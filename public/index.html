@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Positiva · Entrégalo una vez. No lo reenvíes nunca.</title>
+<meta name="description" content="Galerías con tu marca, selección de fotos con un clic y enlaces que no caducan. Para fotógrafos y videógrafos que entregan en su nombre.">
+<meta property="og:title" content="Positiva">
+<meta property="og:description" content="Entrégalo una vez. No lo reenvíes nunca.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://positiva.studio/">
+<meta property="og:image" content="https://positiva.studio/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Positiva. Entrégalo una vez. No lo reenvíes nunca.">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Positiva">
+<meta name="twitter:description" content="Entrégalo una vez. No lo reenvíes nunca.">
+<meta name="twitter:image" content="https://positiva.studio/assets/og.png">
+<meta name="theme-color" content="#F1F0EC">
+<link rel="canonical" href="https://positiva.studio/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<!-- Fuentes auto-alojadas en /fonts (subconjunto latino + ejes instanciados). Cero CDN externo. -->
+<link rel="preload" href="/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+/* ── Fuentes auto-alojadas · subconjunto latino, ejes instanciados · font-display:swap ── */
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:300 400;font-display:swap;src:url(/fonts/newsreader.woff2) format('woff2')}
+@font-face{font-family:'Newsreader';font-style:italic;font-weight:300 400;font-display:swap;src:url(/fonts/newsreader-italic.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/spacemono-400.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/spacemono-700.woff2) format('woff2')}
+/* ══════════════════════════════════════════════════════════════
+   POSITIVA · Landing
+   Tokens idénticos a src/styles/tokens.css. No inventes valores.
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --pv-papel:#F1F0EC; --pv-luz:#FFFFFF; --pv-bandeja:#E6E5E0;
+  --pv-sala:#0E0E0D;  --pv-sala-2:#1A1A18;
+  --pv-tinta:#171614; --pv-tinta-60:#6E6D67; --pv-tinta-30:#A9A8A2;
+  --pv-linea:#D6D5CF; --pv-linea-sala:#2A2A27;
+  --pv-ambar:#C98A2B; --pv-ambar-luz:#F5E9D2; --pv-ambar-hover:#B37A24;
+  --pv-graso:#E0402A;
+  --pv-display:'Newsreader',Georgia,serif;
+  --pv-sans:'Instrument Sans',-apple-system,system-ui,sans-serif;
+  --pv-mono:'Space Mono',ui-monospace,monospace;
+  --pv-r-foto:0px; --pv-r-panel:10px; --pv-r-input:8px; --pv-r-pill:999px;
+  --pv-s1:4px;--pv-s2:8px;--pv-s3:12px;--pv-s4:16px;--pv-s5:24px;
+  --pv-s6:32px;--pv-s7:48px;--pv-s8:64px;--pv-s9:96px;--pv-s10:128px;
+  --pv-ease:cubic-bezier(.4,0,.2,1); --pv-ease-draw:cubic-bezier(.5,.05,.25,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--pv-papel);color:var(--pv-tinta);
+  font-family:var(--pv-sans);font-size:18px;line-height:1.67;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--pv-s5)}
+.narrow{max-width:760px}
+
+h1,h2,h3{font-family:var(--pv-display);font-weight:300;letter-spacing:-.015em;line-height:1.08}
+h1{font-size:clamp(40px,5.8vw,76px)}
+h2{font-size:clamp(32px,4.2vw,54px)}
+h3{font-size:26px;font-weight:400;line-height:1.25}
+h1 em,h2 em,h3 em{font-style:italic}
+.lede{font-size:21px;line-height:1.55;color:var(--pv-tinta-60);max-width:56ch}
+
+.eyebrow{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--pv-ambar);
+  display:flex;align-items:center;gap:var(--pv-s2);margin-bottom:var(--pv-s5);
+}
+.eyebrow::before{content:"▸";font-size:9px;opacity:.7}
+
+section{padding:var(--pv-s10) 0}
+.alt{background:var(--pv-bandeja)}
+.dark{background:var(--pv-sala);color:#EDECE8}
+.dark .lede{color:#9C9B95}
+
+/* ── nav ─────────────────────────────────────────── */
+nav{
+  position:sticky;top:0;z-index:50;background:rgba(241,240,236,.86);
+  backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--pv-linea);
+}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-family:var(--pv-display);font-size:25px;font-weight:400;letter-spacing:-.02em;text-decoration:none;color:var(--pv-tinta)}
+.logo span{color:var(--pv-ambar)}
+.nav-links{display:flex;align-items:center;gap:var(--pv-s5)}
+.nav-links a{font-size:15px;color:var(--pv-tinta-60);text-decoration:none;transition:color .18s}
+.nav-links a:hover{color:var(--pv-tinta)}
+@media(max-width:620px){.nav-links a.hide-s{display:none}}
+
+/* ── botones ─────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:var(--pv-s2);
+  font-size:15px;font-weight:600;padding:13px 26px;
+  border-radius:var(--pv-r-pill);border:1px solid transparent;
+  cursor:pointer;text-decoration:none;transition:all .18s var(--pv-ease);
+}
+.btn-primary{background:var(--pv-tinta);color:var(--pv-papel)}
+.btn-primary:hover{background:#000;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--pv-tinta);border-color:var(--pv-linea)}
+.btn-ghost:hover{border-color:var(--pv-tinta)}
+.dark .btn-ghost{color:#EDECE8;border-color:var(--pv-linea-sala)}
+.dark .btn-ghost:hover{border-color:#EDECE8}
+.btn-sm{padding:9px 18px;font-size:14px}
+
+/* ── hero ────────────────────────────────────────── */
+.hero{padding:var(--pv-s10) 0 var(--pv-s9)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--pv-s9);align-items:center}
+@media(max-width:940px){.hero-grid{grid-template-columns:1fr;gap:var(--pv-s8)}}
+.hero .cta-row{display:flex;gap:var(--pv-s3);margin-top:var(--pv-s7);flex-wrap:wrap}
+.hero-note{
+  font-family:var(--pv-mono);font-size:12px;line-height:1.7;color:var(--pv-tinta-30);
+  margin-top:var(--pv-s5);letter-spacing:.02em;
+}
+
+/* ── hoja de contactos ───────────────────────────── */
+.sheet{
+  background:var(--pv-sala);padding:var(--pv-s6) var(--pv-s5) var(--pv-s5);
+  border-radius:var(--pv-r-panel);box-shadow:0 34px 80px -34px rgba(0,0,0,.6);
+}
+.sheet-edge,.sheet-foot{
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--pv-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+}
+.sheet-edge{color:var(--pv-ambar);margin-bottom:var(--pv-s4);opacity:.85}
+.sheet-foot{
+  color:var(--pv-tinta-60);margin-top:var(--pv-s4);padding-top:var(--pv-s4);
+  border-top:1px solid var(--pv-linea-sala);
+}
+.count{color:var(--pv-graso);font-weight:700}
+.frames{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:520px){.frames{grid-template-columns:repeat(2,1fr)}}
+.frame{position:relative;aspect-ratio:2/3;background:#000;border-radius:var(--pv-r-foto);cursor:pointer}
+.frame img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);transition:filter .4s var(--pv-ease)}
+.frame:hover img{filter:saturate(1)}
+.frame.picked img{filter:saturate(1) brightness(1.03)}
+.frame:focus-visible{outline:2px solid var(--pv-ambar);outline-offset:3px}
+.frame .no{
+  position:absolute;left:5px;bottom:4px;z-index:5;font-family:var(--pv-mono);
+  font-size:9px;letter-spacing:.1em;color:var(--pv-ambar);text-shadow:0 1px 3px rgba(0,0,0,.9);
+}
+/* el trazo: desborda, opaco, sin blend. NO poner overflow:hidden arriba. */
+.mark{position:absolute;inset:-9px;z-index:4;pointer-events:none;opacity:0;transition:opacity .18s var(--pv-ease)}
+.mark svg{width:100%;height:100%;display:block;overflow:visible}
+.mark path{fill:none;stroke:var(--pv-graso);stroke-linecap:round;stroke-linejoin:round}
+.frame.picked .mark{opacity:1}
+.frame.picked .mark path{stroke-dasharray:1150;stroke-dashoffset:1150;animation:draw .7s var(--pv-ease-draw) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* ── manifiesto ──────────────────────────────────── */
+@media(max-width:880px){.mgrid{grid-template-columns:1fr!important;gap:var(--pv-s7)!important}}
+.manifesto{list-style:none;font-family:var(--pv-display);font-size:clamp(24px,3vw,34px);font-weight:300;line-height:1.85}
+.manifesto li{text-decoration:line-through;text-decoration-color:var(--pv-graso);text-decoration-thickness:2px;color:#77766F}
+.manifesto li strong{font-weight:300;color:#EDECE8}
+
+/* ── piezas ──────────────────────────────────────── */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--pv-s7);margin-top:var(--pv-s9)}
+@media(max-width:880px){.three{grid-template-columns:1fr;gap:var(--pv-s8)}}
+.num{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--pv-ambar);margin-bottom:var(--pv-s3)}
+.three p{font-size:17px;color:var(--pv-tinta-60);margin-top:var(--pv-s3)}
+
+/* ── precios ─────────────────────────────────────── */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--pv-s4);margin-top:var(--pv-s8);align-items:start}
+@media(max-width:940px){.plans{grid-template-columns:1fr}}
+.plan{background:var(--pv-luz);border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);padding:var(--pv-s6)}
+.plan.featured{border-color:var(--pv-ambar);box-shadow:0 0 0 1px var(--pv-ambar)}
+.plan-tag{font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pv-tinta-30);margin-bottom:var(--pv-s4)}
+.plan.featured .plan-tag{color:var(--pv-ambar)}
+.plan-name{font-family:var(--pv-display);font-size:32px;font-weight:400;line-height:1;margin-bottom:var(--pv-s3)}
+.price{font-family:var(--pv-display);font-size:44px;font-weight:300;line-height:1;letter-spacing:-.02em}
+.price small{font-family:var(--pv-sans);font-size:15px;font-weight:400;color:var(--pv-tinta-60);letter-spacing:0}
+.price-alt{font-size:14px;color:var(--pv-tinta-30);margin-top:var(--pv-s2)}
+.plan ul{list-style:none;margin-top:var(--pv-s5);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);font-size:16px;line-height:1.9}
+.plan ul li{display:flex;gap:10px;align-items:baseline}
+.plan ul li::before{content:"—";color:var(--pv-ambar);flex:none}
+.plan ul li.off{color:var(--pv-tinta-30)}
+.plan ul li.off::before{content:"×";color:var(--pv-tinta-30)}
+.plan .gb{font-family:var(--pv-mono);font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--pv-tinta);background:var(--pv-ambar-luz);display:inline-block;padding:5px 11px;border-radius:var(--pv-r-pill);margin-top:var(--pv-s4)}
+.extra{font-family:var(--pv-mono);font-size:12px;color:var(--pv-tinta-60);text-align:center;margin-top:var(--pv-s6);letter-spacing:.04em}
+
+/* ── comparativa ─────────────────────────────────── */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:var(--pv-s4);margin-top:var(--pv-s8)}
+@media(max-width:760px){.vs{grid-template-columns:1fr}}
+.vs-card{border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);padding:var(--pv-s6);background:var(--pv-luz)}
+.vs-card.them{background:transparent;border-style:dashed}
+.vs-card h3{margin-bottom:var(--pv-s4)}
+.vs-line{display:flex;justify-content:space-between;padding:var(--pv-s3) 0;border-bottom:1px solid var(--pv-linea);font-size:16px}
+.vs-line:last-child{border:0}
+.vs-line span:last-child{font-family:var(--pv-mono);font-size:13px;font-weight:700;letter-spacing:.04em}
+.vs-card.them .vs-line span:last-child{color:var(--pv-tinta-30)}
+
+/* ── faq ─────────────────────────────────────────── */
+.faq{margin-top:var(--pv-s8)}
+details{border-top:1px solid var(--pv-linea);padding:var(--pv-s5) 0}
+details:last-of-type{border-bottom:1px solid var(--pv-linea)}
+summary{
+  font-family:var(--pv-display);font-size:23px;font-weight:400;cursor:pointer;
+  list-style:none;display:flex;justify-content:space-between;gap:var(--pv-s4);
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--pv-ambar);font-family:var(--pv-sans);font-weight:400;flex:none}
+details[open] summary::after{content:"–"}
+details p{margin-top:var(--pv-s3);color:var(--pv-tinta-60);max-width:64ch}
+
+/* ── captura ─────────────────────────────────────── */
+.capture{background:var(--pv-sala);color:#EDECE8;border-radius:var(--pv-r-panel);padding:var(--pv-s9) var(--pv-s7);text-align:center}
+.capture h2{color:#EDECE8;margin-bottom:var(--pv-s4)}
+.capture .lede{margin:0 auto}
+form{display:flex;gap:var(--pv-s2);max-width:460px;margin:var(--pv-s7) auto 0;flex-wrap:wrap}
+input[type=email]{
+  flex:1;min-width:220px;font-family:var(--pv-sans);font-size:16px;padding:14px 18px;
+  background:var(--pv-sala-2);border:1px solid var(--pv-linea-sala);
+  border-radius:var(--pv-r-input);color:#EDECE8;
+}
+input[type=email]::placeholder{color:#5C5B56}
+input[type=email]:focus{outline:2px solid var(--pv-ambar);outline-offset:1px;border-color:transparent}
+form .btn{background:var(--pv-ambar);color:#fff;border:0}
+form .btn:hover{background:var(--pv-ambar-hover)}
+.capture small{display:block;margin-top:var(--pv-s5);font-family:var(--pv-mono);font-size:11px;letter-spacing:.08em;color:#5C5B56;text-transform:uppercase}
+
+/* ── footer ──────────────────────────────────────── */
+footer{padding:var(--pv-s8) 0;border-top:1px solid var(--pv-linea);font-size:14px;color:var(--pv-tinta-30)}
+footer .wrap{display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap}
+footer a{color:var(--pv-tinta-60);text-decoration:none}
+footer a:hover{color:var(--pv-tinta)}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">Positiva<span>.</span></a>
+    <div class="nav-links">
+      <a href="#precios" class="hide-s">Precios</a>
+      <a href="#faq" class="hide-s">Preguntas</a>
+      <a href="#lista" class="btn btn-primary btn-sm">Avísame</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Positiva · 400 · en construcción</div>
+      <h1>Entrégalo una vez.<br><em>No lo reenvíes nunca.</em></h1>
+      <p class="lede" style="margin-top:var(--pv-s5)">
+        Galerías con tu marca. Tu cliente marca lo que quiere con un clic y tú
+        recibes la selección. El enlace no caduca, no se rompe y no lleva el
+        logo de nadie más.
+      </p>
+      <div class="cta-row">
+        <a href="#lista" class="btn btn-primary">Avísame cuando esté</a>
+        <a href="https://test.positiva.studio/g/aitana-i-david" class="btn btn-ghost" target="_blank" rel="noopener">Ver una galería real ↗</a>
+      </div>
+      <p class="hero-note">
+        Hecho por un fotógrafo de bodas que se cansó de que WeTransfer<br>
+        caducara el martes y el cliente escribiera el miércoles.
+      </p>
+    </div>
+
+    <div class="sheet">
+      <div class="sheet-edge"><span>Aitana &amp; David</span><span>4 jul 2026</span></div>
+      <div class="frames" id="frames"></div>
+      <div class="sheet-foot">
+        <span><span class="count" id="count">0</span> / 8 marcadas</span>
+        <span>↗ enviar selección</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ MANIFIESTO ══ -->
+<section class="dark">
+  <div class="wrap">
+    <div class="eyebrow">Manifiesto</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--pv-s9)" class="mgrid">
+      <div>
+        <h2 style="color:#EDECE8">Lo que <em>no</em><br>vamos a hacer.</h2>
+        <p class="lede" style="margin-top:var(--pv-s5)">
+          Cada línea tachada es una decisión tomada, no un eslogan. Todas
+          cuestan dinero. Por eso casi nadie las toma.
+        </p>
+      </div>
+      <ul class="manifesto">
+        <li><strong>Almacenamiento ilimitado</strong></li>
+        <li><strong>Comisión por tus copias</strong></li>
+        <li><strong>Enlaces que caducan</strong></li>
+        <li><strong>Tu marca debajo de la nuestra</strong></li>
+        <li><strong>Rehenes de tus archivos</strong></li>
+        <li><strong>Descuentos por volumen</strong></li>
+      </ul>
+    </div>
+    <p style="font-family:var(--pv-mono);font-size:13px;letter-spacing:.14em;color:var(--pv-ambar);text-transform:uppercase;margin-top:var(--pv-s8)">
+      Decimos cuánto. Y cuánto cuesta.
+    </p>
+  </div>
+</section>
+
+<!-- ══ TRES PIEZAS ══ -->
+<section id="galeria">
+  <div class="wrap">
+    <div class="eyebrow">Qué hace</div>
+    <h2 class="narrow">Tres cosas. Las tres<br>como <em>deberían ser.</em></h2>
+
+    <div class="three">
+      <div>
+        <div class="num">01 · Entrega</div>
+        <h3>Tu galería.<br>Tu nombre.</h3>
+        <p>
+          Logo, colores y tipografía tuyos desde el primer plan de pago. En el
+          plan Estudio, tu propio dominio. El cliente no ve Positiva por
+          ninguna parte — y ese es exactamente el objetivo.
+        </p>
+      </div>
+      <div>
+        <div class="num">02 · Revisión</div>
+        <h3>Que marquen.<br>Sin reenviar nada.</h3>
+        <p>
+          El cliente abre el enlace, marca lo que quiere y comenta. Tú lo ves
+          en tiempo real. Sin hojas de cálculo, sin capturas por WhatsApp, sin
+          volver a mandar el enlace cada vez que cambias algo.
+        </p>
+      </div>
+      <div>
+        <div class="num">03 · Vídeo</div>
+        <h3>Un GB<br>es un GB.</h3>
+        <p>
+          Foto y vídeo comparten el mismo saldo. Sin cuotas separadas, sin
+          pagar por «horas de vídeo». Nadie más lo hace así, y es la razón
+          por la que tú no tienes que decidir qué subes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRECIOS ══ -->
+<section class="alt" id="precios">
+  <div class="wrap">
+    <div class="eyebrow">Precios</div>
+    <h2 class="narrow">Sin ilimitado.<br>Porque es <em>mentira.</em></h2>
+    <p class="lede" style="margin-top:var(--pv-s5)">
+      El almacenamiento cuesta dinero real. Quien te dice «ilimitado» lo está
+      pagando en otro sitio: en el precio, en la calidad o en tu dependencia.
+      Nosotros te decimos cuántos gigas tienes y cuánto valen.
+    </p>
+
+    <div class="plans">
+      <div class="plan">
+        <div class="plan-tag">Para probar</div>
+        <div class="plan-name">Gratis</div>
+        <div class="price">0 €</div>
+        <div class="price-alt">para siempre</div>
+        <div class="gb">15 GB</div>
+        <ul>
+          <li>2 galerías activas</li>
+          <li>Selección de cliente</li>
+          <li>Caducan a los 30 días</li>
+          <li class="off">Sin tu marca</li>
+          <li class="off">Sin dominio propio</li>
+        </ul>
+      </div>
+
+      <div class="plan featured">
+        <div class="plan-tag">El de casi todos</div>
+        <div class="plan-name">Autor</div>
+        <div class="price">89 € <small>/año</small></div>
+        <div class="price-alt">o 8,95 €/mes</div>
+        <div class="gb">250 GB · foto + vídeo</div>
+        <ul>
+          <li>≈ 35 bodas completas</li>
+          <li>Galerías ilimitadas</li>
+          <li>Tu logo, tus colores</li>
+          <li>Revisión con comentarios</li>
+          <li>Enlaces que no caducan</li>
+          <li>Archivado avisado a 12 meses</li>
+        </ul>
+      </div>
+
+      <div class="plan">
+        <div class="plan-tag">Para estudios</div>
+        <div class="plan-name">Estudio</div>
+        <div class="price">219 € <small>/año</small></div>
+        <div class="price-alt">o 22,95 €/mes</div>
+        <div class="gb">1 TB · foto + vídeo</div>
+        <ul>
+          <li>≈ 140 bodas completas</li>
+          <li>Todo lo de Autor</li>
+          <li>Tu propio dominio</li>
+          <li>Multimarca y equipo</li>
+          <li>Rondas de aprobación</li>
+          <li>Galerías para proveedores</li>
+          <li>Archivado avisado a 24 meses</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="extra">
+      ¿Te quedas corto? <strong style="color:var(--pv-tinta)">+100 GB por 19 €/año.</strong>
+      Lineal: 500 GB son 95 €. Sin descuento por volumen — a nosotros tampoco nos lo hacen.
+      <br>Google Drive te cobra 24 €/año por esos mismos 100 GB.
+    </p>
+  </div>
+</section>
+
+<!-- ══ COMPARATIVA ══ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Comparación honesta</div>
+    <h2 class="narrow">Lo mismo que pagas hoy,<br><em>con más dentro.</em></h2>
+
+    <div class="vs">
+      <div class="vs-card them">
+        <h3>Pic-Time <em>Professional</em></h3>
+        <div class="vs-line"><span>Precio</span><span>≈ 230 €/año</span></div>
+        <div class="vs-line"><span>Fotos</span><span>100 GB</span></div>
+        <div class="vs-line"><span>Vídeo</span><span>30 GB · saldo aparte</span></div>
+        <div class="vs-line"><span>Selección de cliente</span><span>Solo desde aquí</span></div>
+        <div class="vs-line"><span>Tienda de copias</span><span>Comisión</span></div>
+      </div>
+      <div class="vs-card">
+        <h3>Positiva <em>Autor</em></h3>
+        <div class="vs-line"><span>Precio</span><span>89 €/año</span></div>
+        <div class="vs-line"><span>Fotos + vídeo</span><span>250 GB · saldo único</span></div>
+        <div class="vs-line"><span>Vídeo</span><span>Incluido en el saldo</span></div>
+        <div class="vs-line"><span>Selección de cliente</span><span>Desde el primer euro</span></div>
+        <div class="vs-line"><span>Tienda de copias</span><span>Vende tú. 0 %</span></div>
+      </div>
+    </div>
+    <p class="extra" style="text-align:left;margin-top:var(--pv-s5)">
+      Casi el doble de almacenamiento por menos de la mitad de precio. Y la selección,
+      que en Pic-Time solo aparece a partir de su plan de 230 €, aquí está desde el primero.
+    </p>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="alt" id="faq">
+  <div class="wrap narrow">
+    <div class="eyebrow">Preguntas incómodas</div>
+    <h2>Las que <em>importan.</em></h2>
+
+    <div class="faq">
+      <details open>
+        <summary>¿Por qué no ofrecéis almacenamiento ilimitado?</summary>
+        <p>Porque no existe. Cada gigabyte que guardamos lo pagamos. Cuando alguien te
+        vende «ilimitado», está apostando a que la mayoría de sus clientes no lo usen —
+        y a que los que sí, se vayan. Preferimos decirte el número.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa con mi galería a los 12 meses?</summary>
+        <p>Se archiva, con aviso previo por email. Sigue ahí y se restaura en 24 horas
+        cuando la pidas. No se borra nada sin que lo sepas. Y si quieres que siga activa,
+        amplías el plan. Las bodas se miran mucho tres meses y luego duermen: cobrarte
+        por tenerlas despiertas para siempre sería cobrarte por nada.</p>
+      </details>
+      <details>
+        <summary>¿Os lleváis comisión de mis álbumes o mis copias?</summary>
+        <p>Ni un céntimo. No tenemos tienda y no la vamos a tener. Te damos la herramienta
+        para que tu cliente elija, y tú vendes el álbum, la copia o el USB como te dé la
+        gana, al precio que quieras, con el laboratorio que quieras. El 100 % es tuyo.</p>
+      </details>
+      <details>
+        <summary>¿Puedo llevarme mis archivos si me voy?</summary>
+        <p>Cuando quieras, en un ZIP, con la estructura de carpetas intacta. No hay
+        permanencia, no hay penalización y no hay que escribir a soporte para pedirlo.</p>
+      </details>
+      <details>
+        <summary>¿Sirve para vídeo de verdad?</summary>
+        <p>Sí, y comparte saldo con las fotos. Servimos MP4 directo, sin recomprimir tu
+        trabajo. Si has exportado un H.264, se reproduce. Lo que no hacemos es cobrarte
+        aparte por «horas de vídeo» como si fuera otro producto.</p>
+      </details>
+      <details>
+        <summary>¿Quién está detrás de esto?</summary>
+        <p>Un fotógrafo y videógrafo de bodas de Valencia con doce años de oficio, que
+        además es ingeniero informático. Lo estoy construyendo porque lo necesito yo, y
+        porque hablé con veintiséis compañeros que estaban igual de hartos.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CAPTURA ══ -->
+<section id="lista">
+  <div class="wrap">
+    <div class="capture">
+      <div class="eyebrow" style="justify-content:center">Lista de espera</div>
+      <h2>Todavía no está listo.<br><em>Y no te voy a decir que sí.</em></h2>
+      <p class="lede">
+        Estoy construyéndolo ahora mismo. Déjame tu email y te aviso el día que
+        puedas entrar — con estos precios, no con otros.
+      </p>
+      <form id="wl" novalidate>
+        <input type="email" name="email" placeholder="nombre@tuestudio.com" required aria-label="Tu email">
+        <button type="submit" class="btn">Avísame</button>
+      </form>
+      <small id="msg">Sin newsletter. Un email, el día que abra.</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Positiva · Valencia · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span></span>
+    <span><a href="#precios">Precios</a> · <a href="#faq">Preguntas</a> · <a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+  </div>
+</footer>
+
+<script>
+/* ── Hoja de contactos: rectas con temblor. Ver src/components/GreaseMark.tsx ── */
+/* Fotos servidas desde /img como AVIF/WebP/JPG. order[] indexa foto-N.* */
+const order = [1,5,2,6,3,7,4,1];
+const W = 200, H = 300;
+
+function greasePath(seed){
+  let s = seed;
+  const rnd = () => { s = (s*9301 + 49297) % 233280; return s/233280; };
+  const j = a => (rnd() - .5) * a;
+  const i = 9, C = 3.2, M = 1.6;
+  const seg = (a,b) => [1,2].map(k => {
+    const t = k/3;
+    return [a[0] + (b[0]-a[0])*t + j(M), a[1] + (b[1]-a[1])*t + j(M)];
+  });
+  const tl = [i + j(C), i + j(C)];
+  const tr = [W - i + j(C), i + j(C)];
+  const br = [W - i + j(C), H - i + j(C)];
+  const bl = [i + j(C), H - i + j(C)];
+  const pts = [
+    tl, ...seg(tl,tr), tr, ...seg(tr,br), br,
+    ...seg(br,bl), bl, ...seg(bl,tl), tl,
+    [i + (W-2*i) * (0.22 + rnd()*0.14), i - 3 + j(4)],
+  ];
+  return 'M ' + pts.map(p => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join(' L ');
+}
+
+const sheet = document.getElementById('frames');
+order.forEach((p, idx) => {
+  const seed = (idx+1) * 977;
+  const el = document.createElement('div');
+  el.className = 'frame';
+  el.setAttribute('role','button');
+  el.setAttribute('tabindex','0');
+  el.setAttribute('aria-pressed','false');
+  el.setAttribute('aria-label', `Fotograma ${idx+1}, sin marcar`);
+  const w = (p===5||p===6) ? 520 : 347, h = (p===5||p===6) ? 347 : 520;
+  const load = idx===0 ? 'fetchpriority="high"' : 'loading="lazy"';
+  el.innerHTML = `<picture>
+      <source srcset="/img/foto-${p}.avif" type="image/avif">
+      <source srcset="/img/foto-${p}.webp" type="image/webp">
+      <img src="/img/foto-${p}.jpg" alt="" width="${w}" height="${h}" ${load} decoding="async">
+    </picture>
+    <span class="no">${String(idx+1).padStart(2,'0')}A</span>
+    <span class="mark"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+      <defs><filter id="wax${idx}" x="-25%" y="-25%" width="150%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="${idx*7}" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="${idx*3+5}" result="t"/>
+        <feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/>
+        <feComposite in="d" in2="h" operator="out"/>
+      </filter></defs>
+      <path d="${greasePath(seed)}" stroke-width="7" opacity="0.97" filter="url(#wax${idx})"/>
+    </svg></span>`;
+  const toggle = () => {
+    el.classList.toggle('picked');
+    const on = el.classList.contains('picked');
+    el.setAttribute('aria-pressed', on);
+    el.setAttribute('aria-label', `Fotograma ${idx+1}, ${on ? 'marcada' : 'sin marcar'}`);
+    document.getElementById('count').textContent = document.querySelectorAll('.frame.picked').length;
+  };
+  el.addEventListener('click', toggle);
+  el.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
+  sheet.appendChild(el);
+});
+
+/* ── Lista de espera ──────────────────────────────────────────
+   Envía a /api/waitlist (Pages Function → Supabase, tabla waitlist).
+   Sin analytics de terceros. Sin píxeles. Ver manifiesto.        */
+document.getElementById('wl').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const email = form.email.value.trim();
+  const msg = document.getElementById('msg');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    msg.textContent = 'Ese email no parece válido. Revísalo.';
+    msg.style.color = 'var(--pv-graso)';
+    return;
+  }
+  const btn = form.querySelector('button');
+  btn.disabled = true;
+  try {
+    const r = await fetch('/api/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, source: 'landing' }),
+    });
+    if (!r.ok && r.status !== 409) throw new Error(String(r.status));
+    msg.textContent = 'Apuntado. Te escribo el día que abra.';
+    msg.style.color = 'var(--pv-ambar)';
+    form.reset();
+  } catch (_) {
+    msg.textContent = 'No se ha podido guardar. Inténtalo de nuevo en un momento.';
+    msg.style.color = 'var(--pv-graso)';
+  } finally {
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
