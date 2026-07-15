@@ -1,17 +1,12 @@
 {
   "name": "positiva-landing",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node _serve.mjs public 4321"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "private": "true",
-  "dependencies": {
-    "sharp": "^0.35.3"
+  "devDependencies": {
+    "sharp": "^0.35.3",
+    "wrangler": "^4.111.0"
   }
 }

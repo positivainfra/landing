@@ -6,16 +6,19 @@ repo, build, base de datos ni pipeline con ellos.
 
 ## Estructura
 
+Modelo **Worker + static assets** de Cloudflare (`wrangler.jsonc` + `worker.js`).
+Los ficheros de `public/` se sirven directos; solo `/api/waitlist` llega al Worker.
+
 ```
-public/            → raíz estática que publica Cloudflare Pages
+wrangler.jsonc     →  config: main=worker.js, assets=./public
+worker.js          →  Worker: POST /api/waitlist → Supabase; resto → assets
+public/            → assets estáticos
   index.html       ·  ~31 KB (antes 180 KB)
   favicon.svg      ·  favicon vectorial "P."
   _headers         ·  caché de estáticos + cabeceras de seguridad (CSP incl.)
   fonts/           ·  5 woff2 auto-alojados (Newsreader, Instrument Sans, Space Mono)
   img/             ·  7 fotos × {avif, webp, jpg}  (el HTML sirve AVIF, con fallbacks)
   assets/          ·  og.png (1200×630), favicons png
-functions/
-  api/waitlist.js  →  Pages Function: POST /api/waitlist → Supabase
 schema.sql         →  DDL de la tabla waitlist (para la instancia Supabase NUEVA)
 _serve.mjs         →  servidor estático solo para pruebas locales (no se despliega)
 ```
@@ -37,23 +40,23 @@ node _serve.mjs public 4321      # http://localhost:4321
 Para regenerar imágenes/fuentes hace falta `sharp` (Node) y `fonttools`+`brotli`
 (Python). No es necesario para desplegar.
 
-## Despliegue (Cloudflare Pages)
+## Despliegue (Cloudflare Worker + assets)
 
-Proyecto de Pages **nuevo y separado**. Sin comando de build.
+Worker **nuevo y separado**, conectado al repo de GitHub. El build de Git
+ejecuta `wrangler deploy`, que lee `wrangler.jsonc`. Sin comando de build extra.
 
-- **Build command:** *(vacío)*
-- **Build output directory:** `public`
-- **Root directory:** `/` (para que Pages detecte `functions/`)
+Validar en local antes de subir:
 
-### Variables de entorno del proyecto de Pages (Producción y Preview)
+```bash
+npx wrangler deploy --dry-run --outdir=/tmp/out   # valida config + bundle
+```
 
-La Function necesita estos secretos (⚠️ instancia de Supabase **exclusiva** de la
-landing, nunca la de la app):
+### Variables del Worker (⚠️ instancia de Supabase exclusiva de la landing)
 
-| Variable | Valor |
-|---|---|
-| `SUPABASE_URL` | `https://<ref>.supabase.co` |
-| `SUPABASE_SERVICE_KEY` | service_role key (secreto; solo servidor) |
+| Variable | Valor | Tipo |
+|---|---|---|
+| `SUPABASE_URL` | `https://<ref>.supabase.co` | Text |
+| `SUPABASE_SERVICE_KEY` | service_role key | **Secret** (encrypt) |
 
 ### Base de datos (Supabase nuevo)
 
@@ -61,5 +64,6 @@ Ejecutar [`schema.sql`](schema.sql) en el SQL editor del proyecto Supabase nuevo
 
 ## Dominio
 
-`positiva.studio` (raíz) → este proyecto de Pages. **No** apuntar el DNS hasta
-revisar la preview `*.pages.dev`. `app.` y `test.` no se tocan.
+`positiva.studio` (raíz) → este Worker (Settings → Domains & Routes → Custom
+domain). **No** apuntar el DNS hasta revisar la preview `*.workers.dev`.
+`app.` y `test.` no se tocan.
