@@ -5,7 +5,7 @@
   //   · publica ./public como assets estáticos (con su _headers)
   // Las peticiones a un asset se sirven directas; solo /api/waitlist
   // (que no es un fichero) llega al Worker.
-  "name": "positiva-landing",
+  "name": "landing",
   "main": "worker.js",
   "compatibility_date": "2025-01-01",
   "assets": {
