@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +15,8 @@
   "private": "true",
   "dependencies": {
     "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "wrangler": "^4.111.0"
   }
 }
