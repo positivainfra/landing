@@ -172,10 +172,14 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .panels .sheet.is-active{display:block}
 .panels .sheet.is-visible{opacity:1}
 
-/* vitrina masonry: cada foto conserva su aspect-ratio real, sin recorte forzado */
-.masonry{columns:2;column-gap:16px}
-.mitem{break-inside:avoid;margin-bottom:16px;aspect-ratio:var(--r);background:#000;overflow:hidden}
-.mitem img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92)}
+/* vitrina · mismo grid de celda que .frames (Boda): tamaño uniforme,
+   las horizontales ocupan 2 columnas de ancho en vez de una casilla
+   vertical cropeada — así se ve "grid", no una fila suelta */
+.uniform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:520px){.uniform-grid{grid-template-columns:repeat(2,1fr)}}
+.uitem{aspect-ratio:2/3;background:#000;overflow:hidden}
+.uitem.h{grid-column:span 2;aspect-ratio:4/3}
+.uitem img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92)}
 
 .sheet-mission{display:flex;align-items:center;justify-content:center;min-height:340px;text-align:center;padding:var(--pv-s7) var(--pv-s5)}
 .sheet-mission p{
@@ -317,23 +321,23 @@ footer a:hover{color:var(--pv-tinta)}
 
         <div class="sheet" id="panel-evento" role="tabpanel" aria-labelledby="tab-evento" hidden>
           <div class="sheet-edge"><span>Evento</span><span>5 fotogramas</span></div>
-          <div class="masonry">
-            <div class="mitem" style="--r:0.667"><img src="/img/evento_bolsa.webp" alt="" width="1280" height="1919" loading="lazy" decoding="async"></div>
-            <div class="mitem" style="--r:0.667"><img src="/img/evento_arrozal.webp" alt="" width="1280" height="1919" loading="lazy" decoding="async"></div>
-            <div class="mitem" style="--r:1.499"><img src="/img/evento_faja.webp" alt="" width="1280" height="854" loading="lazy" decoding="async"></div>
-            <div class="mitem" style="--r:1.496"><img src="/img/evento_grupo.webp" alt="" width="1080" height="722" loading="lazy" decoding="async"></div>
-            <div class="mitem" style="--r:1.5"><img src="/img/evento_libelula.webp" alt="" width="1080" height="720" loading="lazy" decoding="async"></div>
+          <div class="uniform-grid">
+            <div class="uitem"><img src="/img/evento_bolsa.webp" alt="" width="1280" height="1919" loading="lazy" decoding="async"></div>
+            <div class="uitem"><img src="/img/evento_arrozal.webp" alt="" width="1280" height="1919" loading="lazy" decoding="async"></div>
+            <div class="uitem h"><img src="/img/evento_faja.webp" alt="" width="1280" height="854" loading="lazy" decoding="async"></div>
+            <div class="uitem h"><img src="/img/evento_grupo.webp" alt="" width="1080" height="722" loading="lazy" decoding="async"></div>
+            <div class="uitem h"><img src="/img/evento_libelula.webp" alt="" width="1080" height="720" loading="lazy" decoding="async"></div>
           </div>
           <div class="sheet-foot"><span>Vitrina · sin selección</span></div>
         </div>
 
         <div class="sheet" id="panel-congreso" role="tabpanel" aria-labelledby="tab-congreso" hidden>
           <div class="sheet-edge"><span>Congreso</span><span>4 fotogramas</span></div>
-          <div class="masonry">
-            <div class="mitem" style="--r:1.5"><img src="/img/congreso_panel.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
-            <div class="mitem" style="--r:1.5"><img src="/img/congreso_publico.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
-            <div class="mitem" style="--r:1.5"><img src="/img/congreso_riendo.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
-            <div class="mitem" style="--r:1.5"><img src="/img/congreso_movil.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
+          <div class="uniform-grid">
+            <div class="uitem h"><img src="/img/congreso_panel.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
+            <div class="uitem h"><img src="/img/congreso_publico.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
+            <div class="uitem h"><img src="/img/congreso_riendo.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
+            <div class="uitem h"><img src="/img/congreso_movil.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
           </div>
           <div class="sheet-foot"><span>Vitrina · sin selección</span></div>
         </div>
