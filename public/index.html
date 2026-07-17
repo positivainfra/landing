@@ -167,10 +167,19 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .tab[aria-selected="true"]{color:var(--pv-ambar);border-color:var(--pv-ambar)}
 .tab:focus-visible{outline:2px solid var(--pv-ambar);outline-offset:3px}
 
-.panels{position:relative}
-.panels .sheet{display:none;opacity:0;transition:opacity .35s var(--pv-ease)}
-.panels .sheet.is-active{display:block}
-.panels .sheet.is-visible{opacity:1}
+/* disolve real: los 4 paneles se apilan en la misma celda de grid (así el
+   contenedor mide lo que el más alto y no hay salto de layout) y cruzan
+   opacidad a la vez. visibility con transition-delay los saca del árbol de
+   accesibilidad sin usar display:none (que mataría el solape). */
+.panels{display:grid}
+.panels .sheet{
+  grid-area:1/1;opacity:0;visibility:hidden;
+  transition:opacity .5s var(--pv-ease),visibility 0s linear .5s;
+}
+.panels .sheet.is-active{
+  opacity:1;visibility:visible;
+  transition:opacity .5s var(--pv-ease),visibility 0s linear 0s;
+}
 
 /* vitrina · mismo grid de celda que .frames (Boda): tamaño uniforme,
    las horizontales ocupan 2 columnas de ancho en vez de una casilla
@@ -180,6 +189,13 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .uitem{aspect-ratio:2/3;background:#000;overflow:hidden}
 .uitem.h{grid-column:span 2;aspect-ratio:4/3}
 .uitem img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92)}
+
+/* Congreso: 6 fotos, todas horizontales — para no ganar altura (2 filas,
+   igual que antes con 4) se ensancha a 6 columnas en vez de apilar más
+   filas. En móvil no hay ancho que ganar, así que cae a 2 columnas como
+   el resto y se apila (más alto ahí es inevitable). */
+.uniform-grid--congreso{grid-template-columns:repeat(6,1fr)}
+@media(max-width:520px){.uniform-grid--congreso{grid-template-columns:repeat(2,1fr)}}
 
 .sheet-mission{display:flex;align-items:center;justify-content:center;min-height:340px;text-align:center;padding:var(--pv-s7) var(--pv-s5)}
 .sheet-mission p{
@@ -319,7 +335,7 @@ footer a:hover{color:var(--pv-tinta)}
           </div>
         </div>
 
-        <div class="sheet" id="panel-evento" role="tabpanel" aria-labelledby="tab-evento" hidden>
+        <div class="sheet" id="panel-evento" role="tabpanel" aria-labelledby="tab-evento">
           <div class="sheet-edge"><span>Evento</span><span>5 fotogramas</span></div>
           <div class="uniform-grid">
             <div class="uitem"><img src="/img/evento_bolsa.webp" alt="" width="1280" height="1919" loading="lazy" decoding="async"></div>
@@ -331,18 +347,20 @@ footer a:hover{color:var(--pv-tinta)}
           <div class="sheet-foot"><span>Vitrina · sin selección</span></div>
         </div>
 
-        <div class="sheet" id="panel-congreso" role="tabpanel" aria-labelledby="tab-congreso" hidden>
-          <div class="sheet-edge"><span>Congreso</span><span>4 fotogramas</span></div>
-          <div class="uniform-grid">
-            <div class="uitem h"><img src="/img/congreso_panel.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
-            <div class="uitem h"><img src="/img/congreso_publico.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
-            <div class="uitem h"><img src="/img/congreso_riendo.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
-            <div class="uitem h"><img src="/img/congreso_movil.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
+        <div class="sheet" id="panel-congreso" role="tabpanel" aria-labelledby="tab-congreso">
+          <div class="sheet-edge"><span>Congreso</span><span>6 fotogramas</span></div>
+          <div class="uniform-grid uniform-grid--congreso">
+            <div class="uitem h"><img src="/img/congreso_panoramica.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
+            <div class="uitem h"><img src="/img/congreso_dialogo.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
+            <div class="uitem h"><img src="/img/congreso_bienvenida.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
+            <div class="uitem h"><img src="/img/congreso_telefono.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
+            <div class="uitem h"><img src="/img/congreso_networking.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
+            <div class="uitem h"><img src="/img/congreso_recepcion.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
           </div>
           <div class="sheet-foot"><span>Vitrina · sin selección</span></div>
         </div>
 
-        <div class="sheet sheet-mission" id="panel-mission" role="tabpanel" aria-labelledby="tab-mission" hidden>
+        <div class="sheet sheet-mission" id="panel-mission" role="tabpanel" aria-labelledby="tab-mission">
           <p>Bodas, eventos, congresos, sesiones, lo que reveles.</p>
         </div>
       </div>
@@ -673,14 +691,15 @@ order.forEach((p, idx) => {
 });
 
 /* ── Selector de galería: Boda / Evento / Congreso / … ─────────
-   Crossfade secuencial por CSS transition (opacity) + toggle de
-   clase. Sin librerías. Ver DESIGN.md regla 9. */
+   Disolve real: los 4 paneles están siempre en el DOM, apilados en la
+   misma celda de grid (ver CSS .panels), y la clase is-active cruza su
+   opacidad a la vez — sin flip, sin display:none a medias. Sin
+   librerías. Ver DESIGN.md regla 9. */
 (() => {
   const tabs = Array.from(document.querySelectorAll('.tab'));
   const panels = Object.fromEntries(
     ['boda', 'evento', 'congreso', 'mission'].map(k => [k, document.getElementById(`panel-${k}`)])
   );
-  const FADE_MS = 180;
 
   function activate(key, { focusTab = false } = {}) {
     tabs.forEach(t => {
@@ -689,24 +708,7 @@ order.forEach((p, idx) => {
       t.tabIndex = on ? 0 : -1;
       if (on && focusTab) t.focus();
     });
-
-    const next = panels[key];
-    const current = Object.values(panels).find(p => p.classList.contains('is-active'));
-    if (current === next) return;
-
-    if (current) {
-      current.classList.remove('is-visible');
-      window.setTimeout(() => {
-        current.classList.remove('is-active');
-        current.hidden = true;
-      }, FADE_MS);
-    }
-
-    next.hidden = false;
-    next.classList.add('is-active');
-    // fuerza reflow para que la transición de opacity se dispare
-    void next.offsetWidth;
-    requestAnimationFrame(() => next.classList.add('is-visible'));
+    Object.entries(panels).forEach(([k, el]) => el.classList.toggle('is-active', k === key));
   }
 
   tabs.forEach((tab, i) => {
@@ -722,9 +724,6 @@ order.forEach((p, idx) => {
       activate(tabs[j].dataset.panel, { focusTab: true });
     });
   });
-
-  // estado inicial: Boda visible sin esperar a la primera transición
-  panels.boda.classList.add('is-visible');
 })();
 
 /* ── Lista de espera ──────────────────────────────────────────
