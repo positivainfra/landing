@@ -24,17 +24,17 @@
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
-<!-- Fuentes auto-alojadas en /fonts (subconjunto latino + ejes instanciados). Cero CDN externo. -->
-<link rel="preload" href="/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Fuentes auto-alojadas en /fonts (subconjunto latino). Cero CDN externo. -->
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
-/* ── Fuentes auto-alojadas · subconjunto latino, ejes instanciados · font-display:swap ── */
-@font-face{font-family:'Newsreader';font-style:normal;font-weight:300 400;font-display:swap;src:url(/fonts/newsreader.woff2) format('woff2')}
-@font-face{font-family:'Newsreader';font-style:italic;font-weight:300 400;font-display:swap;src:url(/fonts/newsreader-italic.woff2) format('woff2')}
+/* ── Fuentes auto-alojadas · subconjunto latino · font-display:swap ── */
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:300 400;font-display:swap;src:url(/fonts/playfair.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:300 400;font-display:swap;src:url(/fonts/playfair-italic.woff2) format('woff2')}
 @font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument.woff2) format('woff2')}
-@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/spacemono-400.woff2) format('woff2')}
-@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/spacemono-700.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/ibmplexmono-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/ibmplexmono-700.woff2) format('woff2')}
 /* ══════════════════════════════════════════════════════════════
    POSITIVA · Landing
    Tokens idénticos a src/styles/tokens.css. No inventes valores.
@@ -46,9 +46,9 @@
   --pv-linea:#D6D5CF; --pv-linea-sala:#2A2A27;
   --pv-ambar:#C98A2B; --pv-ambar-luz:#F5E9D2; --pv-ambar-hover:#B37A24;
   --pv-graso:#E0402A;
-  --pv-display:'Newsreader',Georgia,serif;
+  --pv-display:'Playfair Display',Georgia,serif;
   --pv-sans:'Instrument Sans',-apple-system,system-ui,sans-serif;
-  --pv-mono:'Space Mono',ui-monospace,monospace;
+  --pv-mono:'IBM Plex Mono',ui-monospace,monospace;
   --pv-r-foto:0px; --pv-r-panel:10px; --pv-r-input:8px; --pv-r-pill:999px;
   --pv-s1:4px;--pv-s2:8px;--pv-s3:12px;--pv-s4:16px;--pv-s5:24px;
   --pv-s6:32px;--pv-s7:48px;--pv-s8:64px;--pv-s9:96px;--pv-s10:128px;
@@ -221,6 +221,10 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 @media(max-width:880px){.three{grid-template-columns:1fr;gap:var(--pv-s8)}}
 .num{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--pv-ambar);margin-bottom:var(--pv-s3)}
 .three p{font-size:17px;color:var(--pv-tinta-60);margin-top:var(--pv-s3)}
+
+/* ── ancho completo (uso puntual, solo secciones visuales) ── */
+.bleed{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;overflow:hidden}
+.bleed img{width:100%;display:block}
 
 /* ── precios ─────────────────────────────────────── */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--pv-s4);margin-top:var(--pv-s8);align-items:start}
@@ -448,6 +452,35 @@ footer a:hover{color:var(--pv-tinta)}
         </p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ══ DISEÑO DE GALERÍA ══ -->
+<section class="dark" id="diseno">
+  <div class="wrap">
+    <div class="eyebrow">Diseño</div>
+    <h2 class="narrow">No te damos 30 plantillas.<br>Te damos una galería<br><em>bien diseñada.</em></h2>
+    <p class="lede" style="margin-top:var(--pv-s5)">
+      Cada galería de Positiva sale con una dirección de arte pensada por un
+      fotógrafo — tipografía editorial, la foto siempre protagonista, tu
+      marca y nada más. Sin convertirte en maquetador.
+    </p>
+  </div>
+
+  <div class="bleed" style="margin-top:var(--pv-s7)">
+    <!-- PLACEHOLDER: sustituir por export limpio de la galería real, sin chrome de la interfaz -->
+    <img src="/img/showcase-galeria-PLACEHOLDER.jpg" alt="Galería real de Positiva: Aitana &amp; David" width="1512" height="801" loading="lazy">
+  </div>
+
+  <div class="wrap">
+    <p class="lede" style="margin-top:var(--pv-s6)">
+      Y como no creemos en los vídeos de demo, aquí tienes una galería de
+      verdad, con una boda de verdad:
+      <a href="https://test.positiva.studio/g/aitana-i-david" target="_blank" rel="noopener" style="color:var(--pv-ambar)">Ver la galería ↗</a>
+    </p>
+    <p style="font-family:var(--pv-mono);font-size:13px;letter-spacing:.14em;color:var(--pv-ambar);text-transform:uppercase;margin-top:var(--pv-s6)">
+      ¿Menos opciones que otros? Sí. Ese es el trabajo que ya hicimos por ti.
+    </p>
   </div>
 </section>
 
