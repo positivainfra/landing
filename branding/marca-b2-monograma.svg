@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 92" width="68" height="92">
+  <!-- Ronda 2 · B — Monograma P: montura como panza, asta continua, ventana 3:2 -->
+  <path fill-rule="evenodd" fill="#171614" d="
+    M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z
+    M22 25 H46 V41 H22 Z"/>
+  <path fill="#171614" d="M8 50 H22 V81 A7 7 0 0 1 15 88 A7 7 0 0 1 8 81 Z"/>
+  <circle cx="34" cy="33" r="3.6" fill="#C98A2B"/>
+</svg>

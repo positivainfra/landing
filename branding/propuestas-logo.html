@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Positiva · Identidad — Tres propuestas</title>
+<style>
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:300 400;font-display:swap;src:url(../public/fonts/playfair.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:300 400;font-display:swap;src:url(../public/fonts/playfair-italic.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(../public/fonts/instrument.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(../public/fonts/ibmplexmono-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:700;font-display:swap;src:url(../public/fonts/ibmplexmono-700.woff2) format('woff2')}
+:root{
+  --papel:#F1F0EC; --luz:#FFF; --bandeja:#E6E5E0; --sala:#0E0E0D;
+  --tinta:#171614; --tinta-60:#6E6D67; --tinta-30:#A9A8A2; --linea:#D6D5CF;
+  --linea-sala:#2A2A27; --ambar:#C98A2B; --ambar-luz:#F5E9D2; --graso:#E0402A;
+  --display:'Playfair Display',Georgia,serif;
+  --sans:'Instrument Sans',-apple-system,system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+h1,h2,h3{font-family:var(--display);font-weight:300;letter-spacing:-.02em;line-height:1.05}
+h1{font-size:clamp(40px,6vw,84px)}
+h2{font-size:clamp(30px,4vw,52px)}
+em{font-style:italic}
+.mono{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.eyebrow{display:flex;align-items:center;gap:16px;color:var(--ambar);margin-bottom:28px}
+.eyebrow::after{content:"";flex:1;height:1px;background:currentColor;opacity:.28}
+.eyebrow .idx{color:var(--tinta-30)}
+.lede{font-size:19px;line-height:1.55;color:var(--tinta-60);max-width:58ch}
+section{padding:clamp(72px,9vw,128px) 0}
+.dark{background:var(--sala);color:#EDECE8}
+.dark .lede{color:#9C9B95}
+
+/* portada */
+.cover{min-height:88svh;display:flex;flex-direction:column;justify-content:center}
+.cover .mono{color:var(--tinta-30)}
+.cover h1{margin:20px 0 28px}
+
+/* escenario de marca */
+.stage{background:var(--luz);border:1px solid var(--linea);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;min-height:340px;padding:48px}
+.dark .stage{background:var(--sala);border-color:var(--linea-sala)}
+.duo{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,64px);align-items:start;margin-top:40px}
+@media(max-width:880px){.duo{grid-template-columns:1fr}}
+.rationale h3{font-size:24px;font-weight:400;margin-bottom:14px}
+.rationale p{color:var(--tinta-60);margin-bottom:16px;max-width:54ch}
+.dark .rationale p{color:#9C9B95}
+.rationale .claim{font-family:var(--display);font-style:italic;font-size:22px;color:var(--tinta);line-height:1.4;margin:22px 0}
+.dark .rationale .claim{color:#EDECE8}
+
+/* lockups y sistema */
+.lockup{display:flex;align-items:center;gap:26px}
+.lockup .word{font-family:var(--display);font-weight:400;font-size:64px;letter-spacing:-.02em;line-height:1}
+.lockup .word b{font-weight:400;color:var(--ambar)}
+.sys{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+@media(max-width:760px){.sys{grid-template-columns:repeat(2,1fr)}}
+.cell{background:var(--luz);border:1px solid var(--linea);border-radius:10px;aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.dark .cell{background:var(--sala);border-color:var(--linea-sala)}
+.cell .tag{position:absolute;left:10px;bottom:8px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-30)}
+.cell.foto{padding:0}
+.cell.foto img{width:100%;height:100%;object-fit:cover;filter:saturate(.92)}
+.cell.foto svg{position:absolute;right:10px;bottom:10px}
+.cell.inv{background:var(--sala);border-color:var(--sala)}
+.cell.amb{background:var(--ambar-luz);border-color:var(--ambar)}
+
+/* comparativa final */
+table{width:100%;border-collapse:collapse;margin-top:36px;font-size:16px}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--linea-sala);vertical-align:top}
+th{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ambar)}
+td:first-child{font-family:var(--display);font-size:20px;white-space:nowrap}
+.reco{background:var(--ambar-luz);border:1px solid var(--ambar);border-radius:10px;
+  padding:22px 26px;margin-top:40px;color:var(--tinta);font-size:16px;line-height:1.7}
+.reco b{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:8px}
+footer{padding:48px 0;border-top:1px solid var(--linea);color:var(--tinta-30);font-size:14px}
+</style>
+</head>
+<body>
+
+<!-- ══ PORTADA ══ -->
+<div class="wrap cover">
+  <span class="mono">Positiva · Programa de identidad · Julio 2026 · Confidencial</span>
+  <h1>Un positivo<br>de 35 milímetros.<br><em>Tres maneras de decirlo.</em></h1>
+  <p class="lede">
+    La diapositiva es la única pieza de la fotografía analógica que se llama como
+    tu producto: un positivo. No es una metáfora prestada — es el objeto que tu
+    marca ya nombra. Las tres propuestas parten de su anatomía: la montura, la
+    ventana y el punto de orientación.
+  </p>
+</div>
+
+<!-- ══ PROPUESTA A ══ -->
+<section>
+  <div class="wrap">
+    <p class="mono eyebrow"><span class="idx">A</span> El Marco</p>
+    <h2>La montura que protege<br><em>el trabajo terminado.</em></h2>
+    <div class="duo">
+      <div>
+        <div class="stage">
+          <svg viewBox="0 0 64 64" width="180" height="180" aria-label="Marca A: montura de diapositiva con punto ámbar">
+            <rect x="5.5" y="5.5" width="53" height="53" rx="6" fill="none" stroke="#171614" stroke-width="3"/>
+            <rect x="15.5" y="21.5" width="33" height="21" rx="1.5" fill="none" stroke="#171614" stroke-width="3"/>
+            <circle cx="51" cy="13" r="3.4" fill="#C98A2B"/>
+          </svg>
+        </div>
+        <div class="stage" style="margin-top:14px;min-height:150px">
+          <div class="lockup">
+            <svg viewBox="0 0 64 64" width="56" height="56">
+              <rect x="5.5" y="5.5" width="53" height="53" rx="6" fill="none" stroke="#171614" stroke-width="3"/>
+              <rect x="15.5" y="21.5" width="33" height="21" rx="1.5" fill="none" stroke="#171614" stroke-width="3"/>
+              <circle cx="51" cy="13" r="3.4" fill="#C98A2B"/>
+            </svg>
+            <span class="word">Positiva</span>
+          </div>
+        </div>
+      </div>
+      <div class="rationale">
+        <h3>Racional</h3>
+        <p>
+          Una montura de diapositiva, reducida a tres trazos: el cartón, la ventana
+          3:2 y el punto de orientación que el laboratorio ponía para saber cómo
+          proyectarla. Ese punto es ámbar — y es el mismo punto que hoy cierra tu
+          wordmark.
+        </p>
+        <p class="claim">
+          El wordmark pierde su punto final porque el punto se muda a la marca:
+          «Positiva» + marco marcan juntos, nunca por separado.
+        </p>
+        <p>
+          Es la propuesta más literal y la más disciplinada. Funciona como marco
+          real: cualquier fotografía de un cliente puede vivir dentro de la
+          ventana, y la marca se convierte en un contenedor infinito — avatares,
+          favicon, esquinas de galería, sellos de agua.
+        </p>
+        <div class="sys">
+          <div class="cell"><svg viewBox="0 0 64 64" width="32" height="32"><rect x="5.5" y="5.5" width="53" height="53" rx="6" fill="none" stroke="#171614" stroke-width="4"/><rect x="15.5" y="21.5" width="33" height="21" rx="1.5" fill="none" stroke="#171614" stroke-width="4"/><circle cx="51" cy="13" r="4" fill="#C98A2B"/></svg><span class="tag">Favicon 32</span></div>
+          <div class="cell inv"><svg viewBox="0 0 64 64" width="72" height="72"><rect x="5.5" y="5.5" width="53" height="53" rx="6" fill="none" stroke="#EDECE8" stroke-width="3"/><rect x="15.5" y="21.5" width="33" height="21" rx="1.5" fill="none" stroke="#EDECE8" stroke-width="3"/><circle cx="51" cy="13" r="3.4" fill="#C98A2B"/></svg><span class="tag" style="color:#5C5B56">En sala</span></div>
+          <div class="cell foto"><img src="../public/img/foto-2.jpg" alt=""><svg viewBox="0 0 64 64" width="30" height="30"><rect x="5.5" y="5.5" width="53" height="53" rx="6" fill="none" stroke="#fff" stroke-width="4"/><rect x="15.5" y="21.5" width="33" height="21" rx="1.5" fill="none" stroke="#fff" stroke-width="4"/><circle cx="51" cy="13" r="4" fill="#C98A2B"/></svg><span class="tag" style="color:#fff">Marca de agua</span></div>
+          <div class="cell amb"><svg viewBox="0 0 64 64" width="72" height="72"><rect x="5.5" y="5.5" width="53" height="53" rx="6" fill="none" stroke="#171614" stroke-width="3"/><rect x="15.5" y="21.5" width="33" height="21" rx="1.5" fill="none" stroke="#171614" stroke-width="3"/><circle cx="51" cy="13" r="3.4" fill="#171614"/></svg><span class="tag" style="color:#6E6D67">Sello</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROPUESTA B ══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="mono eyebrow"><span class="idx">B</span> El Monograma</p>
+    <h2>La diapositiva que<br><em>aprendió a ser letra.</em></h2>
+    <div class="duo">
+      <div>
+        <div class="stage">
+          <svg viewBox="0 0 64 84" width="150" height="197" aria-label="Marca B: monograma P construido con una montura de diapositiva">
+            <path fill-rule="evenodd" fill="#EDECE8" d="M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z M20 22 H48 V41 H20 Z"/>
+            <path fill="#EDECE8" d="M4 44 H17 V80 A4 4 0 0 1 13 84 H8 A4 4 0 0 1 4 80 Z"/>
+            <circle cx="34" cy="31.5" r="3.4" fill="#C98A2B"/>
+          </svg>
+        </div>
+        <div class="stage" style="margin-top:14px;min-height:150px">
+          <div class="lockup">
+            <svg viewBox="0 0 64 84" width="44" height="58">
+              <path fill-rule="evenodd" fill="#EDECE8" d="M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z M20 22 H48 V41 H20 Z"/>
+              <path fill="#EDECE8" d="M4 44 H17 V80 A4 4 0 0 1 13 84 H8 A4 4 0 0 1 4 80 Z"/>
+              <circle cx="34" cy="31.5" r="3.4" fill="#C98A2B"/>
+            </svg>
+            <span class="word" style="color:#EDECE8">Positiva<b>.</b></span>
+          </div>
+        </div>
+      </div>
+      <div class="rationale">
+        <h3>Racional</h3>
+        <p>
+          La montura es la panza de una P; una pierna la convierte en letra. El
+          punto ámbar flota en la ventana como el grano de luz en el proyector.
+          Ningún otro estudio de galerías tiene una letra construida con el
+          objeto del oficio.
+        </p>
+        <p class="claim">
+          No es una P con una diapositiva dentro. Es una diapositiva que,
+          leída con intención, ya era una P.
+        </p>
+        <p>
+          Es la propuesta con más personalidad y la más «marca registrada» de
+          las tres: funciona sola en un avatar de 24 píxeles, bordada en una
+          camiseta o proyectada de seis metros. Su riesgo es el contrario al de
+          A: pide un pelín más de tiempo para leerse. Los monogramas buenos
+          siempre lo piden.
+        </p>
+        <div class="sys">
+          <div class="cell inv"><svg viewBox="0 0 64 84" width="30" height="39"><path fill-rule="evenodd" fill="#EDECE8" d="M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z M20 22 H48 V41 H20 Z"/><path fill="#EDECE8" d="M4 44 H17 V80 A4 4 0 0 1 13 84 H8 A4 4 0 0 1 4 80 Z"/><circle cx="34" cy="31.5" r="4" fill="#C98A2B"/></svg><span class="tag" style="color:#5C5B56">Favicon 32</span></div>
+          <div class="cell" style="background:var(--papel)"><svg viewBox="0 0 64 84" width="56" height="73"><path fill-rule="evenodd" fill="#171614" d="M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z M20 22 H48 V41 H20 Z"/><path fill="#171614" d="M4 44 H17 V80 A4 4 0 0 1 13 84 H8 A4 4 0 0 1 4 80 Z"/><circle cx="34" cy="31.5" r="3.4" fill="#C98A2B"/></svg><span class="tag">En papel</span></div>
+          <div class="cell foto"><img src="../public/img/foto-6.jpg" alt=""><svg viewBox="0 0 64 84" width="24" height="31"><path fill-rule="evenodd" fill="#fff" d="M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z M20 22 H48 V41 H20 Z"/><path fill="#fff" d="M4 44 H17 V80 A4 4 0 0 1 13 84 H8 A4 4 0 0 1 4 80 Z"/></svg><span class="tag" style="color:#fff">Marca de agua</span></div>
+          <div class="cell amb"><svg viewBox="0 0 64 84" width="56" height="73"><path fill-rule="evenodd" fill="#171614" d="M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z M20 22 H48 V41 H20 Z"/><path fill="#171614" d="M4 44 H17 V80 A4 4 0 0 1 13 84 H8 A4 4 0 0 1 4 80 Z"/><circle cx="34" cy="31.5" r="3.4" fill="#F5E9D2"/></svg><span class="tag" style="color:#6E6D67">Sello</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROPUESTA C ══ -->
+<section>
+  <div class="wrap">
+    <p class="mono eyebrow"><span class="idx">C</span> El Positivo</p>
+    <h2>La ventana es un más.<br><em>Revelar. Marcar. Sumar.</em></h2>
+    <div class="duo">
+      <div>
+        <div class="stage">
+          <svg viewBox="0 0 64 64" width="180" height="180" aria-label="Marca C: montura de diapositiva cuya ventana forma un signo más">
+            <path fill-rule="evenodd" fill="#171614" d="M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z M27 18 H37 V27 H46 V37 H37 V46 H27 V37 H18 V27 H27 Z"/>
+          </svg>
+        </div>
+        <div class="stage" style="margin-top:14px;min-height:150px">
+          <div class="lockup">
+            <svg viewBox="0 0 64 64" width="52" height="52">
+              <path fill-rule="evenodd" fill="#171614" d="M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z M27 18 H37 V27 H46 V37 H37 V46 H27 V37 H18 V27 H27 Z"/>
+            </svg>
+            <span class="word">Positiva<b>.</b></span>
+          </div>
+        </div>
+      </div>
+      <div class="rationale">
+        <h3>Racional</h3>
+        <p>
+          La ventana de la montura, recortada en forma de más. Tres lecturas en
+          un solo trazo: el <em>positivo</em> fotográfico que da nombre a la
+          marca, el gesto de tu producto — el cliente <em>marca</em> sus
+          favoritas, suma — y la luz que atraviesa la diapositiva en el
+          proyector.
+        </p>
+        <p class="claim">
+          Positiva es la única plataforma cuyo nombre es un signo.
+          Esta marca lo escribe con el objeto del oficio.
+        </p>
+        <p>
+          Es la más rotunda en tamaños pequeños (es un bloque sólido) y la más
+          «producto»: el mismo «+» puede ser el botón de marcar favorita dentro
+          de la galería, dibujado en lápiz graso rojo al activarse. Marca e
+          interfaz contarían la misma historia. Sus riesgos: pierde la ventana
+          3:2, y en negativo blanco-sobre-negro puede rozar la lectura «cruz
+          sanitaria» — se mitiga usándola en ámbar, en trazo fino o en el rojo
+          graso del lápiz.
+        </p>
+        <div class="sys">
+          <div class="cell"><svg viewBox="0 0 64 64" width="32" height="32"><path fill-rule="evenodd" fill="#171614" d="M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z M27 18 H37 V27 H46 V37 H37 V46 H27 V37 H18 V27 H27 Z"/></svg><span class="tag">Favicon 32</span></div>
+          <div class="cell inv"><svg viewBox="0 0 64 64" width="72" height="72"><path fill-rule="evenodd" fill="#EDECE8" d="M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z M27 18 H37 V27 H46 V37 H37 V46 H27 V37 H18 V27 H27 Z"/></svg><span class="tag" style="color:#5C5B56">En sala</span></div>
+          <div class="cell foto"><img src="../public/img/foto-3.jpg" alt=""><svg viewBox="0 0 64 64" width="30" height="30"><path fill-rule="evenodd" fill="#E0402A" d="M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z M27 18 H37 V27 H46 V37 H37 V46 H27 V37 H18 V27 H27 Z"/></svg><span class="tag" style="color:#fff">Favorita marcada</span></div>
+          <div class="cell amb"><svg viewBox="0 0 64 64" width="72" height="72"><path fill-rule="evenodd" fill="#C98A2B" d="M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z M27 18 H37 V27 H46 V37 H37 V46 H27 V37 H18 V27 H27 Z"/></svg><span class="tag" style="color:#6E6D67">Sello</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMPARATIVA Y RECOMENDACIÓN ══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="mono eyebrow">Lectura del estudio</p>
+    <h2>Tres marcas honestas.<br><em>Una recomendación.</em></h2>
+    <table>
+      <tr><th>Propuesta</th><th>Fortaleza</th><th>Riesgo</th><th>Brilla en…</th></tr>
+      <tr>
+        <td>A · El Marco</td>
+        <td>Lectura inmediata «foto profesional». Sistema-contenedor infinito: cualquier imagen vive dentro.</td>
+        <td>La más discreta; en línea fina exige cuidado por debajo de 20 px.</td>
+        <td>Marcas de agua, esquinas de galería, papelería.</td>
+      </tr>
+      <tr>
+        <td>B · El Monograma</td>
+        <td>La más distintiva y apropiable — una letra que solo Positiva puede tener.</td>
+        <td>Pide un segundo de lectura; la pierna necesita aire debajo.</td>
+        <td>Avatares, app icon, bordados, señalética.</td>
+      </tr>
+      <tr>
+        <td>C · El Positivo</td>
+        <td>Nombre, producto y gesto en un solo signo. Imbatible en tamaños mínimos.</td>
+        <td>Pierde la ventana 3:2; en negativo puede evocar cruz sanitaria (mitigable con ámbar o trazo).</td>
+        <td>Producto e interfaz: el «+» de marcar favorita es la propia marca.</td>
+      </tr>
+    </table>
+    <div class="reco">
+      <b>Recomendación del estudio</b>
+      Llevaríamos <strong>B</strong> y <strong>C</strong> a una segunda ronda y elegiríamos con una
+      prueba real: el favicon en una pestaña, el avatar en un email y la esquina de una galería
+      entregada. B construye marca a largo plazo; C fusiona marca y producto desde el primer día.
+      A, aunque no gane, no se tira: es el sistema de marcos de agua y contenedores de las otras dos.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Positiva · Programa de identidad · Los SVG de cada propuesta están en /branding — listos para iterar.</div>
+</footer>
+
+</body>
+</html>

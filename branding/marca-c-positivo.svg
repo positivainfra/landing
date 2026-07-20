@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Propuesta C · El Positivo — la ventana de la diapositiva es un “+”: revelar en positivo y marcar favoritas -->
+  <path fill-rule="evenodd" fill="#171614" d="
+    M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z
+    M27 18 H37 V27 H46 V37 H37 V46 H27 V37 H18 V27 H27 Z"/>
+</svg>

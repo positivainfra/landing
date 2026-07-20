@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Ronda 2 · A — El marco abierto: el trazo no se cierra; lo cierra el punto -->
+  <path d="M48 6 A10 10 0 0 1 58 16 V48 A10 10 0 0 1 48 58 H16 A10 10 0 0 1 6 48 V16 A10 10 0 0 1 16 6 H36"
+        fill="none" stroke="#171614" stroke-width="3.4" stroke-linecap="round"/>
+  <circle cx="42.5" cy="6" r="3.4" fill="#C98A2B"/>
+</svg>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Positiva · Monograma — Estudio de barriga</title>
+<style>
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:300 400;font-display:swap;src:url(../public/fonts/playfair.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:300 400;font-display:swap;src:url(../public/fonts/playfair-italic.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(../public/fonts/instrument.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url(../public/fonts/ibmplexmono-400.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(../public/fonts/spacemono-700.woff2) format('woff2')}
+:root{
+  --papel:#F1F0EC; --luz:#FFF; --sala:#0E0E0D;
+  --tinta:#171614; --tinta-60:#6E6D67; --tinta-30:#A9A8A2; --linea:#D6D5CF;
+  --linea-sala:#2A2A27; --ambar:#C98A2B; --ambar-luz:#F5E9D2;
+  --display:'Playfair Display',Georgia,serif;
+  --sans:'Instrument Sans',-apple-system,system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --smono:'Space Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+h1,h2{font-family:var(--display);font-weight:300;letter-spacing:-.02em;line-height:1.05}
+h1{font-size:clamp(38px,5.4vw,76px)}
+h2{font-size:clamp(30px,4vw,52px)}
+em{font-style:italic}
+.mono{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.eyebrow{display:flex;align-items:center;gap:16px;color:var(--ambar);margin-bottom:28px}
+.eyebrow::after{content:"";flex:1;height:1px;background:currentColor;opacity:.28}
+.lede{font-size:19px;line-height:1.55;color:var(--tinta-60);max-width:58ch}
+section{padding:clamp(64px,8vw,110px) 0}
+.dark{background:var(--sala);color:#EDECE8}
+.dark .lede{color:#9C9B95}
+.cover{padding-top:clamp(72px,10vw,140px)}
+.cover .mono{color:var(--tinta-30)}
+.cover h1{margin:20px 0 28px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+@media(max-width:900px){.grid4{grid-template-columns:repeat(2,1fr)}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+.stage{background:var(--luz);border:1px solid var(--linea);border-radius:10px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+  min-height:280px;padding:32px 20px 44px;position:relative}
+.dark .stage{background:var(--sala);border-color:var(--linea-sala)}
+.stage .tag{position:absolute;left:14px;bottom:11px;right:14px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-30)}
+.dark .stage .tag{color:#5C5B56}
+.minirow{display:flex;align-items:flex-end;gap:18px}
+.note{font-family:var(--mono);font-size:12px;color:var(--tinta-60);letter-spacing:.04em;line-height:1.9;margin-top:20px;max-width:76ch}
+.dark .note{color:#9C9B95}
+.w-smono{font-family:var(--smono);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.dot{color:var(--ambar)}
+.navmock{background:var(--papel);border:1px solid var(--linea);border-radius:999px;
+  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);display:flex;align-items:center;
+  justify-content:space-between;padding:12px 14px 12px 22px;width:100%;max-width:760px}
+.navmock .brand{display:flex;align-items:center;gap:12px}
+.navmock .links{display:flex;gap:22px;font-family:var(--mono);font-size:10px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-60)}
+.navmock .cta{background:var(--tinta);color:var(--papel);border-radius:999px;padding:10px 20px;font-size:13px;font-weight:600}
+@media(max-width:720px){.navmock .links{display:none}}
+.reco{background:var(--ambar-luz);border:1px solid var(--ambar);border-radius:10px;
+  padding:22px 26px;margin-top:40px;color:var(--tinta);font-size:16px;line-height:1.7}
+.reco b{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:8px}
+footer{padding:44px 0;border-top:1px solid var(--linea);color:var(--tinta-30);font-size:14px}
+</style>
+</head>
+<body>
+
+<div class="wrap cover">
+  <span class="mono">Positiva · Monograma · Adenda 2 — La barriga</span>
+  <h1>El borde igual<br><em>por los cuatro lados.</em></h1>
+  <p class="lede">
+    Observación justa: hasta ahora solo adelgazaban los laterales; arriba y
+    abajo la panza seguía gorda (14–15,5) porque la ventana 3:2 lo exigía
+    dentro de un cuadrado. Para igualar el borde horizontal hay dos caminos —
+    y los dos están aquí, con 8 y con 10.
+  </p>
+</div>
+
+<!-- ══ MATRIZ ══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="mono eyebrow">01 · Dos caminos × dos grosores</p>
+    <div class="grid4">
+
+      <div class="stage">
+        <svg viewBox="0 0 68 82" height="150"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M18 18 H50 V50 H18 Z"/><path fill="#EDECE8" d="M8 50 H18 V69 A5 5 0 0 1 13 74 A5 5 0 0 1 8 69 Z"/><circle cx="34" cy="34" r="3.8" fill="#C98A2B"/></svg>
+        <div class="minirow">
+          <svg viewBox="0 0 68 82" height="32"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M18 18 H50 V50 H18 Z"/><path fill="#EDECE8" d="M8 50 H18 V69 A5 5 0 0 1 13 74 A5 5 0 0 1 8 69 Z"/><circle cx="34" cy="34" r="4.6" fill="#C98A2B"/></svg>
+          <svg viewBox="0 0 68 82" height="16"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M18 18 H50 V50 H18 Z"/><path fill="#EDECE8" d="M8 50 H18 V69 A5 5 0 0 1 13 74 A5 5 0 0 1 8 69 Z"/></svg>
+        </div>
+        <span class="tag">10 · Ventana cuadrada — borde 10 en todo; pierde el 3:2</span>
+      </div>
+
+      <div class="stage" style="border-color:var(--ambar)">
+        <svg viewBox="0 0 68 71" height="150"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V37 A12 12 0 0 1 48 49 H20 A12 12 0 0 1 8 37 V20 A12 12 0 0 1 20 8 Z M18 18 H50 V39 H18 Z"/><path fill="#EDECE8" d="M8 39 H18 V58 A5 5 0 0 1 13 63 A5 5 0 0 1 8 58 Z"/><circle cx="34" cy="28.5" r="3.8" fill="#C98A2B"/></svg>
+        <div class="minirow">
+          <svg viewBox="0 0 68 71" height="32"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V37 A12 12 0 0 1 48 49 H20 A12 12 0 0 1 8 37 V20 A12 12 0 0 1 20 8 Z M18 18 H50 V39 H18 Z"/><path fill="#EDECE8" d="M8 39 H18 V58 A5 5 0 0 1 13 63 A5 5 0 0 1 8 58 Z"/><circle cx="34" cy="28.5" r="4.6" fill="#C98A2B"/></svg>
+          <svg viewBox="0 0 68 71" height="16"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V37 A12 12 0 0 1 48 49 H20 A12 12 0 0 1 8 37 V20 A12 12 0 0 1 20 8 Z M18 18 H50 V39 H18 Z"/><path fill="#EDECE8" d="M8 39 H18 V58 A5 5 0 0 1 13 63 A5 5 0 0 1 8 58 Z"/></svg>
+        </div>
+        <span class="tag" style="color:var(--ambar)">10 · Panza comprimida 52×41 — borde 10 y ventana 3:2 ✓</span>
+      </div>
+
+      <div class="stage">
+        <svg viewBox="0 0 68 82" height="150"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M16 16 H52 V52 H16 Z"/><path fill="#EDECE8" d="M8 50 H16 V70 A4 4 0 0 1 12 74 A4 4 0 0 1 8 70 Z"/><circle cx="34" cy="34" r="3.8" fill="#C98A2B"/></svg>
+        <div class="minirow">
+          <svg viewBox="0 0 68 82" height="32"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M16 16 H52 V52 H16 Z"/><path fill="#EDECE8" d="M8 50 H16 V70 A4 4 0 0 1 12 74 A4 4 0 0 1 8 70 Z"/><circle cx="34" cy="34" r="4.6" fill="#C98A2B"/></svg>
+          <svg viewBox="0 0 68 82" height="16"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M16 16 H52 V52 H16 Z"/><path fill="#EDECE8" d="M8 50 H16 V70 A4 4 0 0 1 12 74 A4 4 0 0 1 8 70 Z"/></svg>
+        </div>
+        <span class="tag">8 · Ventana cuadrada — muy aire, muy app; pierde el 3:2</span>
+      </div>
+
+      <div class="stage">
+        <svg viewBox="0 0 68 70" height="150"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V36 A12 12 0 0 1 48 48 H20 A12 12 0 0 1 8 36 V20 A12 12 0 0 1 20 8 Z M16 16 H52 V40 H16 Z"/><path fill="#EDECE8" d="M8 40 H16 V58 A4 4 0 0 1 12 62 A4 4 0 0 1 8 58 Z"/><circle cx="34" cy="28" r="3.8" fill="#C98A2B"/></svg>
+        <div class="minirow">
+          <svg viewBox="0 0 68 70" height="32"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V36 A12 12 0 0 1 48 48 H20 A12 12 0 0 1 8 36 V20 A12 12 0 0 1 20 8 Z M16 16 H52 V40 H16 Z"/><path fill="#EDECE8" d="M8 40 H16 V58 A4 4 0 0 1 12 62 A4 4 0 0 1 8 58 Z"/><circle cx="34" cy="28" r="4.6" fill="#C98A2B"/></svg>
+          <svg viewBox="0 0 68 70" height="16"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V36 A12 12 0 0 1 48 48 H20 A12 12 0 0 1 8 36 V20 A12 12 0 0 1 20 8 Z M16 16 H52 V40 H16 Z"/><path fill="#EDECE8" d="M8 40 H16 V58 A4 4 0 0 1 12 62 A4 4 0 0 1 8 58 Z"/></svg>
+        </div>
+        <span class="tag">8 · Panza comprimida 52×40 — borde 8 y ventana 3:2</span>
+      </div>
+
+    </div>
+    <p class="note">
+      Camino 1 (ventana cuadrada): el borde queda idéntico por los cuatro lados
+      dentro de la panza cuadrada — pero la ventana pasa a 1:1 y deja de ser un
+      fotograma; se parece más a un icono de app. Camino 2 (panza comprimida):
+      el borde también es uniforme, la ventana conserva el 3:2, y la panza baja
+      a 52×41 — la P entera queda con ratio ≈1,05, lo más «chata» que ha estado
+      nunca. El fotograma sigue siendo el protagonista.
+    </p>
+  </div>
+</section>
+
+<!-- ══ EN CONTEXTO ══ -->
+<section>
+  <div class="wrap">
+    <p class="mono eyebrow">02 · Los dos finalistas, en el nav</p>
+    <h2>8 o 10:<br><em>que decida la pestaña.</em></h2>
+    <div class="grid2">
+      <div class="stage" style="min-height:190px">
+        <div class="navmock">
+          <div class="brand">
+            <svg viewBox="0 0 68 71" height="28"><path fill-rule="evenodd" fill="#171614" d="M20 8 H48 A12 12 0 0 1 60 20 V37 A12 12 0 0 1 48 49 H20 A12 12 0 0 1 8 37 V20 A12 12 0 0 1 20 8 Z M18 18 H50 V39 H18 Z"/><path fill="#171614" d="M8 39 H18 V58 A5 5 0 0 1 13 63 A5 5 0 0 1 8 58 Z"/><circle cx="34" cy="28.5" r="3.8" fill="#C98A2B"/></svg>
+            <span class="w-smono" style="font-size:14px">Positiva<span class="dot">.</span></span>
+          </div>
+          <div class="links"><span>Diseño</span><span>Precios</span></div>
+          <div class="cta">Regístrate</div>
+        </div>
+        <span class="tag">B·5-10 — presencia; aguanta cualquier fondo y 16 px</span>
+      </div>
+      <div class="stage" style="min-height:190px">
+        <div class="navmock">
+          <div class="brand">
+            <svg viewBox="0 0 68 70" height="28"><path fill-rule="evenodd" fill="#171614" d="M20 8 H48 A12 12 0 0 1 60 20 V36 A12 12 0 0 1 48 48 H20 A12 12 0 0 1 8 36 V20 A12 12 0 0 1 20 8 Z M16 16 H52 V40 H16 Z"/><path fill="#171614" d="M8 40 H16 V58 A4 4 0 0 1 12 62 A4 4 0 0 1 8 58 Z"/><circle cx="34" cy="28" r="3.8" fill="#C98A2B"/></svg>
+            <span class="w-smono" style="font-size:14px">Positiva<span class="dot">.</span></span>
+          </div>
+          <div class="links"><span>Diseño</span><span>Precios</span></div>
+          <div class="cta">Regístrate</div>
+        </div>
+        <span class="tag">B·5-8 — más aire y más ventana; fino en 16 px</span>
+      </div>
+    </div>
+    <div class="reco">
+      <b>Lectura del estudio</b>
+      El camino es el 2 — panza comprimida: borde uniforme sin sacrificar el fotograma 3:2, y
+      la P más asentada que nunca (ratio ≈1,05). Entre grosores: <strong>10</strong> si la marca va a
+      vivir sobre todo en pantalla pequeña y fondos fotográficos (más contorno, favicon más firme);
+      <strong>8</strong> si pesa más la elegancia editorial en grande y asumes un favicon más delicado.
+      Los dos SVG están listos: <span style="font-family:var(--mono);font-size:13px">marca-b5-10.svg</span> y
+      <span style="font-family:var(--mono);font-size:13px">marca-b5-8.svg</span> — dime el elegido y actualizo
+      reglas e integro en la landing.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Positiva · Identidad · Adenda 2 — Estudio de barriga (B·5)</div>
+</footer>
+
+</body>
+</html>

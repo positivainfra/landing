@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Positiva · Identidad — El Monograma, en profundidad</title>
+<style>
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:300 400;font-display:swap;src:url(../public/fonts/playfair.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:300 400;font-display:swap;src:url(../public/fonts/playfair-italic.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(../public/fonts/instrument.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url(../public/fonts/ibmplexmono-400.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url(../public/fonts/spacemono-400.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(../public/fonts/spacemono-700.woff2) format('woff2')}
+:root{
+  --papel:#F1F0EC; --luz:#FFF; --bandeja:#E6E5E0; --sala:#0E0E0D;
+  --tinta:#171614; --tinta-60:#6E6D67; --tinta-30:#A9A8A2; --linea:#D6D5CF;
+  --linea-sala:#2A2A27; --ambar:#C98A2B; --ambar-luz:#F5E9D2; --graso:#E0402A;
+  --display:'Playfair Display',Georgia,serif;
+  --sans:'Instrument Sans',-apple-system,system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --smono:'Space Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+h1,h2,h3{font-family:var(--display);font-weight:300;letter-spacing:-.02em;line-height:1.05}
+h1{font-size:clamp(40px,6vw,84px)}
+h2{font-size:clamp(30px,4vw,52px)}
+em{font-style:italic}
+.mono{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.eyebrow{display:flex;align-items:center;gap:16px;color:var(--ambar);margin-bottom:28px}
+.eyebrow::after{content:"";flex:1;height:1px;background:currentColor;opacity:.28}
+.lede{font-size:19px;line-height:1.55;color:var(--tinta-60);max-width:58ch}
+section{padding:clamp(72px,9vw,120px) 0}
+.dark{background:var(--sala);color:#EDECE8}
+.dark .lede{color:#9C9B95}
+.cover{min-height:76svh;display:flex;flex-direction:column;justify-content:center}
+.cover .mono{color:var(--tinta-30)}
+.cover h1{margin:20px 0 28px}
+.stage{background:var(--luz);border:1px solid var(--linea);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;min-height:300px;padding:40px;position:relative}
+.dark .stage{background:var(--sala);border-color:var(--linea-sala)}
+.stage .tag{position:absolute;left:14px;bottom:11px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-30)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+@media(max-width:820px){.grid3{grid-template-columns:1fr}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+.note{font-family:var(--mono);font-size:12px;color:var(--tinta-60);letter-spacing:.04em;line-height:1.9;margin-top:18px;max-width:70ch}
+.dark .note{color:#9C9B95}
+.w-smono{font-family:var(--smono);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.dot{color:var(--ambar)}
+.sys{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+@media(max-width:760px){.sys{grid-template-columns:repeat(2,1fr)}}
+.cell{background:var(--luz);border:1px solid var(--linea);border-radius:10px;aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.dark .cell{background:var(--sala);border-color:var(--linea-sala)}
+.cell .tag{position:absolute;left:10px;bottom:8px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-30);z-index:2}
+.cell.foto{padding:0}
+.cell.foto img{width:100%;height:100%;object-fit:cover;filter:saturate(.92)}
+.cell.foto svg{position:absolute;right:10px;bottom:10px}
+.cell.inv{background:var(--sala);border-color:var(--sala)}
+.cell.amb{background:var(--ambar-luz);border-color:var(--ambar)}
+/* mock del nav */
+.navmock{background:var(--papel);border:1px solid var(--linea);border-radius:999px;
+  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);display:flex;align-items:center;
+  justify-content:space-between;padding:12px 14px 12px 22px;width:100%;max-width:900px}
+.navmock .brand{display:flex;align-items:center;gap:12px}
+.navmock .brand .w-smono{font-size:15px}
+.navmock .links{display:flex;gap:26px;font-family:var(--mono);font-size:10px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-60)}
+.navmock .cta{background:var(--tinta);color:var(--papel);border-radius:999px;padding:10px 20px;
+  font-size:13px;font-weight:600}
+@media(max-width:720px){.navmock .links{display:none}}
+/* pulso del punto (motion) */
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.72)}}
+.pulse circle:last-child{animation:pulse 2.2s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+@media(prefers-reduced-motion:reduce){.pulse circle:last-child{animation:none}}
+table{width:100%;border-collapse:collapse;margin-top:36px;font-size:16px}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--linea);vertical-align:top}
+th{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ambar)}
+footer{padding:48px 0;border-top:1px solid var(--linea);color:var(--tinta-30);font-size:14px}
+</style>
+</head>
+<body>
+
+<!-- ══ PORTADA ══ -->
+<div class="wrap cover">
+  <span class="mono">Positiva · Programa de identidad · El Monograma · Desarrollo</span>
+  <h1>Una letra<br>hecha de oficio.<br><em>Afinada.</em></h1>
+  <p class="lede">
+    Elegido el monograma, esta fase hace lo que se hace con una letra:
+    ajustarle el cuerpo. La P pierde estatura, gana asiento y queda lista
+    para vivir sola — en un favicon, en un bordado o presidiendo el nav.
+  </p>
+</div>
+
+<!-- ══ PROPORCIÓN ══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="mono eyebrow">01 · La corrección</p>
+    <h2>Tres cuerpos.<br><em>Uno respira mejor.</em></h2>
+    <div class="grid3">
+      <div class="stage">
+        <svg viewBox="0 0 68 92" height="200" aria-label="B2 original">
+          <path fill-rule="evenodd" fill="#3A3936" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/>
+          <path fill="#3A3936" d="M8 50 H22 V81 A7 7 0 0 1 15 88 A7 7 0 0 1 8 81 Z"/>
+          <circle cx="34" cy="33" r="3.6" fill="#6E5B39"/>
+        </svg>
+        <span class="tag" style="color:#5C5B56">B·2 — Descendente 28 · ratio 1,35</span>
+      </div>
+      <div class="stage" style="border-color:var(--ambar)">
+        <svg viewBox="0 0 68 82" height="200" aria-label="B3 elegida">
+          <path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/>
+          <path fill="#EDECE8" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/>
+          <circle cx="34" cy="33" r="3.6" fill="#C98A2B"/>
+        </svg>
+        <span class="tag" style="color:var(--ambar)">B·3 — Descendente 14 · ratio 1,22 ✓</span>
+      </div>
+      <div class="stage">
+        <svg viewBox="0 0 68 76" height="188" aria-label="Variante ultra chata">
+          <path fill-rule="evenodd" fill="#3A3936" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/>
+          <path fill="#3A3936" d="M8 50 H22 V61 A7 7 0 0 1 15 68 A7 7 0 0 1 8 61 Z"/>
+          <circle cx="34" cy="33" r="3.6" fill="#6E5B39"/>
+        </svg>
+        <span class="tag" style="color:#5C5B56">B·3+ — Descendente 8 · deja de leerse P</span>
+      </div>
+    </div>
+    <p class="note">
+      La corrección exacta: el descendente pasa de 28 a 14 unidades — la mitad —
+      y la silueta baja de un ratio 1,35 a 1,22, casi cuadrada, como la montura
+      que la origina. Más corto (B·3+) el pie pierde autoridad y la P empieza a
+      leerse como bandera. B·3 es el punto justo: chata, asentada, letra.
+    </p>
+  </div>
+</section>
+
+<!-- ══ CONSTRUCCIÓN ══ -->
+<section>
+  <div class="wrap">
+    <p class="mono eyebrow">02 · Construcción</p>
+    <h2>Cuatro reglas.<br><em>Nada decorativo.</em></h2>
+    <div class="grid2">
+      <div class="stage" style="min-height:380px">
+        <svg viewBox="0 0 132 100" width="420" aria-label="Plano de construcción del monograma">
+          <!-- rejilla -->
+          <g stroke="#D6D5CF" stroke-width=".6">
+            <line x1="8" y1="0" x2="8" y2="100"/><line x1="22" y1="0" x2="22" y2="100"/>
+            <line x1="46" y1="0" x2="46" y2="100"/><line x1="60" y1="0" x2="60" y2="100"/>
+            <line x1="0" y1="8" x2="120" y2="8"/><line x1="0" y1="25" x2="120" y2="25"/>
+            <line x1="0" y1="41" x2="120" y2="41"/><line x1="0" y1="60" x2="120" y2="60"/>
+            <line x1="0" y1="74" x2="120" y2="74"/>
+          </g>
+          <!-- marca -->
+          <path fill-rule="evenodd" fill="#171614" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/>
+          <path fill="#171614" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/>
+          <circle cx="34" cy="33" r="3.6" fill="#C98A2B"/>
+          <!-- cotas -->
+          <g font-family="IBM Plex Mono,monospace" font-size="4.2" fill="#6E6D67">
+            <text x="66" y="15">radio 12 · de la montura</text>
+            <text x="66" y="34">ventana 24×16 · 3:2</text>
+            <text x="66" y="52">asta = borde · 14</text>
+            <text x="66" y="71">descendente 14 · pill r7</text>
+            <text x="66" y="90">punto r3,6 · siempre ámbar</text>
+          </g>
+          <g stroke="#C98A2B" stroke-width=".7">
+            <line x1="62" y1="13" x2="56" y2="13"/>
+            <line x1="62" y1="32" x2="47" y2="32"/>
+            <line x1="62" y1="50" x2="16" y2="50"/>
+            <line x1="62" y1="69" x2="24" y2="69"/>
+            <line x1="62" y1="88" x2="36" y2="36" stroke-dasharray="1.5 1.5"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <p class="lede" style="margin-top:8px">
+          Todo sale de la montura: un solo radio (12), un solo grosor (14),
+          una sola proporción (3:2). El descendente no es una pieza añadida —
+          es el borde izquierdo que sigue de largo y remata en medio círculo.
+        </p>
+        <p class="note">
+          Regla 1 — La panza es un cuadrado 52×52.<br>
+          Regla 2 — Asta, bordes y descendente comparten grosor: 14.<br>
+          Regla 3 — La ventana es 3:2 y solo ella lleva el punto.<br>
+          Regla 4 — El punto es ámbar o no es: nunca negro, nunca blanco.<br><br>
+          Zona de respeto: media panza (26 u) en todo el perímetro.
+          Tamaño mínimo: 16 px de alto; por debajo, usar la versión sin punto.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LOCKUPS ══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="mono eyebrow">03 · Lockups</p>
+    <h2>Cuatro formaciones.<br><em>Una sola voz.</em></h2>
+    <div class="grid2">
+      <div class="stage">
+        <div style="display:flex;align-items:center;gap:22px">
+          <svg viewBox="0 0 68 82" height="72"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#EDECE8" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/><circle cx="34" cy="33" r="3.6" fill="#C98A2B"/></svg>
+          <span class="w-smono" style="font-size:30px;color:#EDECE8">Positiva<span class="dot">.</span></span>
+        </div>
+        <span class="tag" style="color:#5C5B56">Principal — nav, cabeceras, firma de email</span>
+      </div>
+      <div class="stage">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:18px">
+          <svg viewBox="0 0 68 82" height="88"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#EDECE8" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/><circle cx="34" cy="33" r="3.6" fill="#C98A2B"/></svg>
+          <span class="w-smono" style="font-size:17px;color:#EDECE8">Positiva<span class="dot">.</span></span>
+        </div>
+        <span class="tag" style="color:#5C5B56">Apilado — sellos, cierre de vídeo, packaging</span>
+      </div>
+      <div class="stage">
+        <svg viewBox="0 0 68 82" height="110" class="pulse"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#EDECE8" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/><circle cx="34" cy="33" r="3.6" fill="#C98A2B"/></svg>
+        <span class="tag" style="color:#5C5B56">Solo — avatar, favicon, watermark · el punto respira (motion)</span>
+      </div>
+      <div class="stage">
+        <div style="display:flex;align-items:center;gap:14px">
+          <svg viewBox="0 0 68 82" height="40"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#EDECE8" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/><circle cx="34" cy="33" r="3.6" fill="#C98A2B"/></svg>
+          <span style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C9B95">Entregado con Positiva · positiva.studio</span>
+        </div>
+        <span class="tag" style="color:#5C5B56">Contraetiqueta — pie de galería del cliente</span>
+      </div>
+    </div>
+    <p class="note">
+      La voz es Space Mono Bold, mayúscula inicial, espaciado .22em, punto final
+      ámbar. Regla de convivencia: el monograma nunca aparece dos veces en la
+      misma vista; si el wordmark está presente, la P calla o firma sola en la
+      esquina opuesta.
+    </p>
+  </div>
+</section>
+
+<!-- ══ APLICACIONES ══ -->
+<section>
+  <div class="wrap">
+    <p class="mono eyebrow">04 · Aplicaciones</p>
+    <h2>La prueba<br><em>de los 16 píxeles.</em></h2>
+    <div class="sys">
+      <div class="cell"><svg viewBox="0 0 68 82" height="16"><path fill-rule="evenodd" fill="#171614" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#171614" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/></svg><span class="tag">Favicon 16 — sin punto</span></div>
+      <div class="cell"><svg viewBox="0 0 68 82" height="32"><path fill-rule="evenodd" fill="#171614" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#171614" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/><circle cx="34" cy="33" r="4.4" fill="#C98A2B"/></svg><span class="tag">Favicon 32</span></div>
+      <div class="cell inv" style="border-radius:22%"><svg viewBox="0 0 68 82" height="64"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#EDECE8" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/><circle cx="34" cy="33" r="3.6" fill="#C98A2B"/></svg><span class="tag" style="color:#5C5B56">App icon</span></div>
+      <div class="cell" style="background:var(--bandeja)"><div style="width:96px;height:96px;border-radius:50%;background:var(--sala);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 68 82" height="48"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#EDECE8" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/><circle cx="34" cy="33" r="3.6" fill="#C98A2B"/></svg></div><span class="tag">Avatar redes</span></div>
+      <div class="cell foto"><img src="../public/img/foto-7.jpg" alt=""><svg viewBox="0 0 68 82" height="30"><path fill-rule="evenodd" fill="#fff" opacity=".92" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#fff" opacity=".92" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/></svg><span class="tag" style="color:#fff">Marca de agua</span></div>
+      <div class="cell amb"><svg viewBox="0 0 68 82" height="64"><path fill-rule="evenodd" fill="#171614" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#171614" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/><circle cx="34" cy="33" r="3.6" fill="#F5E9D2"/></svg><span class="tag" style="color:#6E6D67">Sello / lacre</span></div>
+      <div class="cell"><div style="display:flex;align-items:center;gap:10px;background:var(--tinta);color:var(--papel);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600"><svg viewBox="0 0 68 82" height="16"><path fill-rule="evenodd" fill="#F1F0EC" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#F1F0EC" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/></svg>Entrar</div><span class="tag">Botón de producto</span></div>
+      <div class="cell inv"><svg viewBox="0 0 68 82" height="64" class="pulse"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#EDECE8" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/><circle cx="34" cy="33" r="3.6" fill="#C98A2B"/></svg><span class="tag" style="color:#5C5B56">Cargando — el punto respira</span></div>
+    </div>
+    <p class="note">
+      A 16 px el punto ámbar mide menos de un píxel y ensucia: la versión mínima
+      va sin punto (regla 4 no se rompe: simplemente no hay punto que pintar).
+      El estado «cargando» del producto es el monograma con el punto respirando —
+      la marca y el spinner son la misma cosa.
+    </p>
+  </div>
+</section>
+
+<!-- ══ EN CONTEXTO ══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="mono eyebrow">05 · En contexto</p>
+    <h2>En su sitio:<br><em>el nav de la landing.</em></h2>
+    <div class="stage" style="margin-top:40px;min-height:200px;background:var(--papel)">
+      <div class="navmock">
+        <div class="brand">
+          <svg viewBox="0 0 68 82" height="30"><path fill-rule="evenodd" fill="#171614" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#171614" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/><circle cx="34" cy="33" r="3.6" fill="#C98A2B"/></svg>
+          <span class="w-smono">Positiva<span class="dot">.</span></span>
+        </div>
+        <div class="links"><span>Diseño</span><span>Qué hace</span><span>Precios</span><span>Preguntas</span></div>
+        <div class="cta">Regístrate</div>
+      </div>
+    </div>
+    <p class="note">
+      El monograma sustituye al wordmark Playfair del nav y la voz pasa a Space
+      Mono. Playfair no se despide: sigue siendo la tipografía de los titulares
+      de la web — la marca habla en mono, el discurso en serif. Si lo apruebas,
+      lo integro en la landing: nav, favicon, footer y contraetiqueta de las
+      galerías de ejemplo.
+    </p>
+  </div>
+</section>
+
+<!-- ══ SIGUIENTES PASOS ══ -->
+<section>
+  <div class="wrap">
+    <p class="mono eyebrow">06 · Siguientes pasos</p>
+    <table>
+      <tr><th>Paso</th><th>Qué valida</th></tr>
+      <tr><td>Integrar en la landing (nav, favicon, footer)</td><td>Convivencia real con Playfair y el ámbar en pantalla</td></tr>
+      <tr><td>Bordado / impresión en pequeño</td><td>Que el descendente y la ventana sobreviven fuera de pantalla</td></tr>
+      <tr><td>Animación del punto en el vídeo showcase</td><td>La marca como firma de cierre de los vídeos por tipo de cliente</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Positiva · Identidad · Monograma B·3 — SVG definitivo en /branding/marca-b3-chata.svg</div>
+</footer>
+
+</body>
+</html>

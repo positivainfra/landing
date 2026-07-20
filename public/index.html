@@ -36,6 +36,7 @@
 @font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument.woff2) format('woff2')}
 @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/ibmplexmono-400.woff2) format('woff2')}
 @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/ibmplexmono-700.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/spacemono-700.woff2) format('woff2')}
 
 /* ══════════════════════════════════════════════════════════════
    POSITIVA · Landing v2 — editorial, foto protagonista
@@ -116,8 +117,15 @@ nav.scrolled .nav-inner{
   border-color:var(--pv-linea);
   box-shadow:0 18px 50px -24px rgba(23,22,20,.35);
 }
-.logo{font-family:var(--pv-display);font-size:25px;font-weight:400;letter-spacing:-.02em;text-decoration:none;color:var(--pv-tinta)}
-.logo span{color:var(--pv-ambar)}
+/* logo: monograma B·5-10 + wordmark Space Mono. currentColor permite
+   invertirlo (menú abierto) sin duplicar el SVG; el punto siempre ámbar. */
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--pv-tinta)}
+.logo svg{height:27px;width:auto;display:block;flex:none}
+.logo-word{
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;font-size:14px;
+  letter-spacing:.22em;text-transform:uppercase;line-height:1;
+}
+.logo-word b{color:var(--pv-ambar)}
 .nav-links{display:flex;align-items:center;gap:var(--pv-s6)}
 .nav-links a{
   font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;
@@ -446,10 +454,13 @@ input[type=email]:focus{outline:2px solid var(--pv-ambar);outline-offset:1px;bor
 /* ── footer con palabra gigante ──────────────────── */
 footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
 .footer-word{
-  font-family:var(--pv-display);font-weight:300;letter-spacing:-.03em;
-  font-size:clamp(72px,15.5vw,236px);line-height:.95;color:var(--pv-tinta);
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(30px,7.8vw,116px);line-height:1;color:var(--pv-tinta);
   white-space:nowrap;
 }
+.footer-word svg{height:.92em;width:auto;flex:none}
 .footer-word span{color:var(--pv-ambar)}
 .footer-meta{
   display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
@@ -472,7 +483,14 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#" class="logo">Positiva<span>.</span></a>
+    <a href="#" class="logo" aria-label="Positiva">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      <span class="logo-word">Positiva<b>.</b></span>
+    </a>
     <div class="nav-links">
       <a href="#diseno">Diseño</a>
       <a href="#galeria">Qué hace</a>
@@ -876,7 +894,14 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 
 <footer>
   <div class="wrap">
-    <div class="footer-word reveal">Positiva<span>.</span></div>
+    <div class="footer-word reveal">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
     <div class="footer-meta">
       <span>Positiva · Valencia · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span></span>
       <span><a href="#precios">Precios</a> · <a href="#faq">Preguntas</a> · <a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>

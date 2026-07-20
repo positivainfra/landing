@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Propuesta A · El Marco — montura de diapositiva 35mm con punto de orientación -->
+  <rect x="5.5" y="5.5" width="53" height="53" rx="6" fill="none" stroke="#171614" stroke-width="3"/>
+  <rect x="15.5" y="21.5" width="33" height="21" rx="1.5" fill="none" stroke="#171614" stroke-width="3"/>
+  <circle cx="51" cy="13" r="3.4" fill="#C98A2B"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 84" width="64" height="84">
+  <!-- Propuesta B · El Monograma — la montura es la panza de la P; la pierna la convierte en letra -->
+  <path fill-rule="evenodd" fill="#171614" d="
+    M12 4 H52 A8 8 0 0 1 60 12 V52 A8 8 0 0 1 52 60 H12 A8 8 0 0 1 4 52 V12 A8 8 0 0 1 12 4 Z
+    M20 22 H48 V41 H20 Z"/>
+  <path fill="#171614" d="M4 44 H17 V80 A4 4 0 0 1 13 84 H8 A4 4 0 0 1 4 80 Z"/>
+  <circle cx="34" cy="31.5" r="3.4" fill="#C98A2B"/>
+</svg>

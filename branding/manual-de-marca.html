@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Positiva · Manual de marca</title>
+<style>
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:300 400;font-display:swap;src:url(../public/fonts/playfair.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:300 400;font-display:swap;src:url(../public/fonts/playfair-italic.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(../public/fonts/instrument.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url(../public/fonts/ibmplexmono-400.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(../public/fonts/spacemono-700.woff2) format('woff2')}
+:root{
+  --papel:#F1F0EC; --luz:#FFF; --bandeja:#E6E5E0; --sala:#0E0E0D; --sala-2:#1A1A18;
+  --tinta:#171614; --tinta-60:#6E6D67; --tinta-30:#A9A8A2; --linea:#D6D5CF;
+  --linea-sala:#2A2A27; --ambar:#C98A2B; --ambar-luz:#F5E9D2; --graso:#E0402A;
+  --display:'Playfair Display',Georgia,serif;
+  --sans:'Instrument Sans',-apple-system,system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --smono:'Space Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+h1,h2,h3{font-family:var(--display);font-weight:300;letter-spacing:-.02em;line-height:1.05}
+h1{font-size:clamp(40px,6vw,84px)}
+h2{font-size:clamp(30px,4vw,52px)}
+h3{font-size:22px;font-weight:400}
+em{font-style:italic}
+.mono{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.eyebrow{display:flex;align-items:center;gap:16px;color:var(--ambar);margin-bottom:28px}
+.eyebrow::after{content:"";flex:1;height:1px;background:currentColor;opacity:.28}
+.lede{font-size:19px;line-height:1.55;color:var(--tinta-60);max-width:58ch}
+section{padding:clamp(64px,8vw,110px) 0}
+.dark{background:var(--sala);color:#EDECE8}
+.dark .lede{color:#9C9B95}
+.cover{min-height:92svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.cover img{width:min(420px,70vw)}
+.cover .mono{color:var(--tinta-30);margin-top:48px}
+.stage{background:var(--luz);border:1px solid var(--linea);border-radius:10px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  min-height:240px;padding:36px 24px 44px;position:relative}
+.dark .stage{background:var(--sala);border-color:var(--linea-sala)}
+.stage.oscuro{background:var(--sala);border-color:var(--sala)}
+.stage .tag{position:absolute;left:14px;bottom:11px;right:14px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-30)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+@media(max-width:900px){.grid3,.grid4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}
+.note{font-family:var(--mono);font-size:12px;color:var(--tinta-60);letter-spacing:.04em;line-height:1.9;margin-top:20px;max-width:76ch}
+.dark .note{color:#9C9B95}
+.duo{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,64px);align-items:start;margin-top:40px}
+@media(max-width:880px){.duo{grid-template-columns:1fr}}
+.rules p{color:var(--tinta-60);margin-bottom:14px;max-width:54ch}
+.dark .rules p{color:#9C9B95}
+/* tipografía */
+.spec-row{background:var(--luz);border:1px solid var(--linea);border-radius:10px;
+  padding:32px clamp(24px,4vw,48px);display:grid;grid-template-columns:1fr auto;
+  align-items:center;gap:24px;margin-top:14px}
+.dark .spec-row{background:var(--sala);border-color:var(--linea-sala)}
+.spec-row .meta{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-30);text-align:right;line-height:2}
+/* color */
+.pal{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:40px}
+@media(max-width:900px){.pal{grid-template-columns:repeat(3,1fr)}}
+.chip{border-radius:10px;aspect-ratio:1/1.35;border:1px solid var(--linea);position:relative;overflow:hidden}
+.chip .info{position:absolute;left:12px;bottom:10px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;line-height:1.9}
+/* incorrectos */
+.bad{position:relative}
+.bad::after{content:"";position:absolute;inset:0;border-radius:10px;pointer-events:none;
+  background:linear-gradient(to top right,transparent calc(50% - 1.2px),var(--graso) calc(50% - 1.2px),var(--graso) calc(50% + 1.2px),transparent calc(50% + 1.2px))}
+table{width:100%;border-collapse:collapse;margin-top:36px;font-size:15px}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--linea);vertical-align:top}
+th{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ambar)}
+td:first-child{font-family:var(--mono);font-size:13px;white-space:nowrap}
+footer{padding:44px 0;border-top:1px solid var(--linea);color:var(--tinta-30);font-size:14px}
+</style>
+</head>
+<body>
+
+<!-- ══ PORTADA ══ -->
+<div class="wrap cover">
+  <img src="arte-final/positiva-logo-horizontal-positivo.svg" alt="Positiva">
+  <span class="mono">Manual de marca · v1.0 · Julio 2026</span>
+</div>
+
+<!-- ══ 01 LA MARCA ══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="mono eyebrow">01 · La marca</p>
+    <h2>Una P hecha con<br><em>una diapositiva.</em></h2>
+    <div class="duo">
+      <div class="stage oscuro" style="min-height:340px">
+        <img src="arte-final/positiva-icono-negativo.svg" alt="Icono Positiva" style="height:190px">
+      </div>
+      <div class="rules">
+        <p>
+          El monograma de Positiva es una montura de diapositiva de 35&nbsp;mm que,
+          leída con intención, ya era una P: la panza es la montura, la ventana es
+          el fotograma 3:2 y el descendente es el dedo que la sostiene. El punto
+          ámbar es el grano de luz del proyector.
+        </p>
+        <p>
+          Una diapositiva es un positivo. El objeto y el nombre son la misma
+          idea: esta marca no ilustra el producto — lo es.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 02 CONSTRUCCIÓN ══ -->
+<section>
+  <div class="wrap">
+    <p class="mono eyebrow">02 · Construcción</p>
+    <h2>Cuatro reglas.<br><em>Nada decorativo.</em></h2>
+    <div class="duo">
+      <div class="stage" style="min-height:340px">
+        <img src="arte-final/positiva-icono-positivo.svg" alt="" style="height:190px">
+      </div>
+      <div class="rules">
+        <p class="note" style="margin-top:0">
+          Regla 1 — La panza es una montura 52×41, radio 12.<br>
+          Regla 2 — Un solo grosor para todo: 10. Asta, bordes y descendente.<br>
+          Regla 3 — La ventana es 32×21 (3:2) y solo ella lleva el punto (r 3,8, centrado).<br>
+          Regla 4 — El punto es ámbar o no es: nunca negro, nunca blanco.*<br><br>
+          Descendente: 14 bajo la panza, remate pill r5.<br>
+          Zona de respeto: 26 unidades (media panza) en todo el perímetro.<br>
+          Tamaño mínimo: 16 px de alto — a ese tamaño, sin punto.<br><br>
+          *Única excepción: la versión a una tinta, donde el punto toma el color del trazo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 03 VARIANTES ══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="mono eyebrow">03 · Variantes</p>
+    <h2>Positivo, negativo,<br><em>una tinta.</em></h2>
+    <div class="grid4" style="grid-template-columns:repeat(4,1fr)">
+      <div class="stage" style="background:var(--papel);border-color:var(--papel)">
+        <img src="arte-final/positiva-icono-positivo.svg" style="height:110px" alt="">
+        <span class="tag">Positivo — fondos claros</span>
+      </div>
+      <div class="stage oscuro" style="border:1px solid var(--linea-sala)">
+        <img src="arte-final/positiva-icono-negativo.svg" style="height:110px" alt="">
+        <span class="tag" style="color:#5C5B56">Negativo — fondos oscuros</span>
+      </div>
+      <div class="stage" style="background:var(--papel);border-color:var(--papel)">
+        <img src="arte-final/positiva-icono-una-tinta-positivo.svg" style="height:110px" alt="">
+        <span class="tag">Una tinta — sellos, grabado, fax de lujo</span>
+      </div>
+      <div class="stage" style="background:var(--ambar);border-color:var(--ambar)">
+        <img src="arte-final/positiva-icono-una-tinta-negativo.svg" style="height:110px" alt="">
+        <span class="tag" style="color:rgba(23,22,20,.55)">Una tinta clara — sobre ámbar o foto</span>
+      </div>
+    </div>
+    <p class="note">
+      El punto ámbar exige contraste: sobre fondos ámbar, fotografías muy claras
+      o impresión a un color, usar la versión a una tinta. Entre papel (#F1F0EC)
+      y sala (#0E0E0D) no hay término medio: si el fondo es más oscuro que un
+      gris 50%, va el negativo.
+    </p>
+  </div>
+</section>
+
+<!-- ══ 04 DISPOSICIONES ══ -->
+<section>
+  <div class="wrap">
+    <p class="mono eyebrow">04 · Disposiciones</p>
+    <h2>Cuatro formaciones.<br><em>Cuándo cada una.</em></h2>
+    <div class="grid2">
+      <div class="stage"><img src="arte-final/positiva-logo-horizontal-positivo.svg" style="width:min(420px,85%)" alt=""><span class="tag">Horizontal — principal: nav, cabeceras, firmas</span></div>
+      <div class="stage"><img src="arte-final/positiva-logo-vertical-positivo.svg" style="height:150px" alt=""><span class="tag">Vertical — sellos, cierre de vídeo, packaging</span></div>
+      <div class="stage"><img src="arte-final/positiva-icono-positivo.svg" style="height:120px" alt=""><span class="tag">Icono solo — favicon, avatar, marca de agua, app</span></div>
+      <div class="stage"><img src="arte-final/positiva-wordmark-positivo.svg" style="width:min(380px,85%)" alt=""><span class="tag">Wordmark solo — donde el icono ya esté presente</span></div>
+    </div>
+    <p class="note">
+      Regla de convivencia: el monograma nunca aparece dos veces en la misma
+      vista. Si el lockup completo está en pantalla, el icono no firma solo en
+      otra esquina — y al revés.
+    </p>
+  </div>
+</section>
+
+<!-- ══ 05 TIPOGRAFÍA ══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="mono eyebrow">05 · Tipografía</p>
+    <h2>La marca habla en mono.<br><em>El discurso, en serif.</em></h2>
+    <div style="margin-top:40px">
+      <div class="spec-row">
+        <span style="font-family:var(--smono);font-weight:700;font-size:clamp(22px,3.4vw,40px);letter-spacing:.22em;text-transform:uppercase;color:#EDECE8">Positiva<span style="color:var(--ambar)">.</span></span>
+        <span class="meta">Space Mono Bold · track .22em<br>Voz de marca — wordmark, contraetiquetas<br>Siempre con punto final ámbar</span>
+      </div>
+      <div class="spec-row">
+        <span style="font-family:var(--display);font-weight:300;font-size:clamp(26px,3.8vw,44px);color:#EDECE8">Galerías <em>bien diseñadas.</em></span>
+        <span class="meta">Playfair Display Light · –.02em<br>Display — titulares web y editorial<br>Itálica solo para el énfasis</span>
+      </div>
+      <div class="spec-row">
+        <span style="font-size:clamp(17px,2vw,21px);color:#9C9B95;max-width:30ch">Envía galerías privadas de fotografías y vídeos a tus clientes.</span>
+        <span class="meta">Instrument Sans · cuerpo e interfaz<br>16–21 px · interlineado 1.55–1.67</span>
+      </div>
+      <div class="spec-row">
+        <span class="mono" style="color:var(--ambar)">01 · Entrega — 34 fotogramas · 4 jul 2026</span>
+        <span class="meta">IBM Plex Mono · metadatos<br>Eyebrows, códigos, etiquetas · track .16em</span>
+      </div>
+    </div>
+    <p class="note">
+      Cuatro voces, cuatro funciones, cero solapamiento: Space Mono solo para la
+      marca; Playfair para titulares; Instrument para leer; Plex Mono para
+      etiquetar. Todas autoalojadas — cero CDN.
+    </p>
+  </div>
+</section>
+
+<!-- ══ 06 COLOR ══ -->
+<section>
+  <div class="wrap">
+    <p class="mono eyebrow">06 · Color</p>
+    <h2>Papel, sala<br><em>y un grano de ámbar.</em></h2>
+    <div class="pal">
+      <div class="chip" style="background:#F1F0EC"><span class="info" style="color:#6E6D67">Papel<br>#F1F0EC</span></div>
+      <div class="chip" style="background:#0E0E0D"><span class="info" style="color:#9C9B95">Sala<br>#0E0E0D</span></div>
+      <div class="chip" style="background:#171614"><span class="info" style="color:#9C9B95">Tinta<br>#171614</span></div>
+      <div class="chip" style="background:#C98A2B"><span class="info" style="color:#171614">Ámbar<br>#C98A2B</span></div>
+      <div class="chip" style="background:#F5E9D2"><span class="info" style="color:#6E6D67">Ámbar luz<br>#F5E9D2</span></div>
+      <div class="chip" style="background:#E0402A"><span class="info" style="color:#fff">Graso<br>#E0402A</span></div>
+    </div>
+    <p class="note">
+      El ámbar es acento, nunca fondo de grandes superficies (excepción: sellos).
+      El rojo graso pertenece al producto — marcas de selección, trazo de lápiz —
+      y no se usa en la identidad corporativa. Proporción orientativa:
+      90% papel/sala · 8% tinta · 2% ámbar.
+    </p>
+  </div>
+</section>
+
+<!-- ══ 07 USOS INCORRECTOS ══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="mono eyebrow">07 · Lo que no</p>
+    <h2>Seis maneras<br><em>de estropearlo.</em></h2>
+    <div class="grid3">
+      <div class="stage oscuro bad"><img src="arte-final/positiva-icono-negativo.svg" style="height:90px;transform:scaleX(1.45)" alt=""><span class="tag" style="color:#5C5B56">No deformar</span></div>
+      <div class="stage oscuro bad"><img src="arte-final/positiva-icono-negativo.svg" style="height:90px;transform:rotate(-18deg)" alt=""><span class="tag" style="color:#5C5B56">No rotar</span></div>
+      <div class="stage oscuro bad"><svg viewBox="0 0 68 71" style="height:90px"><path fill-rule="evenodd" fill="#E0402A" d="M20 8 H48 A12 12 0 0 1 60 20 V37 A12 12 0 0 1 48 49 H20 A12 12 0 0 1 8 37 V20 A12 12 0 0 1 20 8 Z M18 18 H50 V39 H18 Z"/><path fill="#E0402A" d="M8 28 H18 V58 A5 5 0 0 1 13 63 A5 5 0 0 1 8 58 Z"/><circle cx="34" cy="28.5" r="3.8" fill="#0E5FA8"/></svg><span class="tag" style="color:#5C5B56">No recolorear</span></div>
+      <div class="stage oscuro bad"><svg viewBox="0 0 68 71" style="height:90px"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V37 A12 12 0 0 1 48 49 H20 A12 12 0 0 1 8 37 V20 A12 12 0 0 1 20 8 Z M18 18 H50 V39 H18 Z"/><path fill="#EDECE8" d="M8 28 H18 V58 A5 5 0 0 1 13 63 A5 5 0 0 1 8 58 Z"/><circle cx="34" cy="28.5" r="9" fill="#C98A2B"/></svg><span class="tag" style="color:#5C5B56">No engordar el punto</span></div>
+      <div class="stage bad" style="background:url('../public/img/foto-1.jpg') center/cover"><img src="arte-final/positiva-icono-negativo.svg" style="height:90px" alt=""><span class="tag" style="color:#fff">No sobre foto sin contraste</span></div>
+      <div class="stage oscuro bad"><div style="display:flex;align-items:center;gap:12px"><img src="arte-final/positiva-icono-negativo.svg" style="height:56px" alt=""><span style="font-family:var(--display);font-size:34px;color:#EDECE8">Positiva.</span></div><span class="tag" style="color:#5C5B56">No mezclar voces — el wordmark es Space Mono</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 08 ARTES FINALES ══ -->
+<section>
+  <div class="wrap">
+    <p class="mono eyebrow">08 · Artes finales</p>
+    <h2>Todo en <em>/branding/arte-final.</em></h2>
+    <table>
+      <tr><th>Archivo</th><th>Uso</th><th>Formatos</th></tr>
+      <tr><td>positiva-icono-positivo</td><td>Icono sobre fondos claros</td><td>SVG · PDF · PNG 1024</td></tr>
+      <tr><td>positiva-icono-negativo</td><td>Icono sobre fondos oscuros</td><td>SVG · PDF · PNG 1024</td></tr>
+      <tr><td>positiva-icono-una-tinta-positivo / -negativo</td><td>Impresión a un color, sellos, grabados</td><td>SVG · PDF · PNG 1024</td></tr>
+      <tr><td>positiva-wordmark-positivo / -negativo</td><td>Wordmark en trazados (no requiere fuentes)</td><td>SVG · PDF · PNG 2400</td></tr>
+      <tr><td>positiva-logo-horizontal-positivo / -negativo</td><td>Lockup principal</td><td>SVG · PDF · PNG 2400</td></tr>
+      <tr><td>positiva-logo-vertical-positivo / -negativo</td><td>Lockup apilado</td><td>SVG · PDF · PNG 1600</td></tr>
+    </table>
+    <p class="note">
+      SVG y PDF son vectoriales: valen para cualquier tamaño de impresión.
+      Los PNG llevan fondo transparente. La tipografía del wordmark está
+      convertida a trazados — se puede imprimir en cualquier sitio sin
+      instalar Space Mono.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Positiva · Manual de marca v1.0 · hola@positiva.studio</div>
+</footer>
+
+</body>
+</html>

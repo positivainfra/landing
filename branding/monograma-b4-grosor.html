@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Positiva · Monograma — Estudio de grosor</title>
+<style>
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:300 400;font-display:swap;src:url(../public/fonts/playfair.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:300 400;font-display:swap;src:url(../public/fonts/playfair-italic.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(../public/fonts/instrument.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url(../public/fonts/ibmplexmono-400.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(../public/fonts/spacemono-700.woff2) format('woff2')}
+:root{
+  --papel:#F1F0EC; --luz:#FFF; --bandeja:#E6E5E0; --sala:#0E0E0D;
+  --tinta:#171614; --tinta-60:#6E6D67; --tinta-30:#A9A8A2; --linea:#D6D5CF;
+  --linea-sala:#2A2A27; --ambar:#C98A2B; --ambar-luz:#F5E9D2;
+  --display:'Playfair Display',Georgia,serif;
+  --sans:'Instrument Sans',-apple-system,system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --smono:'Space Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+h1,h2{font-family:var(--display);font-weight:300;letter-spacing:-.02em;line-height:1.05}
+h1{font-size:clamp(38px,5.4vw,76px)}
+h2{font-size:clamp(30px,4vw,52px)}
+em{font-style:italic}
+.mono{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.eyebrow{display:flex;align-items:center;gap:16px;color:var(--ambar);margin-bottom:28px}
+.eyebrow::after{content:"";flex:1;height:1px;background:currentColor;opacity:.28}
+.lede{font-size:19px;line-height:1.55;color:var(--tinta-60);max-width:58ch}
+section{padding:clamp(64px,8vw,110px) 0}
+.dark{background:var(--sala);color:#EDECE8}
+.dark .lede{color:#9C9B95}
+.cover{padding-top:clamp(72px,10vw,140px)}
+.cover .mono{color:var(--tinta-30)}
+.cover h1{margin:20px 0 28px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+@media(max-width:900px){.grid4{grid-template-columns:repeat(2,1fr)}}
+.stage{background:var(--luz);border:1px solid var(--linea);border-radius:10px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+  min-height:280px;padding:32px 20px 40px;position:relative}
+.dark .stage{background:var(--sala);border-color:var(--linea-sala)}
+.stage .tag{position:absolute;left:14px;bottom:11px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--tinta-30)}
+.dark .stage .tag{color:#5C5B56}
+.minirow{display:flex;align-items:flex-end;gap:18px}
+.note{font-family:var(--mono);font-size:12px;color:var(--tinta-60);letter-spacing:.04em;line-height:1.9;margin-top:20px;max-width:74ch}
+.dark .note{color:#9C9B95}
+.w-smono{font-family:var(--smono);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.dot{color:var(--ambar)}
+.navmock{background:var(--papel);border:1px solid var(--linea);border-radius:999px;
+  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);display:flex;align-items:center;
+  justify-content:space-between;padding:12px 14px 12px 22px;width:100%;max-width:900px}
+.navmock .brand{display:flex;align-items:center;gap:12px}
+.navmock .links{display:flex;gap:26px;font-family:var(--mono);font-size:10px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-60)}
+.navmock .cta{background:var(--tinta);color:var(--papel);border-radius:999px;padding:10px 20px;font-size:13px;font-weight:600}
+@media(max-width:720px){.navmock .links{display:none}}
+.reco{background:var(--ambar-luz);border:1px solid var(--ambar);border-radius:10px;
+  padding:22px 26px;margin-top:40px;color:var(--tinta);font-size:16px;line-height:1.7}
+.reco b{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:8px}
+footer{padding:44px 0;border-top:1px solid var(--linea);color:var(--tinta-30);font-size:14px}
+</style>
+</head>
+<body>
+
+<div class="wrap cover">
+  <span class="mono">Positiva · Monograma · Adenda — Estudio de grosor</span>
+  <h1>Cuánto pesa<br><em>una letra.</em></h1>
+  <p class="lede">
+    Petición: bajar el trazo de 14 a 7–10. Consecuencia a vigilar: el borde es
+    a la vez montura y trazo de la P — al adelgazar gana elegancia y pierde
+    presencia en pequeño. Cuatro cuerpos, cada uno con su prueba de 32 y 16 px.
+  </p>
+</div>
+
+<!-- ══ COMPARATIVA ══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="mono eyebrow">01 · Cuatro grosores</p>
+    <div class="grid4">
+
+      <div class="stage">
+        <svg viewBox="0 0 68 82" height="150"><path fill-rule="evenodd" fill="#3A3936" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#3A3936" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/><circle cx="34" cy="33" r="3.6" fill="#6E5B39"/></svg>
+        <div class="minirow">
+          <svg viewBox="0 0 68 82" height="32"><path fill-rule="evenodd" fill="#3A3936" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#3A3936" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/><circle cx="34" cy="33" r="4.4" fill="#6E5B39"/></svg>
+          <svg viewBox="0 0 68 82" height="16"><path fill-rule="evenodd" fill="#3A3936" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M22 25 H46 V41 H22 Z"/><path fill="#3A3936" d="M8 50 H22 V67 A7 7 0 0 1 15 74 A7 7 0 0 1 8 67 Z"/></svg>
+        </div>
+        <span class="tag">Grosor 14 — B·3 · el punto de partida</span>
+      </div>
+
+      <div class="stage" style="border-color:var(--ambar)">
+        <svg viewBox="0 0 68 82" height="150"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M18 23.5 H50 V44.5 H18 Z"/><path fill="#EDECE8" d="M8 50 H18 V69 A5 5 0 0 1 13 74 A5 5 0 0 1 8 69 Z"/><circle cx="34" cy="34" r="3.8" fill="#C98A2B"/></svg>
+        <div class="minirow">
+          <svg viewBox="0 0 68 82" height="32"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M18 23.5 H50 V44.5 H18 Z"/><path fill="#EDECE8" d="M8 50 H18 V69 A5 5 0 0 1 13 74 A5 5 0 0 1 8 69 Z"/><circle cx="34" cy="34" r="4.6" fill="#C98A2B"/></svg>
+          <svg viewBox="0 0 68 82" height="16"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M18 23.5 H50 V44.5 H18 Z"/><path fill="#EDECE8" d="M8 50 H18 V69 A5 5 0 0 1 13 74 A5 5 0 0 1 8 69 Z"/></svg>
+        </div>
+        <span class="tag" style="color:var(--ambar)">Grosor 10 — B·4 · recomendada ✓</span>
+      </div>
+
+      <div class="stage">
+        <svg viewBox="0 0 68 82" height="150"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M16 22 H52 V46 H16 Z"/><path fill="#EDECE8" d="M8 50 H16 V70 A4 4 0 0 1 12 74 A4 4 0 0 1 8 70 Z"/><circle cx="34" cy="34" r="3.8" fill="#C98A2B"/></svg>
+        <div class="minirow">
+          <svg viewBox="0 0 68 82" height="32"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M16 22 H52 V46 H16 Z"/><path fill="#EDECE8" d="M8 50 H16 V70 A4 4 0 0 1 12 74 A4 4 0 0 1 8 70 Z"/><circle cx="34" cy="34" r="4.6" fill="#C98A2B"/></svg>
+          <svg viewBox="0 0 68 82" height="16"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M16 22 H52 V46 H16 Z"/><path fill="#EDECE8" d="M8 50 H16 V70 A4 4 0 0 1 12 74 A4 4 0 0 1 8 70 Z"/></svg>
+        </div>
+        <span class="tag">Grosor 8 — elegante en grande, justa en 16 px</span>
+      </div>
+
+      <div class="stage">
+        <svg viewBox="0 0 68 82" height="150"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M15 21.5 H53 V46.5 H15 Z"/><path fill="#EDECE8" d="M8 50 H15 V70.5 A3.5 3.5 0 0 1 11.5 74 A3.5 3.5 0 0 1 8 70.5 Z"/><circle cx="34" cy="34" r="3.8" fill="#C98A2B"/></svg>
+        <div class="minirow">
+          <svg viewBox="0 0 68 82" height="32"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M15 21.5 H53 V46.5 H15 Z"/><path fill="#EDECE8" d="M8 50 H15 V70.5 A3.5 3.5 0 0 1 11.5 74 A3.5 3.5 0 0 1 8 70.5 Z"/><circle cx="34" cy="34" r="4.6" fill="#C98A2B"/></svg>
+          <svg viewBox="0 0 68 82" height="16"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M15 21.5 H53 V46.5 H15 Z"/><path fill="#EDECE8" d="M8 50 H15 V70.5 A3.5 3.5 0 0 1 11.5 74 A3.5 3.5 0 0 1 8 70.5 Z"/></svg>
+        </div>
+        <span class="tag">Grosor 7 — filigrana: se pierde en 16 px</span>
+      </div>
+
+    </div>
+    <p class="note">
+      Cada tarjeta enseña el cuerpo grande y, debajo, la marca a 32 y 16 píxeles
+      reales. En 10 la letra afina sin perder pie; la ventana crece (32×21,
+      sigue 3:2) y respira más. En 8 el favicon de 16 px aguanta por poco; en 7
+      el descendente se vuelve un hilo y la ventana casi toca el borde. La
+      regla 2 se mantiene en todos: asta, borde y descendente comparten grosor.
+    </p>
+  </div>
+</section>
+
+<!-- ══ B4 EN CONTEXTO ══ -->
+<section>
+  <div class="wrap">
+    <p class="mono eyebrow">02 · B·4 en su sitio</p>
+    <h2>Grosor 10,<br><em>en el nav y en la firma.</em></h2>
+    <div class="stage" style="margin-top:40px;min-height:190px">
+      <div class="navmock">
+        <div class="brand">
+          <svg viewBox="0 0 68 82" height="30"><path fill-rule="evenodd" fill="#171614" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M18 23.5 H50 V44.5 H18 Z"/><path fill="#171614" d="M8 50 H18 V69 A5 5 0 0 1 13 74 A5 5 0 0 1 8 69 Z"/><circle cx="34" cy="34" r="3.8" fill="#C98A2B"/></svg>
+          <span class="w-smono" style="font-size:15px">Positiva<span class="dot">.</span></span>
+        </div>
+        <div class="links"><span>Diseño</span><span>Qué hace</span><span>Precios</span><span>Preguntas</span></div>
+        <div class="cta">Regístrate</div>
+      </div>
+    </div>
+    <div class="stage" style="margin-top:14px;min-height:170px;background:var(--sala);border-color:var(--sala)">
+      <div style="display:flex;align-items:center;gap:14px">
+        <svg viewBox="0 0 68 82" height="34"><path fill-rule="evenodd" fill="#EDECE8" d="M20 8 H48 A12 12 0 0 1 60 20 V48 A12 12 0 0 1 48 60 H20 A12 12 0 0 1 8 48 V20 A12 12 0 0 1 20 8 Z M18 23.5 H50 V44.5 H18 Z"/><path fill="#EDECE8" d="M8 50 H18 V69 A5 5 0 0 1 13 74 A5 5 0 0 1 8 69 Z"/><circle cx="34" cy="34" r="3.8" fill="#C98A2B"/></svg>
+        <span style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C9B95">Entregado con Positiva · positiva.studio</span>
+      </div>
+      <span class="tag" style="color:#5C5B56">Contraetiqueta en sala</span>
+    </div>
+    <div class="reco">
+      <b>Lectura del estudio</b>
+      El 10 es el punto donde tu ojo pedía menos peso sin que la marca pierda el pie.
+      Actualización de reglas: grosor único pasa de 14 a 10; ventana 32×21 (sigue 3:2);
+      pill del descendente r5; el favicon de 16 px sigue yendo sin punto. Todo lo demás
+      del documento B·3 —proporción, lockups, voz Space Mono, usos— queda igual.
+      SVG definitivo: <span style="font-family:var(--mono);font-size:13px">marca-b4-fina.svg</span>.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Positiva · Identidad · Adenda de grosor — B·4</div>
+</footer>
+
+</body>
+</html>
