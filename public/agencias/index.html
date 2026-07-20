@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Positiva · Galerías de fotos y vídeo con revisión online para fotógrafos</title>
-<meta name="description" content="Entrega galerías de fotos y vídeo con tu marca y revisa proyectos online con tu cliente, sin reenviar enlaces. Para fotógrafos y videógrafos.">
+<title>Positiva · Galerías de fotos y vídeo para agencias y empresas</title>
+<meta name="description" content="Entregas de campaña y eventos corporativos en galerías con la marca de tu agencia — o la de tu cliente. Rondas de aprobación incluidas.">
 <meta property="og:title" content="Positiva">
 <meta property="og:description" content="Entrégalo una vez. No lo reenvíes nunca.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://positiva.studio/">
+<meta property="og:url" content="https://positiva.studio/agencias/">
 <meta property="og:image" content="https://positiva.studio/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="Entrégalo una vez. No lo reenvíes nunca.">
 <meta name="twitter:image" content="https://positiva.studio/assets/og.png">
 <meta name="theme-color" content="#F1F0EC">
-<link rel="canonical" href="https://positiva.studio/">
+<link rel="canonical" href="https://positiva.studio/agencias/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -521,18 +521,19 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <!-- ══ HERO · declaración tipográfica + tira de negativos ══ -->
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow hero-eyebrow">Envío de galerías privadas a clientes y recepción de comentarios · Para fotógrafos y videógrafos</p>
+    <p class="eyebrow hero-eyebrow">Envío de galerías privadas y aprobación de material · Para agencias y equipos de contenido</p>
     <h1>
-      <span class="hl"><span style="--d:.05s">Galerías de fotos y vídeos</span></span>
-      <span class="hl"><span style="--d:.15s">para clientes. Con tu marca.</span></span>
-      <span class="hl"><span style="--d:.25s"><em>Sin reenviar el enlace jamás.</em></span></span>
+      <span class="hl"><span style="--d:.05s">Todo el material del cliente,</span></span>
+      <span class="hl"><span style="--d:.15s">en un solo enlace.</span></span>
+      <span class="hl"><span style="--d:.25s"><em>Con tu marca. O la suya.</em></span></span>
     </h1>
     <div class="hero-foot">
       <div>
         <p class="lede">
-          Envía galerías privadas de fotografías y vídeos. Tu cliente marca lo
-          que más le gusta y te lo comenta. El enlace es siempre el mismo, no
-          se rompe, y tu galería no lleva el logo de nadie más.
+          Entregas de campaña, congresos, eventos corporativos: galerías
+          privadas con multimarca, rondas de aprobación y comentarios sobre
+          cada archivo. El enlace no se rompe entre versiones — el que
+          enviaste el primer día sigue siendo el bueno.
         </p>
         <p class="hero-note">
           Creado por un fotógrafo de bodas que se cansó de que WeTransfer<br>
@@ -548,7 +549,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 
   <div class="reel">
     <div class="wrap reel-meta">
-      <span class="amb">Showcase · Boda</span>
+      <span class="amb">Showcase · Galería real</span>
       <span>Galería real — Aitana &amp; David</span>
     </div>
     <div class="bleed reel-frame">
@@ -631,14 +632,14 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
     <!-- demo interactiva: la hoja de contactos -->
     <div class="demo reveal">
       <div class="tabs" role="tablist" aria-label="Tipo de trabajo">
-        <button class="tab" role="tab" id="tab-boda" aria-controls="panel-boda" aria-selected="true" tabindex="0" data-panel="boda">Boda</button>
+        <button class="tab" role="tab" id="tab-boda" aria-controls="panel-boda" aria-selected="false" tabindex="-1" data-panel="boda">Boda</button>
         <button class="tab" role="tab" id="tab-evento" aria-controls="panel-evento" aria-selected="false" tabindex="-1" data-panel="evento">Evento</button>
-        <button class="tab" role="tab" id="tab-congreso" aria-controls="panel-congreso" aria-selected="false" tabindex="-1" data-panel="congreso">Congreso</button>
+        <button class="tab" role="tab" id="tab-congreso" aria-controls="panel-congreso" aria-selected="true" tabindex="0" data-panel="congreso">Congreso</button>
         <button class="tab" role="tab" id="tab-mission" aria-controls="panel-mission" aria-selected="false" tabindex="-1" data-panel="mission" aria-label="Otros tipos de trabajo">…</button>
       </div>
 
       <div class="panels">
-        <div class="sheet is-active" id="panel-boda" role="tabpanel" aria-labelledby="tab-boda">
+        <div class="sheet" id="panel-boda" role="tabpanel" aria-labelledby="tab-boda">
           <div class="sheet-edge"><span>Aitana &amp; David</span><span>4 jul 2026</span></div>
           <div class="frames" id="frames"></div>
           <div class="sheet-foot">
@@ -659,7 +660,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
           <div class="sheet-foot"><span>Vitrina · sin selección</span></div>
         </div>
 
-        <div class="sheet" id="panel-congreso" role="tabpanel" aria-labelledby="tab-congreso">
+        <div class="sheet is-active" id="panel-congreso" role="tabpanel" aria-labelledby="tab-congreso">
           <div class="sheet-edge"><span>Congreso</span><span>6 fotogramas</span></div>
           <div class="uniform-grid uniform-grid--congreso">
             <div class="uitem h"><img src="/img/congreso_panoramica.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
@@ -760,7 +761,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
         </ul>
       </div>
 
-      <div class="plan featured reveal" style="--d:.08s">
+      <div class="plan reveal" style="--d:.08s">
         <div class="plan-tag">El más común</div>
         <div class="plan-name">Autor</div>
         <div class="price">89 € <small>/año + IVA</small></div>
@@ -775,7 +776,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
         </ul>
       </div>
 
-      <div class="plan reveal" style="--d:.16s">
+      <div class="plan featured reveal" style="--d:.16s">
         <div class="plan-tag">Para estudios</div>
         <div class="plan-name">Estudio</div>
         <div class="price">219 € <small>/año + IVA</small></div>
