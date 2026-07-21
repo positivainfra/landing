@@ -524,9 +524,9 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
     <p class="eyebrow hero-eyebrow">Envío de galerías privadas a clientes y recepción de comentarios · Para fotógrafos y videógrafos</p>
     <h1>
       <span class="hl"><span style="--d:.05s">Galerías de fotos y vídeos</span></span>
-      <span class="hl"><span style="--d:.15s">para clientes.</span></span>
-      <span class="hl"><span style="--d:.15s">Con tu marca.</span></span>
-      <span class="hl"><span style="--d:.25s"><em>Sin reenviar el enlace jamás.</em></span></span>
+      <span class="hl"><span style="--d:.13s">para clientes.</span></span>
+      <span class="hl"><span style="--d:.21s">Con tu marca.</span></span>
+      <span class="hl"><span style="--d:.29s"><em>Sin reenviar el enlace jamás.</em></span></span>
     </h1>
     <div class="hero-foot">
       <div>
@@ -683,10 +683,8 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <section class="dark">
   <div class="wrap">
     <p class="eyebrow reveal"><span class="idx">03</span> Manifiesto</p>
-    <div class="mgrid">
-      <div>
-        <h2 class="reveal" style="color:#EDECE8">Lo que<br>encontrarás en Positiva:</h2>
-        
+    <h2 class="reveal" style="color:#EDECE8">Lo que<br>encontrarás en Positiva:</h2>
+
     <div class="yes-grid">
       <div class="yes-item reveal"><strong>Enlaces únicos que no se rompen</strong> Envía un enlace una sola vez. Si haces cambios a los archivos, el enlace se mantiene.</div>
       <div class="yes-item reveal" style="--d:.08s"><strong>Una única galería</strong> Tu cliente revisa y aprueba tus fotografías y vídeos en un solo lugar, sin que tú tengas que perseguirlo.</div>
@@ -901,9 +899,10 @@ window.addEventListener('load', () => document.documentElement.classList.add('lo
 
 /* ── Revelado al hacer scroll + tachado del manifiesto ── */
 (() => {
+  const manifesto = document.getElementById('manifesto'); // puede no existir
   if (!('IntersectionObserver' in window)) {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
-    document.getElementById('manifesto').classList.add('is-struck');
+    if (manifesto) manifesto.classList.add('is-struck');
     return;
   }
   const io = new IntersectionObserver((entries) => {
@@ -914,7 +913,7 @@ window.addEventListener('load', () => document.documentElement.classList.add('lo
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  io.observe(document.getElementById('manifesto'));
+  if (manifesto) io.observe(manifesto);
 })();
 
 /* ── Nav: la cápsula se despega al hacer scroll; menú móvil ── */
