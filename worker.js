@@ -86,7 +86,10 @@ async function handleWaitlist(request, env) {
   try {
     await env.SEB.send(new EmailMessage(env.NOTIFY_FROM, env.NOTIFY_TO, mime));
   } catch (err) {
-    return json(502, { error: 'email_failed', detail: String(err).slice(0, 120) });
+    // Visible en `wrangler tail landing`. Causa habitual: NOTIFY_TO no es una
+    // destination address verificada en Email Routing (ver wrangler.jsonc).
+    console.error('waitlist email_failed:', err && err.message, '| to:', env.NOTIFY_TO, '| from:', env.NOTIFY_FROM);
+    return json(502, { error: 'email_failed', detail: String(err && err.message || err).slice(0, 160) });
   }
   return json(201, { ok: true });
 }
