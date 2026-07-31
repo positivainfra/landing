@@ -1043,7 +1043,7 @@ order.forEach((p, idx) => {
 })();
 
 /* ── Lista de espera ──────────────────────────────────────────
-   Envía a /api/waitlist (Pages Function → Supabase, tabla waitlist).
+   Envía a /api/waitlist (Worker → Cloudflare Email Routing → hola@positiva.studio).
    Sin analytics de terceros. Sin píxeles. Ver manifiesto.        */
 document.getElementById('wl').addEventListener('submit', async (e) => {
   e.preventDefault();

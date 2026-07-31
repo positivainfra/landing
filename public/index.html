@@ -257,6 +257,44 @@ html.loaded .hl>span,html:not(.js) .hl>span{transform:none}
 .design-foot{display:flex;justify-content:space-between;gap:var(--pv-s7);align-items:baseline;flex-wrap:wrap;margin-top:var(--pv-s7)}
 .design-foot .lede{margin:0}
 
+/* ── carrusel de galerías (sin librerías; scroll-snap + JS mínimo) ── */
+.gcar{position:relative;width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}
+.gcar-track{
+  display:flex;gap:clamp(12px,1.6vw,22px);overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;padding:0 max(24px,calc((100vw - 1180px)/2));
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.gcar-track::-webkit-scrollbar{display:none}
+.gslide{
+  flex:0 0 clamp(280px,72vw,880px);scroll-snap-align:center;margin:0;position:relative;
+  border-radius:var(--pv-r-panel);overflow:hidden;background:#000;aspect-ratio:16/10;
+}
+.gslide img{width:100%;height:100%;object-fit:cover;display:block}
+.gslide figcaption{
+  position:absolute;left:14px;bottom:12px;font-family:var(--pv-mono);font-size:10px;
+  font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#EDECE8;
+  background:rgba(14,14,13,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  padding:6px 11px;border-radius:var(--pv-r-pill);
+}
+.gcar-btn{
+  position:absolute;top:calc(50% - 24px);width:48px;height:48px;border-radius:var(--pv-r-pill);
+  border:1px solid var(--pv-linea-sala);background:rgba(14,14,13,.72);color:#EDECE8;
+  font-size:24px;line-height:1;cursor:pointer;z-index:3;transition:background .18s,transform .18s;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;
+}
+.gcar-btn:hover{background:var(--pv-ambar);color:#000;transform:scale(1.05)}
+.gcar-btn.prev{left:clamp(12px,2vw,32px)}
+.gcar-btn.next{right:clamp(12px,2vw,32px)}
+.gcar-btn:focus-visible{outline:2px solid var(--pv-ambar);outline-offset:3px}
+@media(max-width:620px){.gcar-btn{display:none}}
+.gcar-dots{display:flex;justify-content:center;gap:9px;margin-top:var(--pv-s5)}
+.gcar-dots button{
+  width:8px;height:8px;padding:0;border:0;border-radius:50%;cursor:pointer;
+  background:var(--pv-linea-sala);transition:background .2s,transform .2s;
+}
+.gcar-dots button[aria-selected="true"]{background:var(--pv-ambar);transform:scale(1.35)}
+.gcar-dots button:focus-visible{outline:2px solid var(--pv-ambar);outline-offset:3px}
+
 /* ── piezas: lista editorial 01/02/03 ────────────── */
 .piece{
   display:grid;grid-template-columns:140px 1fr 1.15fr;gap:var(--pv-s7);
@@ -542,7 +580,6 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
       </div>
       <div class="cta-row">
         <a href="#lista" class="btn btn-amber">Regístrate</a>
-        <a href="https://test.positiva.studio/g/aitana-i-david" class="btn btn-ghost" target="_blank" rel="noopener">Ver una galería real ↗</a>
       </div>
     </div>
   </div>
@@ -573,16 +610,26 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
     </div>
   </div>
 
-  <div class="bleed" style="margin-top:clamp(48px,7vw,96px)">
-    <!-- PLACEHOLDER: sustituir por export limpio de la galería real, sin chrome de la interfaz -->
-    <img src="/img/showcase-galeria-PLACEHOLDER.jpg" alt="Galería real de Positiva: Aitana &amp; David" width="1512" height="801" loading="lazy" decoding="async">
+  <!-- carrusel de galerías reales · autoavance + swipe + flechas, sin librerías -->
+  <div class="gcar" style="margin-top:clamp(48px,7vw,96px)" aria-roledescription="carrusel" aria-label="Galerías reales de Positiva">
+    <div class="gcar-track" id="gcar-track">
+      <figure class="gslide"><img src="/img/galerias/slide-1-boda-aitana.jpg" alt="Portada de galería de boda con la marca del fotógrafo" width="1600" height="1000" loading="lazy" decoding="async"><figcaption>Boda · Aitana &amp; David</figcaption></figure>
+      <figure class="gslide"><img src="/img/galerias/slide-2-evento-hoka.jpg" alt="Galería de evento deportivo con marca propia" width="1600" height="1000" loading="lazy" decoding="async"><figcaption>Evento · Clifton Pro</figcaption></figure>
+      <figure class="gslide"><img src="/img/galerias/slide-3-boda-grid.jpg" alt="Rejilla de fotos de una boda para revisión del cliente" width="1600" height="1000" loading="lazy" decoding="async"><figcaption>Revisión · el cliente elige</figcaption></figure>
+      <figure class="gslide"><img src="/img/galerias/slide-4-evento-detalle.jpg" alt="Galería de evento con foto a gran tamaño" width="1600" height="1000" loading="lazy" decoding="async"><figcaption>Evento · foto protagonista</figcaption></figure>
+      <figure class="gslide"><img src="/img/galerias/slide-5-boda-alvaro.jpg" alt="Otra portada de boda con diseño distinto" width="1600" height="1000" loading="lazy" decoding="async"><figcaption>Boda · Álvaro &amp; Elena</figcaption></figure>
+      <figure class="gslide"><img src="/img/galerias/slide-6-boda-mosaico.jpg" alt="Mosaico de fotos de boda" width="1600" height="1000" loading="lazy" decoding="async"><figcaption>Boda · mosaico editorial</figcaption></figure>
+    </div>
+    <button class="gcar-btn prev" id="gcar-prev" type="button" aria-label="Anterior">‹</button>
+    <button class="gcar-btn next" id="gcar-next" type="button" aria-label="Siguiente">›</button>
+    <div class="gcar-dots" id="gcar-dots" role="tablist" aria-label="Ir a la galería"></div>
   </div>
 
   <div class="wrap">
     <div class="design-foot reveal">
       <p class="lede">
-        Puedes ver una galeria Positiva aqui:
-        <a href="https://test.positiva.studio/g/aitana-i-david" target="_blank" rel="noopener" style="color:var(--pv-ambar)">Ver la galería ↗</a>
+        Distintos trabajos, distintos diseños — la foto siempre protagonista y
+        tu marca por delante. Sin plantillas que parchear.
       </p>
       <p class="kicker">¿Menos opciones que otros? Sí. Ese es el trabajo que ya hicimos por ti.</p>
     </div>
@@ -627,55 +674,6 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
       </div>
     </div>
 
-    <!-- demo interactiva: la hoja de contactos -->
-    <div class="demo reveal">
-      <div class="tabs" role="tablist" aria-label="Tipo de trabajo">
-        <button class="tab" role="tab" id="tab-boda" aria-controls="panel-boda" aria-selected="true" tabindex="0" data-panel="boda">Boda</button>
-        <button class="tab" role="tab" id="tab-evento" aria-controls="panel-evento" aria-selected="false" tabindex="-1" data-panel="evento">Evento</button>
-        <button class="tab" role="tab" id="tab-congreso" aria-controls="panel-congreso" aria-selected="false" tabindex="-1" data-panel="congreso">Congreso</button>
-        <button class="tab" role="tab" id="tab-mission" aria-controls="panel-mission" aria-selected="false" tabindex="-1" data-panel="mission" aria-label="Otros tipos de trabajo">…</button>
-      </div>
-
-      <div class="panels">
-        <div class="sheet is-active" id="panel-boda" role="tabpanel" aria-labelledby="tab-boda">
-          <div class="sheet-edge"><span>Aitana &amp; David</span><span>4 jul 2026</span></div>
-          <div class="frames" id="frames"></div>
-          <div class="sheet-foot">
-            <span><span class="count" id="count">0</span> / 8 marcadas</span>
-            <span>↗ enviar selección</span>
-          </div>
-        </div>
-
-        <div class="sheet" id="panel-evento" role="tabpanel" aria-labelledby="tab-evento">
-          <div class="sheet-edge"><span>Evento</span><span>5 fotogramas</span></div>
-          <div class="uniform-grid">
-            <div class="uitem"><img src="/img/evento_bolsa.webp" alt="" width="1280" height="1919" loading="lazy" decoding="async"></div>
-            <div class="uitem"><img src="/img/evento_arrozal.webp" alt="" width="1280" height="1919" loading="lazy" decoding="async"></div>
-            <div class="uitem h"><img src="/img/evento_faja.webp" alt="" width="1280" height="854" loading="lazy" decoding="async"></div>
-            <div class="uitem h"><img src="/img/evento_grupo.webp" alt="" width="1080" height="722" loading="lazy" decoding="async"></div>
-            <div class="uitem h"><img src="/img/evento_libelula.webp" alt="" width="1080" height="720" loading="lazy" decoding="async"></div>
-          </div>
-          <div class="sheet-foot"><span>Vitrina · sin selección</span></div>
-        </div>
-
-        <div class="sheet" id="panel-congreso" role="tabpanel" aria-labelledby="tab-congreso">
-          <div class="sheet-edge"><span>Congreso</span><span>6 fotogramas</span></div>
-          <div class="uniform-grid uniform-grid--congreso">
-            <div class="uitem h"><img src="/img/congreso_panoramica.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
-            <div class="uitem h"><img src="/img/congreso_dialogo.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
-            <div class="uitem h"><img src="/img/congreso_bienvenida.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
-            <div class="uitem h"><img src="/img/congreso_telefono.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
-            <div class="uitem h"><img src="/img/congreso_networking.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
-            <div class="uitem h"><img src="/img/congreso_recepcion.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
-          </div>
-          <div class="sheet-foot"><span>Vitrina · sin selección</span></div>
-        </div>
-
-        <div class="sheet sheet-mission" id="panel-mission" role="tabpanel" aria-labelledby="tab-mission">
-          <p>Bodas, eventos, congresos, sesiones, lo que reveles.</p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -940,110 +938,70 @@ window.addEventListener('load', () => document.documentElement.classList.add('lo
   document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 })();
 
-/* ── Hoja de contactos: rectas con temblor. Ver src/components/GreaseMark.tsx ── */
-/* Fotos servidas desde /img como AVIF/WebP/JPG. order[] indexa foto-N.* */
-const order = [1,5,2,6,3,7,4,1];
-const W = 200, H = 300;
-
-function greasePath(seed){
-  let s = seed;
-  const rnd = () => { s = (s*9301 + 49297) % 233280; return s/233280; };
-  const j = a => (rnd() - .5) * a;
-  const i = 9, C = 3.2, M = 1.6;
-  const seg = (a,b) => [1,2].map(k => {
-    const t = k/3;
-    return [a[0] + (b[0]-a[0])*t + j(M), a[1] + (b[1]-a[1])*t + j(M)];
-  });
-  const tl = [i + j(C), i + j(C)];
-  const tr = [W - i + j(C), i + j(C)];
-  const br = [W - i + j(C), H - i + j(C)];
-  const bl = [i + j(C), H - i + j(C)];
-  const pts = [
-    tl, ...seg(tl,tr), tr, ...seg(tr,br), br,
-    ...seg(br,bl), bl, ...seg(bl,tl), tl,
-    [i + (W-2*i) * (0.22 + rnd()*0.14), i - 3 + j(4)],
-  ];
-  return 'M ' + pts.map(p => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join(' L ');
-}
-
-const sheet = document.getElementById('frames');
-order.forEach((p, idx) => {
-  const seed = (idx+1) * 977;
-  const el = document.createElement('div');
-  el.className = 'frame';
-  el.setAttribute('role','button');
-  el.setAttribute('tabindex','0');
-  el.setAttribute('aria-pressed','false');
-  el.setAttribute('aria-label', `Fotograma ${idx+1}, sin marcar`);
-  const w = (p===5||p===6) ? 520 : 347, h = (p===5||p===6) ? 347 : 520;
-  el.innerHTML = `<picture>
-      <source srcset="/img/foto-${p}.avif" type="image/avif">
-      <source srcset="/img/foto-${p}.webp" type="image/webp">
-      <img src="/img/foto-${p}.jpg" alt="" width="${w}" height="${h}" loading="lazy" decoding="async">
-    </picture>
-    <span class="no">${String(idx+1).padStart(2,'0')}A</span>
-    <span class="mark"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
-      <defs><filter id="wax${idx}" x="-25%" y="-25%" width="150%" height="150%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="${idx*7}" result="n"/>
-        <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/>
-        <feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="${idx*3+5}" result="t"/>
-        <feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/>
-        <feComposite in="d" in2="h" operator="out"/>
-      </filter></defs>
-      <path d="${greasePath(seed)}" stroke-width="7" opacity="0.97" filter="url(#wax${idx})"/>
-    </svg></span>`;
-  const toggle = () => {
-    el.classList.toggle('picked');
-    const on = el.classList.contains('picked');
-    el.setAttribute('aria-pressed', on);
-    el.setAttribute('aria-label', `Fotograma ${idx+1}, ${on ? 'marcada' : 'sin marcar'}`);
-    document.getElementById('count').textContent = document.querySelectorAll('.frame.picked').length;
-  };
-  el.addEventListener('click', toggle);
-  el.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-  });
-  sheet.appendChild(el);
-});
-
-/* ── Selector de galería: Boda / Evento / Congreso / … ─────────
-   Disolve real: los 4 paneles están siempre en el DOM, apilados en la
-   misma celda de grid (ver CSS .panels), y la clase is-active cruza su
-   opacidad a la vez — sin flip, sin display:none a medias. Sin
-   librerías. Ver DESIGN.md regla 9. */
+/* ── Carrusel de galerías: scroll-snap nativo + flechas, puntos y
+   autoavance que se pausa al interactuar. Sin librerías. ── */
 (() => {
-  const tabs = Array.from(document.querySelectorAll('.tab'));
-  const panels = Object.fromEntries(
-    ['boda', 'evento', 'congreso', 'mission'].map(k => [k, document.getElementById(`panel-${k}`)])
-  );
+  const track = document.getElementById('gcar-track');
+  if (!track) return;
+  const slides = Array.from(track.children);
+  const dotsWrap = document.getElementById('gcar-dots');
+  const prev = document.getElementById('gcar-prev');
+  const next = document.getElementById('gcar-next');
+  let idx = 0, timer = null;
 
-  function activate(key, { focusTab = false } = {}) {
-    tabs.forEach(t => {
-      const on = t.dataset.panel === key;
-      t.setAttribute('aria-selected', String(on));
-      t.tabIndex = on ? 0 : -1;
-      if (on && focusTab) t.focus();
-    });
-    Object.entries(panels).forEach(([k, el]) => el.classList.toggle('is-active', k === key));
-  }
-
-  tabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => activate(tab.dataset.panel));
-    tab.addEventListener('keydown', e => {
-      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
-      e.preventDefault();
-      let j = i;
-      if (e.key === 'ArrowLeft') j = (i - 1 + tabs.length) % tabs.length;
-      if (e.key === 'ArrowRight') j = (i + 1) % tabs.length;
-      if (e.key === 'Home') j = 0;
-      if (e.key === 'End') j = tabs.length - 1;
-      activate(tabs[j].dataset.panel, { focusTab: true });
-    });
+  slides.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-label', `Galería ${i + 1}`);
+    b.addEventListener('click', () => { go(i); rearm(); });
+    dotsWrap.appendChild(b);
   });
+  const dots = Array.from(dotsWrap.children);
+
+  const go = (i) => {
+    idx = (i + slides.length) % slides.length;
+    slides[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    sync();
+  };
+  const sync = () => dots.forEach((d, i) => d.setAttribute('aria-selected', String(i === idx)));
+
+  // mantener el punto activo cuando el usuario arrastra
+  let raf;
+  track.addEventListener('scroll', () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      const c = track.scrollLeft + track.clientWidth / 2;
+      let best = 0, bd = Infinity;
+      slides.forEach((s, i) => {
+        const sc = s.offsetLeft + s.clientWidth / 2;
+        const d = Math.abs(sc - c);
+        if (d < bd) { bd = d; best = i; }
+      });
+      idx = best; sync();
+    });
+  }, { passive: true });
+
+  prev.addEventListener('click', () => { go(idx - 1); rearm(); });
+  next.addEventListener('click', () => { go(idx + 1); rearm(); });
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const start = () => { if (!reduce) timer = setInterval(() => go(idx + 1), 4500); };
+  const stop = () => { clearInterval(timer); timer = null; };
+  const rearm = () => { stop(); start(); };
+  ['pointerdown', 'focusin', 'mouseenter'].forEach(ev => track.addEventListener(ev, stop));
+  ['pointerup', 'mouseleave'].forEach(ev => track.addEventListener(ev, rearm));
+
+  sync();
+  // arranca solo cuando el carrusel es visible, para no desperdiciar
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((es) => es.forEach(e => e.isIntersecting ? start() : stop()),
+      { threshold: 0.3 }).observe(track);
+  } else { start(); }
 })();
 
 /* ── Lista de espera ──────────────────────────────────────────
-   Envía a /api/waitlist (Pages Function → Supabase, tabla waitlist).
+   Envía a /api/waitlist (Worker → Cloudflare Email Routing → hola@positiva.studio).
    Sin analytics de terceros. Sin píxeles. Ver manifiesto.        */
 document.getElementById('wl').addEventListener('submit', async (e) => {
   e.preventDefault();

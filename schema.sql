@@ -1,3 +1,7 @@
+-- OBSOLETO desde jul 2026: la waitlist ya no usa base de datos.
+-- Ahora POST /api/waitlist envía un email vía Cloudflare Email Routing (ver worker.js).
+-- Este archivo se conserva solo por historial; puede borrarse.
+
 -- Tabla de lista de espera de la landing pública (positiva.studio).
 -- ⚠️ Va en una instancia de Supabase NUEVA y SEPARADA, exclusiva de la web pública.
 --    NO ejecutar contra la base de datos de la app (test./producción).

@@ -11,5 +11,21 @@
   "assets": {
     "directory": "./public",
     "binding": "ASSETS"
+  },
+
+  // ── Waitlist por email (Cloudflare Email Routing, sin base de datos) ──
+  // El binding send_email deja que el Worker envíe correo. destination_address
+  // lo restringe a una única dirección, que debe estar VERIFICADA en
+  // Email Routing (Cloudflare › positiva.studio › Email › Destination addresses).
+  "send_email": [
+    { "name": "SEB", "destination_address": "hola@positiva.studio" }
+  ],
+
+  // NOTIFY_TO  → a dónde llega el aviso (misma dirección verificada de arriba).
+  // NOTIFY_FROM → remitente; una dirección de un dominio tuyo con Email Routing
+  //               (no necesita recibir correo, solo existir como remitente).
+  "vars": {
+    "NOTIFY_TO": "hola@positiva.studio",
+    "NOTIFY_FROM": "waitlist@positiva.studio"
   }
 }

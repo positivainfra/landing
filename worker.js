@@ -1,16 +1,23 @@
 /**
  * Worker de la landing pública (positiva.studio).
  *
- * Modelo "Worker + static assets": los ficheros de ./public se sirven directos
- * (no invocan al Worker). El Worker solo corre para rutas sin asset — aquí,
- * POST /api/waitlist → Supabase. El resto se delega al binding ASSETS.
+ * Modelo "Worker + static assets": los ficheros de ./public se sirven directos.
+ * El Worker solo corre para rutas sin asset — aquí, POST /api/waitlist.
  *
- * Secretos por variables del proyecto (NO en el repo):
- *   SUPABASE_URL          https://<ref>.supabase.co
- *   SUPABASE_SERVICE_KEY  service_role key (secreto; solo servidor)
+ * La waitlist NO usa base de datos. Cada alta envía un correo a NOTIFY_TO
+ * mediante Cloudflare Email Routing (binding send_email). Sin Supabase,
+ * sin terceros, sin píxeles.
  *
- * ⚠️ Instancia de Supabase EXCLUSIVA de la landing. No es la de la app.
+ * Requiere en Cloudflare (una sola vez):
+ *   1. Email Routing activo en positiva.studio.
+ *   2. NOTIFY_TO añadido y VERIFICADO como Destination Address en Email Routing.
+ *   3. Binding send_email "SEB" y vars NOTIFY_TO / NOTIFY_FROM (ver wrangler.jsonc).
+ *
+ * NOTIFY_FROM debe ser una dirección de un dominio tuyo con Email Routing
+ * (no necesita recibir correo; es solo el remitente).
  */
+
+import { EmailMessage } from 'cloudflare:email';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -20,9 +27,35 @@ const json = (status, body) =>
     headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
   });
 
+// Codifica UTF-8 a base64 (para el cuerpo del correo).
+function b64utf8(str) {
+  const bytes = new TextEncoder().encode(str);
+  let bin = '';
+  for (const b of bytes) bin += String.fromCharCode(b);
+  return btoa(bin);
+}
+
+// Construye un MIME text/plain válido (con Date y Message-ID, que CF exige).
+function buildMime({ from, to, replyTo, subject, text }) {
+  const id = `${crypto.randomUUID()}@positiva.studio`;
+  return [
+    `From: Positiva <${from}>`,
+    `To: <${to}>`,
+    `Reply-To: <${replyTo}>`,
+    `Message-ID: <${id}>`,
+    `Date: ${new Date().toUTCString()}`,
+    `Subject: ${subject}`,
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset="utf-8"',
+    'Content-Transfer-Encoding: base64',
+    '',
+    b64utf8(text),
+  ].join('\r\n');
+}
+
 async function handleWaitlist(request, env) {
   if (request.method !== 'POST') return json(405, { error: 'method_not_allowed' });
-  if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_KEY) return json(500, { error: 'not_configured' });
+  if (!env.SEB || !env.NOTIFY_TO || !env.NOTIFY_FROM) return json(500, { error: 'not_configured' });
 
   let data;
   try {
@@ -35,20 +68,26 @@ async function handleWaitlist(request, env) {
   const source = String(data?.source ?? 'landing').slice(0, 40);
   if (!EMAIL_RE.test(email) || email.length > 254) return json(422, { error: 'invalid_email' });
 
-  const res = await fetch(`${env.SUPABASE_URL}/rest/v1/waitlist`, {
-    method: 'POST',
-    headers: {
-      apikey: env.SUPABASE_SERVICE_KEY,
-      Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}`,
-      'Content-Type': 'application/json',
-      Prefer: 'return=minimal',
-    },
-    body: JSON.stringify({ email, source }),
+  const text =
+    `Nuevo registro en la lista de espera de Positiva.\n\n` +
+    `Email:   ${email}\n` +
+    `Origen:  ${source}\n` +
+    `Fecha:   ${new Date().toISOString()}\n\n` +
+    `Responde a este correo para escribirle directamente.`;
+
+  const mime = buildMime({
+    from: env.NOTIFY_FROM,
+    to: env.NOTIFY_TO,
+    replyTo: email, // responder = escribir al interesado
+    subject: 'Nuevo registro en la lista de espera',
+    text,
   });
 
-  // 23505 unique_violation → ya estaba apuntado; éxito idempotente.
-  if (res.status === 409) return json(409, { ok: true, duplicate: true });
-  if (!res.ok) return json(502, { error: 'upstream', status: res.status });
+  try {
+    await env.SEB.send(new EmailMessage(env.NOTIFY_FROM, env.NOTIFY_TO, mime));
+  } catch (err) {
+    return json(502, { error: 'email_failed', detail: String(err).slice(0, 120) });
+  }
   return json(201, { ok: true });
 }
 
@@ -56,7 +95,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === '/api/waitlist') return handleWaitlist(request, env);
-    // Cualquier otra ruta: la sirve la capa de assets (incluye su manejo de 404).
+    // Cualquier otra ruta: la sirve la capa de assets (incluye su 404).
     return env.ASSETS.fetch(request);
   },
 };
