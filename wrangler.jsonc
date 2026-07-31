@@ -13,6 +13,13 @@
     "binding": "ASSETS"
   },
 
+  // Dominio público del Worker. custom_domain:true crea el registro DNS
+  // (proxied) y la ruta al desplegar. Para servir también www, añade otra
+  // entrada { "pattern": "www.positiva.studio", "custom_domain": true }.
+  "routes": [
+    { "pattern": "positiva.studio", "custom_domain": true }
+  ],
+
   // ── Waitlist por email (Cloudflare Email Routing, sin base de datos) ──
   // ⚠️ destination_address y NOTIFY_TO deben ser una DESTINATION ADDRESS
   // VERIFICADA (Cloudflare › positiva.studio › Email › Destination addresses).
