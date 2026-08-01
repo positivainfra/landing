@@ -109,6 +109,20 @@ td .no{color:#5C5B56;font-family:var(--pv-mono);font-size:13px}
 .fair-card h3{font-family:var(--pv-display);font-weight:400;font-size:24px;margin-bottom:var(--pv-s3)}
 .fair-card p{font-size:16px;color:var(--pv-tinta-60)}
 .fair-card.pos{border-color:var(--pv-ambar);box-shadow:0 0 0 1px var(--pv-ambar)}
+.fair-card strong{color:var(--pv-tinta);font-weight:600}
+
+/* FAQ (mismo estilo que la principal) */
+.faq{margin-top:var(--pv-s8)}
+details{border-top:1px solid var(--pv-linea)}
+details:last-of-type{border-bottom:1px solid var(--pv-linea)}
+.dark details{border-color:var(--pv-linea-sala)}
+.dark details p{color:#9C9B95}
+summary{font-family:var(--pv-display);font-size:clamp(20px,2vw,24px);font-weight:400;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:var(--pv-s4);padding:var(--pv-s5) 0;transition:color .18s}
+summary:hover{color:var(--pv-ambar-hover)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--pv-ambar);font-family:var(--pv-sans);font-weight:400;flex:none;transition:transform .3s var(--pv-ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 var(--pv-s5);color:var(--pv-tinta-60);max-width:64ch}
 
 /* captura */
 .capture{background:var(--pv-sala);color:#EDECE8;border-radius:var(--pv-r-panel);
@@ -258,6 +272,72 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea)}
       en facturación europea · Si algo ha cambiado o está mal, escríbenos y lo corregimos:
       <a href="mailto:hola@positiva.studio">hola@positiva.studio</a>.
     </p>
+  </div>
+</section>
+
+<!-- ══ QUÉ PLATAFORMA TE CONVIENE ══ -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow reveal">Cuál elegir</p>
+    <h2 class="reveal" style="--d:.05s">¿Qué plataforma<br><em>te conviene?</em></h2>
+    <div class="fair">
+      <div class="fair-card pos reveal">
+        <h3>Positiva</h3>
+        <p>
+          <strong>La opción más económica.</strong> Perfecta si quieres una
+          herramienta con la que entregar fotos y vídeos en una galería privada
+          con tu marca, recibir selección y comentarios de clientes, y usar un
+          mismo espacio de almacenamiento para fotos y vídeos.
+        </p>
+      </div>
+      <div class="fair-card reveal" style="--d:.08s">
+        <h3>Pic-Time</h3>
+        <p>
+          <strong>De precio más elevado.</strong> Es una buena opción si, además
+          de entregar galerías, necesitas una tienda integrada, automatizaciones
+          de venta y un ecosistema orientado a fotógrafos que venden copias,
+          álbumes o productos. Si no necesitas esas herramientas, estás pagando de más.
+        </p>
+      </div>
+      <div class="fair-card reveal" style="--d:.16s">
+        <h3>Pixieset</h3>
+        <p>
+          Para fotógrafos que buscan una plataforma que combine galerías, web,
+          tienda, gestión de estudio y otras herramientas para tu negocio. Si tu negocio lo manejas con otras herramientas, también estás pagando de más.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="dark">
+  <div class="wrap narrow" style="max-width:820px">
+    <p class="eyebrow reveal">Preguntas frecuentes</p>
+    <h2 class="reveal" style="--d:.05s;color:#EDECE8">Las que <em>importan.</em></h2>
+
+    <div class="faq reveal" style="--d:.1s">
+      <details open>
+        <summary>¿Positiva es una alternativa a Pic-Time y Pixieset?</summary>
+        <p>Sí. Positiva es una plataforma muy económica para fotógrafos y videógrafos que necesitan
+        entregar fotos y vídeos, recibir selecciones y comentarios de clientes y presentar cada
+        proyecto con su propia marca. Además puedes habilitar una web publica para mostrar tus trabajos sin necesidad de crear una página web desde cero.</p>
+      </details>
+      <details>
+        <summary>¿Cómo funciona el almacenamiento de fotos y vídeos en Positiva?</summary>
+        <p>Cada plan incluye un espacio compartido. En Positiva Autor, por ejemplo, los 250 GB se pueden repartir libremente entre fotos y vídeos. En el caso de Positiva Studio tienes hasta 1TB de almacenamiento para todo tu material.</p>
+      </details>
+      <details>
+        <summary>¿Los clientes pueden seleccionar sus fotos y vídeos favoritos?</summary>
+        <p>Sí. Los clientes pueden marcar sus archivos favoritos y dejar comentarios directamente
+        en cada foto o vídeo.</p>
+      </details>
+      <details>
+        <summary>¿Positiva permite usar mi propia marca en las galerías?</summary>
+        <p>Sí. Las galerías de Positiva incluyen logo, colores y tipografía propios. El dominio
+        personalizado está disponible en el plan Estudio.</p>
+      </details>
+    </div>
   </div>
 </section>
 
