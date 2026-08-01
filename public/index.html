@@ -401,11 +401,11 @@ html:not(.js) .manifesto li strong::after{transform:scaleX(1)}
 
 .yes-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:0;
-  margin-top:var(--pv-s6);border-top:1px solid var(--pv-linea-sala);
+  margin-top:var(--pv-s6);border-top:1px solid var(--pv-linea);
 }
 @media(max-width:760px){.yes-grid{grid-template-columns:1fr}}
-.yes-item{padding:var(--pv-s6) var(--pv-s6) var(--pv-s6) 0;border-bottom:1px solid var(--pv-linea-sala);font-size:16px;line-height:1.7;color:#9C9B95}
-.yes-item strong{display:block;color:#EDECE8;font-weight:600;margin-bottom:var(--pv-s2)}
+.yes-item{padding:var(--pv-s6) var(--pv-s6) var(--pv-s6) 0;border-bottom:1px solid var(--pv-linea);font-size:16px;line-height:1.7;color:var(--pv-tinta-60)}
+.yes-item strong{display:block;color:var(--pv-tinta);font-weight:600;margin-bottom:var(--pv-s2)}
 
 /* ── precios ─────────────────────────────────────── */
 .founder{
@@ -562,9 +562,9 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <!-- ══ HERO · declaración tipográfica + tira de negativos ══ -->
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow hero-eyebrow">Envío de galerías privadas a clientes y recepción de comentarios · Para fotógrafos y videógrafos</p>
+    <p class="eyebrow hero-eyebrow">Para fotógrafos y videógrafos</p>
     <h1>
-      <span class="hl"><span style="--d:.05s">Galerías de fotos y vídeos</span></span>
+      <span class="hl"><span style="--d:.05s">Galerías privadas de fotos y vídeos</span></span>
       <span class="hl"><span style="--d:.13s">para clientes.</span></span>
       <span class="hl"><span style="--d:.21s">Con tu marca.</span></span>
       <span class="hl"><span style="--d:.29s"><em>Sin reenviar el enlace jamás.</em></span></span>
@@ -572,13 +572,12 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
     <div class="hero-foot">
       <div>
         <p class="lede">
-          Envía galerías privadas de fotografías y vídeos con tu marca. Tu cliente marca lo
-          que más le gusta y te lo comenta. El enlace es siempre el mismo, no
+          Tu cliente escoge lo que más le gusta y deja comentarios. El enlace es siempre el mismo, no
           se rompe, y tu galería no lleva el logo de nadie más.
         </p>
         <p class="hero-note">
-          Creado por un fotógrafo que se cansó de que WeTransfer<br>
-          caducara un martes y el cliente intentara abrir el enlace un miércoles.
+          Creado por un fotógrafo que se cansó de que el enlace de WeTransfer<br>
+          caducara un martes y el cliente intentara abrirlo un miércoles.
         </p>
       </div>
       <div class="cta-row">
@@ -604,11 +603,9 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
   <div class="wrap">
     <p class="eyebrow reveal"><span class="idx">01</span> Diseño</p>
     <div class="design-head">
-      <h2 class="reveal" style="--d:.05s">No te damos 30 plantillas.<br>Te damos una galería<br><em>bien diseñada.</em></h2>
+      <h2 class="reveal" style="--d:.05s">Te damos una galería<br><em>bien diseñada.</em></h2>
       <p class="lede reveal" style="--d:.15s">
-        Cada galería de Positiva sale con una dirección de arte pensada por un
-        fotógrafo, centrada en mostrar tu material de la mejor manera posible, tu
-        marca y nada más.
+        Cada galería de Positiva sale con una dirección de arte pensada por un fotógrafo, centrada en mostrar tu material de la mejor manera posible. Con tu marca y nada más.
       </p>
     </div>
   </div>
@@ -631,10 +628,9 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
   <div class="wrap">
     <div class="design-foot reveal">
       <p class="lede">
-        Distintos trabajos, distintos diseños — la foto siempre protagonista y
-        tu marca por delante. Sin plantillas que parchear.
+        Distintos trabajos, distintos diseños — Tus fotos siempre protagonistas y tu marca por delante.
       </p>
-      <p class="kicker">¿Menos opciones que otros? Sí. Ese es el trabajo que ya hicimos por ti.</p>
+      <p class="kicker">¿Abrumado por el diseño de tus galerias? Ese trabajo ya lo hicimos por ti.</p>
     </div>
   </div>
 </section>
@@ -643,54 +639,13 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <section id="galeria">
   <div class="wrap">
     <p class="eyebrow reveal"><span class="idx">02</span> Qué hace Positiva</p>
-    <h2 class="narrow reveal" style="--d:.05s">Tres cosas. Las tres<br>como <em>deberían ser.</em></h2>
-
-    <div style="margin-top:clamp(48px,6vw,80px)">
-      <div class="piece reveal">
-        <div class="num">01 · Entrega</div>
-        <h3>Tu galería.<br>Tu marca.</h3>
-        <p>
-          Tu trabajo está terminado: fotografías y vídeos listos para tus
-          clientes. Lo subes a Positiva y creas tu galería privada online con
-          tu logo, tus colores y tu tipografía. Fotos y vídeos consumen el
-          mismo saldo: un GB es un GB. Sin bolsas separadas ni límites
-          artificiales de horas de vídeo.
-        </p>
-      </div>
-      <div class="piece reveal" style="--d:.08s">
-        <div class="num">02 · Revisión</div>
-        <h3>Tu cliente revisa, selecciona<br>y comenta en un mismo lugar</h3>
-        <p>
-          Envías tu trabajo en una galería online y tu cliente selecciona sus
-          fotos o vídeos favoritos y deja comentarios directamente sobre cada
-          archivo. Tú recibes todo al momento, sin hojas de cálculo, capturas
-          de pantalla ni cadenas de emails interminables.
-        </p>
-      </div>
-      <div class="piece reveal" style="--d:.16s">
-        <div class="num">03 · Un solo enlace</div>
-        <h3>El mismo enlace,<br>de principio a fin.</h3>
-        <p>
-          De la primera prueba de color a la entrega final, tu cliente vuelve
-          siempre al mismo sitio. Nunca tienes que generar un nuevo enlace.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══ 03 · MANIFIESTO ══ -->
-<section class="dark">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="idx">03</span> Manifiesto</p>
-    <h2 class="reveal" style="color:#EDECE8">Lo que<br>encontrarás en Positiva:</h2>
+    <h2 class="narrow reveal" style="--d:.05s">Lo que te ofrece Positiva</h2>
 
     <div class="yes-grid">
-      <div class="yes-item reveal"><strong>Enlaces únicos que no se rompen</strong> Envía un enlace una sola vez. Si haces cambios a los archivos, el enlace se mantiene.</div>
-      <div class="yes-item reveal" style="--d:.08s"><strong>Una única galería</strong> Tu cliente revisa y aprueba tus fotografías y vídeos en un solo lugar, sin que tú tengas que perseguirlo.</div>
-      <div class="yes-item reveal" style="--d:.16s"><strong>Almacenamiento sin letra pequeña</strong> No pagues por un «ilimitado» que deja de serlo cuando creces. En Positiva, el precio se ajusta al almacenamiento real de tus galerías.</div>
-      <div class="yes-item reveal" style="--d:.24s"><strong>Tu marca y la de nadie más</strong> Añade tu logo, tus colores corporativos y tu tipografía a cada galería que compartas.</div>
+      <div class="yes-item reveal"><strong>Tu galería. Tu marca.</strong> Subes tu trabajo y creas una galería privada online con tu logo, tus colores y tu tipografía. Fotos y vídeo consumen el mismo saldo: un GB es un GB, sin bolsas separadas ni límites artificiales de horas de vídeo.</div>
+      <div class="yes-item reveal" style="--d:.08s"><strong>Tu cliente revisa, selecciona y comenta</strong> Elige sus fotos o vídeos favoritos y deja comentarios directamente sobre cada archivo. Tú lo recibes al momento, sin hojas de cálculo, capturas de pantalla ni cadenas de emails interminables.</div>
+      <div class="yes-item reveal" style="--d:.16s"><strong>El mismo enlace, de principio a fin</strong> De la primera prueba de color a la entrega final, tu cliente vuelve siempre al mismo sitio. Nunca tienes que generar un enlace nuevo.</div>
+      <div class="yes-item reveal" style="--d:.24s"><strong>Perfil público: tu web sin tener web</strong> Publica las galerías que quieras en una página propia, a modo de portfolio, con las fotos y los vídeos que elijas. El escaparate profesional que no tenías, con tu marca y sin montar ninguna web.</div>
     </div>
 
     <p class="lede reveal" style="margin-top:var(--pv-s7)">
@@ -706,7 +661,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <!-- ══ 04 · PRECIOS ══ -->
 <section id="precios">
   <div class="wrap">
-    <p class="eyebrow reveal"><span class="idx">04</span> Precios</p>
+    <p class="eyebrow reveal"><span class="idx">03</span> Precios</p>
     <h2 class="narrow reveal" style="--d:.05s">Sin ilimitado.<br>Porque es <em>mentira.</em></h2>
     <p class="lede reveal" style="--d:.1s;margin-top:var(--pv-s5)">
       El almacenamiento cuesta dinero real. Quien te dice «ilimitado», te lo está
@@ -729,6 +684,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
         <ul>
           <li>2 galerías activas</li>
           <li>Selección de favoritos por parte del cliente</li>
+          <li>Comentarios de cliente en fotografías.</li>
           <li>Caducan a los 30 días</li>
           <li class="off">Sin tu marca</li>
           <li class="off">Sin dominio propio</li>
@@ -744,7 +700,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
         <ul>
           <li>Galerías ilimitadas</li>
           <li>Tu logo, tus colores</li>
-          <li>Revisión con comentarios</li>
+          <li>Comentarios de cliente en fotografías y vídeo.</li>
           <li>Enlaces que no caducan</li>
           <li>Portfolio público</li>
         </ul>
@@ -776,7 +732,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <!-- ══ 05 · COMPARATIVA ══ -->
 <section style="padding-top:0">
   <div class="wrap">
-    <p class="eyebrow reveal"><span class="idx">05</span> Comparación honesta</p>
+    <p class="eyebrow reveal"><span class="idx">04</span> Comparación honesta</p>
     <h2 class="narrow reveal" style="--d:.05s">Paga menos,<br><em>con mas prestaciones.</em></h2>
 
     <div class="vs">
@@ -796,7 +752,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
     <p class="extra reveal" style="text-align:left;margin-top:var(--pv-s5)">
       Casi el doble de almacenamiento por menos de la mitad de precio. Y la selección,
       que en Pic-Time solo aparece a partir de su plan de 230 €, aquí está desde el primero.
-      <br>¿Quieres todos los números? <a href="/precios/" style="color:var(--pv-ambar)">Comparativa completa con Pic-Time y Pixieset →</a>
+      <br>¿Quieres todos los números? <a href="/positiva-vs-pictime-vs-pixieset/" style="color:var(--pv-ambar)">Comparativa completa con Pic-Time y Pixieset →</a>
     </p>
   </div>
 </section>
@@ -804,7 +760,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <!-- ══ 06 · FAQ ══ -->
 <section class="dark" id="faq">
   <div class="wrap narrow" style="max-width:820px">
-    <p class="eyebrow reveal"><span class="idx">06</span>Las que importan</p>
+    <p class="eyebrow reveal"><span class="idx">05</span>Las que importan</p>
     <h2 class="reveal" style="--d:.05s">Preguntas frecuentes.</h2>
 
     <div class="faq reveal" style="--d:.1s">
@@ -844,7 +800,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <section id="lista">
   <div class="wrap">
     <div class="capture reveal">
-      <p class="eyebrow" style="justify-content:center"><span class="idx">07</span> Lista de espera</p>
+      <p class="eyebrow" style="justify-content:center"><span class="idx">06</span> Lista de espera</p>
       <h2>Positiva está casi lista.</h2>
       <p class="lede">
         Estamos en fase Beta, puliendo los últimos detalles. Déjame tu email y te aviso el día que
@@ -871,7 +827,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
     </div>
     <div class="footer-meta">
       <span>Positiva · Valencia · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span></span>
-      <span><a href="/precios/">Comparativa de precios</a></span>
+      <span><a href="/precios/">Precios</a> · <a href="/positiva-vs-pictime-vs-pixieset/">Comparativa</a></span>
       <span><a href="#precios">Precios</a> · <a href="#faq">Preguntas</a> · <a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
     </div>
   </div>
