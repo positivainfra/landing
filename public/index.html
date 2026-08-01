@@ -407,6 +407,18 @@ html:not(.js) .manifesto li strong::after{transform:scaleX(1)}
 .yes-item{padding:var(--pv-s6) var(--pv-s6) var(--pv-s6) 0;border-bottom:1px solid var(--pv-linea);font-size:16px;line-height:1.7;color:var(--pv-tinta-60)}
 .yes-item strong{display:block;color:var(--pv-tinta);font-weight:600;margin-bottom:var(--pv-s2)}
 
+/* ── perfil público (sección oscura con mockups de navegador) ── */
+.perfiles-head{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--pv-s8);align-items:end}
+@media(max-width:880px){.perfiles-head{grid-template-columns:1fr;gap:var(--pv-s5)}}
+.perfiles-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,44px);margin-top:clamp(44px,6vw,80px)}
+@media(max-width:820px){.perfiles-grid{grid-template-columns:1fr;gap:var(--pv-s8)}}
+.perfil{margin:0;min-width:0}
+.perfil img{width:100%;height:auto;display:block;filter:drop-shadow(0 34px 60px rgba(0,0,0,.6))}
+.perfil figcaption{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5C5B56;margin-top:var(--pv-s4);display:flex;gap:var(--pv-s2) var(--pv-s3);align-items:baseline;flex-wrap:wrap;word-break:break-word}
+.perfil figcaption b{color:var(--pv-ambar);font-weight:700}
+.perfil:nth-child(2){transform:translateY(clamp(0px,4vw,56px))}
+@media(max-width:820px){.perfil:nth-child(2){transform:none}}
+
 /* ── precios ─────────────────────────────────────── */
 .founder{
   display:flex;align-items:baseline;gap:var(--pv-s4);flex-wrap:wrap;
@@ -658,10 +670,40 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
   </div>
 </section>
 
+<!-- ══ 03 · PERFIL PÚBLICO ══ -->
+<section class="dark" id="perfil">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="idx">03</span> Perfil público</p>
+    <div class="perfiles-head">
+      <h2 class="reveal" style="--d:.05s;color:#EDECE8">Tu web,<br><em>sin construir una web.</em></h2>
+      <p class="lede reveal" style="--d:.15s">
+        Ya tienes tus fotos y vídeos subidos a Positiva. Elige los que quieras y
+        aparecen en una página pública con tu nombre y tu marca — un portfolio
+        real, sin montar ningún sitio ni pagar otra herramienta.
+      </p>
+    </div>
+
+    <div class="perfiles-grid">
+      <figure class="perfil reveal">
+        <img src="/img/perfiles/perfil-rmq.png" alt="Perfil público de Rodrigo Márquez en Positiva: portfolio con pestañas Portfolio, Galerías y Vídeos" width="1400" height="932" loading="lazy" decoding="async">
+        <figcaption><b>Fotógrafo &amp; realizador</b> · rodrigomarquez.positiva.studio</figcaption>
+      </figure>
+      <figure class="perfil reveal" style="--d:.1s">
+        <img src="/img/perfiles/perfil-qws.png" alt="Perfil público de Quiero Wedding Studio en Positiva" width="1400" height="932" loading="lazy" decoding="async">
+        <figcaption><b>Estudio de boda</b> · quieroweddingstudio.positiva.studio</figcaption>
+      </figure>
+    </div>
+
+    <p class="kicker reveal" style="margin-top:clamp(48px,7vw,88px)">
+      Seleccionas. Se publica. Portfolio, galerías y vídeos, en tu dirección.
+    </p>
+  </div>
+</section>
+
 <!-- ══ 04 · PRECIOS ══ -->
 <section id="precios">
   <div class="wrap">
-    <p class="eyebrow reveal"><span class="idx">03</span> Precios</p>
+    <p class="eyebrow reveal"><span class="idx">04</span> Precios</p>
     <h2 class="narrow reveal" style="--d:.05s">Sin ilimitado.<br>Porque es <em>mentira.</em></h2>
     <p class="lede reveal" style="--d:.1s;margin-top:var(--pv-s5)">
       El almacenamiento cuesta dinero real. Quien te dice «ilimitado», te lo está
@@ -732,7 +774,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <!-- ══ 05 · COMPARATIVA ══ -->
 <section style="padding-top:0">
   <div class="wrap">
-    <p class="eyebrow reveal"><span class="idx">04</span> Comparación honesta</p>
+    <p class="eyebrow reveal"><span class="idx">05</span> Comparación honesta</p>
     <h2 class="narrow reveal" style="--d:.05s">Paga menos,<br><em>con más prestaciones.</em></h2>
 
     <div class="vs">
@@ -760,7 +802,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <!-- ══ 06 · FAQ ══ -->
 <section class="dark" id="faq">
   <div class="wrap narrow" style="max-width:820px">
-    <p class="eyebrow reveal"><span class="idx">05</span>Las que importan</p>
+    <p class="eyebrow reveal"><span class="idx">06</span>Las que importan</p>
     <h2 class="reveal" style="--d:.05s">Preguntas frecuentes.</h2>
 
     <div class="faq reveal" style="--d:.1s">
@@ -800,7 +842,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <section id="lista">
   <div class="wrap">
     <div class="capture reveal">
-      <p class="eyebrow" style="justify-content:center"><span class="idx">06</span> Lista de espera</p>
+      <p class="eyebrow" style="justify-content:center"><span class="idx">07</span> Lista de espera</p>
       <h2>Positiva está casi lista.</h2>
       <p class="lede">
         Estamos en fase Beta, puliendo los últimos detalles. Déjame tu email y te aviso el día que
