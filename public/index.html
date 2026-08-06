@@ -531,8 +531,10 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
   .mq-track{transform:none}
 }
 </style>
-<!-- Analítica · Umami autoalojado (cookieless, first-party). Sustituye el ID. -->
-<script defer src="https://analytics.labbo.studio/script.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<!-- Analítica · Umami autoalojado (tracker servido en /stats). -->
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<!-- Session replay de Umami (opcional; graba interacciones). Quítalo si no lo quieres. -->
+<script defer src="https://analytics.labbo.studio/recorder.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
 <script src="/js/analytics.js"></script>
 </head>
 <body>
