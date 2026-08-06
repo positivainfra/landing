@@ -144,6 +144,9 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea)}
 .footer-meta a:hover{color:var(--pv-tinta)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html.js .reveal{opacity:1;transform:none}}
 </style>
+<!-- Analítica · Umami autoalojado (cookieless, first-party). Sustituye el ID. -->
+<script defer src="https://analytics.labbo.studio/script.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script src="/js/analytics.js"></script>
 </head>
 <body>
 
@@ -160,7 +163,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea)}
     <div class="nav-links">
       <a href="/">Inicio</a>
     </div>
-    <a href="#lista" class="btn nav-cta">Regístrate</a>
+    <a href="#lista" class="btn nav-cta" data-ev="cta_register_click" data-ev-place="nav_comparativa">Regístrate</a>
   </div>
 </nav>
 
@@ -420,6 +423,7 @@ document.getElementById('wl').addEventListener('submit', async (e) => {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     msg.textContent = 'Ese email no parece válido. Revísalo.';
     msg.style.color = 'var(--pv-graso)';
+    track(Events.WAITLIST_INVALID_EMAIL, { source: 'comparativa' });
     return;
   }
   const btn = form.querySelector('button');
@@ -433,6 +437,7 @@ document.getElementById('wl').addEventListener('submit', async (e) => {
     if (!r.ok && r.status !== 409) throw new Error(String(r.status));
     msg.textContent = 'Apuntado. Te escribo el día que abra.';
     msg.style.color = 'var(--pv-ambar)';
+    track(Events.WAITLIST_SUBMITTED, { source: 'comparativa' });
     form.reset();
   } catch (_) {
     msg.textContent = 'No se ha podido guardar. Inténtalo de nuevo en un momento.';
