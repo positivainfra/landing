@@ -96,6 +96,18 @@ nav.scrolled .nav-inner{background:rgba(241,240,236,.82);backdrop-filter:blur(16
 .extra{font-family:var(--pv-mono);font-size:12px;color:var(--pv-tinta-60);text-align:center;margin-top:var(--pv-s6);letter-spacing:.04em;line-height:2}
 .extra a{color:var(--pv-ambar);text-decoration:none}
 
+/* captura / waitlist */
+.capture{background:var(--pv-sala);color:#EDECE8;border-radius:var(--pv-r-panel);padding:clamp(56px,8vw,104px) var(--pv-s7);text-align:center}
+.capture h2{color:#EDECE8;margin-bottom:var(--pv-s4)}
+.capture .lede{margin:0 auto;color:#9C9B95}
+.capture form{display:flex;gap:var(--pv-s2);max-width:480px;margin:var(--pv-s7) auto 0;flex-wrap:wrap}
+input[type=email]{flex:1;min-width:220px;font-family:var(--pv-sans);font-size:16px;padding:14px 18px;background:var(--pv-sala-2);border:1px solid var(--pv-linea-sala);border-radius:var(--pv-r-input);color:#EDECE8}
+input[type=email]::placeholder{color:#5C5B56}
+input[type=email]:focus{outline:2px solid var(--pv-ambar);outline-offset:1px;border-color:transparent}
+.capture form .btn{background:var(--pv-ambar);color:#fff;border:0;text-transform:uppercase;letter-spacing:.08em}
+.capture form .btn:hover{background:var(--pv-ambar-hover)}
+.capture small{display:block;margin-top:var(--pv-s5);font-family:var(--pv-mono);font-size:11px;letter-spacing:.08em;color:#5C5B56;text-transform:uppercase}
+
 /* footer */
 footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);margin-top:clamp(64px,9vw,120px)}
 .footer-meta{display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;font-size:14px;color:var(--pv-tinta-30)}
@@ -125,7 +137,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
       <a href="/">Inicio</a>
       <a href="/positiva-vs-pictime-vs-pixieset/">Comparativa</a>
     </div>
-    <a href="/#lista" class="btn nav-cta" data-ev="cta_register_click" data-ev-place="nav_precios">Regístrate</a>
+    <a href="#lista" class="btn nav-cta" data-ev="cta_register_click" data-ev-place="nav_precios">Regístrate</a>
   </div>
 </nav>
 
@@ -200,6 +212,25 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
   </div>
 </section>
 
+<!-- ══ CAPTURA / WAITLIST ══ -->
+<section id="lista" style="padding-top:0">
+  <div class="wrap">
+    <div class="capture reveal">
+      <p class="eyebrow" style="justify-content:center">Lista de espera</p>
+      <h2 style="font-family:var(--pv-display);font-weight:300;font-size:clamp(30px,4vw,54px)">Estos precios,<br><em>solo al principio.</em></h2>
+      <p class="lede">
+        Estamos en fase Beta, puliendo los últimos detalles. Déjame tu email y te aviso el día que
+        puedas entrar — con la tarifa fundador, no con otra.
+      </p>
+      <form id="wl" novalidate>
+        <input type="email" name="email" placeholder="nombre@tuestudio.com" required aria-label="Tu email">
+        <button type="submit" class="btn">Avísame</button>
+      </form>
+      <small id="msg">Sin newsletter. Un email, el día que abra.</small>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap footer-meta">
     <span>Positiva · Valencia · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span></span>
@@ -219,6 +250,38 @@ document.documentElement.classList.add('js');
   const onScroll = () => { const on = window.scrollY > 12; if (on !== last) { nav.classList.toggle('scrolled', on); last = on; } };
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 })();
+/* Lista de espera → /api/waitlist (mismo Worker que el resto). */
+document.getElementById('wl').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const email = form.email.value.trim();
+  const msg = document.getElementById('msg');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    msg.textContent = 'Ese email no parece válido. Revísalo.';
+    msg.style.color = 'var(--pv-graso)';
+    track(Events.WAITLIST_INVALID_EMAIL, { source: 'precios' });
+    return;
+  }
+  const btn = form.querySelector('button');
+  btn.disabled = true;
+  try {
+    const r = await fetch('/api/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, source: 'precios' }),
+    });
+    if (!r.ok && r.status !== 409) throw new Error(String(r.status));
+    msg.textContent = 'Apuntado. Te escribo el día que abra.';
+    msg.style.color = 'var(--pv-ambar)';
+    track(Events.WAITLIST_SUBMITTED, { source: 'precios' });
+    form.reset();
+  } catch (_) {
+    msg.textContent = 'No se ha podido guardar. Inténtalo de nuevo en un momento.';
+    msg.style.color = 'var(--pv-graso)';
+  } finally {
+    btn.disabled = false;
+  }
+});
 </script>
 </body>
 </html>
