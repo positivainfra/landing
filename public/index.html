@@ -207,7 +207,12 @@ body.menu-locked{overflow:hidden}
   padding-top:120px;gap:clamp(40px,6vh,72px);
 }
 .hero-eyebrow{margin-bottom:var(--pv-s6)}
-.hero h1{font-size:clamp(40px,6vw,88px)}
+/* Hero (solo aquí): la frase grande es un párrafo emocional con el look del
+   antiguo H1; el H1 conserva la keyword SEO pero con estilo de lede algo mayor.
+   No afecta a ningún otro h1/p de la página. */
+.hero .hero-display{font-family:var(--pv-display);font-weight:300;letter-spacing:-.02em;line-height:1.04;font-size:clamp(40px,6vw,88px)}
+.hero .hero-display em{font-style:italic}
+.hero h1{font-family:var(--pv-sans);font-weight:400;letter-spacing:0;line-height:1.5;font-size:clamp(19px,1.9vw,24px);color:var(--pv-tinta-60);max-width:62ch;margin-top:var(--pv-s5)}
 /* líneas del titular: máscara + entrada escalonada al cargar */
 .hl{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
 .hl>span{display:block;transform:translateY(112%);transition:transform 1.1s var(--pv-ease-out);transition-delay:var(--d,0s)}
@@ -580,11 +585,11 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow hero-eyebrow">Para fotógrafos y videógrafos</p>
-    <h1>
-      <span class="hl"><span style="--d:.05s">Galerías privadas de fotos y vídeos para clientes.</span></span>
-      <span class="hl"><span style="--d:.21s">Con tu marca.</span></span>
-      <span class="hl"><span style="--d:.29s"><em>Sin reenviar el enlace jamás.</em></span></span>
-    </h1>
+    <p class="hero-display">
+      <span class="hl"><span style="--d:.05s">Entrega tu trabajo</span></span>
+      <span class="hl"><span style="--d:.17s"><em>como merece ser visto.</em></span></span>
+    </p>
+    <h1>Galerías privadas de fotos y vídeos para clientes. Con tu marca. Sin reenviar el enlace jamás.</h1>
     <div class="hero-foot">
       <div>
         <p class="lede">
