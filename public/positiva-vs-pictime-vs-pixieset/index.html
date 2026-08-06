@@ -94,6 +94,14 @@ th,td{padding:16px 18px;text-align:left;vertical-align:top;border-bottom:1px sol
 thead th{font-family:var(--pv-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C9B95;border-bottom:1px solid var(--pv-linea-sala)}
 tbody th{font-weight:600;color:#EDECE8;white-space:nowrap}
 td{color:#9C9B95}
+/* Primera columna (la característica) congelada: el scroll horizontal lo hacen
+   los datos, así siempre ves qué estás comparando. En desktop la tabla cabe y
+   sticky no hace nada; solo actúa cuando hay scroll (móvil). */
+thead th:first-child,tbody th{position:sticky;left:0;z-index:2;background:var(--pv-sala);border-right:1px solid var(--pv-linea-sala)}
+thead th:first-child{z-index:3}
+@media(max-width:760px){
+  tbody th,thead th:first-child{white-space:normal;min-width:148px;max-width:190px}
+}
 col.pos{background:rgba(201,138,43,.07)}
 thead th.pos{color:var(--pv-ambar)}
 td.pos{color:#EDECE8}
