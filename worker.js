@@ -98,6 +98,13 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === '/api/waitlist') return handleWaitlist(request, env);
+    // Página fusionada en /galerias/ (el asset ya no existe; el Worker corre y redirige).
+    if (url.pathname === '/agencias' || url.pathname.startsWith('/agencias/')) {
+      return Response.redirect(url.origin + '/productoras/', 301);
+    }
+    if (url.pathname === '/diseno-de-galerias' || url.pathname.startsWith('/diseno-de-galerias/')) {
+      return Response.redirect(url.origin + '/galerias/#diseno', 301);
+    }
     // Cualquier otra ruta: la sirve la capa de assets (incluye su 404).
     return env.ASSETS.fetch(request);
   },

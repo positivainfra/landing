@@ -23,6 +23,23 @@ schema.sql         →  DDL de la tabla waitlist (para la instancia Supabase NUE
 _serve.mjs         →  servidor estático solo para pruebas locales (no se despliega)
 ```
 
+## Cabecera y pie comunes (nav + footer)
+
+La navegación y el pie viven en **`partials/`** y se propagan a todas las
+páginas con marcadores `<!-- pv:nav -->` / `<!-- pv:footer -->`:
+
+```bash
+npm run stamp        # re-estampa partials/ en las páginas listadas en scripts/stamp.mjs
+```
+
+- Edita `partials/chrome-nav.html` o `partials/chrome-footer.html`, nunca el
+  bloque estampado dentro de las páginas (se sobrescribe).
+- Página nueva: añade ambos marcadores a su HTML y su ruta a `PAGES` en
+  `scripts/stamp.mjs`.
+- `/soporte/` queda fuera del stamp (tiene su propio flujo).
+- El footer es el mapa del sitio: toda página pública nueva debe enlazarse ahí
+  (y añadirse a `sitemap.xml`).
+
 ## Rendimiento
 
 - **Cero peticiones a dominios externos.** Fuentes e imágenes auto-alojadas.

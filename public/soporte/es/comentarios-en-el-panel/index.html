@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo leer y responder los comentarios de tu cliente · Soporte de Positiva</title>
+<meta name="description" content="El paso Comentarios reúne todo lo que ha escrito tu cliente en una galería de revisión, y es donde respondes, resuelves y eliminas cada hilo.">
+<meta property="og:title" content="Cómo leer y responder los comentarios de tu cliente · Soporte de Positiva">
+<meta property="og:description" content="El paso Comentarios reúne todo lo que ha escrito tu cliente en una galería de revisión, y es donde respondes, resuelves y eliminas cada hilo.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://positiva.studio/soporte/es/comentarios-en-el-panel/">
+<meta property="og:image" content="https://positiva.studio/assets/og.png">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#F1F0EC">
+<link rel="canonical" href="https://positiva.studio/soporte/es/comentarios-en-el-panel/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/soporte/soporte.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Cómo leer y responder los comentarios de tu cliente","description":"El paso Comentarios reúne todo lo que ha escrito tu cliente en una galería de revisión, y es donde respondes, resuelves y eliminas cada hilo.","inLanguage":"es","dateModified":"24 de agosto de 2026","publisher":{"@type":"Organization","name":"Positiva","url":"https://positiva.studio"},"mainEntityOfPage":"https://positiva.studio/soporte/es/comentarios-en-el-panel/"}</script>
+</head>
+<body class="pagina-articulo">
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<!-- pv:nav -->
+<!-- ════════════════════════════════════════════════════════════════
+     CABECERA COMÚN · fuente única: partials/chrome-nav.html
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarla a todas
+     las páginas. No edites el bloque pv:nav de las páginas a mano.
+     Autocontenida: CSS + markup + JS (las satélite no traen menú móvil).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="nav">
+/* Base de la cápsula (idéntica a la de siempre; aquí para que exista en TODAS las páginas) */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:14px clamp(14px,3vw,40px)}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--pv-s5);
+  max-width:1280px;margin:0 auto;padding:10px 12px 10px clamp(18px,2.4vw,28px);
+  border:1px solid transparent;border-radius:var(--pv-r-pill);
+  transition:background .4s var(--pv-ease),border-color .4s var(--pv-ease),box-shadow .4s var(--pv-ease);
+}
+nav.scrolled .nav-inner{
+  background:rgba(241,240,236,.82);
+  backdrop-filter:blur(16px) saturate(1.4);
+  -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  border-color:var(--pv-linea);
+  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);
+}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--pv-tinta)}
+.logo svg{height:27px;width:auto;display:block;flex:none}
+.logo-word{
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;font-size:14px;
+  letter-spacing:.22em;text-transform:uppercase;line-height:1;
+}
+.logo-word b{color:var(--pv-ambar)}
+.nav-links{display:flex;align-items:center;gap:var(--pv-s6)}
+.nav-links a,.nav-drop-btn{
+  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
+  display:inline-flex;align-items:center;line-height:1;
+}
+.nav-links a:hover,.nav-drop-btn:hover{color:var(--pv-tinta)}
+.nav-right{display:flex;align-items:center;gap:var(--pv-s4)}
+.nav-login{
+  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
+}
+.nav-login:hover{color:var(--pv-tinta)}
+.nav-cta{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
+.nav-cta:hover{background:var(--pv-ambar-hover);color:#fff;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
+
+/* Desplegables: mismo lenguaje que la cápsula (papel translúcido + línea + blur) */
+.nav-drop{position:relative;display:flex;align-items:center}
+.nav-drop-btn{background:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:7px;padding:0}
+.nav-drop-btn::after{
+  content:"";width:5px;height:5px;flex:none;margin-top:-3px;
+  border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg);transition:transform .25s var(--pv-ease);
+}
+.nav-drop:hover .nav-drop-btn::after,.nav-drop.open .nav-drop-btn::after{transform:rotate(225deg);margin-top:3px}
+.nav-drop-menu{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  padding-top:14px;min-width:240px;
+  opacity:0;visibility:hidden;transition:opacity .25s var(--pv-ease),visibility 0s linear .25s;
+}
+.nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu,.nav-drop.open .nav-drop-menu{
+  opacity:1;visibility:visible;transition:opacity .25s var(--pv-ease),visibility 0s linear 0s;
+}
+.nav-drop-card{
+  background:rgba(241,240,236,.94);
+  backdrop-filter:blur(16px) saturate(1.4);
+  -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);
+  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);
+  padding:10px;display:flex;flex-direction:column;
+}
+.nav-drop-card a{
+  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:#4A4943;text-decoration:none;
+  padding:10px 14px;border-radius:6px;white-space:nowrap;transition:color .18s,background .18s;
+}
+.nav-drop-card a:hover{color:var(--pv-tinta);background:rgba(23,22,20,.05)}
+.nav-drop-card .drop-grupo{
+  font-family:var(--pv-mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--pv-tinta-30);
+  margin-top:6px;padding:12px 14px 4px;border-top:1px solid var(--pv-linea);
+}
+.nav-drop-card a.sub{padding-left:26px}
+/* Sobre hero oscuro la cápsula aclara sus enlaces, pero el panel del desplegable
+   sigue siendo papel: sus enlaces mantienen tinta siempre. */
+body.hero-oscuro nav:not(.scrolled) .nav-drop .nav-drop-card a{color:#4A4943}
+body.hero-oscuro nav:not(.scrolled) .nav-drop .nav-drop-card a:hover{color:var(--pv-tinta)}
+
+/* Burger (solo móvil) */
+.nav-burger{
+  display:none;position:relative;width:44px;height:44px;flex:none;
+  background:var(--pv-tinta);border:0;border-radius:var(--pv-r-pill);cursor:pointer;
+}
+.nav-burger span{
+  position:absolute;left:13px;right:13px;height:2px;background:var(--pv-papel);
+  transition:transform .35s var(--pv-ease),top .35s var(--pv-ease);
+}
+.nav-burger span:first-child{top:18px}
+.nav-burger span:last-child{top:24px}
+.nav-burger[aria-expanded="true"] span:first-child{top:21px;transform:rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:last-child{top:21px;transform:rotate(-45deg)}
+html:not(.js) .nav-burger{display:none!important}
+
+/* Menú móvil a pantalla completa */
+body.menu-locked{overflow:hidden}
+body.menu-locked .logo{color:#EDECE8}
+body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.menu{
+  position:fixed;inset:0;z-index:55;background:var(--pv-sala);color:#EDECE8;
+  display:flex;flex-direction:column;justify-content:center;padding:0 clamp(24px,7vw,56px);
+  opacity:0;visibility:hidden;
+  transition:opacity .45s var(--pv-ease),visibility 0s linear .45s;
+}
+.menu.open{opacity:1;visibility:visible;transition:opacity .45s var(--pv-ease),visibility 0s linear 0s}
+.menu a.big{
+  font-family:var(--pv-display);font-weight:300;font-size:clamp(34px,9.5vw,58px);
+  line-height:1.28;color:#EDECE8;text-decoration:none;letter-spacing:-.02em;
+  display:flex;align-items:baseline;gap:var(--pv-s4);
+  opacity:0;transform:translateY(22px);
+  transition:opacity .5s var(--pv-ease-out),transform .5s var(--pv-ease-out);
+  transition-delay:var(--d,0s);
+}
+.menu.open a.big{opacity:1;transform:none}
+.menu a.big em{font-style:normal;font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--pv-ambar)}
+.menu a.big:hover{color:var(--pv-ambar)}
+.menu-groups{
+  margin-top:var(--pv-s6);display:flex;gap:var(--pv-s8);flex-wrap:wrap;
+  opacity:0;transform:translateY(18px);
+  transition:opacity .5s var(--pv-ease-out) .3s,transform .5s var(--pv-ease-out) .3s;
+}
+.menu.open .menu-groups{opacity:1;transform:none}
+.menu-groups h3{
+  font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:#5C5B56;margin:0 0 var(--pv-s2);
+}
+.menu-groups a{
+  display:block;font-family:var(--pv-sans);font-size:15px;color:#9C9B95;
+  text-decoration:none;padding:3px 0;transition:color .18s;
+}
+.menu-groups a:hover{color:#EDECE8}
+.menu-meta{
+  margin-top:var(--pv-s6);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea-sala);
+  font-family:var(--pv-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5C5B56;
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+}
+.menu-meta a{color:#9C9B95;text-decoration:none}
+
+@media(max-width:1020px){
+  nav .nav-links,nav .nav-login,nav .nav-cta{display:none}
+  .nav-burger{display:block}
+}
+</style>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Positiva">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      <span class="logo-word">Positiva<b>.</b></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Galerías</button>
+        <div class="nav-drop-menu">
+          <div class="nav-drop-card">
+            <a href="/galerias/">Entrega tu trabajo</a>
+            <p class="drop-grupo">Optimiza la revisión</p>
+            <a class="sub" href="/revision-video/">Vídeo</a>
+            <a class="sub" href="/revision-foto/">Foto</a>
+          </div>
+        </div>
+      </div>
+      <a href="/portfolio/">Portfolio público</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Casos de uso</button>
+        <div class="nav-drop-menu">
+          <div class="nav-drop-card">
+            <a href="/freelance/">Freelance</a>
+            <a href="/bodas/">Reportaje de bodas</a>
+            <a href="/productoras/">Productoras de vídeo</a>
+          </div>
+        </div>
+      </div>
+      <a href="/precios/">Precios</a>
+      <a href="/soporte/">Soporte</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://app.positiva.studio" class="nav-login" data-ev="login_click" data-ev-place="nav">Entrar</a>
+      <a href="/#lista" class="btn nav-cta" data-ev="cta_register_click" data-ev-place="nav">Regístrate</a>
+      <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="menu" id="menu">
+  <a class="big" href="/" style="--d:.05s"><em>01</em> Inicio</a>
+  <a class="big" href="/galerias/" style="--d:.1s"><em>02</em> Galerías</a>
+  <a class="big" href="/portfolio/" style="--d:.15s"><em>03</em> Portfolio público</a>
+  <a class="big" href="/precios/" style="--d:.2s"><em>04</em> Precios</a>
+  <a class="big" href="/soporte/" style="--d:.25s"><em>05</em> Soporte</a>
+  <a class="big" href="/#lista" style="--d:.3s"><em>06</em> Regístrate</a>
+  <div class="menu-groups">
+    <div>
+      <h3>Galerías</h3>
+      <a href="/galerias/">Entrega tu trabajo</a>
+      <a href="/revision-video/">Revisión de vídeo</a>
+      <a href="/revision-foto/">Revisión de foto</a>
+    </div>
+    <div>
+      <h3>Casos de uso</h3>
+      <a href="/freelance/">Freelance</a>
+      <a href="/bodas/">Reportaje de bodas</a>
+      <a href="/productoras/">Productoras de vídeo</a>
+    </div>
+  </div>
+  <div class="menu-meta">
+    <span>Positiva · Hecha en España</span>
+    <a href="https://app.positiva.studio">Entrar en tu panel</a>
+    <a href="mailto:hola@positiva.studio">hola@positiva.studio</a>
+  </div>
+</div>
+
+<script>
+/* Chrome común: scrolled + burger + desplegables. Guardado para no doblar
+   listeners si una página conserva JS antiguo de nav. */
+(() => {
+  if (window.__pvChrome) return; window.__pvChrome = true;
+  const nav = document.getElementById('nav');
+  let last = -1;
+  const onScroll = () => {
+    const on = window.scrollY > 12;
+    if (on !== last) { nav.classList.toggle('scrolled', on); last = on; }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  const setMenu = (open) => {
+    menu.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    document.body.classList.toggle('menu-locked', open);
+  };
+  burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+  /* Desplegables: hover/focus por CSS; el click alterna .open (táctil y accesibilidad) */
+  document.querySelectorAll('.nav-drop').forEach(drop => {
+    const btn = drop.querySelector('.nav-drop-btn');
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = !drop.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nav-drop-btn').setAttribute('aria-expanded','false'); });
+      drop.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nav-drop-btn').setAttribute('aria-expanded','false'); });
+  });
+})();
+</script>
+<!-- /pv:nav -->
+
+<main id="contenido">
+
+<div class="wrap doc">
+  <aside class="rail">
+    <a class="rail-volver" href="/soporte/es/"><span aria-hidden="true">←</span> Todo el soporte</a>
+    <form class="busca busca-mini" role="search" data-busca>
+  <label class="sr" for="q">Buscar en el soporte</label>
+  <div class="busca-campo">
+    <svg class="busca-lupa" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.8 12.8 17 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <input id="q" type="search" role="combobox" aria-expanded="false" aria-controls="busca-panel" aria-autocomplete="list"
+           placeholder="Buscar…" autocomplete="off" spellcheck="false">
+    <kbd class="busca-tecla" aria-hidden="true">/</kbd>
+  </div>
+  <div class="busca-panel" id="busca-panel" hidden></div>
+</form>
+    <div class="rail-seccion">
+      <p class="eyebrow"><span class="idx">05</span> Revisión y comentarios</p>
+      <ul class="rail-lista"><li><a href="/soporte/es/como-funciona-la-revision/">Qué es una galería de revisión y cómo funciona</a></li><li><span aria-current="page">Cómo leer y responder los comentarios de tu cliente</span></li><li><a href="/soporte/es/quien-ve-los-comentarios/">Revisión colaborativa e individual: quién ve cada comentario</a></li><li><a href="/soporte/es/rondas-de-revision/">Las rondas de revisión</a></li><li><a href="/soporte/es/favoritas-del-cliente/">Las favoritas de tu cliente y cómo exportarlas</a></li><li><a href="/soporte/es/importar-favoritas-en-lightroom/">Cómo llevar las favoritas de tu cliente a Lightroom Classic</a></li><li><a href="/soporte/es/etiquetar-favoritas-en-finder/">Cómo etiquetar en Finder las favoritas de tu cliente</a></li><li><a href="/soporte/es/exportar-marcadores-video/">Cómo exportar los marcadores a DaVinci Resolve o Final Cut</a></li></ul>
+    </div>
+  </aside>
+
+  <article class="art">
+    <nav class="miga" aria-label="Migas de pan">
+      <a href="/soporte/es/">Soporte</a> <span aria-hidden="true">·</span>
+      <a href="/soporte/es/#revision">Revisión y comentarios</a>
+    </nav>
+    
+    <h1>Cómo leer y responder los comentarios de tu cliente</h1>
+    <p class="lede">El paso Comentarios reúne todo lo que ha escrito tu cliente en una galería de revisión, y es donde respondes, resuelves y eliminas cada hilo.</p>
+    
+    <nav class="sumario" aria-label="En esta página"><b>En esta página</b><ol><li><a href="#antes-de-empezar">Antes de empezar</a></li><li><a href="#donde-se-hace">Dónde se hace</a></li><li><a href="#pasos">Pasos</a></li><li><a href="#resultado">Resultado</a></li><li><a href="#que-ves-tu-y-que-ven-tus-revisores">Qué ves tú y qué ven tus revisores</a></li><li><a href="#comentarios-anclados-a-una-fotografia-que-has-sustituido">Comentarios anclados a una fotografía que has sustituido</a></li><li><a href="#como-te-enteras-de-que-hay-comentarios-nuevos">Cómo te enteras de que hay comentarios nuevos</a></li><li><a href="#problemas-frecuentes">Problemas frecuentes</a></li></ol></nav>
+    <div class="prosa">
+<p>Al terminar este proceso habrás leído todo el feedback de una galería de revisión y habrás contestado a los hilos que lo requieran, sin salir del panel y sin cruzar un solo correo con tu cliente.</p>
+<h2 id="antes-de-empezar">Antes de empezar</h2>
+<ul><li>La galería tiene que ser de <strong>revisión</strong>. El paso <strong>Comentarios</strong> existe únicamente en ese tipo de galería: en una galería de entrega no aparece. Consulta <a href="/soporte/es/entrega-o-revision/">Dos tipos de galería: Entrega y Revisión</a>.</li><li>Los hilos los abre tu cliente. Tú no puedes abrir un comentario nuevo desde ningún sitio, ni en el panel ni en el visor: el paso <strong>Comentarios</strong> sirve para responder, resolver y eliminar.</li><li>Tu cliente asigna la prioridad de cada comentario al escribirlo. Ese valor no se edita desde el panel.</li></ul>
+<aside class="nota nota-plan"><b>Los comentarios de vídeo requieren el plan Autor o el plan Estudio</b><p>Si tu plan no incluye la revisión de vídeo, los comentarios anclados al código de tiempo no se muestran en el paso <strong>Comentarios</strong>: en su lugar aparece un aviso de plan. Los comentarios sobre fotografías y sobre la galería entera se leen y se responden en los tres planes.</p></aside>
+<h2 id="donde-se-hace">Dónde se hace</h2>
+<p>Panel → <strong>Galerías</strong> → la galería → paso <strong>Comentarios</strong>.</p>
+<h2 id="pasos">Pasos</h2>
+<ol><li><strong>Accede al paso Comentarios de la galería.</strong> La lista llega ordenada por prioridad y, dentro de cada prioridad, por fecha, de modo que lo más urgente queda arriba.</li><li><strong>Lee la ficha del hilo.</strong> Cada hilo indica quién lo escribió —su dirección de correo, la que verificó al entrar—, cuándo lo escribió, qué prioridad le asignó (<strong>Urgente</strong>, <strong>Alto</strong>, <strong>Normal</strong> o <strong>Bajo</strong>), de qué ronda procede si la galería tiene rondas activadas, y si está resuelto.</li><li><strong>Comprueba a qué está anclado el comentario.</strong> Un hilo puede apuntar a una fotografía, mediante un punto sobre la imagen; a un instante de un vídeo, mediante un código de tiempo; o a la galería entera.</li><li><strong>Pulsa «Responder» para contestar.</strong> La conversación tiene un solo nivel: todas las respuestas cuelgan de la raíz del hilo, nunca de otra respuesta.</li><li><strong>Resuelve el hilo cuando hayas atendido lo que pedía.</strong> El estado de resolución queda visible en la ficha del hilo, junto al resto de sus datos.</li><li><strong>Elimina el hilo solo si no procede conservarlo.</strong> Un hilo resuelto permanece en la lista con esa marca; uno eliminado deja de estar disponible.</li></ol>
+<h2 id="resultado">Resultado</h2>
+<p>Cada respuesta queda publicada dentro del hilo, en la galería, donde la ven todos los revisores con independencia del modo de visibilidad que hayas elegido. Los hilos que has resuelto conservan esa marca, de modo que en la siguiente visita distingues de un vistazo lo pendiente de lo atendido.</p>
+<p>Responder es posible <strong>siempre</strong>, aunque la ronda esté cerrada o se hayan agotado las rondas de la galería. Lo que se cierra es la entrada de comentarios nuevos, no la conversación sobre los que ya existen. Consulta <a href="/soporte/es/rondas-de-revision/">Las rondas de revisión</a>.</p>
+<h2 id="que-ves-tu-y-que-ven-tus-revisores">Qué ves tú y qué ven tus revisores</h2>
+<p>Sea cual sea el modo de visibilidad de la galería, en el panel ves <strong>todos</strong> los comentarios de <strong>todos</strong> los revisores. El modo <strong>«Individual»</strong> afecta a lo que los revisores ven entre sí, no a lo que ves tú. Consulta <a href="/soporte/es/quien-ve-los-comentarios/">Revisión colaborativa e individual: quién ve cada comentario</a>.</p>
+<h2 id="comentarios-anclados-a-una-fotografia-que-has-sustituido">Comentarios anclados a una fotografía que has sustituido</h2>
+<p>Un comentario anclado a una fotografía queda anclado a la versión que había cuando se escribió. Si más adelante subes una versión corregida, el comentario sigue apuntando a la versión antigua.</p>
+<aside class="nota nota-aviso"><b>Al purgar la versión antigua desaparece el punto sobre la imagen</b><p>El texto del comentario se conserva íntegro. Lo que se pierde es la marca sobre la fotografía, el punto que señalaba a qué se refería. El comportamiento es deliberado: preferimos ocultar la marca a mostrarla señalando una imagen que ya no existe. Consulta <a href="/soporte/es/versiones-antiguas/">Versiones antiguas: qué son y cómo liberar su espacio</a>.</p></aside>
+<h2 id="como-te-enteras-de-que-hay-comentarios-nuevos">Cómo te enteras de que hay comentarios nuevos</h2>
+<p>Positiva te avisa por correo mediante un resumen agrupado. No se envía un mensaje por cada comentario: si tu cliente escribe catorce comentarios en una tarde, recibes un aviso con los catorce, no catorce avisos.</p>
+<h2 id="problemas-frecuentes">Problemas frecuentes</h2>
+<ul><li><strong>«No se pudieron cargar los comentarios»</strong>. El paso no ha podido recuperar la lista. Recarga la página.</li><li><strong>«No se pudo enviar la respuesta.»</strong> Tu respuesta no ha salido. El texto permanece en el cuadro de escritura: vuelve a pulsar <strong>«Responder»</strong>.</li></ul>
+<p>Los dos mensajes corresponden a fallos de envío, no de permisos: ni el hilo se ha cerrado ni has perdido el acceso a la galería.</p>
+    </div>
+    <p class="sello">Revisado contra la versión en producción el 24 de agosto de 2026.</p>
+    <section class="ayuda">
+      <h2 id="sigue-sin-resolverse">¿Sigue sin resolverse?</h2>
+      <p>Si este artículo no responde a tu caso, escríbenos. Respondemos todas las consultas en un plazo de 24 a 48 horas.</p>
+      <p><a class="btn btn-primario" href="mailto:hola@positiva.studio?subject=Soporte%20%C2%B7%20C%C3%B3mo%20leer%20y%20responder%20los%20comentarios%20de%20tu%20cliente">Escribir a hola@positiva.studio</a></p>
+    </section>
+    <section class="relacionados">
+      <h2 id="seguir-leyendo">Seguir leyendo</h2>
+      <ul><li><a href="/soporte/es/como-funciona-la-revision/"><b>Qué es una galería de revisión y cómo funciona</b><span>Una galería de revisión permite que tu cliente comente el material antes de la entrega final, y tú lees y respondes esos comentarios desde tu panel.</span></a></li><li><a href="/soporte/es/quien-ve-los-comentarios/"><b>Revisión colaborativa e individual: quién ve cada comentario</b><span>El modo de visibilidad de una galería de revisión decide si cada revisor lee los comentarios de los demás o solo los suyos y los tuyos.</span></a></li><li><a href="/soporte/es/versiones-antiguas/"><b>Versiones antiguas: qué son y cómo liberar su espacio</b><span>Cada sustitución archiva la fotografía anterior, esa copia ocupa tu almacenamiento y se libera con «Purgar versiones», salvo si tiene comentarios abiertos.</span></a></li><li><a href="/soporte/es/rondas-de-revision/"><b>Las rondas de revisión</b><span>Las rondas limitan el feedback de una galería a un número fijo de tandas, y tú decides cuándo se cierra cada una y cuándo se abre la siguiente.</span></a></li></ul>
+    </section>
+  </article>
+</div>
+</main>
+
+<!-- pv:footer -->
+<!-- ════════════════════════════════════════════════════════════════
+     PIE COMÚN · fuente única: partials/chrome-footer.html
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
+     las páginas. Sirve de mapa del sitio: cada página pública real
+     debe estar enlazada aquí (SEO + LLMs leen esto).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="footer">
+footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
+.footcols{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pv-s6);
+  margin-bottom:var(--pv-s8);
+}
+.footcols h3{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-tinta-60);margin:0 0 var(--pv-s3);
+}
+.footcols a{
+  display:block;font-family:var(--pv-sans);font-size:14px;color:var(--pv-tinta-60);
+  text-decoration:none;padding:4px 0;transition:color .18s;
+}
+.footcols a:hover{color:var(--pv-tinta)}
+.footer-word{
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(15px,3.9vw,58px);line-height:1;color:var(--pv-tinta);
+  white-space:nowrap;
+}
+.footer-word svg{height:.92em;width:auto;flex:none}
+.footer-word span{color:var(--pv-ambar)}
+.footer-meta{
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
+  font-size:14px;color:var(--pv-tinta-30);
+}
+.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
+.footer-meta a:hover{color:var(--pv-tinta)}
+@media(max-width:760px){
+  .footcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--pv-s5) var(--pv-s4)}
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <h3>Galerías</h3>
+        <a href="/galerias/">Entrega tu trabajo</a>
+        <a href="/revision-video/">Revisión de vídeo</a>
+        <a href="/revision-foto/">Revisión de foto</a>
+        <a href="/portfolio/">Portfolio público</a>
+        <a href="/precios/">Precios</a>
+        <a href="/#faq">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <h3>Casos de uso</h3>
+        <a href="/freelance/">Freelance</a>
+        <a href="/bodas/">Reportaje de bodas</a>
+        <a href="/productoras/">Productoras de vídeo</a>
+      </div>
+      <div>
+        <h3>Comparativas</h3>
+        <a href="/positiva-vs-pictime-vs-pixieset/">vs Pic-Time · Pixieset</a>
+        <a href="/positiva-vs-dropbox/">vs Dropbox</a>
+        <a href="/positiva-vs-google-drive/">vs Google Drive</a>
+        <a href="/positiva-vs-wetransfer/">vs WeTransfer</a>
+      </div>
+      <div>
+        <h3>Recursos</h3>
+        <a href="/soporte/">Centro de soporte</a>
+        <a href="/novedades/">Novedades</a>
+        <a href="https://app.positiva.studio">Entrar en tu panel</a>
+        <a href="/#lista">Regístrate</a>
+        <a href="mailto:hola@positiva.studio">Contacto</a>
+        <!-- pv:legal — descomenta cuando existan las páginas:
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/terminos/">Términos</a>
+        -->
+      </div>
+    </div>
+    <div class="footer-word">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
+    <div class="footer-meta">
+      <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Hecha en España · Se gestiona, se mejora y se factura desde Europa</span>
+      <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+    </div>
+  </div>
+</footer>
+<!-- /pv:footer -->
+
+<script>
+/* La cabecera y el pie traen su propio JS desde los parciales (cápsula al
+   bajar, menú móvil y desplegables). Aquí solo va lo que es del soporte. */
+document.documentElement.classList.add('js');
+
+(() => {
+  /* Marca «Soporte» como sección activa en el menú común, sin tocar el parcial. */
+  for (const a of document.querySelectorAll('#nav .nav-links a, .menu a')) {
+    const href = a.getAttribute('href') || '';
+    if (href === '/soporte/' || href.startsWith('/soporte/')) a.setAttribute('aria-current', 'page');
+  }
+})();
+
+(() => {
+  /* ── Buscador ────────────────────────────────────────────────────────────
+   * Busca en el TEXTO COMPLETO de los artículos, no solo en los títulos: quien
+   * teclea «RAW» o «Cuarto oscuro» está buscando una frase que vive dentro de
+   * un artículo, no el nombre de ninguno.
+   *
+   * El índice (buscador.json) se descarga la primera vez que alguien toca el
+   * campo, no al cargar la página: quien viene a leer un artículo concreto no
+   * paga por una búsqueda que no va a hacer.
+   */
+  const form = document.querySelector('[data-busca]');
+  if (!form) return;
+
+  const campo = form.querySelector('input');
+  const panel = form.querySelector('.busca-panel');
+  const IDIOMA = document.documentElement.lang || 'es';
+
+  const limpia = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const escapaHtml = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  let indice = null;
+  let cargando = null;
+  let resultados = [];
+  let foco = -1;
+
+  const cargar = () => {
+    if (indice) return Promise.resolve(indice);
+    if (!cargando) {
+      cargando = fetch(`/soporte/${IDIOMA}/buscador.json`)
+        .then((r) => r.json())
+        .then((d) => {
+          indice = d.map((a) => ({ ...a, _t: limpia(a.titulo), _d: limpia(a.descripcion), _c: limpia(a.texto) }));
+          return indice;
+        })
+        .catch(() => { indice = []; return indice; });
+    }
+    return cargando;
+  };
+
+  // Todos los términos tienen que aparecer en algún sitio. El título pesa seis
+  // veces más que el cuerpo: buscar «momentos» tiene que devolver el artículo
+  // que se llama así, no los nueve que lo mencionan de pasada.
+  function buscar(q) {
+    const terminos = limpia(q).split(/\s+/).filter((t) => t.length > 1);
+    if (!terminos.length || !indice) return [];
+    const salida = [];
+    for (const art of indice) {
+      let puntos = 0;
+      let todos = true;
+      for (const t of terminos) {
+        let p = 0;
+        if (art._t.includes(t)) p += art._t.startsWith(t) ? 16 : 12;
+        if (art._d.includes(t)) p += 5;
+        if (art._c.includes(t)) p += 2;
+        if (!p) { todos = false; break; }
+        puntos += p;
+      }
+      if (todos) salida.push({ art, puntos, termino: terminos[0] });
+    }
+    return salida.sort((a, b) => b.puntos - a.puntos).slice(0, 7);
+  }
+
+  // Un trozo del artículo alrededor de la primera aparición, con el término
+  // marcado. Sin esto, siete resultados con su descripción genérica obligan a
+  // abrirlos uno a uno para ver cuál era.
+  function fragmento(art, termino) {
+    const donde = art._c.indexOf(termino);
+    if (donde === -1) return escapaHtml(art.descripcion);
+    // Se recorta por palabra entera: un fragmento que empieza en «…egador no
+    // sabe» hace dudar de si la página está rota.
+    let desde = Math.max(0, donde - 60);
+    if (desde > 0) {
+      const espacio = art.texto.indexOf(' ', desde);
+      if (espacio !== -1 && espacio < donde) desde = espacio + 1;
+    }
+    let trozo = art.texto.slice(desde, desde + 190);
+    const corte = trozo.lastIndexOf(' ');
+    const cortado = desde + 190 < art.texto.length;
+    if (cortado && corte > 120) trozo = trozo.slice(0, corte);
+    const re = new RegExp(`(${termino.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return (desde > 0 ? '…' : '') + escapaHtml(trozo).replace(re, '<mark>$1</mark>') + (cortado ? '…' : '');
+  }
+
+  function pintar(q) {
+    if (!q.trim()) { cerrar(); return; }
+    resultados = buscar(q);
+    foco = -1;
+    if (!resultados.length) {
+      panel.innerHTML = `<p class="busca-nada">Ningún artículo coincide con <b>${escapaHtml(q)}</b>.
+        Escribe a <a href="mailto:hola@positiva.studio">hola@positiva.studio</a> indicando tu caso:
+        respondemos en un plazo de 24 a 48 horas.</p>`;
+    } else {
+      panel.innerHTML = `<ul role="listbox" aria-label="Resultados">${resultados.map((r, i) => `
+        <li role="option" id="res-${i}" aria-selected="false">
+          <a href="/soporte/${IDIOMA}/${r.art.slug}/">
+            <b>${escapaHtml(r.art.titulo)}</b>
+            <span class="busca-cat">${escapaHtml(r.art.categoria)}</span>
+            <span class="busca-frag">${fragmento(r.art, r.termino)}</span>
+          </a>
+        </li>`).join('')}</ul>`;
+    }
+    panel.hidden = false;
+    campo.setAttribute('aria-expanded', 'true');
+  }
+
+  function cerrar() {
+    panel.hidden = true;
+    panel.innerHTML = '';
+    campo.setAttribute('aria-expanded', 'false');
+    campo.removeAttribute('aria-activedescendant');
+    foco = -1;
+  }
+
+  function mover(paso) {
+    const items = [...panel.querySelectorAll('li')];
+    if (!items.length) return;
+    if (foco >= 0) items[foco].setAttribute('aria-selected', 'false');
+    foco = (foco + paso + items.length + 1) % (items.length + 1) - 1;
+    if (foco < 0) { campo.removeAttribute('aria-activedescendant'); return; }
+    items[foco].setAttribute('aria-selected', 'true');
+    items[foco].scrollIntoView({ block: 'nearest' });
+    campo.setAttribute('aria-activedescendant', `res-${foco}`);
+  }
+
+  campo.addEventListener('focus', cargar, { once: true });
+  campo.addEventListener('input', () => { cargar().then(() => pintar(campo.value)); });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const primero = panel.querySelector('a');
+    if (primero) primero.click();
+  });
+
+  campo.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); mover(1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); mover(-1); }
+    else if (e.key === 'Enter' && foco >= 0) { e.preventDefault(); panel.querySelectorAll('a')[foco].click(); }
+    else if (e.key === 'Escape') { cerrar(); campo.blur(); }
+  });
+
+  document.addEventListener('click', (e) => { if (!form.contains(e.target)) cerrar(); });
+
+  // «/» desde cualquier punto de la página lleva el cursor al buscador.
+  document.addEventListener('keydown', (e) => {
+    const editando = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable;
+    if (editando) return;
+    if (e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+      e.preventDefault();
+      // preventScroll + scrollIntoView propio: el foco a secas deja el campo
+      // justo debajo de la barra fija, medio tapado.
+      campo.focus({ preventScroll: true });
+      campo.select();
+      const caja = form.getBoundingClientRect();
+      if (caja.top < 110 || caja.bottom > window.innerHeight - 80) {
+        form.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+    }
+  });
+})();
+
+(() => {
+  /* ── Raíl del índice: marca la categoría que estás mirando ─────────────── */
+  const enlaces = [...document.querySelectorAll('.rail-cats a')];
+  if (!enlaces.length || !('IntersectionObserver' in window)) return;
+  const porId = new Map(enlaces.map((a) => [a.getAttribute('href').slice(1), a]));
+  const vistos = new Set();
+  const io = new IntersectionObserver((entradas) => {
+    for (const e of entradas) e.isIntersecting ? vistos.add(e.target.id) : vistos.delete(e.target.id);
+    const activo = enlaces.find((a) => vistos.has(a.getAttribute('href').slice(1)));
+    for (const a of enlaces) a.classList.toggle('activo', a === activo);
+  }, { rootMargin: '-96px 0px -70% 0px' });
+  for (const id of porId.keys()) {
+    const sec = document.getElementById(id);
+    if (sec) io.observe(sec);
+  }
+})();
+</script>
+
+<!-- Analítica · Umami autoalojado (mismo tracker que el resto de la web). -->
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+/* POSITIVA · Soporte
+ *
+ * Hoja única para el índice y los ~50 artículos. Los tokens --pv-* son los
+ * mismos del resto de la web (la landing no tiene build que los comparta, así
+ * que se copian a mano; si cambian allí, cambian aquí).
+ *
+ * Tres decisiones de fondo, para que nadie las deshaga sin querer:
+ *
+ * 1. El índice NO es una rejilla de tarjetas. Cincuenta tarjetas idénticas son
+ *    cincuenta decisiones con el mismo peso. Es un índice ordenado: secciones
+ *    numeradas (como las de la portada) y filas separadas por filete, más
+ *    cerca del índice de un libro que del panel de ayuda de nadie.
+ * 2. Las dos vías de entrada usan la regla de color del producto: el fotógrafo
+ *    trabaja sobre --pv-papel (el panel) y quien revisa, sobre --pv-sala (el
+ *    cuarto oscuro). El color significa algo, no decora.
+ * 3. Sin animaciones de aparición al bajar. Quien llega al soporte tiene un
+ *    problema; no se le hace esperar a que el contenido se desvanezca dentro.
+ */
+
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:300 400;font-display:swap;src:url(/fonts/playfair.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:300 400;font-display:swap;src:url(/fonts/playfair-italic.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/ibmplexmono-400.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/spacemono-700.woff2) format('woff2')}
+
+:root{
+  --pv-papel:#F1F0EC; --pv-luz:#FFFFFF; --pv-bandeja:#E6E5E0; --pv-sala:#0E0E0D; --pv-sala-2:#1A1A18;
+  --pv-tinta:#171614; --pv-tinta-60:#6E6D67; --pv-tinta-30:#A9A8A2;
+  --pv-linea:#D6D5CF; --pv-linea-sala:#2A2A27;
+  --pv-ambar:#C98A2B; --pv-ambar-luz:#F5E9D2; --pv-ambar-hover:#B37A24; --pv-graso:#E0402A;
+  --pv-display:'Playfair Display',Georgia,serif;
+  --pv-sans:'Instrument Sans',-apple-system,system-ui,sans-serif;
+  --pv-mono:'IBM Plex Mono',ui-monospace,monospace;
+  --pv-r-panel:10px; --pv-r-input:8px; --pv-r-pill:999px;
+  --pv-s1:4px;--pv-s2:8px;--pv-s3:12px;--pv-s4:16px;--pv-s5:24px;--pv-s6:32px;--pv-s7:48px;--pv-s8:64px;
+  --pv-ease:cubic-bezier(.4,0,.2,1);
+  --barra:96px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--barra)}
+body{background:var(--pv-papel);color:var(--pv-tinta);font-family:var(--pv-sans);font-size:18px;line-height:1.67;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mono{font-family:var(--pv-mono);font-size:12px}
+.saltar{position:absolute;left:-9999px;top:0;z-index:100;background:var(--pv-ambar);color:#fff;padding:12px 20px;border-radius:0 0 var(--pv-r-panel) 0}
+.saltar:focus{left:0}
+::selection{background:var(--pv-ambar-luz);color:var(--pv-tinta)}
+
+h1,h2,h3{font-family:var(--pv-display);font-weight:300;letter-spacing:-.02em;line-height:1.06}
+h1{font-size:clamp(36px,4.6vw,62px)}
+h1 em,h2 em{font-style:italic}
+.lede{font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:var(--pv-tinta-60);max-width:62ch}
+
+/* Rótulo de sección con su número y el filete que lo cierra: el mismo device
+   que numera las secciones de la portada. */
+.eyebrow{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-ambar);
+  display:flex;align-items:center;gap:var(--pv-s4);margin-bottom:var(--pv-s4);
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:currentColor;opacity:.28}
+.eyebrow .idx{color:var(--pv-tinta-30)}
+.dark .eyebrow .idx{color:#5C5B56}
+
+/* ── Cromo común ─────────────────────────────────────────────────────────
+ * La cabecera y el pie los aportan partials/chrome-nav.html y
+ * chrome-footer.html, que traen su propio CSS. Aquí solo queda lo que esos
+ * parciales NO definen y lo que hace falta para convivir con ellos.
+ *
+ * El parcial estiliza la cabecera con el selector de elemento "nav", y el
+ * soporte tiene además migas de pan, sumarios y raíles que también son <nav>.
+ * Sin la línea de abajo, la miga de pan de cada artículo se va a la esquina
+ * superior izquierda, encima del logotipo.
+ */
+main nav{position:static;padding:0;z-index:auto}
+
+/* El parcial no marca la sección activa: la plantilla del soporte pone
+   aria-current sobre el enlace de Soporte y aquí se le da color. */
+#nav .nav-links a[aria-current],
+#nav .nav-drop-card a[aria-current],
+.menu a[aria-current]{color:var(--pv-ambar)}
+
+/* El parcial define .nav-cta pero no el .btn genérico, que usan los botones
+   de contacto del cuerpo. */
+.btn{display:inline-flex;align-items:center;gap:var(--pv-s2);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--pv-r-pill);border:1px solid transparent;cursor:pointer;text-decoration:none;transition:all .22s var(--pv-ease)}
+.btn-primario{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar)}
+.btn-primario:hover{background:var(--pv-ambar-hover);color:#fff;transform:translateY(-1px)}
+
+/* ── Portada del soporte ─────────────────────────────────────────────────── */
+.portada{padding-top:clamp(126px,17vh,180px);padding-bottom:clamp(40px,5vw,64px)}
+.portada-caja{max-width:900px}
+.portada h1{margin-bottom:var(--pv-s5)}
+.portada .lede{margin-bottom:var(--pv-s7)}
+
+/* ── Buscador ────────────────────────────────────────────────────────────── */
+.busca{position:relative;max-width:620px;scroll-margin-top:calc(var(--barra) + 24px)}
+.busca-campo{display:flex;align-items:center;gap:var(--pv-s3);background:var(--pv-luz);border:1px solid var(--pv-linea);border-radius:var(--pv-r-pill);padding:0 var(--pv-s3) 0 var(--pv-s5);transition:border-color .2s,box-shadow .2s}
+.busca-campo:focus-within{border-color:var(--pv-ambar);box-shadow:0 0 0 4px var(--pv-ambar-luz)}
+.busca-lupa{width:20px;height:20px;flex:none;color:var(--pv-tinta-30)}
+.busca-campo:focus-within .busca-lupa{color:var(--pv-ambar)}
+.busca input{flex:1;min-width:0;border:0;outline:0;background:none;font-family:var(--pv-sans);font-size:17px;color:var(--pv-tinta);padding:17px 0}
+.busca input::placeholder{color:var(--pv-tinta-30)}
+.busca input::-webkit-search-cancel-button{-webkit-appearance:none}
+.busca-tecla{font-family:var(--pv-mono);font-size:11px;font-weight:700;color:var(--pv-tinta-30);border:1px solid var(--pv-linea);border-radius:6px;padding:3px 9px;flex:none;background:var(--pv-papel)}
+.busca-campo:focus-within .busca-tecla{opacity:0}
+
+.busca-panel{position:absolute;top:calc(100% + 10px);left:0;right:0;z-index:50;background:var(--pv-luz);border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);box-shadow:0 30px 70px -30px rgba(23,22,20,.45);overflow:hidden;max-height:min(62vh,520px);overflow-y:auto}
+.busca-panel ul{list-style:none}
+.busca-panel li+li{border-top:1px solid var(--pv-linea)}
+.busca-panel a{display:block;padding:var(--pv-s4) var(--pv-s5);text-decoration:none;color:var(--pv-tinta)}
+.busca-panel li:hover a,.busca-panel li[aria-selected="true"] a{background:var(--pv-ambar-luz)}
+.busca-panel b{display:block;font-size:16px;font-weight:600;line-height:1.35}
+.busca-cat{display:block;font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-ambar);margin-top:3px}
+.busca-frag{display:block;font-size:14px;line-height:1.55;color:var(--pv-tinta-60);margin-top:6px}
+.busca-frag mark{background:none;color:var(--pv-tinta);font-weight:700;box-shadow:inset 0 -.5em 0 var(--pv-ambar-luz)}
+.busca-nada{padding:var(--pv-s5);font-size:15.5px;line-height:1.6;color:var(--pv-tinta-60)}
+.busca-nada a{color:var(--pv-ambar)}
+
+/* ── Las dos vías ────────────────────────────────────────────────────────── */
+.vias-banda{padding-bottom:clamp(56px,7vw,90px)}
+.vias{display:grid;grid-template-columns:1fr 1fr;gap:var(--pv-s4)}
+.via{border-radius:var(--pv-r-panel);padding:clamp(24px,3vw,36px);border:1px solid var(--pv-linea);display:flex;flex-direction:column}
+.via-papel{background:var(--pv-luz)}
+.via-sala{background:var(--pv-sala);border-color:var(--pv-sala);color:#EDECE8}
+.via-sala .eyebrow .idx{color:#5C5B56}
+.via-lede{font-size:16px;line-height:1.6;color:var(--pv-tinta-60);margin-bottom:var(--pv-s5);max-width:44ch}
+.via-sala .via-lede{color:#9C9B95}
+.via-lista{list-style:none;margin-top:auto}
+.via-lista li+li{margin-top:2px}
+.via-lista a{display:flex;align-items:baseline;justify-content:space-between;gap:var(--pv-s4);padding:11px 0;border-top:1px solid var(--pv-linea);font-size:16.5px;font-weight:600;line-height:1.4;text-decoration:none;color:var(--pv-tinta);transition:color .18s}
+.via-sala .via-lista a{border-top-color:var(--pv-linea-sala);color:#EDECE8}
+.via-lista a span{color:var(--pv-tinta-30);transition:transform .22s var(--pv-ease),color .18s}
+.via-lista a:hover{color:var(--pv-ambar)}
+.via-lista a:hover span{color:var(--pv-ambar);transform:translateX(4px)}
+
+/* ── El índice: raíl + secciones numeradas ───────────────────────────────── */
+.indice{display:grid;grid-template-columns:220px 1fr;gap:clamp(32px,5vw,72px);padding-bottom:clamp(64px,8vw,110px)}
+.rail{position:sticky;top:var(--barra);align-self:start;max-height:calc(100vh - var(--barra) - 24px);overflow-y:auto;padding-bottom:var(--pv-s5)}
+.rail-rotulo{font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pv-tinta-30);margin-bottom:var(--pv-s4)}
+.rail-cats{list-style:none}
+.rail-cats a{display:flex;gap:var(--pv-s3);padding:7px 0 7px var(--pv-s3);border-left:2px solid var(--pv-linea);font-size:14.5px;line-height:1.4;color:var(--pv-tinta-60);text-decoration:none;transition:color .18s,border-color .18s}
+.rail-cats a:hover{color:var(--pv-tinta);border-left-color:var(--pv-tinta-30)}
+.rail-cats a.activo{color:var(--pv-tinta);border-left-color:var(--pv-ambar);font-weight:600}
+.rail-cats .idx{font-family:var(--pv-mono);font-size:11px;font-weight:700;color:var(--pv-tinta-30);flex:none;padding-top:2px}
+.rail-cats a.activo .idx{color:var(--pv-ambar)}
+
+.cat+.cat{margin-top:clamp(48px,6vw,80px)}
+.cat-resumen{font-size:16px;color:var(--pv-tinta-60);margin:calc(var(--pv-s4) * -1 + 2px) 0 var(--pv-s5)}
+.filas{list-style:none;border-top:1px solid var(--pv-linea)}
+.filas a{
+  display:grid;grid-template-columns:1fr auto;column-gap:var(--pv-s5);
+  padding:var(--pv-s4) var(--pv-s4) var(--pv-s4) var(--pv-s3);
+  border-bottom:1px solid var(--pv-linea);text-decoration:none;color:var(--pv-tinta);
+  transition:background .18s var(--pv-ease),padding-left .22s var(--pv-ease);
+}
+.filas a:hover{background:var(--pv-luz);padding-left:var(--pv-s5)}
+.fila-t{font-size:17.5px;font-weight:600;line-height:1.35;display:flex;align-items:center;gap:var(--pv-s3);flex-wrap:wrap}
+.fila-d{grid-column:1;font-size:15px;line-height:1.55;color:var(--pv-tinta-60);margin-top:3px;max-width:68ch}
+.fila-v{grid-column:2;grid-row:1 / span 2;align-self:center;color:var(--pv-linea);font-size:19px;transition:color .18s,transform .22s var(--pv-ease)}
+.filas a:hover .fila-v{color:var(--pv-ambar);transform:translateX(4px)}
+.marca-revisor{font-family:var(--pv-mono);font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-ambar);background:var(--pv-ambar-luz);border-radius:var(--pv-r-pill);padding:3px 9px}
+
+/* ── Cierre oscuro ───────────────────────────────────────────────────────── */
+.dark{background:var(--pv-sala);color:#EDECE8}
+.dark .lede{color:#9C9B95}
+.cierre{padding:clamp(64px,8vw,110px) 0}
+.cierre-caja{max-width:760px}
+.cierre h2{font-size:clamp(30px,3.6vw,48px);margin-bottom:var(--pv-s5)}
+.cierre .lede{margin-bottom:var(--pv-s6)}
+
+/* ── Artículo: raíl fijo + columna de lectura ────────────────────────────── */
+.doc{display:grid;grid-template-columns:250px 1fr;gap:clamp(32px,5vw,80px);padding-top:clamp(110px,14vh,150px);padding-bottom:var(--pv-s8)}
+.rail-volver{display:inline-block;font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-tinta-60);text-decoration:none;margin-bottom:var(--pv-s4)}
+.rail-volver:hover{color:var(--pv-ambar)}
+.busca-mini{max-width:none;margin-bottom:var(--pv-s6)}
+.busca-mini .busca-campo{padding-left:var(--pv-s4);border-radius:var(--pv-r-input)}
+.busca-mini input{font-size:15px;padding:11px 0}
+.busca-mini .busca-lupa{width:17px;height:17px}
+.busca-mini .busca-tecla{display:none}
+.busca-mini .busca-panel{width:min(420px,86vw)}
+.rail-seccion .eyebrow{margin-bottom:var(--pv-s3)}
+.rail-lista{list-style:none}
+.rail-lista li{border-left:2px solid var(--pv-linea)}
+.rail-lista a,.rail-lista span{display:block;padding:7px 0 7px var(--pv-s3);font-size:14.5px;line-height:1.4;color:var(--pv-tinta-60);text-decoration:none}
+.rail-lista a:hover{color:var(--pv-tinta)}
+.rail-lista li:has(span){border-left-color:var(--pv-ambar)}
+.rail-lista span{color:var(--pv-tinta);font-weight:600}
+
+.art{max-width:760px;min-width:0}
+.miga{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-tinta-30);margin-bottom:var(--pv-s5)}
+.miga a{color:var(--pv-tinta-60);text-decoration:none}
+.miga a:hover{color:var(--pv-ambar)}
+.aud{display:inline-block;font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 11px;border-radius:var(--pv-r-pill);border:1px solid var(--pv-linea);color:var(--pv-tinta-60);background:var(--pv-luz)}
+.aud-revisor{border-color:var(--pv-ambar);color:var(--pv-ambar);background:var(--pv-ambar-luz)}
+.art .aud{margin-bottom:var(--pv-s4)}
+.art h1{font-size:clamp(32px,3.8vw,50px);margin-bottom:var(--pv-s4)}
+.art>.lede{margin-bottom:var(--pv-s6)}
+
+.sumario{border-top:1px solid var(--pv-linea);border-bottom:1px solid var(--pv-linea);padding:var(--pv-s4) 0;margin-bottom:var(--pv-s7)}
+.sumario b{display:block;font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pv-tinta-30);margin-bottom:var(--pv-s2)}
+.sumario ol{list-style:none;counter-reset:s;columns:2;column-gap:var(--pv-s6);font-size:15px;line-height:1.7}
+.sumario li{counter-increment:s;break-inside:avoid}
+.sumario li::before{content:counter(s,decimal-leading-zero);font-family:var(--pv-mono);font-size:11px;font-weight:700;color:var(--pv-tinta-30);margin-right:var(--pv-s2)}
+.sumario a{color:var(--pv-tinta);text-decoration:none}
+.sumario a:hover{color:var(--pv-ambar)}
+
+/* ── Prosa ───────────────────────────────────────────────────────────────── */
+.prosa{font-size:18px;line-height:1.75}
+.prosa>*+*{margin-top:var(--pv-s4)}
+.prosa h2{font-size:clamp(24px,2.4vw,31px);margin-top:var(--pv-s8);margin-bottom:var(--pv-s3)}
+.prosa h3{font-family:var(--pv-sans);font-weight:700;font-size:19px;letter-spacing:0;line-height:1.4;margin-top:var(--pv-s6);margin-bottom:var(--pv-s2)}
+.prosa h4{font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pv-tinta-60);margin-top:var(--pv-s5);margin-bottom:var(--pv-s2)}
+.prosa a{color:var(--pv-tinta);text-decoration:underline;text-decoration-color:var(--pv-ambar);text-underline-offset:3px;text-decoration-thickness:1.5px}
+.prosa a:hover{color:var(--pv-ambar)}
+.prosa ul,.prosa ol{padding-left:1.35em}
+.prosa li{margin-top:var(--pv-s2)}
+.prosa li>ul{margin-top:var(--pv-s2)}
+.prosa code{font-family:var(--pv-mono);font-size:.85em;background:var(--pv-bandeja);padding:2px 6px;border-radius:5px;white-space:nowrap}
+.prosa pre{background:var(--pv-sala);color:#EDECE8;border-radius:var(--pv-r-panel);padding:var(--pv-s4) var(--pv-s5);overflow-x:auto}
+.prosa pre code{background:none;padding:0;color:inherit;white-space:pre;font-size:14px}
+.prosa hr{border:0;border-top:1px solid var(--pv-linea);margin:var(--pv-s7) 0}
+.prosa blockquote{border-left:2px solid var(--pv-ambar);padding-left:var(--pv-s5);color:var(--pv-tinta-60);font-style:italic}
+.prosa blockquote p+p{margin-top:var(--pv-s3)}
+
+/* ── Capturas de pantalla ────────────────────────────────────────────────
+ * Se salen un poco de la columna de lectura hacia la derecha: una captura de
+ * una ventana del sistema al ancho del párrafo se lee mal, y centrarla del
+ * todo rompería la alineación izquierda de la que vive la página.
+ */
+.captura{margin-top:var(--pv-s6);margin-bottom:var(--pv-s6)}
+.captura img{display:block;width:100%;height:auto;border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);background:var(--pv-luz)}
+.captura figcaption{margin-top:var(--pv-s3);padding-left:var(--pv-s3);border-left:2px solid var(--pv-ambar);font-size:14.5px;line-height:1.55;color:var(--pv-tinta-60)}
+.captura figcaption strong{color:var(--pv-tinta);font-weight:600}
+/* Las capturas de diálogos del sistema son verticales: a ancho completo
+   quedarían enormes y empujarían fuera de pantalla el texto que las explica.
+   El generador les pone esta clase solo por su proporción. */
+.captura-estrecha img{max-width:340px}
+.captura-estrecha figcaption{max-width:52ch}
+
+.tabla-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);background:var(--pv-luz)}
+.prosa table{border-collapse:collapse;width:100%;font-size:15.5px;line-height:1.55}
+.prosa th,.prosa td{text-align:left;padding:11px var(--pv-s4);border-bottom:1px solid var(--pv-linea);vertical-align:top}
+.prosa th{font-family:var(--pv-mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pv-tinta-60);white-space:nowrap;background:var(--pv-bandeja)}
+.prosa tbody tr:last-child td{border-bottom:0}
+.prosa td code{white-space:nowrap}
+
+/* ── Avisos ──────────────────────────────────────────────────────────────── */
+.nota{border-radius:var(--pv-r-panel);padding:var(--pv-s4) var(--pv-s5);border:1px solid var(--pv-linea);background:var(--pv-luz);font-size:16.5px;line-height:1.65}
+.nota b{display:block;font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px;color:var(--pv-tinta-60)}
+.nota p+p,.nota ul,.nota ol{margin-top:var(--pv-s3)}
+.nota ul,.nota ol{padding-left:1.3em}
+.nota li+li{margin-top:var(--pv-s2)}
+.nota-aviso{background:#FDF3F1;border-color:#F0C6BD}
+.nota-aviso b{color:var(--pv-graso)}
+.nota-truco{background:var(--pv-ambar-luz);border-color:var(--pv-ambar)}
+.nota-truco b{color:var(--pv-ambar-hover)}
+.nota-plan{background:var(--pv-bandeja);border-color:var(--pv-linea)}
+.nota-obra{background:var(--pv-sala);border-color:var(--pv-sala);color:#DEDDD8}
+.nota-obra b{color:var(--pv-ambar)}
+.nota-obra a{color:#fff}
+.art>.nota-obra{margin-bottom:var(--pv-s6)}
+
+.sello{margin-top:var(--pv-s7);padding-top:var(--pv-s4);border-top:1px solid var(--pv-linea);font-family:var(--pv-mono);font-size:11.5px;letter-spacing:.06em;color:var(--pv-tinta-30)}
+
+/* ── Cierre del artículo ─────────────────────────────────────────────────── */
+.ayuda{margin-top:var(--pv-s8);padding:clamp(24px,3vw,36px);background:var(--pv-luz);border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel)}
+.ayuda h2{font-size:27px;margin-bottom:var(--pv-s3)}
+.ayuda p{font-size:16.5px;color:var(--pv-tinta-60)}
+.ayuda p+p{margin-top:var(--pv-s4)}
+.ayuda .btn{margin-top:var(--pv-s2)}
+
+.relacionados{margin-top:var(--pv-s7)}
+.relacionados h2{font-size:27px;margin-bottom:var(--pv-s4)}
+.relacionados ul{list-style:none;border-top:1px solid var(--pv-linea)}
+.relacionados a{display:block;padding:var(--pv-s4) var(--pv-s3);border-bottom:1px solid var(--pv-linea);text-decoration:none;color:var(--pv-tinta);transition:background .18s,padding-left .22s var(--pv-ease)}
+.relacionados a:hover{background:var(--pv-luz);padding-left:var(--pv-s5)}
+.relacionados b{display:block;font-size:16.5px;font-weight:600;line-height:1.35;margin-bottom:2px}
+.relacionados span{display:block;font-size:14.5px;line-height:1.5;color:var(--pv-tinta-60)}
+
+/* El pie lo aporta partials/chrome-footer.html con su propio CSS. Lo único
+   que se ajusta aquí es el aire entre el final del contenido y su filete. */
+main{padding-bottom:clamp(24px,4vw,48px)}
+
+/* ── Adaptación ──────────────────────────────────────────────────────────── */
+@media(max-width:1020px){
+  .indice,.doc{grid-template-columns:1fr}
+  .indice .rail{display:none}
+  .doc{padding-top:clamp(100px,13vh,140px)}
+  .doc .rail{position:static;max-height:none;overflow:visible;margin-bottom:var(--pv-s6)}
+  /* Abajo ya está «Seguir leyendo»: repetir aquí la lista de la sección
+     duplicaría la misma navegación dos veces en la misma pantalla. */
+  .rail-seccion{display:none}
+  .busca-mini{max-width:620px}
+  .busca-mini .busca-panel{width:100%}
+}
+@media(max-width:720px){
+  .vias{grid-template-columns:1fr}
+  .sumario ol{columns:1}
+}
+@media(max-width:640px){
+  body{font-size:17px}
+  /* El marcador largo del buscador se corta a media palabra en un teléfono;
+     y la tecla «/» no significa nada sin teclado físico. */
+  .busca-tecla{display:none}
+  .busca input::placeholder{font-size:15.5px}
+  .busca-campo{padding-left:var(--pv-s4);padding-right:var(--pv-s4)}
+  .prosa{font-size:17px}
+  .busca input{font-size:16px}
+  .fila-t{font-size:16.5px}
+  .fila-d{font-size:14.5px}
+  .filas a{grid-template-columns:1fr;padding-right:0}
+  .fila-v{display:none}
+  .filas a:hover{padding-left:var(--pv-s3)}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* Foco visible y coherente en todo lo que se puede tabular. */
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--pv-ambar);outline-offset:3px;border-radius:2px}

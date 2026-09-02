@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Positiva · Revisión de vídeo online con tu cliente</title>
+<meta name="description" content="Tu cliente comenta sobre el fotograma exacto, sin crear cuenta. Tú exportas los comentarios como marcadores a DaVinci Resolve o Final Cut Pro y corriges en tu timeline. Revisión de vídeo para videógrafos y filmmakers.">
+<meta property="og:title" content="Positiva · Revisión de vídeo online con tu cliente">
+<meta property="og:description" content="Tu cliente no habla en timecodes: comenta sobre el fotograma exacto y tú lo exportas como marcadores a DaVinci Resolve o Final Cut Pro.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://positiva.studio/revision-video/">
+<meta property="og:image" content="https://positiva.studio/assets/og.png">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#0E0E0D">
+<link rel="canonical" href="https://positiva.studio/revision-video/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:300 400;font-display:swap;src:url(/fonts/playfair.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:300 400;font-display:swap;src:url(/fonts/playfair-italic.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/ibmplexmono-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/ibmplexmono-700.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/spacemono-700.woff2) format('woff2')}
+:root{
+  --pv-papel:#F1F0EC; --pv-luz:#FFFFFF; --pv-bandeja:#E6E5E0; --pv-sala:#0E0E0D; --pv-sala-2:#1A1A18;
+  --pv-tinta:#171614; --pv-tinta-60:#6E6D67; --pv-tinta-30:#A9A8A2; --pv-linea:#D6D5CF; --pv-linea-sala:#2A2A27;
+  --pv-ambar:#C98A2B; --pv-ambar-luz:#F5E9D2; --pv-ambar-hover:#B37A24; --pv-ambar-ink:#8F5F15; --pv-graso:#E0402A;
+  --pv-display:'Playfair Display',Georgia,serif; --pv-sans:'Instrument Sans',-apple-system,system-ui,sans-serif;
+  --pv-mono:'IBM Plex Mono',ui-monospace,monospace;
+  --pv-r-panel:10px; --pv-r-input:8px; --pv-r-pill:999px;
+  --pv-s2:8px;--pv-s3:12px;--pv-s4:16px;--pv-s5:24px;--pv-s6:32px;--pv-s7:48px;--pv-s8:64px;
+  --pv-ease:cubic-bezier(.4,0,.2,1); --pv-ease-out:cubic-bezier(.19,1,.22,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--pv-papel);color:var(--pv-tinta);font-family:var(--pv-sans);font-size:18px;line-height:1.67;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.eslogan,h2,h3{font-family:var(--pv-display);font-weight:300;letter-spacing:-.02em;line-height:1.08}
+.eslogan{font-size:clamp(40px,5.6vw,80px);line-height:1.04}
+.eslogan em,h2 em{font-style:italic}
+h2{font-size:clamp(30px,4vw,54px)}
+.lede{font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:var(--pv-tinta-60);max-width:58ch}
+.eyebrow{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pv-ambar-ink);display:flex;align-items:center;gap:var(--pv-s4);margin-bottom:var(--pv-s6)}
+.eyebrow::after{content:"";flex:1;height:1px;background:currentColor;opacity:.28}
+.dark .eyebrow,.capture .eyebrow{color:var(--pv-ambar)}
+.eyebrow .idx{color:var(--pv-tinta-30)}
+section{padding:clamp(72px,9vw,120px) 0}
+html.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--pv-ease-out),transform .9s var(--pv-ease-out);transition-delay:var(--d,0s)}
+html.js .reveal.is-in{opacity:1;transform:none}
+.btn{display:inline-flex;align-items:center;gap:var(--pv-s2);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--pv-r-pill);border:1px solid transparent;cursor:pointer;text-decoration:none;transition:all .22s var(--pv-ease)}
+.btn-amber{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar);text-transform:uppercase;letter-spacing:.08em;font-weight:700;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
+.btn-amber:hover{background:var(--pv-ambar-hover);border-color:var(--pv-ambar-hover);transform:translateY(-1px)}
+.btn-ghost{color:var(--pv-tinta);border-color:var(--pv-linea)}
+.btn-ghost:hover{border-color:var(--pv-tinta)}
+
+/* secciones oscuras */
+.dark{background:var(--pv-sala);color:#EDECE8}
+.dark .lede{color:#9C9B95}
+.dark .eyebrow .idx{color:#5C5B56}
+.dark h2{color:#EDECE8}
+
+/* ── HERO a pantalla completa: sala de cine tipográfica.
+   Tres actos (ciclo 10 s): la nota de voz se escribe → una X roja la
+   tacha → el vídeo corre, se pausa y el comentario cae en el timeline
+   inferior, que ocupa todo el ancho como una barra de reproductor. ── */
+.heroV{
+  position:relative;min-height:100svh;background:var(--pv-sala);color:#EDECE8;
+  display:flex;flex-direction:column;overflow:clip;
+}
+.heroV::before{ /* respiración de luz de proyector */
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(120% 90% at 78% 30%,rgba(201,138,43,.07),transparent 60%),
+    radial-gradient(90% 70% at 15% 85%,rgba(237,236,232,.045),transparent 55%);
+}
+.heroV-inner{position:relative;z-index:2;padding-top:clamp(96px,12vh,136px);flex:1;display:flex;flex-direction:column;justify-content:center;width:100%}
+.heroV .eyebrow{color:var(--pv-ambar)}
+.heroV .eslogan{
+  font-size:clamp(46px,7vw,100px);line-height:1.02;color:#EDECE8;
+  letter-spacing:-.025em;margin:clamp(8px,1vw,16px) 0 clamp(28px,3.5vw,52px);
+}
+.heroV .eslogan em{font-style:italic;color:var(--pv-ambar)}
+.hl{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
+.hl>span{display:inline-block;transform:translateY(128%);animation:pv-linea-sube .9s var(--pv-ease-out) forwards;animation-delay:var(--d,0s)}
+@keyframes pv-linea-sube{to{transform:none}}
+.heroV-foot{display:grid;grid-template-columns:minmax(0,1.15fr) auto;gap:var(--pv-s5) var(--pv-s8);align-items:center}
+.heroV .lede{color:#9C9B95;font-size:clamp(16px,1.35vw,19px);max-width:52ch}
+.hero-cta{display:flex;gap:var(--pv-s3);flex-wrap:wrap;justify-self:end}
+.heroV .btn-ghost{color:#EDECE8;border-color:#3A3936}
+.heroV .btn-ghost:hover{border-color:#EDECE8}
+
+/* nav sobre el hero oscuro (hasta que aparece la cápsula al hacer scroll) */
+body.hero-oscuro nav:not(.scrolled) .logo{color:#EDECE8}
+body.hero-oscuro nav:not(.scrolled) .nav-links a,
+body.hero-oscuro nav:not(.scrolled) .nav-drop-btn,
+body.hero-oscuro nav:not(.scrolled) .nav-login{color:#B9B8B2}
+body.hero-oscuro nav:not(.scrolled) .nav-links a:hover,
+body.hero-oscuro nav:not(.scrolled) .nav-drop-btn:hover,
+body.hero-oscuro nav:not(.scrolled) .nav-login:hover{color:#EDECE8}
+body.hero-oscuro nav:not(.scrolled) .nav-burger{background:#EDECE8}
+body.hero-oscuro nav:not(.scrolled) .nav-burger span{background:var(--pv-sala)}
+
+/* ── acto 1 y 2 · la nota de voz: se escribe y se tacha ── */
+.escena{position:absolute;inset:0;z-index:3;pointer-events:none}
+.vig-nota{
+  position:absolute;left:56%;top:36%;
+  background:#E9E7E1;color:#25241F;border-radius:14px 14px 14px 4px;
+  padding:12px 16px 13px;max-width:min(84vw,560px);
+  box-shadow:0 20px 50px -18px rgba(0,0,0,.65);
+  opacity:0;transform:translateY(-10px);
+  animation:vignota 10s var(--pv-ease) infinite;
+}
+.vig-nota b{display:flex;align-items:center;gap:8px;font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6E6D67;margin-bottom:5px}
+.vig-wave{display:inline-flex;align-items:center;gap:2px}
+.vig-wave i{width:2px;border-radius:1px;background:#8A897F}
+.vig-wave i:nth-child(1){height:5px}.vig-wave i:nth-child(2){height:9px}.vig-wave i:nth-child(3){height:6px}
+.vig-wave i:nth-child(4){height:11px}.vig-wave i:nth-child(5){height:7px}.vig-wave i:nth-child(6){height:10px}
+.vig-wave i:nth-child(7){height:5px}
+.vig-typed{
+  display:block;font-family:var(--pv-mono);font-size:12.5px;line-height:1.5;white-space:nowrap;
+  overflow:hidden;width:0;
+  animation:vigtype 10s steps(49,end) infinite;
+}
+@keyframes vigtype{0%,4%{width:0}30%,100%{width:49ch}}
+@keyframes vignota{0%{opacity:0;transform:translateY(-10px)}3%,49%{opacity:1;transform:none}55%,100%{opacity:0;transform:translateY(-10px)}}
+/* la X roja que lo tacha todo */
+.vig-tacha{position:absolute;inset:-4px;pointer-events:none}
+.vig-tacha::before,.vig-tacha::after{
+  content:"";position:absolute;left:-2%;right:-2%;top:calc(50% - 1.5px);height:3px;
+  background:var(--pv-graso);border-radius:2px;transform-origin:center;
+}
+.vig-tacha::before{transform:rotate(8deg) scaleX(0);animation:vigtacha1 10s var(--pv-ease) infinite}
+.vig-tacha::after{transform:rotate(-8deg) scaleX(0);animation:vigtacha2 10s var(--pv-ease) infinite}
+@keyframes vigtacha1{0%,33%{transform:rotate(8deg) scaleX(0)}38%,100%{transform:rotate(8deg) scaleX(1)}}
+@keyframes vigtacha2{0%,37%{transform:rotate(-8deg) scaleX(0)}42%,100%{transform:rotate(-8deg) scaleX(1)}}
+
+/* ── acto 3 · el timeline a lo ancho de la pantalla ── */
+.heroV-bar{
+  position:relative;z-index:2;display:flex;align-items:center;gap:clamp(14px,2vw,24px);
+  padding:0 clamp(20px,4vw,56px) clamp(26px,4vh,44px);
+}
+.vig-ic{position:relative;width:13px;height:13px;flex:none}
+.vig-ic span{position:absolute;inset:0}
+.vig-ic .pausa{display:flex;justify-content:center;gap:3px;opacity:0;animation:vigic-pausa 10s steps(1) infinite}
+.vig-ic .pausa i{width:3.5px;background:#EDECE8;border-radius:1px}
+.vig-ic .play{animation:vigic-play 10s steps(1) infinite}
+.vig-ic .play::before{content:"";position:absolute;inset:0;background:#EDECE8;clip-path:polygon(18% 0,100% 50%,18% 100%)}
+@keyframes vigic-pausa{0%{opacity:0}55%{opacity:1}72%{opacity:0}100%{opacity:0}}
+@keyframes vigic-play{0%{opacity:1}55%{opacity:0}72%{opacity:1}100%{opacity:1}}
+.vig-line{position:relative;flex:1;height:3px;background:var(--pv-linea-sala);border-radius:2px}
+.vig-progress{position:absolute;inset:0 auto 0 0;width:0;background:var(--pv-ambar);border-radius:2px;animation:vigprog 10s var(--pv-ease) infinite}
+.vig-head{position:absolute;top:50%;left:0;width:11px;height:11px;margin:-5.5px 0 0 -5.5px;background:#EDECE8;border-radius:50%;animation:vighead 10s var(--pv-ease) infinite}
+.vig-pin{position:absolute;top:50%;left:58%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;background:var(--pv-ambar);border-radius:50%;opacity:0;transform:scale(.4);animation:vigpin 10s var(--pv-ease) infinite}
+@keyframes vigprog{0%,55%{width:0}72%,100%{width:58%}}
+@keyframes vighead{0%,55%{left:0}72%,100%{left:58%}}
+@keyframes vigpin{0%,74%{opacity:0;transform:scale(.4)}78%{opacity:1;transform:scale(1.35)}82%,100%{opacity:1;transform:scale(1)}}
+.vig-card{
+  position:absolute;left:58%;bottom:calc(100% + 16px);transform:translateX(-50%) translateY(10px) scale(.96);
+  display:inline-flex;align-items:baseline;gap:9px;white-space:nowrap;
+  font-family:var(--pv-mono);font-size:12.5px;letter-spacing:.04em;color:#EDECE8;
+  background:rgba(26,26,24,.94);border:1px solid #3A3936;border-radius:8px;
+  padding:10px 14px;opacity:0;
+  animation:vigcard 10s var(--pv-ease) infinite;
+}
+.vig-card b{color:var(--pv-ambar);font-weight:700}
+@keyframes vigcard{0%,76%{opacity:0;transform:translateX(-50%) translateY(10px) scale(.96)}82%,97%{opacity:1;transform:translateX(-50%)}100%{opacity:0;transform:translateX(-50%) translateY(10px) scale(.96)}}
+.vig-tc{font-family:var(--pv-mono);font-size:11px;letter-spacing:.08em;color:#5C5B56;flex:none}
+
+@media(max-width:940px){
+  .heroV .eslogan{font-size:clamp(44px,12.5vw,72px)}
+  .heroV-foot{grid-template-columns:1fr}
+  .hero-cta{justify-self:start}
+  .escena{position:relative;inset:auto;min-height:104px;width:100%}
+  .vig-nota{left:20px;right:20px;top:auto;bottom:10px;max-width:none}
+  .vig-typed{white-space:normal;width:auto;animation:none}
+  .vig-tc{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .hl>span{transform:none;animation:none}
+  .vig-nota,.vig-typed,.vig-tacha::before,.vig-tacha::after,.vig-progress,.vig-head,.vig-pin,.vig-card,.vig-ic .pausa,.vig-ic .play{animation:none}
+  .vig-nota{opacity:0}
+  .vig-progress{width:58%}.vig-head{left:58%}
+  .vig-pin{opacity:1;transform:none}
+  .vig-card{opacity:1;transform:translateX(-50%)}
+  .vig-ic .play{opacity:1}.vig-ic .pausa{opacity:0}
+}
+
+/* pasos */
+.head2{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--pv-s8);align-items:end}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px);margin-top:clamp(44px,6vw,72px)}
+.step{border-top:1px solid var(--pv-linea);padding-top:var(--pv-s5)}
+.step em{font-style:normal;font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pv-ambar-ink)}
+.step h3{font-size:clamp(21px,2vw,25px);font-weight:400;margin:var(--pv-s3) 0}
+.step p{color:var(--pv-tinta-60);font-size:16px;line-height:1.62}
+
+/* capturas de producto */
+.shot{margin:clamp(44px,6vw,80px) 0 0;min-width:0}
+.shot img,.shot video{width:100%;height:auto;display:block;border-radius:var(--pv-r-panel)}
+.dark .shot img,.dark .shot video{filter:drop-shadow(0 34px 60px rgba(0,0,0,.6))}
+.shot figcaption{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-tinta-30);margin-top:var(--pv-s4);display:flex;gap:var(--pv-s2) var(--pv-s3);align-items:baseline;flex-wrap:wrap}
+.dark .shot figcaption{color:#5C5B56}
+.shot figcaption b{color:var(--pv-ambar);font-weight:700}
+
+/* atajos de teclado */
+.keys{display:flex;gap:var(--pv-s5) var(--pv-s6);flex-wrap:wrap;margin-top:var(--pv-s7)}
+.key{display:inline-flex;align-items:center;gap:12px;font-family:var(--pv-mono);font-size:12px;letter-spacing:.06em;color:#9C9B95;text-transform:uppercase}
+.key kbd{font-family:var(--pv-mono);font-size:12px;font-weight:700;color:#EDECE8;background:var(--pv-sala-2);border:1px solid var(--pv-linea-sala);border-bottom-width:3px;border-radius:6px;padding:7px 11px;line-height:1}
+
+/* trio de mini-columnas (rondas) */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px);margin-top:clamp(44px,6vw,72px)}
+.trio h3{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pv-ambar);margin-bottom:var(--pv-s3)}
+.trio p{color:#9C9B95;font-size:16px;line-height:1.62}
+
+/* diseños de vídeo */
+.reel-frame{overflow:clip;border-radius:var(--pv-r-panel);background:#000;margin-top:clamp(44px,6vw,72px)}
+.reel-frame video{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+
+/* faq */
+details{border-top:1px solid var(--pv-linea)}
+details:last-of-type{border-bottom:1px solid var(--pv-linea)}
+summary{font-family:var(--pv-display);font-size:clamp(20px,2vw,24px);font-weight:400;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:var(--pv-s4);padding:var(--pv-s5) 0;transition:color .18s}
+summary:hover{color:var(--pv-ambar-hover)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--pv-ambar);font-family:var(--pv-sans);font-weight:400;flex:none;transition:transform .3s var(--pv-ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 var(--pv-s5);color:var(--pv-tinta-60);max-width:64ch}
+.faq-list{margin-top:clamp(36px,5vw,56px)}
+
+/* enlaces al soporte */
+.related{margin-top:clamp(44px,6vw,72px);display:grid;grid-template-columns:repeat(2,1fr);gap:var(--pv-s2) var(--pv-s7)}
+.related a{font-family:var(--pv-mono);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pv-tinta-60);text-decoration:none;padding:12px 0;border-top:1px solid var(--pv-linea);display:flex;justify-content:space-between;gap:var(--pv-s4);transition:color .18s}
+.related a::after{content:"→";color:var(--pv-ambar)}
+.related a:hover{color:var(--pv-tinta)}
+
+/* captura / waitlist */
+.capture{background:var(--pv-sala);color:#EDECE8;border-radius:var(--pv-r-panel);padding:clamp(56px,8vw,104px) var(--pv-s7);text-align:center}
+.capture h2{color:#EDECE8;margin-bottom:var(--pv-s4)}
+.capture .lede{margin:0 auto;color:#9C9B95}
+.capture form{display:flex;gap:var(--pv-s2);max-width:480px;margin:var(--pv-s7) auto 0;flex-wrap:wrap}
+input[type=email]{flex:1;min-width:220px;font-family:var(--pv-sans);font-size:16px;padding:14px 18px;background:var(--pv-sala-2);border:1px solid var(--pv-linea-sala);border-radius:var(--pv-r-input);color:#EDECE8}
+input[type=email]::placeholder{color:#5C5B56}
+input[type=email]:focus{outline:2px solid var(--pv-ambar);outline-offset:1px;border-color:transparent}
+.capture form .btn{background:var(--pv-ambar);color:#fff;border:0;text-transform:uppercase;letter-spacing:.08em}
+.capture form .btn:hover{background:var(--pv-ambar-hover)}
+.capture small{display:block;margin-top:var(--pv-s5);font-family:var(--pv-mono);font-size:11px;letter-spacing:.08em;color:#5C5B56;text-transform:uppercase}
+
+@media(max-width:900px){
+  .head2{grid-template-columns:1fr;gap:var(--pv-s5)}
+  .steps,.trio{grid-template-columns:1fr;gap:var(--pv-s6)}
+  .related{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  html.js .reveal{opacity:1;transform:none;transition:none}
+}
+
+h1.lede{font-family:"Instrument Sans", -apple-system, system-ui, sans-serif;font-weight:400;letter-spacing:normal;margin:0px 0 0px}
+p.eslogan{margin-top:14.4px}
+</style>
+
+<!-- Analítica · Umami autoalojado (tracker servido en /stats). -->
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script defer src="https://analytics.labbo.studio/recorder.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script src="/js/analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://positiva.studio/" },
+        { "@type": "ListItem", "position": 2, "name": "Revisión de vídeo", "item": "https://positiva.studio/revision-video/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Mi cliente necesita una cuenta para revisar el vídeo?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Abre tu enlace, confirma su email y ya puede comentar. La confirmación existe para que cada comentario tenga dueño y para que nadie entre sin permiso." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El vídeo se cobra aparte de las fotos?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Fotos y vídeo comparten el mismo espacio de tu plan. No hay «horas de vídeo» ni un producto separado." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo llegan los comentarios a DaVinci Resolve o Final Cut Pro?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Los exportas desde Positiva como marcadores y los importas en tu proyecto: aparecen en el timeline, en su fotograma, con el texto de cada comentario." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa cuando subo la versión corregida?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Reemplazas el archivo y el enlace de tu cliente sigue siendo el mismo. Las versiones anteriores quedan guardadas con sus comentarios, para poder volver a ellas." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Pueden revisar varias personas el mismo vídeo?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sí. Y tú eliges el modo: colaborativo, donde todos ven los comentarios de todos, o individual, donde cada revisor solo ve los suyos." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="hero-oscuro">
+
+<!-- pv:nav -->
+<!-- ════════════════════════════════════════════════════════════════
+     CABECERA COMÚN · fuente única: partials/chrome-nav.html
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarla a todas
+     las páginas. No edites el bloque pv:nav de las páginas a mano.
+     Autocontenida: CSS + markup + JS (las satélite no traen menú móvil).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="nav">
+/* Base de la cápsula (idéntica a la de siempre; aquí para que exista en TODAS las páginas) */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:14px clamp(14px,3vw,40px)}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--pv-s5);
+  max-width:1280px;margin:0 auto;padding:10px 12px 10px clamp(18px,2.4vw,28px);
+  border:1px solid transparent;border-radius:var(--pv-r-pill);
+  transition:background .4s var(--pv-ease),border-color .4s var(--pv-ease),box-shadow .4s var(--pv-ease);
+}
+nav.scrolled .nav-inner{
+  background:rgba(241,240,236,.82);
+  backdrop-filter:blur(16px) saturate(1.4);
+  -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  border-color:var(--pv-linea);
+  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);
+}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--pv-tinta)}
+.logo svg{height:27px;width:auto;display:block;flex:none}
+.logo-word{
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;font-size:14px;
+  letter-spacing:.22em;text-transform:uppercase;line-height:1;
+}
+.logo-word b{color:var(--pv-ambar)}
+.nav-links{display:flex;align-items:center;gap:var(--pv-s6)}
+.nav-links a,.nav-drop-btn{
+  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
+  display:inline-flex;align-items:center;line-height:1;
+}
+.nav-links a:hover,.nav-drop-btn:hover{color:var(--pv-tinta)}
+.nav-right{display:flex;align-items:center;gap:var(--pv-s4)}
+.nav-login{
+  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
+}
+.nav-login:hover{color:var(--pv-tinta)}
+.nav-cta{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
+.nav-cta:hover{background:var(--pv-ambar-hover);color:#fff;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
+
+/* Desplegables: mismo lenguaje que la cápsula (papel translúcido + línea + blur) */
+.nav-drop{position:relative;display:flex;align-items:center}
+.nav-drop-btn{background:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:7px;padding:0}
+.nav-drop-btn::after{
+  content:"";width:5px;height:5px;flex:none;margin-top:-3px;
+  border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg);transition:transform .25s var(--pv-ease);
+}
+.nav-drop:hover .nav-drop-btn::after,.nav-drop.open .nav-drop-btn::after{transform:rotate(225deg);margin-top:3px}
+.nav-drop-menu{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  padding-top:14px;min-width:240px;
+  opacity:0;visibility:hidden;transition:opacity .25s var(--pv-ease),visibility 0s linear .25s;
+}
+.nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu,.nav-drop.open .nav-drop-menu{
+  opacity:1;visibility:visible;transition:opacity .25s var(--pv-ease),visibility 0s linear 0s;
+}
+.nav-drop-card{
+  background:rgba(241,240,236,.94);
+  backdrop-filter:blur(16px) saturate(1.4);
+  -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);
+  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);
+  padding:10px;display:flex;flex-direction:column;
+}
+.nav-drop-card a{
+  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:#4A4943;text-decoration:none;
+  padding:10px 14px;border-radius:6px;white-space:nowrap;transition:color .18s,background .18s;
+}
+.nav-drop-card a:hover{color:var(--pv-tinta);background:rgba(23,22,20,.05)}
+.nav-drop-card .drop-grupo{
+  font-family:var(--pv-mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--pv-tinta-30);
+  margin-top:6px;padding:12px 14px 4px;border-top:1px solid var(--pv-linea);
+}
+.nav-drop-card a.sub{padding-left:26px}
+/* Sobre hero oscuro la cápsula aclara sus enlaces, pero el panel del desplegable
+   sigue siendo papel: sus enlaces mantienen tinta siempre. */
+body.hero-oscuro nav:not(.scrolled) .nav-drop .nav-drop-card a{color:#4A4943}
+body.hero-oscuro nav:not(.scrolled) .nav-drop .nav-drop-card a:hover{color:var(--pv-tinta)}
+
+/* Burger (solo móvil) */
+.nav-burger{
+  display:none;position:relative;width:44px;height:44px;flex:none;
+  background:var(--pv-tinta);border:0;border-radius:var(--pv-r-pill);cursor:pointer;
+}
+.nav-burger span{
+  position:absolute;left:13px;right:13px;height:2px;background:var(--pv-papel);
+  transition:transform .35s var(--pv-ease),top .35s var(--pv-ease);
+}
+.nav-burger span:first-child{top:18px}
+.nav-burger span:last-child{top:24px}
+.nav-burger[aria-expanded="true"] span:first-child{top:21px;transform:rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:last-child{top:21px;transform:rotate(-45deg)}
+html:not(.js) .nav-burger{display:none!important}
+
+/* Menú móvil a pantalla completa */
+body.menu-locked{overflow:hidden}
+body.menu-locked .logo{color:#EDECE8}
+body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.menu{
+  position:fixed;inset:0;z-index:55;background:var(--pv-sala);color:#EDECE8;
+  display:flex;flex-direction:column;justify-content:center;padding:0 clamp(24px,7vw,56px);
+  opacity:0;visibility:hidden;
+  transition:opacity .45s var(--pv-ease),visibility 0s linear .45s;
+}
+.menu.open{opacity:1;visibility:visible;transition:opacity .45s var(--pv-ease),visibility 0s linear 0s}
+.menu a.big{
+  font-family:var(--pv-display);font-weight:300;font-size:clamp(34px,9.5vw,58px);
+  line-height:1.28;color:#EDECE8;text-decoration:none;letter-spacing:-.02em;
+  display:flex;align-items:baseline;gap:var(--pv-s4);
+  opacity:0;transform:translateY(22px);
+  transition:opacity .5s var(--pv-ease-out),transform .5s var(--pv-ease-out);
+  transition-delay:var(--d,0s);
+}
+.menu.open a.big{opacity:1;transform:none}
+.menu a.big em{font-style:normal;font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--pv-ambar)}
+.menu a.big:hover{color:var(--pv-ambar)}
+.menu-groups{
+  margin-top:var(--pv-s6);display:flex;gap:var(--pv-s8);flex-wrap:wrap;
+  opacity:0;transform:translateY(18px);
+  transition:opacity .5s var(--pv-ease-out) .3s,transform .5s var(--pv-ease-out) .3s;
+}
+.menu.open .menu-groups{opacity:1;transform:none}
+.menu-groups h3{
+  font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:#5C5B56;margin:0 0 var(--pv-s2);
+}
+.menu-groups a{
+  display:block;font-family:var(--pv-sans);font-size:15px;color:#9C9B95;
+  text-decoration:none;padding:3px 0;transition:color .18s;
+}
+.menu-groups a:hover{color:#EDECE8}
+.menu-meta{
+  margin-top:var(--pv-s6);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea-sala);
+  font-family:var(--pv-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5C5B56;
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+}
+.menu-meta a{color:#9C9B95;text-decoration:none}
+
+@media(max-width:1020px){
+  nav .nav-links,nav .nav-login,nav .nav-cta{display:none}
+  .nav-burger{display:block}
+}
+</style>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Positiva">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      <span class="logo-word">Positiva<b>.</b></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Galerías</button>
+        <div class="nav-drop-menu">
+          <div class="nav-drop-card">
+            <a href="/galerias/">Entrega tu trabajo</a>
+            <p class="drop-grupo">Optimiza la revisión</p>
+            <a class="sub" href="/revision-video/">Vídeo</a>
+            <a class="sub" href="/revision-foto/">Foto</a>
+          </div>
+        </div>
+      </div>
+      <a href="/portfolio/">Portfolio público</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Casos de uso</button>
+        <div class="nav-drop-menu">
+          <div class="nav-drop-card">
+            <a href="/freelance/">Freelance</a>
+            <a href="/bodas/">Reportaje de bodas</a>
+            <a href="/productoras/">Productoras de vídeo</a>
+          </div>
+        </div>
+      </div>
+      <a href="/precios/">Precios</a>
+      <a href="/soporte/">Soporte</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://app.positiva.studio" class="nav-login" data-ev="login_click" data-ev-place="nav">Entrar</a>
+      <a href="/#lista" class="btn nav-cta" data-ev="cta_register_click" data-ev-place="nav">Regístrate</a>
+      <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="menu" id="menu">
+  <a class="big" href="/" style="--d:.05s"><em>01</em> Inicio</a>
+  <a class="big" href="/galerias/" style="--d:.1s"><em>02</em> Galerías</a>
+  <a class="big" href="/portfolio/" style="--d:.15s"><em>03</em> Portfolio público</a>
+  <a class="big" href="/precios/" style="--d:.2s"><em>04</em> Precios</a>
+  <a class="big" href="/soporte/" style="--d:.25s"><em>05</em> Soporte</a>
+  <a class="big" href="/#lista" style="--d:.3s"><em>06</em> Regístrate</a>
+  <div class="menu-groups">
+    <div>
+      <h3>Galerías</h3>
+      <a href="/galerias/">Entrega tu trabajo</a>
+      <a href="/revision-video/">Revisión de vídeo</a>
+      <a href="/revision-foto/">Revisión de foto</a>
+    </div>
+    <div>
+      <h3>Casos de uso</h3>
+      <a href="/freelance/">Freelance</a>
+      <a href="/bodas/">Reportaje de bodas</a>
+      <a href="/productoras/">Productoras de vídeo</a>
+    </div>
+  </div>
+  <div class="menu-meta">
+    <span>Positiva · Hecha en España</span>
+    <a href="https://app.positiva.studio">Entrar en tu panel</a>
+    <a href="mailto:hola@positiva.studio">hola@positiva.studio</a>
+  </div>
+</div>
+
+<script>
+/* Chrome común: scrolled + burger + desplegables. Guardado para no doblar
+   listeners si una página conserva JS antiguo de nav. */
+(() => {
+  if (window.__pvChrome) return; window.__pvChrome = true;
+  const nav = document.getElementById('nav');
+  let last = -1;
+  const onScroll = () => {
+    const on = window.scrollY > 12;
+    if (on !== last) { nav.classList.toggle('scrolled', on); last = on; }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  const setMenu = (open) => {
+    menu.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    document.body.classList.toggle('menu-locked', open);
+  };
+  burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+  /* Desplegables: hover/focus por CSS; el click alterna .open (táctil y accesibilidad) */
+  document.querySelectorAll('.nav-drop').forEach(drop => {
+    const btn = drop.querySelector('.nav-drop-btn');
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = !drop.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nav-drop-btn').setAttribute('aria-expanded','false'); });
+      drop.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nav-drop-btn').setAttribute('aria-expanded','false'); });
+  });
+})();
+</script>
+<!-- /pv:nav -->
+
+<!-- ══ HERO ══ -->
+<header class="heroV">
+  <div class="wrap heroV-inner">
+    <p class="eyebrow">Revisión de vídeo</p>
+    <p class="eslogan" aria-label="Tu cliente no habla en timecodes." role="heading" aria-level="2">
+      <span class="hl"><span style="--d:.05s">Tu cliente</span></span>
+      <span class="hl"><span style="--d:.15s">no habla</span></span>
+      <span class="hl"><span style="--d:.25s">en <em>timecodes</em>.</span></span>
+    </p>
+    <div class="heroV-foot">
+      <h1 class="lede">
+        Habla en audios de WhatsApp. Positiva traduce: pausa el vídeo, escribe, y su comentario
+        cae en el fotograma exacto — listo para exportar como marcadores a DaVinci Resolve o
+        Final Cut Pro.
+      </h1>
+      <div class="hero-cta">
+        <a href="#lista" class="btn btn-amber" data-ev="cta_register_click" data-ev-place="hero_revision">Regístrate</a>
+        <a href="#como" class="btn btn-ghost">Ver cómo funciona</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- escena: la nota de voz se escribe, se tacha con una X y entra el timeline -->
+  <div class="escena" aria-hidden="true">
+    <div class="vig-nota">
+      <b><span class="vig-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span> Audio · 3:47</b>
+      <span class="vig-typed">«lo de la abuela quítalo, sale en el minuto dos»</span>
+      <span class="vig-tacha"></span>
+    </div>
+  </div>
+
+  <div class="heroV-bar" aria-hidden="true">
+    <span class="vig-ic">
+      <span class="pausa"><i></i><i></i></span>
+      <span class="play"></span>
+    </span>
+    <div class="vig-line">
+      <span class="vig-progress"></span>
+      <span class="vig-head"></span>
+      <span class="vig-pin"></span>
+      <span class="vig-card"><b>02:03</b> fuera la abuela</span>
+    </div>
+    <span class="vig-tc">02:03 / 03:47</span>
+  </div>
+</header>
+
+<!-- ══ CÓMO FUNCIONA ══ -->
+<section id="como" style="padding-top:clamp(40px,5vw,64px)">
+  <div class="wrap">
+    <div class="steps">
+      <div class="step reveal">
+        <em>01 · Comparte</em>
+        <h3>Sube el vídeo y envía tu enlace</h3>
+        <p>Creas una galería de revisión y compartes el enlace, con tu marca.
+        Es siempre el mismo: <b>no caduca ni cambia cuando subes una versión nueva.</b></p>
+      </div>
+      <div class="step reveal" style="--d:.1s">
+        <em>02 · Comenta</em>
+        <h3>Tu cliente escribe sobre el fotograma</h3>
+        <p>Pausa donde quiere, escribe, y el comentario queda anclado a ese momento exacto del
+        vídeo. Desde cualquier navegador, sin crear una cuenta.</p>
+      </div>
+      <div class="step reveal" style="--d:.2s">
+        <em>03 · Corrige</em>
+        <h3>Los cambios llegan a tu editor</h3>
+        <p>Exportas los comentarios como marcadores para DaVinci Resolve o Final Cut Pro.
+        Corriges viendo cada nota en tu timeline, no interpretando un email.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EL VISOR ══ -->
+<section class="dark" id="visor">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="idx">01</span> El visor</p>
+    <div class="head2">
+      <h2 class="reveal" style="--d:.05s">Comentarios que caen<br><em>donde tienen que caer.</em></h2>
+      <p class="lede reveal" style="--d:.15s">
+        El vídeo se revisa en grande, con los comentarios marcados sobre la línea de tiempo.
+        Nada de listas sueltas: cada nota sabe a qué fotograma pertenece, y un clic te lleva a él.
+      </p>
+    </div>
+    <figure class="shot reveal">
+      <video src="/video/revision-comentar.mp4" poster="/video/revision-comentar-poster.jpg"
+        width="1280" height="720" autoplay muted loop playsinline preload="metadata"
+        aria-label="El cliente pulsa C, escribe y su comentario queda anclado al timeline del vídeo."></video>
+      <figcaption><b>Visor de revisión</b> · pulsar C, escribir, y el comentario cae en su fotograma</figcaption>
+    </figure>
+    <div class="keys reveal">
+      <span class="key"><kbd>C</kbd> pausa y comenta</span>
+      <span class="key"><kbd>J</kbd><kbd>K</kbd><kbd>L</kbd> como en tu editor</span>
+      <span class="key"><kbd>←</kbd><kbd>→</kbd> fotograma a fotograma</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPORT ══ -->
+<section id="export">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="idx">02</span> A tu editor</p>
+    <div class="head2">
+      <h2 class="reveal" style="--d:.05s">Del comentario<br><em>al marcador.</em></h2>
+      <p class="lede reveal" style="--d:.15s">
+        Cuando la revisión esta lista, exportas los comentarios y los abres en DaVinci Resolve o
+        Final Cut Pro: aparecen como marcadores en tu timeline, en su fotograma, con el texto
+        del cliente. Corriges con la nota delante, donde toca.
+      </p>
+    </div>
+    <figure class="shot reveal">
+      <video src="/video/revision-export.mp4" poster="/video/revision-export-poster.jpg"
+        width="1280" height="720" autoplay muted loop playsinline preload="metadata"
+        aria-label="Los comentarios de Positiva aparecen como marcadores en el timeline de DaVinci Resolve."></video>
+      <figcaption><b>Exportación de marcadores</b> · DaVinci Resolve y Final Cut Pro</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ══ RONDAS ══ -->
+<section class="dark" id="rondas">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="idx">03</span> Rondas y versiones</p>
+    <div class="head2">
+      <h2 class="reveal" style="--d:.05s">Cada ronda,<br><em>bajo control.</em></h2>
+      <p class="lede reveal" style="--d:.15s">
+        Tu cliente termina su ronda y te llega el aviso con todo junto — no un goteo de
+        correcciones a deshoras. Subes la versión corregida al mismo enlace y seguís donde
+        estabais.
+      </p>
+    </div>
+    <figure class="shot reveal">
+      <video src="/video/revision-rondas.mp4" poster="/video/revision-rondas-poster.jpg"
+        width="1280" height="720" autoplay muted loop playsinline preload="metadata"
+        aria-label="El panel de Positiva con las rondas de revisión, comentarios y versiones de un vídeo."></video>
+      <figcaption><b>Tu panel</b> · rondas, comentarios y versiones</figcaption>
+    </figure>
+    <div class="trio">
+      <div class="reveal">
+        <h3>Rondas</h3>
+        <p>El cliente marca su ronda como terminada y tú recibes el conjunto. Cada ronda queda
+        registrada: qué se pidió, qué se cambió.</p>
+      </div>
+      <div class="reveal" style="--d:.1s">
+        <h3>Versiones</h3>
+        <p>Reemplazas el vídeo sin cambiar el enlace. Las versiones anteriores quedan guardadas
+        con sus comentarios, por si hay que volver.</p>
+      </div>
+      <div class="reveal" style="--d:.2s">
+        <h3>Quién ve qué</h3>
+        <p>Modo colaborativo — todos ven los comentarios de todos — o individual, donde cada
+        revisor solo ve los suyos. Lo decides tú por galería.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DISEÑOS DE VÍDEO ══ -->
+<section id="disenos">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="idx">04</span> La entrega</p>
+    <div class="head2">
+      <h2 class="reveal" style="--d:.05s">El vídeo también<br><em>se entrega bonito.</em></h2>
+      <p class="lede reveal" style="--d:.15s">
+        Cuando el trabajo está aprobado, la misma galería se convierte en la entrega: diseños
+        pensados para vídeo. Estreno, Cartel, Vitrina, Montaje o Videoteca, con tu logo, tu tipografía
+        y tu dominio. Tu cliente estrena su pieza, no descarga un archivo.
+      </p>
+    </div>
+    <div class="reel-frame reveal">
+      <video src="/video/disenos-video.mp4" poster="/video/disenos-video-poster.jpg"
+        width="1280" height="720" autoplay muted loop playsinline preload="metadata"
+        aria-label="Recorrido por una galería de vídeo de Positiva con diseño de entrega"></video>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow reveal">Preguntas frecuentes</p>
+    <div class="faq-list">
+      <details class="reveal">
+        <summary>¿Mi cliente necesita una cuenta para revisar el vídeo?</summary>
+        <p>No. Abre tu enlace, confirma su email y ya puede comentar. La confirmación existe para
+        que cada comentario tenga dueño y para que nadie entre sin permiso.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿El vídeo se cobra aparte de las fotos?</summary>
+        <p>No. Fotos y vídeo comparten el mismo espacio de tu plan. No hay «horas de vídeo» ni un
+        producto separado.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿Cómo llegan los comentarios a DaVinci Resolve o Final Cut Pro?</summary>
+        <p>Los exportas desde Positiva como marcadores y los importas en tu proyecto: aparecen en
+        el timeline, en su fotograma, con el texto de cada comentario.
+        <a href="/soporte/es/exportar-marcadores-video/" style="color:var(--pv-ambar)">Cómo se hace, paso a paso</a>.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿Qué pasa cuando subo la versión corregida?</summary>
+        <p>Reemplazas el archivo y el enlace de tu cliente sigue siendo el mismo. Las versiones
+        anteriores quedan guardadas con sus comentarios, para poder volver a ellas.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿Pueden revisar varias personas el mismo vídeo?</summary>
+        <p>Sí. Y tú eliges el modo: colaborativo, donde todos ven los comentarios de todos, o
+        individual, donde cada revisor solo ve los suyos.</p>
+      </details>
+    </div>
+
+    <div class="related">
+      <a href="/soporte/es/revisor-comentar-video/">Cómo comenta tu cliente un vídeo</a>
+      <a href="/soporte/es/exportar-marcadores-video/">Exportar marcadores a tu editor</a>
+      <a href="/soporte/es/rondas-de-revision/">Rondas de revisión</a>
+      <a href="/soporte/es/revisor-atajos-de-teclado/">Atajos de teclado del revisor</a>
+      <a href="/soporte/es/disenos-de-video/">Diseños de vídeo</a>
+      <a href="/soporte/es/como-funciona-la-revision/">Cómo funciona la revisión</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LISTA DE ESPERA ══ -->
+<section id="lista" style="padding-top:0">
+  <div class="wrap">
+    <div class="capture reveal">
+      <p class="eyebrow" style="justify-content:center">Reserva una demo</p>
+      <h2>Revisa tu próximo vídeo<br><em>sin descifrar emails.</em></h2>
+      <p class="lede">
+        Positiva se cuenta mejor en directo. Reserva una demo y te la enseño sobre tu
+        propio flujo de trabajo, de la subida a la entrega, sin compromiso. Y si
+        prefieres verla por tu cuenta, <a href="https://app.positiva.studio"
+        style="color:var(--pv-ambar)" data-ev="register_click" data-ev-place="demo_section">regístrate
+        y entra hoy mismo</a>.
+      </p>
+      <form id="wl" novalidate>
+        <input type="email" name="email" placeholder="nombre@tuestudio.com" required aria-label="Tu email">
+        <button type="submit" class="btn">Reserva una demo</button>
+      </form>
+      <small id="msg">Sin compromiso y sin newsletter: te escribo solo para agendarla.</small>
+    </div>
+  </div>
+</section>
+
+<!-- pv:footer -->
+<!-- ════════════════════════════════════════════════════════════════
+     PIE COMÚN · fuente única: partials/chrome-footer.html
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
+     las páginas. Sirve de mapa del sitio: cada página pública real
+     debe estar enlazada aquí (SEO + LLMs leen esto).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="footer">
+footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
+.footcols{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pv-s6);
+  margin-bottom:var(--pv-s8);
+}
+.footcols h3{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-tinta-60);margin:0 0 var(--pv-s3);
+}
+.footcols a{
+  display:block;font-family:var(--pv-sans);font-size:14px;color:var(--pv-tinta-60);
+  text-decoration:none;padding:4px 0;transition:color .18s;
+}
+.footcols a:hover{color:var(--pv-tinta)}
+.footer-word{
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(15px,3.9vw,58px);line-height:1;color:var(--pv-tinta);
+  white-space:nowrap;
+}
+.footer-word svg{height:.92em;width:auto;flex:none}
+.footer-word span{color:var(--pv-ambar)}
+.footer-meta{
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
+  font-size:14px;color:var(--pv-tinta-30);
+}
+.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
+.footer-meta a:hover{color:var(--pv-tinta)}
+@media(max-width:760px){
+  .footcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--pv-s5) var(--pv-s4)}
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <h3>Galerías</h3>
+        <a href="/galerias/">Entrega tu trabajo</a>
+        <a href="/revision-video/">Revisión de vídeo</a>
+        <a href="/revision-foto/">Revisión de foto</a>
+        <a href="/portfolio/">Portfolio público</a>
+        <a href="/precios/">Precios</a>
+        <a href="/#faq">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <h3>Casos de uso</h3>
+        <a href="/freelance/">Freelance</a>
+        <a href="/bodas/">Reportaje de bodas</a>
+        <a href="/productoras/">Productoras de vídeo</a>
+      </div>
+      <div>
+        <h3>Comparativas</h3>
+        <a href="/positiva-vs-pictime-vs-pixieset/">vs Pic-Time · Pixieset</a>
+        <a href="/positiva-vs-dropbox/">vs Dropbox</a>
+        <a href="/positiva-vs-google-drive/">vs Google Drive</a>
+        <a href="/positiva-vs-wetransfer/">vs WeTransfer</a>
+      </div>
+      <div>
+        <h3>Recursos</h3>
+        <a href="/soporte/">Centro de soporte</a>
+        <a href="/novedades/">Novedades</a>
+        <a href="https://app.positiva.studio">Entrar en tu panel</a>
+        <a href="/#lista">Regístrate</a>
+        <a href="mailto:hola@positiva.studio">Contacto</a>
+        <!-- pv:legal — descomenta cuando existan las páginas:
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/terminos/">Términos</a>
+        -->
+      </div>
+    </div>
+    <div class="footer-word">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
+    <div class="footer-meta">
+      <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Hecha en España · Se gestiona, se mejora y se factura desde Europa</span>
+      <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+    </div>
+  </div>
+</footer>
+<!-- /pv:footer -->
+
+<script>
+document.documentElement.classList.add('js');
+(() => {
+  if (!('IntersectionObserver' in window)) { document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in')); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+/* Lista de espera → /api/waitlist (mismo Worker que el resto). */
+document.getElementById('wl').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const email = form.email.value.trim();
+  const msg = document.getElementById('msg');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    msg.textContent = 'Ese email no parece válido. Revísalo.';
+    msg.style.color = 'var(--pv-graso)';
+    track(Events.WAITLIST_INVALID_EMAIL, { source: 'revision-video' });
+    return;
+  }
+  const btn = form.querySelector('button');
+  btn.disabled = true;
+  try {
+    const r = await fetch('/api/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, source: 'revision-video' }),
+    });
+    if (!r.ok && r.status !== 409) throw new Error(String(r.status));
+    msg.textContent = 'Apuntado. Te escribo el día que abra.';
+    msg.style.color = 'var(--pv-ambar)';
+    track(Events.WAITLIST_SUBMITTED, { source: 'revision-video' });
+    form.reset();
+  } catch (_) {
+    msg.textContent = 'No se ha podido guardar. Inténtalo de nuevo en un momento.';
+    msg.style.color = 'var(--pv-graso)';
+  } finally {
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>

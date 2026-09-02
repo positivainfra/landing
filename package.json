@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node _serve.mjs public 4321"
+    "dev": "node _serve.mjs public 4321",
+    "stamp": "node scripts/stamp.mjs"
   },
   "devDependencies": {
     "sharp": "^0.35.3",

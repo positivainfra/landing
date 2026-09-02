@@ -1,0 +1,3 @@
+# Último commit de SHOWCASEBRAIN ya procesado y publicado por el flujo de novedades.
+# Formato: una línea con el hash corto. Ver docs/PROMPT-NOVEDADES.md.
+6d1de1e

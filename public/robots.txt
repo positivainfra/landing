@@ -1,10 +1,4 @@
 User-agent: *
 Allow: /
 
-# Landings por tipo de cliente: aún en construcción y sin enlazar.
-# Quita estas líneas cuando estén listas para indexar.
-Disallow: /bodas/
-Disallow: /freelance/
-Disallow: /agencias/
-
 Sitemap: https://positiva.studio/sitemap.xml
