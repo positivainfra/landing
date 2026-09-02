@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITULO}}</title>
+<meta name="description" content="{{DESCRIPCION}}">
+<meta property="og:title" content="{{TITULO}}">
+<meta property="og:description" content="{{DESCRIPCION}}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{CANONICA}}">
+<meta property="og:image" content="https://positiva.studio/assets/og.png">
+<meta property="og:locale" content="{{LOCALE}}">
+<meta name="theme-color" content="#F1F0EC">
+<link rel="canonical" href="{{CANONICA}}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/soporte/soporte.css">
+<script type="application/ld+json">{{JSONLD}}</script>
+</head>
+<body class="{{CLASE}}">
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<!-- pv:nav -->
+{{NAV}}
+<!-- /pv:nav -->
+
+<main id="contenido">
+{{CONTENIDO}}
+</main>
+
+<!-- pv:footer -->
+{{PIE}}
+<!-- /pv:footer -->
+
+<script>
+/* La cabecera y el pie traen su propio JS desde los parciales (cápsula al
+   bajar, menú móvil y desplegables). Aquí solo va lo que es del soporte. */
+document.documentElement.classList.add('js');
+
+(() => {
+  /* Marca «Soporte» como sección activa en el menú común, sin tocar el parcial. */
+  for (const a of document.querySelectorAll('#nav .nav-links a, .menu a')) {
+    const href = a.getAttribute('href') || '';
+    if (href === '/soporte/' || href.startsWith('/soporte/')) a.setAttribute('aria-current', 'page');
+  }
+})();
+
+(() => {
+  /* ── Buscador ────────────────────────────────────────────────────────────
+   * Busca en el TEXTO COMPLETO de los artículos, no solo en los títulos: quien
+   * teclea «RAW» o «Cuarto oscuro» está buscando una frase que vive dentro de
+   * un artículo, no el nombre de ninguno.
+   *
+   * El índice (buscador.json) se descarga la primera vez que alguien toca el
+   * campo, no al cargar la página: quien viene a leer un artículo concreto no
+   * paga por una búsqueda que no va a hacer.
+   */
+  const form = document.querySelector('[data-busca]');
+  if (!form) return;
+
+  const campo = form.querySelector('input');
+  const panel = form.querySelector('.busca-panel');
+  const IDIOMA = document.documentElement.lang || 'es';
+
+  const limpia = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const escapaHtml = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  let indice = null;
+  let cargando = null;
+  let resultados = [];
+  let foco = -1;
+
+  const cargar = () => {
+    if (indice) return Promise.resolve(indice);
+    if (!cargando) {
+      cargando = fetch(`/soporte/${IDIOMA}/buscador.json`)
+        .then((r) => r.json())
+        .then((d) => {
+          indice = d.map((a) => ({ ...a, _t: limpia(a.titulo), _d: limpia(a.descripcion), _c: limpia(a.texto) }));
+          return indice;
+        })
+        .catch(() => { indice = []; return indice; });
+    }
+    return cargando;
+  };
+
+  // Todos los términos tienen que aparecer en algún sitio. El título pesa seis
+  // veces más que el cuerpo: buscar «momentos» tiene que devolver el artículo
+  // que se llama así, no los nueve que lo mencionan de pasada.
+  function buscar(q) {
+    const terminos = limpia(q).split(/\s+/).filter((t) => t.length > 1);
+    if (!terminos.length || !indice) return [];
+    const salida = [];
+    for (const art of indice) {
+      let puntos = 0;
+      let todos = true;
+      for (const t of terminos) {
+        let p = 0;
+        if (art._t.includes(t)) p += art._t.startsWith(t) ? 16 : 12;
+        if (art._d.includes(t)) p += 5;
+        if (art._c.includes(t)) p += 2;
+        if (!p) { todos = false; break; }
+        puntos += p;
+      }
+      if (todos) salida.push({ art, puntos, termino: terminos[0] });
+    }
+    return salida.sort((a, b) => b.puntos - a.puntos).slice(0, 7);
+  }
+
+  // Un trozo del artículo alrededor de la primera aparición, con el término
+  // marcado. Sin esto, siete resultados con su descripción genérica obligan a
+  // abrirlos uno a uno para ver cuál era.
+  function fragmento(art, termino) {
+    const donde = art._c.indexOf(termino);
+    if (donde === -1) return escapaHtml(art.descripcion);
+    // Se recorta por palabra entera: un fragmento que empieza en «…egador no
+    // sabe» hace dudar de si la página está rota.
+    let desde = Math.max(0, donde - 60);
+    if (desde > 0) {
+      const espacio = art.texto.indexOf(' ', desde);
+      if (espacio !== -1 && espacio < donde) desde = espacio + 1;
+    }
+    let trozo = art.texto.slice(desde, desde + 190);
+    const corte = trozo.lastIndexOf(' ');
+    const cortado = desde + 190 < art.texto.length;
+    if (cortado && corte > 120) trozo = trozo.slice(0, corte);
+    const re = new RegExp(`(${termino.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return (desde > 0 ? '…' : '') + escapaHtml(trozo).replace(re, '<mark>$1</mark>') + (cortado ? '…' : '');
+  }
+
+  function pintar(q) {
+    if (!q.trim()) { cerrar(); return; }
+    resultados = buscar(q);
+    foco = -1;
+    if (!resultados.length) {
+      panel.innerHTML = `<p class="busca-nada">Ningún artículo coincide con <b>${escapaHtml(q)}</b>.
+        Escribe a <a href="mailto:hola@positiva.studio">hola@positiva.studio</a> indicando tu caso:
+        respondemos en un plazo de 24 a 48 horas.</p>`;
+    } else {
+      panel.innerHTML = `<ul role="listbox" aria-label="Resultados">${resultados.map((r, i) => `
+        <li role="option" id="res-${i}" aria-selected="false">
+          <a href="/soporte/${IDIOMA}/${r.art.slug}/">
+            <b>${escapaHtml(r.art.titulo)}</b>
+            <span class="busca-cat">${escapaHtml(r.art.categoria)}</span>
+            <span class="busca-frag">${fragmento(r.art, r.termino)}</span>
+          </a>
+        </li>`).join('')}</ul>`;
+    }
+    panel.hidden = false;
+    campo.setAttribute('aria-expanded', 'true');
+  }
+
+  function cerrar() {
+    panel.hidden = true;
+    panel.innerHTML = '';
+    campo.setAttribute('aria-expanded', 'false');
+    campo.removeAttribute('aria-activedescendant');
+    foco = -1;
+  }
+
+  function mover(paso) {
+    const items = [...panel.querySelectorAll('li')];
+    if (!items.length) return;
+    if (foco >= 0) items[foco].setAttribute('aria-selected', 'false');
+    foco = (foco + paso + items.length + 1) % (items.length + 1) - 1;
+    if (foco < 0) { campo.removeAttribute('aria-activedescendant'); return; }
+    items[foco].setAttribute('aria-selected', 'true');
+    items[foco].scrollIntoView({ block: 'nearest' });
+    campo.setAttribute('aria-activedescendant', `res-${foco}`);
+  }
+
+  campo.addEventListener('focus', cargar, { once: true });
+  campo.addEventListener('input', () => { cargar().then(() => pintar(campo.value)); });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const primero = panel.querySelector('a');
+    if (primero) primero.click();
+  });
+
+  campo.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); mover(1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); mover(-1); }
+    else if (e.key === 'Enter' && foco >= 0) { e.preventDefault(); panel.querySelectorAll('a')[foco].click(); }
+    else if (e.key === 'Escape') { cerrar(); campo.blur(); }
+  });
+
+  document.addEventListener('click', (e) => { if (!form.contains(e.target)) cerrar(); });
+
+  // «/» desde cualquier punto de la página lleva el cursor al buscador.
+  document.addEventListener('keydown', (e) => {
+    const editando = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable;
+    if (editando) return;
+    if (e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+      e.preventDefault();
+      // preventScroll + scrollIntoView propio: el foco a secas deja el campo
+      // justo debajo de la barra fija, medio tapado.
+      campo.focus({ preventScroll: true });
+      campo.select();
+      const caja = form.getBoundingClientRect();
+      if (caja.top < 110 || caja.bottom > window.innerHeight - 80) {
+        form.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+    }
+  });
+})();
+
+(() => {
+  /* ── Raíl del índice: marca la categoría que estás mirando ─────────────── */
+  const enlaces = [...document.querySelectorAll('.rail-cats a')];
+  if (!enlaces.length || !('IntersectionObserver' in window)) return;
+  const porId = new Map(enlaces.map((a) => [a.getAttribute('href').slice(1), a]));
+  const vistos = new Set();
+  const io = new IntersectionObserver((entradas) => {
+    for (const e of entradas) e.isIntersecting ? vistos.add(e.target.id) : vistos.delete(e.target.id);
+    const activo = enlaces.find((a) => vistos.has(a.getAttribute('href').slice(1)));
+    for (const a of enlaces) a.classList.toggle('activo', a === activo);
+  }, { rootMargin: '-96px 0px -70% 0px' });
+  for (const id of porId.keys()) {
+    const sec = document.getElementById(id);
+    if (sec) io.observe(sec);
+  }
+})();
+</script>
+
+<!-- Analítica · Umami autoalojado (mismo tracker que el resto de la web). -->
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+</body>
+</html>

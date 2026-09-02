@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 788" width="1400" height="788">
+  <rect width="1400" height="788" fill="#0E0E0D"/>
+  <circle cx="700" cy="330" r="5" fill="#C98A2B"/>
+  <text x="700" y="390" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="26" font-weight="700" letter-spacing="4" fill="#9C9B95">CLIP PENDIENTE · 8-10 s SIN SONIDO</text>
+  <text x="700" y="432" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17" letter-spacing="3" fill="#5C5B56">PULSAR C → ESCRIBIR COMENTARIO → CAE EN EL TIMELINE → CLIC Y SALTA AL FOTOGRAMA</text>
+  <text x="700" y="500" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="14" letter-spacing="2" fill="#3E3D39">SUSTITUIR POR /video/revision-hero.mp4 + POSTER (VER COMENTARIO EN EL HTML)</text>
+</svg>
