@@ -253,6 +253,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://positiva.studio/soporte/es/marcar-favoritas/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://positiva.studio/soporte/es/formatos-admitidos/</loc>
     <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
