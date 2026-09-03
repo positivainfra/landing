@@ -51,3 +51,13 @@ los parciales de `partials/`. Qué significa para el flujo de soporte:
 - El CSS antiguo del chrome que viva FUERA de los marcadores en las plantillas de
   soporte puede retirarse cuando toque; hoy no interfiere (el bloque estampado es
   autocontenido y posterior en el documento).
+
+
+## Añadido 2026-09-03 · Favoritas con nombre (desplegado hasta 4c0aac4)
+
+Actualizado DESDE la landing por orden de Rodrigo: entrada en /novedades/ (3 sep),
+/galerias/ («Las favoritas vuelven a tu editor») y el artículo de soporte
+favoritas-del-cliente (nueva sección «Quién ha marcado cada favorita», paso de
+exportación con «Solo clientes / Todos», sello al 03/09). Los literales salen de
+los commits (A-D de new/favorites), no de pantalla: conviene el repaso visual del
+flujo de soporte cuando toque. Marcador de novedades en 4c0aac4.
