@@ -53,7 +53,7 @@ section{padding:clamp(72px,9vw,120px) 0}
 html.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--pv-ease-out),transform .9s var(--pv-ease-out);transition-delay:var(--d,0s)}
 html.js .reveal.is-in{opacity:1;transform:none}
 .btn{display:inline-flex;align-items:center;gap:var(--pv-s2);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--pv-r-pill);border:1px solid transparent;cursor:pointer;text-decoration:none;transition:all .22s var(--pv-ease)}
-.btn-amber{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar);text-transform:uppercase;letter-spacing:.08em;font-weight:700;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
+.btn-amber{background:var(--pv-ambar);color:#171614;border-color:var(--pv-ambar);text-transform:uppercase;letter-spacing:.08em;font-weight:700;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
 .btn-amber:hover{background:var(--pv-ambar-hover);border-color:var(--pv-ambar-hover);transform:translateY(-1px)}
 .btn-ghost{color:var(--pv-tinta);border-color:var(--pv-linea)}
 .btn-ghost:hover{border-color:var(--pv-tinta)}
@@ -246,7 +246,7 @@ details a{color:var(--pv-ambar-ink)}
 input[type=email]{flex:1;min-width:220px;font-family:var(--pv-sans);font-size:16px;padding:14px 18px;background:var(--pv-sala-2);border:1px solid var(--pv-linea-sala);border-radius:var(--pv-r-input);color:#EDECE8}
 input[type=email]::placeholder{color:#5C5B56}
 input[type=email]:focus{outline:2px solid var(--pv-ambar);outline-offset:1px;border-color:transparent}
-.capture form .btn{background:var(--pv-ambar);color:#fff;border:0;text-transform:uppercase;letter-spacing:.08em}
+.capture form .btn{background:var(--pv-ambar);color:#171614;border:0;text-transform:uppercase;letter-spacing:.08em}
 .capture form .btn:hover{background:var(--pv-ambar-hover)}
 .capture small{display:block;margin-top:var(--pv-s5);font-family:var(--pv-mono);font-size:11px;letter-spacing:.08em;color:#5C5B56;text-transform:uppercase}
 @media(max-width:940px){
@@ -419,8 +419,8 @@ nav.scrolled .nav-inner{
   text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
 }
 .nav-login:hover{color:var(--pv-tinta)}
-.nav-cta{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
-.nav-cta:hover{background:var(--pv-ambar-hover);color:#fff;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
+.nav-cta{background:var(--pv-ambar);color:#171614;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
+.nav-cta:hover{background:var(--pv-ambar-hover);color:#171614;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
 
 /* Desplegables: mismo lenguaje que la cápsula (papel translúcido + línea + blur) */
 .nav-drop{position:relative;display:flex;align-items:center}
@@ -648,6 +648,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 })();
 </script>
 <!-- /pv:nav -->
+<main id="contenido">
 
 <header class="heroC">
   <div class="wrap heroC-inner">
@@ -677,12 +678,12 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
         <span class="vf-chip">3 favoritas · en tu panel</span>
         <div class="cab"><span>La segunda línea · 96 fotos</span><span>♥ 3</span></div>
         <div class="vf-celdas">
-          <figure class="f1"><img src="/img/placeholders/web/sl-pescador.jpg" alt="" loading="eager" decoding="async"><span class="vf-mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="rfx1" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="12" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.9 8.7 L 69.6 9.8 L 130.4 10.0 L 191.9 10.0 L 191.0 103.9 L 190.6 198.4 L 190.4 292.2 L 129.7 292.2 L 68.9 290.4 L 8.3 289.9 L 8.9 195.7 L 7.5 102.9 L 7.9 8.7 L 54.5 5.6" stroke-width="11" opacity="0.97" filter="url(#rfx1)"/></svg></span><span class="vf-fav"></span></figure>
-          <figure><img src="/img/placeholders/web/sl-limpiadora.jpg" alt="" loading="eager" decoding="async"></figure>
-          <figure class="f2"><img src="/img/placeholders/web/sl-agricultor.jpg" alt="" loading="eager" decoding="async"><span class="vf-mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="rfx2" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="14" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="17" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.8 7.6 L 68.3 8.3 L 129.0 9.9 L 189.4 10.3 L 190.9 103.9 L 190.5 197.3 L 191.9 291.7 L 130.6 291.8 L 69.4 290.7 L 8.0 290.9 L 7.3 196.7 L 7.1 102.4 L 7.8 7.6 L 64.8 5.1" stroke-width="11" opacity="0.97" filter="url(#rfx2)"/></svg></span><span class="vf-fav"></span></figure>
-          <figure><img src="/img/placeholders/web/sl-retrato.jpg" alt="" loading="eager" decoding="async"></figure>
-          <figure class="f3"><img src="/img/placeholders/web/sl-tendero.jpg" alt="" loading="eager" decoding="async"><span class="vf-mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="rfx3" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="21" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="26" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.6 9.8 L 68.1 10.5 L 129.7 11.0 L 190.2 10.5 L 190.2 104.0 L 190.8 197.9 L 190.3 291.1 L 129.4 291.4 L 68.9 291.1 L 7.6 291.9 L 7.3 197.1 L 8.3 104.1 L 7.6 9.8 L 49.6 4.6" stroke-width="11" opacity="0.97" filter="url(#rfx3)"/></svg></span><span class="vf-fav"></span></figure>
-          <figure><img src="/img/placeholders/web/sl-dependienta.jpg" alt="" loading="eager" decoding="async"></figure>
+          <figure class="f1"><img src="/img/placeholders/web/sl-pescador.webp" alt="" loading="eager" decoding="async"><span class="vf-mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="rfx1" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="12" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.9 8.7 L 69.6 9.8 L 130.4 10.0 L 191.9 10.0 L 191.0 103.9 L 190.6 198.4 L 190.4 292.2 L 129.7 292.2 L 68.9 290.4 L 8.3 289.9 L 8.9 195.7 L 7.5 102.9 L 7.9 8.7 L 54.5 5.6" stroke-width="11" opacity="0.97" filter="url(#rfx1)"/></svg></span><span class="vf-fav"></span></figure>
+          <figure><img src="/img/placeholders/web/sl-limpiadora.webp" alt="" loading="eager" decoding="async"></figure>
+          <figure class="f2"><img src="/img/placeholders/web/sl-agricultor.webp" alt="" loading="eager" decoding="async"><span class="vf-mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="rfx2" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="14" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="17" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.8 7.6 L 68.3 8.3 L 129.0 9.9 L 189.4 10.3 L 190.9 103.9 L 190.5 197.3 L 191.9 291.7 L 130.6 291.8 L 69.4 290.7 L 8.0 290.9 L 7.3 196.7 L 7.1 102.4 L 7.8 7.6 L 64.8 5.1" stroke-width="11" opacity="0.97" filter="url(#rfx2)"/></svg></span><span class="vf-fav"></span></figure>
+          <figure><img src="/img/placeholders/web/sl-retrato.webp" alt="" loading="eager" decoding="async"></figure>
+          <figure class="f3"><img src="/img/placeholders/web/sl-tendero.webp" alt="" loading="eager" decoding="async"><span class="vf-mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="rfx3" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="21" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="26" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.6 9.8 L 68.1 10.5 L 129.7 11.0 L 190.2 10.5 L 190.2 104.0 L 190.8 197.9 L 190.3 291.1 L 129.4 291.4 L 68.9 291.1 L 7.6 291.9 L 7.3 197.1 L 8.3 104.1 L 7.6 9.8 L 49.6 4.6" stroke-width="11" opacity="0.97" filter="url(#rfx3)"/></svg></span><span class="vf-fav"></span></figure>
+          <figure><img src="/img/placeholders/web/sl-dependienta.webp" alt="" loading="eager" decoding="async"></figure>
         </div>
       </div>
     </div>
@@ -761,7 +762,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     <figure class="shot-real reveal">
       <video src="/video/pasos/cliente.mp4" poster="/video/pasos/cliente-poster.jpg"
         width="1280" height="720" autoplay muted loop playsinline preload="metadata"
-        aria-label="El cliente marca una favorita y deja un comentario sobre una foto."></video>
+        aria-label="El cliente marca una favorita y deja un comentario sobre una foto."><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
       <figcaption><b>Galería real</b> · favoritas y comentarios, foto a foto</figcaption>
     </figure>
   </div>
@@ -835,6 +836,8 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
   </div>
 </section>
 
+</main>
+
 <!-- pv:footer -->
 <!-- ════════════════════════════════════════════════════════════════
      PIE COMÚN · fuente única: partials/chrome-footer.html
@@ -866,11 +869,11 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 }
 .footer-word svg{height:.92em;width:auto;flex:none}
 .footer-word span{color:var(--pv-ambar)}
-.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-30);max-width:78ch}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
 .footer-meta{
   display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
   margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
-  font-size:14px;color:var(--pv-tinta-30);
+  font-size:14px;color:var(--pv-tinta-60);
 }
 .footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
 .footer-meta a:hover{color:var(--pv-tinta)}

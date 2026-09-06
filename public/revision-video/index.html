@@ -53,7 +53,7 @@ section{padding:clamp(72px,9vw,120px) 0}
 html.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--pv-ease-out),transform .9s var(--pv-ease-out);transition-delay:var(--d,0s)}
 html.js .reveal.is-in{opacity:1;transform:none}
 .btn{display:inline-flex;align-items:center;gap:var(--pv-s2);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--pv-r-pill);border:1px solid transparent;cursor:pointer;text-decoration:none;transition:all .22s var(--pv-ease)}
-.btn-amber{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar);text-transform:uppercase;letter-spacing:.08em;font-weight:700;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
+.btn-amber{background:var(--pv-ambar);color:#171614;border-color:var(--pv-ambar);text-transform:uppercase;letter-spacing:.08em;font-weight:700;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
 .btn-amber:hover{background:var(--pv-ambar-hover);border-color:var(--pv-ambar-hover);transform:translateY(-1px)}
 .btn-ghost{color:var(--pv-tinta);border-color:var(--pv-linea)}
 .btn-ghost:hover{border-color:var(--pv-tinta)}
@@ -245,7 +245,7 @@ details p{padding:0 0 var(--pv-s5);color:var(--pv-tinta-60);max-width:64ch}
 input[type=email]{flex:1;min-width:220px;font-family:var(--pv-sans);font-size:16px;padding:14px 18px;background:var(--pv-sala-2);border:1px solid var(--pv-linea-sala);border-radius:var(--pv-r-input);color:#EDECE8}
 input[type=email]::placeholder{color:#5C5B56}
 input[type=email]:focus{outline:2px solid var(--pv-ambar);outline-offset:1px;border-color:transparent}
-.capture form .btn{background:var(--pv-ambar);color:#fff;border:0;text-transform:uppercase;letter-spacing:.08em}
+.capture form .btn{background:var(--pv-ambar);color:#171614;border:0;text-transform:uppercase;letter-spacing:.08em}
 .capture form .btn:hover{background:var(--pv-ambar-hover)}
 .capture small{display:block;margin-top:var(--pv-s5);font-family:var(--pv-mono);font-size:11px;letter-spacing:.08em;color:#5C5B56;text-transform:uppercase}
 
@@ -407,8 +407,8 @@ nav.scrolled .nav-inner{
   text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
 }
 .nav-login:hover{color:var(--pv-tinta)}
-.nav-cta{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
-.nav-cta:hover{background:var(--pv-ambar-hover);color:#fff;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
+.nav-cta{background:var(--pv-ambar);color:#171614;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
+.nav-cta:hover{background:var(--pv-ambar-hover);color:#171614;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
 
 /* Desplegables: mismo lenguaje que la cápsula (papel translúcido + línea + blur) */
 .nav-drop{position:relative;display:flex;align-items:center}
@@ -636,6 +636,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 })();
 </script>
 <!-- /pv:nav -->
+<main id="contenido">
 
 <!-- ══ HERO ══ -->
 <header class="heroV">
@@ -724,7 +725,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     <figure class="shot reveal">
       <video src="/video/revision-comentar.mp4" poster="/video/revision-comentar-poster.jpg"
         width="1280" height="720" autoplay muted loop playsinline preload="metadata"
-        aria-label="El cliente pulsa C, escribe y su comentario queda anclado al timeline del vídeo."></video>
+        aria-label="El cliente pulsa C, escribe y su comentario queda anclado al timeline del vídeo."><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
       <figcaption><b>Visor de revisión</b> · pulsar C, escribir, y el comentario cae en su fotograma</figcaption>
     </figure>
     <div class="keys reveal">
@@ -750,7 +751,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     <figure class="shot reveal">
       <video src="/video/revision-export.mp4" poster="/video/revision-export-poster.jpg"
         width="1280" height="720" autoplay muted loop playsinline preload="metadata"
-        aria-label="Los comentarios de Positiva aparecen como marcadores en el timeline de DaVinci Resolve."></video>
+        aria-label="Los comentarios de Positiva aparecen como marcadores en el timeline de DaVinci Resolve."><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
       <figcaption><b>Exportación de marcadores</b> · DaVinci Resolve y Final Cut Pro</figcaption>
     </figure>
   </div>
@@ -771,7 +772,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     <figure class="shot reveal">
       <video src="/video/revision-rondas.mp4" poster="/video/revision-rondas-poster.jpg"
         width="1280" height="720" autoplay muted loop playsinline preload="metadata"
-        aria-label="El panel de Positiva con las rondas de revisión, comentarios y versiones de un vídeo."></video>
+        aria-label="El panel de Positiva con las rondas de revisión, comentarios y versiones de un vídeo."><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
       <figcaption><b>Tu panel</b> · rondas, comentarios y versiones</figcaption>
     </figure>
     <div class="trio">
@@ -809,7 +810,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     <div class="reel-frame reveal">
       <video src="/video/disenos-video.mp4" poster="/video/disenos-video-poster.jpg"
         width="1280" height="720" autoplay muted loop playsinline preload="metadata"
-        aria-label="Recorrido por una galería de vídeo de Positiva con diseño de entrega"></video>
+        aria-label="Recorrido por una galería de vídeo de Positiva con diseño de entrega"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
     </div>
   </div>
 </section>
@@ -880,6 +881,8 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
   </div>
 </section>
 
+</main>
+
 <!-- pv:footer -->
 <!-- ════════════════════════════════════════════════════════════════
      PIE COMÚN · fuente única: partials/chrome-footer.html
@@ -911,11 +914,11 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 }
 .footer-word svg{height:.92em;width:auto;flex:none}
 .footer-word span{color:var(--pv-ambar)}
-.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-30);max-width:78ch}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
 .footer-meta{
   display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
   margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
-  font-size:14px;color:var(--pv-tinta-30);
+  font-size:14px;color:var(--pv-tinta-60);
 }
 .footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
 .footer-meta a:hover{color:var(--pv-tinta)}

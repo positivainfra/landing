@@ -53,7 +53,7 @@ section{padding:clamp(72px,9vw,120px) 0}
 html.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--pv-ease-out),transform .9s var(--pv-ease-out);transition-delay:var(--d,0s)}
 html.js .reveal.is-in{opacity:1;transform:none}
 .btn{display:inline-flex;align-items:center;gap:var(--pv-s2);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--pv-r-pill);border:1px solid transparent;cursor:pointer;text-decoration:none;transition:all .22s var(--pv-ease)}
-.btn-amber{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar);text-transform:uppercase;letter-spacing:.08em;font-weight:700;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
+.btn-amber{background:var(--pv-ambar);color:#171614;border-color:var(--pv-ambar);text-transform:uppercase;letter-spacing:.08em;font-weight:700;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
 .btn-amber:hover{background:var(--pv-ambar-hover);border-color:var(--pv-ambar-hover);transform:translateY(-1px)}
 .btn-ghost{color:var(--pv-tinta);border-color:var(--pv-linea)}
 .btn-ghost:hover{border-color:var(--pv-tinta)}
@@ -158,7 +158,7 @@ details p{padding:0 0 var(--pv-s5);color:var(--pv-tinta-60);max-width:64ch}
 input[type=email]{flex:1;min-width:220px;font-family:var(--pv-sans);font-size:16px;padding:14px 18px;background:var(--pv-sala-2);border:1px solid var(--pv-linea-sala);border-radius:var(--pv-r-input);color:#EDECE8}
 input[type=email]::placeholder{color:#5C5B56}
 input[type=email]:focus{outline:2px solid var(--pv-ambar);outline-offset:1px;border-color:transparent}
-.capture form .btn{background:var(--pv-ambar);color:#fff;border:0;text-transform:uppercase;letter-spacing:.08em}
+.capture form .btn{background:var(--pv-ambar);color:#171614;border:0;text-transform:uppercase;letter-spacing:.08em}
 .capture form .btn:hover{background:var(--pv-ambar-hover)}
 .capture small{display:block;margin-top:var(--pv-s5);font-family:var(--pv-mono);font-size:11px;letter-spacing:.08em;color:#5C5B56;text-transform:uppercase}
 
@@ -372,8 +372,8 @@ nav.scrolled .nav-inner{
   text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
 }
 .nav-login:hover{color:var(--pv-tinta)}
-.nav-cta{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
-.nav-cta:hover{background:var(--pv-ambar-hover);color:#fff;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
+.nav-cta{background:var(--pv-ambar);color:#171614;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
+.nav-cta:hover{background:var(--pv-ambar-hover);color:#171614;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
 
 /* Desplegables: mismo lenguaje que la cápsula (papel translúcido + línea + blur) */
 .nav-drop{position:relative;display:flex;align-items:center}
@@ -601,6 +601,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 })();
 </script>
 <!-- /pv:nav -->
+<main id="contenido">
 
 <!-- ══ HERO ══ -->
 <header class="heroG">
@@ -629,7 +630,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
       <div class="marco">
         <video src="/video/galeria-hero.mp4" poster="/video/galeria-hero-poster.jpg"
           width="1280" height="720" autoplay muted loop playsinline preload="metadata"
-          aria-label="Una galería real de fotos y vídeo entregada con Positiva"></video>
+          aria-label="Una galería real de fotos y vídeo entregada con Positiva"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
       </div>
       <figcaption><b>Galería real</b> · fotos y vídeo, entregada con Positiva</figcaption>
     </figure>
@@ -680,7 +681,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
       </p>
     </div>
     <figure class="shotG reveal">
-      <img src="/img/galerias/marca-galeria.jpg" alt="Portada de una galería real con el nombre del estudio arriba y la sesión Must Have NYC" width="1280" height="720" loading="lazy" decoding="async">
+      <img src="/img/galerias/marca-galeria.webp" alt="Portada de una galería real con el nombre del estudio arriba y la sesión Must Have NYC" width="1280" height="720" loading="lazy" decoding="async">
       <figcaption><b>Galería real</b></figcaption>
     </figure>
     <div class="firma reveal">
@@ -708,20 +709,20 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
       <figure>
         <video src="/video/pasos/disenas.mp4" poster="/video/pasos/disenas-poster.jpg"
           width="1280" height="720" muted loop playsinline preload="none"
-          aria-label="Elegir portada, cuadrícula y tema de una galería de fotos"></video>
+          aria-label="Elegir portada, cuadrícula y tema de una galería de fotos"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
         <figcaption><b>Foto</b> · portada, cuadrícula y tema, en tiempo real</figcaption>
       </figure>
       <figure>
-        <video src="/video/disenos-video.mp4" poster="/img/galerias/diseno-video.jpg"
+        <video src="/video/disenos-video.mp4" poster="/img/galerias/diseno-video.webp"
           width="1280" height="720" muted loop playsinline preload="none"
-          aria-label="Recorrido por los diseños de entrega de vídeo: Estreno, Cartel, Vitrina y Montaje"></video>
+          aria-label="Recorrido por los diseños de entrega de vídeo: Estreno, Cartel, Vitrina y Montaje"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
         <figcaption><b>Vídeo</b> · Estreno, Cartel, Vitrina, Montaje y Videoteca</figcaption>
       </figure>
     </div>
     <div class="tira3 reveal">
-      <figure><img src="/img/galerias/huella-barro.jpg" alt="Galería de un documental: portada oscura con laureles de festivales" width="640" height="354" loading="lazy" decoding="async"></figure>
-      <figure><img src="/img/galerias/slide-2-evento-hoka.jpg" alt="Galería de evento deportivo con la marca del estudio" width="1600" height="1000" loading="lazy" decoding="async"></figure>
-      <figure><img src="/img/galerias/slide-6-boda-mosaico.jpg" alt="Portada editorial de una galería de boda" width="1600" height="1000" loading="lazy" decoding="async"></figure>
+      <figure><img src="/img/galerias/huella-barro.webp" alt="Galería de un documental: portada oscura con laureles de festivales" width="640" height="354" loading="lazy" decoding="async"></figure>
+      <figure><img src="/img/galerias/slide-2-evento-hoka.webp" alt="Galería de evento deportivo con la marca del estudio" width="1600" height="1000" loading="lazy" decoding="async"></figure>
+      <figure><img src="/img/galerias/slide-6-boda-mosaico.webp" alt="Portada editorial de una galería de boda" width="1600" height="1000" loading="lazy" decoding="async"></figure>
     </div>
     <p class="tira3-pie reveal"><b>Galerías reales</b> · tres trabajos, tres diseños</p>
     <div class="firma reveal">
@@ -845,7 +846,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
       </p>
     </div>
     <figure class="momentos-shot reveal">
-      <img src="/img/galerias/slide-3-boda-grid.jpg" alt="Galería real dividida en momentos: cada sección con su nombre y su número de fotos en la cabecera" width="1600" height="1000" loading="lazy" decoding="async">
+      <img src="/img/galerias/slide-3-boda-grid.webp" alt="Galería real dividida en momentos: cada sección con su nombre y su número de fotos en la cabecera" width="1600" height="1000" loading="lazy" decoding="async">
       <figcaption><b>Galería real</b> · los momentos, con su recuento, en la cabecera</figcaption>
     </figure>
   </div>
@@ -865,11 +866,11 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     </div>
     <div class="dis2 reveal">
       <figure>
-        <img src="/img/galerias/galeria-fotos.jpg" alt="La rejilla de fotos de una galería real, con las pestañas Fotos y Vídeo en la cabecera" width="1280" height="720" loading="lazy" decoding="async">
+        <img src="/img/galerias/galeria-fotos.webp" alt="La rejilla de fotos de una galería real, con las pestañas Fotos y Vídeo en la cabecera" width="1280" height="720" loading="lazy" decoding="async">
         <figcaption><b>Fotos</b> · la rejilla, con la pestaña Vídeo al lado</figcaption>
       </figure>
       <figure>
-        <img src="/img/galerias/galeria-video.jpg" alt="Un vídeo reproduciéndose dentro de la misma galería" width="1280" height="720" loading="lazy" decoding="async">
+        <img src="/img/galerias/galeria-video.webp" alt="Un vídeo reproduciéndose dentro de la misma galería" width="1280" height="720" loading="lazy" decoding="async">
         <figcaption><b>Vídeo</b> · se reproduce en la propia galería</figcaption>
       </figure>
     </div>
@@ -970,6 +971,8 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
   </div>
 </section>
 
+</main>
+
 <!-- pv:footer -->
 <!-- ════════════════════════════════════════════════════════════════
      PIE COMÚN · fuente única: partials/chrome-footer.html
@@ -1001,11 +1004,11 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 }
 .footer-word svg{height:.92em;width:auto;flex:none}
 .footer-word span{color:var(--pv-ambar)}
-.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-30);max-width:78ch}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
 .footer-meta{
   display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
   margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
-  font-size:14px;color:var(--pv-tinta-30);
+  font-size:14px;color:var(--pv-tinta-60);
 }
 .footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
 .footer-meta a:hover{color:var(--pv-tinta)}

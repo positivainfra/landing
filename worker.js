@@ -110,7 +110,25 @@ export default {
     if (url.pathname === '/soporte' || url.pathname === '/soporte/') {
       return Response.redirect(url.origin + '/soporte/es/', 301);
     }
-    // Cualquier otra ruta: la sirve la capa de assets (incluye su 404).
-    return env.ASSETS.fetch(request);
+    // Cualquier otra ruta: la sirve la capa de assets (incluye su 404),
+    // con caché eficiente por tipo y cabeceras de seguridad.
+    const res = await env.ASSETS.fetch(request);
+    const h = new Headers(res.headers);
+    const p = url.pathname;
+    if (p.startsWith('/fonts/')) {
+      h.set('Cache-Control', 'public, max-age=31536000, immutable');
+    } else if (/\.(?:webp|avif|jpe?g|png|svg|ico|vtt)$/.test(p)) {
+      h.set('Cache-Control', 'public, max-age=2592000'); // 30 días
+    } else if (/\.(?:mp4|webm)$/.test(p)) {
+      // los vídeos se sustituyen conservando el nombre: caché corta
+      h.set('Cache-Control', 'public, max-age=604800'); // 7 días
+    } else if (/\.(?:css|js|json|txt|xml)$/.test(p)) {
+      h.set('Cache-Control', 'public, max-age=86400'); // 1 día
+    }
+    h.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    h.set('X-Content-Type-Options', 'nosniff');
+    h.set('Cross-Origin-Opener-Policy', 'same-origin');
+    h.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+    return new Response(res.body, { status: res.status, statusText: res.statusText, headers: h });
   },
 };

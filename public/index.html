@@ -28,6 +28,7 @@
 <link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/video/galeria-hero-poster.jpg" as="image" fetchpriority="high">
 
 <style>
 /* ── Fuentes auto-alojadas · subconjunto latino · font-display:swap ── */
@@ -114,8 +115,8 @@ html.js .reveal.is-in{opacity:1;transform:none}
 }
 .btn-primary{background:var(--pv-tinta);color:var(--pv-papel)}
 .btn-primary:hover{background:#000;transform:translateY(-2px)}
-.btn-amber{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar);font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 8px 24px -8px rgba(201,138,43,.6)}
-.btn-amber:hover{background:var(--pv-ambar-hover);color:#fff;border-color:var(--pv-ambar-hover);transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(201,138,43,.8)}
+.btn-amber{background:var(--pv-ambar);color:#171614;border-color:var(--pv-ambar);font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 8px 24px -8px rgba(201,138,43,.6)}
+.btn-amber:hover{background:var(--pv-ambar-hover);color:#171614;border-color:var(--pv-ambar-hover);transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(201,138,43,.8)}
 .btn-ghost{background:transparent;color:var(--pv-tinta);border-color:var(--pv-linea)}
 .btn-ghost:hover{border-color:var(--pv-tinta)}
 .dark .btn-ghost,.capture .btn-ghost{color:#EDECE8;border-color:var(--pv-linea-sala)}
@@ -147,8 +148,8 @@ html:not(.js) .hst,.hst.rm{position:static;height:auto;min-height:100svh;--s1:1;
 .acto-3{opacity:var(--t3,0);transform:translateY(var(--m3,30px)) translateX(var(--swap))}
 .acto-4{opacity:var(--t4,0);transform:translateY(var(--m4,30px))}
 .acto>em{font-style:normal;font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pv-ambar-ink);display:block;margin-bottom:var(--pv-s4)}
-.acto h3{font-size:min(clamp(30px,3.4vw,48px),6.5svh);font-weight:300;letter-spacing:-.02em;line-height:1.12;margin-bottom:var(--pv-s4)}
-.acto h3 i{font-style:italic}
+.acto h2{font-size:min(clamp(30px,3.4vw,48px),6.5svh);font-weight:300;letter-spacing:-.02em;line-height:1.12;margin-bottom:var(--pv-s4)}
+.acto h2 i{font-style:italic}
 .acto>p{font-size:clamp(16.5px,1.4vw,19px);line-height:1.6;color:var(--pv-tinta-60);max-width:42ch}
 .acto-0 .hero-eyebrow{margin-bottom:var(--pv-s6)}
 .acto-0 .hero-display{color:var(--pv-tinta);font-family:var(--pv-display);font-weight:300;letter-spacing:-.025em;line-height:1.08;font-size:min(clamp(40px,5.2vw,84px),10svh)}
@@ -193,6 +194,8 @@ html:not(.js) .camino,.hst.rm .camino{display:none}
   position:relative;overflow:clip;border-radius:var(--pv-r-panel);background:#000;
   box-shadow:0 44px 90px -34px rgba(23,22,20,.5);
 }
+.f-vid .f-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.f-vid video{position:relative;z-index:1}
 /* pequeño loading mientras el vídeo del hero llega */
 html.js .f-vid.cargando::before{
   content:"";position:absolute;left:50%;top:50%;z-index:2;width:34px;height:34px;
@@ -412,7 +415,7 @@ html:not(.js) .tj-url,.hst.rm .tj-url{opacity:1;transform:none}
   .hst-grid{grid-template-columns:1fr;gap:18px;align-content:end;padding-top:clamp(72px,9vh,96px);padding-bottom:clamp(52px,8vh,72px)}
   .hst-textos{min-height:0;align-items:end}
   .acto{align-self:end}
-  .acto h3{font-size:clamp(23px,5.8vw,30px);margin-bottom:10px}
+  .acto h2{font-size:clamp(23px,5.8vw,30px);margin-bottom:10px}
   .acto>p{font-size:15.5px}
   .acto-0 .hero-display{font-size:min(11.2cqw,44px)}
   .acto-0 h1{font-size:17px;margin-top:12px;line-height:1.3}
@@ -582,7 +585,7 @@ input[type=email]{
 }
 input[type=email]::placeholder{color:#5C5B56}
 input[type=email]:focus{outline:2px solid var(--pv-ambar);outline-offset:1px;border-color:transparent}
-.capture form .btn{background:var(--pv-ambar);color:#fff;border:0;text-transform:uppercase;letter-spacing:.08em}
+.capture form .btn{background:var(--pv-ambar);color:#171614;border:0;text-transform:uppercase;letter-spacing:.08em}
 .capture form .btn:hover{background:var(--pv-ambar-hover)}
 .capture small{display:block;margin-top:var(--pv-s5);font-family:var(--pv-mono);font-size:11px;letter-spacing:.08em;color:#5C5B56;text-transform:uppercase}
 
@@ -775,8 +778,8 @@ nav.scrolled .nav-inner{
   text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
 }
 .nav-login:hover{color:var(--pv-tinta)}
-.nav-cta{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
-.nav-cta:hover{background:var(--pv-ambar-hover);color:#fff;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
+.nav-cta{background:var(--pv-ambar);color:#171614;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
+.nav-cta:hover{background:var(--pv-ambar-hover);color:#171614;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
 
 /* Desplegables: mismo lenguaje que la cápsula (papel translúcido + línea + blur) */
 .nav-drop{position:relative;display:flex;align-items:center}
@@ -1004,6 +1007,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 })();
 </script>
 <!-- /pv:nav -->
+<main id="contenido">
 
 <!-- ══ HERO · declaración tipográfica + tira de negativos ══ -->
 <!-- ══ LA HISTORIA · hero pineado que cuenta la entrega ══ -->
@@ -1025,7 +1029,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
             <span class="hl"><span style="--d:.25s"><em>ser visto.</em></span></span>
           </p>
           <h1>Plataforma de galerías de fotos y vídeo para clientes</h1>
-          <p class="lede0">Galerías privadas de fotografías y vídeos para tus clientes, con tu marca y sin reenviar el enlace jamás.</p>
+          <p class="lede0">Galerías privadas de fotos y vídeos para clientes. Con tu marca. Sin reenviar el enlace jamás.</p>
           <div class="cta-row">
             <a href="https://app.positiva.studio/registro" class="btn btn-amber" data-ev="cta_register_click" data-ev-place="hero">Empieza gratis</a>
             <a href="#historia" class="btn btn-ghost" id="cta-pasos">Cómo funciona</a>
@@ -1033,25 +1037,25 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
         </header>
         <div class="acto acto-1">
           <em>Así lo entregas hoy</em>
-          <h3>Un enlace gris<br><i>que caduca.</i></h3>
+          <h2>Un enlace gris<br><i>que caduca.</i></h2>
           <p>Sin tu marca, sin diseño y con publicidad de otros. En tres días, muerto
           y vuelta al «¿me lo reenvías?». ¿Lo cambiamos?</p>
         </div>
         <div class="acto acto-2">
           <em>01 · Experiencia</em>
-          <h3>Entrega tus fotos y vídeos<br><i>con diseño y con tu marca.</i></h3>
+          <h2>Entrega tus fotos y vídeos<br><i>con diseño y con tu marca.</i></h2>
           <p>Galerías de entrega diseñadas para que tu cliente disfrute de tu trabajo.</p>
         </div>
         <div class="acto acto-3">
           <em>02 · Revisión</em>
-          <h3>Todo el feedback<br><i>en un lugar.</i></h3>
+          <h2>Todo el feedback<br><i>en un lugar.</i></h2>
           <p>Obtén el feedback de fotografías y de vídeo en un solo lugar, foto a foto
           y fotograma a fotograma. Con exportación de favoritas a Lightroom y de
           comentarios de vídeo a DaVinci Resolve y Final Cut Pro.</p>
         </div>
         <div class="acto acto-4">
           <em>03 · Portfolio actualizado</em>
-          <h3>Tu web,<br><i>por fin actualizada.</i></h3>
+          <h2>Tu web,<br><i>por fin actualizada.</i></h2>
           <p>Ya no hay excusas: monta tu portfolio web con las entregas que ya tienes.
           Selecciona lo que quieres mostrar y en segundos está en tu web.</p>
         </div>
@@ -1062,9 +1066,11 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
         <!-- acto 0 · la entrega con Positiva: galería real en vídeo -->
         <div class="tj-final">
           <div class="f-vid">
-            <video id="herovid" src="/video/galeria-hero.mp4" poster="/video/galeria-hero-poster.jpg"
-              width="1280" height="720" autoplay muted loop playsinline preload="auto" fetchpriority="high"
-              aria-label="Una galería real entregada con Positiva"></video>
+            <img class="f-poster" src="/video/galeria-hero-poster.jpg" alt="" width="1280" height="720" fetchpriority="high" decoding="async">
+            <video id="herovid" src="/video/galeria-hero-720.mp4" poster="/video/galeria-hero-poster.jpg"
+              width="1280" height="720" autoplay muted loop playsinline preload="auto"
+              aria-label="Una galería real entregada con Positiva"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
+            <script>if(matchMedia("(min-width:761px)").matches){document.getElementById("herovid").src="/video/galeria-hero.mp4";}</script>
           </div>
           <a class="f-url" href="https://portfolio.rodrigomarquez.es/g/musthave-nyc" target="_blank" rel="noopener"><i></i><span><em>rodrigomarquez</em>.positiva.studio/g/musthave-nyc</span></a>
         </div>
@@ -1084,33 +1090,33 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
         </div>
         <!-- acto 1 · subes: captura real de la subida, movida por el scroll -->
         <div class="tj-clip">
-          <video id="clipentrega" src="/video/pasos/entrega.mp4" poster="/video/pasos/entrega-poster.jpg"
-            width="1280" height="720" muted loop playsinline preload="none"></video>
+          <video id="clipentrega" src="/video/pasos/entrega.mp4" poster="/video/pasos/entrega-poster.webp"
+            width="1280" height="720" muted loop playsinline preload="none"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
         </div>
         <!-- acto 2 · diseñas: captura real del diseño de la galería -->
         <div class="tj-clip2">
-          <video id="cliprevision" src="/video/pasos/revision.mp4" poster="/video/pasos/revision-poster.jpg"
-            width="1280" height="720" muted loop playsinline preload="none"></video>
+          <video id="cliprevision" src="/video/pasos/revision.mp4" poster="/video/pasos/revision-poster.webp"
+            width="1280" height="720" muted loop playsinline preload="none"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
         </div>
         <!-- acto 4 · portfolio: tu web pública -->
         <div class="tj-port">
-          <img src="/img/perfiles/perfil-rmq.png" alt="" width="1400" height="932" loading="lazy" decoding="async">
+          <img src="/img/perfiles/perfil-rmq.webp" alt="" width="1400" height="932" loading="lazy" decoding="async">
         </div>
         <div class="tj-panel">
           <div class="tj-cab"><span><b>Campaña NYC</b></span><span>84 fotos · 3 vídeos</span></div>
           <div class="tj-cover">
-            <img src="/img/placeholders/web/nyc-cover.jpg" alt="" width="1200" height="809" loading="eager" decoding="async">
+            <img src="/img/placeholders/web/nyc-cover.webp" alt="" width="1200" height="809" loading="lazy" decoding="async">
             <span class="marca">Rodrigo Márquez</span>
             <span class="tj-sello">No caduca</span>
             <div class="tj-coment"><b>Cliente · hace 2 min</b>La del abrigo rojo, en grande para la web ✨</div>
           </div>
           <div class="tj-grid">
-            <figure class="f1"><img src="/img/placeholders/web/nyc-flag.jpg" alt="" loading="eager" decoding="async"><span class="mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="wx1" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="12" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.9 8.7 L 69.6 9.8 L 130.4 10.0 L 191.9 10.0 L 191.0 103.9 L 190.6 198.4 L 190.4 292.2 L 129.7 292.2 L 68.9 290.4 L 8.3 289.9 L 8.9 195.7 L 7.5 102.9 L 7.9 8.7 L 54.5 5.6" stroke-width="11" opacity="0.97" filter="url(#wx1)"/></svg></span><span class="tj-fav"></span></figure>
-            <figure class="f2"><img src="/img/placeholders/web/nyc-street.jpg" alt="" loading="eager" decoding="async"><span class="mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="wx2" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="14" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="17" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.8 7.6 L 68.3 8.3 L 129.0 9.9 L 189.4 10.3 L 190.9 103.9 L 190.5 197.3 L 191.9 291.7 L 130.6 291.8 L 69.4 290.7 L 8.0 290.9 L 7.3 196.7 L 7.1 102.4 L 7.8 7.6 L 64.8 5.1" stroke-width="11" opacity="0.97" filter="url(#wx2)"/></svg></span><span class="tj-fav"></span></figure>
-            <figure><img src="/img/placeholders/web/nyc-venice.jpg" alt="" loading="eager" decoding="async"></figure>
-            <figure><img src="/img/placeholders/web/nyc-mural.jpg" alt="" loading="eager" decoding="async"></figure>
-            <figure class="f3"><img src="/img/placeholders/web/nyc-kiosco.jpg" alt="" loading="eager" decoding="async"><span class="mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="wx3" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="21" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="26" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.6 9.8 L 68.1 10.5 L 129.7 11.0 L 190.2 10.5 L 190.2 104.0 L 190.8 197.9 L 190.3 291.1 L 129.4 291.4 L 68.9 291.1 L 7.6 291.9 L 7.3 197.1 L 8.3 104.1 L 7.6 9.8 L 49.6 4.6" stroke-width="11" opacity="0.97" filter="url(#wx3)"/></svg></span><span class="tj-fav"></span></figure>
-            <figure><img src="/img/placeholders/web/nyc-beach.jpg" alt="" loading="eager" decoding="async"></figure>
+            <figure class="f1"><img src="/img/placeholders/web/nyc-flag.webp" alt="" loading="lazy" decoding="async"><span class="mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="wx1" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="12" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.9 8.7 L 69.6 9.8 L 130.4 10.0 L 191.9 10.0 L 191.0 103.9 L 190.6 198.4 L 190.4 292.2 L 129.7 292.2 L 68.9 290.4 L 8.3 289.9 L 8.9 195.7 L 7.5 102.9 L 7.9 8.7 L 54.5 5.6" stroke-width="11" opacity="0.97" filter="url(#wx1)"/></svg></span><span class="tj-fav"></span></figure>
+            <figure class="f2"><img src="/img/placeholders/web/nyc-street.webp" alt="" loading="lazy" decoding="async"><span class="mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="wx2" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="14" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="17" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.8 7.6 L 68.3 8.3 L 129.0 9.9 L 189.4 10.3 L 190.9 103.9 L 190.5 197.3 L 191.9 291.7 L 130.6 291.8 L 69.4 290.7 L 8.0 290.9 L 7.3 196.7 L 7.1 102.4 L 7.8 7.6 L 64.8 5.1" stroke-width="11" opacity="0.97" filter="url(#wx2)"/></svg></span><span class="tj-fav"></span></figure>
+            <figure><img src="/img/placeholders/web/nyc-venice.webp" alt="" loading="lazy" decoding="async"></figure>
+            <figure><img src="/img/placeholders/web/nyc-mural.webp" alt="" loading="lazy" decoding="async"></figure>
+            <figure class="f3"><img src="/img/placeholders/web/nyc-kiosco.webp" alt="" loading="lazy" decoding="async"><span class="mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="wx3" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="21" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="26" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.6 9.8 L 68.1 10.5 L 129.7 11.0 L 190.2 10.5 L 190.2 104.0 L 190.8 197.9 L 190.3 291.1 L 129.4 291.4 L 68.9 291.1 L 7.6 291.9 L 7.3 197.1 L 8.3 104.1 L 7.6 9.8 L 49.6 4.6" stroke-width="11" opacity="0.97" filter="url(#wx3)"/></svg></span><span class="tj-fav"></span></figure>
+            <figure><img src="/img/placeholders/web/nyc-beach.webp" alt="" loading="lazy" decoding="async"></figure>
           </div>
         </div>
         <div class="tj-urls">
@@ -1138,7 +1144,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
       <div class="marco">
         <video id="reelvid" src="/video/showcase-hero.mp4" poster="/video/showcase-hero-poster.jpg"
           width="1280" height="720" autoplay muted loop playsinline preload="metadata"
-          aria-label="Recorrido por Positiva: galerías con tu marca, revisión del cliente y portfolio público."></video>
+          aria-label="Recorrido por Positiva: galerías con tu marca, revisión del cliente y portfolio público."><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
       </div>
       <figcaption><span><b>Showcase</b> · una galería real, de la subida a la entrega</span><span>40 s · sin sonido</span></figcaption>
     </figure>
@@ -1153,9 +1159,9 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 
     <div class="qgrid">
       <a class="qcard wide reveal" href="/galerias/">
-        <div class="qshot"><video src="/video/galeria-hero.mp4" poster="/img/qcards/entrega.jpg"
+        <div class="qshot"><video src="/video/galeria-hero.mp4" poster="/img/qcards/entrega.webp"
           width="1280" height="720" muted loop playsinline preload="none"
-          aria-label="Una galería de entrega real con la marca del estudio"></video></div>
+          aria-label="Una galería de entrega real con la marca del estudio"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video></div>
         <div class="qbody">
           <em>Galerías de entrega</em>
           <h3>Entrega tu trabajo con tu marca</h3>
@@ -1164,9 +1170,9 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
         </div>
       </a>
       <a class="qcard reveal" href="/revision-video/">
-        <div class="qshot"><video src="/video/revision-video.mp4" poster="/img/qcards/revision-video.jpg"
+        <div class="qshot"><video src="/video/revision-video.mp4" poster="/img/qcards/revision-video.webp"
           width="1280" height="720" muted loop playsinline preload="none"
-          aria-label="El cliente comenta sobre el fotograma y el estudio responde desde su panel"></video></div>
+          aria-label="El cliente comenta sobre el fotograma y el estudio responde desde su panel"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video></div>
         <div class="qbody">
           <em>Optimiza la revisión</em>
           <h3>Revisión de vídeo</h3>
@@ -1176,9 +1182,9 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
         </div>
       </a>
       <a class="qcard reveal" style="--d:.08s" href="/revision-foto/">
-        <div class="qshot"><video src="/video/pasos/cliente.mp4" poster="/img/qcards/revision-foto.jpg"
+        <div class="qshot"><video src="/video/pasos/cliente.mp4" poster="/img/qcards/revision-foto.webp"
           width="1280" height="720" muted loop playsinline preload="none"
-          aria-label="El cliente marca favoritas y comenta una foto"></video></div>
+          aria-label="El cliente marca favoritas y comenta una foto"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video></div>
         <div class="qbody">
           <em>Optimiza la revisión</em>
           <h3>Revisión de foto</h3>
@@ -1188,9 +1194,9 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
         </div>
       </a>
       <a class="qcard reveal" href="/galerias/#diseno">
-        <div class="qshot"><video src="/video/pasos/disenas.mp4" poster="/img/qcards/diseno.jpg"
+        <div class="qshot"><video src="/video/pasos/disenas.mp4" poster="/img/qcards/diseno.webp"
           width="1280" height="720" muted loop playsinline preload="none"
-          aria-label="Elegir portada y cuadrícula de una galería"></video></div>
+          aria-label="Elegir portada y cuadrícula de una galería"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video></div>
         <div class="qbody">
           <em>Diseño</em>
           <h3>Diseño de galerías</h3>
@@ -1200,7 +1206,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
         </div>
       </a>
       <a class="qcard reveal" style="--d:.08s" href="/portfolio/">
-        <div class="qshot"><img src="/img/perfiles/perfil-rmq.png" alt="Perfil público de un fotógrafo en Positiva, a modo de portfolio" width="1400" height="932" loading="lazy" decoding="async"></div>
+        <div class="qshot"><img src="/img/perfiles/perfil-rmq.webp" alt="Perfil público de un fotógrafo en Positiva, a modo de portfolio" width="1400" height="932" loading="lazy" decoding="async"></div>
         <div class="qbody">
           <em>Portfolio público</em>
           <h3>Tu web, sin construir una web</h3>
@@ -1402,6 +1408,8 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
   </div>
 </section>
 
+</main>
+
 <!-- pv:footer -->
 <!-- ════════════════════════════════════════════════════════════════
      PIE COMÚN · fuente única: partials/chrome-footer.html
@@ -1433,11 +1441,11 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 }
 .footer-word svg{height:.92em;width:auto;flex:none}
 .footer-word span{color:var(--pv-ambar)}
-.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-30);max-width:78ch}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
 .footer-meta{
   display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
   margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
-  font-size:14px;color:var(--pv-tinta-30);
+  font-size:14px;color:var(--pv-tinta-60);
 }
 .footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
 .footer-meta a:hover{color:var(--pv-tinta)}
@@ -1585,6 +1593,8 @@ window.addEventListener('load', () => document.documentElement.classList.add('lo
       const listo = () => fv.classList.remove('cargando');
       vid.addEventListener('playing', listo, { once: true });
       vid.addEventListener('canplaythrough', listo, { once: true });
+      vid.addEventListener('error', listo, { once: true });
+      setTimeout(listo, 8000); // red de seguridad: nunca un spinner eterno
     }
     const arranca = () => { if (!vidFuera && vid.paused) vid.play().catch(() => {}); };
     vid.addEventListener('loadeddata', arranca);
