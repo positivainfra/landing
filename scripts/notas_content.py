@@ -100,7 +100,7 @@ body="""
 <p>Leída así, la conclusión es incómoda para casi todas: ninguna cubre las tres verticales a la vez, y las que cubren dos cuestan más que Positiva, que cubre las tres por 89&nbsp;€&nbsp;+&nbsp;IVA al año.</p>
 
 <h2>Nuestra recomendación</h2>
-<p>Si vives de vender copias impresas a un público internacional, Pic-Time es una gran heredera de Pixieset. Para todo lo demás — <a href="/galerias/">entregar</a> foto y vídeo con tu marca, <a href="/revision-foto/">revisar con tu cliente</a> en español y tener tu <a href="/portfolio/">portfolio</a> siempre al día, en euros y con los datos en la UE — <a href="/">Positiva</a> es la alternativa que hemos construido precisamente porque no existía. Puedes <a href="https://app.positiva.studio">probarla gratis</a> con 15&nbsp;GB y 2 galerías.</p>
+<p>Si vives de vender copias impresas a un público internacional, Pic-Time es una gran heredera de Pixieset. Para todo lo demás — <a href="/galerias/">entregar</a> foto y vídeo con tu marca, <a href="/revision-foto/">revisar con tu cliente</a> en español y tener tu <a href="/portfolio/">portfolio</a> siempre al día, en euros y con los datos en la UE — <a href="/">Positiva</a> es la alternativa que hemos construido precisamente porque no existía. Puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB y 2 galerías.</p>
 """,
 faq=[
 ('¿Hay alguna alternativa a Pixieset en español?',
@@ -184,7 +184,7 @@ body="""
 <p>Ninguna de las cinco cubre entrega, revisión y portfolio a la vez — y Positiva, que cubre las tres, es además la más barata a almacenamiento comparable. Tenemos la comparativa detallada en <a href="/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time vs Pixieset</a>.</p>
 
 <h2>Nuestra recomendación</h2>
-<p>Si la tienda de impresión es el corazón de tu negocio, quédate en Pic-Time: ahí sigue siendo la mejor. Si lo que necesitas es <a href="/galerias/">entregar</a> y <a href="/revision-foto/">revisar</a> foto y vídeo con tu marca, y un <a href="/portfolio/">portfolio</a> que se actualiza solo, en español y en euros, <a href="/">Positiva</a> está construida exactamente para eso — y puedes <a href="https://app.positiva.studio">probarla gratis</a>.</p>
+<p>Si la tienda de impresión es el corazón de tu negocio, quédate en Pic-Time: ahí sigue siendo la mejor. Si lo que necesitas es <a href="/galerias/">entregar</a> y <a href="/revision-foto/">revisar</a> foto y vídeo con tu marca, y un <a href="/portfolio/">portfolio</a> que se actualiza solo, en español y en euros, <a href="/">Positiva</a> está construida exactamente para eso — y puedes <a href="https://app.positiva.studio/registro">probarla gratis</a>.</p>
 """,
 faq=[
 ('¿Hay alguna alternativa a Pic-Time en español?',
@@ -269,7 +269,7 @@ body="""
 <p>La comparativa completa está en <a href="/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>.</p>
 
 <h2>Nuestra recomendación</h2>
-<p>Para mover un archivo suelto, SwissTransfer o Smash resuelven gratis y rápido. Para <strong>entregar tu trabajo</strong> — que tu cliente lo vea con tu marca, lo <a href="/revision-foto/">comente</a> y no te vuelva a pedir el enlace, y que cada entrega sume a tu <a href="/portfolio/">portfolio</a> — <a href="/">Positiva</a> es gratis hasta 15&nbsp;GB y tarda cinco minutos en <a href="https://app.positiva.studio">probarse</a>.</p>
+<p>Para mover un archivo suelto, SwissTransfer o Smash resuelven gratis y rápido. Para <strong>entregar tu trabajo</strong> — que tu cliente lo vea con tu marca, lo <a href="/revision-foto/">comente</a> y no te vuelva a pedir el enlace, y que cada entrega sume a tu <a href="/portfolio/">portfolio</a> — <a href="/">Positiva</a> es gratis hasta 15&nbsp;GB y tarda cinco minutos en <a href="https://app.positiva.studio/registro">probarse</a>.</p>
 """,
 faq=[
 ('¿Cuál es la mejor alternativa gratuita a WeTransfer para fotógrafos?',
@@ -331,7 +331,7 @@ body="""
 <p>El patrón se repite: todas revisan, ninguna entrega con tu marca ni alimenta un portfolio — y todas cobran por usuario. Un equipo de tres en Frame.io Pro paga unos 540&nbsp;$ al año solo por revisar; <a href="/precios/">el plan Autor de Positiva cuesta 89&nbsp;€&nbsp;+&nbsp;IVA al año</a> y cubre revisión, entrega y portfolio sin contar asientos.</p>
 
 <h2>Nuestra recomendación</h2>
-<p>Si tu casa es Premiere y la postproducción interna de un equipo grande, Frame.io sigue siendo la referencia. Si revisas con clientes en español y terminas en DaVinci Resolve o Final Cut Pro, <a href="/revision-video/">la revisión de vídeo de Positiva</a> hace exactamente ese recorrido — comentario del cliente → marcador en tu timeline — y de paso resuelve <a href="/galerias/">la entrega del máster</a> y tu <a href="/portfolio/">portfolio</a>, por una fracción del precio. <a href="https://app.positiva.studio">Pruébala gratis</a>.</p>
+<p>Si tu casa es Premiere y la postproducción interna de un equipo grande, Frame.io sigue siendo la referencia. Si revisas con clientes en español y terminas en DaVinci Resolve o Final Cut Pro, <a href="/revision-video/">la revisión de vídeo de Positiva</a> hace exactamente ese recorrido — comentario del cliente → marcador en tu timeline — y de paso resuelve <a href="/galerias/">la entrega del máster</a> y tu <a href="/portfolio/">portfolio</a>, por una fracción del precio. <a href="https://app.positiva.studio/registro">Pruébala gratis</a>.</p>
 """,
 faq=[
 ('¿Hay alguna alternativa a Frame.io en español?',
@@ -424,7 +424,7 @@ body="""
 <p>Tienes el análisis detallado en <a href="/positiva-vs-arcadina/">Positiva vs Arcadina</a>.</p>
 
 <h2>Nuestra recomendación</h2>
-<p>Si lo que necesitas es una web con blog y tienda llave en mano y en español, Arcadina sigue teniendo sentido. Si tu problema diario es <a href="/galerias/">entregar</a> y <a href="/revision-foto/">revisar</a> foto y vídeo con tus clientes — y quieres que tu <a href="/portfolio/">portfolio</a> se actualice solo con cada entrega — <a href="/">Positiva</a> cubre las tres verticales por 89&nbsp;€&nbsp;+&nbsp;IVA al año. <a href="https://app.positiva.studio">Pruébala gratis</a> con 15&nbsp;GB y 2 galerías.</p>
+<p>Si lo que necesitas es una web con blog y tienda llave en mano y en español, Arcadina sigue teniendo sentido. Si tu problema diario es <a href="/galerias/">entregar</a> y <a href="/revision-foto/">revisar</a> foto y vídeo con tus clientes — y quieres que tu <a href="/portfolio/">portfolio</a> se actualice solo con cada entrega — <a href="/">Positiva</a> cubre las tres verticales por 89&nbsp;€&nbsp;+&nbsp;IVA al año. <a href="https://app.positiva.studio/registro">Pruébala gratis</a> con 15&nbsp;GB y 2 galerías.</p>
 """,
 faq=[
 ('¿Cuál es la principal diferencia entre Arcadina y sus alternativas?',
@@ -435,7 +435,155 @@ faq=[
  'Sí. Positiva tiene un plan gratuito permanente de 15 GB y 2 galerías, sin tarjeta, suficiente para montar una entrega real con tu marca y decidir con calma.'),
 ],
 ),
+# ══ 6 · VIMEO ═════════════════════════════════════════════════════
+dict(
+slug='alternativas-a-vimeo',
+title='Alternativas a Vimeo para revisar y entregar vídeo (2026) · Notas de Positiva',
+h1='Alternativas a Vimeo para revisar y entregar vídeo (2026)',
+desc='Alternativas a Vimeo para videógrafos: revisión de vídeo con clientes, entrega con tu marca y portfolio, en español y sin pagar por asiento.',
+lede='Vimeo sigue teniendo el mejor reproductor del sector. Pero si lo usas para revisar con clientes y entregar proyectos, pagas por asiento, por año y en inglés — por funciones que no son su centro. Estas son las alternativas.',
+date_iso=D, date_h=DH,
+list_names=['Positiva', 'Frame.io', 'Dropbox Replay', 'YouTube', 'Filestage'],
+body="""
+<p>Seamos justos con Vimeo: reproductor impecable, embeds sin publicidad y unos showcases que durante años fueron el portfolio de facto de medio sector audiovisual. Como escaparate de vídeo, sigue siendo excelente.</p>
+<p>El problema aparece cuando lo estiras hacia el trabajo con clientes. Las notas con código de tiempo llegan en sus planes de pago, que se cobran por asiento y al mes (Starter 12&nbsp;$/asiento/mes facturado anual; Standard, con 2&nbsp;TB, 25&nbsp;$/asiento/mes; Advanced 75&nbsp;$/asiento/mes), los planes limitan los vídeos que subes al año, buena parte del flujo ocurre en inglés — y ni la <a href="/galerias/">entrega de un proyecto con tu marca</a> (foto incluida) ni la exportación de comentarios a tu editor existen. Estas son las alternativas en 2026.</p>
+
+<h2>1. Positiva — revisión, entrega y portfolio, sin pagar por asiento</h2>
+<p><a href="/">Positiva</a> es una plataforma española que cubre lo que un videógrafo necesita alrededor del cliente. La <a href="/revision-video/">revisión</a>: tu cliente comenta sobre el fotograma exacto sin registrarse, por rondas, y tú exportas los comentarios como marcadores a DaVinci Resolve (EDL) o Final Cut Pro (FCPXML). La <a href="/galerias/">entrega</a>: la misma galería con tu marca sirve el máster final, junto a las fotos si las hay, en un enlace que no caduca. Y el <a href="/portfolio/">portfolio público</a>: tus mejores entregas, publicadas en segundos.</p>
+<ul>
+<li><strong>A favor:</strong> las tres verticales en una sola cuota — <a href="/precios/">Autor: 250&nbsp;GB, 89&nbsp;€&nbsp;+&nbsp;IVA/año</a>, sin asientos ni límite de vídeos al año; en español y en euros; datos en la UE; el vídeo se reproduce en el navegador antes de descargarse; plan gratis de 15&nbsp;GB y 2 galerías.</li>
+<li><strong>En contra:</strong> no es un servicio de alojamiento para incrustar vídeo en webs de terceros: si vives de los embeds de Vimeo en tu web o la de tus clientes, esa pieza no está aquí.</li>
+<li><strong>Para quién:</strong> videógrafos y productoras que revisan y entregan a clientes y editan en DaVinci o Final Cut.</li>
+</ul>
+
+<h2>2. Frame.io — la referencia en postproducción</h2>
+<ul>
+<li><strong>A favor:</strong> comentarios en el fotograma, versiones y una integración con Premiere insuperable; plan gratuito de 2&nbsp;GB y 2 miembros.</li>
+<li><strong>En contra:</strong> por usuario y al mes (Pro, 15&nbsp;$/usuario/mes), en inglés, y sin entrega con tu marca ni portfolio. Lo analizamos en <a href="/notas/alternativas-a-frame-io/">Alternativas a Frame.io</a>.</li>
+<li><strong>Para quién:</strong> equipos de postproducción dentro del ecosistema Adobe.</li>
+</ul>
+
+<h2>3. Dropbox Replay — revisión sobre tu almacenamiento</h2>
+<ul>
+<li><strong>A favor:</strong> comentarios en el fotograma sobre archivos que ya viven en Dropbox.</li>
+<li><strong>En contra:</strong> la versión completa es un add-on de 10&nbsp;$/usuario/mes sobre un plan Dropbox ya de pago — el conjunto ronda los 28&nbsp;$/usuario/mes; en inglés; la entrega sigue siendo una carpeta.</li>
+<li><strong>Para quién:</strong> equipos cuyo almacenamiento ya es Dropbox.</li>
+</ul>
+
+<h2>4. YouTube — difusión, no revisión</h2>
+<ul>
+<li><strong>A favor:</strong> gratis, ilimitado y con el mejor alcance del planeta; los vídeos ocultos sirven para enseñar un corte rápido.</li>
+<li><strong>En contra:</strong> sin comentarios con timecode privados, sin marca propia, con compresión agresiva y recomendaciones de terceros junto a tu trabajo. No es una herramienta profesional de revisión ni de entrega.</li>
+<li><strong>Para quién:</strong> publicar, no trabajar.</li>
+</ul>
+
+<h2>5. Filestage — aprobaciones corporativas</h2>
+<ul>
+<li><strong>A favor:</strong> revisa vídeo, PDF e imágenes con flujos de aprobación formales.</li>
+<li><strong>En contra:</strong> precios por usuario de herramienta corporativa, en inglés, y solo cubre la revisión.</li>
+<li><strong>Para quién:</strong> departamentos de marketing con validaciones en varios pasos.</li>
+</ul>
+
+<h2>Comparativa: las tres verticales y el precio</h2>
+<div class="tabla-scroll">
+<table>
+<thead><tr><th>Herramienta</th><th>Revisión de vídeo</th><th>Entrega con tu marca</th><th>Portfolio público</th><th>Modelo de precio</th></tr></thead>
+<tbody>
+<tr><td>Positiva</td><td><span class="pv-si">En el fotograma · export EDL y FCPXML</span></td><td><span class="pv-si">Sí, foto y vídeo</span></td><td><span class="pv-si">Sí</span></td><td><span class="pv-si">89 € + IVA/año, sin asientos</span></td></tr>
+<tr><td>Vimeo</td><td>Notas en el tiempo (planes de pago)</td><td>Página de vídeo</td><td>Showcases de vídeo</td><td>12–75 $/asiento/mes, límite de vídeos/año</td></tr>
+<tr><td>Frame.io</td><td>En el fotograma</td><td>No</td><td>No</td><td>15 $/usuario/mes (Pro)</td></tr>
+<tr><td>Dropbox Replay</td><td>En el fotograma</td><td>Carpeta</td><td>No</td><td>≈ 28 $/usuario/mes (plan + add-on)</td></tr>
+<tr><td>YouTube</td><td>No</td><td>No</td><td>Canal público</td><td>Gratis</td></tr>
+<tr><td>Filestage</td><td>En el fotograma</td><td>No</td><td>No</td><td>Por usuario, corporativo</td></tr>
+</tbody>
+</table>
+</div>
+<p>La cuenta sale rápido: un equipo de tres personas en Vimeo Standard paga unos 900&nbsp;$ al año solo por asientos; <a href="/precios/">el plan Autor de Positiva cuesta 89&nbsp;€&nbsp;+&nbsp;IVA al año</a> para todo el estudio, cubriendo revisión, entrega y portfolio.</p>
+
+<h2>Nuestra recomendación</h2>
+<p>Si tu web y las de tus clientes viven de embeds impecables, mantén Vimeo para eso: ahí sigue siendo el mejor. Para lo demás — <a href="/revision-video/">revisar con tu cliente en español</a>, <a href="/galerias/">entregar el máster con tu marca</a> y tener el <a href="/portfolio/">portfolio</a> al día — <a href="/">Positiva</a> lo cubre por una cuota anual sin asientos. <a href="https://app.positiva.studio/registro">Pruébala gratis</a> con 15&nbsp;GB.</p>
+""",
+faq=[
+('¿Hay alguna alternativa a Vimeo en español?',
+ 'Sí. Positiva es una plataforma española: tu cliente revisa el vídeo en español, comenta sobre el fotograma exacto y tú exportas los comentarios a DaVinci Resolve o Final Cut Pro. El panel, las galerías y el soporte están en español.'),
+('¿Qué alternativa a Vimeo no cobra por asiento?',
+ 'Positiva cobra por almacenamiento, no por usuarios: el plan Autor (250 GB) cuesta 89 € + IVA al año para todo el estudio, frente a los 12–75 $ por asiento y mes de los planes de pago de Vimeo.'),
+('¿Puedo entregar el vídeo final además de revisarlo?',
+ 'En Positiva la misma galería de revisión sirve la entrega final: el máster con tu marca, junto a las fotos del proyecto si las hay, en un enlace que no caduca.'),
+],
+),
+
+# ══ 7 · DROPBOX REPLAY ════════════════════════════════════════════
+dict(
+slug='alternativas-a-dropbox-replay',
+title='Alternativas a Dropbox Replay (2026) · Notas de Positiva',
+h1='Alternativas a Dropbox Replay (2026)',
+desc='Alternativas a Dropbox Replay para revisar vídeo con clientes: comentarios en el fotograma, exportación a DaVinci y Final Cut, y entrega con tu marca.',
+lede='Replay añade revisión de vídeo a Dropbox — pagando un add-on sobre un plan que ya pagas, y en inglés. Si revisas con clientes y entregas proyectos, hay herramientas construidas para eso. Comparación honesta.',
+date_iso=D, date_h=DH,
+list_names=['Positiva', 'Frame.io', 'Vimeo', 'Filestage'],
+body="""
+<p>Dropbox Replay tiene una lógica clara: si tu material ya vive en Dropbox, revisar ahí mismo evita mover archivos. Comentarios en el fotograma, comparación de versiones y aprobaciones, integrado con tu almacenamiento.</p>
+<p>La letra pequeña: la versión completa es un add-on de 10&nbsp;$/usuario/mes (facturado anual) <em>sobre</em> un plan Dropbox de pago — el conjunto ronda los 28&nbsp;$/usuario/mes por persona del equipo. Todo en inglés, también para tu cliente. Y cuando la pieza se aprueba, lo que entregas sigue siendo una carpeta de Dropbox: sin tu marca, sin <a href="/galerias/">galería de entrega</a>, sin <a href="/portfolio/">portfolio</a>. Estas son las alternativas en 2026.</p>
+
+<h2>1. Positiva — revisión con tu cliente, entrega con tu marca</h2>
+<p><a href="/revision-video/">Positiva</a> es una plataforma española de galerías de entrega y revisión de fotos y vídeo. Tu cliente abre un enlace con tu marca y comenta sobre el fotograma exacto sin registrarse; tú trabajas por <a href="/revision-video/">rondas de revisión</a> y exportas los comentarios como marcadores a DaVinci Resolve (EDL) o Final Cut Pro (FCPXML). Aprobada la pieza, la misma galería es <a href="/galerias/">la entrega del máster</a> — y alimenta tu <a href="/portfolio/">portfolio público</a>.</p>
+<ul>
+<li><strong>A favor:</strong> pensada para el cliente final: comentar es tan fácil como escribir, en español; exportación nativa a DaVinci y Final Cut (Replay no exporta a editores externos); las tres verticales — revisión, entrega y portfolio — por <a href="/precios/">89&nbsp;€&nbsp;+&nbsp;IVA al año (250&nbsp;GB), sin pagar por usuario</a>; datos en la UE; plan gratis de 15&nbsp;GB.</li>
+<li><strong>En contra:</strong> no sincroniza carpetas ni sustituye a Dropbox como almacenamiento de trabajo: es la capa de cliente, no tu disco en la nube.</li>
+<li><strong>Para quién:</strong> videógrafos y productoras que revisan con dirección, agencia o cliente final y editan en DaVinci o Final Cut.</li>
+</ul>
+
+<h2>2. Frame.io — más profundo para postproducción</h2>
+<ul>
+<li><strong>A favor:</strong> la revisión más completa del mercado (versiones, comparación, integración Premiere); plan gratuito de 2&nbsp;GB y 2 miembros.</li>
+<li><strong>En contra:</strong> 15&nbsp;$/usuario/mes en Pro, en inglés, y sin entrega con marca ni portfolio. Análisis completo en <a href="/notas/alternativas-a-frame-io/">Alternativas a Frame.io</a>.</li>
+<li><strong>Para quién:</strong> equipos de postproducción en el ecosistema Adobe.</li>
+</ul>
+
+<h2>3. Vimeo — revisión dentro del escaparate</h2>
+<ul>
+<li><strong>A favor:</strong> reproductor excelente; notas en el tiempo en sus planes de pago; showcases como portfolio de vídeo.</li>
+<li><strong>En contra:</strong> por asiento y con límite de vídeos al año (Standard: 25&nbsp;$/asiento/mes anual); en inglés en buena parte del flujo; sin entrega de proyectos foto+vídeo. Más en <a href="/notas/alternativas-a-vimeo/">Alternativas a Vimeo</a>.</li>
+<li><strong>Para quién:</strong> quien ya aloja su vídeo en Vimeo.</li>
+</ul>
+
+<h2>4. Filestage — aprobaciones multiformato</h2>
+<ul>
+<li><strong>A favor:</strong> revisa vídeo, PDF, imágenes y webs con flujos de aprobación formales.</li>
+<li><strong>En contra:</strong> precio corporativo por usuario, en inglés, solo revisión.</li>
+<li><strong>Para quién:</strong> departamentos de marketing con procesos de validación largos.</li>
+</ul>
+
+<h2>Comparativa: las tres verticales y el precio</h2>
+<div class="tabla-scroll">
+<table>
+<thead><tr><th>Herramienta</th><th>Revisión de vídeo</th><th>Export a DaVinci / Final Cut</th><th>Entrega con tu marca</th><th>Portfolio público</th><th>Precio</th></tr></thead>
+<tbody>
+<tr><td>Positiva</td><td><span class="pv-si">En el fotograma, sin registro para el cliente</span></td><td><span class="pv-si">Sí · EDL y FCPXML</span></td><td><span class="pv-si">Sí, foto y vídeo</span></td><td><span class="pv-si">Sí</span></td><td><span class="pv-si">89 € + IVA/año, sin asientos</span></td></tr>
+<tr><td>Dropbox Replay</td><td>En el fotograma</td><td>No</td><td>Carpeta</td><td>No</td><td>≈ 28 $/usuario/mes (plan + add-on)</td></tr>
+<tr><td>Frame.io</td><td>En el fotograma</td><td>Parcial (foco en Premiere)</td><td>No</td><td>No</td><td>15 $/usuario/mes (Pro)</td></tr>
+<tr><td>Vimeo</td><td>Notas en el tiempo (pago)</td><td>No</td><td>Página de vídeo</td><td>Showcases</td><td>12–75 $/asiento/mes</td></tr>
+<tr><td>Filestage</td><td>En el fotograma</td><td>No</td><td>No</td><td>No</td><td>Por usuario, corporativo</td></tr>
+</tbody>
+</table>
+</div>
+<p>Tres personas con Dropbox Business + Replay pagan unos 1.000&nbsp;$ al año solo por revisar; <a href="/precios/">el plan Autor de Positiva</a> cuesta 89&nbsp;€&nbsp;+&nbsp;IVA al año para todo el estudio y añade la entrega y el portfolio. También comparamos el Dropbox «normal» en <a href="/positiva-vs-dropbox/">Positiva vs Dropbox</a>.</p>
+
+<h2>Nuestra recomendación</h2>
+<p>Si tu equipo vive dentro de Dropbox y solo necesita anotar cortes internos, Replay es cómodo. Si quien comenta es tu cliente y lo que sigue a la aprobación es una entrega, <a href="/revision-video/">la revisión de vídeo de Positiva</a> hace el recorrido completo — comentario → marcador en tu timeline → <a href="/galerias/">máster entregado con tu marca</a> — en español y sin pagar por asiento. <a href="https://app.positiva.studio/registro">Pruébala gratis</a>.</p>
+""",
+faq=[
+('¿Cuánto cuesta Dropbox Replay frente a sus alternativas?',
+ 'El add-on de Replay cuesta 10 $ por usuario al mes sobre un plan Dropbox de pago: en total unos 28 $/usuario/mes. Positiva cuesta 89 € + IVA al año en total, sin pagar por usuario, e incluye además la entrega con tu marca y el portfolio.'),
+('¿Puedo exportar los comentarios de la revisión a mi editor?',
+ 'Con Positiva sí: los comentarios de cada ronda se exportan como marcadores en EDL (DaVinci Resolve) o FCPXML (Final Cut Pro) y aparecen sobre tu timeline en el fotograma exacto. Dropbox Replay no exporta marcadores a editores externos.'),
+('¿Necesita mi cliente una cuenta para comentar?',
+ 'En Positiva no: abre el enlace de la galería con tu marca y comenta directamente, sin registro. En Dropbox Replay el flujo vive dentro del ecosistema Dropbox.'),
+],
+),
 ]
+
 
 # El artículo de Frame.io monta su sección de Positiva tras el intro
 # (no lleva el bloque VERTICALES completo porque su ángulo es la revisión).

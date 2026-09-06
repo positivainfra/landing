@@ -52,6 +52,31 @@ gtag('set', 'ads_data_redaction', true);
 gtag('set', 'url_passthrough', false);
 gtag('js', new Date());
 gtag('config', 'AW-617896664');
+
+/* Conversión de Google Ads: «registro» (clientes potenciales).
+   Se dispara al pinchar cualquier enlace a app.positiva.studio/registro (los de
+   login apuntan a la raíz de la app y quedan fuera).
+   Sin bloquear la navegación: transport beacon sobrevive al cambio de página. */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+    'event_callback': callback
+  });
+  return false;
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="https://app.positiva.studio/registro"]');
+  if (!a || a.classList.contains('nav-login') || a.hasAttribute('data-no-conv')) return;
+  try {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+      'transport_type': 'beacon'
+    });
+  } catch (_) {}
+}, { passive: true });
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
 
@@ -241,7 +266,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     </div>
     <div class="nav-right">
       <a href="https://app.positiva.studio" class="nav-login" data-ev="login_click" data-ev-place="nav">Entrar</a>
-      <a href="/#lista" class="btn nav-cta" data-ev="cta_register_click" data-ev-place="nav">Regístrate</a>
+      <a href="https://app.positiva.studio/registro" class="btn nav-cta" data-ev="cta_register_click" data-ev-place="nav">Empieza gratis</a>
       <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
         <span></span><span></span>
       </button>
@@ -255,7 +280,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
   <a class="big" href="/portfolio/" style="--d:.15s"><em>03</em> Portfolio público</a>
   <a class="big" href="/precios/" style="--d:.2s"><em>04</em> Precios</a>
   <a class="big" href="/soporte/es/" style="--d:.25s"><em>05</em> Soporte</a>
-  <a class="big" href="/#lista" style="--d:.3s"><em>06</em> Regístrate</a>
+  <a class="big" href="https://app.positiva.studio/registro" style="--d:.3s"><em>06</em> Empieza gratis</a>
   <div class="menu-groups">
     <div>
       <h3>Galerías para clientes</h3>
@@ -580,8 +605,8 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
         <a href="/soporte/es/">Soporte</a>
         <a href="/novedades/">Novedades</a>
         <a href="/notas/">Notas</a>
-        <a href="https://app.positiva.studio">Accede a tu panel</a>
-        <a href="/#lista">Regístrate</a>
+        <a href="https://app.positiva.studio" data-no-conv>Accede a tu panel</a>
+        <a href="https://app.positiva.studio/registro">Empieza gratis</a>
         <a href="mailto:hola@positiva.studio">Contacto</a>
         <a href="/aviso-legal/">Aviso legal</a>
         <a href="/privacidad/">Privacidad</a>

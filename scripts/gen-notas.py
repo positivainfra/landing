@@ -38,7 +38,7 @@ RAIL = """
     <div class="banner-pv">
       <span class="bp-logo">Positiva<b>.</b></span>
       <p>Galerías de entrega y revisión de fotos y vídeo, con tu marca. En español y con los datos en la Unión Europea.</p>
-      <a class="bp-btn" href="https://app.positiva.studio">Prueba Positiva gratis</a>
+      <a class="bp-btn" href="https://app.positiva.studio/registro">Prueba Positiva gratis</a>
       <span class="bp-nota">15 GB y 2 galerías · sin tarjeta</span>
     </div>
     <div class="banner-mini">
