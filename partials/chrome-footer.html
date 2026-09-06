@@ -28,6 +28,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 }
 .footer-word svg{height:.92em;width:auto;flex:none}
 .footer-word span{color:var(--pv-ambar)}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-30);max-width:78ch}
 .footer-meta{
   display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
   margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
@@ -44,39 +45,39 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
   <div class="wrap">
     <div class="footcols">
       <div>
-        <h3>Galerías</h3>
+        <h3>Galerías para clientes</h3>
         <a href="/galerias/">Entrega tu trabajo</a>
         <a href="/revision-video/">Revisión de vídeo</a>
-        <a href="/revision-foto/">Revisión de foto</a>
+        <a href="/revision-foto/">Revisión de fotografías</a>
         <a href="/portfolio/">Portfolio público</a>
         <a href="/precios/">Precios</a>
         <a href="/#faq">Preguntas frecuentes</a>
       </div>
       <div>
         <h3>Casos de uso</h3>
-        <a href="/freelance/">Freelance</a>
-        <a href="/bodas/">Reportaje de bodas</a>
-        <a href="/productoras/">Productoras de vídeo</a>
+        <a href="/freelance/">Para profesionales freelance</a>
+        <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
+        <a href="/productoras/">Para productoras de vídeo</a>
       </div>
       <div>
         <h3>Comparativas</h3>
-        <a href="/positiva-vs-pictime-vs-pixieset/">vs Pic-Time · Pixieset</a>
-        <a href="/positiva-vs-dropbox/">vs Dropbox</a>
-        <a href="/positiva-vs-google-drive/">vs Google Drive</a>
-        <a href="/positiva-vs-wetransfer/">vs WeTransfer</a>
+        <a href="/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time · Pixieset</a>
+        <a href="/positiva-vs-arcadina/">Positiva vs Arcadina</a>
+        <a href="/positiva-vs-dropbox/">Positiva vs Dropbox</a>
+        <a href="/positiva-vs-google-drive/">Positiva vs Google Drive</a>
+        <a href="/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>
       </div>
       <div>
         <h3>Recursos</h3>
-        <a href="/soporte/">Centro de soporte</a>
+        <a href="/soporte/">Soporte</a>
         <a href="/novedades/">Novedades</a>
-        <a href="https://app.positiva.studio">Entrar en tu panel</a>
+        <a href="/notas/">Notas</a>
+        <a href="https://app.positiva.studio">Accede a tu panel</a>
         <a href="/#lista">Regístrate</a>
         <a href="mailto:hola@positiva.studio">Contacto</a>
-        <!-- pv:legal — descomenta cuando existan las páginas:
         <a href="/aviso-legal/">Aviso legal</a>
         <a href="/privacidad/">Privacidad</a>
         <a href="/terminos/">Términos</a>
-        -->
       </div>
     </div>
     <div class="footer-word">
@@ -87,9 +88,29 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
       </svg>
       Positiva<span>.</span>
     </div>
+    <p class="footer-entidad">Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.</p>
     <div class="footer-meta">
       <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Hecha en España · Se gestiona, se mejora y se factura desde Europa</span>
       <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
     </div>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://positiva.studio/#org",
+      "name": "Positiva",
+      "url": "https://positiva.studio/",
+      "logo": "https://positiva.studio/assets/og.png",
+      "description": "Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.",
+      "email": "hola@positiva.studio",
+      "foundingLocation": { "@type": "Place", "name": "Valencia, España" },
+      "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
+      "areaServed": "ES",
+      "knowsLanguage": "es",
+      "sameAs": [
+        "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
+        "https://www.linkedin.com/company/positiva-studio/",
+        "https://instagram.com/positiva.studio_"
+      ]
+    }</script>
   </div>
 </footer>

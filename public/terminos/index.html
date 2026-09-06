@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Términos y condiciones · Positiva</title>
+<meta name="description" content="Términos y condiciones de uso de la plataforma Positiva: servicio B2B para fotógrafos y videógrafos, planes, almacenamiento y responsabilidades.">
+<meta property="og:title" content="Términos y condiciones · Positiva">
+<meta property="og:description" content="Términos y condiciones de uso de la plataforma Positiva: servicio B2B para fotógrafos y videógrafos, planes, almacenamiento y responsabilidades.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://positiva.studio/terminos/">
+<meta property="og:image" content="https://positiva.studio/assets/og.png">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#F1F0EC">
+<link rel="canonical" href="https://positiva.studio/terminos/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/soporte/soporte.css">
+<style>.doc-legal{display:block;padding-top:clamp(110px,14vh,150px);padding-bottom:var(--pv-s8)}.doc-legal .art{max-width:820px;margin:0 auto}.legal-fecha{font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--pv-tinta-30);margin-top:var(--pv-s3)}</style>
+</head>
+<body class="pagina-articulo">
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<!-- pv:nav -->
+<!-- ════════════════════════════════════════════════════════════════
+     CABECERA COMÚN · fuente única: partials/chrome-nav.html
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarla a todas
+     las páginas. No edites el bloque pv:nav de las páginas a mano.
+     Autocontenida: CSS + markup + JS (las satélite no traen menú móvil).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="nav">
+/* Base de la cápsula (idéntica a la de siempre; aquí para que exista en TODAS las páginas) */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:14px clamp(14px,3vw,40px)}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--pv-s5);
+  max-width:1280px;margin:0 auto;padding:10px 12px 10px clamp(18px,2.4vw,28px);
+  border:1px solid transparent;border-radius:var(--pv-r-pill);
+  transition:background .4s var(--pv-ease),border-color .4s var(--pv-ease),box-shadow .4s var(--pv-ease);
+}
+nav.scrolled .nav-inner{
+  background:rgba(241,240,236,.82);
+  backdrop-filter:blur(16px) saturate(1.4);
+  -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  border-color:var(--pv-linea);
+  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);
+}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--pv-tinta)}
+.logo svg{height:27px;width:auto;display:block;flex:none}
+.logo-word{
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;font-size:14px;
+  letter-spacing:.22em;text-transform:uppercase;line-height:1;
+}
+.logo-word b{color:var(--pv-ambar)}
+.nav-links{display:flex;align-items:center;gap:var(--pv-s6)}
+.nav-links a,.nav-drop-btn{
+  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
+  display:inline-flex;align-items:center;line-height:1;
+}
+.nav-links a:hover,.nav-drop-btn:hover{color:var(--pv-tinta)}
+.nav-right{display:flex;align-items:center;gap:var(--pv-s4)}
+.nav-login{
+  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
+}
+.nav-login:hover{color:var(--pv-tinta)}
+.nav-cta{background:var(--pv-ambar);color:#fff;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
+.nav-cta:hover{background:var(--pv-ambar-hover);color:#fff;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
+
+/* Desplegables: mismo lenguaje que la cápsula (papel translúcido + línea + blur) */
+.nav-drop{position:relative;display:flex;align-items:center}
+.nav-drop-btn{background:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:7px;padding:0}
+.nav-drop-btn::after{
+  content:"";width:5px;height:5px;flex:none;margin-top:-3px;
+  border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg);transition:transform .25s var(--pv-ease);
+}
+.nav-drop:hover .nav-drop-btn::after,.nav-drop.open .nav-drop-btn::after{transform:rotate(225deg);margin-top:3px}
+.nav-drop-menu{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  padding-top:14px;min-width:240px;
+  opacity:0;visibility:hidden;transition:opacity .25s var(--pv-ease),visibility 0s linear .25s;
+}
+.nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu,.nav-drop.open .nav-drop-menu{
+  opacity:1;visibility:visible;transition:opacity .25s var(--pv-ease),visibility 0s linear 0s;
+}
+.nav-drop-card{
+  background:rgba(241,240,236,.94);
+  backdrop-filter:blur(16px) saturate(1.4);
+  -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);
+  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);
+  padding:10px;display:flex;flex-direction:column;
+}
+.nav-drop-card a{
+  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:#4A4943;text-decoration:none;
+  padding:10px 14px;border-radius:6px;white-space:nowrap;transition:color .18s,background .18s;
+}
+.nav-drop-card a:hover{color:var(--pv-tinta);background:rgba(23,22,20,.05)}
+.nav-drop-card .drop-grupo{
+  font-family:var(--pv-mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--pv-tinta-30);
+  margin-top:6px;padding:12px 14px 4px;border-top:1px solid var(--pv-linea);
+}
+.nav-drop-card a.sub{padding-left:26px}
+.nav-drop-card .drop-grupo-link{font-size:12px;letter-spacing:.13em;color:#4A4943}
+.nav-drop-card a.sub-alt{font-family:var(--pv-sans);font-size:13.5px;font-weight:500;letter-spacing:0;text-transform:none}
+/* Sobre hero oscuro la cápsula aclara sus enlaces, pero el panel del desplegable
+   sigue siendo papel: sus enlaces mantienen tinta siempre. */
+body.hero-oscuro nav:not(.scrolled) .nav-drop .nav-drop-card a{color:#4A4943}
+body.hero-oscuro nav:not(.scrolled) .nav-drop .nav-drop-card a:hover{color:var(--pv-tinta)}
+
+/* Burger (solo móvil) */
+.nav-burger{
+  display:none;position:relative;width:44px;height:44px;flex:none;
+  background:var(--pv-tinta);border:0;border-radius:var(--pv-r-pill);cursor:pointer;
+}
+.nav-burger span{
+  position:absolute;left:13px;right:13px;height:2px;background:var(--pv-papel);
+  transition:transform .35s var(--pv-ease),top .35s var(--pv-ease);
+}
+.nav-burger span:first-child{top:18px}
+.nav-burger span:last-child{top:24px}
+.nav-burger[aria-expanded="true"] span:first-child{top:21px;transform:rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:last-child{top:21px;transform:rotate(-45deg)}
+html:not(.js) .nav-burger{display:none!important}
+
+/* Menú móvil a pantalla completa */
+body.menu-locked{overflow:hidden}
+body.menu-locked .logo{color:#EDECE8}
+body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.menu{
+  position:fixed;inset:0;z-index:55;background:var(--pv-sala);color:#EDECE8;
+  display:flex;flex-direction:column;justify-content:center;padding:0 clamp(24px,7vw,56px);
+  opacity:0;visibility:hidden;
+  transition:opacity .45s var(--pv-ease),visibility 0s linear .45s;
+}
+.menu.open{opacity:1;visibility:visible;transition:opacity .45s var(--pv-ease),visibility 0s linear 0s}
+.menu a.big{
+  font-family:var(--pv-display);font-weight:300;font-size:clamp(34px,9.5vw,58px);
+  line-height:1.28;color:#EDECE8;text-decoration:none;letter-spacing:-.02em;
+  display:flex;align-items:baseline;gap:var(--pv-s4);
+  opacity:0;transform:translateY(22px);
+  transition:opacity .5s var(--pv-ease-out),transform .5s var(--pv-ease-out);
+  transition-delay:var(--d,0s);
+}
+.menu.open a.big{opacity:1;transform:none}
+.menu a.big em{font-style:normal;font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--pv-ambar)}
+.menu a.big:hover{color:var(--pv-ambar)}
+.menu-groups{
+  margin-top:var(--pv-s6);display:flex;gap:var(--pv-s8);flex-wrap:wrap;
+  opacity:0;transform:translateY(18px);
+  transition:opacity .5s var(--pv-ease-out) .3s,transform .5s var(--pv-ease-out) .3s;
+}
+.menu.open .menu-groups{opacity:1;transform:none}
+.menu-groups h3{
+  font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:#5C5B56;margin:0 0 var(--pv-s2);
+}
+.menu-groups a{
+  display:block;font-family:var(--pv-sans);font-size:15px;color:#9C9B95;
+  text-decoration:none;padding:3px 0;transition:color .18s;
+}
+.menu-groups a:hover{color:#EDECE8}
+.menu-meta{
+  margin-top:var(--pv-s6);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea-sala);
+  font-family:var(--pv-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5C5B56;
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+}
+.menu-meta a{color:#9C9B95;text-decoration:none}
+
+@media(max-width:1020px){
+  nav .nav-links,nav .nav-login,nav .nav-cta{display:none}
+  .nav-burger{display:block}
+}
+</style>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Positiva">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      <span class="logo-word">Positiva<b>.</b></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Galerías para clientes</button>
+        <div class="nav-drop-menu">
+          <div class="nav-drop-card">
+            <a href="/galerias/">Entrega tu trabajo</a>
+            <p class="drop-grupo drop-grupo-link">Revisa con tu cliente</p>
+            <a class="sub sub-alt" href="/revision-video/">Vídeo</a>
+            <a class="sub sub-alt" href="/revision-foto/">Fotografías</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Casos de uso</button>
+        <div class="nav-drop-menu">
+          <div class="nav-drop-card">
+            <a href="/freelance/">Para profesionales freelance</a>
+            <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
+            <a href="/productoras/">Para productoras de vídeo</a>
+          </div>
+        </div>
+      </div>
+      <a href="/portfolio/">Portfolio público</a>
+      <a href="/precios/">Precios</a>
+      <a href="/soporte/">Soporte</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://app.positiva.studio" class="nav-login" data-ev="login_click" data-ev-place="nav">Entrar</a>
+      <a href="/#lista" class="btn nav-cta" data-ev="cta_register_click" data-ev-place="nav">Regístrate</a>
+      <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="menu" id="menu">
+  <a class="big" href="/" style="--d:.05s"><em>01</em> Inicio</a>
+  <a class="big" href="/galerias/" style="--d:.1s"><em>02</em> Galerías para clientes</a>
+  <a class="big" href="/portfolio/" style="--d:.15s"><em>03</em> Portfolio público</a>
+  <a class="big" href="/precios/" style="--d:.2s"><em>04</em> Precios</a>
+  <a class="big" href="/soporte/" style="--d:.25s"><em>05</em> Soporte</a>
+  <a class="big" href="/#lista" style="--d:.3s"><em>06</em> Regístrate</a>
+  <div class="menu-groups">
+    <div>
+      <h3>Galerías para clientes</h3>
+      <a href="/galerias/">Entrega tu trabajo</a>
+      <a href="/revision-video/">Revisión de vídeo</a>
+      <a href="/revision-foto/">Revisión de fotografías</a>
+    </div>
+    <div>
+      <h3>Casos de uso</h3>
+      <a href="/freelance/">Para profesionales freelance</a>
+      <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
+      <a href="/productoras/">Para productoras de vídeo</a>
+    </div>
+  </div>
+  <div class="menu-meta">
+    <span>Positiva · Hecha en España</span>
+    <a href="https://app.positiva.studio">Entrar en tu panel</a>
+    <a href="mailto:hola@positiva.studio">hola@positiva.studio</a>
+  </div>
+</div>
+
+<script>
+/* Chrome común: scrolled + burger + desplegables. Guardado para no doblar
+   listeners si una página conserva JS antiguo de nav. */
+(() => {
+  if (window.__pvChrome) return; window.__pvChrome = true;
+  const nav = document.getElementById('nav');
+  let last = -1;
+  const onScroll = () => {
+    const on = window.scrollY > 12;
+    if (on !== last) { nav.classList.toggle('scrolled', on); last = on; }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  const setMenu = (open) => {
+    menu.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    document.body.classList.toggle('menu-locked', open);
+  };
+  burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+  /* Desplegables: hover/focus por CSS; el click alterna .open (táctil y accesibilidad) */
+  document.querySelectorAll('.nav-drop').forEach(drop => {
+    const btn = drop.querySelector('.nav-drop-btn');
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = !drop.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nav-drop-btn').setAttribute('aria-expanded','false'); });
+      drop.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nav-drop-btn').setAttribute('aria-expanded','false'); });
+  });
+})();
+</script>
+<!-- /pv:nav -->
+
+<main id="contenido">
+<div class="wrap doc-legal">
+  <article class="art">
+    <h1>Términos y condiciones</h1>
+    <p class="legal-fecha">Última revisión · septiembre de 2026</p>
+    <div class="prosa">
+<p>
+Los presentes Términos y Condiciones de Uso (en adelante, "T&amp;C") regulan el acceso,
+registro y uso de la plataforma web positiva.studio (en adelante, la "Plataforma").
+</p>
+<h2>1. Objeto y partes</h2>
+<ul>
+<li><strong>Positiva:</strong> Marca y plataforma titularidad de Rodrigo Marquez Rapela (en adelante, "Positiva").</li>
+<li>
+<strong>El Usuario:</strong> La persona física (profesional autónomo) o jurídica
+(sociedad) que se registra en la Plataforma y contrata sus servicios con fines
+comerciales o profesionales relacionados con su actividad económica.
+</li>
+</ul>
+<p>
+La aceptación de estos T&amp;C crea un contrato vinculante entre Positiva y el Usuario. Al
+marcar la casilla de aceptación durante el registro, el Usuario declara haber leído,
+comprendido y aceptado íntegramente este documento.
+</p>
+<h2>2. Descripción del servicio y carácter B2B</h2>
+<p>
+Positiva ofrece a fotógrafos y videógrafos profesionales una herramienta de software
+como servicio (SaaS) diseñada para:
+</p>
+<ul>
+<li>
+(a) Entregar a sus propios clientes finales galerías de fotografía y vídeo optimizadas
+y personalizadas con su marca propia.
+</li>
+<li>
+(b) Recibir revisiones, comentarios y selecciones de material por parte de dichos
+clientes finales mediante un enlace web compartido.
+</li>
+</ul>
+<p>
+<strong>Aviso importante:</strong> La Plataforma está dirigida exclusivamente a un perfil
+profesional o comercial (B2B). Por tanto, el Usuario reconoce que no le es de aplicación
+la normativa específica de defensa de los consumidores y usuarios.
+</p>
+<p>
+Positiva no ofrece servicios de venta de copias, impresión, álbumes o productos físicos,
+ni actúa como intermediario o pasarela en la transacción comercial entre el Usuario y
+sus clientes. Cualquier transacción de dicha naturaleza es responsabilidad única y
+exclusiva del Usuario.
+</p>
+<h2>3. Planes, precios y facturación</h2>
+<p>
+Los planes de suscripción vigentes, el volumen de almacenamiento asignado y sus
+respectivos precios están publicados de forma actualizada en positiva.studio.
+</p>
+<ul>
+<li>
+<strong>Impuestos:</strong> Los precios mostrados se indican sin incluir los impuestos
+aplicables (como el IVA), los cuales se añadirán y desglosarán de forma legal en la
+factura correspondiente emitida tras cada cobro.
+</li>
+<li>
+<strong>Impagos y suspensión:</strong> El impago de cualquier cuota facultará a
+Positiva para suspender temporalmente el acceso a la cuenta y, transcurrido un plazo
+de quince (15) días naturales desde la notificación del impago, proceder a la
+resolución del contrato y posterior borrado del contenido.
+</li>
+</ul>
+<p><strong>3.1. Condiciones Especiales de la "Tarifa Fundador"</strong></p>
+<p>
+Los primeros cincuenta (50) usuarios que contraten un plan de pago tendrán la
+consideración de "Usuarios Fundadores" y mantendrán el precio mensual o anual vigente en
+el momento de su alta inicial. Este beneficio exclusivo está sujeto estrictamente a las
+siguientes condiciones:
+</p>
+<ul>
+<li>
+<strong>Mantenimiento de la Suscripción (Continuidad):</strong> La Tarifa Fundador es
+personal, intransferible y está condicionada a mantener la suscripción activa y sin
+interrupciones. En caso de baja voluntaria, resolución por impago o pausa de la
+cuenta, el usuario perderá esta condición de forma definitiva. Cualquier alta
+posterior se regirá por las tarifas comerciales estándar vigentes.
+</li>
+<li>
+<strong>Modificaciones del Plan (Upgrades/Downgrades):</strong> El precio congelado se
+aplica única y exclusivamente al plan específico contratado originalmente. Si el
+usuario decide cambiar de plan (para aumentar o disminuir almacenamiento o
+funcionalidades), la Tarifa Fundador quedará sin efecto y se aplicarán los precios
+públicos del nuevo plan seleccionado.
+</li>
+<li>
+<strong>Evolución y Cambios Sustanciales del Servicio:</strong> Positiva se reserva el
+derecho de revisar, modificar o extinguir la Tarifa Fundador si se produce una
+transformación sustancial en la arquitectura técnica del software, un cambio drástico
+e imprevisto en los costes de la infraestructura de almacenamiento de terceros, o una
+reestructuración completa del modelo de negocio. En este caso excepcional, la
+plataforma notificará al usuario con un mínimo de treinta (30) días de antelación,
+ofreciéndole la opción de acogerse a los nuevos planes o resolver el contrato sin
+penalización.
+</li>
+</ul>
+<h2>4. Obligaciones del Usuario</h2>
+<p>Al registrarse y utilizar la Plataforma, el Usuario se compromete de forma vinculante a:</p>
+<ul>
+<li>
+<strong>Capacidad legal:</strong> Declarar que es mayor de edad y que cuenta con la
+capacidad legal y la habilitación profesional suficiente para contratar.
+</li>
+<li>
+<strong>Derechos de propiedad e imagen:</strong> Garantizar que es el titular exclusivo
+de los derechos de propiedad intelectual del contenido que sube a la Plataforma o que
+cuenta con las licencias, autorizaciones y consentimientos explícitos de los clientes
+o terceros que aparezcan en las imágenes o vídeos (con especial atención si se trata
+de menores de edad).
+</li>
+<li>
+<strong>Uso lícito del servicio:</strong> No utilizar la Plataforma para almacenar,
+alojar o distribuir contenido que sea ilícito, pornográfico, difamatorio, injurioso,
+que infrinja la propiedad intelectual o industrial de terceros, o que vulnere la
+normativa de protección de datos.
+</li>
+<li>
+<strong>Seguridad y custodia de la cuenta:</strong> Mantener la estricta
+confidencialidad de sus credenciales de acceso. El Usuario es el único responsable de
+cualquier actividad o daño derivado de un uso indebido de su cuenta por parte de
+terceros debido a una falta de diligencia en la custodia de sus claves.
+</li>
+</ul>
+<h2>5. Propiedad intelectual del contenido subido</h2>
+<p>
+El Usuario conserva la titularidad íntegra de los derechos de propiedad intelectual
+sobre las fotografías y vídeos que suba a la Plataforma. Positiva no adquiere ningún
+derecho de explotación sobre dicho contenido; únicamente lo procesará y tratará en la
+medida estrictamente necesaria para prestar el servicio contratado (alojamiento,
+optimización técnica para web, entrega y visualización por terceros autorizados).
+</p>
+<h2>6. Protección de datos de terceros</h2>
+<p>
+En la medida en que el contenido subido por el Usuario contenga datos personales de
+terceros (imágenes, voces, nombres o correos electrónicos), resultará de aplicación
+obligatoria el Contrato de Encargado de Tratamiento incorporado como Anexo I a estos
+T&amp;C, el cual se entiende aceptado conjuntamente con el presente documento.
+</p>
+<h2>7. Almacenamiento, archivado y baja del servicio</h2>
+<p>
+Cada plan incluye un volumen de almacenamiento determinado (compartido entre fotografía
+y vídeo).
+</p>
+<ul>
+<li>
+<strong>Archivado automático:</strong> Superado el periodo de actividad o vigencia
+indicado en el plan contratado para cada galería (por ejemplo, 12 o 24 meses), las
+galerías se archivan automáticamente. Positiva enviará un aviso previo por correo
+electrónico. El contenido archivado permanecerá disponible para su restauración en un
+plazo máximo de 24 horas desde su solicitud por parte del Usuario.
+</li>
+<li>
+<strong>Baja voluntaria:</strong> El Usuario podrá darse de baja del servicio en
+cualquier momento desde su panel de control o solicitándolo por escrito, sin
+penalización ni periodo de permanencia. Las cuotas ya abonadas correspondientes a
+periodos en curso (mensuales o anuales) no serán reembolsables.
+</li>
+</ul>
+<h2>8. Modificación del servicio y de las condiciones</h2>
+<p>
+Positiva podrá modificar las características técnicas de la Plataforma o sus precios
+comerciales, respetando en todo caso lo dispuesto en la cláusula de "Tarifa Fundador"
+para aquellos usuarios a quienes resulte aplicable. Cualquier modificación sustancial de
+las condiciones económicas o contractuales será comunicada al Usuario con una antelación
+mínima de quince (15) días a su entrada en vigor.
+</p>
+<h2>9. Limitación de responsabilidad y Exclusión de Daños</h2>
+<ul>
+<li>
+<strong>9.1. Exclusión de Daños Indirectos y Lucro Cesante:</strong> En la máxima
+medida permitida por la ley aplicable, Positiva no será responsable en ningún caso
+ante el Usuario o terceros por daños indirectos, incidentales, punitivos o
+consecuenciales. Esto incluye, de forma enunciativa pero no limitativa: la pérdida de
+beneficios, pérdida de ingresos comerciales, lucro cesante, interrupción del negocio,
+daño reputacional, pérdida de clientes o costes de obtención de servicios sustitutivos,
+derivados del uso o de la imposibilidad de usar la Plataforma.
+</li>
+<li>
+<strong>9.2. Tope de Indemnización Financiera (Responsabilidad Máxima):</strong> La
+responsabilidad total, agregada y acumulada de Positiva por cualquier reclamación,
+demanda, acción legal o responsabilidad (ya sea contractual o extracontractual)
+derivada de este contrato o del funcionamiento del servicio, se limitará estrictamente
+a una cantidad máxima equivalente a las sumas efectivamente abonadas por el Usuario a
+la Plataforma durante los doce (12) meses inmediatamente anteriores al hecho que dio
+origen a la reclamación.
+</li>
+<li>
+<strong>9.3. Tratamiento Específico de Pérdida de Material Fotográfico Irrepetible:</strong> 
+El Usuario reconoce y acepta expresamente las siguientes condiciones críticas respecto
+al material audiovisual:
+<ul>
+<li>
+<em>Naturaleza del servicio:</em> La Plataforma es una herramienta de organización,
+gestión y entrega temporal de galerías a clientes finales, no un servicio de copia
+de seguridad (backup) ni un archivo histórico de seguridad.
+</li>
+<li>
+<em>Obligación de duplicidad:</em> Es obligación única, exclusiva y crítica del
+Usuario mantener copias de seguridad locales y externas (en sus propios discos
+duros físicos o servicios de almacenamiento en la nube alternativos) de todo el
+material fotográfico y de vídeo original (especialmente archivos "RAW" u
+originales de cámara), sobre todo de aquel material que sea de carácter
+irrepetible (bodas, bautizos, comuniones, eventos corporativos únicos, etc.).
+</li>
+<li>
+<em>Exención por pérdida de datos:</em> En caso de producirse un fallo técnico,
+ciberataque, corrupción de archivos o error en los servidores que provoque la
+pérdida total o parcial del material alojado, la responsabilidad de la Plataforma
+quedará sujeta estrictamente al tope económico fijado en la sección 9.2. Positiva
+no indemnizará en ningún caso el valor sentimental, artístico, comercial o los
+costes de repetición del evento o de producción del material audiovisual perdido.
+</li>
+</ul>
+</li>
+</ul>
+<h2>10. Duración y resolución</h2>
+<p>
+Estos T&amp;C tendrán vigencia indefinida mientras el Usuario mantenga una cuenta activa.
+Positiva podrá suspender o cancelar de forma inmediata y sin previo aviso aquellas
+cuentas que incurran en un uso fraudulento, impagos prolongados o violaciones graves del
+apartado de obligaciones o propiedad intelectual de estos T&amp;C.
+</p>
+<h2>11. Legislación aplicable y jurisdicción</h2>
+<p>
+Estos T&amp;C se rigen en todos sus extremos por la legislación española. Para la
+resolución de cualquier controversia, litigio o reclamación derivada de la
+interpretación o aplicación de este contrato, y dado el carácter B2B de la relación, las
+partes renuncian de forma expresa a cualquier otro fuero que pudiera corresponderles y
+se someten voluntaria y estrictamente a los juzgados y tribunales de la ciudad de
+Valencia (España).
+</p>
+    </div>
+  </article>
+</div>
+</main>
+
+<!-- pv:footer -->
+<!-- ════════════════════════════════════════════════════════════════
+     PIE COMÚN · fuente única: partials/chrome-footer.html
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
+     las páginas. Sirve de mapa del sitio: cada página pública real
+     debe estar enlazada aquí (SEO + LLMs leen esto).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="footer">
+footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
+.footcols{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pv-s6);
+  margin-bottom:var(--pv-s8);
+}
+.footcols h3{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-tinta-60);margin:0 0 var(--pv-s3);
+}
+.footcols a{
+  display:block;font-family:var(--pv-sans);font-size:14px;color:var(--pv-tinta-60);
+  text-decoration:none;padding:4px 0;transition:color .18s;
+}
+.footcols a:hover{color:var(--pv-tinta)}
+.footer-word{
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(15px,3.9vw,58px);line-height:1;color:var(--pv-tinta);
+  white-space:nowrap;
+}
+.footer-word svg{height:.92em;width:auto;flex:none}
+.footer-word span{color:var(--pv-ambar)}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-30);max-width:78ch}
+.footer-meta{
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
+  font-size:14px;color:var(--pv-tinta-30);
+}
+.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
+.footer-meta a:hover{color:var(--pv-tinta)}
+@media(max-width:760px){
+  .footcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--pv-s5) var(--pv-s4)}
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <h3>Galerías para clientes</h3>
+        <a href="/galerias/">Entrega tu trabajo</a>
+        <a href="/revision-video/">Revisión de vídeo</a>
+        <a href="/revision-foto/">Revisión de fotografías</a>
+        <a href="/portfolio/">Portfolio público</a>
+        <a href="/precios/">Precios</a>
+        <a href="/#faq">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <h3>Casos de uso</h3>
+        <a href="/freelance/">Para profesionales freelance</a>
+        <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
+        <a href="/productoras/">Para productoras de vídeo</a>
+      </div>
+      <div>
+        <h3>Comparativas</h3>
+        <a href="/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time · Pixieset</a>
+        <a href="/positiva-vs-arcadina/">Positiva vs Arcadina</a>
+        <a href="/positiva-vs-dropbox/">Positiva vs Dropbox</a>
+        <a href="/positiva-vs-google-drive/">Positiva vs Google Drive</a>
+        <a href="/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>
+      </div>
+      <div>
+        <h3>Recursos</h3>
+        <a href="/soporte/">Soporte</a>
+        <a href="/novedades/">Novedades</a>
+        <a href="/notas/">Notas</a>
+        <a href="https://app.positiva.studio">Accede a tu panel</a>
+        <a href="/#lista">Regístrate</a>
+        <a href="mailto:hola@positiva.studio">Contacto</a>
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/terminos/">Términos</a>
+      </div>
+    </div>
+    <div class="footer-word">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
+    <p class="footer-entidad">Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.</p>
+    <div class="footer-meta">
+      <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Hecha en España · Se gestiona, se mejora y se factura desde Europa</span>
+      <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+    </div>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://positiva.studio/#org",
+      "name": "Positiva",
+      "url": "https://positiva.studio/",
+      "logo": "https://positiva.studio/assets/og.png",
+      "description": "Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.",
+      "email": "hola@positiva.studio",
+      "foundingLocation": { "@type": "Place", "name": "Valencia, España" },
+      "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
+      "areaServed": "ES",
+      "knowsLanguage": "es",
+      "sameAs": [
+        "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
+        "https://www.linkedin.com/company/positiva-studio/",
+        "https://instagram.com/positiva.studio_"
+      ]
+    }</script>
+  </div>
+</footer>
+<!-- /pv:footer -->
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+# Positiva
+
+> Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.
+
+Datos clave:
+- Idioma: español. Precios en euros. Datos alojados en la Unión Europea (RGPD). Hecha en España.
+- Foto y vídeo conviven en la misma galería y el mismo enlace, con la marca del profesional. Los enlaces no caducan.
+- Revisión de fotos: el cliente marca favoritas (con su nombre) y comenta foto a foto; exportación a Lightroom Classic, CSV, lista de nombres y etiquetas de Finder.
+- Revisión de vídeo: comentarios anclados al fotograma exacto, rondas de revisión, y exportación de los comentarios como marcadores en EDL (DaVinci Resolve) y FCPXML (Final Cut Pro).
+- Portfolio web público que se monta con las entregas ya hechas, con dominios propios.
+- Sin publicidad, sin comisiones y sin entrenar ninguna IA con el material de los usuarios.
+- Planes: Gratis (15 GB, 2 galerías, sin tarjeta) · Autor (250 GB, 89 € + IVA/año) · Estudio (1 TB, 219 € + IVA/año). Tarifa Fundador para los primeros 50 usuarios de pago.
+- Contacto: hola@positiva.studio · App: https://app.positiva.studio
+
+## Páginas principales
+
+- [Inicio](https://positiva.studio/): plataforma de galerías de fotos y vídeo para clientes.
+- [Galerías de entrega](https://positiva.studio/galerias/): entrega con marca propia, diseños, momentos y enlaces que no caducan.
+- [Revisión de vídeo](https://positiva.studio/revision-video/): comentarios en el fotograma y exportación a DaVinci Resolve y Final Cut Pro.
+- [Revisión de fotografías](https://positiva.studio/revision-foto/): favoritas y comentarios del cliente, exportables a Lightroom.
+- [Portfolio](https://positiva.studio/portfolio/): web pública montada con las entregas.
+- [Precios](https://positiva.studio/precios/): planes y almacenamiento, en euros.
+- [Para profesionales freelance](https://positiva.studio/freelance/)
+- [Para fotógrafos y videógrafos de bodas](https://positiva.studio/bodas/)
+- [Para productoras de vídeo](https://positiva.studio/productoras/)
+
+## Comparativas
+
+- [Positiva vs Pic-Time vs Pixieset](https://positiva.studio/positiva-vs-pictime-vs-pixieset/)
+- [Positiva vs Arcadina](https://positiva.studio/positiva-vs-arcadina/)
+- [Positiva vs WeTransfer](https://positiva.studio/positiva-vs-wetransfer/)
+- [Positiva vs Dropbox](https://positiva.studio/positiva-vs-dropbox/)
+- [Positiva vs Google Drive](https://positiva.studio/positiva-vs-google-drive/)
+
+## Recursos
+
+- [Soporte](https://positiva.studio/soporte/es/): más de 50 artículos en español sobre galerías, revisión, favoritas y exportaciones.
+- [Notas](https://positiva.studio/notas/): guías y comparativas (alternativas a Pixieset, Pic-Time, WeTransfer, Frame.io y Arcadina).
+- [Novedades](https://positiva.studio/novedades/): registro fechado de cada mejora desplegada.
+- [Aviso legal](https://positiva.studio/aviso-legal/) · [Privacidad](https://positiva.studio/privacidad/) · [Términos](https://positiva.studio/terminos/)

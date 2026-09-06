@@ -35,7 +35,14 @@ const PAGES = [
   'public/positiva-vs-google-drive/index.html',
   'public/positiva-vs-pictime-vs-pixieset/index.html',
   'public/positiva-vs-wetransfer/index.html',
+  'public/positiva-vs-arcadina/index.html',
+  'public/aviso-legal/index.html',
+  'public/privacidad/index.html',
+  'public/terminos/index.html',
 ];
+
+// /notas/ (el blog) se estampa igual: índice y artículos.
+for (const f of globSync('public/notas/**/index.html', { cwd: ROOT })) PAGES.push(f);
 
 // /soporte/ se estampa también (decisión de Rodrigo, 02/09/2026): sus páginas
 // llevan los mismos marcadores. El glob las recoge aunque el otro flujo añada artículos.

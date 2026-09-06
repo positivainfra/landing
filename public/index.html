@@ -124,7 +124,7 @@ html.js .reveal.is-in{opacity:1;transform:none}
 
 /* ══════════════════════════════════════════════════════════════
    LA HISTORIA · hero pineado, dirigido por el scroll de forma
-   CONTINUA: el JS publica --p y los progresos --s1..--s4 y los
+   CONTINUA: el JS publica --p y los progresos --s1..--s3 y los
    --t/--m de cada texto; todo lo demás son calc() en CSS.
    Scrubbing real: avanza, retrocede y se detiene contigo.
    Sin JS o con reduced-motion: hero estático con la tarjeta final.
@@ -146,7 +146,6 @@ html:not(.js) .hst,.hst.rm{position:static;height:auto;min-height:100svh;--s1:1;
 .acto-2{opacity:var(--t2,0);transform:translateY(var(--m2,30px))}
 .acto-3{opacity:var(--t3,0);transform:translateY(var(--m3,30px)) translateX(var(--swap))}
 .acto-4{opacity:var(--t4,0);transform:translateY(var(--m4,30px))}
-.acto-5{opacity:var(--t5,0);transform:translateY(var(--m5,30px)) translateX(calc(var(--swap) + 26px))}
 .acto>em{font-style:normal;font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pv-ambar-ink);display:block;margin-bottom:var(--pv-s4)}
 .acto h3{font-size:min(clamp(30px,3.4vw,48px),6.5svh);font-weight:300;letter-spacing:-.02em;line-height:1.12;margin-bottom:var(--pv-s4)}
 .acto h3 i{font-style:italic}
@@ -156,7 +155,8 @@ html:not(.js) .hst,.hst.rm{position:static;height:auto;min-height:100svh;--s1:1;
 .acto-0 .hero-display .hl>span{white-space:nowrap}
 @supports (font-size:1cqw){.acto-0 .hero-display{font-size:min(11.2cqw,84px,10svh)}}
 .acto-0 .hero-display em{font-style:italic}
-.acto-0 h1{font-family:var(--pv-sans);font-weight:400;line-height:1.5;font-size:clamp(18px,1.6vw,22px);color:var(--pv-tinta-60);max-width:44ch;margin-top:var(--pv-s5)}
+.acto-0 h1{font-family:var(--pv-sans);font-weight:600;line-height:1.3;font-size:clamp(20px,2vw,26px);letter-spacing:-.01em;color:var(--pv-tinta);max-width:34ch;margin-top:var(--pv-s5)}
+.acto-0 .lede0{font-family:var(--pv-sans);font-weight:400;line-height:1.5;font-size:clamp(18px,1.6vw,22px);color:var(--pv-tinta-60);max-width:44ch;margin-top:var(--pv-s3)}
 .acto-0 .cta-row{display:flex;gap:var(--pv-s3);flex-wrap:wrap;margin-top:var(--pv-s6)}
 /* líneas del titular: máscara + entrada escalonada al cargar */
 .hl{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
@@ -179,9 +179,9 @@ html:not(.js) .camino,.hst.rm .camino{display:none}
 
 /* ── la tarjeta que se transforma (todo scrubbed) ── */
 .tj{position:relative;z-index:3;justify-self:center;width:min(100%,480px);font-family:var(--pv-mono);
-  transform:translateX(calc((var(--s2,0) - var(--s3,0) + var(--s4,0))*var(--swap)*-1))
-            translateY(calc((var(--a2,0) + var(--a3,0))*-80px + var(--a4,0)*-56px))
-            rotate(calc(var(--a2,0)*-3deg + var(--a3,0)*3deg + var(--a4,0)*-2deg));}
+  transform:translateX(calc((var(--s2,0) - var(--s3,0))*var(--swap)*-1))
+            translateY(calc((var(--a2,0) + var(--a3,0))*-80px))
+            rotate(calc(var(--a2,0)*-3deg + var(--a3,0)*3deg));}
 /* acto 0: la entrega con Positiva, terminada (sale al primer scroll) */
 .tj-final{
   position:absolute;left:50%;top:50%;z-index:5;width:min(118%,580px);
@@ -194,7 +194,7 @@ html:not(.js) .camino,.hst.rm .camino{display:none}
   box-shadow:0 44px 90px -34px rgba(23,22,20,.5);
 }
 .tj-final video{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
-.tj-final .f-url{
+.tj-final .f-url{text-decoration:none;pointer-events:auto;cursor:pointer;
   display:flex;align-items:center;gap:9px;margin-top:12px;
   background:var(--pv-luz);border:1px solid var(--pv-linea);border-radius:var(--pv-r-pill);
   padding:10px 16px;font-size:11px;color:var(--pv-tinta-60);white-space:nowrap;overflow:hidden;
@@ -274,61 +274,22 @@ html:not(.js) .tj-clip,.hst.rm .tj-clip{display:none}
 .tj-clip2 video{display:block;width:100%;height:auto}
 html:not(.js) .tj-clip2,.hst.rm .tj-clip2{display:none}
 
-/* acto 03 · compartes: la tarjeta de enlaces — animación CSS movida por --u.
-   Entra en el aterrizaje del salto (--xf2) y cede al clip del cliente (--xf3) */
-.tj-links{
-  position:absolute;left:0;right:0;top:0;z-index:3;
-  background:var(--pv-luz);border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);
-  box-shadow:0 44px 90px -34px rgba(23,22,20,.45);
-  padding:14px 16px 16px;font-family:var(--pv-mono);
-  opacity:calc(clamp(0, var(--xf2,0), 1) * (1 - var(--xf3,0)));
-  transform:
-    translateY(calc((1 - var(--s1b,0))*18vh + var(--s1b,0)*48px - var(--s3,0)*62px + var(--s4,0)*4px))
-    translateX(calc(var(--s2,0)*-20px + var(--s3,0)*20px + var(--s4,0)*-8px))
-    rotate(calc(var(--s2,0)*-1.4deg + var(--s3,0)*1.6deg + var(--s4,0)*-.4deg))
-    scale(calc(.94 + var(--s1b,0)*.06 + var(--s2,0)*.05 - var(--s3,0)*.09 + var(--s4,0)*.06));
-  pointer-events:none;
-}
-.lk-cab{display:flex;justify-content:space-between;align-items:baseline;font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pv-tinta-30);margin-bottom:12px}
-.lk-cab b{color:var(--pv-tinta)}
-.lk{border:1px solid var(--pv-linea);border-radius:14px;padding:11px 13px;background:var(--pv-papel)}
-.lk+.lk{margin-top:9px}
-.lk-url{display:flex;align-items:center;gap:9px;font-size:10.5px;color:var(--pv-tinta-60);white-space:nowrap;overflow:hidden}
-.lk-url i{font-style:normal;flex:none;width:7px;height:7px;border-radius:50%;background:var(--pv-ambar)}
-.lk-url em{font-style:normal;color:var(--pv-tinta);font-weight:700}
-.lk-ops{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:9px}
-.lk-ops .op{display:inline-flex;align-items:center;gap:4px;font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--pv-tinta-30)}
-.lk-ops .op u{text-decoration:none;padding:3px 8px;border-radius:var(--pv-r-pill);border:1px solid var(--pv-linea)}
-.lk-ops .op u.on{background:var(--pv-ambar-luz);border-color:var(--pv-ambar);color:var(--pv-ambar-ink)}
-.lk-ops .chip{font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--pv-tinta-30);padding:3px 9px;border-radius:var(--pv-r-pill);border:1px solid var(--pv-linea)}
-.lk-ops .chip-on{background:var(--pv-ambar-luz);border-color:var(--pv-ambar);color:var(--pv-ambar-ink)}
-/* entrada escalonada, movida por el scroll */
-.lk1{opacity:clamp(0, calc(var(--u,0)*5), 1);transform:translateY(calc((1 - clamp(0, calc(var(--u,0)*5), 1))*18px))}
-.lk1 .lk-ops>*:nth-child(1){opacity:clamp(0, calc(var(--u,0)*6 - .6), 1)}
-.lk1 .lk-ops>*:nth-child(2){opacity:clamp(0, calc(var(--u,0)*6 - 1.05), 1)}
-.lk1 .lk-ops>*:nth-child(3){opacity:clamp(0, calc(var(--u,0)*6 - 1.5), 1)}
-.lk1 .lk-ops>*:nth-child(4){opacity:clamp(0, calc(var(--u,0)*6 - 1.95), 1)}
-.lk2{opacity:clamp(0, calc(var(--u,0)*3 - 1), 1);transform:translateY(calc((1 - clamp(0, calc(var(--u,0)*3 - 1), 1))*22px))}
-.lk3{opacity:clamp(0, calc(var(--u,0)*3 - 1.7), 1);transform:translateY(calc((1 - clamp(0, calc(var(--u,0)*3 - 1.7), 1))*22px))}
-.lk-pie{margin-top:11px;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-tinta-30);opacity:clamp(0, calc(var(--u,0)*4 - 3), 1)}
-html:not(.js) .tj-links,.hst.rm .tj-links{display:none}
-
-/* acto 04 · tu cliente: captura real de favoritas y comentarios */
-.tj-clip3{
+/* acto 03 · portfolio: tu web pública, entra en el último salto (--xf2) */
+.tj-port{
   position:absolute;left:0;right:0;top:0;z-index:3;
   border-radius:var(--pv-r-panel);overflow:clip;background:var(--pv-luz);
   border:1px solid var(--pv-linea);
   box-shadow:0 44px 90px -34px rgba(23,22,20,.45);
-  opacity:clamp(0, var(--xf3,0), 1);
+  opacity:clamp(0, var(--xf2,0), 1);
   transform:
-    translateY(calc((1 - var(--s1b,0))*18vh + var(--s1b,0)*48px - var(--s3,0)*62px + var(--s4,0)*4px))
-    translateX(calc(var(--s2,0)*-20px + var(--s3,0)*20px + var(--s4,0)*-8px))
-    rotate(calc(var(--s2,0)*-1.4deg + var(--s3,0)*1.6deg + var(--s4,0)*-.4deg))
-    scale(calc(.94 + var(--s1b,0)*.06 + var(--s2,0)*.05 - var(--s3,0)*.09 + var(--s4,0)*.06));
+    translateY(calc((1 - var(--s1b,0))*18vh + var(--s1b,0)*48px - var(--s3,0)*62px))
+    translateX(calc(var(--s2,0)*-20px + var(--s3,0)*20px))
+    rotate(calc(var(--s2,0)*-1.4deg + var(--s3,0)*1.6deg))
+    scale(calc(.94 + var(--s1b,0)*.06 + var(--s2,0)*.05 - var(--s3,0)*.09));
   pointer-events:none;
 }
-.tj-clip3 video{display:block;width:100%;height:auto}
-html:not(.js) .tj-clip3,.hst.rm .tj-clip3{display:none}
+.tj-port img{display:block;width:100%;height:auto}
+html:not(.js) .tj-port,.hst.rm .tj-port{display:none}
 
 /* con JS, el panel y los enlaces antiguos solo reservan el hueco (fallback sin JS) */
 html.js .hst:not(.rm) .tj-panel,html.js .hst:not(.rm) .tj-urls{visibility:hidden}
@@ -340,10 +301,10 @@ html.js .hst:not(.rm) .tj-panel,html.js .hst:not(.rm) .tj-urls{visibility:hidden
   box-shadow:0 44px 90px -34px rgba(23,22,20,.45);
   opacity:clamp(0, var(--xf2,0), 1);
   transform:
-    translateY(calc((1 - var(--s1b,0))*18vh + var(--s1b,0)*48px - var(--s3,0)*62px + var(--s4,0)*4px))
-    translateX(calc(var(--s2,0)*-20px + var(--s3,0)*20px + var(--s4,0)*-8px))
-    rotate(calc(var(--s2,0)*-1.4deg + var(--s3,0)*1.6deg + var(--s4,0)*-.4deg))
-    scale(calc(.94 + var(--s1b,0)*.06 + var(--s2,0)*.05 - var(--s3,0)*.09 + var(--s4,0)*.06));
+    translateY(calc((1 - var(--s1b,0))*18vh + var(--s1b,0)*48px - var(--s3,0)*62px))
+    translateX(calc(var(--s2,0)*-20px + var(--s3,0)*20px))
+    rotate(calc(var(--s2,0)*-1.4deg + var(--s3,0)*1.6deg))
+    scale(calc(.94 + var(--s1b,0)*.06 + var(--s2,0)*.05 - var(--s3,0)*.09));
 }
 .tj-cab{display:flex;justify-content:space-between;align-items:baseline;padding:14px 16px 10px;font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pv-tinta-30)}
 .tj-cab b{color:var(--pv-tinta)}
@@ -430,7 +391,8 @@ html:not(.js) .tj-url,.hst.rm .tj-url{opacity:1;transform:none}
 
 @media(max-height:800px) and (min-width:901px){
   .acto-0 .hero-eyebrow{margin-bottom:14px}
-  .acto-0 h1{margin-top:14px;font-size:16.5px}
+  .acto-0 h1{margin-top:14px;font-size:19px}
+  .acto-0 .lede0{margin-top:10px;font-size:16.5px}
   .acto-0 .cta-row{margin-top:18px}
   .acto-0 .cta-row .btn{padding:12px 24px}
   .hst-textos{min-height:min(46vh,420px)}
@@ -444,7 +406,8 @@ html:not(.js) .tj-url,.hst.rm .tj-url{opacity:1;transform:none}
   .acto h3{font-size:clamp(23px,5.8vw,30px);margin-bottom:10px}
   .acto>p{font-size:15.5px}
   .acto-0 .hero-display{font-size:min(11.2cqw,44px)}
-  .acto-0 h1{font-size:15.5px;margin-top:12px;line-height:1.45}
+  .acto-0 h1{font-size:17px;margin-top:12px;line-height:1.3}
+  .acto-0 .lede0{font-size:15.5px;margin-top:10px;line-height:1.45}
   .acto-0 .cta-row{margin-top:16px}
   .acto-0 .cta-row .btn{padding:11px 20px;font-size:14px}
   .acto-0 .hero-eyebrow{margin-bottom:14px}
@@ -651,19 +614,6 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "https://positiva.studio/#org",
-      "name": "Positiva",
-      "url": "https://positiva.studio/",
-      "logo": "https://positiva.studio/assets/apple-touch-icon.png",
-      "email": "hola@positiva.studio",
-      "description": "Galerías privadas de fotos y vídeo para que fotógrafos y videógrafos entreguen su trabajo a clientes con su propia marca.",
-      "foundingLocation": {
-        "@type": "Place",
-        "name": "Valencia, España"
-      }
-    },
-    {
       "@type": "WebSite",
       "@id": "https://positiva.studio/#website",
       "url": "https://positiva.studio/",
@@ -808,6 +758,8 @@ nav.scrolled .nav-inner{
   margin-top:6px;padding:12px 14px 4px;border-top:1px solid var(--pv-linea);
 }
 .nav-drop-card a.sub{padding-left:26px}
+.nav-drop-card .drop-grupo-link{font-size:12px;letter-spacing:.13em;color:#4A4943}
+.nav-drop-card a.sub-alt{font-family:var(--pv-sans);font-size:13.5px;font-weight:500;letter-spacing:0;text-transform:none}
 /* Sobre hero oscuro la cápsula aclara sus enlaces, pero el panel del desplegable
    sigue siendo papel: sus enlaces mantienen tinta siempre. */
 body.hero-oscuro nav:not(.scrolled) .nav-drop .nav-drop-card a{color:#4A4943}
@@ -890,27 +842,27 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     </a>
     <div class="nav-links">
       <div class="nav-drop">
-        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Galerías</button>
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Galerías para clientes</button>
         <div class="nav-drop-menu">
           <div class="nav-drop-card">
             <a href="/galerias/">Entrega tu trabajo</a>
-            <p class="drop-grupo">Optimiza la revisión</p>
-            <a class="sub" href="/revision-video/">Vídeo</a>
-            <a class="sub" href="/revision-foto/">Foto</a>
+            <p class="drop-grupo drop-grupo-link">Revisa con tu cliente</p>
+            <a class="sub sub-alt" href="/revision-video/">Vídeo</a>
+            <a class="sub sub-alt" href="/revision-foto/">Fotografías</a>
           </div>
         </div>
       </div>
-      <a href="/portfolio/">Portfolio público</a>
       <div class="nav-drop">
         <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Casos de uso</button>
         <div class="nav-drop-menu">
           <div class="nav-drop-card">
-            <a href="/freelance/">Freelance</a>
-            <a href="/bodas/">Reportaje de bodas</a>
-            <a href="/productoras/">Productoras de vídeo</a>
+            <a href="/freelance/">Para profesionales freelance</a>
+            <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
+            <a href="/productoras/">Para productoras de vídeo</a>
           </div>
         </div>
       </div>
+      <a href="/portfolio/">Portfolio público</a>
       <a href="/precios/">Precios</a>
       <a href="/soporte/">Soporte</a>
     </div>
@@ -926,23 +878,23 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 
 <div class="menu" id="menu">
   <a class="big" href="/" style="--d:.05s"><em>01</em> Inicio</a>
-  <a class="big" href="/galerias/" style="--d:.1s"><em>02</em> Galerías</a>
+  <a class="big" href="/galerias/" style="--d:.1s"><em>02</em> Galerías para clientes</a>
   <a class="big" href="/portfolio/" style="--d:.15s"><em>03</em> Portfolio público</a>
   <a class="big" href="/precios/" style="--d:.2s"><em>04</em> Precios</a>
   <a class="big" href="/soporte/" style="--d:.25s"><em>05</em> Soporte</a>
   <a class="big" href="/#lista" style="--d:.3s"><em>06</em> Regístrate</a>
   <div class="menu-groups">
     <div>
-      <h3>Galerías</h3>
+      <h3>Galerías para clientes</h3>
       <a href="/galerias/">Entrega tu trabajo</a>
       <a href="/revision-video/">Revisión de vídeo</a>
-      <a href="/revision-foto/">Revisión de foto</a>
+      <a href="/revision-foto/">Revisión de fotografías</a>
     </div>
     <div>
       <h3>Casos de uso</h3>
-      <a href="/freelance/">Freelance</a>
-      <a href="/bodas/">Reportaje de bodas</a>
-      <a href="/productoras/">Productoras de vídeo</a>
+      <a href="/freelance/">Para profesionales freelance</a>
+      <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
+      <a href="/productoras/">Para productoras de vídeo</a>
     </div>
   </div>
   <div class="menu-meta">
@@ -995,7 +947,6 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 })();
 </script>
 <!-- /pv:nav -->
-</div>
 
 <!-- ══ HERO · declaración tipográfica + tira de negativos ══ -->
 <!-- ══ LA HISTORIA · hero pineado que cuenta la entrega ══ -->
@@ -1016,7 +967,8 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
             <span class="hl"><span style="--d:.15s"><em>como merece</em></span></span>
             <span class="hl"><span style="--d:.25s"><em>ser visto.</em></span></span>
           </p>
-          <h1>Galerías privadas de fotos y vídeos para clientes. Con tu marca. Sin reenviar el enlace jamás.</h1>
+          <h1>Galerías de fotografías y vídeo para clientes</h1>
+          <p class="lede0">Entrega tu material, con tu marca, tus colores y tu estilo. Sin reenviar el enlace jamás.</p>
           <div class="cta-row">
             <a href="#lista" class="btn btn-amber" data-ev="cta_register_click" data-ev-place="hero">Regístrate</a>
             <a href="#historia" class="btn btn-ghost" id="cta-pasos">Cómo funciona</a>
@@ -1029,31 +981,27 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
           y vuelta al «¿me lo reenvías?». ¿Lo cambiamos?</p>
         </div>
         <div class="acto acto-2">
-          <em>01 · Subes</em>
-          <h3>Fotos y vídeo,<br><i>a la misma galería.</i></h3>
-          <p>Arrastras JPEG y MP4 y la galería se llena mientras sigues trabajando.
-          Fotografías y videos en la misma galería.</p>
+          <em>01 · Experiencia</em>
+          <h3>Entrega tus fotos y vídeos<br><i>con diseño y con tu marca.</i></h3>
+          <p>Galerías de entrega diseñadas para que tu cliente disfrute de tu trabajo.</p>
         </div>
         <div class="acto acto-3">
-          <em>02 · Eliges diseño</em>
-          <h3>La galería<br><i>con tu estilo.</i></h3>
-          <p>Portada, cuadrícula y tema, pensados por un fotógrafo. Tu logo, tu
-          tipografía y tus colores para que todo respire tu marca.</p>
+          <em>02 · Revisión</em>
+          <h3>Todo el feedback<br><i>en un lugar.</i></h3>
+          <p>Obtén el feedback de fotografías y de vídeo en un solo lugar, foto a foto
+          y fotograma a fotograma. Con exportación de favoritas a Lightroom y de
+          comentarios de vídeo a DaVinci Resolve y Final Cut Pro.</p>
         </div>
         <div class="acto acto-4">
-          <em>03 · Compartes</em>
-          <h3>Un enlace personalizable<br><i>que no caduca.</i></h3>
-          <p>Cada enlace con sus permisos y su contraseña: el cliente con originales,
-          prensa con password y descarga reducida e invitados solo ven. Y cuando quieras, los eliminas.</p>
+          <em>03 · Portfolio actualizado</em>
+          <h3>Tu web,<br><i>por fin actualizada.</i></h3>
+          <p>Ya no hay excusas: monta tu portfolio web con las entregas que ya tienes.
+          Selecciona lo que quieres mostrar y en segundos está en tu web.</p>
         </div>
-        <div class="acto acto-5">
-          <em>04 · Tu cliente</em>
-          <h3>Elige y comenta<br><i>ahí mismo.</i></h3>
-          <p>Tu cliente marca favoritas y comentarios, foto y vídeo, sin crear cuenta. Tú ves el feedback en un solo lugar.</p>
-        </div>
+        
       </div>
 
-      <div class="tj" aria-hidden="true">
+      <div class="tj">
         <!-- acto 0 · la entrega con Positiva: galería real en vídeo -->
         <div class="tj-final">
           <div class="f-vid">
@@ -1061,9 +1009,9 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
               width="1280" height="720" autoplay muted loop playsinline preload="auto"
               aria-label="Una galería real entregada con Positiva"></video>
           </div>
-          <div class="f-url"><i></i><span><em>rodrigomarquez</em>.positiva.studio/campana-nyc</span></div>
+          <a class="f-url" href="https://portfolio.rodrigomarquez.es/g/musthave-nyc" target="_blank" rel="noopener"><i></i><span><em>rodrigomarquez</em>.positiva.studio/g/musthave-nyc</span></a>
         </div>
-        <div class="tj-transfer">
+        <div class="tj-transfer" aria-hidden="true">
           <div class="t-bar"><i></i><i></i><i></i><span>transferfiles.net/dl/x7Kq2pR</span></div>
           <div class="t-cuerpo">
             <div class="t-zip">ZIP</div>
@@ -1079,48 +1027,17 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
         </div>
         <!-- acto 1 · subes: captura real de la subida, movida por el scroll -->
         <div class="tj-clip">
-          <video id="clipsubes" src="/video/pasos/subes.mp4" poster="/video/pasos/subes-poster.jpg"
+          <video id="clipentrega" src="/video/pasos/entrega.mp4" poster="/video/pasos/entrega-poster.jpg"
             width="1280" height="720" muted loop playsinline preload="auto"></video>
         </div>
         <!-- acto 2 · diseñas: captura real del diseño de la galería -->
         <div class="tj-clip2">
-          <video id="clipdisenas" src="/video/pasos/disenas.mp4" poster="/video/pasos/disenas-poster.jpg"
+          <video id="cliprevision" src="/video/pasos/revision.mp4" poster="/video/pasos/revision-poster.jpg"
             width="1280" height="720" muted loop playsinline preload="auto"></video>
         </div>
-        <!-- acto 3 · compartes: enlaces con sus permisos, uno tras otro -->
-        <div class="tj-links">
-          <div class="lk-cab"><span><b>Campaña NYC</b></span><span>Compartir</span></div>
-          <div class="lk lk1">
-            <div class="lk-url"><i></i><span><em>rodrigomarquez</em>.positiva.studio/campana-nyc</span></div>
-            <div class="lk-ops">
-              <span class="op"><b>Descarga</b><u class="on">Sí</u><u>No</u></span>
-              <span class="op"><b>Favoritas</b><u class="on">Sí</u><u>No</u></span>
-              <span class="chip">Contraseña</span>
-              <span class="chip">Desactivar</span>
-            </div>
-          </div>
-          <div class="lk lk2">
-            <div class="lk-url"><i></i><span><em>rodrigomarquez</em>.positiva.studio/campana-nyc-prensa</span></div>
-            <div class="lk-ops">
-              <span class="op"><b>Descarga</b><u class="on">Sí</u><u>No</u></span>
-              <span class="op"><b>Favoritas</b><u>Sí</u><u class="on">No</u></span>
-              <span class="chip chip-on">Contraseña ····</span>
-            </div>
-          </div>
-          <div class="lk lk3">
-            <div class="lk-url"><i></i><span><em>rodrigomarquez</em>.positiva.studio/campana-nyc-invitados</span></div>
-            <div class="lk-ops">
-              <span class="op"><b>Descarga</b><u>Sí</u><u class="on">No</u></span>
-              <span class="op"><b>Favoritas</b><u class="on">Sí</u><u>No</u></span>
-              <span class="chip">Contraseña</span>
-            </div>
-          </div>
-          <div class="lk-pie">＋ Nuevo enlace · los enlaces no caducan</div>
-        </div>
-        <!-- acto 4 · tu cliente: captura real de la revisión -->
-        <div class="tj-clip3">
-          <video id="clipcliente" src="/video/pasos/cliente.mp4" poster="/video/pasos/cliente-poster.jpg"
-            width="1280" height="720" muted loop playsinline preload="auto"></video>
+        <!-- acto 4 · portfolio: tu web pública -->
+        <div class="tj-port">
+          <img src="/img/perfiles/perfil-rmq.png" alt="" width="1400" height="932" loading="lazy" decoding="async">
         </div>
         <div class="tj-panel">
           <div class="tj-cab"><span><b>Campaña NYC</b></span><span>84 fotos · 3 vídeos</span></div>
@@ -1149,7 +1066,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     <div class="hst-pie">
       <div class="wrap">
         <div class="hitos" aria-hidden="true">
-          <span data-a="2">01 Subes</span><span data-a="3">02 Diseñas</span><span data-a="4">03 Compartes</span><span data-a="5">04 Tu cliente</span>
+          <span data-a="2">01 Entrega</span><span data-a="3">02 Revisión</span><span data-a="4">03 Portfolio</span>
         </div>
         <span class="hst-hint" aria-hidden="true">Sigue bajando ↓</span>
       </div>
@@ -1166,7 +1083,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
           width="1280" height="720" autoplay muted loop playsinline preload="metadata"
           aria-label="Recorrido por Positiva: galerías con tu marca, revisión del cliente y portfolio público."></video>
       </div>
-      <figcaption><span><b>Showcase</b> · una galería real, de la subida a la entrega</span><span>40 s · sin sonido</span></figcaption>
+      <figcaption><span><b>Showcase</b></span></figcaption>
     </figure>
   </div>
 </section>
@@ -1459,6 +1376,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 }
 .footer-word svg{height:.92em;width:auto;flex:none}
 .footer-word span{color:var(--pv-ambar)}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-30);max-width:78ch}
 .footer-meta{
   display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
   margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
@@ -1475,39 +1393,39 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
   <div class="wrap">
     <div class="footcols">
       <div>
-        <h3>Galerías</h3>
+        <h3>Galerías para clientes</h3>
         <a href="/galerias/">Entrega tu trabajo</a>
         <a href="/revision-video/">Revisión de vídeo</a>
-        <a href="/revision-foto/">Revisión de foto</a>
+        <a href="/revision-foto/">Revisión de fotografías</a>
         <a href="/portfolio/">Portfolio público</a>
         <a href="/precios/">Precios</a>
         <a href="/#faq">Preguntas frecuentes</a>
       </div>
       <div>
         <h3>Casos de uso</h3>
-        <a href="/freelance/">Freelance</a>
-        <a href="/bodas/">Reportaje de bodas</a>
-        <a href="/productoras/">Productoras de vídeo</a>
+        <a href="/freelance/">Para profesionales freelance</a>
+        <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
+        <a href="/productoras/">Para productoras de vídeo</a>
       </div>
       <div>
         <h3>Comparativas</h3>
-        <a href="/positiva-vs-pictime-vs-pixieset/">vs Pic-Time · Pixieset</a>
-        <a href="/positiva-vs-dropbox/">vs Dropbox</a>
-        <a href="/positiva-vs-google-drive/">vs Google Drive</a>
-        <a href="/positiva-vs-wetransfer/">vs WeTransfer</a>
+        <a href="/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time · Pixieset</a>
+        <a href="/positiva-vs-arcadina/">Positiva vs Arcadina</a>
+        <a href="/positiva-vs-dropbox/">Positiva vs Dropbox</a>
+        <a href="/positiva-vs-google-drive/">Positiva vs Google Drive</a>
+        <a href="/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>
       </div>
       <div>
         <h3>Recursos</h3>
-        <a href="/soporte/">Centro de soporte</a>
+        <a href="/soporte/">Soporte</a>
         <a href="/novedades/">Novedades</a>
-        <a href="https://app.positiva.studio">Entrar en tu panel</a>
+        <a href="/notas/">Notas</a>
+        <a href="https://app.positiva.studio">Accede a tu panel</a>
         <a href="/#lista">Regístrate</a>
         <a href="mailto:hola@positiva.studio">Contacto</a>
-        <!-- pv:legal — descomenta cuando existan las páginas:
         <a href="/aviso-legal/">Aviso legal</a>
         <a href="/privacidad/">Privacidad</a>
         <a href="/terminos/">Términos</a>
-        -->
       </div>
     </div>
     <div class="footer-word">
@@ -1518,10 +1436,30 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
       </svg>
       Positiva<span>.</span>
     </div>
+    <p class="footer-entidad">Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.</p>
     <div class="footer-meta">
       <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Hecha en España · Se gestiona, se mejora y se factura desde Europa</span>
       <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
     </div>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://positiva.studio/#org",
+      "name": "Positiva",
+      "url": "https://positiva.studio/",
+      "logo": "https://positiva.studio/assets/og.png",
+      "description": "Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.",
+      "email": "hola@positiva.studio",
+      "foundingLocation": { "@type": "Place", "name": "Valencia, España" },
+      "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
+      "areaServed": "ES",
+      "knowsLanguage": "es",
+      "sameAs": [
+        "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
+        "https://www.linkedin.com/company/positiva-studio/",
+        "https://instagram.com/positiva.studio_"
+      ]
+    }</script>
   </div>
 </footer>
 <!-- /pv:footer -->
@@ -1549,8 +1487,8 @@ window.addEventListener('load', () => document.documentElement.classList.add('lo
 
 /* ── La historia: scrub continuo ──
    Publica --p, --e1 (Positiva sale / entra la entrega arcaica),
-   --s1..--s4 (tachado+subida, diseño, enlaces, cliente), los arcos
-   --a2..--a4 de los saltos, --pc (trazado del camino) y --tN/--mN
+   --s1..--s3 (tachado+subida, entrega, revisión→portfolio), los arcos
+   --a2..--a3 de los saltos, --pc (trazado del camino) y --tN/--mN
    de cada texto. Los umbrales solo deciden puntero e hitos. */
 (() => {
   const sec = document.getElementById('historia');
@@ -1563,20 +1501,19 @@ window.addEventListener('load', () => document.documentElement.classList.add('lo
   const actos = Array.from(hst.querySelectorAll('.acto'));
   const hitos = Array.from(hst.querySelectorAll('.hitos span'));
   const seg = (p, a, b) => Math.min(1, Math.max(0, (p - a) / (b - a)));
-  // rangos (afinar aquí): E1 y las cuatro fases de la tarjeta
+  // rangos (afinar aquí): E1 y las tres fases de la tarjeta
   const E1 = [.03,.11];
-  const S = [[.15,.24],[.36,.48],[.55,.67],[.71,.83]];
-  // textos: [entraA,entraB,saleA,saleB] · 1=hoy(dcha) 2=subes(izq) 3=diseñas(dcha) 4=compartes(izq) 5=cliente(dcha)
-  const T = [[.08,.14,.19,.25],[.26,.32,.37,.43],[.43,.49,.51,.57],[.56,.62,.69,.75],[.73,.79,2,3]];
-  const DOM = [.08,.25,.44,.57,.74];
+  const S = [[.15,.24],[.40,.52],[.64,.76]];
+  // textos: [entraA,entraB,saleA,saleB] · 1=hoy(dcha) 2=entrega(izq) 3=revisión(dcha) 4=portfolio(izq)
+  const T = [[.08,.14,.19,.25],[.26,.32,.37,.43],[.50,.56,.61,.67],[.73,.79,2,3]];
+  const DOM = [.08,.25,.50,.73];
   let raf = 0, lastDom = -1;
   const st = hst.style;
   const vid = document.getElementById('herovid');
   // clips de paso: cada uno se reproduce dentro de su ventana de scroll
   const clips = [
-    { el: document.getElementById('clipsubes'), a: .18, b: .50, dentro: false },
-    { el: document.getElementById('clipdisenas'), a: .44, b: .66, dentro: false },
-    { el: document.getElementById('clipcliente'), a: .74, b: 1.02, dentro: false },
+    { el: document.getElementById('clipentrega'), a: .18, b: .54, dentro: false },
+    { el: document.getElementById('cliprevision'), a: .48, b: .78, dentro: false },
   ].filter(c => c.el);
   let vidFuera = false; // true cuando el acto 0 ya ha salido de escena
   if (vid) {
@@ -1616,13 +1553,11 @@ window.addEventListener('load', () => document.documentElement.classList.add('lo
       }
       c.dentro = dentro;
     }
-    st.setProperty('--xf', seg(p, .43, .50).toFixed(4));
-    st.setProperty('--xf2', seg(p, .60, .67).toFixed(4));
-    st.setProperty('--u', seg(p, .60, .715).toFixed(4));   // enlaces, uno tras otro
-    st.setProperty('--xf3', seg(p, .78, .85).toFixed(4));  // enlaces → clip del cliente
+    st.setProperty('--xf', seg(p, .47, .54).toFixed(4));   // entrega → revisión
+    st.setProperty('--xf2', seg(p, .71, .78).toFixed(4));  // revisión → portfolio
     st.setProperty('--pc', seg(p, .21, .90).toFixed(4));
     st.setProperty('--s1b', seg(p, .21, .31).toFixed(4));
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
       const v = seg(p, S[i][0], S[i][1]);
       st.setProperty('--s' + (i + 1), v.toFixed(4));
       if (i > 0) st.setProperty('--a' + (i + 1), (4 * v * (1 - v)).toFixed(4)); // arco del salto
@@ -1630,7 +1565,7 @@ window.addEventListener('load', () => document.documentElement.classList.add('lo
     const o0 = seg(p, .03, .09);
     st.setProperty('--t0', (1 - o0).toFixed(3));
     st.setProperty('--m0', (o0 * -30).toFixed(1) + 'px');
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
       const [ia, ib, oa, ob] = T[i];
       const tin = seg(p, ia, ib), tout = seg(p, oa, ob);
       st.setProperty('--t' + (i + 1), (tin * (1 - tout)).toFixed(3));
