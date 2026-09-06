@@ -288,6 +288,29 @@ h1.kw{font-family:"Instrument Sans", -apple-system, system-ui, sans-serif;font-w
      las páginas. No edites el bloque pv:nav de las páginas a mano.
      Autocontenida: CSS + markup + JS (las satélite no traen menú móvil).
      ════════════════════════════════════════════════════════════════ -->
+
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+
 <style data-pv-chrome="nav">
 /* Base de la cápsula (idéntica a la de siempre; aquí para que exista en TODAS las páginas) */
 nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:14px clamp(14px,3vw,40px)}
@@ -563,10 +586,10 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
         <span class="hl"><span style="--d:.05s">Tu trabajo.</span></span>
         <span class="hl"><span style="--d:.15s"><em>Tu marca.</em></span></span>
       </p>
-      <h1 class="kw">Galerías de entrega de fotografía y vídeo con tu marca</h1>
+      <h1 class="kw">Galerías de entrega de fotos y vídeo con tu marca</h1>
       <p class="lede">
-        Entrega tus fotos y vídeo a tus clientes con tu logo, tu tipografía y tus colores,
-        con diseños pensados por un fotógrafo, enlaces que no caducan, momentos para ordenar el relato y todo, foto y vídeo, en el mismo enlace.
+        Galerías privadas de fotos y vídeo con tu logo, tu tipografía y tus colores.
+        Entrega tu material con diseños pensados por un fotógrafo, enlaces que no caducan, momentos para ordenar el relato y todo, foto y vídeo, en el mismo enlace.
       </p>
       <div class="hero-cta">
         <a href="#lista" class="btn btn-amber" data-ev="cta_register_click" data-ev-place="hero_galerias">Regístrate</a>
@@ -636,7 +659,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
       <figcaption><b>Galería real</b></figcaption>
     </figure>
     <div class="firma reveal">
-      <div><b>Privadas</b><p>Tu trabajo solo lo ve quien tú decides.</p></div>
+      <div><b>Privadas</b><p>Sin buscadores y sin cuentas: tu trabajo solo lo ve quien tú decides.</p></div>
       <div><b>Tu identidad</b><p>Logo, colores y tipografías tuyos en portada, rejilla y descargas.</p></div>
       <div><b>Tu dirección</b><p>tuestudio.positiva.studio — o tu dominio propio en el plan Estudio.</p></div>
       <div><b>Sin nuestra firma</b><p>Tu cliente ve tu estudio. Positiva se queda fuera del plano.</p></div>

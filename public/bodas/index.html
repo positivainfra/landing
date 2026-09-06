@@ -256,6 +256,29 @@ h1.kw{font-family:"Instrument Sans", -apple-system, system-ui, sans-serif;font-w
      las páginas. No edites el bloque pv:nav de las páginas a mano.
      Autocontenida: CSS + markup + JS (las satélite no traen menú móvil).
      ════════════════════════════════════════════════════════════════ -->
+
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+
 <style data-pv-chrome="nav">
 /* Base de la cápsula (idéntica a la de siempre; aquí para que exista en TODAS las páginas) */
 nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:14px clamp(14px,3vw,40px)}
