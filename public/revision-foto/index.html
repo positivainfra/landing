@@ -487,37 +487,49 @@ body.menu-locked .logo{color:#EDECE8}
 body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
 .menu{
   position:fixed;inset:0;z-index:55;background:var(--pv-sala);color:#EDECE8;
-  display:flex;flex-direction:column;justify-content:center;padding:0 clamp(24px,7vw,56px);
+  display:flex;flex-direction:column;
+  padding:calc(84px + env(safe-area-inset-top)) clamp(24px,7vw,56px) calc(24px + env(safe-area-inset-bottom));
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
   opacity:0;visibility:hidden;
   transition:opacity .45s var(--pv-ease),visibility 0s linear .45s;
 }
 .menu.open{opacity:1;visibility:visible;transition:opacity .45s var(--pv-ease),visibility 0s linear 0s}
-.menu a.big{
-  font-family:var(--pv-display);font-weight:300;font-size:clamp(34px,9.5vw,58px);
-  line-height:1.28;color:#EDECE8;text-decoration:none;letter-spacing:-.02em;
-  display:flex;align-items:baseline;gap:var(--pv-s4);
-  opacity:0;transform:translateY(22px);
-  transition:opacity .5s var(--pv-ease-out),transform .5s var(--pv-ease-out);
-  transition-delay:var(--d,0s);
+.menu .m-anim{opacity:0;transform:translateY(18px);transition:opacity .5s var(--pv-ease-out),transform .5s var(--pv-ease-out);transition-delay:var(--d,0s)}
+.menu.open .m-anim{opacity:1;transform:none}
+.menu .m-nav{position:static;inset:auto;z-index:auto;padding:0;display:flex;flex-direction:column}
+.m-item{border-bottom:1px solid var(--pv-linea-sala)}
+.m-item>a,.m-acc{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;
+  font-family:var(--pv-display);font-weight:300;font-size:clamp(25px,6.6vw,32px);
+  letter-spacing:-.02em;line-height:1.2;color:#EDECE8;text-decoration:none;
+  padding:17px 0;background:none;border:0;text-align:left;cursor:pointer;
 }
-.menu.open a.big{opacity:1;transform:none}
-.menu a.big em{font-style:normal;font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--pv-ambar)}
-.menu a.big:hover{color:var(--pv-ambar)}
-.menu-groups{
-  margin-top:var(--pv-s6);display:flex;gap:var(--pv-s8);flex-wrap:wrap;
-  opacity:0;transform:translateY(18px);
-  transition:opacity .5s var(--pv-ease-out) .3s,transform .5s var(--pv-ease-out) .3s;
+.m-item>a:hover,.m-acc:hover{color:var(--pv-ambar)}
+.m-acc::after{
+  content:"";flex:none;width:9px;height:9px;margin-right:6px;
+  border-right:1.5px solid #9C9B95;border-bottom:1.5px solid #9C9B95;
+  transform:rotate(45deg) translateY(-2px);transition:transform .3s var(--pv-ease);
 }
-.menu.open .menu-groups{opacity:1;transform:none}
-.menu-groups h3{
-  font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.18em;
-  text-transform:uppercase;color:#5C5B56;margin:0 0 var(--pv-s2);
+.m-item.open .m-acc::after{transform:rotate(225deg) translateY(-2px)}
+.m-sub{overflow:hidden;max-height:0;transition:max-height .35s var(--pv-ease)}
+.m-item.open .m-sub{max-height:440px}
+.m-sub>div{padding:2px 0 18px}
+.m-sub a{display:block;font-family:var(--pv-sans);font-size:16.5px;color:#B8B7B1;text-decoration:none;padding:9px 0}
+.m-sub a:hover{color:#EDECE8}
+.m-grupo{font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#5C5B56;margin:12px 0 3px}
+.m-cta{
+  display:block;text-align:center;background:var(--pv-ambar);color:#171614;
+  font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.08em;
+  text-decoration:none;padding:17px 24px;border-radius:var(--pv-r-pill);
+  margin-top:var(--pv-s6);box-shadow:0 10px 30px -10px rgba(201,138,43,.55);
 }
-.menu-groups a{
-  display:block;font-family:var(--pv-sans);font-size:15px;color:#9C9B95;
-  text-decoration:none;padding:3px 0;transition:color .18s;
+.m-cta:active{background:var(--pv-ambar-hover)}
+.m-entrar{
+  display:block;text-align:center;font-family:var(--pv-mono);font-size:12px;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:#9C9B95;text-decoration:none;
+  padding:16px 0 6px;
 }
-.menu-groups a:hover{color:#EDECE8}
+.m-entrar:hover{color:#EDECE8}
 .menu-meta{
   margin-top:var(--pv-s6);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea-sala);
   font-family:var(--pv-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5C5B56;
@@ -578,29 +590,33 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 </nav>
 
 <div class="menu" id="menu">
-  <a class="big" href="/" style="--d:.05s"><em>01</em> Inicio</a>
-  <a class="big" href="/galerias/" style="--d:.1s"><em>02</em> Galerías para clientes</a>
-  <a class="big" href="/portfolio/" style="--d:.15s"><em>03</em> Portfolio público</a>
-  <a class="big" href="/precios/" style="--d:.2s"><em>04</em> Precios</a>
-  <a class="big" href="/soporte/es/" style="--d:.25s"><em>05</em> Soporte</a>
-  <a class="big" href="https://app.positiva.studio/registro" style="--d:.3s"><em>06</em> Empieza gratis</a>
-  <div class="menu-groups">
-    <div>
-      <h3>Galerías para clientes</h3>
-      <a href="/galerias/">Entrega tu trabajo</a>
-      <a href="/revision-video/">Revisión de vídeo</a>
-      <a href="/revision-foto/">Revisión de fotografías</a>
+  <nav class="m-nav" aria-label="Menú">
+    <div class="m-item m-anim" style="--d:.04s"><a href="/">Inicio</a></div>
+    <div class="m-item m-anim" style="--d:.08s">
+      <button class="m-acc" type="button" aria-expanded="false">Galerías para clientes</button>
+      <div class="m-sub"><div>
+        <a href="/galerias/">Entrega tu trabajo</a>
+        <p class="m-grupo">Revisa con tu cliente</p>
+        <a href="/revision-video/">Vídeo</a>
+        <a href="/revision-foto/">Fotografías</a>
+      </div></div>
     </div>
-    <div>
-      <h3>Casos de uso</h3>
-      <a href="/freelance/">Para profesionales freelance</a>
-      <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
-      <a href="/productoras/">Para productoras de vídeo</a>
+    <div class="m-item m-anim" style="--d:.12s">
+      <button class="m-acc" type="button" aria-expanded="false">Casos de uso</button>
+      <div class="m-sub"><div>
+        <a href="/freelance/">Para profesionales freelance</a>
+        <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
+        <a href="/productoras/">Para productoras de vídeo</a>
+      </div></div>
     </div>
-  </div>
-  <div class="menu-meta">
+    <div class="m-item m-anim" style="--d:.16s"><a href="/portfolio/">Portfolio público</a></div>
+    <div class="m-item m-anim" style="--d:.2s"><a href="/precios/">Precios</a></div>
+    <div class="m-item m-anim" style="--d:.24s"><a href="/soporte/es/">Soporte</a></div>
+  </nav>
+  <a class="m-cta m-anim" style="--d:.3s" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Empieza gratis</a>
+  <a class="m-entrar m-anim" style="--d:.34s" href="https://app.positiva.studio">Entrar en tu panel</a>
+  <div class="menu-meta m-anim" style="--d:.38s">
     <span>Positiva · Hecha en España</span>
-    <a href="https://app.positiva.studio">Entrar en tu panel</a>
     <a href="mailto:hola@positiva.studio">hola@positiva.studio</a>
   </div>
 </div>
@@ -626,8 +642,23 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     document.body.classList.toggle('menu-locked', open);
+    if (!open) menu.querySelectorAll('.m-item.open').forEach(o => {
+      o.classList.remove('open');
+      const b = o.querySelector('.m-acc'); if (b) b.setAttribute('aria-expanded', 'false');
+    });
   };
   burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  /* Acordeones del menú móvil: uno abierto a la vez; se pliegan al cerrar el menú */
+  menu.querySelectorAll('.m-acc').forEach(btn => btn.addEventListener('click', () => {
+    const it = btn.parentElement;
+    const abre = !it.classList.contains('open');
+    menu.querySelectorAll('.m-item.open').forEach(o => {
+      o.classList.remove('open');
+      const b = o.querySelector('.m-acc'); if (b) b.setAttribute('aria-expanded', 'false');
+    });
+    it.classList.toggle('open', abre);
+    btn.setAttribute('aria-expanded', String(abre));
+  }));
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
