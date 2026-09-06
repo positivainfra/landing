@@ -105,6 +105,11 @@ export default {
     if (url.pathname === '/diseno-de-galerias' || url.pathname.startsWith('/diseno-de-galerias/')) {
       return Response.redirect(url.origin + '/galerias/#diseno', 301);
     }
+    // /soporte/ vive en /soporte/es/: redirección en el borde, sin página
+    // intermedia (antes lo hacía un meta-refresh y se veía un flash blanco).
+    if (url.pathname === '/soporte' || url.pathname === '/soporte/') {
+      return Response.redirect(url.origin + '/soporte/es/', 301);
+    }
     // Cualquier otra ruta: la sirve la capa de assets (incluye su 404).
     return env.ASSETS.fetch(request);
   },

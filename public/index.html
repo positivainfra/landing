@@ -28,6 +28,8 @@
 <link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<!-- El vídeo del hero es la pieza clave: que empiece a bajar con el <head> -->
+<link rel="preload" href="/video/galeria-hero.mp4" as="video" type="video/mp4" fetchpriority="high">
 
 <style>
 /* ── Fuentes auto-alojadas · subconjunto latino · font-display:swap ── */
@@ -190,9 +192,18 @@ html:not(.js) .camino,.hst.rm .camino{display:none}
   animation:tj-flota 6s ease-in-out infinite alternate;
 }
 .tj-final .f-vid{
-  overflow:clip;border-radius:var(--pv-r-panel);background:#000;
+  position:relative;overflow:clip;border-radius:var(--pv-r-panel);background:#000;
   box-shadow:0 44px 90px -34px rgba(23,22,20,.5);
 }
+/* pequeño loading mientras el vídeo del hero llega */
+html.js .f-vid.cargando::before{
+  content:"";position:absolute;left:50%;top:50%;z-index:2;width:34px;height:34px;
+  margin:-17px 0 0 -17px;border-radius:50%;
+  border:3px solid rgba(255,255,255,.28);border-top-color:var(--pv-ambar);
+  animation:pv-gira .8s linear infinite;
+}
+html.js .f-vid.cargando::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(14,14,13,.18)}
+@keyframes pv-gira{to{transform:rotate(360deg)}}
 .tj-final video{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
 .tj-final .f-url{text-decoration:none;pointer-events:auto;cursor:pointer;
   display:flex;align-items:center;gap:9px;margin-top:12px;
@@ -608,7 +619,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
 <script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
 <!-- Session replay de Umami (opcional; graba interacciones). Quítalo si no lo quieres. -->
 <script defer src="https://analytics.labbo.studio/recorder.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
-<script src="/js/analytics.js"></script>
+<script defer src="/js/analytics.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -887,7 +898,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
       </div>
       <a href="/portfolio/">Portfolio público</a>
       <a href="/precios/">Precios</a>
-      <a href="/soporte/">Soporte</a>
+      <a href="/soporte/es/">Soporte</a>
     </div>
     <div class="nav-right">
       <a href="https://app.positiva.studio" class="nav-login" data-ev="login_click" data-ev-place="nav">Entrar</a>
@@ -904,7 +915,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
   <a class="big" href="/galerias/" style="--d:.1s"><em>02</em> Galerías para clientes</a>
   <a class="big" href="/portfolio/" style="--d:.15s"><em>03</em> Portfolio público</a>
   <a class="big" href="/precios/" style="--d:.2s"><em>04</em> Precios</a>
-  <a class="big" href="/soporte/" style="--d:.25s"><em>05</em> Soporte</a>
+  <a class="big" href="/soporte/es/" style="--d:.25s"><em>05</em> Soporte</a>
   <a class="big" href="/#lista" style="--d:.3s"><em>06</em> Regístrate</a>
   <div class="menu-groups">
     <div>
@@ -1029,7 +1040,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
         <div class="tj-final">
           <div class="f-vid">
             <video id="herovid" src="/video/galeria-hero.mp4" poster="/video/galeria-hero-poster.jpg"
-              width="1280" height="720" autoplay muted loop playsinline preload="auto"
+              width="1280" height="720" autoplay muted loop playsinline preload="auto" fetchpriority="high"
               aria-label="Una galería real entregada con Positiva"></video>
           </div>
           <a class="f-url" href="https://portfolio.rodrigomarquez.es/g/musthave-nyc" target="_blank" rel="noopener"><i></i><span><em>rodrigomarquez</em>.positiva.studio/g/musthave-nyc</span></a>
@@ -1051,12 +1062,12 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
         <!-- acto 1 · subes: captura real de la subida, movida por el scroll -->
         <div class="tj-clip">
           <video id="clipentrega" src="/video/pasos/entrega.mp4" poster="/video/pasos/entrega-poster.jpg"
-            width="1280" height="720" muted loop playsinline preload="auto"></video>
+            width="1280" height="720" muted loop playsinline preload="none"></video>
         </div>
         <!-- acto 2 · diseñas: captura real del diseño de la galería -->
         <div class="tj-clip2">
           <video id="cliprevision" src="/video/pasos/revision.mp4" poster="/video/pasos/revision-poster.jpg"
-            width="1280" height="720" muted loop playsinline preload="auto"></video>
+            width="1280" height="720" muted loop playsinline preload="none"></video>
         </div>
         <!-- acto 4 · portfolio: tu web pública -->
         <div class="tj-port">
@@ -1440,7 +1451,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
       </div>
       <div>
         <h3>Recursos</h3>
-        <a href="/soporte/">Soporte</a>
+        <a href="/soporte/es/">Soporte</a>
         <a href="/novedades/">Novedades</a>
         <a href="/notas/">Notas</a>
         <a href="https://app.positiva.studio">Accede a tu panel</a>
@@ -1544,12 +1555,33 @@ window.addEventListener('load', () => document.documentElement.classList.add('lo
     vid.muted = true;
     vid.playsInline = true;
     vid.defaultMuted = true;
+    // pequeño loading sobre el póster hasta que el vídeo arranca de verdad
+    const fv = vid.closest('.f-vid');
+    if (fv && vid.readyState < 3) {
+      fv.classList.add('cargando');
+      const listo = () => fv.classList.remove('cargando');
+      vid.addEventListener('playing', listo, { once: true });
+      vid.addEventListener('canplaythrough', listo, { once: true });
+    }
     const arranca = () => { if (!vidFuera && vid.paused) vid.play().catch(() => {}); };
     vid.addEventListener('loadeddata', arranca);
     vid.addEventListener('canplay', arranca);
     addEventListener('load', arranca);
     document.addEventListener('visibilitychange', () => { if (!document.hidden) arranca(); });
     arranca();
+    // los clips de los pasos esperan a que el hero esté servido (o 2,5 s)
+    let promo = false;
+    const promociona = () => {
+      if (promo) return; promo = true;
+      for (const c of clips) {
+        if (c.el.preload !== 'auto' && c.el.paused && c.el.currentTime === 0) {
+          c.el.preload = 'auto';
+          if (c.el.networkState === HTMLMediaElement.NETWORK_EMPTY) c.el.load();
+        }
+      }
+    };
+    vid.addEventListener('playing', promociona, { once: true });
+    setTimeout(promociona, 2500);
   }
   const pinta = () => {
     raf = 0;
@@ -1614,13 +1646,26 @@ window.addEventListener('load', () => document.documentElement.classList.add('lo
   });
 })();
 
-/* ── tarjetas «Qué hace»: el vídeo arranca en bucle al pasar el ratón ── */
+/* ── tarjetas «Qué hace»: los vídeos se reproducen en bucle mientras están
+   en pantalla y se pausan al salir (con hover como reserva sin IO) ── */
 (() => {
-  document.querySelectorAll('.qcard video').forEach((v) => {
-    const card = v.closest('.qcard');
-    card.addEventListener('mouseenter', () => { v.play().catch(() => {}); });
-    card.addEventListener('mouseleave', () => { v.pause(); });
-  });
+  const vids = document.querySelectorAll('.qcard video');
+  if (!vids.length) return;
+  if (!('IntersectionObserver' in window)) {
+    vids.forEach((v) => {
+      const card = v.closest('.qcard');
+      card.addEventListener('mouseenter', () => { v.play().catch(() => {}); });
+      card.addEventListener('mouseleave', () => { v.pause(); });
+    });
+    return;
+  }
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); }
+    else if (!v.paused) { v.pause(); }
+  }), { threshold: 0.3, rootMargin: '100px 0px' });
+  vids.forEach((v) => { v.muted = true; v.playsInline = true; io.observe(v); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
 })();
 
 /* ── Revelado al hacer scroll + tachado del manifiesto ── */
