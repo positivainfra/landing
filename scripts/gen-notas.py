@@ -69,7 +69,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="{ogtype}">
 <meta property="og:url" content="https://positiva.studio{path}">
-<meta property="og:image" content="https://positiva.studio/assets/og.png">
+<meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
 <meta property="og:locale" content="es_ES">
 <meta name="theme-color" content="#F1F0EC">
 <link rel="canonical" href="https://positiva.studio{path}">
