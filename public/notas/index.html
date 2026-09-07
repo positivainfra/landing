@@ -67,6 +67,7 @@
      y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
      los actualice sin revisar antes la política de privacidad. -->
 <script>
+document.documentElement.classList.add('js');
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent', 'default', {
@@ -593,6 +594,30 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
     }</script>
   </div>
 </footer>
+
+<script>
+/* ── Vídeos del sitio: reproducción automática en bucle mientras están en
+   pantalla y pausa al salir — mismo comportamiento en móvil y escritorio.
+   Quedan fuera: la historia de la home (.hst), las tarjetas de la home
+   (.qcard) y el showcase (#reelvid), que tienen su propio control, los
+   vídeos con controles y los marcados con data-noauto. ── */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  const vids = Array.prototype.filter.call(
+    document.querySelectorAll('video[loop][muted]:not([controls]):not([data-noauto])'),
+    (v) => !v.closest('.hst') && !v.closest('.qcard') && v.id !== 'reelvid'
+  );
+  if (!vids.length) return;
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); }
+    else if (!v.paused) { v.pause(); }
+  }), { threshold: 0.25, rootMargin: '100px 0px' });
+  vids.forEach((v) => { v.muted = true; v.playsInline = true; io.observe(v); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
+})();
+</script>
 <!-- /pv:footer -->
 
 </body>
