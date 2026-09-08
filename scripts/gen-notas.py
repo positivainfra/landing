@@ -138,13 +138,14 @@ def article_page(a):
 <main id="contenido">
 <div class="wrap notas-doc">
   <article class="art">
-    <nav class="miga" aria-label="Migas de pan"><a href="/notas/">Notas</a> <span aria-hidden="true">·</span> <span>Alternativas</span></nav>
+    <nav class="miga" aria-label="Migas de pan"><a href="/notas/">Blog</a> <span aria-hidden="true">·</span> <span>Alternativas</span></nav>
     <h1>{a['h1']}</h1>
     <p class="lede">{a['lede']}</p>
-    <p class="notas-fecha">{a['date_h']} · Notas de Positiva</p>
+    <p class="notas-fecha">{a['date_h']} · Blog de Positiva</p>
     <div class="prosa">
 {a['body']}
 {faq_html}
+{a.get('extra_foot','')}
     </div>
   </article>
 {RAIL}
@@ -161,7 +162,7 @@ def article_page(a):
 def index_page(articles):
     schema = '<script type="application/ld+json">' + json.dumps({
         "@context": "https://schema.org", "@type": "Blog",
-        "name": "Notas de Positiva",
+        "name": "Blog de Positiva",
         "url": "https://positiva.studio/notas/",
         "inLanguage": "es",
         "publisher": {"@id": "https://positiva.studio/#org"},
@@ -172,14 +173,14 @@ def index_page(articles):
         <p>{a['lede']}</p>
       </a>""" for a in articles)
     body = HEAD.format(
-        title='Notas · Positiva',
+        title='Blog · Positiva',
         desc='Guías y comparativas para fotógrafos, videógrafos y productoras: alternativas a las herramientas de siempre, entrega de galerías y revisión de fotos y vídeo.',
         ogtype='website', path='/notas/', css=CSS, schema=schema)
     body += f"""
 <main id="contenido">
 <div class="wrap notas-doc">
   <div class="art">
-    <p class="eyebrow">Notas</p>
+    <p class="eyebrow">Blog</p>
     <h1 style="font-size:clamp(32px,3.8vw,50px);margin:var(--pv-s3) 0 var(--pv-s4)">Guías y comparativas para foto y vídeo</h1>
     <p class="lede">Lo que aprendemos construyendo Positiva, contado sin humo: qué herramienta encaja en cada flujo, cuánto cuesta de verdad y qué letra pequeña conviene leer.</p>
     <div class="notas-lista">
