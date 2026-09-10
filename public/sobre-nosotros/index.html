@@ -64,6 +64,13 @@ html.js .reveal.is-in{opacity:1;transform:none}
 .dark .eyebrow .idx{color:#5C5B56}
 .dark h2{color:#EDECE8}
 
+/* ── accesibilidad: enlace de salto (sin esto se pinta visible: el CSS que lo
+   escondía vive en /soporte/soporte.css, que esta página no carga) ── */
+.saltar{position:absolute;left:-9999px;top:0;z-index:100;background:var(--pv-ambar);color:#171614;
+  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;padding:12px 20px;border-radius:0 0 var(--pv-r-panel) 0}
+.saltar:focus{left:0}
+
 /* ── HERO: en papel, tipográfico. El chiste arriba, el H1 descriptivo
    justo después (información antes que marketing). ── */
 .heroS{position:relative;min-height:82svh;display:flex;align-items:center;overflow:clip;
