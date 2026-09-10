@@ -152,6 +152,19 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea)}
 .footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
 .footer-meta a:hover{color:var(--pv-tinta)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html.js .reveal{opacity:1;transform:none}}
+
+/* ── mudanza desde Pic-Time (bajo demanda, sin anunciar producto) ── */
+.mudanza{border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);background:var(--pv-luz);
+  padding:clamp(24px,3.4vw,40px);max-width:720px}
+.mudanza .mud-rotulo{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-ambar-ink);margin-bottom:var(--pv-s3)}
+.mudanza p{font-size:16px;line-height:1.65;color:var(--pv-tinta-60);max-width:56ch}
+.mudanza strong{color:var(--pv-tinta)}
+.mudanza .mud-btn{display:inline-flex;align-items:center;gap:8px;margin-top:var(--pv-s4);
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--pv-tinta);text-decoration:none;border-bottom:1px solid var(--pv-ambar);padding-bottom:3px}
+.mudanza .mud-btn::after{content:"→";color:var(--pv-ambar);transition:transform .25s var(--pv-ease)}
+.mudanza .mud-btn:hover::after{transform:translateX(4px)}
 </style>
 <!-- Analítica · Umami autoalojado (tracker servido en /stats). -->
 <script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
@@ -580,7 +593,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 <!-- ══ HERO ══ -->
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">Datos revisados en agosto de 2026</p>
+    <p class="eyebrow">Datos revisados el 10 de septiembre de 2026</p>
     <h1>Positiva vs Pic-Time vs Pixieset: ¿Cuál es la mejor herramienta para entregar galerías de fotos a clientes?</h1>
     <p class="lede" style="margin-top:var(--pv-s5)">
       Positiva, Pic-Time y Pixieset permiten entregar galerías online a clientes. Pero hay varias diferencias. Aquí comparamos estas herramientas para que elijas la plataforma que encaja con tu forma de trabajar.
@@ -614,7 +627,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
             <th>Precio al año</th>
             <td class="pos">89 € + IVA</td>
             <td class="pos">219 € + IVA</td>
-            <td>≈ 230 €</td>
+            <td>252 $ (21 $/mes anual)</td>
             <td>192 $ (≈ 180 €)</td>
             <td>288 $ (≈ 265 €)</td>
           </tr>
@@ -696,9 +709,10 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     <p class="cmp-note reveal">
       Fuentes: <a href="https://www.pic-time.com" target="_blank" rel="noopener">pic-time.com</a> y
       <a href="https://pixieset.com/pricing/" target="_blank" rel="noopener">pixieset.com/pricing</a>,
-      consultadas el 1 de agosto de 2026 · Precios de Pixieset en dólares con facturación anual;
-      conversión a euros aproximada y sin IVA · Pic-Time Professional: 25 $/mes, ≈ 230 €/año
-      en facturación europea · Alojamiento e IA según
+      consultadas el 10 de septiembre de 2026 · Precios de Pic-Time y Pixieset en dólares con
+      facturación anual, sin impuestos; la conversión a euros es aproximada y solo orientativa ·
+      Pic-Time Professional: 21 $/mes con facturación anual (252 $/año), 25 $/mes si facturas mes
+      a mes · Alojamiento e IA según
       <a href="https://help.pic-time.com/en/articles/7916614-is-pic-time-gdpr-compliant" target="_blank" rel="noopener">Pic-Time (GDPR</a> ·
       <a href="https://help.pic-time.com/en/articles/8945250-pic-time-ai-faq" target="_blank" rel="noopener">IA)</a> y
       <a href="https://help.pixieset.com/hc/en-us/articles/360003826911-GDPR-and-Pixieset" target="_blank" rel="noopener">Pixieset</a>:
@@ -772,6 +786,19 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
   </div>
 </section>
 <br/><br/>
+<!-- ══ MUDANZA DESDE PIC-TIME ══ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="mudanza reveal">
+      <p class="mud-rotulo">¿Vienes de Pic-Time?</p>
+      <p>Escríbenos <strong>antes</strong> de empezar a subir nada. Llevamos un tiempo
+      dándole vueltas a cómo traer galerías de Pic-Time a Positiva, y a algunos
+      fotógrafos ya les hemos echado una mano con la mudanza.</p>
+      <a class="mud-btn" href="mailto:hola@positiva.studio?subject=Migrar%20desde%20Pic-Time" data-ev="migracion_pictime" data-ev-place="comparativa">Cuéntanos tu caso</a>
+    </div>
+  </div>
+</section>
+
 <!-- ══ CAPTURA ══ -->
 <section id="lista" style="padding-top:0">
   <div class="wrap">
@@ -870,6 +897,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
         <a href="/soporte/es/">Soporte</a>
         <a href="/novedades/">Novedades</a>
         <a href="/notas/">Blog</a>
+        <a href="/sobre-nosotros/">Sobre nosotros</a>
         <a href="https://app.positiva.studio" data-no-conv>Accede a tu panel</a>
         <a href="https://app.positiva.studio/registro">Empieza gratis</a>
         <a href="mailto:hola@positiva.studio">Contacto</a>

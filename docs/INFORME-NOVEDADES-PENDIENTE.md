@@ -1,63 +1,108 @@
-# Informe de novedades · pendiente para el chat de soporte
+# Informe de impacto · lote 4c0aac4 → b6e3647 (desplegado el 10/09/2026)
 
-Generado el 2026-09-02 · rango `f384d1d..6d1de1e` · **desplegado en producción,
-confirmado por Rodrigo el 02/09**. Sustituye al informe del 25/08 (atendido).
+82 commits. Tres temas visibles para el usuario: la **descarga ZIP automática**,
+la **analítica de descargas** y la **reanudación** de descargas grandes. Todo lo
+demás del lote (CRC-32 en la subida, barridos del archiver, presupuesto de
+subpeticiones, tests, runbooks) es interno y no va a novedades.
 
-Nota: las entradas de /novedades/ del 31 de agosto ya estaban publicadas, pero
-aquel ciclo no generó informe de impacto ni actualizó el marcador — este informe
-cubre por tanto TODO el lote (31 ago + 1-2 sep). Marcador actualizado a 6d1de1e.
-
-## Qué se ha publicado hoy en /novedades/ (2 sep)
-
-1. Dominio propio completo: vídeos y ZIP ya se sirven desde el dominio propio (plan Estudio).
-2. Seguridad: una galería desactivada (a mano o por caducidad) corta el acceso al momento;
-   reactivar lo devuelve sin reabrir enlace; el fotógrafo sí puede entrar en la suya.
-
-## Artículos de soporte a revisar (afirmación a verificar, no texto nuevo)
-
-| Artículo | Qué verificar |
-|---|---|
-| dominio-propio | Ahora TODO se sirve desde el dominio propio, incluidos vídeos y descargas ZIP. Si el artículo listaba limitaciones («los vídeos salen de positiva.studio»), quedaron obsoletas. |
-| enlace-de-cliente · revocar-un-enlace | Comportamiento nuevo al desactivar: el acceso se corta también para sesiones ya abiertas; reactivar restaura sin reabrir el enlace. |
-| disenos-de-galeria | Cuadrículas: ahora SEIS (Filas, Magazine, Mosaico, Denso, Columna, Tres columnas — labels verificados en el código). Portadas siguen siendo siete (Editorial, Split, Overlay, Magazine, Minimal, Foto Top, Cartel). Nuevo modo «el Pase» (proyección a pantalla completa) y portada de cine (clip como portada). El paso Diseño ya no tiene presets: dos selectores directos. |
-| disenos-de-video | Videoteca se suma a Estreno, Cartel, Vitrina y Montaje. El selector avisa cuando un diseño no encaja con el número de piezas. |
-| favoritas-del-cliente | Las favoritas se activan POR ENLACE (antes por galería). Nuevo plugin de Lightroom Classic: importa la selección (.txt/.csv) como colección; se descarga desde el panel de favoritas. |
-| enlace-de-cliente · contrasena-del-enlace | Caducidad OPCIONAL de galería: fecha, desactivación automática y avisos por email. El claim «los enlaces no caducan» sigue siendo cierto por defecto — la caducidad es una decisión del fotógrafo. |
-| el-panel-por-dentro · los-pasos-de-una-galeria | Buscador de fotos en el editor; orden por toma o nombre elegido por galería; tarjeta de enlace reorganizada en tres zonas. |
-| revisor-atajos-de-teclado | Velo de atajos al entrar por primera vez en la revisión de vídeo (botón «?» para recuperarlo). |
-| enviar-la-galeria | Al compartir un enlace, la tarjeta de previsualización muestra la portada (estable). Al compartir una foto no viaja texto. |
-| perfil-publico · portfolio | Los datos de contacto del perfil cierran también las galerías de entrega. Orden aleatorio opcional de la rejilla del portfolio. |
-
-## Landing (ya corregida desde este flujo, 2 sep)
-
-/galerias/ y home: «cinco cuadrículas» → «seis»; Videoteca añadida a las listas de
-diseños de vídeo en /galerias/ y /revision-video/. Recuentos verificados contra los
-registros del código (grids/registry.ts, heroes/registry.ts, videoLayouts/registry.ts).
+Publicado ya en `/novedades/`: tres entradas con fecha 10/09/2026 (Producto,
+Rendimiento, Panel).
 
 ---
 
-## Nota para el chat de soporte: el chrome ahora se estampa (2026-09-02)
+## 1 · Descarga completa automática
 
-Por orden de Rodrigo, el menú y el pie de /soporte/ se han igualado al del sitio
-DESDE la landing: `npm run stamp` ahora recoge también `public/soporte/es/**/index.html`
-(glob en `scripts/stamp.mjs`) y sobrescribe sus bloques `pv:nav` y `pv:footer` con
-los parciales de `partials/`. Qué significa para el flujo de soporte:
+`VITE_GALLERY_ZIP="1"` en `frontend/.env.production`. El botón «Descargar todo»
+deja de depender de que el fotógrafo suba un zip: se genera al vuelo en
+`GET /media/zip` respetando el tier del enlace. El zip manual sobrevive como
+opción, pero **solo** con `zip_mode='manual'` **y** tier `high`.
 
-- Los artículos deben CONSERVAR los marcadores `<!-- pv:nav -->…<!-- /pv:nav -->`
-  y `<!-- pv:footer -->…<!-- /pv:footer -->`; su contenido lo pisa el stamp.
-- Si el generador de soporte lleva una copia propia del chrome, ya no hace falta
-  mantenerla al día: basta con emitir los marcadores (con cualquier contenido) y
-  ejecutar `npm run stamp` tras generar.
-- El CSS antiguo del chrome que viva FUERA de los marcadores en las plantillas de
-  soporte puede retirarse cuando toque; hoy no interfiere (el bloque estampado es
-  autocontenido y posterior en el documento).
+**Hecho desde este flujo** (cambio desplegado y verificado en el código):
 
+- `public/soporte/es/zip-descarga-completa/index.html` — **reescrito entero**.
+  Rodrigo pidió expresamente reescribirlo aquí en vez de dejarlo en informe.
+- `public/galerias/index.html` — la sección «Permisos y descarga» decía que el
+  ZIP «lo preparas tú».
+- `public/bodas/index.html` — la tarjeta «El ZIP de "Descargar todo"» decía lo mismo.
 
-## Añadido 2026-09-03 · Favoritas con nombre (desplegado hasta 4c0aac4)
+**Literales usados en el artículo** (sacados del código, NO vistos en pantalla —
+conviene confirmarlos en el producto real):
 
-Actualizado DESDE la landing por orden de Rodrigo: entrada en /novedades/ (3 sep),
-/galerias/ («Las favoritas vuelven a tu editor») y el artículo de soporte
-favoritas-del-cliente (nueva sección «Quién ha marcado cada favorita», paso de
-exportación con «Solo clientes / Todos», sello al 03/09). Los literales salen de
-los commits (A-D de new/favorites), no de pantalla: conviene el repaso visual del
-flujo de soporte cuando toque. Marcador de novedades en 4c0aac4.
+| Literal | Origen en el código |
+|---|---|
+| `Descargar todo` | `DownloadAllButton.tsx` (auto y manual) |
+| `24 fotos · 1,2 GB · 2 vídeos no incluidos` | `formatZipLabel()` — ejemplo compuesto por mí a partir del formato, no una captura |
+| `Este enlace no permite descargar vídeos.` | `formatZipEmptyReason()` |
+| `Todavía no hay nada listo para descargar. Vuelve a intentarlo en unos minutos.` | `formatZipEmptyReason()` |
+| `Usar mi zip en lugar del automático` | `GalleryZipPanel.tsx` |
+| `Solo en enlaces con descarga en alta…` | `GalleryZipPanel.tsx` (parafraseado en el artículo) |
+| `Subir zip` / `Reemplazar zip` / `Preparando…` | `GalleryZipPanel.tsx`, `DownloadAllButton.tsx` |
+| `Zip subido el 12/08/2026 · 14 archivos añadidos después. Tu zip no los incluye; el automático sí.` | `GalleryZipPanel.tsx` — fecha y cifra inventadas como ejemplo |
+| `¿Quitar tu zip? Tu cliente seguirá viendo "Descargar todo", servido con el zip automático.` | `GalleryZipPanel.tsx` (`confirm`) |
+| `No hay saldo suficiente: usas X de Y. Amplía el almacenamiento para subir este zip.` | `GalleryZipPanel.tsx` — ya estaba en el artículo anterior |
+
+**A verificar en pantalla antes de dar el artículo por bueno:**
+
+1. Que el botón por sección (fotos ↔ vídeos) se comporta como digo: el de la
+   vista de fotos se lleva fotos y el del visor de vídeo, vídeos.
+2. Que el tooltip de cifras es exactamente ese formato y con esos separadores.
+3. Que la sección del panel se sigue llamando «Descarga completa» y está en el
+   paso **Compartir** (el artículo lo mantiene del texto anterior).
+4. Que la casilla del interruptor solo aparece **si hay zip subido**
+   (`GalleryZipPanel` no la pinta sin `filename`); el artículo lo da por hecho
+   implícitamente al describir el orden subir → marcar.
+
+**Otros artículos de soporte que pueden haber quedado tocados** (este flujo NO
+los ha editado):
+
+- `almacenamiento` — si enumera el ZIP entre lo que ocupa espacio, ahora hay que
+  matizar: el automático no ocupa, el subido por ti sí.
+- `permisos-de-descarga` — la relación entre calidad del enlace y descarga
+  completa cambia: en «Web» ya no se sirve el zip manual aunque exista.
+- `no-puedo-descargar` — el motivo «el fotógrafo no ha subido el ZIP» deja de
+  ser una causa válida; aparecen dos nuevas (enlace sin vídeos, archivos aún
+  procesándose).
+- `enlace-de-cliente`, `revocar-un-enlace` — revisar si mencionan que el botón
+  depende de haber subido un archivo.
+
+## 2 · Analítica de descargas
+
+`gallery_analytics()` devuelve tres cifras con su unidad en vez de un total, y
+la tabla «Quién ha entrado» ya no depende de `isEvent`.
+
+**Hecho desde este flujo:** `public/soporte/es/analitica/index.html` — tabla
+«Qué mide» (tres filas nuevas), nota sobre no sumar unidades, sección nueva
+«El aviso por email», sección «La tabla de quién ha entrado» corregida (ya
+aparece en entregas cuando alguien deja su nombre al marcar favoritas) y tabla
+por tipo de galería.
+
+**Literales usados:** `Fotos sueltas`, `Lotes de favoritas`, `Galería completa`,
+`Reproducciones`, `Avisarme por email de las descargas`, `Un resumen al día con
+lo que ha descargado tu cliente, sólo los días que haya descargas.`, `El email es
+autodeclarado por el visitante, no verificado, salvo que lo confirmara desde su
+correo.` — todos de `AnalyticsPanel.tsx` y `GalleryInfoEditor.tsx`.
+
+**A verificar en pantalla:**
+
+1. Que la casilla del aviso está en el paso **Datos** (el código la sitúa en
+   `GalleryInfoEditor`, que es ese paso — confirmar el nombre del paso en el raíl).
+2. El hint exacto de «Galería completa» (`describeZip`) con datos reales: el
+   artículo lo describe en prosa, sin citar el literal.
+3. Que la línea D5 («Las descargas anteriores al … no se guardaban») ya no
+   aparece — se retiró en `80f351d`, y el artículo no la menciona.
+
+**Otros artículos posiblemente tocados:** `favoritas-del-cliente` (la
+identificación al marcar favoritas ahora alimenta la tabla de la analítica),
+`planes-y-precios` (si enumera qué incluye la analítica de Autor/Estudio).
+
+## 3 · Reanudación
+
+El navegador retoma una descarga cortada (ETag + If-Range) y el panel la sigue
+contando como una sola descarga (id de descarga con TTL de 30 min).
+
+**Hecho:** una entrada de novedades (Rendimiento) y una sección nueva en el
+artículo del ZIP («Si la descarga se corta»).
+
+**A verificar:** que el navegador ofrece efectivamente «Reanudar» en la lista de
+descargas tras cortar la conexión a mitad — es la única afirmación del artículo
+que depende del comportamiento del navegador y no solo del servidor.

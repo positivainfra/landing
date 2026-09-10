@@ -26,6 +26,7 @@ const PAGES = [
   'public/revision-video/index.html',
   'public/portfolio/index.html',
   'public/novedades/index.html',
+  'public/sobre-nosotros/index.html',
   'public/precios/index.html',
   'public/bodas/index.html',
   'public/productoras/index.html',
