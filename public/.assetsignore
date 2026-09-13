@@ -1,0 +1,12 @@
+# Ficheros que NUNCA deben subir a Cloudflare como assets estáticos.
+# Hoy la web se despliega desde git y .gitignore ya excluye .DS_Store, así que
+# en producción no aparecen. Pero un `wrangler deploy` lanzado desde un Mac sube
+# el contenido de public/ tal cual está en disco, y ahí sí hay .DS_Store (7 a
+# fecha de hoy). Esto cierra esa vía. Sin barra inicial: coincide a cualquier nivel.
+.DS_Store
+Thumbs.db
+*.map
+.env
+.env.*
+*.bak
+*~
