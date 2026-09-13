@@ -16,6 +16,8 @@ import path from 'node:path';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const PUBLIC = path.join(ROOT, 'public');
 const SITEMAP = path.join(PUBLIC, 'sitemap.xml');
+// Copias del mismo sitemap que también hay que mantener al día (ver más abajo).
+const ALIASES = ['sitemap-2026-09.xml'];
 const ORIGIN = 'https://positiva.studio';
 const CHECK = process.argv.includes('--check');
 
@@ -76,4 +78,8 @@ if (orphans.length) console.log(`\n⚠️  Páginas fuera del sitemap (${orphans
 
 if (CHECK) { console.log('\n--check: no se ha escrito nada.'); process.exit(0); }
 fs.writeFileSync(SITEMAP, xml);
-console.log('\npublic/sitemap.xml reescrito.');
+// Copia con nombre fechado: se añadió el 13/09/2026 porque Google tenía cacheada
+// una versión del 14 de agosto de sitemap.xml y no la refrescaba. Ambas se
+// escriben a la vez para que no puedan divergir sin que nadie se entere.
+for (const alias of ALIASES) fs.writeFileSync(path.join(PUBLIC, alias), xml);
+console.log(`\npublic/sitemap.xml reescrito (y ${ALIASES.join(', ')}).`);
