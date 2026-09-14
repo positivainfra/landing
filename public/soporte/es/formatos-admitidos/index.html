@@ -19,7 +19,7 @@
 <link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/soporte/soporte.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Formatos de archivo admitidos","description":"Positiva admite lo que tu navegador sepa leer como imagen o como vídeo, con consecuencias muy distintas para el RAW, el HEIC, el TIFF y el PNG.","inLanguage":"es","dateModified":"24 de agosto de 2026","publisher":{"@type":"Organization","name":"Positiva","url":"https://positiva.studio"},"mainEntityOfPage":"https://positiva.studio/soporte/es/formatos-admitidos/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Formatos de archivo admitidos","description":"Positiva admite lo que tu navegador sepa leer como imagen o como vídeo, con consecuencias muy distintas para el RAW, el HEIC, el TIFF y el PNG.","inLanguage":"es","dateModified":"14 de septiembre de 2026","publisher":{"@type":"Organization","name":"Positiva","url":"https://positiva.studio"},"mainEntityOfPage":"https://positiva.studio/soporte/es/formatos-admitidos/"}</script>
 </head>
 <body class="pagina-articulo">
 
@@ -408,14 +408,16 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     <h1>Formatos de archivo admitidos</h1>
     <p class="lede">Positiva admite lo que tu navegador sepa leer como imagen o como vídeo, con consecuencias muy distintas para el RAW, el HEIC, el TIFF y el PNG.</p>
     
-    <nav class="sumario" aria-label="En esta página"><b>En esta página</b><ol><li><a href="#formatos-de-fotografia">Formatos de fotografía</a></li><li><a href="#formatos-de-video">Formatos de vídeo</a></li><li><a href="#notas-de-uso">Notas de uso</a></li></ol></nav>
+    <nav class="sumario" aria-label="En esta página"><b>En esta página</b><ol><li><a href="#formatos-de-fotografia">Formatos de fotografía</a></li><li><a href="#formatos-de-video">Formatos de vídeo</a></li><li><a href="#el-rechazo-del-video-es-temprano">Qué dice el aviso cuando un vídeo no entra</a></li><li><a href="#el-hevc-entra-avisando">El HEVC entra, pero avisando</a></li><li><a href="#notas-de-uso">Notas de uso</a></li></ol></nav>
     <div class="prosa">
-<p>Positiva admite <strong>lo que tu navegador sepa leer como imagen o como vídeo</strong>. No existe una lista blanca de extensiones, porque la decisión no la toma Positiva: la toma el navegador que tengas abierto en ese momento.</p>
+<p>Con <strong>fotografía</strong>, Positiva admite lo que tu navegador sepa leer como imagen: la decisión la toma el navegador que tengas abierto. Con <strong>vídeo</strong> hay además una comprobación propia antes de subir nada, porque lo que importa no es si el archivo se abre en tu ordenador, sino si se va a ver en el de tu cliente.</p>
 <p>Estas tablas recogen el comportamiento de los formatos que llegan con más frecuencia desde una cámara o un teléfono. Te sirven antes de exportar una entrega, y también después, para identificar por qué un archivo concreto se ha quedado fuera de la galería.</p>
 <h2 id="formatos-de-fotografia">Formatos de fotografía</h2>
 <div class="tabla-scroll"><table><thead><tr><th>Formato</th><th>Qué ocurre al subirlo</th></tr></thead><tbody><tr><td><strong>JPEG</strong></td><td>Se sube y se muestra siempre. Es el formato que conviene entregar.</td></tr><tr><td><strong>PNG</strong></td><td>Se sube y funciona, pero todas las versiones que ve tu cliente se generan en <strong>JPEG</strong> y pierden la transparencia.</td></tr><tr><td>Cualquier otra imagen que tu navegador decodifique (<strong>WebP</strong>, por ejemplo)</td><td>Se sube y funciona. Como con el PNG, las versiones que ve tu cliente se generan en <strong>JPEG</strong>.</td></tr><tr><td><strong>RAW</strong> (CR2, NEF, ARW, DNG…)</td><td>Normalmente ni siquiera entra en la cola. Se descarta en silencio.</td></tr><tr><td><strong>HEIC</strong> (el formato del iPhone)</td><td>Puede entrar en la cola, subir el original entero y fallar después. Consume almacenamiento y la fotografía no llega a aparecer.</td></tr><tr><td><strong>TIFF</strong></td><td>Igual que HEIC: ningún navegador principal lo decodifica.</td></tr></tbody></table></div>
 <h2 id="formatos-de-video">Formatos de vídeo</h2>
-<div class="tabla-scroll"><table><thead><tr><th>Formato</th><th>Qué ocurre al subirlo</th></tr></thead><tbody><tr><td><strong>MP4 con H.264</strong></td><td>Se sube y se reproduce en cualquier navegador. Es el formato que conviene entregar.</td></tr><tr><td>Cualquier vídeo que tu navegador no reproduzca</td><td>Falla antes de subir nada, con el mensaje <strong>«No se pudo leer el vídeo.»</strong> No consume almacenamiento.</td></tr></tbody></table></div>
+<p>Antes de subir nada, Positiva comprueba en qué formato está el vídeo. La regla es una: <strong>si tu cliente no va a poder reproducirlo en la galería, no entra</strong>.</p>
+<div class="tabla-scroll"><table><thead><tr><th>Formato</th><th>Qué ocurre al subirlo</th></tr></thead><tbody><tr><td><strong>MP4 con H.264</strong></td><td>Entra. Se reproduce en cualquier navegador: es el formato que conviene entregar.</td></tr><tr><td><strong>HEVC / H.265</strong> (lo que graba el iPhone por defecto)</td><td>Entra, pero avisando: se ve en la mayoría de móviles y en Mac, y puede fallar en ordenadores Windows antiguos o en Firefox.</td></tr><tr><td><strong>Códecs de edición</strong> (ProRes, DNx, CineForm…)</td><td>No entra. Los navegadores no los reproducen, así que el vídeo no se vería en la galería.</td></tr><tr><td>Un archivo <strong>sin imagen</strong> (solo sonido)</td><td>No entra: en la galería se vería un rectángulo negro.</td></tr><tr><td>Un formato <strong>que no reconocemos</strong></td><td>Se le pregunta al navegador. Si consigue sacar fotogramas, entra; si no, se rechaza.</td></tr></tbody></table></div>
+<p>Los rechazos ocurren <strong>antes</strong> de transferir nada: no consumen almacenamiento ni dejan archivos a medias.</p>
 <h2 id="notas-de-uso">Notas de uso</h2>
 <h3 id="el-raw-se-descarta-sin-dejar-rastro">El RAW se descarta sin dejar rastro</h3>
 <p>Si sueltas una carpeta de archivos RAW y no ocurre nada —ni fila en la cola, ni mensaje de error, ni barra de progreso—, este es el motivo. El sistema operativo no le atribuye al archivo un tipo de imagen reconocible, de modo que se descarta en silencio: no llega a aparecer siquiera como fila fallida.</p>
@@ -426,17 +428,24 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 <p>Con TIFF ocurre lo mismo y por el mismo motivo.</p>
 <h3 id="el-png-se-entrega-en-jpeg">El PNG se entrega en JPEG</h3>
 <p>Un PNG se sube y se muestra sin incidencias, pero las versiones que Positiva genera a partir de él son JPEG. La transparencia del original se pierde en esas versiones, que son las que ve tu cliente. Si el archivo depende de su fondo transparente, esa transparencia no llega a la galería.</p>
-<h3 id="el-rechazo-del-video-es-temprano">El rechazo del vídeo es temprano</h3>
-<p>Con vídeo el comportamiento es más limpio que con fotografía. Si tu navegador no puede reproducir el archivo, la subida falla <strong>antes</strong> de transferir nada, con este mensaje:</p>
-<blockquote><p>No se pudo leer el vídeo.</p></blockquote>
-<p>No consume espacio ni deja el archivo a medias. Es un rechazo temprano, no un error del sistema.</p>
+<h3 id="el-rechazo-del-video-es-temprano">Qué dice el aviso cuando un vídeo no entra</h3>
+<p>El rechazo nombra el archivo y explica el motivo, sin tecnicismos. Según el caso:</p>
+<blockquote><p>«boda-final.mov» está en ProRes 422 — Es un códec de edición: los navegadores no lo reproducen, así que tus clientes no podrían ver este vídeo en la galería.</p></blockquote>
+<blockquote><p>«audio.mp4» no tiene imagen — Solo tiene sonido: en la galería tus clientes verían un rectángulo negro.</p></blockquote>
+<p>Cuando el formato no se reconoce y el navegador tampoco consigue leer sus fotogramas, el aviso lo dice así: <strong>«no se puede reproducir en el navegador»</strong>. En todos los casos el aviso incluye el peso del archivo, para que sepas qué te estás ahorrando.</p>
+<h3 id="el-hevc-entra-avisando">El HEVC entra, pero avisando</h3>
+<p>El HEVC es el formato que graba el iPhone por defecto, y sí se admite. Al terminar la tanda aparece un aviso con el número de vídeos afectados:</p>
+<blockquote><p>2 vídeos en HEVC (el formato que graba el iPhone por defecto). Se ven bien en la mayoría de móviles y en Mac, pero pueden no reproducirse en ordenadores Windows antiguos o en Firefox. Si es una entrega importante, exporta en H.264.</p></blockquote>
+<p>No es un error y no hay que hacer nada: es información para que decidas. Si la entrega es importante y no sabes con qué equipo va a abrirla tu cliente, exporta en H.264.</p>
+<h3 id="un-video-sin-portada">Un vídeo sin portada se sube igual</h3>
+<p>Si un vídeo válido no deja extraer su primer fotograma —ocurre con algunas grabaciones—, la subida no se detiene: el vídeo entra con una <strong>portada provisional</strong> y queda marcado para que lo sepas. Puedes cambiar esa portada cuando quieras.</p>
 <h3 id="que-exportar">Qué exportar</h3>
 <ul><li><strong>Fotografía: JPEG.</strong></li><li><strong>Vídeo: H.264 en MP4.</strong></li></ul>
 <p>Estos dos formatos son los que garantizan que el archivo funcione en cualquier navegador: el tuyo al subirlo y el de tu cliente al abrirlo. Un formato que se abre sin problemas en tu ordenador no es necesariamente un formato que se abra en el navegador de quien revisa la galería desde el móvil.</p>
 <aside class="nota nota-info"><b>Los mensajes de error de decodificación los redacta el navegador</b><p>Cuando un archivo falla al decodificarse, el texto que aparece en la fila procede del navegador, no de Positiva. Por eso a veces se muestra en inglés y con terminología técnica. No es un problema de traducción.</p></aside>
 <p>Si tienes archivos que se quedan fuera y no sabes en cuál de estos casos encajan, <a href="/soporte/es/archivos-que-no-suben/">Hay archivos que no se suben</a> está ordenado por síntoma.</p>
     </div>
-    <p class="sello">Revisado contra la versión en producción el 24 de agosto de 2026.</p>
+    <p class="sello">Revisado contra la versión en producción el 14 de septiembre de 2026.</p>
     <section class="ayuda">
       <h2 id="sigue-sin-resolverse">¿Sigue sin resolverse?</h2>
       <p>Si este artículo no responde a tu caso, escríbenos. Respondemos todas las consultas en un plazo de 24 a 48 horas.</p>

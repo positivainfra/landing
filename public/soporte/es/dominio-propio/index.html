@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cómo usar tu propio dominio · Soporte de Positiva</title>
-<meta name="description" content="Puedes entregar tus galerías desde tu propio dominio: se guarda en Branding y lo configuramos de forma manual en un plazo de 24 a 48 horas.">
+<meta name="description" content="Puedes entregar tus galerías desde tu propio dominio: lo guardas en Branding, pones dos registros DNS y el alta y el certificado se hacen solos.">
 <meta property="og:title" content="Cómo usar tu propio dominio · Soporte de Positiva">
-<meta property="og:description" content="Puedes entregar tus galerías desde tu propio dominio: se guarda en Branding y lo configuramos de forma manual en un plazo de 24 a 48 horas.">
+<meta property="og:description" content="Puedes entregar tus galerías desde tu propio dominio: lo guardas en Branding, pones dos registros DNS y el alta y el certificado se hacen solos.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://positiva.studio/soporte/es/dominio-propio/">
 <meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
@@ -19,7 +19,7 @@
 <link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/soporte/soporte.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Cómo usar tu propio dominio","description":"Puedes entregar tus galerías desde tu propio dominio: se guarda en Branding y lo configuramos de forma manual en un plazo de 24 a 48 horas.","inLanguage":"es","dateModified":"24 de agosto de 2026","publisher":{"@type":"Organization","name":"Positiva","url":"https://positiva.studio"},"mainEntityOfPage":"https://positiva.studio/soporte/es/dominio-propio/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Cómo usar tu propio dominio","description":"Puedes entregar tus galerías desde tu propio dominio: lo guardas en Branding, pones dos registros DNS y el alta y el certificado se hacen solos.","inLanguage":"es","dateModified":"14 de septiembre de 2026","publisher":{"@type":"Organization","name":"Positiva","url":"https://positiva.studio"},"mainEntityOfPage":"https://positiva.studio/soporte/es/dominio-propio/"}</script>
 </head>
 <body class="pagina-articulo">
 
@@ -406,32 +406,54 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     </nav>
     
     <h1>Cómo usar tu propio dominio</h1>
-    <p class="lede">Puedes entregar tus galerías desde tu propio dominio: se guarda en Branding y lo configuramos de forma manual en un plazo de 24 a 48 horas.</p>
+    <p class="lede">Puedes entregar tus galerías desde tu propio dominio: lo guardas en Branding, pones dos registros DNS y el alta y el certificado se hacen solos.</p>
     
-    <nav class="sumario" aria-label="En esta página"><b>En esta página</b><ol><li><a href="#antes-de-empezar">Antes de empezar</a></li><li><a href="#donde-se-hace">Dónde se hace</a></li><li><a href="#pasos">Pasos</a></li><li><a href="#resultado">Resultado</a></li><li><a href="#problemas-frecuentes">Problemas frecuentes</a></li></ol></nav>
+    <nav class="sumario" aria-label="En esta página"><b>En esta página</b><ol><li><a href="#antes-de-empezar">Antes de empezar</a></li><li><a href="#donde-se-hace">Dónde se hace</a></li><li><a href="#pasos">Pasos</a></li><li><a href="#que-dice-el-panel">Qué dice el panel en cada momento</a></li><li><a href="#mientras-esperas">Mientras esperas</a></li><li><a href="#resultado">Resultado</a></li><li><a href="#problemas-frecuentes">Problemas frecuentes</a></li></ol></nav>
     <div class="prosa">
-<p>Al terminar este proceso tus galerías se servirán desde tu propio dominio en lugar de desde el subdominio de Positiva. El proceso tiene dos partes: guardas el dominio en el panel y después lo configuramos de forma manual.</p>
-<aside class="nota nota-aviso"><b>Guardar el dominio en el panel no lo activa</b><p>El DNS y el certificado se configuran <strong>a mano</strong>, en un plazo de <strong>24 a 48 horas</strong>, y te avisamos por correo cuando el dominio esté listo. Hasta ese aviso el dominio está guardado, pero no funciona.</p></aside>
+<p>Al terminar este proceso tus galerías se servirán desde tu propio dominio en lugar de desde el subdominio de Positiva. Tú pones dos registros en el DNS de tu dominio y el resto — el alta y el certificado — se hace solo.</p>
+<aside class="nota nota-truco"><b>El panel te dice en qué punto está cada registro</b><p>No hay que adivinar ni escribirnos para preguntar: el bloque de dominio propio muestra el estado real de cada registro DNS — comprobado, en espera, emitiendo el certificado — y recibes un correo cuando tu dominio empieza a servir.</p></aside>
 <h2 id="antes-de-empezar">Antes de empezar</h2>
-<ul><li>Todos los planes, incluido Gratis, disponen desde el primer día de un subdominio propio del tipo <code>tuestudio.positiva.studio</code>. Funciona sin configurar nada y es el que utilizan tus enlaces. El dominio propio es un paso adicional, no un requisito para trabajar.</li><li>El dominio no puede estar dado de alta en otro estudio de Positiva.</li><li>Decide con antelación si vas a usar la raíz del dominio o un subdominio: la elección determina qué ocurre con la página que tuvieras publicada en esa dirección.</li></ul>
+<ul><li>Todos los planes, incluido Gratis, disponen desde el primer día de un subdominio propio del tipo <code>tuestudio.positiva.studio</code>. Funciona sin configurar nada y es el que utilizan tus enlaces. El dominio propio es un paso adicional, no un requisito para trabajar.</li><li>El dominio no puede estar dado de alta en otro estudio de Positiva.</li><li>Necesitas poder editar el DNS de tu dominio: donde lo compraste, o donde lo tengas alojado.</li><li>Decide con antelación si vas a usar la raíz del dominio o un subdominio: la elección determina qué ocurre con la página que tuvieras publicada en esa dirección.</li></ul>
 <aside class="nota nota-plan"><b>Disponibilidad</b><p>El dominio propio requiere el plan <strong>Estudio</strong>.</p></aside>
 <h2 id="donde-se-hace">Dónde se hace</h2>
 <p>Panel → <strong>Branding</strong> → bloque <strong>Dominio propio</strong>, junto al resto de <a href="/soporte/es/logo-y-marca/">tu logotipo y tu marca</a>.</p>
 <h2 id="pasos">Pasos</h2>
-<ol><li><strong>Decide qué dirección vas a usar.</strong> Si introduces la raíz de tu dominio, o el <code>www</code>, esa dirección deja de mostrar lo que tuvieras publicado allí: si tienes una página en <code>tudominio.com</code>, deja de verse. Si introduces un subdominio libre —<code>galeria.tudominio.com</code>, por ejemplo—, tu página permanece donde está.</li><li><strong>Escribe el dominio en el campo.</strong> El panel advierte de esa consecuencia mientras escribes, según la dirección que introduzcas.</li><li><strong>Guarda el dominio.</strong> Antes de guardarlo, el panel indica lo siguiente:</li></ol>
-<p>&gt; Guardarlo no lo activa al momento: lo configuramos a mano (DNS y certificado) en 24-48h y te avisamos por email cuando esté listo. Mientras tanto sigues usando tu subdominio.</p>
-<ol><li><strong>Sigue repartiendo el subdominio mientras esperas.</strong> Los enlaces que copies del panel salen con <code>tuestudio.positiva.studio</code> y son los que hay que enviar a tus clientes. No compongas a mano un enlace con tu dominio propio antes de la activación: hasta entonces no conduce a ninguna galería. Con el dominio guardado y todavía pendiente, el panel lo expresa así:</li></ol>
-<p>&gt; …está guardado pero todavía no activo… Hasta entonces tus enlaces siguen saliendo con tuestudio.positiva.studio, que funciona con normalidad — no hace falta que esperes para repartirlos.</p>
-<ol><li><strong>Espera el aviso por correo.</strong> Llega cuando el DNS y el certificado están configurados, dentro del plazo de 24 a 48 horas.</li></ol>
+<ol>
+<li><strong>Decide qué dirección vas a usar.</strong> Si introduces la raíz de tu dominio, o el <code>www</code>, esa dirección deja de mostrar lo que tuvieras publicado allí: si tienes una página en <code>tudominio.com</code>, deja de verse. Si introduces un subdominio libre —<code>galeria.tudominio.com</code>, por ejemplo—, tu página permanece donde está.</li>
+<li><strong>Escribe el dominio y guárdalo.</strong> El panel advierte de esa consecuencia mientras escribes, según la dirección que introduzcas.</li>
+<li><strong>Pon los dos registros en tu DNS.</strong> El panel te los muestra con su nombre y su valor exactos, listos para copiar:
+<div class="tabla-scroll"><table><thead><tr><th>Tipo</th><th>Nombre</th><th>Valor</th><th>Para qué</th></tr></thead><tbody>
+<tr><td><strong>TXT</strong></td><td><code>_positiva-verify.tudominio.com</code></td><td>El código que muestra el panel</td><td>Demuestra que el dominio es tuyo</td></tr>
+<tr><td><strong>CNAME</strong></td><td><code>tudominio.com</code></td><td><code>saas.positiva.studio</code></td><td>Envía las visitas a Positiva</td></tr>
+</tbody></table></div>
+Puedes poner los dos a la vez. El CNAME se comprueba en cuanto el TXT esté verificado.</li>
+<li><strong>Espera.</strong> No hay nada más que hacer por tu parte: cuando el TXT está comprobado, damos de alta el dominio automáticamente, se emite el certificado y el panel va reflejando cada paso. Si algo falla, se reintenta solo.</li>
+</ol>
+<aside class="nota nota-aviso"><b>Si tu dominio está en Cloudflare, deja el registro en «DNS only»</b><p>Con la nube naranja (proxy activado) no llegamos a ver el CNAME y la activación se queda esperando. El propio panel lo recuerda cuando detecta esa situación.</p></aside>
+<h2 id="que-dice-el-panel">Qué dice el panel en cada momento</h2>
+<p>Cada registro lleva su estado escrito. Estos son los mensajes del CNAME, en el orden en que suelen aparecer:</p>
+<div class="tabla-scroll"><table><thead><tr><th>Estado</th><th>Qué significa</th></tr></thead><tbody>
+<tr><td>«Puedes ponerlo ya. Lo miramos en cuanto el registro de arriba esté comprobado.»</td><td>Falta verificar el TXT. Puedes dejar el CNAME puesto.</td></tr>
+<tr><td>«Lo estamos dando de alta por nuestra parte. Te escribimos por correo en cuanto esté listo.»</td><td>El dominio es tuyo y el alta está en marcha.</td></tr>
+<tr><td>«Todavía no lo vemos…»</td><td>El CNAME aún no se ve. Puede tardar en propagarse; si usas Cloudflare, revisa que esté en «DNS only».</td></tr>
+<tr><td>«Visto. Estamos emitiendo el certificado…»</td><td>Ya lo vemos; falta el certificado.</td></tr>
+<tr><td>«Certificado listo. Comprobando que tu dominio responde…»</td><td>Último paso antes de activarlo.</td></tr>
+<tr><td>«Comprobado: tu dominio ya responde con su certificado.»</td><td>Activo.</td></tr>
+</tbody></table></div>
+<h2 id="mientras-esperas">Mientras esperas</h2>
+<p>Sigue repartiendo el subdominio. Los enlaces que copies del panel salen con <code>tuestudio.positiva.studio</code> y son los que hay que enviar a tus clientes. No compongas a mano un enlace con tu dominio propio antes de la activación: hasta entonces no conduce a ninguna galería.</p>
 <h2 id="resultado">Resultado</h2>
-<p>Con el dominio activo, el panel lo indica de esta forma:</p>
-<blockquote><p>…está activo. Los enlaces que copies desde aquí ya salen con tu dominio.</p></blockquote>
-<p>A partir de ese momento, los enlaces que copies del panel llevan tu dominio y tu cliente abre las galerías en esa dirección.</p>
+<p>Con el dominio activo, los enlaces que copies del panel llevan tu dominio y tu cliente abre las galerías en esa dirección.</p>
 <h2 id="problemas-frecuentes">Problemas frecuentes</h2>
-<ul><li><strong>«Ese dominio ya está en uso por otro estudio.»</strong> Un mismo dominio no puede estar dado de alta en dos estudios de Positiva a la vez. Comprueba la dirección que has escrito y utiliza otro dominio o otro subdominio.</li><li><strong>El dominio no lleva a ninguna galería después de guardarlo.</strong> Es el comportamiento previsto durante las 24 a 48 horas de configuración. Reparte el subdominio mientras tanto.</li><li><strong>Tu cliente ha recibido un enlace con tu dominio y ve un error del navegador.</strong> El enlace se ha compuesto a mano antes de que el dominio estuviera activo. Copia el enlace desde el panel y vuelve a enviárselo. Consulta <a href="/soporte/es/enlace-de-cliente/">Cómo crear el enlace para tu cliente</a>.</li><li><strong>La página que tenías en esa dirección ha dejado de verse.</strong> Has introducido la raíz de tu dominio, o el <code>www</code>, y esa dirección la sirve ahora Positiva. Un subdominio libre es la opción que no interfiere con tu página.</li></ul>
-<p>Si transcurridas 48 horas el dominio sigue sin activarse, escribe a <code>hola@positiva.studio</code>. Respondemos en un plazo de 24 a 48 horas.</p>
+<ul>
+<li><strong>«Ese dominio ya está en uso por otro estudio.»</strong> Un mismo dominio no puede estar dado de alta en dos estudios de Positiva a la vez. Comprueba la dirección que has escrito y utiliza otro dominio o otro subdominio.</li>
+<li><strong>El panel lleva horas en «Todavía no lo vemos».</strong> Revisa que el CNAME apunte exactamente a <code>saas.positiva.studio</code> y que, si tu DNS está en Cloudflare, el registro esté en <strong>«DNS only»</strong> (nube gris).</li>
+<li><strong>Tu cliente ha recibido un enlace con tu dominio y ve un error del navegador.</strong> El enlace se ha compuesto a mano antes de que el dominio estuviera activo. Copia el enlace desde el panel y vuelve a enviárselo. Consulta <a href="/soporte/es/enlace-de-cliente/">Cómo crear el enlace para tu cliente</a>.</li>
+<li><strong>La página que tenías en esa dirección ha dejado de verse.</strong> Has introducido la raíz de tu dominio, o el <code>www</code>, y esa dirección la sirve ahora Positiva. Un subdominio libre es la opción que no interfiere con tu página.</li>
+</ul>
+<p>Si los registros están puestos y el dominio sigue sin activarse al día siguiente, escribe a <code>hola@positiva.studio</code>. Respondemos en un plazo de 24 a 48 horas.</p>
     </div>
-    <p class="sello">Revisado contra la versión en producción el 24 de agosto de 2026.</p>
+    <p class="sello">Revisado contra la versión en producción el 14 de septiembre de 2026.</p>
     <section class="ayuda">
       <h2 id="sigue-sin-resolverse">¿Sigue sin resolverse?</h2>
       <p>Si este artículo no responde a tu caso, escríbenos. Respondemos todas las consultas en un plazo de 24 a 48 horas.</p>

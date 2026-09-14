@@ -1,108 +1,126 @@
-# Informe de impacto · lote 4c0aac4 → b6e3647 (desplegado el 10/09/2026)
+# Informe de impacto · lote b6e3647 → 2a59b6c (desplegado el 14/09/2026)
 
-82 commits. Tres temas visibles para el usuario: la **descarga ZIP automática**,
-la **analítica de descargas** y la **reanudación** de descargas grandes. Todo lo
-demás del lote (CRC-32 en la subida, barridos del archiver, presupuesto de
-subpeticiones, tests, runbooks) es interno y no va a novedades.
+33 commits, cinco temas visibles. Publicadas **seis entradas** en `/novedades/`
+(14, 13, 13, 12, 11 y 10 de septiembre).
 
-Publicado ya en `/novedades/`: tres entradas con fecha 10/09/2026 (Producto,
-Rendimiento, Panel).
+Interno y fuera de novedades: los prompts y runbooks, la inversión de
+`run_worker_first`, el marcador HSTS, los tests del Worker y el relleno hacia
+atrás del códec en las filas existentes.
 
 ---
 
-## 1 · Descarga completa automática
+## 1 · ZIP por momento (14/09)
 
-`VITE_GALLERY_ZIP="1"` en `frontend/.env.production`. El botón «Descargar todo»
-deja de depender de que el fotógrafo suba un zip: se genera al vuelo en
-`GET /media/zip` respetando el tier del enlace. El zip manual sobrevive como
-opción, pero **solo** con `zip_mode='manual'` **y** tier `high`.
+`GET /media/zip?scope=moment`. Botón junto al título de cada sección del visor.
+Condiciones reales, leídas del código: tier ≠ `none`, momento no vacío, **más de
+un grupo**, cuadrícula con momentos; nunca en «Otros» ni con el filtro de
+favoritas. Convive con el zip manual global.
 
-**Hecho desde este flujo** (cambio desplegado y verificado en el código):
-
-- `public/soporte/es/zip-descarga-completa/index.html` — **reescrito entero**.
-  Rodrigo pidió expresamente reescribirlo aquí en vez de dejarlo en informe.
-- `public/galerias/index.html` — la sección «Permisos y descarga» decía que el
-  ZIP «lo preparas tú».
-- `public/bodas/index.html` — la tarjeta «El ZIP de "Descargar todo"» decía lo mismo.
-
-**Literales usados en el artículo** (sacados del código, NO vistos en pantalla —
-conviene confirmarlos en el producto real):
-
-| Literal | Origen en el código |
-|---|---|
-| `Descargar todo` | `DownloadAllButton.tsx` (auto y manual) |
-| `24 fotos · 1,2 GB · 2 vídeos no incluidos` | `formatZipLabel()` — ejemplo compuesto por mí a partir del formato, no una captura |
-| `Este enlace no permite descargar vídeos.` | `formatZipEmptyReason()` |
-| `Todavía no hay nada listo para descargar. Vuelve a intentarlo en unos minutos.` | `formatZipEmptyReason()` |
-| `Usar mi zip en lugar del automático` | `GalleryZipPanel.tsx` |
-| `Solo en enlaces con descarga en alta…` | `GalleryZipPanel.tsx` (parafraseado en el artículo) |
-| `Subir zip` / `Reemplazar zip` / `Preparando…` | `GalleryZipPanel.tsx`, `DownloadAllButton.tsx` |
-| `Zip subido el 12/08/2026 · 14 archivos añadidos después. Tu zip no los incluye; el automático sí.` | `GalleryZipPanel.tsx` — fecha y cifra inventadas como ejemplo |
-| `¿Quitar tu zip? Tu cliente seguirá viendo "Descargar todo", servido con el zip automático.` | `GalleryZipPanel.tsx` (`confirm`) |
-| `No hay saldo suficiente: usas X de Y. Amplía el almacenamiento para subir este zip.` | `GalleryZipPanel.tsx` — ya estaba en el artículo anterior |
-
-**A verificar en pantalla antes de dar el artículo por bueno:**
-
-1. Que el botón por sección (fotos ↔ vídeos) se comporta como digo: el de la
-   vista de fotos se lleva fotos y el del visor de vídeo, vídeos.
-2. Que el tooltip de cifras es exactamente ese formato y con esos separadores.
-3. Que la sección del panel se sigue llamando «Descarga completa» y está en el
-   paso **Compartir** (el artículo lo mantiene del texto anterior).
-4. Que la casilla del interruptor solo aparece **si hay zip subido**
-   (`GalleryZipPanel` no la pinta sin `filename`); el artículo lo da por hecho
-   implícitamente al describir el orden subir → marcar.
-
-**Otros artículos de soporte que pueden haber quedado tocados** (este flujo NO
-los ha editado):
-
-- `almacenamiento` — si enumera el ZIP entre lo que ocupa espacio, ahora hay que
-  matizar: el automático no ocupa, el subido por ti sí.
-- `permisos-de-descarga` — la relación entre calidad del enlace y descarga
-  completa cambia: en «Web» ya no se sirve el zip manual aunque exista.
-- `no-puedo-descargar` — el motivo «el fotógrafo no ha subido el ZIP» deja de
-  ser una causa válida; aparecen dos nuevas (enlace sin vídeos, archivos aún
-  procesándose).
-- `enlace-de-cliente`, `revocar-un-enlace` — revisar si mencionan que el botón
-  depende de haber subido un archivo.
-
-## 2 · Analítica de descargas
-
-`gallery_analytics()` devuelve tres cifras con su unidad en vez de un total, y
-la tabla «Quién ha entrado» ya no depende de `isEvent`.
-
-**Hecho desde este flujo:** `public/soporte/es/analitica/index.html` — tabla
-«Qué mide» (tres filas nuevas), nota sobre no sumar unidades, sección nueva
-«El aviso por email», sección «La tabla de quién ha entrado» corregida (ya
-aparece en entregas cuando alguien deja su nombre al marcar favoritas) y tabla
-por tipo de galería.
-
-**Literales usados:** `Fotos sueltas`, `Lotes de favoritas`, `Galería completa`,
-`Reproducciones`, `Avisarme por email de las descargas`, `Un resumen al día con
-lo que ha descargado tu cliente, sólo los días que haya descargas.`, `El email es
-autodeclarado por el visitante, no verificado, salvo que lo confirmara desde su
-correo.` — todos de `AnalyticsPanel.tsx` y `GalleryInfoEditor.tsx`.
+**Editado aquí:** `zip-descarga-completa` (sección «Descargar un momento
+suelto») y `momentos` (sección «Qué ve tu cliente»).
 
 **A verificar en pantalla:**
+1. Cómo se llama y dónde está exactamente el control: lo describo como «su
+   propio botón de descarga junto al título». El commit dice que se unificó a
+   **un solo icono de descarga en todo el visor** — si tiene una etiqueta de
+   texto visible o un tooltip, conviene citarla tal cual.
+2. Que con el filtro de favoritas el botón efectivamente desaparece (lo digo).
+3. El nombre del archivo: según `0934f9f` queda `Galería - Momento.zip`, sin el
+   sufijo « - fotos». No lo cito en el artículo; si quieres citarlo, confírmalo.
 
-1. Que la casilla del aviso está en el paso **Datos** (el código la sitúa en
-   `GalleryInfoEditor`, que es ese paso — confirmar el nombre del paso en el raíl).
-2. El hint exacto de «Galería completa» (`describeZip`) con datos reales: el
-   artículo lo describe en prosa, sin citar el literal.
-3. Que la línea D5 («Las descargas anteriores al … no se guardaban») ya no
-   aparece — se retiró en `80f351d`, y el artículo no la menciona.
+## 2 · Indexación (12-13/09)
 
-**Otros artículos posiblemente tocados:** `favoritas-del-cliente` (la
-identificación al marcar favoritas ahora alimenta la tabla de la analítica),
-`planes-y-precios` (si enumera qué incluye la analítica de Autor/Estudio).
+`GALLERY_ROBOTS_MODE` se queda en **noindex permanente** para `/g/` y `/f/`
+(Disallow impediría rastrear pero no listar, y este producto consiste en
+repartir esos enlaces). El panel entero fuera del índice por inversión:
+`X-Robots-Tag` noindex salvo lista cerrada. Portfolios inyectados en el edge con
+HTMLRewriter: título, descripción, canonical, H1, bio, `<img>` con alt, OG y
+JSON-LD Person/ProfilePage. Umbral: sin bio y sin galería publicada, noindex.
+Etiquetas `/galerias/<tag>`: noindex en v1. Sitemap por subdominio.
+Despublicado → 404 con página de marca.
 
-## 3 · Reanudación
+**Editado aquí:** `perfil-publico` (sección «Tu web y los buscadores»).
 
-El navegador retoma una descarga cortada (ETag + If-Range) y el panel la sigue
-contando como una sola descarga (id de descarga con TTL de 30 min).
+**A verificar:**
+1. Que el umbral es exactamente «sin bio **y** sin ninguna galería publicada»
+   (lo escribo así).
+2. Si el panel avisa de alguna forma de que un perfil está fuera del índice. Si
+   no avisa, el artículo es el único sitio donde el fotógrafo puede enterarse.
 
-**Hecho:** una entrada de novedades (Rendimiento) y una sección nueva en el
-artículo del ZIP («Si la descarga se corta»).
+**Otros artículos que puede tocar (no editados):** `portfolio` (si promete
+visibilidad en buscadores sin matizar el umbral) y `enlace-de-cliente` (ahora se
+puede afirmar que un enlace repartido no acaba en Google).
 
-**A verificar:** que el navegador ofrece efectivamente «Reanudar» en la lista de
-descargas tras cortar la conexión a mitad — es la única afirmación del artículo
-que depende del comportamiento del navegador y no solo del servidor.
+## 3 · Portero de códec, HEVC y póster provisional (11-12/09)
+
+Tres estados en `videoGate.ts`: **entra** (códec web), **entra avisando**
+(`hardware-only` = HEVC), **no entra** (`not-web` con etiqueta, o desconocido
+del que el navegador no saca fotogramas). Un fourCC desconocido que sí da
+fotogramas entra y avisa a Sentry.
+
+**Editado aquí:** `formatos-admitidos` — tabla de vídeo rehecha, secciones «Qué
+dice el aviso cuando un vídeo no entra», «El HEVC entra, pero avisando» y «Un
+vídeo sin portada se sube igual». La entradilla ya distingue foto (decide el
+navegador) de vídeo (comprobación propia).
+
+**Literales usados, sacados del código y NO vistos en pantalla:**
+
+| Literal | Origen |
+|---|---|
+| `«archivo» está en ProRes 422 — Es un códec de edición: los navegadores no lo reproducen…` | `describeRejection()`, rama EDITING. El nombre del archivo y el códec del ejemplo son míos |
+| `«archivo» no tiene imagen — Solo tiene sonido: en la galería tus clientes verían un rectángulo negro.` | `describeRejection()`, rama `codec === "none"` |
+| `«archivo» no se puede reproducir en el navegador` | `describeRejection()`, rama desconocido |
+| `2 vídeos en HEVC (el formato que graba el iPhone por defecto)…` | `hardwareOnlyNotice()`, texto completo y literal |
+
+**A verificar:**
+1. Dónde se pinta cada aviso (fila de la cola, banda al terminar la tanda,
+   toast) — el artículo dice «al terminar la tanda» para el de HEVC, que es lo
+   que sugiere el código (`UNA vez por tanda con el número`).
+2. Que el aviso incluye el peso («Pesa 2,4 GB») como dice `pesoLegible`.
+3. Que la portada provisional se puede cambiar desde el panel: lo afirmo, y es
+   la única frase de esa sección que no está respaldada por el diff que leí.
+4. **Contradicción pendiente en otro artículo:** `archivos-que-no-suben` y
+   `subir-fotos-y-videos` pueden seguir diciendo que el vídeo falla con «No se
+   pudo leer el vídeo.» Ese mensaje ya no es el único camino. No los he editado
+   para no tocar más alcance del necesario — decide si van en este lote o en el
+   siguiente.
+
+## 4 · Dominios propios automáticos (10-11/09)
+
+Alta automática en Cloudflare tras verificar la propiedad; correo al fotógrafo
+cuando el dominio sirve; el panel muestra el estado real de cada registro en vez
+de pedirle que mire. `CNAME_DESTINO = saas.positiva.studio`, TXT
+`_positiva-verify.<hostname>`.
+
+**Editado aquí:** `dominio-propio` — **reescrito**. El artículo anterior decía
+que el DNS y el certificado se configuran «a mano, en 24-48 horas», que ya es
+falso. También cambia su `<meta name="description">`.
+
+**Literales usados (de `registrosDe()` en `Branding.tsx`, no vistos en
+pantalla):** los seis estados del CNAME de la tabla «Qué dice el panel en cada
+momento», copiados uno a uno.
+
+**A verificar:**
+1. Que el bloque sigue estando en **Branding** y se llama «Dominio propio».
+2. Que el panel muestra el TXT y el CNAME con nombre y valor copiables, como
+   describo en el paso 3.
+3. Que el aviso de Cloudflare «DNS only» aparece tal cual (yo lo resumo).
+
+## 5 · Rescate de avisos (10/09)
+
+Un aviso que fallaba podía dejar sin cerrar la fila y llevarse por delante el
+resumen de descargas del día; los 5xx transitorios de Supabase ya se reintentan.
+
+**Editado aquí:** solo la entrada de novedades (etiqueta Arreglo).
+
+**A verificar:** nada en soporte. `analitica` ya describe el resumen diario y no
+prometía fiabilidad, así que no queda desactualizado.
+
+---
+
+## Cierre
+
+- `docs/novedades-estado.txt` → `2a59b6c`.
+- **Sitemap:** no lo he tocado. Ahora se genera con `npm run sitemap`, que saca
+  los `lastmod` de la fecha real del último commit de cada página — hay que
+  ejecutarlo **después** de commitear este lote, no antes.

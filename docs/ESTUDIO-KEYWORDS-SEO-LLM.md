@@ -245,3 +245,172 @@ Qué NO hacer: blog genérico "consejos para fotógrafos" (no hay volumen y sí 
 - Las SERPs se leyeron sin personalización (pws=0) el 2/9/2026; las posiciones cambian.
 - AI Mode se consultó con tres preguntas; las respuestas varían entre sesiones. ChatGPT no se pudo consultar desde el navegador (dominio bloqueado en la extensión); Perplexity pidió registro.
 - Ahrefs Keyword Generator (gratuito) quedó detrás de un captcha de Cloudflare; no se usó.
+
+---
+
+# Actualización 14 sept 2026 · Repaso español + estudio en inglés (US + UK)
+
+## 0. Lo que bloquea, antes que nada
+
+[Seguro] **Keyword Planner sigue dando rangos.** La campaña activa (Positiva Traffic 01, 1 €/día, Máximo rendimiento) no desbloquea cifras exactas: Google solo las da con gasto "suficiente" (en la práctica decenas de euros/mes sostenidos). Los rangos valen para decidir; para cifras exactas hace falta Semrush/Ahrefs con login (no se llegó a hacer en esta sesión).
+
+[Seguro] **Google tiene indexadas 2 páginas de positiva.studio y 7 «rastreadas, sin indexar»** (Search Console, 14/09). 26 consultas en 28 días, todas de portfolios de usuarios o de la marca. Traducir al inglés añade 20–30 URLs a un dominio que Google hoy ignora: el inglés no rendirá hasta que el español indexe. Esto no es motivo para no traducir (el producto en inglés tiene sentido comercial), pero sí para no esperar tráfico del inglés antes de 3–6 meses.
+
+## 1. Repaso español: nada cambia, tres matices
+
+Se volvió a pasar el plan de 78 términos + 57 nuevos. Mismos rangos que el 2/9. Lo único nuevo:
+
+| Keyword (España) | vol | Lectura |
+|---|---|---|
+| wetransfer limite | 100 – 1 mil | Nuevo ángulo: el límite de 10 transferencias/mes. H2 propio en la página de WeTransfer. |
+| wetransfer caduca | 10 – 100, **+∞** | Naciendo. Es literalmente el hero de Positiva («un enlace que no caduca»). |
+| picflow | 100 – 1 mil, **+900 %** | Competidor nuevo entrando en España (comentarios en el fotograma, 4K, sin cuenta). Vigilar; candidato a «alternativas a». |
+| arcadina precios / arcadina opiniones | 10 – 100 | Confirma la página «alternativas a Arcadina» (ya escrita en /notas/). |
+| exportlab · framebird · lightfolio · krock io | 10 – 100 | Marcas que empiezan a buscarse en España; ninguna con contenido en español. |
+| alternativa a pixieset · alternativas a pic time · pixieset opiniones · pic-time opiniones | — | Por debajo de 10 en España. Las páginas de /notas/ se justifican por LLMs y long-tail, no por volumen. |
+
+Todo lo demás (revisión de vídeo, entrega de fotos, galería de cliente, marcadores DaVinci) sigue sin volumen medible en España.
+
+## 2. Inglés (US + UK): rangos de Keyword Planner, sept 2025 – ago 2026
+
+[Seguro] El mercado anglosajón es entre 10 y 100 veces el español, y la estructura es la misma: marcas > transferencia > categoría.
+
+### Marcas (donde está el volumen)
+
+| Keyword | vol US+UK | comp | CPC |
+|---|---|---|---|
+| pixieset | **100 mil – 1 M** | Baja | 0,03–2,99 € |
+| pixieset pricing | 1 mil – 10 mil | Baja | |
+| pixieset alternative | 100 – 1 mil | Media | 1,88–6,43 € |
+| pixieset free | 100 – 1 mil, **+900 %** | Baja | |
+| pixieset vs pic time / pic time vs pixieset | 100 – 1 mil c/u | Baja | |
+| pic time | 10 mil – 100 mil | Baja | |
+| pic time pricing | 100 – 1 mil | Baja | |
+| pic time alternative | 10 – 100 | Alta | |
+| shootproof · zenfolio · smugmug | 10 mil – 100 mil c/u | Baja | |
+| smugmug alternative | 100 – 1 mil | Media | |
+| cloudspot · pass gallery | 1 mil – 10 mil | Baja | |
+| frame io | 10 mil – 100 mil | Baja | |
+| frame io pricing | 100 – 1 mil | Media | |
+| frame io alternative / free | 10 – 100 c/u | Media | |
+| dropbox replay · filestage · screenlight | 1 mil – 10 mil c/u | Baja | |
+| vimeo review · wipster · kollaborate | 100 – 1 mil c/u | Baja | |
+| krock io | 10 – 100 | Baja | |
+
+### Categoría (intención genérica)
+
+| Keyword | vol US+UK | comp | CPC |
+|---|---|---|---|
+| videographer software | **1 mil – 10 mil** | Media | 1,98–7,51 € |
+| client gallery for photographers | 100 – 1 mil | Media | 3,78–18,51 € |
+| online gallery for photographers | 100 – 1 mil | Media | |
+| photo gallery software | 100 – 1 mil | Media | |
+| portfolio website for photographers · photographer website builder · best website builder for photographers | 100 – 1 mil c/u | Media | hasta 26 € |
+| brand asset management | 100 – 1 mil | Media | hasta 61 € |
+| best client gallery for photographers · photo gallery for clients · photo delivery app/website · photographer software | 10 – 100 c/u | **Alta** | 10–24 € |
+| how to deliver photos to clients | 10 – 100, **+900 %** | Baja | |
+| client proofing gallery · online proofing for photographers · photo proofing software | 10 – 100 c/u | Baja | |
+| video review software · video review tool · video feedback tool · video proofing software | 10 – 100 c/u | Media–Alta | hasta 35 € |
+| review and approval software · creative review software | 10 – 100 c/u | Alta | **32–62 €** (enterprise) |
+| client video review · video review and approval software | 10 – 100 | Baja | |
+| import markers davinci resolve | 10 – 100 | Baja | |
+| client gallery for videographers · video delivery for clients · video gallery for clients · deliver photos and videos to clients | — | | Sin volumen medible, pero es exactamente la pregunta que AI Mode responde |
+
+### Transferencia y bodas
+
+| Keyword | vol US+UK | comp |
+|---|---|---|
+| send large files | 1 mil – 10 mil | Alta |
+| wetransfer alternative | 1 mil – 10 mil | Media |
+| wetransfer alternative free | 100 – 1 mil | Media |
+| send large video files | 100 – 1 mil | Media |
+| expiring links | 10 – 100 | Baja |
+| share wedding photos with guests · wedding photo sharing · wedding gallery | 100 – 1 mil c/u | Alta / Alta / Baja |
+| wedding video delivery | 10 – 100 | Media |
+
+## 3. Quién manda en las SERPs y en AI Mode en inglés
+
+[Seguro] **«pixieset alternative» (US):** Reddit r/photography y r/weddingvideography, grupos de Facebook, Pixpa (blog, DA 56), Unscripted (DA 31) y, entre ellos, **productos jóvenes con dominios débiles que sí posicionan**: Framebird (DA 27, «modern Pixieset alternative… video delivery, comments, annotations, 500 GB, $12/mo»), SendPhoto (DA 16), VolleyDrive, pixieset-alternatives.com (DA 4). Conclusión: en inglés una página «Pixieset alternative» desde un dominio nuevo puede entrar en primera página. En español no hay SERP que ganar; en inglés sí.
+
+[Seguro] **«frame.io alternative» (US):** Reddit, listas de los vendors (Filestage, Krock, Flask, Ziflow), Facebook, Creative COW, Logik. Mismo patrón que en español: el que escribe la lista se lleva la cita.
+
+[Seguro] **AI Mode, pregunta híbrida «client gallery for photographers and videographers with frame comments and DaVinci markers»:** gana **Exportlab** (exportlab.io) con el argumento exacto de Positiva: «elimina la suscripción a Pixieset y la de Frame.io, todo en uno; plugin de DaVinci Resolve; comentarios en el fotograma sin login; EU-hosted en Frankfurt». Segundo, Krock.io; tercero, Frame.io. Fuentes: blog de Exportlab («Frame.io alternatives 2026», «WeTransfer alternative for photographers – GDPR»), YouTube, FrameDeck Studio.
+
+[Seguro] **AI Overview, «client gallery for photographers and videographers»:** Pixieset, Pic-Time (video delivery), ShootProof, **Picflow** («frame-accurate comments and color labels on 4K videos without an account»), CloudSpot. Fuentes: webs de marca, blog de Pixieset, Aftershoot, Rokee & Co, Facebook.
+
+### Exportlab: el competidor a batir en inglés
+
+Alemán, EU-hosted, alemán + inglés. Planes: Rookie $79/año (10 GB foto, **1 GB vídeo**), Creator $149/año (100 GB foto, **10 GB vídeo**, 30 min de transcodificación HD/mes), Ultimate $299/año (250 GB foto, 25 GB vídeo), Team $599/año. Añade contratos, facturación, group shoots, apps nativas y plugin de Resolve.
+
+Dónde gana Positiva: **espacio de vídeo** (Autor: 250 GB foto + vídeo por 89 €/año; Exportlab da 10 GB de vídeo por $149), sin cuotas de transcodificación, precio, español. Dónde pierde: plugin nativo de Resolve (Positiva exporta EDL/FCPXML, no sincroniza), sin contratos/facturación/apps, sin blog en inglés todavía. Ese es el guion de `/en/exportlab-alternative/`.
+
+## 4. Cómo encaminar la traducción
+
+### Estructura (bloquea el despliegue si se hace mal)
+
+- **Subcarpeta `/en/`**, nunca `en.positiva.studio`: un subdominio empieza con autoridad cero y el dominio ya tiene poca. Con `/en/` cada enlace que consiga el español empuja al inglés y viceversa.
+- `hreflang` es/en/x-default en todas las páginas con equivalente; hoy no hay ninguno en el código. Las páginas sin equivalente (p. ej. `/notas/alternativas-a-arcadina/`) no llevan hreflang.
+- Slugs en inglés **con la keyword**, no traducciones del slug español: `/en/client-galleries/`, `/en/video-review/`, `/en/photo-proofing/`, `/en/portfolio-website/`, `/en/pricing/`, `/en/pixieset-alternative/`, `/en/pic-time-alternative/`, `/en/frame-io-alternative/`, `/en/wetransfer-alternative/`, `/en/exportlab-alternative/`.
+- Sitemap: el mismo fichero con las URL `/en/` (o un sitemap-en.xml enlazado desde robots). Lo que hay montado en `scripts/gen-sitemap.mjs` sirve.
+- llms.txt bilingüe (o `/en/llms.txt`): los LLMs en inglés son el canal con más recorrido.
+
+### Vocabulario: qué palabra usar en inglés (la que busca la gente, no la traducción)
+
+| Español (Positiva) | Inglés a usar | No usar |
+|---|---|---|
+| galerías de entrega | **client galleries** / client gallery | delivery galleries, private galleries |
+| revisión de foto / favoritas | **client proofing**, photo proofing, favorites | photo review |
+| revisión de vídeo | **video review and approval**, video review, frame-accurate comments | video revision, video proofing (nicho enterprise) |
+| comentarios en el fotograma | **frame-accurate comments**, timecoded comments | comments on the frame |
+| marcadores para DaVinci / Final Cut | **export comments as markers to DaVinci Resolve (EDL) and Final Cut Pro (FCPXML)** | |
+| portfolio público | **portfolio website** for photographers | public portfolio, public profile |
+| momentos | **scenes** (Pic-Time) o sections | moments |
+| enlaces con permisos | **gallery links** with download permissions | |
+| enlace que no caduca | **links that never expire** / no expiring links | permanent link |
+| productoras de vídeo | **video production companies**, videographers | producers |
+| freelance | **solo photographers and videographers** | freelancers (en US suena a marketplace) |
+| hecha en España | **EU-hosted, GDPR-compliant** (+ «made in Spain» como detalle) | Spanish platform |
+| plan Autor / Estudio | mantener nombres, añadir «for one» / «for studios» | |
+| ZIP de descarga | **full-resolution download**, original files | |
+
+### Orden de traducción (por volumen × capacidad de ganar)
+
+1. **`/en/pixieset-alternative/` y `/en/pic-time-alternative/`** — a partir de los artículos de /notas/ ya escritos con la guía editorial, pero **reescritos**, no traducidos: en inglés el lector conoce ShootProof, CloudSpot, Zenfolio, SmugMug, Pass; Arcadina no existe. Tabla de decisión rápida arriba, precios en USD verificados con fecha. Es la única keyword de compra con SERP ganable.
+2. **`/en/client-galleries/`** (producto) — «client galleries for photographers and videographers»: la página que AI Overview cita cuando alguien pregunta por foto + vídeo juntos. H1 con la keyword, tabla de features, FAQ.
+3. **`/en/video-review/` + `/en/frame-io-alternative/` + `/en/exportlab-alternative/`** — el hueco híbrido foto + vídeo + DaVinci que AI Mode hoy da a Exportlab. Ser honesto con el plugin (Positiva exporta EDL/FCPXML; no sincroniza en vivo) y atacar por espacio de vídeo y precio.
+4. **`/en/videographers/`** (caso de uso) — «videographer software» es 1 mil – 10 mil, competencia Media: la única keyword de categoría con volumen real. Equivale a /productoras/ pero el título debe ser literal: «Videographer software: client galleries, video review and delivery in one».
+5. **`/en/wetransfer-alternative/`** — 1 mil – 10 mil, pero SERP de servicios de transferencia (Smash, TransferNow, TechRadar). Solo con el ángulo «for photographers and videographers» (Exportlab ya lo hace). Cuarta prioridad, no primera.
+6. **`/en/pricing/`**, home, `/en/photo-proofing/`, `/en/portfolio-website/`, `/en/weddings/`: necesarias para vender, no para captar. Traducir después de las cinco anteriores.
+7. **Soporte en inglés**: `soporte/_src/en` existe pero está vacío. Sin soporte en inglés el plan gratis en inglés genera tickets. Traducir primero los 10 artículos de revisor (revisor-*) y los de EDL/FCPXML.
+
+### Precios en inglés
+
+Mantener € (refuerza «EU-hosted» y evita dos listas de precios). Añadir «excl. VAT» y una línea «≈ $X» orientativa solo si se actualiza; si no, no ponerla. Exportlab, Framebird y Pixieset cobran en USD: el lector americano compara; el europeo no anglosajón (Alemania, Países Bajos, nórdicos) es el que más se parece al cliente de Positiva y paga en €.
+
+### Qué no hacer
+
+- No lanzar el inglés en `en.positiva.studio` ni en otro dominio.
+- No traducir el blog palabra por palabra: los competidores y los precios cambian por mercado.
+- No atacar «send large files» ni «best website builder for photographers» (Alta, CPC 8–26 €, mercado maduro).
+- No traducir /bodas/ ni /freelance/ antes que las cinco páginas del punto anterior.
+- No esperar tráfico en inglés hasta que el español esté indexado: el problema de indexación es el mismo dominio.
+
+## 5. Datos y límites de esta actualización
+
+Keyword Planner (cuenta positiva.infra, campaña activa a 1 €/día, rangos), US + UK, «todos los idiomas», sept 2025 – ago 2026, 90 términos en inglés y 57 nuevos en español (España). SERPs de google.com (hl=en, gl=us, pws=0) y AI Mode/AI Overview el 14/09/2026. Search Console: 28 días e informe de indexación. Semrush free requería login y no se completó; Ahrefs free sigue detrás de captcha.
+
+### Cifras exactas (Semrush free, 14/09, base US)
+
+Solo dieron para dos términos antes de agotar los 10 créditos diarios (el intento de análisis en bloque consumió el resto):
+
+| Keyword | US | Global | KD | CPC | Intención |
+|---|---|---|---|---|---|
+| pixieset alternative | **140/mes** | 520 (US 140, AU/BE/BR/CA/DE 20 c/u) | **9 % «very easy»** | $3,16 | Informacional |
+| videographer software | **50/mes** | 480 (**DE 260**, US 50, IN 30, PK 30, CH 20, FR 20) | **72 % «hard»** | $2,84 | Comercial |
+
+Dos correcciones a lo de arriba:
+
+1. [Seguro] **«pixieset alternative» es la mejor keyword en inglés con diferencia**: 140/mes en US, dificultad 9 % (Semrush: «puedes posicionar sin backlinks»). Confirma lo que mostraba la SERP (Framebird, SendPhoto, VolleyDrive posicionan con dominios débiles). Página nº 1 del inglés, sin discusión.
+2. [Seguro] **«videographer software» no es el ancla que decía el rango de Keyword Planner** (1 mil – 10 mil incluía variantes): son 50/mes en US, dificultad 72 %, y más de la mitad del volumen global está en Alemania. Se mantiene como título de `/en/videographers/` porque es la palabra correcta, no porque traiga tráfico. Y es una pista: **el mercado alemán busca esto más que el americano** — coherente con que Exportlab sea alemán. Si algún día hay tercer idioma, es alemán, no francés.
+
+[Probable] Aplicando la misma corrección a los rangos de Keyword Planner: las cifras reales suelen estar en el tercio bajo del rango. «client gallery for photographers» estará más cerca de 100–200 que de 1.000.
