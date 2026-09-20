@@ -640,18 +640,49 @@ seguridad.
 
 <h2>9. Permisos de la Extensión</h2>
 <p>
-La Extensión solicita únicamente los permisos necesarios para acceder a las páginas de
-Pic-Time seleccionadas por el usuario y realizar las operaciones necesarias para
-transferir el contenido a Positiva.
+La Extensión declara en su manifiesto únicamente los permisos necesarios para ejecutar la
+migración. Estos son, con la finalidad concreta de cada uno:
+</p>
+<div class="tabla-scroll"><table><thead><tr><th>Permiso</th><th>Para qué se utiliza</th></tr></thead><tbody>
+<tr><td><code>storage</code></td><td>Guardar temporalmente el estado técnico de la migración descrito en el apartado 2.3, mediante <code>chrome.storage.session</code>. No se almacenan en él datos personales ni credenciales.</td></tr>
+<tr><td><code>downloads</code></td><td>Interceptar el archivo ZIP de alta resolución que genera Pic-Time para transmitirlo directamente a la cuenta de Positiva del usuario, en lugar de escribir varios gigabytes en su disco.</td></tr>
+</tbody></table></div>
+<p>
+El permiso <code>downloads</code> se aplica de forma acotada: solo actúa sobre descargas
+que son un archivo <code>.zip</code> procedente de los dominios de Pic-Time, únicamente
+durante los treinta minutos siguientes a que el usuario inicie una migración, y sobre una
+sola descarga por cada migración iniciada. La descarga se pausa y solo se cancela cuando
+la Extensión ha confirmado que puede leer ese archivo; si no puede, la descarga se reanuda
+y el archivo se guarda en la carpeta de descargas del usuario con normalidad. Cualquier
+otra descarga del navegador queda fuera del alcance de la Extensión.
 </p>
 <p>
-Estos permisos se utilizan exclusivamente para ejecutar la función de migración descrita
-en esta política.
+La Extensión declara además los siguientes accesos a sitios web
+(<em>host permissions</em>), imprescindibles para leer el origen y escribir en el destino:
+</p>
+<div class="tabla-scroll"><table><thead><tr><th>Dominio</th><th>Para qué se utiliza</th></tr></thead><tbody>
+<tr><td><code>*.pic-time.com</code></td><td>Leer, en el navegador del usuario, las galerías de su propia cuenta de Pic-Time que este selecciona, y obtener el archivo que Pic-Time genera.</td></tr>
+<tr><td><code>app.positiva.studio</code></td><td>Leer la sesión que el usuario ya tiene abierta en el panel de Positiva, para autenticar las subidas sin pedirle credenciales adicionales (apartado 2.2).</td></tr>
+<tr><td><code>gallery-upload-production.positiva-infra.workers.dev</code></td><td>Servicio de subida de Positiva, al que se transmiten los archivos.</td></tr>
+<tr><td><code>xwmiiwmwwoatuocvmbjz.supabase.co</code></td><td>Infraestructura de base de datos y autenticación de Positiva: crear la galería y los momentos de destino y renovar la sesión del usuario.</td></tr>
+<tr><td><code>*.r2.cloudflarestorage.com</code></td><td>Almacenamiento de objetos de Positiva, destino final de los archivos migrados.</td></tr>
+</tbody></table></div>
+<p>
+La Extensión declara un único permiso opcional, <code>*.azurefd.net</code>, que se utiliza
+exclusivamente para descargar el archivo de alta resolución cuando Pic-Time lo sirve desde
+esa red de distribución. Ese permiso no se concede al instalar la Extensión: se solicita en
+el momento en que el usuario inicia esa acción concreta y puede denegarse, en cuyo caso
+únicamente deja de estar disponible esa vía de importación.
 </p>
 <p>
-La Extensión no utiliza dichos permisos para realizar un seguimiento general de la
-navegación del usuario ni para recopilar información sobre páginas o servicios que no
-sean necesarios para la migración.
+Estos permisos se utilizan exclusivamente para ejecutar la función de migración descrita en
+esta política.
+</p>
+<p>
+La Extensión no solicita acceso a la totalidad de los sitios web visitados por el usuario ni
+a su historial de navegación, y no utiliza los permisos declarados para realizar un
+seguimiento general de la navegación ni para recopilar información sobre páginas o servicios
+que no sean necesarios para la migración.
 </p>
 
 <h2>10. Derechos de las personas interesadas</h2>
