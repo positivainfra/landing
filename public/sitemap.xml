@@ -487,6 +487,12 @@
     <priority>0.2</priority>
   </url>
   <url>
+    <loc>https://positiva.studio/legal/extension/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://positiva.studio/terminos/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>yearly</changefreq>

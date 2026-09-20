@@ -40,6 +40,7 @@ const PAGES = [
   'public/aviso-legal/index.html',
   'public/privacidad/index.html',
   'public/terminos/index.html',
+  'public/legal/extension/index.html',
 ];
 
 // /notas/ (el blog) se estampa igual: índice y artículos.
