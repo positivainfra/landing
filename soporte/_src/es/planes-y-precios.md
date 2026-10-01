@@ -41,6 +41,7 @@ Si lo único que necesitas es más espacio, no hace falta subir de plan: el alma
 | Varias marcas por estudio | No | No | Sí |
 | Rondas de revisión | No | No | Sí |
 | Dominio propio | No | No | Sí |
+| Solicitudes de archivos: un enlace para que otros te suban material | No | No | Sí |
 
 :::aviso El dominio propio no es autoservicio
 El dominio propio está incluido en el plan Estudio, pero guardarlo en el panel no lo activa. La configuración se realiza de forma manual y tarda entre 24 y 48 horas desde que se solicita. Ten en cuenta ese margen si tienes una entrega con fecha comprometida. Consulta [Cómo usar tu propio dominio](/soporte/es/dominio-propio/).
