@@ -24,6 +24,7 @@
 <link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/new/chrome.css">
 <link rel="stylesheet" href="/new/positiva.css">
 <script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
 <script defer src="/js/analytics.js"></script>
@@ -35,7 +36,55 @@
      mientras la web nueva vive en pruebas; al pasarla a la raíz se
      cambia /new/ por / en este fichero y se vuelve a estampar.
      ════════════════════════════════════════════════════════════════ -->
-<a class="saltar" href="#contenido">Saltar al contenido</a>
+<link rel="stylesheet" href="/new/chrome.css">
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+document.documentElement.classList.add('js');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+
+/* Conversión de Google Ads: «registro» (clientes potenciales).
+   Se dispara al pinchar cualquier enlace a app.positiva.studio/registro (los de
+   login apuntan a la raíz de la app y quedan fuera).
+   Sin bloquear la navegación: transport beacon sobrevive al cambio de página. */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+    'event_callback': callback
+  });
+  return false;
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="https://app.positiva.studio/registro"]');
+  if (!a || a.classList.contains('nav-login') || a.hasAttribute('data-no-conv')) return;
+  try {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+      'transport_type': 'beacon'
+    });
+  } catch (_) {}
+}, { passive: true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+<a class="saltar-n" href="#contenido">Saltar al contenido</a>
 <nav class="top" id="nav" aria-label="Principal"><div class="wrap inner">
   <a href="/new/" class="logo" aria-label="Positiva, inicio"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
   <div class="links">
@@ -111,7 +160,7 @@
   <span class="eyebrow r">Reserva una demo</span>
   <h2 class="h-xl r d1">Esos cinco minutos, <em class="a">bien hechos.</em></h2>
   <p class="lede r d2">Positiva se cuenta mejor en directo. Reserva una demo y te la enseño sobre tu propio flujo de trabajo, sin compromiso. Y si prefieres verla por tu cuenta, <a href="https://app.positiva.studio/registro" data-ev="register_click">regístrate y entra hoy mismo</a>.</p>
-  <form class="demo" id="wl" novalidate>
+  <form class="demo" id="wl" data-demo novalidate>
     <input type="email" name="email" id="wl-email" placeholder="nombre@tuestudio.com" required aria-label="Tu email" autocomplete="email">
     <button type="submit" class="btn">Reserva una demo</button>
   </form>
@@ -213,16 +262,16 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
       </div>
       <div>
         <h3>Recursos</h3>
-        <a href="/soporte/es/">Soporte</a>
-        <a href="/novedades/">Novedades</a>
-        <a href="/notas/">Blog</a>
+        <a href="/new/soporte/es/">Soporte</a>
+        <a href="/new/novedades/">Novedades</a>
+        <a href="/new/notas/">Blog</a>
         <a href="/new/sobre-nosotros/">Sobre nosotros</a>
         <a href="https://app.positiva.studio" data-no-conv>Accede a tu panel</a>
         <a href="https://app.positiva.studio/registro">Empieza gratis</a>
         <a href="mailto:hola@positiva.studio">Contacto</a>
-        <a href="/aviso-legal/">Aviso legal</a>
-        <a href="/privacidad/">Privacidad</a>
-        <a href="/terminos/">Términos</a>
+        <a href="/new/aviso-legal/">Aviso legal</a>
+        <a href="/new/privacidad/">Privacidad</a>
+        <a href="/new/terminos/">Términos</a>
       </div>
     </div>
     <div class="footer-word">

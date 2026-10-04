@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo llevar las favoritas de tu cliente a Lightroom Classic · Soporte de Positiva</title>
+<!-- Web nueva en pruebas: NO indexar -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Instalación y uso del plugin de Positiva para Lightroom Classic, que convierte la selección de tu cliente en una colección de tu catálogo.">
+<meta property="og:title" content="Cómo llevar las favoritas de tu cliente a Lightroom Classic · Soporte de Positiva">
+<meta property="og:description" content="Instalación y uso del plugin de Positiva para Lightroom Classic, que convierte la selección de tu cliente en una colección de tu catálogo.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://positiva.studio/soporte/es/importar-favoritas-en-lightroom/">
+<meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#F1F0EC">
+<link rel="canonical" href="https://positiva.studio/soporte/es/importar-favoritas-en-lightroom/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/soporte/soporte.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Cómo llevar las favoritas de tu cliente a Lightroom Classic","description":"Instalación y uso del plugin de Positiva para Lightroom Classic, que convierte la selección de tu cliente en una colección de tu catálogo.","inLanguage":"es","dateModified":"31 de agosto de 2026","publisher":{"@type":"Organization","name":"Positiva","url":"https://positiva.studio"},"mainEntityOfPage":"https://positiva.studio/soporte/es/importar-favoritas-en-lightroom/"}</script>
+<link rel="stylesheet" href="/new/docs.css">
+</head>
+<body class="pagina-articulo">
+
+<!-- pv:nav -->
+<!-- ════════════════════════════════════════════════════════════════
+     NAV DE LA WEB NUEVA · fuente única: partials/new-nav.html
+     Edita AQUÍ y ejecuta `npm run stamp`. Los enlaces llevan /new/
+     mientras la web nueva vive en pruebas; al pasarla a la raíz se
+     cambia /new/ por / en este fichero y se vuelve a estampar.
+     ════════════════════════════════════════════════════════════════ -->
+<link rel="stylesheet" href="/new/chrome.css">
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+document.documentElement.classList.add('js');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+
+/* Conversión de Google Ads: «registro» (clientes potenciales).
+   Se dispara al pinchar cualquier enlace a app.positiva.studio/registro (los de
+   login apuntan a la raíz de la app y quedan fuera).
+   Sin bloquear la navegación: transport beacon sobrevive al cambio de página. */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+    'event_callback': callback
+  });
+  return false;
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="https://app.positiva.studio/registro"]');
+  if (!a || a.classList.contains('nav-login') || a.hasAttribute('data-no-conv')) return;
+  try {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+      'transport_type': 'beacon'
+    });
+  } catch (_) {}
+}, { passive: true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+<a class="saltar-n" href="#contenido">Saltar al contenido</a>
+<nav class="top" id="nav" aria-label="Principal"><div class="wrap inner">
+  <a href="/new/" class="logo" aria-label="Positiva, inicio"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
+  <div class="links">
+    <a href="/new/galerias/">Entrega</a>
+    <a href="/new/revision-video/">Revisión</a>
+    <a href="/new/archivos/">Archivos</a>
+    <a href="/new/portfolio/">Portfolio</a>
+    <a href="/new/precios/">Precios</a>
+    <a href="/new/notas/">Blog</a>
+  </div>
+  <div class="acc">
+    <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar</a>
+    <a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click" data-ev-place="nav">Empieza gratis</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Abrir menú"><span></span></button>
+  </div>
+</div></nav>
+<div class="menu-m" id="menu-m" hidden>
+  <a href="/new/galerias/">Entrega</a>
+  <a href="/new/revision-video/">Revisión de vídeo</a>
+  <a href="/new/revision-foto/">Revisión de fotos</a>
+  <a href="/new/archivos/">Archivos</a>
+  <a href="/new/portfolio/">Portfolio</a>
+  <a href="/new/precios/">Precios</a>
+  <span class="sub">Casos de uso</span>
+  <a class="sm" href="/new/freelance/">Freelance</a>
+  <a class="sm" href="/new/bodas/">Bodas</a>
+  <a class="sm" href="/new/productoras/">Productoras de vídeo</a>
+  <span class="sub">Recursos</span>
+  <a class="sm" href="/new/notas/">Blog</a>
+  <a class="sm" href="/new/soporte/es/">Soporte</a>
+  <a class="sm" href="/new/sobre-nosotros/">Sobre nosotros</a>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click" data-ev-place="menu">Empieza gratis</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar en tu panel</a></div>
+</div>
+<!-- /pv:nav -->
+
+<main id="contenido">
+
+<div class="wrap doc">
+  <aside class="rail">
+    <a class="rail-volver" href="/new/soporte/es/"><span aria-hidden="true">←</span> Todo el soporte</a>
+    <form class="busca busca-mini" role="search" data-busca>
+  <label class="sr" for="q">Buscar en el soporte</label>
+  <div class="busca-campo">
+    <svg class="busca-lupa" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.8 12.8 17 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <input id="q" type="search" role="combobox" aria-expanded="false" aria-controls="busca-panel" aria-autocomplete="list"
+           placeholder="Buscar…" autocomplete="off" spellcheck="false">
+    <kbd class="busca-tecla" aria-hidden="true">/</kbd>
+  </div>
+  <div class="busca-panel" id="busca-panel" hidden></div>
+</form>
+    <div class="rail-seccion">
+      <p class="eyebrow"><span class="idx">05</span> Revisión y comentarios</p>
+      <ul class="rail-lista"><li><a href="/new/soporte/es/como-funciona-la-revision/">Qué es una galería de revisión y cómo funciona</a></li><li><a href="/new/soporte/es/comentarios-en-el-panel/">Cómo leer y responder los comentarios de tu cliente</a></li><li><a href="/new/soporte/es/quien-ve-los-comentarios/">Revisión colaborativa e individual: quién ve cada comentario</a></li><li><a href="/new/soporte/es/rondas-de-revision/">Las rondas de revisión</a></li><li><a href="/new/soporte/es/marcar-favoritas/">Cómo marca favoritas tu cliente</a></li><li><a href="/new/soporte/es/favoritas-del-cliente/">Las favoritas de tu cliente y cómo exportarlas</a></li><li><span aria-current="page">Cómo llevar las favoritas de tu cliente a Lightroom Classic</span></li><li><a href="/new/soporte/es/etiquetar-favoritas-en-finder/">Cómo etiquetar en Finder las favoritas de tu cliente</a></li><li><a href="/new/soporte/es/exportar-marcadores-video/">Cómo exportar comentarios de vídeo a DaVinci Resolve (EDL) y Final Cut Pro (FCPXML)</a></li></ul>
+    </div>
+  </aside>
+
+  <article class="art">
+    <nav class="miga" aria-label="Migas de pan">
+      <a href="/new/soporte/es/">Soporte</a> <span aria-hidden="true">·</span>
+      <a href="/new/soporte/es/#revision">Revisión y comentarios</a>
+    </nav>
+    
+    <h1>Cómo llevar las favoritas de tu cliente a Lightroom Classic</h1>
+    <p class="lede">Instalación y uso del plugin de Positiva para Lightroom Classic, que convierte la selección de tu cliente en una colección de tu catálogo.</p>
+    
+    <nav class="sumario" aria-label="En esta página"><b>En esta página</b><ol><li><a href="#antes-de-empezar">Antes de empezar</a></li><li><a href="#donde-se-hace">Dónde se hace</a></li><li><a href="#instalacion-una-sola-vez">Instalación, una sola vez</a></li><li><a href="#cada-vez-que-quieras-importar-una-seleccion">Cada vez que quieras importar una selección</a></li><li><a href="#resultado">Resultado</a></li><li><a href="#notas-de-uso">Notas de uso</a></li><li><a href="#problemas-frecuentes">Problemas frecuentes</a></li><li><a href="#si-el-problema-continua">Si el problema continúa</a></li></ol></nav>
+    <div class="prosa">
+<p>El plugin de Positiva para Lightroom Classic lee la lista de favoritas que exportas desde el panel y crea con ella <strong>una colección</strong> en tu catálogo. A partir de ahí trabajas con la selección de tu cliente como con cualquier otra colección, sin comparar nombres de archivo a mano.</p>
+<p>Es la vía recomendada si editas en Lightroom Classic. La instalación se hace una sola vez, no pasa por ninguna pantalla de seguridad del sistema operativo y no modifica ningún archivo de tu disco.</p>
+<h2 id="antes-de-empezar">Antes de empezar</h2>
+<ul><li><strong>Lightroom Classic.</strong> El Lightroom «de nube» no admite plugins y no puede usar esto.</li><li><strong>Los originales ya importados en tu catálogo.</strong> El plugin no importa fotografías desde el disco: busca entre las que ya tienes en el catálogo.</li><li><strong>Los nombres de archivo intactos, extensión incluida.</strong> Es la condición que más problemas da; está explicada en el apartado siguiente.</li></ul>
+<aside class="nota nota-aviso"><b>El nombre tiene que coincidir con la extensión</b><p>El plugin compara el nombre completo del archivo, extensión incluida. Si subiste a Positiva <code>DSC_0042.jpg</code> y en tu catálogo de Lightroom tienes el archivo original <code>DSC_0042.NEF</code>, <strong>el plugin no lo encuentra</strong>: ese nombre aparecerá en la lista de no encontrados y la colección saldrá vacía o incompleta.</p>
+<p>Para que funcione, en el catálogo tienen que estar las mismas piezas que subiste, con el mismo nombre y la misma extensión. Si tu flujo consiste en revelar en RAW y subir JPEG exportados, importa también esos JPEG al catálogo, o utiliza en su lugar <a href="/new/soporte/es/etiquetar-favoritas-en-finder/">el script de etiquetas del Finder</a>, que trabaja sobre la carpeta de archivos que tú le indiques.</p></aside>
+<h2 id="donde-se-hace">Dónde se hace</h2>
+<p>Panel → <strong>Galerías</strong> → la galería → paso <strong>Favoritas</strong> → sección <strong>Exportar selección</strong>.</p>
+<h2 id="instalacion-una-sola-vez">Instalación, una sola vez</h2>
+<h3 id="1-descarga-el-plugin">1. Descarga el plugin</h3>
+<p>Pulsa <strong>«Plugin de Lightroom (.zip)»</strong>. Se descarga el archivo <code>positiva-plugin-lightroom.zip</code>.</p>
+<aside class="nota nota-info"><b>Son dos archivos .zip distintos</b><p>El paso <strong>Favoritas</strong> ofrece dos descargas con extensión <code>.zip</code> y no son lo mismo. <code>positiva-plugin-lightroom.zip</code> es <strong>el plugin</strong>, siempre el mismo y sin datos de ninguna galería. <code>‹nombre-de-la-galería›-seleccion.zip</code> es <strong>el script de Finder</strong>, con la lista de esa galería concreta dentro.</p></aside>
+<h3 id="2-descomprimelo-y-guarda-la-carpeta-en-un-sitio-estable">2. Descomprímelo y guarda la carpeta en un sitio estable</h3>
+<p>Del <code>.zip</code> sale una carpeta llamada <strong><code>positiva.lrplugin</code></strong>. Guárdala donde vaya a quedarse: <strong>Lightroom no la copia, la usa desde donde esté</strong>. Si la dejas en Descargas y algún día vacías esa carpeta, el plugin deja de funcionar.</p>
+<p>Un sitio razonable en macOS es <code>~/Library/Application Support/Adobe/Lightroom/</code>. Cualquier carpeta permanente vale.</p>
+<h3 id="3-anadela-en-lightroom">3. Añádela en Lightroom</h3>
+<p>En Lightroom Classic: <strong>Archivo → Gestor de plugins → Añadir</strong>, y selecciona la carpeta <code>positiva.lrplugin</code>. El plugin aparece en la lista con el nombre <strong>Positiva</strong>.</p>
+<h2 id="cada-vez-que-quieras-importar-una-seleccion">Cada vez que quieras importar una selección</h2>
+<h3 id="1-exporta-la-lista-desde-el-panel">1. Exporta la lista desde el panel</h3>
+<p>En el paso <strong>Favoritas</strong>, pulsa <strong>«Nombres (.txt)»</strong> o <strong>«Hoja de cálculo (.csv)»</strong>. El plugin acepta los dos y el resultado es idéntico: de la hoja de cálculo solo lee la primera columna, la del nombre de archivo.</p>
+<h3 id="2-abrela-desde-lightroom">2. Ábrela desde Lightroom</h3>
+<p><strong>Biblioteca → Complementos → «Importar selección de Positiva…»</strong>. Se abre un cuadro de diálogo titulado <strong>«Selección de Positiva»</strong> que solo muestra archivos <code>.txt</code> y <code>.csv</code>. Elige el que acabas de descargar y pulsa <strong>«Importar»</strong>.</p>
+<h3 id="3-espera-al-recuento">3. Espera al recuento</h3>
+<p>El plugin recorre <strong>todo tu catálogo</strong> comparando nombres. Mientras lo hace muestra la barra <strong>«Positiva: buscando N fotos en el catálogo…»</strong>, que puedes cancelar. El tiempo depende del tamaño del catálogo, no de lo larga que sea la selección.</p>
+<h3 id="4-decide-si-ademas-pones-la-bandera">4. Decide si además pones la bandera</h3>
+<p>Al terminar aparece el resumen:</p>
+<blockquote><p>Colección «Positiva &gt; ‹nombre›» lista: 42 fotos añadidas (42 de 42 nombres de la lista).</p>
+<p>¿Quieres marcarlas también con la bandera de seleccionada?</p></blockquote>
+<p>Con <strong>«Sí, poner bandera»</strong> el plugin marca además cada fotografía con la bandera de seleccionada de Lightroom. Con <strong>«No, solo la colección»</strong> deja el catálogo como estaba salvo por la colección.</p>
+<h2 id="resultado">Resultado</h2>
+<p>En el panel de colecciones aparece un conjunto llamado <strong>Positiva</strong> y, dentro, una colección con <strong>el nombre del archivo que has abierto</strong>, sin su extensión. Como el panel exporta con el nombre de la galería, queda algo como <code>Positiva &gt; boda-ana-y-luis-seleccion</code>.</p>
+<p>Es una colección normal, no una colección inteligente: no se actualiza sola.</p>
+<aside class="nota nota-truco"><b>El nombre de la colección lo decide el nombre del archivo</b><p>No hay ningún campo para escribirlo. Si quieres que la colección se llame de otra manera, renombra el <code>.txt</code> antes de abrirlo con el plugin.</p></aside>
+<h2 id="notas-de-uso">Notas de uso</h2>
+<h3 id="que-escribe-y-que-no">Qué escribe y qué no</h3>
+<p>El plugin crea la colección y, si lo aceptas, pone la bandera de seleccionada. <strong>No pone estrellas ni etiquetas de color</strong>, y <strong>no toca ningún archivo de tu disco</strong>: todo lo que hace vive dentro del catálogo.</p>
+<p>De la hoja de cálculo ignora la columna con el número de favoritos. Para el plugin, el <code>.txt</code> y el <code>.csv</code> son equivalentes.</p>
+<h3 id="los-nombres-que-no-encuentra">Los nombres que no encuentra</h3>
+<p>El resumen los lista debajo, ordenados alfabéticamente y con el recuento. Si son más de quince, muestra los quince primeros y una línea con cuántos quedan.</p>
+<p>Si no encuentra ninguno, no llega a crear nada y avisa:</p>
+<blockquote><p>Ninguna de las N fotos de la lista está en este catálogo.</p>
+<p>La búsqueda es por nombre de archivo: comprueba que has importado los originales (con su nombre original) en este catálogo.</p></blockquote>
+<h3 id="un-mismo-nombre-en-varias-carpetas">Un mismo nombre en varias carpetas</h3>
+<p>El plugin busca en el catálogo entero y no se puede acotar a una carpeta ni a una selección. Si el mismo nombre existe en varios sitios, <strong>añade todas las coincidencias</strong> y lo dice en el resumen: «Algún nombre existe en más de una carpeta del catálogo: se han añadido todas las coincidencias.»</p>
+<h3 id="si-lo-ejecutas-dos-veces">Si lo ejecutas dos veces</h3>
+<p>Con el mismo archivo, reutiliza la colección existente y vuelve a añadir las fotografías. <strong>La colección acumula: no se sincroniza.</strong> Una fotografía que tu cliente haya desmarcado después sigue dentro, y la bandera tampoco se retira sola.</p>
+<p>Ten en cuenta además que si descargas la lista por segunda vez, el sistema suele guardarla como <code>‹nombre› (1).txt</code>. Ese nombre distinto crea <strong>una colección nueva</strong> dentro del mismo conjunto Positiva, en lugar de reutilizar la anterior.</p>
+<h3 id="los-videos-de-la-seleccion">Los vídeos de la selección</h3>
+<p>Si tu cliente ha marcado vídeos, sus nombres viajan también en la exportación y aparecerán entre los no encontrados si no están en tu catálogo de Lightroom. No es un fallo.</p>
+<h3 id="las-favoritas-sin-nombre-de-archivo-guardado">Las favoritas sin nombre de archivo guardado</h3>
+<p>El paso <strong>Favoritas</strong> avisa cuando hay marcas de las que no se conserva el nombre del archivo original. Esas no entran en ninguna exportación, así que el recuento del plugin puede no coincidir con el número de favoritas del panel. Consulta <a href="/new/soporte/es/favoritas-del-cliente/">Las favoritas de tu cliente y cómo exportarlas</a>.</p>
+<h2 id="problemas-frecuentes">Problemas frecuentes</h2>
+<ul><li><strong>«Ninguna de las N fotos de la lista está en este catálogo.»</strong> Casi siempre es la extensión. Comprueba que las piezas del catálogo se llaman exactamente igual que las que subiste a Positiva, extensión incluida.</li></ul>
+<ul><li><strong>«El archivo está vacío o no se pudo leer.»</strong> El archivo elegido no tiene contenido legible. Vuelve a exportarlo desde el paso <strong>Favoritas</strong>.</li></ul>
+<ul><li><strong>«No se encontró ningún nombre de archivo en la lista.»</strong> El archivo se ha leído pero no contiene nombres. Comprueba que has elegido el <code>.txt</code> o el <code>.csv</code> de la selección y no otro archivo.</li></ul>
+<ul><li><strong>«Error inesperado del plugin: …»</strong> La operación no ha llegado a completarse. Vuelve a intentarlo; si se repite, anota el texto completo del mensaje antes de escribir a soporte.</li></ul>
+<ul><li><strong>La entrada del menú no aparece.</strong> Comprueba en <strong>Archivo → Gestor de plugins</strong> que Positiva figura en la lista y está habilitado. Si la carpeta <code>positiva.lrplugin</code> se ha movido o se ha borrado, Lightroom la marca como no encontrada.</li></ul>
+<ul><li><strong>La colección aparece con menos fotografías de las que marcó el cliente.</strong> Compara el recuento del resumen con el del paso <strong>Favoritas</strong> y revisa la lista de no encontrados: ahí está la diferencia.</li></ul>
+<aside class="nota nota-truco"><b>Salir del paso sin instalar nada</b><p>Si necesitas la selección una sola vez, abre el <code>.txt</code> y pon todos los nombres en una línea separados por espacios. En Lightroom Classic, con la barra de filtros abierta (tecla <code>\</code>), ve a <strong>Texto → Nombre de archivo → Contiene</strong> y pega la línea: aparecen todas las de la lista. Selecciónalas y arrástralas a una colección.</p>
+<p>Tiene un límite práctico: con selecciones largas el campo se atasca, así que hay que pegar por tandas de cincuenta o cien nombres. El plugin no tiene ese límite.</p></aside>
+<h2 id="si-el-problema-continua">Si el problema continúa</h2>
+<p>Reúne estos datos antes de escribir a soporte:</p>
+<ul><li>El nombre de la galería y el número de favoritas que muestra el paso <strong>Favoritas</strong>.</li><li>Tu versión de Lightroom Classic y tu sistema operativo.</li><li>El texto completo del resumen o del error que muestra el plugin.</li><li>Un ejemplo de nombre de archivo tal y como aparece en el <code>.txt</code> y tal y como aparece en tu catálogo.</li></ul>
+<p>Escribe a <code>hola@positiva.studio</code>. Respondemos en un plazo de 24 a 48 horas.</p>
+    </div>
+    <p class="sello">Revisado contra la versión en producción el 31 de agosto de 2026.</p>
+    <section class="ayuda">
+      <h2 id="sigue-sin-resolverse">¿Sigue sin resolverse?</h2>
+      <p>Si este artículo no responde a tu caso, escríbenos. Respondemos todas las consultas en un plazo de 24 a 48 horas.</p>
+      <p><a class="btn btn-primario" href="mailto:hola@positiva.studio?subject=Soporte%20%C2%B7%20C%C3%B3mo%20llevar%20las%20favoritas%20de%20tu%20cliente%20a%20Lightroom%20Classic">Escribir a hola@positiva.studio</a></p>
+    </section>
+    <section class="relacionados">
+      <h2 id="seguir-leyendo">Seguir leyendo</h2>
+      <ul><li><a href="/new/soporte/es/favoritas-del-cliente/"><b>Las favoritas de tu cliente y cómo exportarlas</b><span>El paso Favoritas reúne la selección de tu cliente y la exporta a tu ordenador: lista de nombres, hoja de cálculo, etiquetas de Finder o colección de Lightroom.</span></a></li><li><a href="/new/soporte/es/etiquetar-favoritas-en-finder/"><b>Cómo etiquetar en Finder las favoritas de tu cliente</b><span>Recorrido completo del script de Finder, con las pantallas de seguridad que macOS muestra la primera vez y cómo superarlas paso a paso.</span></a></li><li><a href="/new/soporte/es/como-funciona-la-revision/"><b>Qué es una galería de revisión y cómo funciona</b><span>Una galería de revisión permite que tu cliente comente el material antes de la entrega final, y tú lees y respondes esos comentarios desde tu panel.</span></a></li><li><a href="/new/soporte/es/comentarios-en-el-panel/"><b>Cómo leer y responder los comentarios de tu cliente</b><span>El paso Comentarios reúne todo lo que ha escrito tu cliente en una galería de revisión, y es donde respondes, resuelves y eliminas cada hilo.</span></a></li></ul>
+    </section>
+  </article>
+</div>
+</main>
+
+<!-- pv:footer -->
+<!-- ════════════════════════════════════════════════════════════════
+     PIE COMÚN · fuente única: partials/chrome-footer.html
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
+     las páginas. Sirve de mapa del sitio: cada página pública real
+     debe estar enlazada aquí (SEO + LLMs leen esto).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="footer">
+footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
+.footcols{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pv-s6);
+  margin-bottom:var(--pv-s8);
+}
+.footcols h3{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-tinta-60);margin:0 0 var(--pv-s3);
+}
+.footcols a{
+  display:block;font-family:var(--pv-sans);font-size:14px;color:var(--pv-tinta-60);
+  text-decoration:none;padding:4px 0;transition:color .18s;
+}
+.footcols a:hover{color:var(--pv-tinta)}
+.footer-word{
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(15px,3.9vw,58px);line-height:1;color:var(--pv-tinta);
+  white-space:nowrap;
+}
+.footer-word svg{height:.92em;width:auto;flex:none}
+.footer-word span{color:var(--pv-ambar)}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
+.footer-meta{
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
+  font-size:14px;color:var(--pv-tinta-60);
+}
+.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
+.footer-meta a:hover{color:var(--pv-tinta)}
+@media(max-width:760px){
+  .footcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--pv-s5) var(--pv-s4)}
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <h3>Galerías para clientes</h3>
+        <a href="/new/galerias/">Entrega tu trabajo</a>
+        <a href="/new/revision-video/">Revisión de vídeo</a>
+        <a href="/new/revision-foto/">Revisión de fotografías</a>
+        <a href="/new/portfolio/">Portfolio público</a>
+        <a href="/new/precios/">Precios</a>
+        <a href="/new/#faq">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <h3>Casos de uso</h3>
+        <a href="/new/freelance/">Para profesionales freelance</a>
+        <a href="/new/bodas/">Para fotógrafos y videógrafos de bodas</a>
+        <a href="/new/productoras/">Para productoras de vídeo</a>
+      </div>
+      <div>
+        <h3>Comparativas</h3>
+        <a href="/new/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time · Pixieset</a>
+        <a href="/new/positiva-vs-arcadina/">Positiva vs Arcadina</a>
+        <a href="/new/positiva-vs-dropbox/">Positiva vs Dropbox</a>
+        <a href="/new/positiva-vs-google-drive/">Positiva vs Google Drive</a>
+        <a href="/new/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>
+      </div>
+      <div>
+        <h3>Recursos</h3>
+        <a href="/new/soporte/es/">Soporte</a>
+        <a href="/new/novedades/">Novedades</a>
+        <a href="/new/notas/">Blog</a>
+        <a href="/new/sobre-nosotros/">Sobre nosotros</a>
+        <a href="https://app.positiva.studio" data-no-conv>Accede a tu panel</a>
+        <a href="https://app.positiva.studio/registro">Empieza gratis</a>
+        <a href="mailto:hola@positiva.studio">Contacto</a>
+        <a href="/new/aviso-legal/">Aviso legal</a>
+        <a href="/new/privacidad/">Privacidad</a>
+        <a href="/new/terminos/">Términos</a>
+      </div>
+    </div>
+    <div class="footer-word">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
+    <p class="footer-entidad">Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.</p>
+    <div class="footer-meta">
+      <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Hecha en España · Se gestiona, se mejora y se factura desde Europa</span>
+      <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+    </div>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://positiva.studio/#org",
+      "name": "Positiva",
+      "url": "https://positiva.studio/",
+      "logo": "https://positiva.studio/assets/og.png",
+      "description": "Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.",
+      "email": "hola@positiva.studio",
+      "foundingLocation": { "@type": "Place", "name": "Valencia, España" },
+      "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
+      "areaServed": "ES",
+      "knowsLanguage": "es",
+      "sameAs": [
+        "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
+        "https://www.linkedin.com/company/positiva-studio/",
+        "https://instagram.com/positiva.studio_"
+      ]
+    }</script>
+  </div>
+</footer>
+
+<script>
+/* ── Vídeos del sitio: reproducción automática en bucle mientras están en
+   pantalla y pausa al salir — mismo comportamiento en móvil y escritorio.
+   Quedan fuera: la historia de la home (.hst), las tarjetas de la home
+   (.qcard) y el showcase (#reelvid), que tienen su propio control, los
+   vídeos con controles y los marcados con data-noauto. ── */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  const vids = Array.prototype.filter.call(
+    document.querySelectorAll('video[loop][muted]:not([controls]):not([data-noauto])'),
+    (v) => !v.closest('.hst') && !v.closest('.qcard') && v.id !== 'reelvid'
+  );
+  if (!vids.length) return;
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); }
+    else if (!v.paused) { v.pause(); }
+  }), { threshold: 0.25, rootMargin: '100px 0px' });
+  vids.forEach((v) => { v.muted = true; v.playsInline = true; io.observe(v); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
+})();
+</script>
+<!-- /pv:footer -->
+
+<script>
+/* La cabecera y el pie traen su propio JS desde los parciales (cápsula al
+   bajar, menú móvil y desplegables). Aquí solo va lo que es del soporte. */
+document.documentElement.classList.add('js');
+
+(() => {
+  /* Marca «Soporte» como sección activa en el menú común, sin tocar el parcial. */
+  for (const a of document.querySelectorAll('#nav .nav-links a, .menu a')) {
+    const href = a.getAttribute('href') || '';
+    if (href === '/soporte/' || href.startsWith('/soporte/')) a.setAttribute('aria-current', 'page');
+  }
+})();
+
+(() => {
+  /* ── Buscador ────────────────────────────────────────────────────────────
+   * Busca en el TEXTO COMPLETO de los artículos, no solo en los títulos: quien
+   * teclea «RAW» o «Cuarto oscuro» está buscando una frase que vive dentro de
+   * un artículo, no el nombre de ninguno.
+   *
+   * El índice (buscador.json) se descarga la primera vez que alguien toca el
+   * campo, no al cargar la página: quien viene a leer un artículo concreto no
+   * paga por una búsqueda que no va a hacer.
+   */
+  const form = document.querySelector('[data-busca]');
+  if (!form) return;
+
+  const campo = form.querySelector('input');
+  const panel = form.querySelector('.busca-panel');
+  const IDIOMA = document.documentElement.lang || 'es';
+
+  const limpia = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const escapaHtml = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  let indice = null;
+  let cargando = null;
+  let resultados = [];
+  let foco = -1;
+
+  const cargar = () => {
+    if (indice) return Promise.resolve(indice);
+    if (!cargando) {
+      cargando = fetch(`/soporte/${IDIOMA}/buscador.json`)
+        .then((r) => r.json())
+        .then((d) => {
+          indice = d.map((a) => ({ ...a, _t: limpia(a.titulo), _d: limpia(a.descripcion), _c: limpia(a.texto) }));
+          return indice;
+        })
+        .catch(() => { indice = []; return indice; });
+    }
+    return cargando;
+  };
+
+  // Todos los términos tienen que aparecer en algún sitio. El título pesa seis
+  // veces más que el cuerpo: buscar «momentos» tiene que devolver el artículo
+  // que se llama así, no los nueve que lo mencionan de pasada.
+  function buscar(q) {
+    const terminos = limpia(q).split(/\s+/).filter((t) => t.length > 1);
+    if (!terminos.length || !indice) return [];
+    const salida = [];
+    for (const art of indice) {
+      let puntos = 0;
+      let todos = true;
+      for (const t of terminos) {
+        let p = 0;
+        if (art._t.includes(t)) p += art._t.startsWith(t) ? 16 : 12;
+        if (art._d.includes(t)) p += 5;
+        if (art._c.includes(t)) p += 2;
+        if (!p) { todos = false; break; }
+        puntos += p;
+      }
+      if (todos) salida.push({ art, puntos, termino: terminos[0] });
+    }
+    return salida.sort((a, b) => b.puntos - a.puntos).slice(0, 7);
+  }
+
+  // Un trozo del artículo alrededor de la primera aparición, con el término
+  // marcado. Sin esto, siete resultados con su descripción genérica obligan a
+  // abrirlos uno a uno para ver cuál era.
+  function fragmento(art, termino) {
+    const donde = art._c.indexOf(termino);
+    if (donde === -1) return escapaHtml(art.descripcion);
+    // Se recorta por palabra entera: un fragmento que empieza en «…egador no
+    // sabe» hace dudar de si la página está rota.
+    let desde = Math.max(0, donde - 60);
+    if (desde > 0) {
+      const espacio = art.texto.indexOf(' ', desde);
+      if (espacio !== -1 && espacio < donde) desde = espacio + 1;
+    }
+    let trozo = art.texto.slice(desde, desde + 190);
+    const corte = trozo.lastIndexOf(' ');
+    const cortado = desde + 190 < art.texto.length;
+    if (cortado && corte > 120) trozo = trozo.slice(0, corte);
+    const re = new RegExp(`(${termino.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return (desde > 0 ? '…' : '') + escapaHtml(trozo).replace(re, '<mark>$1</mark>') + (cortado ? '…' : '');
+  }
+
+  function pintar(q) {
+    if (!q.trim()) { cerrar(); return; }
+    resultados = buscar(q);
+    foco = -1;
+    if (!resultados.length) {
+      panel.innerHTML = `<p class="busca-nada">Ningún artículo coincide con <b>${escapaHtml(q)}</b>.
+        Escribe a <a href="mailto:hola@positiva.studio">hola@positiva.studio</a> indicando tu caso:
+        respondemos en un plazo de 24 a 48 horas.</p>`;
+    } else {
+      panel.innerHTML = `<ul role="listbox" aria-label="Resultados">${resultados.map((r, i) => `
+        <li role="option" id="res-${i}" aria-selected="false">
+          <a href="/soporte/${IDIOMA}/${r.art.slug}/">
+            <b>${escapaHtml(r.art.titulo)}</b>
+            <span class="busca-cat">${escapaHtml(r.art.categoria)}</span>
+            <span class="busca-frag">${fragmento(r.art, r.termino)}</span>
+          </a>
+        </li>`).join('')}</ul>`;
+    }
+    panel.hidden = false;
+    campo.setAttribute('aria-expanded', 'true');
+  }
+
+  function cerrar() {
+    panel.hidden = true;
+    panel.innerHTML = '';
+    campo.setAttribute('aria-expanded', 'false');
+    campo.removeAttribute('aria-activedescendant');
+    foco = -1;
+  }
+
+  function mover(paso) {
+    const items = [...panel.querySelectorAll('li')];
+    if (!items.length) return;
+    if (foco >= 0) items[foco].setAttribute('aria-selected', 'false');
+    foco = (foco + paso + items.length + 1) % (items.length + 1) - 1;
+    if (foco < 0) { campo.removeAttribute('aria-activedescendant'); return; }
+    items[foco].setAttribute('aria-selected', 'true');
+    items[foco].scrollIntoView({ block: 'nearest' });
+    campo.setAttribute('aria-activedescendant', `res-${foco}`);
+  }
+
+  campo.addEventListener('focus', cargar, { once: true });
+  campo.addEventListener('input', () => { cargar().then(() => pintar(campo.value)); });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const primero = panel.querySelector('a');
+    if (primero) primero.click();
+  });
+
+  campo.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); mover(1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); mover(-1); }
+    else if (e.key === 'Enter' && foco >= 0) { e.preventDefault(); panel.querySelectorAll('a')[foco].click(); }
+    else if (e.key === 'Escape') { cerrar(); campo.blur(); }
+  });
+
+  document.addEventListener('click', (e) => { if (!form.contains(e.target)) cerrar(); });
+
+  // «/» desde cualquier punto de la página lleva el cursor al buscador.
+  document.addEventListener('keydown', (e) => {
+    const editando = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable;
+    if (editando) return;
+    if (e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+      e.preventDefault();
+      // preventScroll + scrollIntoView propio: el foco a secas deja el campo
+      // justo debajo de la barra fija, medio tapado.
+      campo.focus({ preventScroll: true });
+      campo.select();
+      const caja = form.getBoundingClientRect();
+      if (caja.top < 110 || caja.bottom > window.innerHeight - 80) {
+        form.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+    }
+  });
+})();
+
+(() => {
+  /* ── Raíl del índice: marca la categoría que estás mirando ─────────────── */
+  const enlaces = [...document.querySelectorAll('.rail-cats a')];
+  if (!enlaces.length || !('IntersectionObserver' in window)) return;
+  const porId = new Map(enlaces.map((a) => [a.getAttribute('href').slice(1), a]));
+  const vistos = new Set();
+  const io = new IntersectionObserver((entradas) => {
+    for (const e of entradas) e.isIntersecting ? vistos.add(e.target.id) : vistos.delete(e.target.id);
+    const activo = enlaces.find((a) => vistos.has(a.getAttribute('href').slice(1)));
+    for (const a of enlaces) a.classList.toggle('activo', a === activo);
+  }, { rootMargin: '-96px 0px -70% 0px' });
+  for (const id of porId.keys()) {
+    const sec = document.getElementById(id);
+    if (sec) io.observe(sec);
+  }
+})();
+</script>
+
+<!-- Analítica · Umami autoalojado (mismo tracker que el resto de la web). -->
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script src="/new/positiva.js" defer></script>
+</body>
+</html>

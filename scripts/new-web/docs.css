@@ -1,0 +1,76 @@
+/* ══════════════════════════════════════════════════════════════════════
+   POSITIVA · capa de la web nueva para las páginas de contenido
+   (soporte, blog, novedades y legales). Se carga DESPUÉS de su hoja propia
+   (/soporte/soporte.css o el estilo de la página) y solo ajusta lo que las
+   separa del diseño nuevo: tokens, fondo, titulares, rótulos, botones,
+   tarjetas y el aire bajo el nav, que ahora ocupa sitio en vez de flotar.
+   La maquetación de cada familia (raíl, buscador, sumario, changelog…) se
+   queda como está.
+   Fuente: scripts/new-web/docs.css → public/new/docs.css (gen.py)
+   ══════════════════════════════════════════════════════════════════════ */
+
+:root{
+  --pv-papel:#F3F2EE; --pv-bandeja:#E8E7E1; --pv-linea:#DEDDD6; --pv-tinta-60:#5A5852; --pv-ambar-ink:#8F5F15;
+  --pv-r-panel:16px;
+  --barra:84px;           /* alto del nav pegajoso: raíles y anclas se colocan debajo */
+}
+body{background:var(--pv-papel)}
+::selection{background:var(--pv-ambar-luz);color:var(--pv-tinta)}
+
+/* ── Titulares: Playfair 400, como en el resto de la web nueva ────────── */
+h1,h2,h3,.eslogan{font-weight:400;letter-spacing:-.015em;text-wrap:balance}
+h1{font-size:clamp(40px,5.2vw,72px);line-height:1.02}
+.art h1{font-size:clamp(34px,4.2vw,56px);line-height:1.04}
+h1 em,h2 em,.eslogan em{color:var(--pv-ambar-ink)}
+.prosa h2{font-size:clamp(26px,2.6vw,34px);line-height:1.12}
+.prosa h3{font-weight:600}
+h1.kw{font-weight:500 !important}
+
+/* ── Rótulos: mono 12 px, ámbar oscuro, sin filete ───────────────────── */
+.eyebrow,.mes{font-size:12px;font-weight:400;letter-spacing:.16em;color:var(--pv-ambar-ink)}
+.eyebrow::after{display:none}
+.mes::after{opacity:.18}
+.eyebrow .idx{color:var(--pv-tinta-30)}
+.miga,.notas-fecha,.legal-fecha,.rail-volver,.sumario b,.nota b,.busca-cat,.marca-revisor,.aud,.tag,.nc-fecha,.sello,.log-meta time{font-weight:400}
+.miga{letter-spacing:.14em}
+
+/* ── Aire bajo el nav (antes flotaba encima del contenido) ────────────── */
+.portada{padding-top:clamp(56px,9vw,120px)}
+.doc,.notas-doc,.doc-legal{padding-top:clamp(40px,5vw,80px)}
+.phead{padding-top:clamp(56px,9vw,120px)}
+.notas-rail{top:calc(var(--barra) + 16px)}
+@media(max-width:1020px){.doc{padding-top:clamp(32px,5vw,56px)}}
+
+/* ── Botones: pastilla negra, como el resto ───────────────────────────── */
+.btn{border-radius:999px}
+.btn-primario,.capture form .btn,.banner-pv .bp-btn{background:var(--pv-tinta);border-color:var(--pv-tinta);color:#fff}
+.btn-primario:hover,.capture form .btn:hover,.banner-pv .bp-btn:hover{background:#000;color:#fff;transform:translateY(-2px)}
+.dark .btn-primario,.capture form .btn,.banner-pv .bp-btn{background:var(--pv-ambar);border-color:var(--pv-ambar);color:var(--pv-sala)}
+.capture form .btn{text-transform:none;letter-spacing:0;border-radius:999px}
+.banner-pv .bp-btn{font-family:var(--pv-sans);font-size:14px;font-weight:600;letter-spacing:0;text-transform:none}
+
+/* ── Tarjetas y paneles: radio 16 px y sombra suave al pasar ──────────── */
+.via,.ayuda,.nota,.tabla-scroll,.nota-card,.banner-pv,.banner-mini,.capture,.busca-panel,.captura img{border-radius:var(--pv-r-panel)}
+.nota-card{transition:box-shadow .6s cubic-bezier(.19,1,.22,1),transform .6s cubic-bezier(.19,1,.22,1)}
+.nota-card:hover{box-shadow:0 30px 60px -40px rgba(23,22,20,.5);transform:translateY(-4px)}
+.nota-card h2{font-weight:400}
+.ayuda{padding:clamp(28px,3.4vw,44px)}
+.ayuda h2,.relacionados h2{font-size:clamp(26px,2.4vw,32px)}
+.via-sala,.capture,.banner-pv,.dark{background:var(--pv-sala)}
+.busca-campo{border-radius:999px}
+.busca-mini .busca-campo{border-radius:999px}
+
+/* ── Changelog (novedades) ────────────────────────────────────────────── */
+.log{padding:clamp(28px,3vw,40px) 0}
+.log-body h3{font-size:clamp(22px,2.2vw,28px)}
+.tag{letter-spacing:.12em}
+
+/* ── Legales: columna de lectura cómoda ───────────────────────────────── */
+.doc-legal .art{max-width:760px}
+.doc-legal .prosa{font-size:17px}
+
+/* ── Enlaces del cuerpo con el subrayado ámbar de la web nueva ────────── */
+.prosa a{text-decoration-color:var(--pv-ambar);text-underline-offset:3px}
+
+/* rutas y URLs largas dentro del texto: que partan en móvil (en la web actual desbordan) */
+.prosa p code,.prosa li code{white-space:normal;overflow-wrap:anywhere}

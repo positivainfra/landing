@@ -75,7 +75,7 @@
     else{q.addEventListener('mouseenter',function(){v.play().catch(function(){})});q.addEventListener('mouseleave',function(){v.pause()})}});
 
   /* demo: mismo endpoint que la web actual (/api/waitlist → hola@positiva.studio) */
-  var wl=document.getElementById('wl');
+  var wl=document.querySelector('#wl[data-demo]');
   if(wl){wl.addEventListener('submit',async function(e){e.preventDefault();var form=e.target,email=form.email.value.trim(),msg=document.getElementById('msg');
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent='Ese email no parece válido. Revísalo.';msg.style.color='var(--graso)';return}
     var btn=form.querySelector('button');btn.disabled=true;

@@ -7,7 +7,7 @@ falta = set()
 for f in glob.glob(os.path.join(PUB, 'new', '**', 'index.html'), recursive=True):
     s = open(f).read()
     for u in re.findall(r'(?:href|src|poster)="(/[^"#?]*)', s):
-        if u.startswith('//'): continue
+        if u.startswith('//') or '${' in u: continue   # plantillas JS (buscador de soporte)
         p = os.path.join(PUB, u.lstrip('/'))
         if u.endswith('/'): p = os.path.join(p, 'index.html')
         if not os.path.exists(p) and not u.startswith('/api/') and u not in ('/soporte/', '/soporte'):

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad de la extensión de Chrome · Positiva</title>
+<!-- Web nueva en pruebas: NO indexar -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Cómo trata los datos la extensión «Positiva · Importar desde Pic-Time»: qué lee, qué transmite a tu cuenta, qué no hace y qué derechos tienes.">
+<meta property="og:title" content="Política de privacidad de la extensión de Chrome · Positiva">
+<meta property="og:description" content="Cómo trata los datos la extensión «Positiva · Importar desde Pic-Time»: qué lee, qué transmite a tu cuenta, qué no hace y qué derechos tienes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://positiva.studio/legal/extension/">
+<meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#F1F0EC">
+<link rel="canonical" href="https://positiva.studio/legal/extension/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/soporte/soporte.css">
+<style>.doc-legal{display:block;padding-top:clamp(110px,14vh,150px);padding-bottom:var(--pv-s8)}.doc-legal .art{max-width:820px;margin:0 auto}.legal-fecha{font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--pv-tinta-30);margin-top:var(--pv-s3)}</style>
+<link rel="stylesheet" href="/new/docs.css">
+</head>
+<body class="pagina-articulo">
+
+<!-- pv:nav -->
+<!-- ════════════════════════════════════════════════════════════════
+     NAV DE LA WEB NUEVA · fuente única: partials/new-nav.html
+     Edita AQUÍ y ejecuta `npm run stamp`. Los enlaces llevan /new/
+     mientras la web nueva vive en pruebas; al pasarla a la raíz se
+     cambia /new/ por / en este fichero y se vuelve a estampar.
+     ════════════════════════════════════════════════════════════════ -->
+<link rel="stylesheet" href="/new/chrome.css">
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+document.documentElement.classList.add('js');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+
+/* Conversión de Google Ads: «registro» (clientes potenciales).
+   Se dispara al pinchar cualquier enlace a app.positiva.studio/registro (los de
+   login apuntan a la raíz de la app y quedan fuera).
+   Sin bloquear la navegación: transport beacon sobrevive al cambio de página. */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+    'event_callback': callback
+  });
+  return false;
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="https://app.positiva.studio/registro"]');
+  if (!a || a.classList.contains('nav-login') || a.hasAttribute('data-no-conv')) return;
+  try {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+      'transport_type': 'beacon'
+    });
+  } catch (_) {}
+}, { passive: true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+<a class="saltar-n" href="#contenido">Saltar al contenido</a>
+<nav class="top" id="nav" aria-label="Principal"><div class="wrap inner">
+  <a href="/new/" class="logo" aria-label="Positiva, inicio"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
+  <div class="links">
+    <a href="/new/galerias/">Entrega</a>
+    <a href="/new/revision-video/">Revisión</a>
+    <a href="/new/archivos/">Archivos</a>
+    <a href="/new/portfolio/">Portfolio</a>
+    <a href="/new/precios/">Precios</a>
+    <a href="/new/notas/">Blog</a>
+  </div>
+  <div class="acc">
+    <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar</a>
+    <a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click" data-ev-place="nav">Empieza gratis</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Abrir menú"><span></span></button>
+  </div>
+</div></nav>
+<div class="menu-m" id="menu-m" hidden>
+  <a href="/new/galerias/">Entrega</a>
+  <a href="/new/revision-video/">Revisión de vídeo</a>
+  <a href="/new/revision-foto/">Revisión de fotos</a>
+  <a href="/new/archivos/">Archivos</a>
+  <a href="/new/portfolio/">Portfolio</a>
+  <a href="/new/precios/">Precios</a>
+  <span class="sub">Casos de uso</span>
+  <a class="sm" href="/new/freelance/">Freelance</a>
+  <a class="sm" href="/new/bodas/">Bodas</a>
+  <a class="sm" href="/new/productoras/">Productoras de vídeo</a>
+  <span class="sub">Recursos</span>
+  <a class="sm" href="/new/notas/">Blog</a>
+  <a class="sm" href="/new/soporte/es/">Soporte</a>
+  <a class="sm" href="/new/sobre-nosotros/">Sobre nosotros</a>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click" data-ev-place="menu">Empieza gratis</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar en tu panel</a></div>
+</div>
+<!-- /pv:nav -->
+
+<main id="contenido">
+<div class="wrap doc-legal">
+  <article class="art">
+    <p class="eyebrow">Extensión de navegador «Positiva · Importar desde Pic-Time»</p>
+    <h1>Política de privacidad</h1>
+    <p class="legal-fecha">Última actualización · 20/09/2026 · Versión 1.0</p>
+    <div class="prosa">
+<h2>Responsable del tratamiento</h2>
+<ul>
+<li><strong>Identidad:</strong> Rodrigo Marquez Rapela</li>
+<li><strong>NIF:</strong> 29195596V</li>
+<li><strong>Domicilio:</strong> Carrer dels Dofins 41 - 4, Valencia (España)</li>
+<li><strong>Correo de contacto:</strong> <a href="mailto:hola@positiva.studio">hola@positiva.studio</a></li>
+<li><strong>Canal de privacidad:</strong> <a href="mailto:privacidad@positiva.studio">privacidad@positiva.studio</a></li>
+</ul>
+<p>
+Esta política describe cómo trata los datos personales la extensión de navegador
+«Positiva · Importar desde Pic-Time» (en adelante, la «Extensión»), desarrollada para
+facilitar a los usuarios de Positiva la migración de sus propias galerías desde Pic-Time
+a su cuenta de Positiva.
+</p>
+<p>
+La Extensión se instala y ejecuta en el navegador del propio usuario y está diseñada
+para actuar exclusivamente sobre las cuentas de Pic-Time y Positiva que el propio
+usuario utiliza.
+</p>
+<p>
+Esta política se refiere únicamente al funcionamiento de la Extensión. El tratamiento de
+datos realizado posteriormente dentro de la plataforma Positiva se rige por la
+<a href="/new/privacidad/">Política de Privacidad de Positiva</a>, que debe leerse
+conjuntamente con esta política.
+</p>
+
+<h2>1. Objeto y ámbito</h2>
+<p>
+La Extensión tiene una única finalidad: permitir al usuario migrar galerías que se
+encuentran en su propia cuenta de Pic-Time a su propia cuenta de Positiva.
+</p>
+<p>
+Para ello, la Extensión lee en el navegador la información necesaria de las galerías
+seleccionadas por el usuario y la transmite a Positiva para recrearlas en la cuenta de
+destino.
+</p>
+<p>
+La Extensión no realiza ninguna otra función de tratamiento de datos personales y no
+recopila información sobre la navegación del usuario fuera de las páginas necesarias
+para ejecutar la migración.
+</p>
+
+<h2>2. Datos que se tratan y finalidad</h2>
+<p><strong>2.1. Contenido de las galerías</strong></p>
+<p>Durante la migración, la Extensión puede acceder a:</p>
+<ul>
+<li>Fotografías contenidas en las galerías seleccionadas por el usuario.</li>
+<li>
+Metadatos asociados a dichas galerías, como el título de la galería, fechas y nombres
+de escenas u otros datos necesarios para recrear su estructura en Positiva.
+</li>
+</ul>
+<p>
+Las fotografías pueden contener datos personales de terceros, por ejemplo, imágenes de
+invitados, asistentes a eventos u otras personas fotografiadas.
+</p>
+<p>
+La Extensión accede a estos datos únicamente para ejecutar la migración solicitada por
+el usuario y los transmite a la cuenta de Positiva indicada por este.
+</p>
+<p>
+La Extensión no utiliza las fotografías ni sus metadatos para fines propios, no crea
+perfiles a partir de ellos y no los conserva como una copia independiente de la
+información alojada posteriormente en Positiva.
+</p>
+<p>
+Respecto de las fotografías y demás contenidos de las galerías, el usuario que realiza
+la migración determina los fines para los que utiliza dichos datos y es responsable de
+disponer de una base jurídica adecuada para su captación, tratamiento, alojamiento y
+utilización.
+</p>
+<p>
+De acuerdo con la <a href="/new/privacidad/">Política de Privacidad de Positiva</a>, respecto
+de los archivos multimedia que el usuario aloja en su cuenta, Positiva actúa como
+Encargado del Tratamiento, conforme a los términos y condiciones aplicables.
+</p>
+<p><strong>2.2. Credencial de sesión de Positiva</strong></p>
+<p>
+Para poder realizar las subidas a Positiva, la Extensión puede acceder al token de
+sesión que Positiva ya ha almacenado en el navegador del usuario para mantener
+autenticada su cuenta en <code>app.positiva.studio</code>.
+</p>
+<p>
+Este token se utiliza exclusivamente para autenticar las solicitudes realizadas contra
+la propia infraestructura de Positiva en nombre del usuario.
+</p>
+<p>
+El token no se transmite a Pic-Time ni a otros terceros y la Extensión no crea una copia
+persistente del mismo fuera de los mecanismos de sesión utilizados por el navegador.
+</p>
+<p><strong>2.3. Estado técnico de la migración</strong></p>
+<p>
+La Extensión puede almacenar temporalmente información técnica necesaria para ejecutar
+el proceso de migración, como la identificación de la galería que se encuentra preparada
+para la siguiente fase del proceso.
+</p>
+<p>
+Esta información se almacena mediante <code>chrome.storage.session</code>, un mecanismo
+de almacenamiento temporal proporcionado por el navegador, y no se utiliza para realizar
+seguimiento del usuario ni para crear perfiles.
+</p>
+
+<h2>3. Lo que la Extensión NO hace</h2>
+<p>La Extensión:</p>
+<ul>
+<li>No recopila datos personales para utilizarlos con fines propios.</li>
+<li>
+No envía fotografías ni metadatos a servidores distintos de los necesarios para
+realizar la migración hacia la cuenta de Positiva del propio usuario.
+</li>
+<li>No vende, alquila ni cede datos personales con fines comerciales.</li>
+<li>
+No utiliza las fotografías, metadatos o credenciales para publicidad, elaboración de
+perfiles, analítica comportamental o seguimiento.
+</li>
+<li>No incorpora herramientas de analítica, seguimiento ni telemetría.</li>
+<li>
+No recopila información sobre las páginas que el usuario visita fuera de las necesarias
+para ejecutar la migración.
+</li>
+<li>No conserva una copia independiente de las fotografías migradas.</li>
+<li>No almacena de forma persistente las credenciales de acceso de Positiva.</li>
+<li>
+No descarga ni ejecuta código remoto. El código necesario para el funcionamiento de la
+Extensión se encuentra incluido en el paquete distribuido al usuario.
+</li>
+</ul>
+
+<h2>4. Base jurídica y responsabilidad sobre las fotografías</h2>
+<p>
+La utilización de la Extensión por parte del usuario forma parte de la ejecución de las
+acciones que este solicita dentro de su relación con Positiva, incluyendo la migración
+de contenido a su cuenta.
+</p>
+<p>
+En relación con las fotografías, vídeos, nombres y demás datos personales contenidos en
+las galerías que el usuario decide migrar, el usuario es quien determina los fines para
+los que dichos datos fueron obtenidos y para los que serán utilizados posteriormente.
+</p>
+<p>
+Por tanto, corresponde al usuario garantizar que dispone de una base jurídica adecuada
+para el tratamiento y migración de dichos datos, incluyendo, cuando resulte aplicable,
+las imágenes o información personal de invitados, asistentes, clientes, empleados u
+otras personas que aparezcan en las galerías.
+</p>
+<p>
+La Extensión no determina los fines del tratamiento de dichos datos ni los utiliza para
+fines propios, sino que ejecuta técnicamente la acción de migración solicitada por el
+usuario.
+</p>
+<p>
+Una vez transferidos los contenidos a Positiva, el tratamiento de dichos archivos se
+rige por la <a href="/new/privacidad/">Política de Privacidad de Positiva</a> y por los
+<a href="/new/terminos/">Términos y Condiciones</a> aplicables a la Plataforma.
+</p>
+
+<h2>5. Destinatarios y proveedores tecnológicos</h2>
+<p>La Extensión no comunica los datos a terceros con fines comerciales.</p>
+<p>
+Las fotografías y metadatos seleccionados por el usuario se transmiten a su cuenta de
+Positiva, donde serán tratados de acuerdo con la
+<a href="/new/privacidad/">Política de Privacidad de Positiva</a>.
+</p>
+<p>
+Positiva utiliza determinados proveedores tecnológicos para prestar sus servicios, entre
+ellos:
+</p>
+<ul>
+<li>
+<strong>Cloudflare, Inc.</strong>, para infraestructura de red, seguridad, CDN y
+servicios de almacenamiento y ejecución.
+</li>
+<li>
+<strong>Supabase, Inc.</strong>, para infraestructura de bases de datos y servicios
+relacionados con la autenticación.
+</li>
+<li>
+<strong>Stripe, Inc.</strong>, para el procesamiento técnico de pagos y servicios
+relacionados con la facturación.
+</li>
+</ul>
+<p>
+Estos proveedores actúan, según corresponda a cada servicio, como encargados del
+tratamiento u otros proveedores tecnológicos de Positiva conforme a las condiciones
+aplicables.
+</p>
+<p>
+La información detallada sobre los proveedores, su función y las condiciones aplicables
+al tratamiento de datos se encuentra en la
+<a href="/new/privacidad/">Política de Privacidad de Positiva</a>.
+</p>
+<p>
+Pic-Time actúa como origen de los datos que el usuario decide migrar. La Extensión no
+está afiliada, patrocinada ni asociada con Pic-Time.
+</p>
+
+<h2>6. Transferencias internacionales</h2>
+<p>
+La infraestructura utilizada por Positiva puede implicar accesos o tratamientos de datos
+desde fuera del Espacio Económico Europeo.
+</p>
+<p>
+Cuando se produzcan transferencias internacionales de datos, estas se realizarán de
+conformidad con los mecanismos previstos por el RGPD, incluyendo, cuando corresponda,
+decisiones de adecuación, el Marco de Privacidad de Datos UE-EE. UU. (Data Privacy
+Framework) o Cláusulas Contractuales Tipo aprobadas por la Comisión Europea.
+</p>
+<p>
+Para obtener información actualizada sobre los proveedores utilizados por Positiva y las
+posibles transferencias internacionales, deberá consultarse la
+<a href="/new/privacidad/">Política de Privacidad de Positiva</a>.
+</p>
+
+<h2>7. Conservación</h2>
+<p>La Extensión no constituye un sistema independiente de almacenamiento de fotografías.</p>
+<p>
+Las fotografías y metadatos se procesan durante la ejecución de la migración y se
+transmiten a la cuenta de Positiva del usuario. La Extensión no conserva una copia
+independiente de dichos archivos una vez completado el proceso.
+</p>
+<p>
+El estado técnico temporal utilizado durante la migración se almacena mediante
+<code>chrome.storage.session</code> y está sujeto al ciclo de vida de dicho
+almacenamiento proporcionado por el navegador.
+</p>
+<p>
+El token de sesión de Positiva utilizado para autenticar las solicitudes no se almacena
+de forma persistente por la Extensión.
+</p>
+<p>
+La conservación posterior de los datos dentro de Positiva se regula por la
+<a href="/new/privacidad/">Política de Privacidad de Positiva</a> y por las condiciones del
+servicio contratado por el usuario.
+</p>
+
+<h2>8. Seguridad</h2>
+<p>
+La Extensión está diseñada siguiendo un principio de minimización de datos y utiliza
+únicamente la información necesaria para ejecutar la migración solicitada.
+</p>
+<p>Las comunicaciones entre la Extensión y Positiva se realizan mediante conexiones HTTPS/TLS.</p>
+<p>
+La Extensión no almacena de forma persistente las fotografías ni las credenciales de
+sesión y no incorpora mecanismos de analítica, seguimiento o recopilación de información
+ajena a su finalidad.
+</p>
+<p>
+Positiva aplica, además, las medidas técnicas y organizativas de seguridad descritas en
+su <a href="/new/privacidad/">Política de Privacidad</a>, incluyendo medidas destinadas a
+proteger los datos frente a pérdida, alteración, acceso no autorizado y otros riesgos de
+seguridad.
+</p>
+
+<h2>9. Permisos de la Extensión</h2>
+<p>
+La Extensión declara en su manifiesto únicamente los permisos necesarios para ejecutar la
+migración. Estos son, con la finalidad concreta de cada uno:
+</p>
+<div class="tabla-scroll"><table><thead><tr><th>Permiso</th><th>Para qué se utiliza</th></tr></thead><tbody>
+<tr><td><code>storage</code></td><td>Guardar temporalmente el estado técnico de la migración descrito en el apartado 2.3, mediante <code>chrome.storage.session</code>. No se almacenan en él datos personales ni credenciales.</td></tr>
+<tr><td><code>downloads</code></td><td>Interceptar el archivo ZIP de alta resolución que genera Pic-Time para transmitirlo directamente a la cuenta de Positiva del usuario, en lugar de escribir varios gigabytes en su disco.</td></tr>
+</tbody></table></div>
+<p>
+El permiso <code>downloads</code> se aplica de forma acotada: solo actúa sobre descargas
+que son un archivo <code>.zip</code> procedente de los dominios de Pic-Time, únicamente
+durante los treinta minutos siguientes a que el usuario inicie una migración, y sobre una
+sola descarga por cada migración iniciada. La descarga se pausa y solo se cancela cuando
+la Extensión ha confirmado que puede leer ese archivo; si no puede, la descarga se reanuda
+y el archivo se guarda en la carpeta de descargas del usuario con normalidad. Cualquier
+otra descarga del navegador queda fuera del alcance de la Extensión.
+</p>
+<p>
+La Extensión declara además los siguientes accesos a sitios web
+(<em>host permissions</em>), imprescindibles para leer el origen y escribir en el destino:
+</p>
+<div class="tabla-scroll"><table><thead><tr><th>Dominio</th><th>Para qué se utiliza</th></tr></thead><tbody>
+<tr><td><code>*.pic-time.com</code></td><td>Leer, en el navegador del usuario, las galerías de su propia cuenta de Pic-Time que este selecciona, y obtener el archivo que Pic-Time genera.</td></tr>
+<tr><td><code>app.positiva.studio</code></td><td>Leer la sesión que el usuario ya tiene abierta en el panel de Positiva, para autenticar las subidas sin pedirle credenciales adicionales (apartado 2.2).</td></tr>
+<tr><td><code>gallery-upload-production.positiva-infra.workers.dev</code></td><td>Servicio de subida de Positiva, al que se transmiten los archivos.</td></tr>
+<tr><td><code>xwmiiwmwwoatuocvmbjz.supabase.co</code></td><td>Infraestructura de base de datos y autenticación de Positiva: crear la galería y los momentos de destino y renovar la sesión del usuario.</td></tr>
+<tr><td><code>*.r2.cloudflarestorage.com</code></td><td>Almacenamiento de objetos de Positiva, destino final de los archivos migrados.</td></tr>
+</tbody></table></div>
+<p>
+La Extensión declara un único permiso opcional, <code>*.azurefd.net</code>, que se utiliza
+exclusivamente para descargar el archivo de alta resolución cuando Pic-Time lo sirve desde
+esa red de distribución. Ese permiso no se concede al instalar la Extensión: se solicita en
+el momento en que el usuario inicia esa acción concreta y puede denegarse, en cuyo caso
+únicamente deja de estar disponible esa vía de importación.
+</p>
+<p>
+Estos permisos se utilizan exclusivamente para ejecutar la función de migración descrita en
+esta política.
+</p>
+<p>
+La Extensión no solicita acceso a la totalidad de los sitios web visitados por el usuario ni
+a su historial de navegación, y no utiliza los permisos declarados para realizar un
+seguimiento general de la navegación ni para recopilar información sobre páginas o servicios
+que no sean necesarios para la migración.
+</p>
+
+<h2>10. Derechos de las personas interesadas</h2>
+<p>
+Cualquier persona física cuyos datos personales sean tratados en Positiva puede ejercer
+los derechos reconocidos por el RGPD, incluyendo los derechos de acceso, rectificación,
+supresión, oposición, limitación del tratamiento y portabilidad, en los términos
+establecidos por la normativa aplicable.
+</p>
+<p>
+Cuando los datos personales formen parte de una galería gestionada por un fotógrafo u
+otro usuario profesional, dicho usuario es, con carácter general, quien determina los
+fines del tratamiento y quien ostenta la condición de Responsable del Tratamiento
+respecto de dichos datos.
+</p>
+<p>
+Las solicitudes relativas al tratamiento de dichos datos podrán dirigirse al usuario
+responsable de la galería. Cuando los datos se encuentren alojados en Positiva, también
+podrán dirigirse a <a href="mailto:privacidad@positiva.studio">privacidad@positiva.studio</a>,
+especialmente cuando se solicite la eliminación técnica de contenido alojado en la
+Plataforma.
+</p>
+<p>
+En particular, cualquier persona que considere que su imagen o voz aparece en una
+galería alojada en Positiva sin una base jurídica adecuada puede solicitar la retirada
+del contenido conforme al procedimiento establecido en la
+<a href="/new/privacidad/">Política de Privacidad de Positiva</a>.
+</p>
+<p>
+Para ejercer derechos directamente ante Positiva, puede enviarse una comunicación a
+<a href="mailto:hola@positiva.studio">hola@positiva.studio</a> o
+<a href="mailto:privacidad@positiva.studio">privacidad@positiva.studio</a>, pudiendo
+solicitarse la acreditación de identidad cuando resulte necesario.
+</p>
+<p>
+Si considera que sus derechos no han sido debidamente atendidos, puede presentar una
+reclamación ante la Agencia Española de Protección de Datos (AEPD) a través de su sede
+electrónica.
+</p>
+
+<h2>11. Cambios en esta política</h2>
+<p>
+Positiva podrá actualizar esta Política de Privacidad cuando resulte necesario para
+reflejar cambios en el funcionamiento de la Extensión, en los tratamientos realizados o
+en las obligaciones legales aplicables.
+</p>
+<p>
+Cualquier modificación relevante se publicará en esta misma dirección y se actualizará
+la fecha y versión indicadas al comienzo del documento.
+</p>
+    </div>
+  </article>
+</div>
+</main>
+
+<!-- pv:footer -->
+<!-- ════════════════════════════════════════════════════════════════
+     PIE COMÚN · fuente única: partials/chrome-footer.html
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
+     las páginas. Sirve de mapa del sitio: cada página pública real
+     debe estar enlazada aquí (SEO + LLMs leen esto).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="footer">
+footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
+.footcols{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pv-s6);
+  margin-bottom:var(--pv-s8);
+}
+.footcols h3{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-tinta-60);margin:0 0 var(--pv-s3);
+}
+.footcols a{
+  display:block;font-family:var(--pv-sans);font-size:14px;color:var(--pv-tinta-60);
+  text-decoration:none;padding:4px 0;transition:color .18s;
+}
+.footcols a:hover{color:var(--pv-tinta)}
+.footer-word{
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(15px,3.9vw,58px);line-height:1;color:var(--pv-tinta);
+  white-space:nowrap;
+}
+.footer-word svg{height:.92em;width:auto;flex:none}
+.footer-word span{color:var(--pv-ambar)}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
+.footer-meta{
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
+  font-size:14px;color:var(--pv-tinta-60);
+}
+.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
+.footer-meta a:hover{color:var(--pv-tinta)}
+@media(max-width:760px){
+  .footcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--pv-s5) var(--pv-s4)}
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <h3>Galerías para clientes</h3>
+        <a href="/new/galerias/">Entrega tu trabajo</a>
+        <a href="/new/revision-video/">Revisión de vídeo</a>
+        <a href="/new/revision-foto/">Revisión de fotografías</a>
+        <a href="/new/portfolio/">Portfolio público</a>
+        <a href="/new/precios/">Precios</a>
+        <a href="/new/#faq">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <h3>Casos de uso</h3>
+        <a href="/new/freelance/">Para profesionales freelance</a>
+        <a href="/new/bodas/">Para fotógrafos y videógrafos de bodas</a>
+        <a href="/new/productoras/">Para productoras de vídeo</a>
+      </div>
+      <div>
+        <h3>Comparativas</h3>
+        <a href="/new/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time · Pixieset</a>
+        <a href="/new/positiva-vs-arcadina/">Positiva vs Arcadina</a>
+        <a href="/new/positiva-vs-dropbox/">Positiva vs Dropbox</a>
+        <a href="/new/positiva-vs-google-drive/">Positiva vs Google Drive</a>
+        <a href="/new/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>
+      </div>
+      <div>
+        <h3>Recursos</h3>
+        <a href="/new/soporte/es/">Soporte</a>
+        <a href="/new/novedades/">Novedades</a>
+        <a href="/new/notas/">Blog</a>
+        <a href="/new/sobre-nosotros/">Sobre nosotros</a>
+        <a href="https://app.positiva.studio" data-no-conv>Accede a tu panel</a>
+        <a href="https://app.positiva.studio/registro">Empieza gratis</a>
+        <a href="mailto:hola@positiva.studio">Contacto</a>
+        <a href="/new/aviso-legal/">Aviso legal</a>
+        <a href="/new/privacidad/">Privacidad</a>
+        <a href="/new/terminos/">Términos</a>
+      </div>
+    </div>
+    <div class="footer-word">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
+    <p class="footer-entidad">Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.</p>
+    <div class="footer-meta">
+      <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Hecha en España · Se gestiona, se mejora y se factura desde Europa</span>
+      <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+    </div>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://positiva.studio/#org",
+      "name": "Positiva",
+      "url": "https://positiva.studio/",
+      "logo": "https://positiva.studio/assets/og.png",
+      "description": "Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.",
+      "email": "hola@positiva.studio",
+      "foundingLocation": { "@type": "Place", "name": "Valencia, España" },
+      "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
+      "areaServed": "ES",
+      "knowsLanguage": "es",
+      "sameAs": [
+        "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
+        "https://www.linkedin.com/company/positiva-studio/",
+        "https://instagram.com/positiva.studio_"
+      ]
+    }</script>
+  </div>
+</footer>
+
+<script>
+/* ── Vídeos del sitio: reproducción automática en bucle mientras están en
+   pantalla y pausa al salir — mismo comportamiento en móvil y escritorio.
+   Quedan fuera: la historia de la home (.hst), las tarjetas de la home
+   (.qcard) y el showcase (#reelvid), que tienen su propio control, los
+   vídeos con controles y los marcados con data-noauto. ── */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  const vids = Array.prototype.filter.call(
+    document.querySelectorAll('video[loop][muted]:not([controls]):not([data-noauto])'),
+    (v) => !v.closest('.hst') && !v.closest('.qcard') && v.id !== 'reelvid'
+  );
+  if (!vids.length) return;
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); }
+    else if (!v.paused) { v.pause(); }
+  }), { threshold: 0.25, rootMargin: '100px 0px' });
+  vids.forEach((v) => { v.muted = true; v.playsInline = true; io.observe(v); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
+})();
+</script>
+<!-- /pv:footer -->
+
+<script src="/new/positiva.js" defer></script>
+</body>
+</html>

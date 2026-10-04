@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Novedades · Positiva</title>
+<!-- Web nueva en pruebas: NO indexar -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Qué hemos mejorado en Positiva, con fechas: rendimiento de galerías, revisión de vídeo, seguridad, perfiles públicos. Un producto vivo, semana a semana.">
+<meta property="og:title" content="Novedades · Positiva">
+<meta property="og:description" content="Qué hemos mejorado en Positiva, con fechas. Sin humo: cada entrada es algo desplegado y funcionando.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://positiva.studio/novedades/">
+<meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#F1F0EC">
+<link rel="canonical" href="https://positiva.studio/novedades/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:300 400;font-display:swap;src:url(/fonts/playfair.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:300 400;font-display:swap;src:url(/fonts/playfair-italic.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/ibmplexmono-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/ibmplexmono-700.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/spacemono-700.woff2) format('woff2')}
+:root{
+  --pv-papel:#F1F0EC; --pv-luz:#FFFFFF; --pv-bandeja:#E6E5E0; --pv-sala:#0E0E0D; --pv-sala-2:#1A1A18;
+  --pv-tinta:#171614; --pv-tinta-60:#6E6D67; --pv-tinta-30:#A9A8A2; --pv-linea:#D6D5CF; --pv-linea-sala:#2A2A27;
+  --pv-ambar:#C98A2B; --pv-ambar-luz:#F5E9D2; --pv-ambar-hover:#B37A24; --pv-ambar-ink:#8F5F15; --pv-graso:#E0402A;
+  --pv-display:'Playfair Display',Georgia,serif; --pv-sans:'Instrument Sans',-apple-system,system-ui,sans-serif;
+  --pv-mono:'IBM Plex Mono',ui-monospace,monospace;
+  --pv-r-panel:10px; --pv-r-input:8px; --pv-r-pill:999px;
+  --pv-s2:8px;--pv-s3:12px;--pv-s4:16px;--pv-s5:24px;--pv-s6:32px;--pv-s7:48px;--pv-s8:64px;
+  --pv-ease:cubic-bezier(.4,0,.2,1); --pv-ease-out:cubic-bezier(.19,1,.22,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--pv-papel);color:var(--pv-tinta);font-family:var(--pv-sans);font-size:18px;line-height:1.67;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.eslogan,h2,h3{font-family:var(--pv-display);font-weight:300;letter-spacing:-.02em;line-height:1.08}
+.eslogan{font-size:clamp(40px,5.6vw,80px);line-height:1.04}
+.eslogan em,h2 em{font-style:italic}
+h2{font-size:clamp(30px,4vw,54px)}
+.lede{font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:var(--pv-tinta-60);max-width:58ch}
+.eyebrow{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pv-ambar-ink);display:flex;align-items:center;gap:var(--pv-s4);margin-bottom:var(--pv-s6)}
+.eyebrow::after{content:"";flex:1;height:1px;background:currentColor;opacity:.28}
+.capture .eyebrow{color:var(--pv-ambar)}
+section{padding:clamp(72px,9vw,120px) 0}
+html.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--pv-ease-out),transform .9s var(--pv-ease-out);transition-delay:var(--d,0s)}
+html.js .reveal.is-in{opacity:1;transform:none}
+.btn{display:inline-flex;align-items:center;gap:var(--pv-s2);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--pv-r-pill);border:1px solid transparent;cursor:pointer;text-decoration:none;transition:all .22s var(--pv-ease)}
+
+/* hero */
+.phead{padding-top:clamp(108px,15vh,150px);padding-bottom:clamp(24px,3vw,40px)}
+
+/* meses */
+.mes{font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pv-ambar-ink);margin:clamp(40px,5vw,64px) 0 var(--pv-s4);display:flex;align-items:center;gap:var(--pv-s4)}
+.mes::after{content:"";flex:1;height:1px;background:currentColor;opacity:.28}
+
+/* entradas */
+.log{display:grid;grid-template-columns:190px 1fr;gap:var(--pv-s4) var(--pv-s7);border-top:1px solid var(--pv-linea);padding:var(--pv-s6) 0}
+.log:last-of-type{border-bottom:1px solid var(--pv-linea)}
+.log-meta{display:flex;flex-direction:column;align-items:flex-start;gap:var(--pv-s3)}
+.log-meta time{font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--pv-tinta)}
+.tag{font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-ambar-ink);background:var(--pv-ambar-luz);border-radius:var(--pv-r-pill);padding:5px 12px}
+.log-body h3{font-size:clamp(21px,2.2vw,27px);font-weight:400;margin-bottom:var(--pv-s3)}
+.log-body p{color:var(--pv-tinta-60);font-size:16px;line-height:1.62;max-width:68ch}
+.log-body a{color:var(--pv-ambar-ink)}
+@media(max-width:760px){
+  .log{grid-template-columns:1fr;gap:var(--pv-s3)}
+  .log-meta{flex-direction:row;align-items:center}
+}
+
+/* captura / waitlist */
+.capture{background:var(--pv-sala);color:#EDECE8;border-radius:var(--pv-r-panel);padding:clamp(56px,8vw,104px) var(--pv-s7);text-align:center}
+.capture h2{color:#EDECE8;margin-bottom:var(--pv-s4)}
+.capture .lede{margin:0 auto;color:#9C9B95}
+.capture form{display:flex;gap:var(--pv-s2);max-width:480px;margin:var(--pv-s7) auto 0;flex-wrap:wrap}
+input[type=email]{flex:1;min-width:220px;font-family:var(--pv-sans);font-size:16px;padding:14px 18px;background:var(--pv-sala-2);border:1px solid var(--pv-linea-sala);border-radius:var(--pv-r-input);color:#EDECE8}
+input[type=email]::placeholder{color:#5C5B56}
+input[type=email]:focus{outline:2px solid var(--pv-ambar);outline-offset:1px;border-color:transparent}
+.capture form .btn{background:var(--pv-ambar);color:#171614;border:0;text-transform:uppercase;letter-spacing:.08em}
+.capture form .btn:hover{background:var(--pv-ambar-hover)}
+.capture small{display:block;margin-top:var(--pv-s5);font-family:var(--pv-mono);font-size:11px;letter-spacing:.08em;color:#5C5B56;text-transform:uppercase}
+
+@media(prefers-reduced-motion:reduce){
+  html.js .reveal{opacity:1;transform:none;transition:none}
+}
+
+h1.lede{font-family:"Instrument Sans", -apple-system, system-ui, sans-serif;font-weight:400;letter-spacing:normal;margin:0}
+p.eslogan{margin-top:0px}
+h1.kw{font-family:"Instrument Sans", -apple-system, system-ui, sans-serif;font-weight:600;letter-spacing:-.01em;line-height:1.3;font-size:clamp(20px,1.9vw,25px);color:var(--pv-tinta);max-width:38ch;margin:0 0 14px}
+.dark h1.kw,.heroV h1.kw{color:#EDECE8}
+
+</style>
+
+<!-- Analítica · Umami autoalojado (tracker servido en /stats). -->
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script defer src="https://analytics.labbo.studio/recorder.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script src="/js/analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://positiva.studio/" },
+    { "@type": "ListItem", "position": 2, "name": "Novedades", "item": "https://positiva.studio/novedades/" }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/new/docs.css">
+</head>
+<body>
+
+<!-- pv:nav -->
+<!-- ════════════════════════════════════════════════════════════════
+     NAV DE LA WEB NUEVA · fuente única: partials/new-nav.html
+     Edita AQUÍ y ejecuta `npm run stamp`. Los enlaces llevan /new/
+     mientras la web nueva vive en pruebas; al pasarla a la raíz se
+     cambia /new/ por / en este fichero y se vuelve a estampar.
+     ════════════════════════════════════════════════════════════════ -->
+<link rel="stylesheet" href="/new/chrome.css">
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+document.documentElement.classList.add('js');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+
+/* Conversión de Google Ads: «registro» (clientes potenciales).
+   Se dispara al pinchar cualquier enlace a app.positiva.studio/registro (los de
+   login apuntan a la raíz de la app y quedan fuera).
+   Sin bloquear la navegación: transport beacon sobrevive al cambio de página. */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+    'event_callback': callback
+  });
+  return false;
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="https://app.positiva.studio/registro"]');
+  if (!a || a.classList.contains('nav-login') || a.hasAttribute('data-no-conv')) return;
+  try {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+      'transport_type': 'beacon'
+    });
+  } catch (_) {}
+}, { passive: true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+<a class="saltar-n" href="#contenido">Saltar al contenido</a>
+<nav class="top" id="nav" aria-label="Principal"><div class="wrap inner">
+  <a href="/new/" class="logo" aria-label="Positiva, inicio"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
+  <div class="links">
+    <a href="/new/galerias/">Entrega</a>
+    <a href="/new/revision-video/">Revisión</a>
+    <a href="/new/archivos/">Archivos</a>
+    <a href="/new/portfolio/">Portfolio</a>
+    <a href="/new/precios/">Precios</a>
+    <a href="/new/notas/">Blog</a>
+  </div>
+  <div class="acc">
+    <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar</a>
+    <a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click" data-ev-place="nav">Empieza gratis</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Abrir menú"><span></span></button>
+  </div>
+</div></nav>
+<div class="menu-m" id="menu-m" hidden>
+  <a href="/new/galerias/">Entrega</a>
+  <a href="/new/revision-video/">Revisión de vídeo</a>
+  <a href="/new/revision-foto/">Revisión de fotos</a>
+  <a href="/new/archivos/">Archivos</a>
+  <a href="/new/portfolio/">Portfolio</a>
+  <a href="/new/precios/">Precios</a>
+  <span class="sub">Casos de uso</span>
+  <a class="sm" href="/new/freelance/">Freelance</a>
+  <a class="sm" href="/new/bodas/">Bodas</a>
+  <a class="sm" href="/new/productoras/">Productoras de vídeo</a>
+  <span class="sub">Recursos</span>
+  <a class="sm" href="/new/notas/">Blog</a>
+  <a class="sm" href="/new/soporte/es/">Soporte</a>
+  <a class="sm" href="/new/sobre-nosotros/">Sobre nosotros</a>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click" data-ev-place="menu">Empieza gratis</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar en tu panel</a></div>
+</div>
+<!-- /pv:nav -->
+<main id="contenido">
+
+<header class="phead">
+  <div class="wrap">
+    <p class="eyebrow">Novedades</p>
+    <p class="eslogan" role="heading" aria-level="2">Un producto vivo,<br><em>semana a semana.</em></p>
+    <h1 class="kw" style="margin-top:var(--pv-s6)">Novedades y nuevas funciones de Positiva</h1>
+    <p class="lede" style="margin-top:14px">
+      Lo que hemos mejorado en Positiva, con fechas. Sin humo: cada entrada corresponde
+      a algo desplegado y funcionando en producción.
+    </p>
+  </div>
+</header>
+
+<section style="padding-top:0">
+  <div class="wrap">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PLANTILLA para añadir una entrada (copiar encima de la más
+         reciente, dentro de su mes; crear el <h2 class="mes"> si el
+         mes no existe todavía). Actualizar también sitemap.xml
+         (lastmod de /novedades/).
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="AAAA-MM-DD">D mes AAAA</time>
+        <span class="tag">Categoría</span>
+      </div>
+      <div class="log-body">
+        <h3>Titular corto en una línea</h3>
+        <p>Qué cambia para el usuario, en 2-3 frases. Sin jerga interna.</p>
+      </div>
+    </article>
+    ═══════════════════════════════════════════════════════════ -->
+
+    <h2 class="mes">Septiembre 2026</h2>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-09-14">14 sep 2026</time>
+        <span class="tag">Producto</span>
+      </div>
+      <div class="log-body">
+        <h3>Descargar un momento suelto</h3>
+        <p>Cuando una galería está organizada por momentos, cada uno tiene ahora su propio botón de
+        descarga junto al título: tu cliente puede llevarse solo la ceremonia, o solo el banquete,
+        sin bajarse la entrega entera. El archivo se prepara al vuelo, como la descarga completa, y
+        respeta la calidad que permita ese enlace. El botón aparece cuando hay más de un momento —
+        con uno solo, su descarga ya es la de la galería.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-09-13">13 sep 2026</time>
+        <span class="tag">Seguridad</span>
+      </div>
+      <div class="log-body">
+        <h3>Tus galerías de cliente no aparecen en Google</h3>
+        <p>Los enlaces de galería y de archivo suelto se sirven ahora con instrucción permanente de
+        no indexar, y el panel queda entero fuera de los buscadores. Repartir un enlace deja de
+        tener el riesgo de que acabe en una búsqueda: aunque alguien lo publique, no se indexa.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-09-13">13 sep 2026</time>
+        <span class="tag">Portfolio</span>
+      </div>
+      <div class="log-body">
+        <h3>Tu portfolio, legible para los buscadores</h3>
+        <p>Antes tu web pública se montaba en el navegador, y un buscador que la visitaba encontraba
+        una página vacía. Ahora el contenido — titular, biografía, imágenes con su texto alternativo
+        y los datos de tu perfil — viaja ya escrito en la propia página, con su sitemap por
+        subdominio. Los perfiles que todavía no tienen biografía ni ninguna galería publicada siguen
+        fuera del índice hasta que haya algo que enseñar.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-09-12">12 sep 2026</time>
+        <span class="tag">Vídeo</span>
+      </div>
+      <div class="log-body">
+        <h3>Ningún vídeo entra en una galería si tu cliente no va a poder verlo</h3>
+        <p>Al subir un vídeo, Positiva comprueba antes su formato. Un archivo de edición — ProRes,
+        DNx, CineForm — o uno sin imagen se rechaza en el momento y con el motivo escrito, en lugar
+        de acabar en la entrega como un rectángulo negro. El HEVC del iPhone sí entra, pero
+        avisando: se ve bien en móviles y en Mac y puede fallar en Windows antiguos o en Firefox.
+        Y si un vídeo válido no deja sacar su portada, se sube igual con una portada provisional
+        que puedes cambiar.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-09-11">11 sep 2026</time>
+        <span class="tag">Panel</span>
+      </div>
+      <div class="log-body">
+        <h3>Tu dominio propio se configura solo</h3>
+        <p>Conectar un dominio del plan Estudio ya no pasa por nosotros: el alta se hace sola en
+        cuanto compruebas que el dominio es tuyo. El panel muestra el estado real de cada registro
+        DNS — comprobado, en espera, emitiendo el certificado — en vez de pedirte que mires si ya
+        funciona, y recibes un correo cuando tu dominio empieza a servir.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-09-10">10 sep 2026</time>
+        <span class="tag">Arreglo</span>
+      </div>
+      <div class="log-body">
+        <h3>Los avisos por email ya no se pierden</h3>
+        <p>Un fallo puntual al enviar un aviso podía llevarse por delante el resumen de descargas de
+        todo un día. Ahora cada aviso se cierra por su cuenta y un error pasajero se reintenta, así
+        que el resumen diario llega aunque algo falle por el camino.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-09-10">10 sep 2026</time>
+        <span class="tag">Producto</span>
+      </div>
+      <div class="log-body">
+        <h3>«Descargar todo» ya no hay que prepararlo</h3>
+        <p>El botón de descarga completa aparece solo en todas las galerías con descarga activada:
+        Positiva arma el archivo en el momento con lo que hay dentro, en la resolución que permita
+        cada enlace. No ocupa almacenamiento, no hay que subir nada y no se queda desactualizado
+        cuando cambias fotografías. Si prefieres entregar tu propio archivo — con un contrato o una
+        licencia dentro — puedes seguir subiéndolo y activar «Usar mi zip en lugar del automático».</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-09-10">10 sep 2026</time>
+        <span class="tag">Rendimiento</span>
+      </div>
+      <div class="log-body">
+        <h3>Las descargas grandes se reanudan</h3>
+        <p>Si la descarga completa se corta a mitad — se cierra el portátil, se cae la conexión —
+        el navegador la retoma donde iba en vez de empezar de cero. En el panel sigue contando como
+        una sola descarga, no como tres.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-09-10">10 sep 2026</time>
+        <span class="tag">Panel</span>
+      </div>
+      <div class="log-body">
+        <h3>La analítica cuenta las descargas de verdad</h3>
+        <p>El paso Analítica separa las descargas en tres cifras con su unidad — fotos sueltas,
+        lotes de favoritas y galería completa — en vez de un total que mezclaba una foto con una
+        boda entera. En la galería completa se ve además cuántas terminaron y cuántas se
+        abandonaron. Y puedes pedir un resumen por email de lo que descarga tu cliente, un aviso
+        al día y solo los días que haya movimiento.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-09-03">3 sep 2026</time>
+        <span class="tag">Producto</span>
+      </div>
+      <div class="log-body">
+        <h3>Las favoritas, con nombre</h3>
+        <p>Al marcar su primera favorita en una galería de entrega, tu cliente confirma su email y
+        su selección queda guardada a su nombre — aunque vuelva desde otro navegador. En tu panel
+        ves quién ha marcado qué, señalas quién es el cliente (o apuntas su email de antemano), y
+        las exportaciones — lista, hoja de cálculo, Finder o Lightroom — pueden traer solo su
+        selección o la de todos.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-09-02">2 sep 2026</time>
+        <span class="tag">Producto</span>
+      </div>
+      <div class="log-body">
+        <h3>Tu dominio propio, de principio a fin</h3>
+        <p>Con el dominio propio del plan Estudio conectado, los vídeos y las descargas ZIP
+        ya funcionan también desde tu dirección — antes esas dos piezas fallaban fuera de
+        positiva.studio. La galería del cliente final vive entera en tu dominio, de la
+        portada al último archivo.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-09-02">2 sep 2026</time>
+        <span class="tag">Seguridad</span>
+      </div>
+      <div class="log-body">
+        <h3>Una galería desactivada se desactiva de verdad</h3>
+        <p>Desactivar una galería — a mano o al caducar — no cortaba el acceso de quien ya la
+        tenía abierta: su sesión seguía viva, y con ella las fotos, los vídeos y las descargas.
+        Ahora desactivar cierra el acceso al momento y reactivar lo devuelve sin que tu cliente
+        tenga que abrir el enlace de nuevo. Tú sigues pudiendo entrar en tu propia galería
+        desactivada para revisarla.</p>
+      </div>
+    </article>
+
+    <h2 class="mes">Agosto 2026</h2>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Producto</span>
+      </div>
+      <div class="log-body">
+        <h3>Dos diseños nuevos: Mosaico y Videoteca</h3>
+        <p><strong>Mosaico</strong> es una cuadrícula compacta de celdas cuadradas con una fotografía
+        destacada a doble tamaño cada siete, pensada para entregas grandes. <strong>Videoteca</strong>
+        es un diseño de vídeo en forma de pared de carátulas, con vista previa al pasar el ratón,
+        para las entregas de muchas piezas. Los dos se eligen en el paso Diseño.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Producto</span>
+      </div>
+      <div class="log-body">
+        <h3>El Pase: la galería a pantalla completa, foto a foto</h3>
+        <p>Un modo de proyección para enseñar una entrega sin ir haciendo clic. Se abre desde la
+        cabecera de cualquier galería con dos o más fotografías, respeta el filtro de favoritas si
+        está puesto y deja elegir los segundos por foto. Al salir, la galería queda como estaba.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Producto</span>
+      </div>
+      <div class="log-body">
+        <h3>La portada de una galería ya puede ser un clip</h3>
+        <p>Cualquier vídeo de la galería sirve como portada: se reproduce en silencio y en bucle
+        sobre su fotograma. En una conexión lenta o con el ahorro de datos activado, el cliente ve
+        la imagen fija en su lugar, nunca un hueco.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Producto</span>
+      </div>
+      <div class="log-body">
+        <h3>Poner fecha de caducidad a una galería</h3>
+        <p>En el paso Datos hay ahora un campo opcional para fijar el día en que la galería se
+        desactivará sola y saldrá de tu web pública. Te avisamos por correo siete, tres y un día
+        antes, y otra vez cuando ocurra. Volver a activarla la devuelve intacta.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Revisión</span>
+      </div>
+      <div class="log-body">
+        <h3>La selección de tu cliente, directa a Lightroom Classic</h3>
+        <p>El paso Favoritas incorpora un cuarto botón que descarga un plugin para Lightroom
+        Classic. Se instala una sola vez y convierte la lista de favoritas en una colección de tu
+        catálogo, sin pasar por las pantallas de seguridad que exige el script del Finder.
+        El proceso completo está en <a href="/new/soporte/es/importar-favoritas-en-lightroom/">soporte</a>.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Panel</span>
+      </div>
+      <div class="log-body">
+        <h3>Las favoritas se deciden enlace a enlace</h3>
+        <p>Cada enlace de cliente lleva ahora su propio permiso para marcar favoritas, igual que ya
+        llevaba el de descarga. Sirve para repartir un enlace a quien solo va a mirar la galería:
+        sin corazones, sin contador y sin filtro. Los enlaces que ya tenías las conservan
+        activadas.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Panel</span>
+      </div>
+      <div class="log-body">
+        <h3>La tarjeta de cada enlace, reordenada</h3>
+        <p>Los controles de un enlace se agrupan en tres zonas: lo que usas a diario arriba,
+        los permisos en el centro y el estado abajo. «Email» y «WhatsApp» pasan a estar dentro de
+        un botón «Compartir», y «Revocar» queda solo, al otro extremo, porque es el único que no se
+        puede deshacer.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Panel</span>
+      </div>
+      <div class="log-body">
+        <h3>Buscar una foto dentro de la galería, y ordenarlas por nombre</h3>
+        <p>El paso Fotos y vídeos estrena un buscador por nombre de archivo y por título que filtra
+        según escribes y no pierde la selección al cambiar de búsqueda. Y en el paso Diseño puedes
+        elegir si tu cliente ve las fotografías por hora de toma o por nombre de archivo.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Web</span>
+      </div>
+      <div class="log-body">
+        <h3>Al compartir un enlace ya se ve la portada de la galería</h3>
+        <p>Pegar la dirección de una galería en WhatsApp o en Telegram enseñaba el logotipo de
+        Positiva. Ahora enseña la portada de esa galería, su título y el nombre de tu estudio.
+        Un enlace protegido con contraseña sigue mostrando solo tu logotipo, que es marca
+        pública.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Web</span>
+      </div>
+      <div class="log-body">
+        <h3>Tus datos de contacto cierran también las galerías</h3>
+        <p>El email, el teléfono y las redes que tienes en tu web pública aparecen ahora al final de
+        cada galería de entrega, con el mismo aspecto con que cierran tu perfil. No hay nada nuevo
+        que rellenar: si ya los tenías puestos, ya están ahí.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Revisión</span>
+      </div>
+      <div class="log-body">
+        <h3>Los atajos del teclado, a la vista</h3>
+        <p>La pantalla de revisión de vídeo enseña la lista de atajos la primera vez que se entra en
+        ella, agrupados por lo que hacen. Se cierra con «Entendido» y se recupera cuando haga falta
+        con el botón de interrogación de la cabecera.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Portfolio</span>
+      </div>
+      <div class="log-body">
+        <h3>El portfolio puede barajarse en cada visita</h3>
+        <p>Una casilla en Portfolio → Inicio hace que la rejilla se muestre en un orden distinto a
+        cada visitante. El orden que hayas colocado a mano no se pierde: vuelve en cuanto la
+        apagas.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Vídeo</span>
+      </div>
+      <div class="log-body">
+        <h3>Pantalla completa de verdad en el iPhone</h3>
+        <p>El botón de pantalla completa no hacía nada en un iPhone, y el modo alternativo escondía
+        sus propios controles debajo de la barra de Safari. En las galerías de entrega el vídeo pasa
+        ahora al reproductor del sistema, que ocupa la pantalla entera y gira con el teléfono.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-31">31 ago 2026</time>
+        <span class="tag">Arreglo</span>
+      </div>
+      <div class="log-body">
+        <h3>Subidas bloqueadas y comentarios que no se veían</h3>
+        <p>Dos fallos que no daban la cara. El recuento de espacio podía tardar tanto que tumbaba la
+        subida entera: ahora, si no se puede calcular, la subida pasa igualmente. Y en galerías de
+        más de mil fotografías se dejaban de leer comentarios y versiones a partir de esa cifra, sin
+        avisar de nada.</p>
+      </div>
+    </article>
+
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-25">25 ago 2026</time>
+        <span class="tag">Producto</span>
+      </div>
+      <div class="log-body">
+        <h3>La calidad de descarga de un enlace ya se puede cambiar</h3>
+        <p>Hasta ahora la calidad de descarga quedaba fijada al crear el enlace. Desde hoy
+        puedes cambiarla cuando quieras, sin regenerar el enlace ni avisar a nadie: el mismo
+        enlace, con la nueva calidad.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-25">25 ago 2026</time>
+        <span class="tag">Panel</span>
+      </div>
+      <div class="log-body">
+        <h3>Peso y estado de cada galería, a la vista</h3>
+        <p>El listado de galerías muestra ahora cuánto pesa cada una y en qué paso está,
+        y se puede ordenar por cualquiera de sus columnas.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-25">25 ago 2026</time>
+        <span class="tag">Rendimiento</span>
+      </div>
+      <div class="log-body">
+        <h3>Pasar fotos se siente mejor</h3>
+        <p>El visor encadena las fotos con un fundido corto y deja preparadas las vecinas,
+        así avanzar y retroceder no da saltos. La barra del reproductor de vídeo también
+        espera medio segundo antes de esconderse.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-24">24 ago 2026</time>
+        <span class="tag">Web</span>
+      </div>
+      <div class="log-body">
+        <h3>Estrenamos web: producto a la vista y centro de soporte</h3>
+        <p>Nueva navegación con páginas por funcionalidad y casos de uso, página dedicada a la
+        revisión de vídeo y un <a href="/new/soporte/es/">centro de soporte</a> con cerca de cincuenta
+        guías de uso, de crear tu primera galería a exportar marcadores a tu editor.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-20">20 ago 2026</time>
+        <span class="tag">Vídeo</span>
+      </div>
+      <div class="log-body">
+        <h3>Revisar vídeo, con manos de editor</h3>
+        <p>Tu cliente ahora pulsa C para pausar y comentar, se mueve con J-K-L y avanza fotograma
+        a fotograma, también en pantalla completa. Y los diseños de vídeo se comportan mejor en
+        el móvil, con el fotograma siempre limpio de textos.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-20">20 ago 2026</time>
+        <span class="tag">Revisión</span>
+      </div>
+      <div class="log-body">
+        <h3>Quién ve qué en cada galería de revisión</h3>
+        <p>Nuevos modos por galería: colaborativo, donde todos los revisores ven los comentarios
+        de todos, o individual, donde cada uno ve solo los suyos. Y los revisores confirman su
+        email antes de entrar, para que cada comentario tenga dueño.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-19">19 ago 2026</time>
+        <span class="tag">Rendimiento</span>
+      </div>
+      <div class="log-body">
+        <h3>Galerías grandes, el doble de rápidas</h3>
+        <p>Reescribimos cómo se sirven las imágenes de las galerías privadas. En una galería de
+        1.000 fotos, la primera imagen pasa de 11 a 5 segundos, y el resto acompaña. También
+        blindamos el servicio para que un pico de visitas no lo frene.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-17">17 ago 2026</time>
+        <span class="tag">Arreglo</span>
+      </div>
+      <div class="log-body">
+        <h3>Safari ya no se toma su tiempo</h3>
+        <p>Corregida la carga lenta de fotos en galerías privadas que afectaba solo a Safari, y de
+        paso el visor gana un sistema de carga perezosa más fino para todas las galerías.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-15">15 ago 2026</time>
+        <span class="tag">Rendimiento</span>
+      </div>
+      <div class="log-body">
+        <h3>Subidas más ágiles y rejillas más nítidas</h3>
+        <p>Resuelto el retraso al empezar una subida en galerías grandes desde Safari. Las rejillas
+        estrenan una derivada de imagen propia, regenerada para las más de 18.000 fotos que ya
+        viven en Positiva.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-12">12 ago 2026</time>
+        <span class="tag">Seguridad</span>
+      </div>
+      <div class="log-body">
+        <h3>Auditoría de seguridad, aplicada</h3>
+        <p>Pasamos una auditoría completa antes de abrir la beta y desplegamos sus correcciones:
+        los enlaces de galería quedan acotados al dominio de cada estudio, el almacenamiento se
+        mide en servidor y toda la web pública sirve cabeceras de seguridad endurecidas.</p>
+      </div>
+    </article>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-08-08">8 ago 2026</time>
+        <span class="tag">Portfolio</span>
+      </div>
+      <div class="log-body">
+        <h3>Tu perfil público, ahora una web de cuatro páginas</h3>
+        <p>El perfil público crece a Home, Galerías, Sobre mí y Contacto, con cuatro diseños de
+        portada para elegir cómo te presentas. Todo se gestiona desde el panel, sin tocar código.</p>
+      </div>
+    </article>
+
+    <h2 class="mes">Julio 2026</h2>
+
+    <article class="log reveal">
+      <div class="log-meta">
+        <time datetime="2026-07-31">jul 2026</time>
+        <span class="tag">Panel</span>
+      </div>
+      <div class="log-body">
+        <h3>Avisos con cabeza</h3>
+        <p>Los comentarios de tus clientes llegan agrupados en un resumen, no correo a correo. Y
+        los emails de Positiva estrenan diseño, a juego con tu galería.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══ LISTA DE ESPERA ══ -->
+<section id="lista" style="padding-top:0">
+  <div class="wrap">
+    <div class="capture reveal">
+      <p class="eyebrow" style="justify-content:center">Reserva una demo</p>
+      <h2>La próxima entrada<br><em>podría avisarte a ti.</em></h2>
+      <p class="lede">
+        Positiva se cuenta mejor en directo. Reserva una demo y te la enseño sobre tu
+        propio flujo de trabajo, de la subida a la entrega, sin compromiso. Y si
+        prefieres verla por tu cuenta, <a href="https://app.positiva.studio/registro"
+        style="color:var(--pv-ambar)" data-ev="register_click" data-ev-place="demo_section">regístrate
+        y entra hoy mismo</a>.
+      </p>
+      <form id="wl" novalidate>
+        <input type="email" name="email" placeholder="nombre@tuestudio.com" required aria-label="Tu email">
+        <button type="submit" class="btn">Reserva una demo</button>
+      </form>
+      <small id="msg">Sin compromiso y sin newsletter: te escribo solo para agendarla.</small>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- pv:footer -->
+<!-- ════════════════════════════════════════════════════════════════
+     PIE COMÚN · fuente única: partials/chrome-footer.html
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
+     las páginas. Sirve de mapa del sitio: cada página pública real
+     debe estar enlazada aquí (SEO + LLMs leen esto).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="footer">
+footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
+.footcols{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pv-s6);
+  margin-bottom:var(--pv-s8);
+}
+.footcols h3{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-tinta-60);margin:0 0 var(--pv-s3);
+}
+.footcols a{
+  display:block;font-family:var(--pv-sans);font-size:14px;color:var(--pv-tinta-60);
+  text-decoration:none;padding:4px 0;transition:color .18s;
+}
+.footcols a:hover{color:var(--pv-tinta)}
+.footer-word{
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(15px,3.9vw,58px);line-height:1;color:var(--pv-tinta);
+  white-space:nowrap;
+}
+.footer-word svg{height:.92em;width:auto;flex:none}
+.footer-word span{color:var(--pv-ambar)}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
+.footer-meta{
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
+  font-size:14px;color:var(--pv-tinta-60);
+}
+.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
+.footer-meta a:hover{color:var(--pv-tinta)}
+@media(max-width:760px){
+  .footcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--pv-s5) var(--pv-s4)}
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <h3>Galerías para clientes</h3>
+        <a href="/new/galerias/">Entrega tu trabajo</a>
+        <a href="/new/revision-video/">Revisión de vídeo</a>
+        <a href="/new/revision-foto/">Revisión de fotografías</a>
+        <a href="/new/portfolio/">Portfolio público</a>
+        <a href="/new/precios/">Precios</a>
+        <a href="/new/#faq">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <h3>Casos de uso</h3>
+        <a href="/new/freelance/">Para profesionales freelance</a>
+        <a href="/new/bodas/">Para fotógrafos y videógrafos de bodas</a>
+        <a href="/new/productoras/">Para productoras de vídeo</a>
+      </div>
+      <div>
+        <h3>Comparativas</h3>
+        <a href="/new/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time · Pixieset</a>
+        <a href="/new/positiva-vs-arcadina/">Positiva vs Arcadina</a>
+        <a href="/new/positiva-vs-dropbox/">Positiva vs Dropbox</a>
+        <a href="/new/positiva-vs-google-drive/">Positiva vs Google Drive</a>
+        <a href="/new/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>
+      </div>
+      <div>
+        <h3>Recursos</h3>
+        <a href="/new/soporte/es/">Soporte</a>
+        <a href="/new/novedades/">Novedades</a>
+        <a href="/new/notas/">Blog</a>
+        <a href="/new/sobre-nosotros/">Sobre nosotros</a>
+        <a href="https://app.positiva.studio" data-no-conv>Accede a tu panel</a>
+        <a href="https://app.positiva.studio/registro">Empieza gratis</a>
+        <a href="mailto:hola@positiva.studio">Contacto</a>
+        <a href="/new/aviso-legal/">Aviso legal</a>
+        <a href="/new/privacidad/">Privacidad</a>
+        <a href="/new/terminos/">Términos</a>
+      </div>
+    </div>
+    <div class="footer-word">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
+    <p class="footer-entidad">Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.</p>
+    <div class="footer-meta">
+      <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Hecha en España · Se gestiona, se mejora y se factura desde Europa</span>
+      <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+    </div>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://positiva.studio/#org",
+      "name": "Positiva",
+      "url": "https://positiva.studio/",
+      "logo": "https://positiva.studio/assets/og.png",
+      "description": "Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.",
+      "email": "hola@positiva.studio",
+      "foundingLocation": { "@type": "Place", "name": "Valencia, España" },
+      "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
+      "areaServed": "ES",
+      "knowsLanguage": "es",
+      "sameAs": [
+        "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
+        "https://www.linkedin.com/company/positiva-studio/",
+        "https://instagram.com/positiva.studio_"
+      ]
+    }</script>
+  </div>
+</footer>
+
+<script>
+/* ── Vídeos del sitio: reproducción automática en bucle mientras están en
+   pantalla y pausa al salir — mismo comportamiento en móvil y escritorio.
+   Quedan fuera: la historia de la home (.hst), las tarjetas de la home
+   (.qcard) y el showcase (#reelvid), que tienen su propio control, los
+   vídeos con controles y los marcados con data-noauto. ── */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  const vids = Array.prototype.filter.call(
+    document.querySelectorAll('video[loop][muted]:not([controls]):not([data-noauto])'),
+    (v) => !v.closest('.hst') && !v.closest('.qcard') && v.id !== 'reelvid'
+  );
+  if (!vids.length) return;
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); }
+    else if (!v.paused) { v.pause(); }
+  }), { threshold: 0.25, rootMargin: '100px 0px' });
+  vids.forEach((v) => { v.muted = true; v.playsInline = true; io.observe(v); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
+})();
+</script>
+<!-- /pv:footer -->
+
+<script>
+document.documentElement.classList.add('js');
+(() => {
+  if (!('IntersectionObserver' in window)) { document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in')); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+/* Lista de espera → /api/waitlist (mismo Worker que el resto). */
+document.getElementById('wl').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const email = form.email.value.trim();
+  const msg = document.getElementById('msg');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    msg.textContent = 'Ese email no parece válido. Revísalo.';
+    msg.style.color = 'var(--pv-graso)';
+    track(Events.WAITLIST_INVALID_EMAIL, { source: 'novedades' });
+    return;
+  }
+  const btn = form.querySelector('button');
+  btn.disabled = true;
+  try {
+    const r = await fetch('/api/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, source: 'novedades' }),
+    });
+    if (!r.ok && r.status !== 409) throw new Error(String(r.status));
+    msg.textContent = 'Apuntado. Te escribo el día que abra.';
+    msg.style.color = 'var(--pv-ambar)';
+    track(Events.WAITLIST_SUBMITTED, { source: 'novedades' });
+    form.reset();
+  } catch (_) {
+    msg.textContent = 'No se ha podido guardar. Inténtalo de nuevo en un momento.';
+    msg.style.color = 'var(--pv-graso)';
+  } finally {
+    btn.disabled = false;
+  }
+});
+</script>
+<script src="/new/positiva.js" defer></script>
+</body>
+</html>

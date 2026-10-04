@@ -25,6 +25,7 @@
 <link rel="preload" href="/fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/img/galerias/slide-1-boda-aitana.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="/new/chrome.css">
 <link rel="stylesheet" href="/new/positiva.css">
 <script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
 <script defer src="/js/analytics.js"></script>
@@ -36,7 +37,55 @@
      mientras la web nueva vive en pruebas; al pasarla a la raíz se
      cambia /new/ por / en este fichero y se vuelve a estampar.
      ════════════════════════════════════════════════════════════════ -->
-<a class="saltar" href="#contenido">Saltar al contenido</a>
+<link rel="stylesheet" href="/new/chrome.css">
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+document.documentElement.classList.add('js');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+
+/* Conversión de Google Ads: «registro» (clientes potenciales).
+   Se dispara al pinchar cualquier enlace a app.positiva.studio/registro (los de
+   login apuntan a la raíz de la app y quedan fuera).
+   Sin bloquear la navegación: transport beacon sobrevive al cambio de página. */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+    'event_callback': callback
+  });
+  return false;
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="https://app.positiva.studio/registro"]');
+  if (!a || a.classList.contains('nav-login') || a.hasAttribute('data-no-conv')) return;
+  try {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+      'transport_type': 'beacon'
+    });
+  } catch (_) {}
+}, { passive: true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+<a class="saltar-n" href="#contenido">Saltar al contenido</a>
 <nav class="top" id="nav" aria-label="Principal"><div class="wrap inner">
   <a href="/new/" class="logo" aria-label="Positiva, inicio"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
   <div class="links">
@@ -89,7 +138,7 @@
 <section class="sec" id="entrega">
   <div class="head r"><span class="eyebrow">La entrega</span><h2 class="h-l">Una boda entera, <em class="a">ordenada por momentos.</em></h2><p class="lede">Preparativos, ceremonia, cóctel, fiesta: las fotos se agrupan en momentos con nombre, y el vídeo vive en la misma galería — sin plataformas aparte ni espacio cobrado dos veces. Todo con la portada, la cuadrícula y el tema que elijas.</p></div>
   <div class="cols">
-    <div class="r"><span class="k">Momentos</span><h3>La boda se lee como una historia</h3><p>Hasta 20 bloques con nombre, configurados comodamente desde tu panel. La pareja no recorre 800 fotos: recorre su día. <a href="/soporte/es/momentos/">Cómo funcionan</a>.</p></div>
+    <div class="r"><span class="k">Momentos</span><h3>La boda se lee como una historia</h3><p>Hasta 20 bloques con nombre, configurados comodamente desde tu panel. La pareja no recorre 800 fotos: recorre su día. <a href="/new/soporte/es/momentos/">Cómo funcionan</a>.</p></div>
     <div class="r d1"><span class="k">Vídeo</span><h3>El mismo espacio, el mismo enlace</h3><p>La película de boda se entrega junto a las fotos, con <a href="/new/galerias/#diseno">diseños pensados para vídeo</a> — y sin cobrarse como un producto aparte.</p></div>
     <div class="r d2"><span class="k">Marca</span><h3>Tu logo en la puerta</h3><p>La galería lleva tu marca y se sirve desde tu subdominio — o tu dominio. Cuando la compartan con la familia e invitados, te están recomendando.</p></div>
   </div>
@@ -104,7 +153,7 @@
 <section class="sec">
   <article class="step flip">
     <div class="txt r"><span class="eyebrow">La pareja, los invitados, proveedores…</span><h2>Una galería. Muchas formas de compartir.</h2><p class="l">La misma galería admite varios enlaces, cada uno con su contraseña y su permiso de descarga y marcado de favoritos: la pareja con los originales, los invitados y la familia solo viendo — o con la versión web para compartir, los proveedores como tu decidas.</p>
-      <ul><li><b>Las favoritas hacen el álbum.</b> La pareja marca sus favoritas en la galería y tú exportas la selección a Lightroom o como lista de nombres, hoja de cálculo o etiquetas de Finder — directa a tu flujo de diseño de álbum. <a href="/soporte/es/favoritas-del-cliente/">Cómo se exportan</a>.</li><li><b>El botón «Descargar todo».</b> La boda entera en un archivo, preparado en el momento y en la calidad que permita cada enlace. Sin montar nada. <a href="/new/galerias/">Así funciona la entrega</a>.</li></ul></div>
+      <ul><li><b>Las favoritas hacen el álbum.</b> La pareja marca sus favoritas en la galería y tú exportas la selección a Lightroom o como lista de nombres, hoja de cálculo o etiquetas de Finder — directa a tu flujo de diseño de álbum. <a href="/new/soporte/es/favoritas-del-cliente/">Cómo se exportan</a>.</li><li><b>El botón «Descargar todo».</b> La boda entera en un archivo, preparado en el momento y en la calidad que permita cada enlace. Sin montar nada. <a href="/new/galerias/">Así funciona la entrega</a>.</li></ul></div>
     <figure class="media reveal-img"><img src="/img/galerias/slide-3-boda-grid.webp" alt="Galería de boda dividida en momentos" loading="lazy"><figcaption>Galería real · los momentos de la boda</figcaption></figure>
   </article>
 </section>
@@ -115,17 +164,17 @@
     <details><summary>¿Los invitados necesitan cuenta para ver la galería?</summary><p>No. Abren el enlace en cualquier navegador, con la contraseña si la has puesto. Sin cuentas, sin instalaciones y sin formularios.</p></details>
     <details><summary>¿El enlace caduca en algún momento?</summary><p>No. Los enlaces de Positiva no tienen fecha de caducidad: el día del aniversario seguirá abriendo la misma galería.</p></details>
     <details><summary>¿El vídeo de boda se cobra o se guarda aparte?</summary><p>No. Fotos y vídeo comparten el mismo espacio de tu plan y la misma galería, con diseños propios para la pieza de vídeo.</p></details>
-    <details><summary>¿Puedo dar permisos distintos a la pareja y a los invitados?</summary><p>Sí. Cada enlace fija su calidad de descarga — solo ver, web o alta con originales — y su contraseña. Dos enlaces de la misma galería pueden entregar permisos distintos. <a href="/soporte/es/permisos-de-descarga/">Qué puede descargar cada uno</a>.</p></details>
+    <details><summary>¿Puedo dar permisos distintos a la pareja y a los invitados?</summary><p>Sí. Cada enlace fija su calidad de descarga — solo ver, web o alta con originales — y su contraseña. Dos enlaces de la misma galería pueden entregar permisos distintos. <a href="/new/soporte/es/permisos-de-descarga/">Qué puede descargar cada uno</a>.</p></details>
     <details><summary>¿Cómo me llevo la selección del álbum?</summary><p>Desde el paso Favoritas: la selección de la pareja se exporta como lista de nombres (.txt), hoja de cálculo (.csv) o etiquetas de color de Finder, generadas en tu navegador.</p></details>
   </div>
-  <nav class="ayuda r" aria-label="Artículos relacionados"><span>Del soporte</span><div><a href="/new/galerias/">Galerías de entrega, a fondo</a><a href="/new/galerias/#diseno">Diseños, temas y tu marca</a><a href="/new/revision-video/">Revisión de vídeo con la pareja</a><a href="/soporte/es/momentos/">Organizar las fotos por momentos</a><a href="/soporte/es/favoritas-del-cliente/">Las favoritas y el álbum</a><a href="/soporte/es/enlace-de-cliente/">Crear el enlace para la pareja</a></div></nav>
+  <nav class="ayuda r" aria-label="Artículos relacionados"><span>Del soporte</span><div><a href="/new/galerias/">Galerías de entrega, a fondo</a><a href="/new/galerias/#diseno">Diseños, temas y tu marca</a><a href="/new/revision-video/">Revisión de vídeo con la pareja</a><a href="/new/soporte/es/momentos/">Organizar las fotos por momentos</a><a href="/new/soporte/es/favoritas-del-cliente/">Las favoritas y el álbum</a><a href="/new/soporte/es/enlace-de-cliente/">Crear el enlace para la pareja</a></div></nav>
 </section>
 </div>
 <section class="final" id="demo"><div class="wrap inner">
   <span class="eyebrow r">Reserva una demo</span>
   <h2 class="h-xl r d1">La próxima boda, <em class="a">entregada como merece.</em></h2>
   <p class="lede r d2">Positiva se cuenta mejor en directo. Reserva una demo y te la enseño sobre tu propio flujo de trabajo, sin compromiso. Y si prefieres verla por tu cuenta, <a href="https://app.positiva.studio/registro" data-ev="register_click">regístrate y entra hoy mismo</a>.</p>
-  <form class="demo" id="wl" novalidate>
+  <form class="demo" id="wl" data-demo novalidate>
     <input type="email" name="email" id="wl-email" placeholder="nombre@tuestudio.com" required aria-label="Tu email" autocomplete="email">
     <button type="submit" class="btn">Reserva una demo</button>
   </form>
@@ -272,16 +321,16 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
       </div>
       <div>
         <h3>Recursos</h3>
-        <a href="/soporte/es/">Soporte</a>
-        <a href="/novedades/">Novedades</a>
-        <a href="/notas/">Blog</a>
+        <a href="/new/soporte/es/">Soporte</a>
+        <a href="/new/novedades/">Novedades</a>
+        <a href="/new/notas/">Blog</a>
         <a href="/new/sobre-nosotros/">Sobre nosotros</a>
         <a href="https://app.positiva.studio" data-no-conv>Accede a tu panel</a>
         <a href="https://app.positiva.studio/registro">Empieza gratis</a>
         <a href="mailto:hola@positiva.studio">Contacto</a>
-        <a href="/aviso-legal/">Aviso legal</a>
-        <a href="/privacidad/">Privacidad</a>
-        <a href="/terminos/">Términos</a>
+        <a href="/new/aviso-legal/">Aviso legal</a>
+        <a href="/new/privacidad/">Privacidad</a>
+        <a href="/new/terminos/">Términos</a>
       </div>
     </div>
     <div class="footer-word">

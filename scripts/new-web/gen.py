@@ -38,7 +38,7 @@ BASE = '/new/'
 nav = open(os.path.join(ROOT, 'partials', 'new-nav.html')).read().strip()
 footer = open(os.path.join(ROOT, 'partials', 'chrome-footer.html')).read().strip()
 
-DEMO = '''<form class="demo" id="wl" novalidate>
+DEMO = '''<form class="demo" id="wl" data-demo novalidate>
     <input type="email" name="email" id="wl-email" placeholder="nombre@tuestudio.com" required aria-label="Tu email" autocomplete="email">
     <button type="submit" class="btn">Reserva una demo</button>
   </form>
@@ -58,10 +58,16 @@ MIGRADAS = ['galerias', 'revision-video', 'revision-foto', 'portfolio', 'precios
             'positiva-vs-pictime-vs-pixieset', 'positiva-vs-arcadina', 'positiva-vs-dropbox',
             'positiva-vs-google-drive', 'positiva-vs-wetransfer']
 
+DERIVADAS = ['notas', 'soporte/es', 'novedades', 'aviso-legal', 'privacidad', 'terminos', 'legal/extension']
+
 def enlaces(html):
     if BASE == '/': return html
     for slug in MIGRADAS:
         html = re.sub(rf'href="/{slug}/', f'href="{BASE}{slug}/', html)
+    # páginas de contenido: solo URLs de página (acaban en / o llevan #), nunca ficheros
+    for slug in DERIVADAS:
+        html = re.sub(rf'href="/{slug}/((?:[a-z0-9-]+/)*)(#[^"]*)?"', lambda m: f'href="{BASE}{slug}/{m.group(1)}{m.group(2) or ""}"', html)
+    html = re.sub(r'href="/soporte/?"', f'href="{BASE}soporte/es/"', html)
     return html.replace('href="/#', f'href="{BASE}#')
 
 def page(d, body):
@@ -96,7 +102,8 @@ def page(d, body):
 <link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
-{pre}<link rel="stylesheet" href="{BASE}positiva.css">
+{pre}<link rel="stylesheet" href="{BASE}chrome.css">
+<link rel="stylesheet" href="{BASE}positiva.css">
 <script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
 <script defer src="/js/analytics.js"></script>
 </head>
@@ -114,6 +121,8 @@ def page(d, body):
 os.makedirs(OUT, exist_ok=True)
 shutil.copy(os.path.join(HERE, 'positiva.css'), os.path.join(OUT, 'positiva.css'))
 shutil.copy(os.path.join(HERE, 'positiva.js'), os.path.join(OUT, 'positiva.js'))
+for f in ('chrome.css', 'docs.css'):
+    shutil.copy(os.path.join(HERE, f), os.path.join(OUT, f))
 n = 0
 for f in sorted(glob.glob(os.path.join(HERE, 'pages', '*.html'))):
     d, body = meta(open(f).read())
@@ -124,3 +133,28 @@ for f in sorted(glob.glob(os.path.join(HERE, 'pages', '*.html'))):
     n += 1
     print('✓', d['path'])
 print(f'{n} página(s) en public/new/')
+
+# ── Páginas derivadas ─────────────────────────────────────────────────────
+def derivar(html):
+    html = re.sub(r'<!-- pv:nav -->.*?<!-- /pv:nav -->', '<!-- pv:nav -->\n' + nav + '\n<!-- /pv:nav -->', html, count=1, flags=re.S)
+    html = re.sub(r'\s*<a class="saltar" href="#contenido">[^<]*</a>', '', html)
+    html = re.sub(r'<meta name="robots"[^>]*>\s*', '', html)
+    if not INDEXABLE:
+        html = html.replace('</title>', '</title>\n<!-- Web nueva en pruebas: NO indexar -->\n<meta name="robots" content="noindex, nofollow">', 1)
+    html = html.replace('</head>', f'<link rel="stylesheet" href="{BASE}docs.css">\n</head>', 1)
+    html = html.replace('</body>', f'<script src="{BASE}positiva.js" defer></script>\n</body>', 1)
+    return enlaces(html)
+
+m = 0
+PUB = os.path.join(ROOT, 'public')
+for slug in DERIVADAS:
+    for src in sorted(glob.glob(os.path.join(PUB, slug, '**', 'index.html'), recursive=True)):
+        rel = os.path.relpath(src, PUB)
+        html = open(src).read()
+        if '<!-- pv:nav -->' not in html:
+            print('  (sin marcador pv:nav, se omite)', rel); continue
+        dst = os.path.join(OUT, rel)
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        open(dst, 'w').write(derivar(html))
+        m += 1
+print(f'{m} página(s) de contenido derivadas en public/new/')
