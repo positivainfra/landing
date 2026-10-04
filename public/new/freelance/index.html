@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Archivos y solicitudes · Positiva</title>
-<meta name="description" content="Almacenamiento, envíos y solicitudes de archivos para fotógrafos, videógrafos y productoras. Organiza, comparte y pide brutos con un enlace, sin cuenta para quien sube.">
+<title>Entrega de fotos y vídeo para freelance · Positiva</title>
+<meta name="description" content="Galerías de entrega, revisión con comentarios, envío de archivos y portfolio público en una sola herramienta y una sola cuota. Foto y vídeo en el mismo espacio, con plan gratis para empezar.">
 <!-- Web nueva en pruebas: NO indexar. Ver scripts/new-web/gen.py -->
 <meta name="robots" content="noindex, nofollow">
-<link rel="canonical" href="https://positiva.studio/new/archivos/">
-<meta property="og:title" content="Archivos y solicitudes · Positiva">
-<meta property="og:description" content="Almacenamiento, envíos y solicitudes de archivos para fotógrafos, videógrafos y productoras. Organiza, comparte y pide brutos con un enlace, sin cuenta para quien sube.">
+<link rel="canonical" href="https://positiva.studio/new/freelance/">
+<meta property="og:title" content="Entrega de fotos y vídeo para freelance · Positiva">
+<meta property="og:description" content="Galerías de entrega, revisión con comentarios, envío de archivos y portfolio público en una sola herramienta y una sola cuota. Foto y vídeo en el mismo espacio, con plan gratis para empezar.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://positiva.studio/new/archivos/">
+<meta property="og:url" content="https://positiva.studio/new/freelance/">
 <meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,6 +24,7 @@
 <link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/video/showcase-hero-poster.jpg" as="image" fetchpriority="high">
 <link rel="stylesheet" href="/new/positiva.css">
 <script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
 <script defer src="/js/analytics.js"></script>
@@ -72,58 +73,131 @@
 <main id="contenido">
 <div class="wrap">
 <section class="hero">
-  <span class="eyebrow">Archivos y solicitudes · herramienta de trabajo · plan Estudio</span>
-  <h1 class="h-xl"><span class="w"><span>Tus&nbsp;archivos</span></span> <span class="w"><span>de&nbsp;trabajo,</span></span> <span class="w"><span><em class="a">donde&nbsp;ya</em></span></span> <span class="w"><span><em class="a">entregas.</em></span></span></h1>
-  <p class="lede"><strong style="color:var(--tinta);font-weight:600">Almacenamiento, envíos y solicitudes de archivos para fotógrafos, videógrafos y productoras.</strong> Organiza tus carpetas, comparte material con clientes y compañeros, y pide brutos, logos o selecciones con un enlace. No es una función para tu cliente: es tu mesa de trabajo, en el mismo sitio donde entregas.</p>
-  <div class="cta"><a class="btn" href="/new/precios/">Probar con el plan Estudio</a><a class="btn ghost" href="#demo">Reserva una demo</a></div>
-  <div class="stage"><div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">positiva.studio/s/brutos-boda-ana</span></div><div class="panes"><div class="pane on"><div class="mock" aria-hidden="true">
-    <div class="card"><div class="t">Brutos boda Ana y Luis</div><div class="row"><span>Solicita: Rodrigo Márquez</span><span>Sin cuenta · sin límite por envío</span></div><div class="drop">Arrastra aquí tus archivos o haz clic para elegirlos</div><div class="row"><span>A7IV_0412.MP4</span><span>1,8 GB · 62 % · 48 MB/s</span></div><div class="pr"><b></b></div><div class="row"><span>A7IV_0413.MP4</span><span>2,4 GB · en cola</span></div><div class="pr"><b style="width:0"></b></div><div class="row"><span>3 de 9 terminados</span><span>Quedan 14 min</span></div></div>
-    <div class="card"><div class="row"><span><b style="color:var(--tinta)">Archivos</b> &nbsp; Solicitudes</span><span>Subir · Solicitar</span></div><div class="row"><span>▸ Boda Ana y Luis / Brutos</span><span>9 · 14,2 GB</span></div><div class="row"><span>▸ Hoka · evento / Logos</span><span>4 · 28 MB</span></div><div class="row"><span>▸ Campaña NYC / Selección</span><span>84 · 2,1 GB</span></div><div style="flex:1"></div><div class="row"><span>Almacenamiento</span><span>412 GB de 1 TB</span></div><div class="pr"><b style="width:41%"></b></div></div>
-  </div><span class="lbl">maqueta · sustituir por captura real de /s/ y Archivos</span></div></div></div></div>
+  <span class="eyebrow">Freelance</span>
+  <p class="h-xl titular"><span class="w"><span style="animation-delay:0.00s">Una</span></span> <span class="w"><span style="animation-delay:0.05s">cuota</span></span> <span class="w"><span style="animation-delay:0.10s">multitarea,</span></span> <span class="w"><span style="animation-delay:0.15s"><em class="a">como</em></span></span> <span class="w"><span style="animation-delay:0.20s"><em class="a">tú.</em></span></span></p>
+  <h1 class="lede h1d">Galerías, revisión y portfolio para freelance</h1>
+  <p class="lede">Si haces foto y vídeo tú solo, no necesitas una plataforma de galerías, otra de transferencias, otra de revisión y una web aparte. Positiva es las cuatro: entrega, comentarios, archivos y portfolio, en una cuota — y con plan Gratis para empezar.</p>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click">Empieza gratis</a><a class="btn ghost" href="/new/precios/">Ver precios</a></div>
+  <p class="fine">Los gigas se cobran una vez.<br/> No una vez por herramienta.</p>
+  <figure class="browser stage" data-grow>
+    <div class="bar"><i></i><i></i><i></i><span class="url">rodrigomarquez.positiva.studio/g/must-have-nyc</span></div>
+    <div class="panes"><div class="pane on"><video data-noauto class="auto" muted playsinline loop preload="none" poster="/video/showcase-hero-poster.jpg" src="/video/showcase-hero.mp4"></video></div></div><figcaption>Una entrega real, de la subida a la galería</figcaption>
+  </figure>
 </section>
+</div>
 
-
-<section class="sec">
-  <div class="head r"><span class="eyebrow">Para qué sirve</span><h2 class="h-l">Tres cosas. Una carpeta.</h2><p class="lede">Lo que hoy haces entre un disco duro, un Drive y un WeTransfer, aquí vive junto a tus galerías.</p></div>
-  <div class="flow">
-    <div class="r"><div class="num">01</div><h3>Organiza</h3><p>Carpetas de trabajo con la cuota de tu plan: brutos, selecciones, logos de cliente, versiones. El mismo subidor que tus galerías.</p></div>
-    <div class="r d1"><div class="num">02</div><h3>Comparte</h3><p>Envía una carpeta o unos archivos a un cliente, un compañero o un laboratorio con un enlace. Sin reenviar, sin que caduque a los siete días.</p></div>
-    <div class="r d2"><div class="num">03</div><h3>Solicita</h3><p>Pide material con un enlace: brutos a un segundo operador, logos a un cliente, archivos a un proveedor. Suben sin cuenta y cae donde tú dijiste.</p></div>
-  </div>
-</section>
-<section class="sec">
-  <div class="head r"><span class="eyebrow">Cómo funciona una solicitud</span><h2 class="h-l">Tres pasos. Ninguno es <em class="a">«escribirle otra vez».</em></h2><p class="lede">Es el primer paso del mismo flujo con el que entregas: lo que recibes aquí lo revisas, lo entregas y lo publicas sin salir de Positiva.</p></div>
-  <div class="flow">
-    <div class="r"><div class="num">01</div><h3>Crea la solicitud</h3><p>Nombre, carpeta de destino en tus Archivos y contraseña opcional. Obtienes un enlace <code>positiva.studio/s/…</code></p></div>
-    <div class="r d1"><div class="num">02</div><h3>Tu cliente sube</h3><p>Sin registrarse, desde el navegador. Ve tiempo restante y velocidad. Si se corta, continúa donde se quedó.</p></div>
-    <div class="r d2"><div class="num">03</div><h3>Lo tienes en Archivos</h3><p>En la carpeta que elegiste, con el mismo subidor que tus galerías y la cuota de tu plan. Desde ahí, a revisar o a entregar.</p></div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="head r"><span class="eyebrow">Lo que incluye</span><h2 class="h-l">Archivos, por si WeTransfer no era el sitio.</h2></div>
-  <div class="g3">
-    <div class="r"><h3>Sin cuenta para quien sube</h3><p>Abre el enlace y arrastra. Sin registro ni app.</p></div>
-    <div class="r d1"><h3>Sin límite por envío</h3><p>El único límite es la cuota de tu plan. Un bruto de 40 GB es un archivo más.</p></div>
-    <div class="r d2"><h3>Reanudación</h3><p>Las subidas largas sobreviven a un corte de red o a cerrar el portátil.</p></div>
-    <div class="r"><h3>Carpetas y destino</h3><p>Cada solicitud apunta a una carpeta de tus Archivos. Nada que reordenar.</p></div>
-    <div class="r d1"><h3>Contraseña opcional</h3><p>Para material sensible, el enlace la pide antes de mostrar nada.</p></div>
-    <div class="r d2"><h3>En la UE, sin IA</h3><p>El mismo alojamiento europeo que tus galerías.</p></div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="head r"><span class="eyebrow">Preguntas frecuentes</span><h2 class="h-l">Antes de pedir el primer bruto.</h2></div>
-  <div class="faq r">
-    <details><summary>¿Mis clientes tienen que aprender a usarlo?</summary><p>No. Ellos solo abren un enlace: para ver lo que compartes o para subir lo que pides. Archivos es tu herramienta, no la suya.</p></details>
-    <details><summary>¿Cuánto puede subirme alguien?</summary><p>Lo que quepa en tu cuota. Las solicitudes no tienen límite propio de tamaño ni de archivos.</p></details>
-    <details><summary>¿Caduca el enlace de la solicitud?</summary><p>No caduca solo. Lo cierras tú cuando ya tienes el material.</p></details>
-    <details><summary>¿Qué plan lo incluye?</summary><p>Plan Estudio (1 TB). Galerías y revisión están en todos los planes.</p></details>
-    <details><summary>¿Varias personas con el mismo enlace?</summary><p>Sí. Todas suben a la misma carpeta y ves cada archivo con su nombre.</p></details>
+<div class="wrap">
+<section class="sec" id="como">
+  <div class="head r"><span class="eyebrow">El flujo completo</span><h2 class="h-l">Del encargo al portfolio, <em class="a">sin salir de aquí.</em></h2><p class="lede">Cada pieza del trabajo de un freelance tiene su sitio en Positiva, y todas se alimentan del mismo material: lo que subes una vez sirve para revisar, entregar y mostrar.</p></div>
+  <div class="grid g4">
+    <a class="q r" href="/new/revision-video/"><div class="shot"><img src="/img/qcards/revision-video.webp" alt="" loading="lazy"><video data-noauto class="hover" muted playsinline loop preload="none" src="/video/revision-comentar.mp4"></video></div><div class="b"><span class="k">Revisión</span><h3>Comentarios en su sitio</h3><p>El cliente comenta sobre la foto o el fotograma del vídeo, y los cambios llegan juntos, por rondas.</p></div></a>
+    <a class="q r d1" href="/new/galerias/"><div class="shot"><img src="/video/pasos/entrega-poster.jpg" alt="" loading="lazy"><video data-noauto class="hover" muted playsinline loop preload="none" src="/video/pasos/entrega.mp4"></video></div><div class="b"><span class="k">Entrega</span><h3>Un enlace que no muere</h3><p>Galería con tu marca, permisos por enlace y ZIP de descarga completa.</p></div></a>
+    <a class="q r d2" href="/new/galerias/#diseno"><div class="shot"><img src="/img/galerias/marca-galeria.webp" alt="" loading="lazy"><video data-noauto class="hover" muted playsinline loop preload="none" src="/video/pasos/disenas.mp4"></video></div><div class="b"><span class="k">Marca</span><h3>Tu marca en todo</h3><p>Portadas, temas, tu logo y tu subdominio — o tu dominio.</p></div></a>
+    <a class="q r d3" href="/new/portfolio/"><div class="shot"><img src="/img/perfiles/perfil-rmq.webp" alt="" loading="lazy"></div><div class="b"><span class="k">Portfolio</span><h3>El portfolio se hace solo</h3><p>Eliges lo mejor de lo ya subido y tu portfolio queda publicado.</p></div></a>
   </div>
 </section>
 </div>
-<section class="final"><div class="wrap inner"><h2 class="h-xl r">Entrega, revisa y envía. <em class="a">Con tu marca.</em></h2><div class="r d1" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center"><a class="btn" href="/new/precios/">Probar el plan Estudio</a><a class="btn ghost" href="#demo">Reserva una demo</a></div></div></section>
+
+<section class="sala"><div class="wrap">
+  <div class="head r" style="padding-top:var(--gap)"><span class="eyebrow">El espacio y el precio</span><h2 class="h-l">Gigas claros, <em class="a">sin letra pequeña.</em></h2><p class="lede">Nada de «ilimitado» que se cobra por otro lado: sabes cuántos gigas tienes y cuánto valen, y el vídeo comparte espacio con las fotos en lugar de facturarse como «horas de vídeo». Empiezas gratis y subes de plan cuando el trabajo lo pida.</p></div>
+  <div class="cols c2">
+    <div class="r"><span class="k">Gratis</span><h3>Para empezar, gratis</h3><p>El plan Gratis incluye espacio y galerías activas suficientes para probar el flujo completo con encargos reales. <a href="/new/precios/">Los planes, en detalle</a>.</p></div>
+    <div class="r d1"><span class="k">Fundador</span><h3>Tarifa fundador</h3><p>Los primeros 50 creadores que entren conservan su precio para siempre. Es lo justo por confiar en nosotros.</p></div>
+  </div>
+</div></section>
+
+<div class="wrap">
+<section class="sec tight" id="faq">
+  <div class="head r"><span class="eyebrow">Preguntas frecuentes</span><h2 class="h-l">Las que importan.</h2></div>
+  <div class="faq r">
+    <details><summary>¿Puedo empezar sin pagar?</summary><p>Sí. El plan Gratis existe para probar el flujo completo con encargos reales, y los planes de pago se contratan cuando el volumen lo pide. <a href="/new/precios/">Los planes, en detalle</a>.</p></details>
+    <details><summary>¿El vídeo consume un espacio aparte?</summary><p>No. Fotos y vídeo comparten los mismos gigas de tu plan. No hay «horas de vídeo» ni un producto separado que contratar.</p></details>
+    <details><summary>¿Sustituye a mi herramienta de transferencias?</summary><p>Para el trabajo con clientes, sí: los enlaces no caducan, llevan tu marca y controlan qué se descarga. También puedes compartir un archivo suelto sin montar una galería.</p></details>
+    <details><summary>¿Y la web de portfolio?</summary><p>Incluida en todos los planes: cuatro páginas con tu nombre en tu subdominio, montadas con el material que ya has subido. <a href="/new/portfolio/">Cómo funciona</a>.</p></details>
+    <details><summary>¿Qué pasa si un mes no tengo encargos?</summary><p>Nada: tus galerías siguen en su sitio y los enlaces entregados siguen funcionando. Tu archivo no depende de tu mes.</p></details>
+  </div>
+  <nav class="ayuda r" aria-label="Artículos relacionados"><span>Del soporte</span><div><a href="/new/galerias/">Galerías de entrega</a><a href="/new/revision-video/">Revisión de vídeo</a><a href="/new/galerias/#diseno">Diseño y marca</a><a href="/new/portfolio/">Portfolio público</a><a href="/new/precios/">Planes y precios</a><a href="/soporte/es/almacenamiento/">Cómo se calcula tu almacenamiento</a></div></nav>
+</section>
+</div>
+<section class="final" id="demo"><div class="wrap inner">
+  <span class="eyebrow r">Reserva una demo</span>
+  <h2 class="h-xl r d1">Una herramienta menos que pagar. <em class="a">Tres, en realidad.</em></h2>
+  <p class="lede r d2">Positiva se cuenta mejor en directo. Reserva una demo y te la enseño sobre tu propio flujo de trabajo, sin compromiso. Y si prefieres verla por tu cuenta, <a href="https://app.positiva.studio/registro" data-ev="register_click">regístrate y entra hoy mismo</a>.</p>
+  <form class="demo" id="wl" novalidate>
+    <input type="email" name="email" id="wl-email" placeholder="nombre@tuestudio.com" required aria-label="Tu email" autocomplete="email">
+    <button type="submit" class="btn">Reserva una demo</button>
+  </form>
+  <small class="demo-msg" id="msg">Sin compromiso y sin newsletter: te escribo solo para agendarla.</small>
+</div></section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://positiva.studio/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Freelance",
+          "item": "https://positiva.studio/freelance/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Puedo empezar sin pagar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. El plan Gratis existe para probar el flujo completo con encargos reales, y los planes de pago se contratan cuando el volumen lo pide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El vídeo consume un espacio aparte?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Fotos y vídeo comparten los mismos gigas de tu plan. No hay «horas de vídeo» ni un producto separado que contratar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Sustituye a mi herramienta de transferencias?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para el trabajo con clientes, sí: los enlaces no caducan, llevan tu marca y controlan qué se descarga. También puedes compartir un archivo suelto sin montar una galería."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Y la web de portfolio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Incluida en todos los planes: cuatro páginas con tu nombre en tu subdominio, montadas con el material que ya has subido."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si un mes no tengo encargos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nada: tus galerías siguen en su sitio y los enlaces entregados siguen funcionando. Tu archivo no depende de tu mes."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </main>
 <!-- ════════════════════════════════════════════════════════════════
      PIE COMÚN · fuente única: partials/chrome-footer.html
