@@ -365,3 +365,5 @@ body.menu-abierto{overflow:hidden}
 .tabla.t3 table{min-width:0}
 @media(max-width:520px){.tabla.t3 th,.tabla.t3 td{padding:12px 10px;font-size:14px}}
 .cols p.h-m{font-size:clamp(26px,2.8vw,40px);line-height:1.15;color:var(--tinta)}
+.sala .cols code{background:#2A2A27;color:var(--hueso)}
+@media(max-width:760px){.cols.m2{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cols.m2>div{padding:18px 16px}.cols.m2 h3{font-size:19px}.cols.m2 p{font-size:14px}}
