@@ -48,7 +48,7 @@ body=body.replace('src="/video/galeria-hero-720.mp4"','data-start="1.6" src="/vi
 # enlaces del prototipo → enlaces reales
 nav_links={'>Entrega</a>':'/galerias/','>Revisión</a>':'/revision-video/','>Portfolio</a>':'/portfolio/','>Precios</a>':'/precios/','>Blog</a>':'/notas/'}
 for k,v in nav_links.items(): body=body.replace('<a href="#home"'+k,f'<a href="{v}"'+k)
-body=body.replace('<a href="#archivos" class="new">','<a href="/new/archivos/" class="new">')
+body=body.replace('<a href="#archivos">Archivos</a>','<a href="/new/archivos/">Archivos</a>')
 body=body.replace('<a class="btn ghost" href="#home">Entrar</a>','<a class="btn ghost" href="https://app.positiva.studio">Entrar</a>')
 body=body.replace('<a href="#home" class="logo"','<a href="/new/" class="logo"')
 body=re.sub(r'<a class="btn" href="#home">Empieza gratis</a>','<a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click">Empieza gratis</a>',body)
@@ -76,12 +76,6 @@ def card_fix(m):
 body=re.sub(r'<a class="q r[^"]*" href="#home">.*?</a>\n',card_fix,body,flags=re.S)
 # cualquier #home restante → /new/
 body=body.replace('href="#home"','href="/new/"')
-
-# ── 3. copy de Archivos (herramienta de trabajo, no función de cliente) ─────
-body=body.replace('<h3>Pide los archivos. Deja de perseguirlos.</h3><p class="l">Crea una solicitud, envía el enlace y recibe brutos, logos o material directamente en tus Archivos. Quien sube no necesita cuenta.</p>\n      <ul><li>Subidas grandes que se reanudan si se corta.</li><li>Sin límite por envío: el único límite es tu cuota.</li><li>Carpeta de destino y contraseña opcional.</li></ul>',
- '<h3>Pide los brutos. O comparte la carpeta.</h3><p class="l">Archivos es tu mesa de trabajo: organiza carpetas junto a tus galerías, comparte material con un cliente o un compañero, y crea solicitudes para que te suban brutos, logos o selecciones. Quien sube no necesita cuenta.</p>\n      <ul><li>Solicitudes a clientes, compañeros o proveedores, con un enlace.</li><li>Subidas grandes que se reanudan si se corta.</li><li>Carpetas con la cuota de tu plan, en el mismo sitio que entregas.</li></ul>')
-body=body.replace('<span class="k">Archivos y solicitudes · nuevo</span><h3>Pide los brutos con un enlace</h3><p>Sin cuenta para quien sube. Todo cae en tus Archivos.</p>',
- '<span class="k">Archivos y solicitudes · nuevo</span><h3>Tu mesa de trabajo</h3><p>Organiza, comparte y pide archivos a clientes, compañeros o proveedores.</p>')
 
 # ── 4. separar vistas ───────────────────────────────────────────────────────
 nav_html=re.search(r'<nav class="top".*?</nav>',body,re.S).group(0)

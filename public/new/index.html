@@ -79,16 +79,17 @@ nav.top .inner{display:flex;align-items:center;justify-content:space-between;gap
 
 /* hero */
 .hero{padding-block:clamp(56px,9vw,120px) 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px}
-.hero h1{max-width:14ch}
-.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.14em;margin-bottom:-.14em}
-.hero h1 .w span{display:inline-block;transform:translateY(110%);animation:rise 1.1s var(--ease) forwards}
-.hero h1 .w:nth-child(2) span{animation-delay:.06s}.hero h1 .w:nth-child(3) span{animation-delay:.12s}.hero h1 .w:nth-child(4) span{animation-delay:.18s}.hero h1 .w:nth-child(5) span{animation-delay:.24s}.hero h1 .w:nth-child(6) span{animation-delay:.3s}.hero h1 .w:nth-child(7) span{animation-delay:.36s}
+.hero .titular{max-width:14ch;margin:0}
+.hero .h1d{font-weight:400;color:var(--tinta);max-width:40ch;font-family:var(--sans);font-size:clamp(18px,1.6vw,23px);line-height:1.4;letter-spacing:0}
+.hero .titular .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.14em;margin-bottom:-.14em}
+.hero .titular .w span{display:inline-block;transform:translateY(110%);animation:rise 1.1s var(--ease) forwards}
+ .hero .titular .w:nth-child(2) span{animation-delay:.06s} .hero .titular .w:nth-child(3) span{animation-delay:.12s} .hero .titular .w:nth-child(4) span{animation-delay:.18s} .hero .titular .w:nth-child(5) span{animation-delay:.24s} .hero .titular .w:nth-child(6) span{animation-delay:.3s} .hero .titular .w:nth-child(7) span{animation-delay:.36s}
 @keyframes rise{to{transform:none}}
-.hero .lede,.hero .cta,.hero .fine,.hero .eyebrow{opacity:0;animation:fade 1.2s var(--ease) .45s forwards}
+.hero .lede,.hero .h1d,.hero .cta,.hero .fine,.hero .eyebrow{opacity:0;animation:fade 1.2s var(--ease) .45s forwards}
 @keyframes fade{to{opacity:1}}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px}
 .hero .fine{font-family:var(--mono);font-size:12px;color:var(--tinta-2)}
-@media(prefers-reduced-motion:reduce){.hero h1 .w span,.hero .lede,.hero .cta,.hero .fine,.hero .eyebrow{animation:none;transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.hero .titular .w span,.hero .lede,.hero .h1d,.hero .cta,.hero .fine,.hero .eyebrow{animation:none;transform:none;opacity:1}}
 
 /* escenario: vídeo grande que respira con el scroll */
 .stage{margin-top:clamp(40px,6vw,72px);width:100%;max-width:1180px;transform:scale(.94);opacity:0;animation:stagein 1.4s var(--ease) .5s forwards}
@@ -107,7 +108,7 @@ nav.top .inner{display:flex;align-items:center;justify-content:space-between;gap
 .chap button{appearance:none;border:0;border-right:1px solid var(--linea);background:transparent;font:inherit;padding:18px 18px 20px;cursor:pointer;color:var(--tinta-2);position:relative;display:flex;flex-direction:column;gap:4px;min-width:0;text-align:left}
 .chap button:last-child{border-right:0}
 .chap button b{font-weight:600;color:var(--tinta);font-size:15px;display:flex;gap:10px;align-items:baseline}
-.chap button b small{font-family:var(--mono);font-size:11px;color:var(--ambar-ink);font-weight:400}
+.chap button b small{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ambar-ink);font-weight:400;background:var(--ambar-luz);padding:2px 6px;border-radius:999px}
 .chap button span{font-size:13.5px;line-height:1.4}
 .chap button i{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--ambar)}
 .chap button[aria-selected="true"]{background:var(--luz)}
@@ -144,6 +145,7 @@ nav.top .inner{display:flex;align-items:center;justify-content:space-between;gap
 .step{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,6vw,96px);align-items:center;padding-block:clamp(40px,6vw,88px)}
 .step.flip .txt{order:2}
 .step .n{font-family:var(--display);font-size:clamp(64px,8vw,120px);line-height:.8;color:var(--linea);letter-spacing:-.04em;margin-bottom:22px}
+.step .txt>.eyebrow{display:block;margin-bottom:18px}
 .step h3{font-family:var(--display);font-size:clamp(30px,3.6vw,50px);line-height:1.04;letter-spacing:-.01em}
 .step .l{color:var(--tinta-2);margin-top:18px;max-width:46ch;font-size:17px}
 .step ul{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:10px}
@@ -269,7 +271,7 @@ footer.site{margin-top:0}
 <a class="saltar" href="#contenido">Saltar al contenido</a>
 <nav class="top" id="nav" aria-label="Principal"><div class="wrap inner">
   <a href="/new/" class="logo" aria-label="Positiva"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg>Positiva<b>.</b></a>
-  <div class="links"><a href="/galerias/">Entrega</a><a href="/revision-video/">Revisión</a><a href="/new/archivos/" class="new">Archivos y solicitudes</a><a href="/portfolio/">Portfolio</a><a href="/precios/">Precios</a><a href="/notas/">Blog</a></div>
+  <div class="links"><a href="/galerias/">Entrega</a><a href="/revision-video/">Revisión</a><a href="/new/archivos/">Archivos</a><a href="/portfolio/">Portfolio</a><a href="/precios/">Precios</a><a href="/notas/">Blog</a></div>
   <div class="acc"><a class="btn ghost" href="https://app.positiva.studio">Entrar</a><a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click">Empieza gratis</a></div>
 </div></nav>
 <main id="contenido">
@@ -277,8 +279,8 @@ footer.site{margin-top:0}
 <div class="wrap">
 <section class="hero">
   <span class="eyebrow">Para fotógrafos, videógrafos y productoras</span>
-  <h1 class="h-xl"><span class="w"><span>Recibe,</span></span> <span class="w"><span>revisa</span></span> <span class="w"><span>y&nbsp;entrega</span></span> <span class="w"><span>tu&nbsp;trabajo.</span></span> <span class="w"><span><em class="a">Con&nbsp;tu&nbsp;marca.</em></span></span></h1>
-  <p class="lede">Galerías de fotos y vídeo para clientes, comentarios sobre el fotograma, solicitudes de archivos y portfolio público. Una sola herramienta, alojada en la UE.</p>
+  <p class="h-xl titular"><span class="w"><span>Tu&nbsp;trabajo</span></span> <span class="w"><span>no&nbsp;termina</span></span> <span class="w"><span><em class="a">cuando&nbsp;exportas.</em></span></span></p>
+  <h1 class="lede h1d">Galerías de fotos y vídeo para clientes, revisión online y envío de archivos, con tu marca.</h1>
   <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click">Empieza gratis</a><a class="btn ghost" href="#demo">Reserva una demo</a></div>
   <p class="fine">15 GB gratis para siempre · sin tarjeta · tus archivos se van contigo cuando quieras</p>
 
@@ -287,19 +289,18 @@ footer.site{margin-top:0}
       <div class="bar"><i></i><i></i><i></i><span class="url" id="url">quieroweddingstudio.positiva.studio/g/alvaro-y-elena</span></div>
       <div class="panes" id="panes">
         <div class="pane on" data-p="0"><video muted playsinline loop preload="metadata" poster="/video/showcase-hero-poster.jpg" src="/video/showcase-hero.mp4"></video></div>
-        <div class="pane" data-p="1"><div class="mock" aria-hidden="true">
+        <div class="pane" data-p="1"><video muted playsinline loop preload="metadata" poster="/video/pasos/revision-poster.jpg" src="/video/revision-video.mp4"></video></div>
+        <div class="pane" data-p="2"><div class="mock" aria-hidden="true">
           <div class="card"><div class="t">Brutos boda Ana y Luis</div><div class="row"><span>Solicita: Rodrigo Márquez</span><span>Sin cuenta · sin límite por envío</span></div><div class="drop">Arrastra aquí tus archivos o haz clic para elegirlos</div><div class="row"><span>A7IV_0412.MP4</span><span>1,8 GB · 62 % · 48 MB/s</span></div><div class="pr"><b></b></div><div class="row"><span>A7IV_0413.MP4</span><span>2,4 GB · en cola</span></div><div class="pr"><b style="width:0"></b></div><div class="row"><span>3 de 9 terminados</span><span>Quedan 14 min</span></div></div>
           <div class="card"><div class="row"><span><b style="color:var(--tinta)">Archivos</b> &nbsp; Solicitudes</span><span>Subir · Solicitar</span></div><div class="row"><span>▸ Boda Ana y Luis / Brutos</span><span>9 · 14,2 GB</span></div><div class="row"><span>▸ Hoka · evento / Logos</span><span>4 · 28 MB</span></div><div class="row"><span>▸ Campaña NYC / Selección</span><span>84 · 2,1 GB</span></div><div style="flex:1"></div><div class="row"><span>Almacenamiento</span><span>412 GB de 1 TB</span></div><div class="pr"><b style="width:41%"></b></div></div>
         </div><span class="lbl">maqueta · falta captura real</span></div>
-        <div class="pane" data-p="2"><video muted playsinline loop preload="metadata" poster="/video/pasos/revision-poster.jpg" src="/video/revision-video.mp4"></video></div>
-        <div class="pane" data-p="3"><video muted playsinline loop preload="metadata" poster="/video/pasos/entrega-poster.jpg" src="/video/pasos/entrega.mp4"></video></div>
-        <div class="pane" data-p="4"><img src="/img/perfiles/perfil-rmq.webp" alt="Portfolio público generado desde las galerías"></div>
+        <div class="pane" data-p="3"><img src="/img/perfiles/perfil-rmq.webp" alt="Portfolio público generado desde las galerías"></div>
       </div>
       <div class="chap" role="tablist" aria-label="Qué hace Positiva">
-        <button role="tab" aria-selected="true" data-p="0" data-url="quieroweddingstudio.positiva.studio/g/alvaro-y-elena" data-dur="12000"><b><small>00</small>Así se ve</b><span>Una entrega real, de la subida a la galería.</span><i></i></button>
-        <button role="tab" aria-selected="false" data-p="1" data-url="positiva.studio/s/brutos-boda-ana" data-dur="7000"><b><small>01</small>Recibe</b><span>Pide brutos y material con un enlace. Sin cuenta para quien sube.</span><i></i></button>
-        <button role="tab" aria-selected="false" data-p="2" data-url="rodrigomarquez.positiva.studio/g/must-have-nyc" data-dur="9000"><b><small>02</small>Revisa</b><span>Comentarios sobre el fotograma. Rondas. Exporta a DaVinci y Final Cut.</span><i></i></button>
-        <button role="tab" aria-selected="false" data-p="3" data-url="app.positiva.studio/galerias/must-have-nyc" data-dur="10000"><b><small>03</small>Entrega</b><span>Galería con tu marca, un enlace que no caduca, ZIP y analítica.</span><i></i></button>
+        <button role="tab" aria-selected="true" data-p="0" data-url="quieroweddingstudio.positiva.studio/g/alvaro-y-elena" data-dur="12000"><b>Entrega</b><span>Galerías de fotos y vídeo con tu marca. Un enlace que no caduca.</span><i></i></button>
+        <button role="tab" aria-selected="false" data-p="1" data-url="rodrigomarquez.positiva.studio/g/must-have-nyc" data-dur="9000"><b>Revisión</b><span>Favoritas y comentarios sobre la foto o el fotograma. Rondas.</span><i></i></button>
+        <button role="tab" aria-selected="false" data-p="2" data-url="positiva.studio/s/brutos-boda-ana" data-dur="7000"><b>Envíos <small>plan Estudio</small></b><span>Manda y pide archivos a clientes, proveedores y partners.</span><i></i></button>
+        <button role="tab" aria-selected="false" data-p="3" data-url="rodrigomarquez.positiva.studio" data-dur="8000"><b>Portfolio</b><span>Tu web, con lo que ya has subido. Con tu dominio.</span><i></i></button>
       </div>
     </div>
   </div>
@@ -322,41 +323,40 @@ footer.site{margin-top:0}
 
 <div class="wrap">
 <section class="sec" id="como">
-  <div class="head r"><span class="eyebrow">Cómo funciona</span><h2 class="h-l">Cuatro pasos. Un único sitio con tu marca.</h2><p class="lede">Lo que recibes es lo que revisas, lo que apruebas es lo que entregas, y lo que entregas alimenta tu portfolio. Sin volver a subir nada.</p></div>
-
+  <div class="head r"><span class="eyebrow">Entrega · Revisión · Envíos · Portfolio</span><h2 class="h-l">Cada punto de contacto con tu cliente, con tu marca.</h2><p class="lede">Lo que hoy repartes entre un WeTransfer con anuncios, un hilo de WhatsApp y una carpeta de Drive, aquí sale con tu nombre.</p></div>
   <article class="step">
-    <div class="txt r"><div class="n">01</div><h3>Pide los brutos. O comparte la carpeta.</h3><p class="l">Archivos es tu mesa de trabajo: organiza carpetas junto a tus galerías, comparte material con un cliente o un compañero, y crea solicitudes para que te suban brutos, logos o selecciones. Quien sube no necesita cuenta.</p>
-      <ul><li>Solicitudes a clientes, compañeros o proveedores, con un enlace.</li><li>Subidas grandes que se reanudan si se corta.</li><li>Carpetas con la cuota de tu plan, en el mismo sitio que entregas.</li></ul><a class="more" href="/new/archivos/">Archivos y solicitudes</a></div>
-    <div class="media ratio reveal-img" style="position:relative"><div class="mock" aria-hidden="true"><div class="card"><div class="t">Brutos boda Ana y Luis</div><div class="row"><span>Solicita: Rodrigo Márquez</span><span>Sin cuenta</span></div><div class="drop">Arrastra aquí tus archivos</div><div class="row"><span>A7IV_0412.MP4</span><span>1,8 GB · 62 %</span></div><div class="pr"><b></b></div><div class="row"><span>3 de 9 terminados</span><span>Quedan 14 min</span></div></div><div class="card"><div class="row"><span><b style="color:var(--tinta)">Archivos</b> &nbsp; Solicitudes</span><span>Solicitar</span></div><div class="row"><span>▸ Boda Ana y Luis / Brutos</span><span>14,2 GB</span></div><div class="row"><span>▸ Hoka · evento / Logos</span><span>28 MB</span></div><div style="flex:1"></div><div class="row"><span>412 GB de 1 TB</span></div><div class="pr"><b style="width:41%"></b></div></div></div><span class="lbl">maqueta · falta captura real</span></div>
-  </article>
-
-  <article class="step flip">
-    <div class="txt r"><div class="n">02</div><h3>Tu cliente no habla en códigos de tiempo. No hace falta.</h3><p class="l">Comenta sobre el fotograma exacto y lo recibes asociado al archivo correcto, con su marcador. En foto, favoritas y comentarios por imagen.</p>
-      <ul><li>Rondas de aprobación con límite de vueltas.</li><li>Exporta los comentarios como marcadores a DaVinci Resolve y Final Cut Pro.</li><li>Revisión colaborativa o individual.</li></ul><a class="more" href="/revision-video/">Revisión de vídeo y foto</a></div>
-    <div class="media reveal-img"><video class="auto" muted playsinline loop preload="metadata" poster="/video/pasos/revision-poster.jpg" src="/video/pasos/revision.mp4"></video></div>
-  </article>
-
-  <article class="step">
-    <div class="txt r"><div class="n">03</div><h3>Una galería con tu marca y un enlace que no caduca.</h3><p class="l">Fotos y vídeos juntos. Lo compartes una vez y sigue funcionando hasta que tú decidas lo contrario: puedes reemplazar archivos sin enviar otra URL.</p>
+    <div class="txt r"><span class="eyebrow">Entrega</span><h3>Una galería con tu marca y un enlace que no caduca.</h3><p class="l">Fotos y vídeos juntos. Lo compartes una vez y sigue funcionando hasta que tú decidas lo contrario: puedes reemplazar archivos sin enviar otra URL.</p>
       <ul><li>Un enlace por acceso: originales, versión web para prensa, solo ver.</li><li>ZIP automático de la galería o de cada momento.</li><li>Analítica de visitas, únicos, descargas y reproducciones.</li></ul><a class="more" href="/galerias/">Galerías de entrega</a></div>
     <div class="media reveal-img"><video class="auto" muted playsinline loop preload="metadata" poster="/video/galeria-hero-poster2.jpg" data-start="1.6" src="/video/galeria-hero-720.mp4"></video></div>
   </article>
 
   <article class="step flip">
-    <div class="txt r"><div class="n">04</div><h3>Tu portfolio, con lo que ya has subido.</h3><p class="l">Repasa tus proyectos, marca tus fotografías y vídeos preferidos y publícalos en tu web de fotógrafo o videógrafo. Sin mantener otra web. Con tu dominio en el plan Estudio.</p><a class="more" href="/portfolio/">Portfolio público</a></div>
+    <div class="txt r"><span class="eyebrow">Revisión</span><h3>Tu cliente no habla en códigos de tiempo. No hace falta.</h3><p class="l">Comenta sobre el fotograma exacto y lo recibes asociado al archivo correcto, con su marcador. En foto, favoritas y comentarios por imagen.</p>
+      <ul><li>Rondas de aprobación con límite de vueltas.</li><li>Exporta los comentarios como marcadores a DaVinci Resolve y Final Cut Pro.</li><li>Revisión colaborativa o individual.</li></ul><a class="more" href="/revision-video/">Revisión de vídeo y foto</a></div>
+    <div class="media reveal-img"><video class="auto" muted playsinline loop preload="metadata" poster="/video/pasos/revision-poster.jpg" src="/video/pasos/revision.mp4"></video></div>
+  </article>
+
+  <article class="step">
+    <div class="txt r"><span class="eyebrow">Envíos y solicitudes · plan Estudio</span><h3>Manda y pide archivos sin salir de tu marca.</h3><p class="l">Envía una carpeta a un cliente o a un laboratorio, o pide brutos, logos y selecciones a clientes, proveedores y partners con un enlace. Quien sube no necesita cuenta, y nada caduca a los siete días.</p>
+      <ul><li>Subidas grandes que se reanudan si se corta.</li><li>Sin límite por envío: el único límite es tu cuota.</li><li>Tus Archivos, junto a tus galerías.</li></ul><a class="more" href="/new/archivos/">Archivos y solicitudes</a></div>
+    <div class="media ratio reveal-img" style="position:relative"><div class="mock" aria-hidden="true"><div class="card"><div class="t">Brutos boda Ana y Luis</div><div class="row"><span>Solicita: Rodrigo Márquez</span><span>Sin cuenta</span></div><div class="drop">Arrastra aquí tus archivos</div><div class="row"><span>A7IV_0412.MP4</span><span>1,8 GB · 62 %</span></div><div class="pr"><b></b></div><div class="row"><span>3 de 9 terminados</span><span>Quedan 14 min</span></div></div><div class="card"><div class="row"><span><b style="color:var(--tinta)">Archivos</b> &nbsp; Solicitudes</span><span>Solicitar</span></div><div class="row"><span>▸ Boda Ana y Luis / Brutos</span><span>14,2 GB</span></div><div class="row"><span>▸ Hoka · evento / Logos</span><span>28 MB</span></div><div style="flex:1"></div><div class="row"><span>412 GB de 1 TB</span></div><div class="pr"><b style="width:41%"></b></div></div></div><span class="lbl">maqueta · falta captura real</span></div>
+  </article>
+
+  <article class="step flip">
+    <div class="txt r"><span class="eyebrow">Portfolio público</span><h3>Tu portfolio, con lo que ya has subido.</h3><p class="l">Repasa tus proyectos, marca tus fotografías y vídeos preferidos y publícalos en tu web de fotógrafo o videógrafo. Sin mantener otra web. Con tu dominio en el plan Estudio.</p><a class="more" href="/portfolio/">Portfolio público</a></div>
     <div class="media reveal-img"><img src="/img/perfiles/perfil-qws.webp" alt="Portfolio público de un estudio de bodas"></div>
   </article>
 </section>
 
 <section class="sec" id="que">
-  <div class="head r"><span class="eyebrow">Qué hace Positiva</span><h2 class="h-l">Lo que hoy repartes en cinco herramientas.</h2><p class="lede">Cada pieza tiene su página. Esta es la vista general.</p></div>
+  <div class="head r"><span class="eyebrow">Qué hace Positiva</span><h2 class="h-l">Todo lo que tu cliente recibe de ti, en un solo sitio.</h2><p class="lede">Cada pieza tiene su página. Esta es la vista general.</p></div>
   <div class="grid">
     <a class="q r" href="/galerias/"><div class="shot"><img src="/img/galerias/galeria-fotos.webp" alt=""><video class="hover" muted playsinline loop preload="none" src="/video/pasos/subes.mp4"></video></div><div class="b"><span class="k">Galerías</span><h3>Fotos y vídeos, en una sola galería</h3><p>Sin separar formatos ni mandar a tu cliente a otra plataforma.</p><span class="go">Ver las galerías</span></div></a>
     <a class="q r d1" href="/galerias/#diseno"><div class="shot"><img src="/img/galerias/marca-galeria.webp" alt=""><video class="hover" muted playsinline loop preload="none" src="/video/pasos/disenas.mp4"></video></div><div class="b"><span class="k">Diseño</span><h3>Tu galería, tu marca</h3><p>Logo, colores, tipografía, portada y cuadrícula.</p><span class="go">Ver los diseños</span></div></a>
     <a class="q r d2" href="/galerias/"><div class="shot"><img src="/video/pasos/entrega-poster.jpg" alt=""><video class="hover" muted playsinline loop preload="none" src="/video/pasos/entrega.mp4"></video></div><div class="b"><span class="k">Enlaces</span><h3>Un enlace que no caduca, y uno por acceso</h3><p>Cada uno con su contraseña y sus permisos de descarga.</p><span class="go">Ver los enlaces</span></div></a>
     <a class="q r" href="/revision-video/"><div class="shot"><img src="/img/qcards/revision-video.webp" alt=""><video class="hover" muted playsinline loop preload="none" src="/video/revision-comentar.mp4"></video></div><div class="b"><span class="k">Revisión de vídeo</span><h3>Comentarios sobre el fotograma</h3><p>Prioridad, estado y exportación al editor.</p><span class="go">Ver la revisión de vídeo</span></div></a>
     <a class="q r d1" href="/revision-foto/"><div class="shot"><img src="/img/qcards/revision-foto.webp" alt=""><video class="hover" muted playsinline loop preload="none" src="/video/pasos/cliente.mp4"></video></div><div class="b"><span class="k">Revisión de foto</span><h3>Favoritas y comentarios por imagen</h3><p>Tu cliente elige; tú recibes la lista sin WhatsApps.</p><span class="go">Ver la revisión de foto</span></div></a>
-    <a class="q r d2" href="/new/archivos/"><div class="shot" style="position:relative"><div class="mock" style="font-size:9px;padding:12px" aria-hidden="true"><div class="card"><div class="t">Brutos boda Ana y Luis</div><div class="drop">Arrastra aquí tus archivos</div><div class="row"><span>A7IV_0412.MP4</span><span>62 %</span></div><div class="pr"><b></b></div></div><div class="card"><div class="row"><span><b style="color:var(--tinta)">Archivos</b></span><span>Solicitar</span></div><div class="row"><span>▸ Brutos</span><span>14,2 GB</span></div><div style="flex:1"></div><div class="pr"><b style="width:41%"></b></div></div></div><span class="lbl">maqueta</span></div><div class="b"><span class="k">Archivos y solicitudes · nuevo</span><h3>Tu mesa de trabajo</h3><p>Organiza, comparte y pide archivos a clientes, compañeros o proveedores.</p><span class="go">Ver Archivos y solicitudes</span></div></a>
+    <a class="q r d2" href="/new/archivos/"><div class="shot" style="position:relative"><div class="mock" style="font-size:9px;padding:12px" aria-hidden="true"><div class="card"><div class="t">Brutos boda Ana y Luis</div><div class="drop">Arrastra aquí tus archivos</div><div class="row"><span>A7IV_0412.MP4</span><span>62 %</span></div><div class="pr"><b></b></div></div><div class="card"><div class="row"><span><b style="color:var(--tinta)">Archivos</b></span><span>Solicitar</span></div><div class="row"><span>▸ Brutos</span><span>14,2 GB</span></div><div style="flex:1"></div><div class="pr"><b style="width:41%"></b></div></div></div><span class="lbl">maqueta</span></div><div class="b"><span class="k">Envíos y solicitudes · plan Estudio</span><h3>Manda y pide archivos con tu marca</h3><p>A clientes, proveedores y partners. Sin cuenta para quien sube.</p><span class="go">Ver Archivos</span></div></a>
     <a class="q r wide" href="/portfolio/"><div class="shot"><img src="/img/perfiles/perfil-rmq.webp" alt=""></div><div class="b"><span class="k">Portfolio público</span><h3>Tu web, con lo que ya has subido</h3><p>Con tu dominio en el plan Estudio. Indexable por buscadores.</p><span class="go">Ver el portfolio</span></div></a>
     <a class="q r d1 tall" href="/soporte/es/analitica/"><div class="shot" style="background:var(--sala);display:grid;place-items:center;color:var(--hueso)"><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px 28px;font-variant-numeric:tabular-nums;padding:20px"><div><b style="font-size:34px;font-weight:600;display:block;line-height:1">214</b><span style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gris)">VISITAS</span></div><div><b style="font-size:34px;font-weight:600;display:block;line-height:1">61</b><span style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gris)">DESCARGAS</span></div><div><b style="font-size:34px;font-weight:600;display:block;line-height:1">38</b><span style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gris)">ÚNICOS</span></div><div><b style="font-size:34px;font-weight:600;display:block;line-height:1">122</b><span style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gris)">REPRODUCC.</span></div></div></div><div class="b"><span class="k">Analítica</span><h3>Sabes si lo han visto</h3><p>Visitas, descargas y reproducciones. Sin píxeles de terceros.</p><span class="go">Ver la analítica</span></div></a>
   </div>
@@ -401,7 +401,7 @@ footer.site{margin-top:0}
 <section class="final" id="demo"><div class="wrap inner">
   <span class="eyebrow r">Reserva una demo</span>
   <h2 class="h-xl r d1">Se cuenta mejor <em class="a">en directo.</em></h2>
-  <p class="lede r d2" style="text-align:center">Sobre tu propio flujo, de la subida a la entrega, sin compromiso. Y si prefieres verla por tu cuenta, regístrate y entra hoy mismo.</p>
+  <p class="lede r d2" style="text-align:center">Sobre tu propio flujo: entrega, revisión y envíos, sin compromiso. Y si prefieres verla por tu cuenta, regístrate y entra hoy mismo.</p>
   <form class="demo r d3" id="wl" novalidate>
     <input type="email" name="email" id="wl-email" placeholder="nombre@tuestudio.com" required aria-label="Tu email" autocomplete="email">
     <button type="submit" class="btn">Reserva una demo</button>
