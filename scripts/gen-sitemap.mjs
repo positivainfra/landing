@@ -22,7 +22,7 @@ const ORIGIN = 'https://positiva.studio';
 const CHECK = process.argv.includes('--check');
 
 // Carpetas que nunca contienen páginas
-const SKIP_DIRS = new Set(['assets', 'fonts', 'img', 'js', 'video', 'soporte-assets']);
+const SKIP_DIRS = new Set(['assets', 'fonts', 'img', 'js', 'video', 'soporte-assets', 'new']); // 'new': nueva web en pruebas (noindex), fuera del sitemap
 
 const fileFor = (urlPath) => {
   const rel = urlPath.replace(/^\/|\/$/g, '');

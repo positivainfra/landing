@@ -1,2 +1,6 @@
 node_modules/
 .DS_Store
+
+# Basura local: nunca al repo ni al despliegue
+_to_delete/
+public/*.zip
