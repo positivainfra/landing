@@ -48,8 +48,37 @@
 .nota-card h2{font-size:clamp(21px,2.2vw,27px);margin:8px 0 8px}
 .nota-card p{font-size:15.5px;line-height:1.6;color:var(--pv-tinta-60)}
 @media(max-width:960px){.notas-doc{grid-template-columns:1fr}.notas-rail{position:static}}
+
+/* .cmpx.cmpx: gana a las reglas genéricas de tabla de cada hoja (p. ej. .prosa table th) */
+.cmpx.cmpx{margin:var(--pv-s5,24px) 0;border:1px solid var(--pv-linea,#DEDDD6);border-radius:16px;background:var(--pv-luz,#fff);overflow:hidden}
+.cmpx.cmpx table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:14.5px;line-height:1.45}
+.cmpx.cmpx th,.cmpx.cmpx td{padding:12px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--pv-linea,#DEDDD6);white-space:normal !important;overflow-wrap:anywhere;font-weight:400}
+.cmpx.cmpx tbody tr:last-child th,.cmpx.cmpx tbody tr:last-child td{border-bottom:0}
+.cmpx.cmpx thead th{font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--pv-tinta-60,#5A5852);background:var(--pv-bandeja,#E8E7E1);border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+.cmpx.cmpx thead th.pos{background:var(--pv-ambar-luz,#F6EAD2);color:var(--pv-ambar-ink,#8F5F15)}
+.cmpx.cmpx thead th:first-child{width:24%}
+.cmpx.cmpx tbody th{font-family:inherit;text-transform:none;letter-spacing:0;font-weight:600 !important;color:var(--pv-tinta,#171614);font-size:14px;background:none;border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+.cmpx.cmpx td{color:var(--pv-tinta-60,#5A5852)}
+.cmpx.cmpx td.pos{background:color-mix(in srgb,var(--pv-ambar-luz,#F6EAD2) 35%,transparent)}
+.cmpx.cmpx td.gana{background:#E6F2E8;color:#1F3B27;box-shadow:inset 3px 0 0 #2F7A45}
+.cmpx.cmpx .gana-b{display:flex;width:max-content;align-items:center;gap:4px;margin-bottom:5px;font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:#2F7A45;border-radius:999px;padding:2px 8px;line-height:1.5}
+.cmpx-ley{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:13px;color:var(--pv-tinta-60,#5A5852);margin:10px 0 0}
+.cmpx-ley .gana-b{display:inline-flex;align-items:center;gap:4px;font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:#2F7A45;border-radius:999px;padding:2px 8px}
+@media(max-width:700px){
+  .cmpx.cmpx{border:0;background:none;border-radius:0;overflow:visible}
+  .cmpx.cmpx table,.cmpx.cmpx tbody,.cmpx.cmpx tr,.cmpx.cmpx th,.cmpx.cmpx td{display:block;width:auto}
+  .cmpx.cmpx thead{display:none}
+  .cmpx.cmpx tbody tr{border:1px solid var(--pv-linea,#DEDDD6);border-radius:14px;background:var(--pv-luz,#fff);margin-bottom:10px;overflow:hidden}
+  .cmpx.cmpx tbody th{background:var(--pv-bandeja,#E8E7E1);padding:10px 14px;border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+  .cmpx.cmpx td{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:4px 10px;padding:10px 14px}
+  .cmpx.cmpx td::before{content:attr(data-h);font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--pv-tinta-60,#5A5852);padding-top:3px;grid-row:1 / span 2}
+  .cmpx.cmpx td.pos::before{color:var(--pv-ambar-ink,#8F5F15)}
+  .cmpx.cmpx td.gana{box-shadow:inset 3px 0 0 #2F7A45}
+  .cmpx.cmpx td .gana-b{grid-column:2;justify-self:start}
+  .cmpx.cmpx td .v{grid-column:2}
+}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Alternativas a Frame.io para vídeo y fotografía (2026)", "description": "Guía de alternativas a Frame.io: revisión de vídeo con comentarios por fotograma, entrega al cliente, precio por usuario y idioma. Datos verificados.", "datePublished": "2026-09-10", "dateModified": "2026-09-10", "inLanguage": "es", "author": {"@type": "Organization", "name": "Positiva", "url": "https://positiva.studio/"}, "publisher": {"@id": "https://positiva.studio/#org"}, "mainEntityOfPage": "https://positiva.studio/notas/alternativas-a-frame-io/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Alternativas a Frame.io para vídeo y fotografía (2026)", "description": "Guía de alternativas a Frame.io: revisión de vídeo con comentarios por fotograma, entrega al cliente, precio por usuario y idioma. Datos verificados.", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "inLanguage": "es", "author": {"@type": "Organization", "name": "Positiva", "url": "https://positiva.studio/"}, "publisher": {"@id": "https://positiva.studio/#org"}, "mainEntityOfPage": "https://positiva.studio/notas/alternativas-a-frame-io/"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Alternativas a Frame.io para vídeo y fotografía (2026)", "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Positiva"}, {"@type": "ListItem", "position": 2, "name": "Vimeo"}, {"@type": "ListItem", "position": 3, "name": "Dropbox Replay"}, {"@type": "ListItem", "position": 4, "name": "Frame.io"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué alternativa a Frame.io permite comentar sobre el fotograma exacto?", "acceptedAnswer": {"@type": "Answer", "text": "Positiva y Vimeo lo documentan: Positiva con comentarios anclados al fotograma que se exportan como marcadores a DaVinci Resolve y Final Cut Pro, y Vimeo con comentarios de código de tiempo en la línea de tiempo. En Dropbox Replay no hemos encontrado esa precisión declarada en su documentación oficial."}}, {"@type": "Question", "name": "¿Cuál sale más barata si mi cliente tiene que entrar a revisar?", "acceptedAnswer": {"@type": "Answer", "text": "Depende del modelo de precio, no de la tarifa. Frame.io, Vimeo y Dropbox Replay cobran por miembro, asiento o usuario; en Positiva los revisores entran por enlace y no suman coste, así que el precio no cambia porque tu cliente sea una persona o un comité."}}, {"@type": "Question", "name": "¿Alguna alternativa exporta los comentarios a mi editor?", "acceptedAnswer": {"@type": "Answer", "text": "Frame.io importa comentarios como marcadores en Premiere Pro y exporta en CSV, con integración heredada para DaVinci Resolve. Positiva exporta comentarios como marcadores a DaVinci Resolve y Final Cut Pro. En Vimeo no hemos encontrado exportación a editores documentada."}}, {"@type": "Question", "name": "¿Hay alguna que sirva también para fotografía?", "acceptedAnswer": {"@type": "Answer", "text": "Frame.io admite fotografía con visor propio y enlaces de revisión, y Positiva entrega y revisa fotografía y vídeo en la misma galería. Vimeo y Dropbox Replay son de vídeo (y Replay, también de audio)."}}, {"@type": "Question", "name": "¿Qué alternativas están en español?", "acceptedAnswer": {"@type": "Answer", "text": "Frame.io ofrece interfaz en diez idiomas incluido el español en sus experiencias actuales, y Vimeo en siete, español incluido. Positiva es española: panel, galerías y soporte en castellano, y datos alojados en la Unión Europea."}}, {"@type": "Question", "name": "¿Puedo usar Frame.io gratis?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, con límites: el plan gratuito son 2 GB y hasta 2 miembros. Si tienes Creative Cloud, iniciar sesión con tu Adobe ID lo sube a 100 GB y cinco proyectos compartidos con otra persona."}}]}</script>
 <link rel="stylesheet" href="/new/docs.css">
@@ -119,6 +148,14 @@ document.addEventListener('click', function (e) {
     <a href="/new/revision-video/">Revisión</a>
     <a href="/new/archivos/">Archivos</a>
     <a href="/new/portfolio/">Portfolio</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-casos">Casos de uso<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-casos">
+        <a href="/new/freelance/"><b>Freelance</b><span>Entrega, revisión, archivos y portfolio en una sola cuota</span></a>
+        <a href="/new/bodas/"><b>Bodas</b><span>La boda completa, fotos y vídeo, con un enlace que no caduca</span></a>
+        <a href="/new/productoras/"><b>Productoras de vídeo</b><span>Revisión por fotograma con varios interlocutores y entrega del máster</span></a>
+      </div>
+    </div>
     <a href="/new/precios/">Precios</a>
     <a href="/new/notas/">Blog</a>
   </div>
@@ -153,7 +190,7 @@ document.addEventListener('click', function (e) {
     <nav class="miga" aria-label="Migas de pan"><a href="/new/notas/">Blog</a> <span aria-hidden="true">·</span> <span>Alternativas</span></nav>
     <h1>Alternativas a Frame.io para vídeo y fotografía (2026)</h1>
     <p class="lede">Frame.io es el estándar de la revisión de vídeo en postproducción. Si buscas otra cosa suele ser por el precio por asiento, porque tu cliente no es un equipo de post, o porque además de revisar necesitas entregar. Esta guía compara las opciones según tu caso.</p>
-    <p class="notas-fecha">10 de septiembre de 2026 · Blog de Positiva</p>
+    <p class="notas-fecha">4 de octubre de 2026 · Blog de Positiva</p>
     <div class="prosa">
 
 <p>Frame.io hace muy bien un trabajo concreto: que un equipo de postproducción comente un corte sobre el fotograma exacto y esos comentarios lleguen al montador. Comentarios de fotograma único, de rango y anotaciones dibujadas encima; importación de comentarios como marcadores en Premiere Pro; Camera to Cloud desde el rodaje. Su plan Pro cuesta 15&nbsp;$ por miembro y mes más impuestos, con 2&nbsp;TB y hasta 5 miembros.</p>
@@ -165,6 +202,7 @@ document.addEventListener('click', function (e) {
 <thead><tr><th>Si buscas…</th><th>Mejor opción</th><th>Por qué</th></tr></thead>
 <tbody>
 <tr><td>Revisar y entregar foto y vídeo al cliente final</td><td><a href="/">Positiva</a></td><td>Revisión por fotograma y entrega con tu marca, sin pagar por asiento</td></tr>
+<tr><td>Pedir material a clientes o proveedores sin que creen cuenta</td><td>Dropbox Replay</td><td>Usa las solicitudes de Dropbox, incluidas en todos sus planes; Positiva las tiene solo en el plan Estudio</td></tr>
 <tr><td>Alojar vídeo público y hacer marketing con él</td><td>Vimeo</td><td>Reproductor incrustable, showcases y directos</td></tr>
 <tr><td>Revisar vídeo y audio donde ya guardas los archivos</td><td>Dropbox Replay</td><td>Complemento sobre el Dropbox que ya pagas, con audio incluido</td></tr>
 <tr><td>Postproducción en equipo, con Camera to Cloud</td><td>Quedarte en Frame.io</td><td>Ninguna alternativa replica C2C ni su integración con Premiere</td></tr>
@@ -194,11 +232,12 @@ document.addEventListener('click', function (e) {
 <li>No se paga por asiento: los revisores entran por enlace, sean uno o quince.</li>
 <li>Entrega final y <a href="/new/portfolio/">portfolio público</a> en la misma herramienta.</li>
 <li>Panel, galerías y soporte en español; datos en la Unión Europea; plan gratuito de 15&nbsp;GB.</li>
+<li>En el plan Estudio, <strong>Archivos</strong>: carpetas para guardar tu material en cualquier formato, envíos con enlace y solicitudes para que clientes, compañeros o proveedores te suban archivos sin crear cuenta (hasta 150&nbsp;GB por archivo).</li>
 </ul>
 <p><strong>Limitaciones:</strong></p>
 <ul>
 <li>No es una herramienta de postproducción colaborativa: no hay Camera to Cloud ni panel dentro de Premiere Pro.</li>
-<li>Admite JPEG y MP4 con H.264; no revisa audio suelto, PDF ni proyectos de edición.</li>
+<li>La revisión es de JPEG y MP4 con H.264: no revisa audio suelto, PDF ni proyectos de edición. En el plan Estudio puedes guardarlos y enviarlos desde Archivos, pero no comentarlos.</li>
 <li>Sin gestión de proyectos con miembros, roles y permisos internos por equipo.</li>
 <li>El almacenamiento va por plan: 250&nbsp;GB o 1&nbsp;TB, sin crecer por miembro.</li>
 </ul>
@@ -262,17 +301,20 @@ document.addEventListener('click', function (e) {
 <p><strong>Precio:</strong> incluido con Creative Cloud. Los planes de pago de Frame.io son Pro, 15&nbsp;$ por miembro/mes más impuestos, y Team, 25&nbsp;$; la facturación anual aplica un 13&nbsp;% de descuento cuya cifra exacta no aparece en su tabla pública.</p>
 
 <h2>Comparativa de datos</h2>
-<div class="tabla-scroll">
-<table>
-<thead><tr><th>Herramienta</th><th>Comentarios en vídeo</th><th>Exporta al editor</th><th>Fotografía</th><th>Entrega y portfolio</th><th>Modelo de precio</th><th>Precio de referencia</th></tr></thead>
+<div class="cmpx"><table>
+<thead><tr><th scope="col"><span style="position:absolute;left:-9999px">Criterio</span></th><th scope="col" class="pos">Positiva</th><th scope="col">Frame.io</th><th scope="col">Vimeo</th><th scope="col">Dropbox Replay</th></tr></thead>
 <tbody>
-<tr><td>Positiva</td><td><span class="pv-si">Por fotograma</span></td><td><span class="pv-si">Marcadores a DaVinci Resolve y Final Cut Pro; favoritas a Lightroom</span></td><td><span class="pv-si">Galerías con favoritas y comentarios</span></td><td><span class="pv-si">Entrega con tu marca + portfolio público</span></td><td>Por cuenta, revisores ilimitados</td><td>89 € + IVA/año (250 GB)</td></tr>
-<tr><td>Frame.io</td><td>Por fotograma, por rango y anotaciones dibujadas</td><td>Marcadores en Premiere Pro; CSV; Resolve heredado</td><td>Sí, con visor y enlaces de revisión</td><td>Presentaciones con marca, sin portfolio</td><td>Por miembro</td><td>15 $/miembro/mes (Pro)</td></tr>
-<tr><td>Vimeo</td><td>Con código de tiempo</td><td>No documentado</td><td>No</td><td>Showcases y portfolios de vídeo</td><td>Por asiento</td><td>25 $/asiento/mes (Standard)</td></tr>
-<tr><td>Dropbox Replay</td><td>Sí; vínculo al fotograma no documentado</td><td>Integración con editores; marcadores no documentados</td><td>No</td><td>No</td><td>Por usuario, sobre un plan de Dropbox</td><td>120 $/usuario/año + Dropbox</td></tr>
-</tbody>
-</table>
-</div>
+<tr><th scope="row">Comentarios en vídeo</th><td data-h="Positiva" class="pos"><span class="v">Por fotograma</span></td><td data-h="Frame.io" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Por fotograma, por rango y anotaciones dibujadas</span></td><td data-h="Vimeo"><span class="v">Con código de tiempo (desde Standard)</span></td><td data-h="Dropbox Replay"><span class="v">Sí; vínculo al fotograma no documentado</span></td></tr>
+<tr><th scope="row">Exporta al editor</th><td data-h="Positiva" class="pos"><span class="v">Marcadores a DaVinci Resolve y Final Cut Pro</span></td><td data-h="Frame.io"><span class="v">Marcadores en Premiere Pro; CSV</span></td><td data-h="Vimeo"><span class="v">No documentado</span></td><td data-h="Dropbox Replay"><span class="v">No documentado</span></td></tr>
+<tr><th scope="row">Fotografía</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Galerías con favoritas, comentarios y exportación a Lightroom</span></td><td data-h="Frame.io"><span class="v">Sí, con visor y enlaces de revisión</span></td><td data-h="Vimeo"><span class="v">No</span></td><td data-h="Dropbox Replay"><span class="v">No</span></td></tr>
+<tr><th scope="row">Guardar tus archivos</th><td data-h="Positiva" class="pos"><span class="v">Carpetas con cualquier formato y envíos con enlace (plan Estudio)</span></td><td data-h="Frame.io" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Cualquier archivo, hasta 5 TB, con carpetas</span></td><td data-h="Vimeo"><span class="v">Solo vídeo</span></td><td data-h="Dropbox Replay"><span class="v">Tu Dropbox, con cualquier archivo</span></td></tr>
+<tr><th scope="row">Pedir archivos a terceros</th><td data-h="Positiva" class="pos"><span class="v">Sí, en el plan Estudio: quien sube no necesita cuenta; hasta 150 GB por archivo</span></td><td data-h="Frame.io"><span class="v">Sin función propia</span></td><td data-h="Vimeo"><span class="v">Solo programándolo con su API</span></td><td data-h="Dropbox Replay"><span class="v">Con las solicitudes de Dropbox, sin cuenta</span></td></tr>
+<tr><th scope="row">Entrega y portfolio</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Entrega con tu marca + portfolio público</span></td><td data-h="Frame.io"><span class="v">Presentaciones con marca, sin portfolio</span></td><td data-h="Vimeo"><span class="v">Showcases y portfolios de vídeo</span></td><td data-h="Dropbox Replay"><span class="v">No</span></td></tr>
+<tr><th scope="row">Almacenamiento</th><td data-h="Positiva" class="pos"><span class="v">250 GB (Autor) · 1 TB (Estudio)</span></td><td data-h="Frame.io"><span class="v">2 TB (Pro, +2 TB por miembro)</span></td><td data-h="Vimeo" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">4 TB (Standard)</span></td><td data-h="Dropbox Replay"><span class="v">El de tu Dropbox (2 TB en Plus)</span></td></tr>
+<tr><th scope="row">Modelo de precio</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Por cuenta, revisores ilimitados</span></td><td data-h="Frame.io"><span class="v">Por miembro</span></td><td data-h="Vimeo"><span class="v">Por asiento</span></td><td data-h="Dropbox Replay"><span class="v">Por usuario, sobre un plan de Dropbox</span></td></tr>
+<tr><th scope="row">Precio de referencia</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">89 € + IVA/año (Autor, 250 GB)</span></td><td data-h="Frame.io"><span class="v">15 $/miembro/mes (Pro)</span></td><td data-h="Vimeo"><span class="v">25 $/asiento/mes (Standard)</span></td><td data-h="Dropbox Replay"><span class="v">120 $/usuario/año + Dropbox</span></td></tr>
+</tbody></table></div>
+<p class="cmpx-ley"><span class="gana-b">✓ Mejor</span><span>El mejor dato de la fila, sea de quien sea. Sin distintivo: empate o depende de tu caso.</span></p>
 
 <h2>Cómo decidir</h2>
 <p>Si tu flujo es de postproducción y grabas para la nube, Frame.io sigue siendo difícil de sustituir — y si ya pagas Creative Cloud, su plan gratuito mejorado quizá te baste. Si además de revisar publicas, Vimeo. Si tu archivo vive en Dropbox y revisas audio, Replay. Y si quien tiene que opinar es tu cliente, no tu montador, y después de aprobar hay que entregar el trabajo con tu marca, <a href="/">Positiva</a> está construida para ese recorrido: puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB.</p>
@@ -291,7 +333,7 @@ document.addEventListener('click', function (e) {
 <p>Frame.io ofrece interfaz en diez idiomas incluido el español en sus experiencias actuales, y Vimeo en siete, español incluido. Positiva es española: panel, galerías y soporte en castellano, y datos alojados en la Unión Europea.</p>
 <h3>¿Puedo usar Frame.io gratis?</h3>
 <p>Sí, con límites: el plan gratuito son 2 GB y hasta 2 miembros. Si tienes Creative Cloud, iniciar sesión con tu Adobe ID lo sube a 100 GB y cinco proyectos compartidos con otra persona.</p>
-<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada herramienta. Los precios en dólares son los de la edición estadounidense de cada web.</p>
+<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada herramienta; los de guardar archivos y pedirlos a terceros, el 4 de octubre de 2026. Los precios en dólares son los de la edición estadounidense de cada web.</p>
     </div>
   </article>
 

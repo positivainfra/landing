@@ -46,8 +46,37 @@
 .nota-card h2{font-size:clamp(21px,2.2vw,27px);margin:8px 0 8px}
 .nota-card p{font-size:15.5px;line-height:1.6;color:var(--pv-tinta-60)}
 @media(max-width:960px){.notas-doc{grid-template-columns:1fr}.notas-rail{position:static}}
+
+/* .cmpx.cmpx: gana a las reglas genéricas de tabla de cada hoja (p. ej. .prosa table th) */
+.cmpx.cmpx{margin:var(--pv-s5,24px) 0;border:1px solid var(--pv-linea,#DEDDD6);border-radius:16px;background:var(--pv-luz,#fff);overflow:hidden}
+.cmpx.cmpx table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:14.5px;line-height:1.45}
+.cmpx.cmpx th,.cmpx.cmpx td{padding:12px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--pv-linea,#DEDDD6);white-space:normal !important;overflow-wrap:anywhere;font-weight:400}
+.cmpx.cmpx tbody tr:last-child th,.cmpx.cmpx tbody tr:last-child td{border-bottom:0}
+.cmpx.cmpx thead th{font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--pv-tinta-60,#5A5852);background:var(--pv-bandeja,#E8E7E1);border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+.cmpx.cmpx thead th.pos{background:var(--pv-ambar-luz,#F6EAD2);color:var(--pv-ambar-ink,#8F5F15)}
+.cmpx.cmpx thead th:first-child{width:24%}
+.cmpx.cmpx tbody th{font-family:inherit;text-transform:none;letter-spacing:0;font-weight:600 !important;color:var(--pv-tinta,#171614);font-size:14px;background:none;border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+.cmpx.cmpx td{color:var(--pv-tinta-60,#5A5852)}
+.cmpx.cmpx td.pos{background:color-mix(in srgb,var(--pv-ambar-luz,#F6EAD2) 35%,transparent)}
+.cmpx.cmpx td.gana{background:#E6F2E8;color:#1F3B27;box-shadow:inset 3px 0 0 #2F7A45}
+.cmpx.cmpx .gana-b{display:flex;width:max-content;align-items:center;gap:4px;margin-bottom:5px;font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:#2F7A45;border-radius:999px;padding:2px 8px;line-height:1.5}
+.cmpx-ley{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:13px;color:var(--pv-tinta-60,#5A5852);margin:10px 0 0}
+.cmpx-ley .gana-b{display:inline-flex;align-items:center;gap:4px;font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:#2F7A45;border-radius:999px;padding:2px 8px}
+@media(max-width:700px){
+  .cmpx.cmpx{border:0;background:none;border-radius:0;overflow:visible}
+  .cmpx.cmpx table,.cmpx.cmpx tbody,.cmpx.cmpx tr,.cmpx.cmpx th,.cmpx.cmpx td{display:block;width:auto}
+  .cmpx.cmpx thead{display:none}
+  .cmpx.cmpx tbody tr{border:1px solid var(--pv-linea,#DEDDD6);border-radius:14px;background:var(--pv-luz,#fff);margin-bottom:10px;overflow:hidden}
+  .cmpx.cmpx tbody th{background:var(--pv-bandeja,#E8E7E1);padding:10px 14px;border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+  .cmpx.cmpx td{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:4px 10px;padding:10px 14px}
+  .cmpx.cmpx td::before{content:attr(data-h);font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--pv-tinta-60,#5A5852);padding-top:3px;grid-row:1 / span 2}
+  .cmpx.cmpx td.pos::before{color:var(--pv-ambar-ink,#8F5F15)}
+  .cmpx.cmpx td.gana{box-shadow:inset 3px 0 0 #2F7A45}
+  .cmpx.cmpx td .gana-b{grid-column:2;justify-self:start}
+  .cmpx.cmpx td .v{grid-column:2}
+}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Alternativas a Dropbox Replay para revisar vídeo (2026)", "description": "Guía de alternativas a Dropbox Replay: revisión de vídeo con comentarios por fotograma, entrega al cliente, audio y precio real sumando el plan de Dropbox.", "datePublished": "2026-09-10", "dateModified": "2026-09-10", "inLanguage": "es", "author": {"@type": "Organization", "name": "Positiva", "url": "https://positiva.studio/"}, "publisher": {"@id": "https://positiva.studio/#org"}, "mainEntityOfPage": "https://positiva.studio/notas/alternativas-a-dropbox-replay/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Alternativas a Dropbox Replay para revisar vídeo (2026)", "description": "Guía de alternativas a Dropbox Replay: revisión de vídeo con comentarios por fotograma, entrega al cliente, audio y precio real sumando el plan de Dropbox.", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "inLanguage": "es", "author": {"@type": "Organization", "name": "Positiva", "url": "https://positiva.studio/"}, "publisher": {"@id": "https://positiva.studio/#org"}, "mainEntityOfPage": "https://positiva.studio/notas/alternativas-a-dropbox-replay/"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Alternativas a Dropbox Replay para revisar vídeo (2026)", "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Positiva"}, {"@type": "ListItem", "position": 2, "name": "Frame.io"}, {"@type": "ListItem", "position": 3, "name": "Vimeo"}, {"@type": "ListItem", "position": 4, "name": "Dropbox Replay"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuánto cuesta realmente Dropbox Replay?", "acceptedAnswer": {"@type": "Answer", "text": "El complemento son 10 $ por usuario y mes con facturación anual —120 $ al año— pero exige un plan de pago de Dropbox por debajo. Con Dropbox Plus a 9,99 $/mes en facturación anual, el coste real de una sola persona supera los 240 $ anuales."}}, {"@type": "Question", "name": "¿Qué alternativa permite comentar sobre el fotograma exacto?", "acceptedAnswer": {"@type": "Answer", "text": "Positiva y Frame.io lo documentan explícitamente, y Frame.io añade comentarios de rango y anotaciones dibujadas. Vimeo trabaja con código de tiempo. En la documentación oficial de Replay no hemos encontrado declarado ese anclaje al fotograma."}}, {"@type": "Question", "name": "¿Hay alguna alternativa que revise audio?", "acceptedAnswer": {"@type": "Answer", "text": "De esta comparativa, no. Replay es la única que revisa audio, y además con calidad sin pérdida. Si el audio es parte de tu flujo, ese es un motivo sólido para quedarse."}}, {"@type": "Question", "name": "¿Puedo usar Replay gratis?", "acceptedAnswer": {"@type": "Answer", "text": "Con límites: sin el complemento de pago se pueden crear 4 archivos en la mayoría de planes de Dropbox y 10 en Essentials y Business Plus. Para uso continuado hace falta el complemento."}}, {"@type": "Question", "name": "¿Cuál sirve también para entregar el trabajo terminado?", "acceptedAnswer": {"@type": "Answer", "text": "Positiva: la misma herramienta con la que revisas hace la entrega final, con fotografías y vídeos en la galería, permisos por enlace y portfolio público. Frame.io tiene presentaciones con marca propia pero no portfolio, y Replay y Vimeo no cubren la entrega de fotografía."}}, {"@type": "Question", "name": "¿Merece la pena cambiar si ya pago Dropbox por el almacenamiento?", "acceptedAnswer": {"@type": "Answer", "text": "Si Dropbox es tu disco de trabajo, no lo sustituyas: ninguna de estas herramientas es almacenamiento sincronizado. La pregunta real es si necesitas el complemento de revisión o si esa parte la resuelve mejor una herramienta que además entregue."}}]}</script>
 </head>
@@ -414,7 +443,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     <nav class="miga" aria-label="Migas de pan"><a href="/notas/">Blog</a> <span aria-hidden="true">·</span> <span>Alternativas</span></nav>
     <h1>Alternativas a Dropbox Replay para revisar vídeo (2026)</h1>
     <p class="lede">Dropbox Replay añade revisión de vídeo y audio a los archivos que ya tienes en Dropbox. Si buscas alternativa suele ser por el precio real — son dos cuotas — o porque además de revisar necesitas entregar. Esta guía compara las opciones según tu caso.</p>
-    <p class="notas-fecha">10 de septiembre de 2026 · Blog de Positiva</p>
+    <p class="notas-fecha">4 de octubre de 2026 · Blog de Positiva</p>
     <div class="prosa">
 
 <p>Dropbox Replay no es un plan, es un complemento: 12&nbsp;$ por usuario y mes con facturación mensual, 10&nbsp;$ con anual — 120&nbsp;$ al año — <em>sobre</em> un plan de pago de Dropbox, que es requisito. Sin el complemento, Replay funciona con un tope de 4 archivos (10 en Essentials y Business Plus). A cambio trae algo poco común: revisión de audio con calidad sin pérdida, además de vídeo, con archivos de hasta 150&nbsp;GB y 12 horas.</p>
@@ -426,6 +455,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 <thead><tr><th>Si buscas…</th><th>Mejor opción</th><th>Por qué</th></tr></thead>
 <tbody>
 <tr><td>Revisar y entregar foto y vídeo al cliente</td><td><a href="/">Positiva</a></td><td>Comentarios por fotograma y entrega con tu marca, en una sola cuota</td></tr>
+<tr><td>Pedir material a clientes o proveedores sin que creen cuenta</td><td>Quedarte en Dropbox Replay</td><td>Usa las solicitudes de Dropbox, incluidas en todos sus planes; Positiva las tiene solo en el plan Estudio</td></tr>
 <tr><td>Revisión en un equipo de postproducción</td><td>Frame.io</td><td>Comentarios por rango, anotaciones y Camera to Cloud</td></tr>
 <tr><td>Alojar y publicar el vídeo además de revisarlo</td><td>Vimeo</td><td>Reproductor incrustable, showcases y directos</td></tr>
 <tr><td>Revisar audio, o no mover tu archivo de sitio</td><td>Quedarte en Dropbox Replay</td><td>Es la única de la lista que revisa audio, y trabaja sobre tu Dropbox</td></tr>
@@ -455,12 +485,13 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 <li>Sin coste por revisor: entra quien tenga el enlace.</li>
 <li>Fotografía y vídeo en la misma galería, con favoritas y comentarios <a href="/revision-foto/">foto a foto</a>.</li>
 <li>Entrega final con enlaces que no caducan y <a href="/portfolio/">portfolio público</a>; en español y con los datos en la UE.</li>
+<li>En el plan Estudio, <strong>Archivos</strong>: carpetas para guardar tu material en cualquier formato, envíos con enlace y solicitudes para que clientes, compañeros o proveedores te suban archivos sin crear cuenta (hasta 150&nbsp;GB por archivo).</li>
 </ul>
 <p><strong>Limitaciones:</strong></p>
 <ul>
 <li>No revisa audio suelto: no hay equivalente a la revisión de audio sin pérdida de Replay.</li>
 <li>Sin transcripción ni subtítulos automáticos, ni comparación de versiones en paralelo.</li>
-<li>No es almacenamiento sincronizado: no sustituye a Dropbox como disco de trabajo.</li>
+<li>No es almacenamiento sincronizado: Archivos (plan Estudio) guarda y envía cualquier formato, pero no sustituye a Dropbox como disco de trabajo.</li>
 <li>Admite JPEG y MP4 con H.264; el almacenamiento va por plan.</li>
 </ul>
 <p><strong>Precio:</strong> <a href="/precios/">Autor, 89&nbsp;€&nbsp;+&nbsp;IVA/año (250&nbsp;GB); Estudio, 219&nbsp;€&nbsp;+&nbsp;IVA/año (1&nbsp;TB)</a>. Plan gratuito de 15&nbsp;GB y 2 galerías.</p>
@@ -524,17 +555,19 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 <p><strong>Precio:</strong> 12&nbsp;$ por usuario/mes con facturación mensual, 10&nbsp;$ con anual (120&nbsp;$/año), más el plan de Dropbox: Plus desde 9,99&nbsp;$/mes con facturación anual, Standard 15&nbsp;$/usuario/mes anual.</p>
 
 <h2>Comparativa de datos</h2>
-<div class="tabla-scroll">
-<table>
-<thead><tr><th>Herramienta</th><th>Comentarios en vídeo</th><th>Audio</th><th>Exporta al editor</th><th>Entrega al cliente</th><th>Modelo de precio</th><th>Precio de referencia</th></tr></thead>
+<div class="cmpx"><table>
+<thead><tr><th scope="col"><span style="position:absolute;left:-9999px">Criterio</span></th><th scope="col" class="pos">Positiva</th><th scope="col">Dropbox Replay</th><th scope="col">Frame.io</th><th scope="col">Vimeo</th></tr></thead>
 <tbody>
-<tr><td>Positiva</td><td><span class="pv-si">Por fotograma</span></td><td>No</td><td><span class="pv-si">Marcadores a DaVinci Resolve y Final Cut Pro</span></td><td><span class="pv-si">Galería con tu marca + portfolio</span></td><td>Una cuota, revisores ilimitados</td><td>89 € + IVA/año (250 GB)</td></tr>
-<tr><td>Dropbox Replay</td><td>Sí; vínculo al fotograma no documentado</td><td><span class="pv-si">Sí, sin pérdida</span></td><td>Integración con editores; marcadores no documentados</td><td>No</td><td>Por usuario + plan de Dropbox</td><td>120 $/usuario/año + Dropbox</td></tr>
-<tr><td>Frame.io</td><td>Por fotograma, por rango y anotaciones</td><td>No como producto propio</td><td>Marcadores en Premiere Pro; CSV</td><td>Presentaciones con marca, sin portfolio</td><td>Por miembro</td><td>15 $/miembro/mes (Pro)</td></tr>
-<tr><td>Vimeo</td><td>Con código de tiempo (desde Standard)</td><td>No</td><td>No documentado</td><td>Showcases y portfolios de vídeo</td><td>Por asiento</td><td>25 $/asiento/mes (Standard)</td></tr>
-</tbody>
-</table>
-</div>
+<tr><th scope="row">Comentarios en vídeo</th><td data-h="Positiva" class="pos"><span class="v">Por fotograma</span></td><td data-h="Dropbox Replay"><span class="v">Sí; vínculo al fotograma no documentado</span></td><td data-h="Frame.io" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Por fotograma, por rango y anotaciones</span></td><td data-h="Vimeo"><span class="v">Con código de tiempo (desde Standard)</span></td></tr>
+<tr><th scope="row">Audio</th><td data-h="Positiva" class="pos"><span class="v">No</span></td><td data-h="Dropbox Replay" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí, sin pérdida</span></td><td data-h="Frame.io"><span class="v">No como producto propio</span></td><td data-h="Vimeo"><span class="v">No</span></td></tr>
+<tr><th scope="row">Exporta al editor</th><td data-h="Positiva" class="pos"><span class="v">Marcadores a DaVinci Resolve y Final Cut Pro</span></td><td data-h="Dropbox Replay"><span class="v">No documentado</span></td><td data-h="Frame.io"><span class="v">Marcadores en Premiere Pro; CSV</span></td><td data-h="Vimeo"><span class="v">No documentado</span></td></tr>
+<tr><th scope="row">Entrega al cliente</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Galería con tu marca + portfolio</span></td><td data-h="Dropbox Replay"><span class="v">No</span></td><td data-h="Frame.io"><span class="v">Presentaciones con marca, sin portfolio</span></td><td data-h="Vimeo"><span class="v">Showcases y portfolios de vídeo</span></td></tr>
+<tr><th scope="row">Guardar tus archivos</th><td data-h="Positiva" class="pos"><span class="v">Carpetas con cualquier formato y envíos con enlace (plan Estudio)</span></td><td data-h="Dropbox Replay" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Tu Dropbox sincronizado, con cualquier archivo</span></td><td data-h="Frame.io"><span class="v">Cualquier archivo, hasta 5 TB</span></td><td data-h="Vimeo"><span class="v">Solo vídeo</span></td></tr>
+<tr><th scope="row">Pedir archivos a terceros</th><td data-h="Positiva" class="pos"><span class="v">Sí, en el plan Estudio: quien sube no necesita cuenta; hasta 150 GB por archivo</span></td><td data-h="Dropbox Replay"><span class="v">Con las solicitudes de Dropbox, sin cuenta</span></td><td data-h="Frame.io"><span class="v">Sin función propia</span></td><td data-h="Vimeo"><span class="v">Solo programándolo con su API</span></td></tr>
+<tr><th scope="row">Modelo de precio</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Una cuota, revisores ilimitados</span></td><td data-h="Dropbox Replay"><span class="v">Por usuario + plan de Dropbox</span></td><td data-h="Frame.io"><span class="v">Por miembro</span></td><td data-h="Vimeo"><span class="v">Por asiento</span></td></tr>
+<tr><th scope="row">Precio de referencia</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">89 € + IVA/año (Autor, 250 GB)</span></td><td data-h="Dropbox Replay"><span class="v">120 $/usuario/año + Dropbox</span></td><td data-h="Frame.io"><span class="v">15 $/miembro/mes (Pro)</span></td><td data-h="Vimeo"><span class="v">25 $/asiento/mes (Standard)</span></td></tr>
+</tbody></table></div>
+<p class="cmpx-ley"><span class="gana-b">✓ Mejor</span><span>El mejor dato de la fila, sea de quien sea. Sin distintivo: empate o depende de tu caso.</span></p>
 
 <h2>Cómo decidir</h2>
 <p>Si revisas audio, quédate: Replay es la única de la lista que lo hace. Si tu equipo es de postproducción y necesitas anotaciones y Camera to Cloud, Frame.io. Si el vídeo acaba publicado, Vimeo. Y si lo que viene después de la revisión es entregar el trabajo a un cliente — con las fotos al lado, con tu marca y con un enlace que no caduque —, ese recorrido entero lo hace <a href="/">Positiva</a> en una sola cuota: puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB. La comparación detallada está en <a href="/positiva-vs-dropbox/">Positiva vs Dropbox</a>.</p>
@@ -553,7 +586,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 <p>Positiva: la misma herramienta con la que revisas hace la entrega final, con fotografías y vídeos en la galería, permisos por enlace y portfolio público. Frame.io tiene presentaciones con marca propia pero no portfolio, y Replay y Vimeo no cubren la entrega de fotografía.</p>
 <h3>¿Merece la pena cambiar si ya pago Dropbox por el almacenamiento?</h3>
 <p>Si Dropbox es tu disco de trabajo, no lo sustituyas: ninguna de estas herramientas es almacenamiento sincronizado. La pregunta real es si necesitas el complemento de revisión o si esa parte la resuelve mejor una herramienta que además entregue.</p>
-<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada herramienta. Los precios en dólares son los de la edición estadounidense de cada web.</p>
+<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada herramienta; los de guardar archivos y pedirlos a terceros, el 4 de octubre de 2026. Los precios en dólares son los de la edición estadounidense de cada web.</p>
     </div>
   </article>
 

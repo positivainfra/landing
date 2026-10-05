@@ -21,16 +21,20 @@ Cabecera de cada página:
   -->
 
 Atajos dentro del contenido:
-  <!-- @demo -->   formulario de «Reserva una demo» (usa /api/waitlist)
+  <!-- @demo -->          formulario de «Reserva una demo» (usa /api/waitlist)
+  <!-- @tabla clave -->   tabla comparativa con la celda ganadora de cada fila
+                          (fuente única: scripts/comparativas.py, compartida con el blog)
 
 Mientras la web nueva esté en /new/ todas las páginas salen con noindex.
 Al pasar a la raíz: cambia INDEXABLE a True y BASE a '/', regenera, y quita la
 regla /new/* de public/_headers.
 """
-import re, os, shutil, glob
+import re, os, sys, shutil, glob
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
+sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+import comparativas
 OUT = os.path.join(ROOT, 'public', 'new')
 INDEXABLE = False
 BASE = '/new/'
@@ -76,7 +80,7 @@ def page(d, body):
     canon = d['path'].replace('/new/', '/', 1) if INDEXABLE else d['path']
     pre = ''.join(f'<link rel="preload" href="{p.strip()}" as="image" fetchpriority="high">\n'
                   for p in d.get('preload', '').split(',') if p.strip())
-    body = enlaces(body.replace('<!-- @demo -->', DEMO))
+    body = enlaces(comparativas.pintar(body.replace('<!-- @demo -->', DEMO)))
     foot = enlaces(footer)
     return f'''<!DOCTYPE html>
 <html lang="es">
@@ -119,7 +123,9 @@ def page(d, body):
 '''
 
 os.makedirs(OUT, exist_ok=True)
-shutil.copy(os.path.join(HERE, 'positiva.css'), os.path.join(OUT, 'positiva.css'))
+# positiva.css + las tablas comparativas (mismo CSS que el blog)
+open(os.path.join(OUT, 'positiva.css'), 'w').write(open(os.path.join(HERE, 'positiva.css')).read()
+    + '\n/* ── Tablas comparativas: scripts/comparativas.py ── */' + comparativas.CSS)
 shutil.copy(os.path.join(HERE, 'positiva.js'), os.path.join(OUT, 'positiva.js'))
 for f in ('chrome.css', 'docs.css'):
     shutil.copy(os.path.join(HERE, f), os.path.join(OUT, f))

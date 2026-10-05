@@ -46,8 +46,37 @@
 .nota-card h2{font-size:clamp(21px,2.2vw,27px);margin:8px 0 8px}
 .nota-card p{font-size:15.5px;line-height:1.6;color:var(--pv-tinta-60)}
 @media(max-width:960px){.notas-doc{grid-template-columns:1fr}.notas-rail{position:static}}
+
+/* .cmpx.cmpx: gana a las reglas genéricas de tabla de cada hoja (p. ej. .prosa table th) */
+.cmpx.cmpx{margin:var(--pv-s5,24px) 0;border:1px solid var(--pv-linea,#DEDDD6);border-radius:16px;background:var(--pv-luz,#fff);overflow:hidden}
+.cmpx.cmpx table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:14.5px;line-height:1.45}
+.cmpx.cmpx th,.cmpx.cmpx td{padding:12px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--pv-linea,#DEDDD6);white-space:normal !important;overflow-wrap:anywhere;font-weight:400}
+.cmpx.cmpx tbody tr:last-child th,.cmpx.cmpx tbody tr:last-child td{border-bottom:0}
+.cmpx.cmpx thead th{font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--pv-tinta-60,#5A5852);background:var(--pv-bandeja,#E8E7E1);border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+.cmpx.cmpx thead th.pos{background:var(--pv-ambar-luz,#F6EAD2);color:var(--pv-ambar-ink,#8F5F15)}
+.cmpx.cmpx thead th:first-child{width:24%}
+.cmpx.cmpx tbody th{font-family:inherit;text-transform:none;letter-spacing:0;font-weight:600 !important;color:var(--pv-tinta,#171614);font-size:14px;background:none;border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+.cmpx.cmpx td{color:var(--pv-tinta-60,#5A5852)}
+.cmpx.cmpx td.pos{background:color-mix(in srgb,var(--pv-ambar-luz,#F6EAD2) 35%,transparent)}
+.cmpx.cmpx td.gana{background:#E6F2E8;color:#1F3B27;box-shadow:inset 3px 0 0 #2F7A45}
+.cmpx.cmpx .gana-b{display:flex;width:max-content;align-items:center;gap:4px;margin-bottom:5px;font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:#2F7A45;border-radius:999px;padding:2px 8px;line-height:1.5}
+.cmpx-ley{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:13px;color:var(--pv-tinta-60,#5A5852);margin:10px 0 0}
+.cmpx-ley .gana-b{display:inline-flex;align-items:center;gap:4px;font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:#2F7A45;border-radius:999px;padding:2px 8px}
+@media(max-width:700px){
+  .cmpx.cmpx{border:0;background:none;border-radius:0;overflow:visible}
+  .cmpx.cmpx table,.cmpx.cmpx tbody,.cmpx.cmpx tr,.cmpx.cmpx th,.cmpx.cmpx td{display:block;width:auto}
+  .cmpx.cmpx thead{display:none}
+  .cmpx.cmpx tbody tr{border:1px solid var(--pv-linea,#DEDDD6);border-radius:14px;background:var(--pv-luz,#fff);margin-bottom:10px;overflow:hidden}
+  .cmpx.cmpx tbody th{background:var(--pv-bandeja,#E8E7E1);padding:10px 14px;border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+  .cmpx.cmpx td{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:4px 10px;padding:10px 14px}
+  .cmpx.cmpx td::before{content:attr(data-h);font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--pv-tinta-60,#5A5852);padding-top:3px;grid-row:1 / span 2}
+  .cmpx.cmpx td.pos::before{color:var(--pv-ambar-ink,#8F5F15)}
+  .cmpx.cmpx td.gana{box-shadow:inset 3px 0 0 #2F7A45}
+  .cmpx.cmpx td .gana-b{grid-column:2;justify-self:start}
+  .cmpx.cmpx td .v{grid-column:2}
+}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Alternativas a Arcadina para fotógrafos (2026)", "description": "Guía de alternativas a Arcadina: web y galerías para fotógrafos, tienda, gestión del estudio, vídeo y revisión. Precios en euros y datos verificados.", "datePublished": "2026-09-10", "dateModified": "2026-09-10", "inLanguage": "es", "author": {"@type": "Organization", "name": "Positiva", "url": "https://positiva.studio/"}, "publisher": {"@id": "https://positiva.studio/#org"}, "mainEntityOfPage": "https://positiva.studio/notas/alternativas-a-arcadina/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Alternativas a Arcadina para fotógrafos (2026)", "description": "Guía de alternativas a Arcadina: web y galerías para fotógrafos, tienda, gestión del estudio, vídeo y revisión. Precios en euros y datos verificados.", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "inLanguage": "es", "author": {"@type": "Organization", "name": "Positiva", "url": "https://positiva.studio/"}, "publisher": {"@id": "https://positiva.studio/#org"}, "mainEntityOfPage": "https://positiva.studio/notas/alternativas-a-arcadina/"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Alternativas a Arcadina para fotógrafos (2026)", "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Positiva"}, {"@type": "ListItem", "position": 2, "name": "PSPro"}, {"@type": "ListItem", "position": 3, "name": "Pixieset"}, {"@type": "ListItem", "position": 4, "name": "Pic-Time"}, {"@type": "ListItem", "position": 5, "name": "Zenfolio"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuál es la alternativa española más parecida a Arcadina?", "acceptedAnswer": {"@type": "Answer", "text": "PSPro: galerías privadas con venta, web con plantillas, CRM, contratos con firma, agenda y facturación VeriFactu en un solo producto y con soporte en castellano. Es bastante más cara — desde 300 € al año más IVA — y cubre más terreno administrativo."}}, {"@type": "Question", "name": "¿Qué alternativa a Arcadina maneja mejor el vídeo?", "acceptedAnswer": {"@type": "Answer", "text": "Positiva: el vídeo se sube a la propia galería y comparte almacenamiento y enlace con las fotografías, y el cliente puede comentar sobre el fotograma exacto. En Arcadina el vídeo de las galerías se añade como URL de YouTube o Vimeo."}}, {"@type": "Question", "name": "¿Puedo tener web y galerías sin pagar dos planes?", "acceptedAnswer": {"@type": "Answer", "text": "En Arcadina, no: Web y Negocio son servicios independientes, aunque las Suites los agrupan con descuento desde 24 €/mes con pago anual. Zenfolio y PSPro incluyen web y galerías en la misma suscripción; en Positiva el portfolio público viene con la cuenta, pero no sustituye a una web con páginas y blog."}}, {"@type": "Question", "name": "¿Hay alternativas a Arcadina con plan gratuito?", "acceptedAnswer": {"@type": "Answer", "text": "Arcadina no tiene plan gratuito permanente, solo 30 días de prueba sin tarjeta. Con plan gratuito de verdad: Positiva (15 GB y 2 galerías), Pixieset (3 GB, con 15 % de comisión en tienda) y Pic-Time (3 GB de foto y 1 GB de vídeo tras tres meses)."}}, {"@type": "Question", "name": "¿Dónde están alojados los datos de cada una?", "acceptedAnswer": {"@type": "Answer", "text": "Arcadina identifica en su política de privacidad a Hetzner y Amazon Web Services como encargados del tratamiento, bajo el RGPD y con jurisdicción en Valencia; no publica la región concreta de los centros de datos. Positiva aloja los datos en la Unión Europea. Las plataformas estadounidenses no garantizan residencia europea."}}, {"@type": "Question", "name": "¿Merece la pena cambiar si solo entrego fotografía?", "acceptedAnswer": {"@type": "Answer", "text": "Probablemente no, si la tienda o la facturación de Arcadina te están funcionando. El cambio compensa cuando el vídeo pesa en tus entregas o cuando necesitas que el cliente revise y comente, no solo que descargue."}}]}</script>
 </head>
@@ -414,7 +443,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     <nav class="miga" aria-label="Migas de pan"><a href="/notas/">Blog</a> <span aria-hidden="true">·</span> <span>Alternativas</span></nav>
     <h1>Alternativas a Arcadina para fotógrafos (2026)</h1>
     <p class="lede">Arcadina lleva años siendo la opción por defecto del fotógrafo español que quiere web, galerías y tienda en castellano. Si buscas otra cosa, suele ser por el vídeo, por cómo se suman sus planes o porque necesitas revisión de verdad. Esta guía compara las alternativas según tu caso.</p>
-    <p class="notas-fecha">10 de septiembre de 2026 · Blog de Positiva</p>
+    <p class="notas-fecha">4 de octubre de 2026 · Blog de Positiva</p>
     <div class="prosa">
 
 <p>Arcadina es una empresa española, con sede en Alzira (Valencia), que vende tres servicios independientes: <strong>Negocio</strong> (galerías de cliente y tienda, desde 10&nbsp;€/mes con pago anual, impuestos incluidos), <strong>Web</strong> (el portfolio, 8&nbsp;€/mes anual) y <strong>Manager</strong> (reservas, facturación y contratos, desde 8&nbsp;€/mes anual). También los agrupa en Suites, desde 24&nbsp;€/mes con pago anual. Todo en castellano, con soporte en castellano y sin comisiones por venta.</p>
@@ -426,6 +455,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 <thead><tr><th>Si buscas…</th><th>Mejor opción</th><th>Por qué</th></tr></thead>
 <tbody>
 <tr><td>Entregar y revisar foto y vídeo</td><td><a href="/">Positiva</a></td><td>Vídeo alojado en la galería y comentarios por fotograma</td></tr>
+<tr><td>Guardar tus archivos y pedírselos a clientes o proveedores</td><td><a href="/precios/">Positiva</a> (plan Estudio)</td><td>Carpetas, envíos y solicitudes junto a tus galerías; quien sube no necesita cuenta</td></tr>
 <tr><td>Gestionar todo el estudio en español</td><td>PSPro</td><td>Galerías, web, CRM, contratos, agenda y facturación VeriFactu</td></tr>
 <tr><td>Galerías con tienda y un ecosistema grande</td><td>Pixieset</td><td>Galería, web, tienda y gestión, cada módulo aparte</td></tr>
 <tr><td>Vender impresiones con automatizaciones</td><td>Pic-Time</td><td>Tienda conectada a más de 30 laboratorios</td></tr>
@@ -456,13 +486,14 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 <li>Un enlace por tipo de acceso, cada uno con su contraseña y su calidad de descarga; los enlaces no caducan.</li>
 <li><a href="/portfolio/">Portfolio público</a> alimentado por las entregas que ya tienes.</li>
 <li>Empresa española, soporte en castellano, datos alojados en la Unión Europea y plan gratuito de 15&nbsp;GB.</li>
+<li>En el plan Estudio, <strong>Archivos</strong>: carpetas para guardar tu material en cualquier formato, envíos con enlace y solicitudes para que clientes, compañeros o proveedores te suban archivos sin crear cuenta (hasta 150&nbsp;GB por archivo).</li>
 </ul>
 <p><strong>Limitaciones:</strong></p>
 <ul>
 <li>Sin tienda: no se venden copias, álbumes ni descargas desde la galería. Arcadina sí, y sin comisión.</li>
 <li>Sin reservas, contratos ni facturación: no hay equivalente al plan Manager.</li>
 <li>Sin creador de web completo con páginas, blog y formularios: el portfolio muestra tu trabajo, no sustituye a una web corporativa.</li>
-<li>Admite JPEG y MP4 con H.264; los RAW no se suben.</li>
+<li>Las galerías admiten JPEG y MP4 con H.264; los RAW solo se pueden guardar y enviar desde Archivos, en el plan Estudio.</li>
 </ul>
 <p><strong>Precio:</strong> <a href="/precios/">Autor, 89&nbsp;€&nbsp;+&nbsp;IVA/año (250&nbsp;GB); Estudio, 219&nbsp;€&nbsp;+&nbsp;IVA/año (1&nbsp;TB)</a>. Plan gratuito de 15&nbsp;GB y 2 galerías. Ojo a la comparación: los precios de Arcadina se publican con impuestos incluidos y los nuestros sin IVA.</p>
 <p><strong>No la elegiríamos si:</strong> lo que te da de comer es la venta de impresiones o necesitas la gestión administrativa del estudio.</p>
@@ -540,19 +571,19 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 <p><strong>Precio:</strong> Basic, 7&nbsp;$/mes con facturación anual (15&nbsp;GB); Professional, 11,50&nbsp;$/mes anual — unos 138&nbsp;$/año — con 150&nbsp;GB; Advanced, 20&nbsp;$/mes anual.</p>
 
 <h2>Comparativa de datos</h2>
-<div class="tabla-scroll">
-<table>
-<thead><tr><th>Herramienta</th><th>Vídeo en la galería</th><th>Revisión</th><th>Web pública</th><th>Tienda</th><th>Gestión del negocio</th><th>Idioma del panel</th><th>Precio de referencia</th></tr></thead>
+<div class="cmpx"><table>
+<thead><tr><th scope="col"><span style="position:absolute;left:-9999px">Criterio</span></th><th scope="col" class="pos">Positiva</th><th scope="col">Arcadina</th><th scope="col">Pixieset</th><th scope="col">Pic-Time</th></tr></thead>
 <tbody>
-<tr><td>Positiva</td><td><span class="pv-si">Alojado, junto a las fotos</span></td><td><span class="pv-si">Favoritas + comentarios en foto + comentarios de vídeo por fotograma</span></td><td>Portfolio con tus entregas</td><td>No</td><td>No</td><td><span class="pv-si">Español</span></td><td>89 € + IVA/año (250 GB)</td></tr>
-<tr><td>Arcadina</td><td>Enlace de YouTube o Vimeo</td><td>Favoritas + comentario por imagen seleccionada</td><td>Sí, plan Web aparte</td><td>Sí, sin comisión</td><td>Sí, plan Manager aparte</td><td>Español</td><td>Negocio desde 120 €/año (IVA incl., 30 GB); Suite Pro 288 €/año</td></tr>
-<tr><td>PSPro</td><td>No documentado</td><td>Favoritas y comparar</td><td>Sí, incluida</td><td>Sí, integrada</td><td>CRM, contratos, agenda, VeriFactu</td><td>Español</td><td>300 €/año + IVA (Starter, 300 GB)</td></tr>
-<tr><td>Pixieset</td><td>Por minutos según plan</td><td>Favoritas de foto</td><td>Módulo aparte</td><td>Módulo aparte</td><td>Studio Manager, aparte</td><td>Inglés</td><td>192 $/año (Plus, 100 GB)</td></tr>
-<tr><td>Pic-Time</td><td>Bolsa aparte (30 GB en Professional)</td><td>Favoritas y selección</td><td>Portfolio Page embebible</td><td>Sí, 30+ laboratorios</td><td>No</td><td>Inglés</td><td>252 $/año (100 GB + 30 GB vídeo)</td></tr>
-<tr><td>Zenfolio</td><td>—</td><td>Proofing de foto</td><td>Sí, incluida</td><td>Sí</td><td>Reservas</td><td>Inglés</td><td>138 $/año (Professional, 150 GB)</td></tr>
-</tbody>
-</table>
-</div>
+<tr><th scope="row">Vídeo en la galería</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Alojado, junto a las fotos</span></td><td data-h="Arcadina"><span class="v">Enlace de YouTube o Vimeo</span></td><td data-h="Pixieset"><span class="v">Por minutos según plan</span></td><td data-h="Pic-Time"><span class="v">Bolsa aparte (30 GB en Professional)</span></td></tr>
+<tr><th scope="row">Revisión</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Favoritas, comentarios en foto y por fotograma en vídeo</span></td><td data-h="Arcadina"><span class="v">Favoritas + comentario por imagen seleccionada</span></td><td data-h="Pixieset"><span class="v">Favoritas de foto</span></td><td data-h="Pic-Time"><span class="v">Favoritas y selección</span></td></tr>
+<tr><th scope="row">Guardar tus archivos y pedirlos a terceros</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí, en el plan Estudio: quien sube no necesita cuenta; hasta 150 GB por archivo; carpetas y envíos</span></td><td data-h="Arcadina"><span class="v">No lo hemos encontrado en su documentación</span></td><td data-h="Pixieset"><span class="v">No lo hemos encontrado en su documentación</span></td><td data-h="Pic-Time"><span class="v">Subida del cliente a la galería, desactivada en Pic-Time 2.0</span></td></tr>
+<tr><th scope="row">Web pública</th><td data-h="Positiva" class="pos"><span class="v">Portfolio con tus entregas</span></td><td data-h="Arcadina"><span class="v">Sí, plan Web aparte</span></td><td data-h="Pixieset"><span class="v">Módulo aparte</span></td><td data-h="Pic-Time"><span class="v">Portfolio Page embebible</span></td></tr>
+<tr><th scope="row">Tienda</th><td data-h="Positiva" class="pos"><span class="v">No</span></td><td data-h="Arcadina"><span class="v">Sí, sin comisión</span></td><td data-h="Pixieset"><span class="v">Módulo aparte</span></td><td data-h="Pic-Time"><span class="v">Sí, 30+ laboratorios</span></td></tr>
+<tr><th scope="row">Gestión del negocio</th><td data-h="Positiva" class="pos"><span class="v">No</span></td><td data-h="Arcadina"><span class="v">Sí, plan Manager aparte</span></td><td data-h="Pixieset"><span class="v">Studio Manager, aparte</span></td><td data-h="Pic-Time"><span class="v">No</span></td></tr>
+<tr><th scope="row">Idioma del panel</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Español</span></td><td data-h="Arcadina" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Español</span></td><td data-h="Pixieset"><span class="v">Inglés</span></td><td data-h="Pic-Time"><span class="v">Inglés</span></td></tr>
+<tr><th scope="row">Precio de referencia</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">89 € + IVA/año (Autor, 250 GB)</span></td><td data-h="Arcadina"><span class="v">Negocio desde 120 €/año (IVA incl., 30 GB)</span></td><td data-h="Pixieset"><span class="v">192 $/año (Plus, 100 GB)</span></td><td data-h="Pic-Time"><span class="v">252 $/año (100 GB + 30 GB de vídeo)</span></td></tr>
+</tbody></table></div>
+<p class="cmpx-ley"><span class="gana-b">✓ Mejor</span><span>El mejor dato de la fila, sea de quien sea. Sin distintivo: empate o depende de tu caso. PSPro y Zenfolio, en sus apartados del artículo.</span></p>
 <p>Una advertencia sobre esa última columna: Arcadina publica sus precios con impuestos incluidos, PSPro sin IVA, y las plataformas internacionales en dólares. No son cifras directamente comparables, y conviene mirar también qué entra en cada plan.</p>
 
 <h2>Cómo decidir</h2>
@@ -572,7 +603,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 <p>Arcadina identifica en su política de privacidad a Hetzner y Amazon Web Services como encargados del tratamiento, bajo el RGPD y con jurisdicción en Valencia; no publica la región concreta de los centros de datos. Positiva aloja los datos en la Unión Europea. Las plataformas estadounidenses no garantizan residencia europea.</p>
 <h3>¿Merece la pena cambiar si solo entrego fotografía?</h3>
 <p>Probablemente no, si la tienda o la facturación de Arcadina te están funcionando. El cambio compensa cuando el vídeo pesa en tus entregas o cuando necesitas que el cliente revise y comente, no solo que descargue.</p>
-<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada plataforma. Los precios de Arcadina se publican con impuestos incluidos; los de PSPro y Positiva, sin IVA; los internacionales, en dólares de la edición estadounidense.</p>
+<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada plataforma; los de guardar archivos y pedirlos a terceros, el 4 de octubre de 2026. Los precios de Arcadina se publican con impuestos incluidos; los de PSPro y Positiva, sin IVA; los internacionales, en dólares de la edición estadounidense.</p>
     </div>
   </article>
 

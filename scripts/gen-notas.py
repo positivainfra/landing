@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # Genera /notas/ (índice + artículos) a partir de ARTICLES.
-import os, json, html
+import os, sys, json, html
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import comparativas  # tablas con la celda ganadora (fuente única, también para /positiva-vs-*)
 
 ROOT = os.path.join(os.path.dirname(__file__), '..', 'public')
 
@@ -32,6 +34,7 @@ CSS = """
 .nota-card p{font-size:15.5px;line-height:1.6;color:var(--pv-tinta-60)}
 @media(max-width:960px){.notas-doc{grid-template-columns:1fr}.notas-rail{position:static}}
 """
+CSS += comparativas.CSS
 
 RAIL = """
   <aside class="notas-rail">
@@ -143,7 +146,7 @@ def article_page(a):
     <p class="lede">{a['lede']}</p>
     <p class="notas-fecha">{a['date_h']} · Blog de Positiva</p>
     <div class="prosa">
-{a['body']}
+{comparativas.pintar(a['body'])}
 {faq_html}
 {a.get('extra_foot','')}
     </div>

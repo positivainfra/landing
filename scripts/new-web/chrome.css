@@ -7,13 +7,13 @@
    Fuente: scripts/new-web/chrome.css → public/new/chrome.css (gen.py)
    ══════════════════════════════════════════════════════════════════════ */
 @font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/spacemono-700.woff2) format('woff2')}
-nav.top,.menu-m,.saltar-n{
+nav.top,.menu-m,.saltar-n,.cta-flot{
   --n-papel:#F3F2EE;--n-luz:#FFFFFF;--n-tinta:#171614;--n-tinta-2:#5A5852;--n-linea:#DEDDD6;--n-bandeja:#E8E7E1;--n-ambar:#C98A2B;
   --n-display:'Playfair Display',Georgia,'Times New Roman',serif;--n-sans:'Instrument Sans',-apple-system,system-ui,'Segoe UI',sans-serif;--n-mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
   --n-ease:cubic-bezier(.19,1,.22,1);
   font-family:var(--n-sans);color:var(--n-tinta);line-height:1.5;box-sizing:border-box;
 }
-nav.top *,.menu-m *{box-sizing:border-box}
+nav.top *,.menu-m *,.cta-flot *{box-sizing:border-box}
 .saltar-n{position:absolute;left:-9999px;top:auto}
 .saltar-n:focus{left:16px;top:16px;z-index:100;background:var(--n-tinta);color:var(--n-luz);padding:10px 14px;border-radius:999px;text-decoration:none}
 
@@ -29,9 +29,26 @@ nav.top .logo b{color:var(--n-ambar);font-weight:700}
 nav.top .links{display:flex;gap:4px;font-size:15px;font-weight:500}
 nav.top .links a{text-decoration:none;color:var(--n-tinta-2);padding:8px 12px;border-radius:999px;transition:background .2s,color .2s}
 nav.top .links a:hover,nav.top .links a[aria-current="page"]{background:var(--n-bandeja);color:var(--n-tinta)}
+/* Desplegable «Casos de uso»: se abre al pasar el ratón, con el teclado (foco) o al pulsar */
+nav.top .dd{position:relative}
+nav.top .dd-b{appearance:none;border:0;background:none;font:inherit;color:var(--n-tinta-2);padding:8px 12px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:background .2s,color .2s}
+nav.top .dd-b svg{width:10px;height:6px;transition:transform .3s var(--n-ease)}
+nav.top .dd-b:hover,nav.top .dd-b[aria-expanded="true"],nav.top .dd-b.actual{background:var(--n-bandeja);color:var(--n-tinta)}
+nav.top .dd-b[aria-expanded="true"] svg{transform:rotate(180deg)}
+nav.top .dd-p{position:absolute;top:100%;left:50%;width:330px;margin-top:10px;padding:8px;background:var(--n-luz);border:1px solid var(--n-linea);border-radius:16px;box-shadow:0 30px 60px -30px rgba(23,22,20,.35);display:grid;gap:2px;opacity:0;visibility:hidden;transform:translate(-50%,-6px);transition:opacity .25s,transform .35s var(--n-ease),visibility 0s .35s}
+nav.top .dd-p::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+nav.top .dd.abierto .dd-p{opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity .2s,transform .35s var(--n-ease),visibility 0s}
+nav.top .dd-p a{display:grid;gap:2px;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--n-tinta)}
+nav.top .dd-p a:hover,nav.top .dd-p a:focus-visible,nav.top .dd-p a[aria-current="page"]{background:var(--n-papel)}
+nav.top .dd-p b{font-weight:600;font-size:15px}
+nav.top .dd-p span{font-size:13px;line-height:1.4;color:var(--n-tinta-2);font-weight:400}
+@media(prefers-reduced-motion:reduce){nav.top .dd-p,nav.top .dd-b svg{transition:none}}
 nav.top .acc{display:flex;gap:8px;align-items:center}
 nav.top .btn,.menu-m .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;font-family:var(--n-sans);font-weight:600;font-size:14px;line-height:1.2;text-decoration:none;border:1px solid var(--n-tinta);background:var(--n-tinta);color:var(--n-luz);transition:transform .5s var(--n-ease),background .25s;cursor:pointer}
 nav.top .btn:hover,.menu-m .btn:hover{transform:translateY(-2px);background:#000;color:var(--n-luz)}
+/* «Empieza gratis»: ámbar de marca, el único botón de color de la cabecera (texto tinta: 7:1 de contraste) */
+nav.top .btn:not(.ghost),.menu-m .btn:not(.ghost){background:var(--n-ambar);border-color:var(--n-ambar);color:var(--n-tinta)}
+nav.top .btn:not(.ghost):hover,.menu-m .btn:not(.ghost):hover{background:#DB9A35;border-color:#DB9A35;color:var(--n-tinta)}
 nav.top .btn.ghost,.menu-m .btn.ghost{background:transparent;color:var(--n-tinta)}
 nav.top .btn.ghost:hover,.menu-m .btn.ghost:hover{background:var(--n-bandeja);color:var(--n-tinta)}
 nav.top a:focus-visible,nav.top button:focus-visible,.menu-m a:focus-visible{outline:2px solid var(--n-ambar);outline-offset:3px}
@@ -54,3 +71,25 @@ nav.top .burger[aria-expanded="true"] span::after{transform:translateY(-5px) rot
 body.menu-abierto{overflow:hidden}
 @media(max-width:1000px){nav.top .links{display:none}nav.top .burger{display:grid}}
 @media(max-width:600px){nav.top .acc .btn.ghost{display:none}}
+
+/* ── CTA flotante «Prueba Positiva gratis» ────────────────────────────────
+   Lo crea positiva.js en todas las páginas menos /soporte/. Aparece tras
+   1000 px de scroll y se esconde cuando hay otro botón de registro a la
+   vista (para no duplicar) o con el menú móvil abierto. Se puede cerrar,
+   y no vuelve en esa sesión. */
+.cta-flot{--n-ambar-v:#DB9A35;position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:55;display:flex;align-items:center;gap:2px;padding:6px 6px 6px 8px;background:var(--n-ambar);border-radius:999px;box-shadow:0 24px 50px -18px rgba(143,95,21,.7),0 0 0 1px rgba(23,22,20,.06);opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .35s,transform .5s var(--n-ease),visibility 0s .5s}
+.cta-flot.ver{opacity:1;visibility:visible;transform:none;transition:opacity .35s,transform .5s var(--n-ease),visibility 0s}
+.cta-flot a{display:flex;align-items:center;gap:10px;padding:6px 12px 6px 6px;text-decoration:none;color:var(--n-tinta);font-family:var(--n-sans);font-size:14.5px;font-weight:500;line-height:1.2;border-radius:999px}
+.cta-flot a b{font-weight:700}
+.cta-flot .ico{flex:none;width:34px;height:34px;border-radius:50%;background:var(--n-tinta);display:grid;place-items:center;transition:transform .5s var(--n-ease)}
+.cta-flot .ico svg{width:17px;height:auto;display:block;color:var(--n-ambar)}
+.cta-flot a:hover .ico{transform:rotate(-8deg) scale(1.06)}
+.cta-flot .x{appearance:none;border:0;background:none;color:rgba(23,22,20,.6);width:30px;height:30px;border-radius:50%;cursor:pointer;display:grid;place-items:center;padding:0}
+.cta-flot .x:hover{background:rgba(23,22,20,.12);color:var(--n-tinta)}
+.cta-flot:hover{background:var(--n-ambar-v)}
+.cta-flot .x svg{width:10px;height:10px}
+.cta-flot a:focus-visible,.cta-flot .x:focus-visible{outline:2px solid var(--n-tinta);outline-offset:2px}
+body.menu-abierto .cta-flot{display:none}
+/* En móvil y tablet no: el «Empieza gratis» del nav ya está siempre a la vista */
+@media(max-width:1000px){.cta-flot{display:none}}
+@media(prefers-reduced-motion:reduce){.cta-flot,.cta-flot.ver{transition:none;transform:none}}

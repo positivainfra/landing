@@ -92,6 +92,14 @@ document.addEventListener('click', function (e) {
     <a href="/new/revision-video/">Revisión</a>
     <a href="/new/archivos/">Archivos</a>
     <a href="/new/portfolio/">Portfolio</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-casos">Casos de uso<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-casos">
+        <a href="/new/freelance/"><b>Freelance</b><span>Entrega, revisión, archivos y portfolio en una sola cuota</span></a>
+        <a href="/new/bodas/"><b>Bodas</b><span>La boda completa, fotos y vídeo, con un enlace que no caduca</span></a>
+        <a href="/new/productoras/"><b>Productoras de vídeo</b><span>Revisión por fotograma con varios interlocutores y entrega del máster</span></a>
+      </div>
+    </div>
     <a href="/new/precios/">Precios</a>
     <a href="/notas/">Blog</a>
   </div>
@@ -152,8 +160,23 @@ document.addEventListener('click', function (e) {
 <div class="wrap">
 <section class="sec" id="detalle">
   <div class="head r"><span class="eyebrow">En detalle</span><h2 class="h-l">Dropbox y Positiva, <em class="a">lado a lado.</em></h2></div>
-  <div class="tabla t3 r"><table> <colgroup><col/><col/><col class="pos"/></colgroup> <thead><tr><th></th><th>Dropbox</th><th class="pos">Positiva</th></tr></thead> <tbody> <tr><th>Para qué está pensado</th><td>Almacenamiento y sincronización</td><td class="pos">Entregar fotos y vídeo a clientes</td></tr> <tr><th>El cliente recibe</th><td>Una carpeta de archivos</td><td class="pos">Una galería con tu marca</td></tr> <tr><th>Tu marca (logo, colores, tipografía)</th><td>No</td><td class="pos"><span class="si">Sí</span></td></tr> <tr><th>El enlace caduca</th><td>No</td><td class="pos"><span class="si">No, nunca</span></td></tr> <tr><th>El cliente elige sus favoritos</th><td>No</td><td class="pos"><span class="si">Sí</span></td></tr> <tr><th>Comentarios sobre cada archivo</th><td>No</td><td class="pos"><span class="si">Sí</span></td></tr> <tr><th>Vídeo reproducible en la galería</th><td>No — solo descarga</td><td class="pos"><span class="si">Sí</span></td></tr> <tr><th>Portfolio / web pública</th><td>No</td><td class="pos"><span class="si">Sí</span></td></tr> <tr><th>Precio de referencia</th><td>Plus · 2 TB ≈ 120 €/año</td><td class="pos">Autor · 250 GB · 89 €/año</td></tr> </tbody> </table></div>
-  <p class="fuentes r">Precios de referencia de planes de particular, aproximados y sin IVA; varían según promociones, país y modalidad de facturación. Aquí no comparamos almacenamiento ni precio: comparamos la entrega. Fuentes: <a href="https://one.google.com/about/plans" rel="noopener" target="_blank">Google One</a>, <a href="https://www.dropbox.com/plans" rel="noopener" target="_blank">Dropbox</a>, <a href="https://wetransfer.com/pricing" rel="noopener" target="_blank">WeTransfer</a>.</p>
+  <div class="r"><div class="cmpx"><table>
+<thead><tr><th scope="col"><span style="position:absolute;left:-9999px">Criterio</span></th><th scope="col">Dropbox</th><th scope="col" class="pos">Positiva</th></tr></thead>
+<tbody>
+<tr><th scope="row">Pensado para</th><td data-h="Dropbox"><span class="v">Almacenamiento y sincronización</span></td><td data-h="Positiva" class="pos"><span class="v">Entregar y revisar fotos y vídeo con el cliente</span></td></tr>
+<tr><th scope="row">El cliente recibe</th><td data-h="Dropbox"><span class="v">Una carpeta de archivos</span></td><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Una galería con tu marca</span></td></tr>
+<tr><th scope="row">Tu marca (logo, colores, tipografía)</th><td data-h="Dropbox"><span class="v">No</span></td><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí</span></td></tr>
+<tr><th scope="row">El enlace caduca</th><td data-h="Dropbox"><span class="v">No</span></td><td data-h="Positiva" class="pos"><span class="v">No, nunca</span></td></tr>
+<tr><th scope="row">El cliente elige sus favoritos</th><td data-h="Dropbox"><span class="v">No</span></td><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí</span></td></tr>
+<tr><th scope="row">Comentarios sobre cada archivo</th><td data-h="Dropbox"><span class="v">No</span></td><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí, en foto y por fotograma en vídeo</span></td></tr>
+<tr><th scope="row">Vídeo reproducible en la galería</th><td data-h="Dropbox"><span class="v">No, solo descarga</span></td><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí</span></td></tr>
+<tr><th scope="row">Guardar tus archivos de trabajo</th><td data-h="Dropbox" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Cualquier archivo, sincronizado con tu ordenador</span></td><td data-h="Positiva" class="pos"><span class="v">Carpetas y envíos con enlace (plan Estudio), sin sincronización</span></td></tr>
+<tr><th scope="row">Pedir archivos a terceros</th><td data-h="Dropbox" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí, en todos los planes, sin cuenta; de 2 GB a 250 GB por archivo</span></td><td data-h="Positiva" class="pos"><span class="v">Sí, en el plan Estudio, sin cuenta; hasta 150 GB por archivo</span></td></tr>
+<tr><th scope="row">Portfolio / web pública</th><td data-h="Dropbox"><span class="v">No</span></td><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí</span></td></tr>
+<tr><th scope="row">Precio de referencia</th><td data-h="Dropbox"><span class="v">Plus · 2 TB · 9,99 $/mes</span></td><td data-h="Positiva" class="pos"><span class="v">Autor · 250 GB · 89 €/año</span></td></tr>
+</tbody></table></div>
+<p class="cmpx-ley"><span class="gana-b">✓ Mejor</span><span>El mejor dato de la fila, sea de quien sea. Sin distintivo: empate o depende de tu caso.</span></p></div>
+  <p class="fuentes r">Precios de referencia de planes de particular, aproximados y sin IVA; varían según promociones, país y modalidad de facturación. Aquí no comparamos almacenamiento ni precio: comparamos la entrega. Guardar y pedir archivos, verificado el 4 de octubre de 2026 en la ayuda de Dropbox: las solicitudes de archivos están en todos sus planes; en Positiva, en el plan Estudio. Fuentes: <a href="https://one.google.com/about/plans" rel="noopener" target="_blank">Google One</a>, <a href="https://www.dropbox.com/plans" rel="noopener" target="_blank">Dropbox</a>, <a href="https://wetransfer.com/pricing" rel="noopener" target="_blank">WeTransfer</a>.</p>
 </section>
 </div>
 <section class="final" id="demo"><div class="wrap inner">

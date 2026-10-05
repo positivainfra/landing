@@ -48,8 +48,37 @@
 .nota-card h2{font-size:clamp(21px,2.2vw,27px);margin:8px 0 8px}
 .nota-card p{font-size:15.5px;line-height:1.6;color:var(--pv-tinta-60)}
 @media(max-width:960px){.notas-doc{grid-template-columns:1fr}.notas-rail{position:static}}
+
+/* .cmpx.cmpx: gana a las reglas genéricas de tabla de cada hoja (p. ej. .prosa table th) */
+.cmpx.cmpx{margin:var(--pv-s5,24px) 0;border:1px solid var(--pv-linea,#DEDDD6);border-radius:16px;background:var(--pv-luz,#fff);overflow:hidden}
+.cmpx.cmpx table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:14.5px;line-height:1.45}
+.cmpx.cmpx th,.cmpx.cmpx td{padding:12px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--pv-linea,#DEDDD6);white-space:normal !important;overflow-wrap:anywhere;font-weight:400}
+.cmpx.cmpx tbody tr:last-child th,.cmpx.cmpx tbody tr:last-child td{border-bottom:0}
+.cmpx.cmpx thead th{font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--pv-tinta-60,#5A5852);background:var(--pv-bandeja,#E8E7E1);border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+.cmpx.cmpx thead th.pos{background:var(--pv-ambar-luz,#F6EAD2);color:var(--pv-ambar-ink,#8F5F15)}
+.cmpx.cmpx thead th:first-child{width:24%}
+.cmpx.cmpx tbody th{font-family:inherit;text-transform:none;letter-spacing:0;font-weight:600 !important;color:var(--pv-tinta,#171614);font-size:14px;background:none;border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+.cmpx.cmpx td{color:var(--pv-tinta-60,#5A5852)}
+.cmpx.cmpx td.pos{background:color-mix(in srgb,var(--pv-ambar-luz,#F6EAD2) 35%,transparent)}
+.cmpx.cmpx td.gana{background:#E6F2E8;color:#1F3B27;box-shadow:inset 3px 0 0 #2F7A45}
+.cmpx.cmpx .gana-b{display:flex;width:max-content;align-items:center;gap:4px;margin-bottom:5px;font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:#2F7A45;border-radius:999px;padding:2px 8px;line-height:1.5}
+.cmpx-ley{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:13px;color:var(--pv-tinta-60,#5A5852);margin:10px 0 0}
+.cmpx-ley .gana-b{display:inline-flex;align-items:center;gap:4px;font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:#2F7A45;border-radius:999px;padding:2px 8px}
+@media(max-width:700px){
+  .cmpx.cmpx{border:0;background:none;border-radius:0;overflow:visible}
+  .cmpx.cmpx table,.cmpx.cmpx tbody,.cmpx.cmpx tr,.cmpx.cmpx th,.cmpx.cmpx td{display:block;width:auto}
+  .cmpx.cmpx thead{display:none}
+  .cmpx.cmpx tbody tr{border:1px solid var(--pv-linea,#DEDDD6);border-radius:14px;background:var(--pv-luz,#fff);margin-bottom:10px;overflow:hidden}
+  .cmpx.cmpx tbody th{background:var(--pv-bandeja,#E8E7E1);padding:10px 14px;border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+  .cmpx.cmpx td{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:4px 10px;padding:10px 14px}
+  .cmpx.cmpx td::before{content:attr(data-h);font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--pv-tinta-60,#5A5852);padding-top:3px;grid-row:1 / span 2}
+  .cmpx.cmpx td.pos::before{color:var(--pv-ambar-ink,#8F5F15)}
+  .cmpx.cmpx td.gana{box-shadow:inset 3px 0 0 #2F7A45}
+  .cmpx.cmpx td .gana-b{grid-column:2;justify-self:start}
+  .cmpx.cmpx td .v{grid-column:2}
+}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Alternativas a Pic-Time para fotógrafos y videógrafos (2026)", "description": "Guía de alternativas a Pic-Time: qué plataforma de galerías de clientes encaja según tu caso — vídeo, contratos, almacenamiento, idioma y precio. Datos verificados.", "datePublished": "2026-09-08", "dateModified": "2026-09-08", "inLanguage": "es", "author": {"@type": "Organization", "name": "Positiva", "url": "https://positiva.studio/"}, "publisher": {"@id": "https://positiva.studio/#org"}, "mainEntityOfPage": "https://positiva.studio/notas/alternativas-a-pic-time/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Alternativas a Pic-Time para fotógrafos y videógrafos (2026)", "description": "Guía de alternativas a Pic-Time: qué plataforma de galerías de clientes encaja según tu caso — vídeo, contratos, almacenamiento, idioma y precio. Datos verificados.", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "inLanguage": "es", "author": {"@type": "Organization", "name": "Positiva", "url": "https://positiva.studio/"}, "publisher": {"@id": "https://positiva.studio/#org"}, "mainEntityOfPage": "https://positiva.studio/notas/alternativas-a-pic-time/"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Alternativas a Pic-Time para fotógrafos y videógrafos (2026)", "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Positiva"}, {"@type": "ListItem", "position": 2, "name": "Pixieset"}, {"@type": "ListItem", "position": 3, "name": "ShootProof"}, {"@type": "ListItem", "position": 4, "name": "SmugMug"}, {"@type": "ListItem", "position": 5, "name": "Zenfolio"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuál es la alternativa más parecida a Pic-Time?", "acceptedAnswer": {"@type": "Answer", "text": "Pixieset: galerías de clientes con tienda de impresiones y automatizaciones, dentro de una suite que añade web y gestión de estudio. Es la opción con el solape funcional más alto."}}, {"@type": "Question", "name": "¿Qué alternativa a Pic-Time funciona mejor con vídeo?", "acceptedAnswer": {"@type": "Answer", "text": "Positiva trata fotos y vídeos por igual dentro del mismo almacenamiento y añade revisión de vídeo con comentarios por fotograma. En Pic-Time el vídeo tiene su propio límite (30 GB en el plan Professional, ampliable con un add-on desde 10 $/mes) y en Pixieset se mide en minutos según el plan."}}, {"@type": "Question", "name": "¿Qué alternativas tienen la experiencia en español?", "acceptedAnswer": {"@type": "Answer", "text": "Conviene separar panel y galería. Positiva tiene panel, galerías y soporte en español. En Pic-Time y Pixieset las galerías que ve el cliente pueden configurarse en español, pero el panel de trabajo está en inglés (Pic-Time ofrece una traducción automática del panel)."}}, {"@type": "Question", "name": "¿Hay alternativas a Pic-Time gratuitas?", "acceptedAnswer": {"@type": "Answer", "text": "Con plan gratuito permanente: Positiva (15 GB y 2 galerías), Pixieset (3 GB, con 15 % de comisión en la tienda) y ShootProof (100 fotos, 5 GB). SmugMug y Zenfolio solo ofrecen periodo de prueba. El plan gratuito de Pic-Time queda en 3 GB de foto y 1 GB de vídeo a los 3 meses."}}, {"@type": "Question", "name": "¿Puedo migrar mis galerías desde Pic-Time?", "acceptedAnswer": {"@type": "Answer", "text": "Ninguna de estas plataformas ofrece una migración automática documentada, así que el camino habitual es recuperar los originales y volver a subirlos —las galerías nuevas no conservan las favoritas ni el histórico de pedidos—. Dicho eso: si vienes de Pic-Time, escríbenos a hola@positiva.studio antes de ponerte, porque llevamos un tiempo con ello y podemos echarte una mano."}}, {"@type": "Question", "name": "¿Qué opción es mejor si no vendo impresiones?", "acceptedAnswer": {"@type": "Answer", "text": "Si tampoco necesitas contratos ni facturación, Positiva o SmugMug según tu prioridad: revisión y entrega de foto y vídeo (Positiva) o archivo ilimitado de fotos (SmugMug). Si necesitas la gestión administrativa, ShootProof."}}]}</script>
 <link rel="stylesheet" href="/new/docs.css">
@@ -119,6 +148,14 @@ document.addEventListener('click', function (e) {
     <a href="/new/revision-video/">Revisión</a>
     <a href="/new/archivos/">Archivos</a>
     <a href="/new/portfolio/">Portfolio</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-casos">Casos de uso<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-casos">
+        <a href="/new/freelance/"><b>Freelance</b><span>Entrega, revisión, archivos y portfolio en una sola cuota</span></a>
+        <a href="/new/bodas/"><b>Bodas</b><span>La boda completa, fotos y vídeo, con un enlace que no caduca</span></a>
+        <a href="/new/productoras/"><b>Productoras de vídeo</b><span>Revisión por fotograma con varios interlocutores y entrega del máster</span></a>
+      </div>
+    </div>
     <a href="/new/precios/">Precios</a>
     <a href="/new/notas/">Blog</a>
   </div>
@@ -153,7 +190,7 @@ document.addEventListener('click', function (e) {
     <nav class="miga" aria-label="Migas de pan"><a href="/new/notas/">Blog</a> <span aria-hidden="true">·</span> <span>Alternativas</span></nav>
     <h1>Alternativas a Pic-Time para fotógrafos y videógrafos (2026)</h1>
     <p class="lede">Pic-Time combina galerías de clientes con una tienda de impresiones y automatizaciones de venta. Si estás valorando un cambio — por precio, por vídeo, por idioma o porque no vendes copias — esta guía compara las alternativas según tu caso de uso.</p>
-    <p class="notas-fecha">8 de septiembre de 2026 · Blog de Positiva</p>
+    <p class="notas-fecha">4 de octubre de 2026 · Blog de Positiva</p>
     <div class="prosa">
 
 <p>Pic-Time es una plataforma de galerías de clientes centrada en la venta de impresiones: incluye tienda conectada a más de 30 laboratorios y automatizaciones de venta en todos sus planes. Su plan Professional cuesta 21&nbsp;$/mes con facturación anual — 252&nbsp;$/año — con 100&nbsp;GB para fotos y 30&nbsp;GB para vídeo.</p>
@@ -165,6 +202,7 @@ document.addEventListener('click', function (e) {
 <thead><tr><th>Si buscas…</th><th>Mejor opción</th><th>Por qué</th></tr></thead>
 <tbody>
 <tr><td>Entrega y revisión de foto y vídeo</td><td><a href="/">Positiva</a></td><td>Foto y vídeo en la misma galería, con comentarios por fotograma</td></tr>
+<tr><td>Guardar tus archivos y pedírselos a clientes o proveedores</td><td><a href="/new/precios/">Positiva</a> (plan Estudio)</td><td>Carpetas, envíos y solicitudes junto a tus galerías; quien sube no necesita cuenta</td></tr>
 <tr><td>Tienda de impresiones y suite completa</td><td>Pixieset</td><td>Galerías, web, tienda y gestión de estudio en un ecosistema</td></tr>
 <tr><td>Contratos, facturas y pagos</td><td>ShootProof</td><td>Añade la gestión administrativa a las galerías</td></tr>
 <tr><td>Almacenamiento de fotos sin límite</td><td>SmugMug</td><td>Subidas ilimitadas de fotos en todos los planes</td></tr>
@@ -197,6 +235,7 @@ document.addEventListener('click', function (e) {
 <li>Revisión de foto y de vídeo con comentarios por fotograma y exportación a Lightroom, DaVinci Resolve y Final Cut Pro.</li>
 <li>Panel, galerías y soporte en español; precios en euros; datos alojados en la Unión Europea.</li>
 <li>Plan gratuito de 15&nbsp;GB y 2 galerías, sin tarjeta.</li>
+<li>En el plan Estudio, <strong>Archivos</strong>: carpetas para guardar tu material en cualquier formato, envíos con enlace y solicitudes para que clientes, compañeros o proveedores te suban archivos sin crear cuenta (hasta 150&nbsp;GB por archivo).</li>
 </ul>
 <p><strong>Limitaciones:</strong></p>
 <ul>
@@ -275,19 +314,18 @@ document.addEventListener('click', function (e) {
 <p><strong>Precio:</strong> Basic, 7&nbsp;$/mes con facturación anual (15&nbsp;GB); Professional, 11,50&nbsp;$/mes anual — unos 138&nbsp;$/año — con 150&nbsp;GB; Advanced, 20&nbsp;$/mes anual.</p>
 
 <h2>Comparativa de datos</h2>
-<div class="tabla-scroll">
-<table>
-<thead><tr><th>Herramienta</th><th>Vídeo</th><th>Revisión</th><th>Portfolio / web</th><th>Tienda</th><th>Plan gratis</th><th>Precio anual (fact. anual)</th></tr></thead>
+<div class="cmpx"><table>
+<thead><tr><th scope="col"><span style="position:absolute;left:-9999px">Criterio</span></th><th scope="col" class="pos">Positiva</th><th scope="col">Pic-Time</th><th scope="col">Pixieset</th></tr></thead>
 <tbody>
-<tr><td>Positiva</td><td><span class="pv-si">Por GB, junto a las fotos</span></td><td><span class="pv-si">Favoritas + comentarios en foto + comentarios de vídeo por fotograma</span></td><td>Portfolio con tus entregas</td><td>No</td><td>15 GB · 2 galerías</td><td>89 € + IVA (250 GB)</td></tr>
-<tr><td>Pic-Time</td><td>30 GB en Professional (ampliable desde 10 $/mes)</td><td>Favoritas y selección</td><td>Portfolio Page (escaparate de galerías, embebible)</td><td>Sí, 30+ laboratorios + automatizaciones</td><td>3 GB de foto (tras 3 meses) · 1 GB de vídeo</td><td>252 $ (100 GB foto + 30 GB vídeo)</td></tr>
-<tr><td>Pixieset</td><td>Por minutos según plan</td><td>Favoritas de foto</td><td>Website, producto aparte de la suite</td><td>Sí (15 % comisión en plan gratis)</td><td>3 GB</td><td>192 $ (100 GB)</td></tr>
-<tr><td>ShootProof</td><td>No documentado</td><td>Favoritas de foto</td><td>Web sencilla incluida</td><td>Sí, sin comisión</td><td>100 fotos · 5 GB</td><td>≈ 200 $ (5.000 fotos · 250 GB)</td></tr>
-<tr><td>SmugMug</td><td>Subidas de foto ilimitadas (vídeo según plan)</td><td>Proofing en plan Business</td><td>Sí, webs personalizables</td><td>Sí (Pro y Business)</td><td>No (prueba 14 días)</td><td>≈ 357 $ (Business)</td></tr>
-<tr><td>Zenfolio</td><td>—</td><td>Proofing de foto</td><td>Web incluida</td><td>Sí</td><td>No (prueba)</td><td>138 $ (Professional, 150 GB)</td></tr>
-</tbody>
-</table>
-</div>
+<tr><th scope="row">Vídeo</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Por GB, junto a las fotos</span></td><td data-h="Pic-Time"><span class="v">30 GB en Professional (ampliable desde 10 $/mes)</span></td><td data-h="Pixieset"><span class="v">Por minutos según plan</span></td></tr>
+<tr><th scope="row">Revisión</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Favoritas, comentarios en foto y por fotograma en vídeo</span></td><td data-h="Pic-Time"><span class="v">Favoritas y selección</span></td><td data-h="Pixieset"><span class="v">Favoritas de foto</span></td></tr>
+<tr><th scope="row">Guardar tus archivos y pedirlos a terceros</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí, en el plan Estudio: quien sube no necesita cuenta; hasta 150 GB por archivo; carpetas y envíos</span></td><td data-h="Pic-Time"><span class="v">Subida del cliente a la galería, desactivada en Pic-Time 2.0</span></td><td data-h="Pixieset"><span class="v">No lo hemos encontrado en su documentación</span></td></tr>
+<tr><th scope="row">Web pública</th><td data-h="Positiva" class="pos"><span class="v">Portfolio con tus entregas</span></td><td data-h="Pic-Time"><span class="v">Portfolio Page (escaparate de galerías, embebible)</span></td><td data-h="Pixieset" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Website completa, producto aparte</span></td></tr>
+<tr><th scope="row">Tienda</th><td data-h="Positiva" class="pos"><span class="v">No</span></td><td data-h="Pic-Time" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí, 30+ laboratorios y automatizaciones</span></td><td data-h="Pixieset"><span class="v">Sí (15 % de comisión en el plan gratis)</span></td></tr>
+<tr><th scope="row">Plan gratis</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">15 GB · 2 galerías</span></td><td data-h="Pic-Time"><span class="v">3 GB de foto (tras 3 meses) · 1 GB de vídeo</span></td><td data-h="Pixieset"><span class="v">3 GB</span></td></tr>
+<tr><th scope="row">Precio anual</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">89 € + IVA/año (Autor, 250 GB)</span></td><td data-h="Pic-Time"><span class="v">252 $ (100 GB + 30 GB de vídeo)</span></td><td data-h="Pixieset"><span class="v">192 $ (Plus, 100 GB)</span></td></tr>
+</tbody></table></div>
+<p class="cmpx-ley"><span class="gana-b">✓ Mejor</span><span>El mejor dato de la fila, sea de quien sea. Sin distintivo: empate o depende de tu caso. ShootProof, SmugMug y Zenfolio, en sus apartados del artículo.</span></p>
 <p>Tenemos una comparativa más detallada de las tres primeras en <a href="/new/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time vs Pixieset</a>.</p>
 
 <h2>Cómo decidir</h2>
@@ -307,7 +345,7 @@ document.addEventListener('click', function (e) {
 <p>Ninguna de estas plataformas ofrece una migración automática documentada, así que el camino habitual es recuperar los originales y volver a subirlos —las galerías nuevas no conservan las favoritas ni el histórico de pedidos—. Dicho eso: si vienes de Pic-Time, escríbenos a hola@positiva.studio antes de ponerte, porque llevamos un tiempo con ello y podemos echarte una mano.</p>
 <h3>¿Qué opción es mejor si no vendo impresiones?</h3>
 <p>Si tampoco necesitas contratos ni facturación, Positiva o SmugMug según tu prioridad: revisión y entrega de foto y vídeo (Positiva) o archivo ilimitado de fotos (SmugMug). Si necesitas la gestión administrativa, ShootProof.</p>
-<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 8 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada plataforma.</p>
+<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 8 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada plataforma; los de guardar archivos y pedirlos a terceros, el 4 de octubre de 2026.</p>
     </div>
   </article>
 

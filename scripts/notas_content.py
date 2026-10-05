@@ -21,7 +21,7 @@ title='Alternativas a Pixieset para fotógrafos y videógrafos (2026) · Blog de
 h1='Alternativas a Pixieset para fotógrafos y videógrafos (2026)',
 desc='Guía de alternativas a Pixieset: qué plataforma de galerías encaja según tu caso — vídeo, tienda, gestión del estudio, idioma y precio. Datos verificados.',
 lede='Pixieset es la galería de clientes más extendida, y su suite cubre web, tienda y gestión del estudio. Si estás buscando otra cosa — por el vídeo, por el precio, por el idioma o porque no necesitas media suite — esta guía compara las alternativas según tu caso.',
-date_iso='2026-09-10', date_h='10 de septiembre de 2026',
+date_iso='2026-10-04', date_h='4 de octubre de 2026',
 list_names=['Positiva', 'Pic-Time', 'ShootProof', 'SmugMug', 'Zenfolio'],
 body="""
 <p>Pixieset no es un producto, son cuatro: Client Gallery (las galerías), Website (la web pública), Store (la tienda) y Studio Manager (contratos, facturas y reservas). Cada uno se contrata por separado, y su plan de galerías más habitual, Plus, cuesta 16&nbsp;$/mes con facturación anual — 192&nbsp;$/año — con 100&nbsp;GB.</p>
@@ -33,6 +33,7 @@ body="""
 <thead><tr><th>Si buscas…</th><th>Mejor opción</th><th>Por qué</th></tr></thead>
 <tbody>
 <tr><td>Entrega y revisión de foto y vídeo</td><td><a href="/">Positiva</a></td><td>Foto y vídeo en la misma galería, con comentarios por fotograma</td></tr>
+<tr><td>Guardar tus archivos y pedírselos a clientes o proveedores</td><td><a href="/precios/">Positiva</a> (plan Estudio)</td><td>Carpetas, envíos y solicitudes junto a tus galerías; quien sube no necesita cuenta</td></tr>
 <tr><td>Vender impresiones con automatizaciones</td><td>Pic-Time</td><td>Tienda conectada a más de 30 laboratorios y campañas de venta</td></tr>
 <tr><td>Contratos, facturas y pagos</td><td>ShootProof</td><td>Galerías y gestión administrativa en la misma herramienta</td></tr>
 <tr><td>Archivo de fotos sin límite</td><td>SmugMug</td><td>Subidas de fotos ilimitadas en todos sus planes</td></tr>
@@ -65,6 +66,7 @@ body="""
 <li>Un enlace por tipo de acceso, cada uno con su contraseña y su calidad de descarga.</li>
 <li>Panel, galerías y soporte en español; precios en euros; datos alojados en la Unión Europea.</li>
 <li>Plan gratuito de 15&nbsp;GB y 2 galerías, sin tarjeta y sin comisiones.</li>
+<li>En el plan Estudio, <strong>Archivos</strong>: carpetas para guardar tu material en cualquier formato, envíos con enlace y solicitudes para que clientes, compañeros o proveedores te suban archivos sin crear cuenta (hasta 150&nbsp;GB por archivo).</li>
 </ul>
 <p><strong>Limitaciones:</strong></p>
 <ul>
@@ -144,19 +146,7 @@ body="""
 <p><strong>Precio:</strong> Basic, 7&nbsp;$/mes con facturación anual (15&nbsp;GB); Professional, 11,50&nbsp;$/mes anual — unos 138&nbsp;$/año — con 150&nbsp;GB; Advanced, 20&nbsp;$/mes anual.</p>
 
 <h2>Comparativa de datos</h2>
-<div class="tabla-scroll">
-<table>
-<thead><tr><th>Herramienta</th><th>Vídeo</th><th>Revisión</th><th>Portfolio / web</th><th>Tienda</th><th>Gestión del negocio</th><th>Plan gratis</th><th>Precio anual (fact. anual)</th></tr></thead>
-<tbody>
-<tr><td>Positiva</td><td><span class="pv-si">Por GB, junto a las fotos</span></td><td><span class="pv-si">Favoritas + comentarios en foto + comentarios de vídeo por fotograma</span></td><td>Portfolio con tus entregas</td><td>No</td><td>No</td><td>15 GB · 2 galerías</td><td>89 € + IVA (250 GB)</td></tr>
-<tr><td>Pixieset</td><td>Por minutos según plan (30 min en Basic)</td><td>Favoritas de foto</td><td>Website, módulo aparte</td><td>Sí, módulo aparte (15 % en el plan gratis)</td><td>Studio Manager, módulo aparte</td><td>3 GB</td><td>192 $ (Plus, 100 GB)</td></tr>
-<tr><td>Pic-Time</td><td>30 GB en Professional, ampliable desde 10 $/mes</td><td>Favoritas y selección</td><td>Portfolio Page, embebible</td><td>Sí, 30+ laboratorios + automatizaciones</td><td>No</td><td>3 GB foto · 1 GB vídeo</td><td>252 $ (100 GB foto + 30 GB vídeo)</td></tr>
-<tr><td>ShootProof</td><td>No documentado</td><td>Favoritas de foto</td><td>Web sencilla incluida</td><td>Sí, sin comisión</td><td>Contratos, facturas y pagos</td><td>100 fotos · 5 GB</td><td>≈ 200 $ (5.000 fotos · 250 GB)</td></tr>
-<tr><td>SmugMug</td><td>Según plan</td><td>Proofing en el plan Business</td><td>Sí, webs personalizables</td><td>Sí (Pro y Business)</td><td>No</td><td>No (prueba)</td><td>≈ 357 $ (Business)</td></tr>
-<tr><td>Zenfolio</td><td>—</td><td>Proofing de foto</td><td>Web incluida</td><td>Sí</td><td>Reservas y venta</td><td>No (prueba)</td><td>138 $ (Professional, 150 GB)</td></tr>
-</tbody>
-</table>
-</div>
+<!-- @tabla pixieset -->
 <p>Tenemos una comparativa más detallada de las tres primeras en <a href="/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time vs Pixieset</a>.</p>
 
 <h2>Cómo decidir</h2>
@@ -176,7 +166,7 @@ faq=[
 ('¿Qué opción es mejor si no necesito tienda?',
  'Positiva si tu prioridad es entregar y revisar foto y vídeo, o SmugMug si lo que necesitas es archivar volumen y tener portfolio. Quitar la tienda de la ecuación es justo lo que abarata el cambio.'),
 ],
-extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada plataforma. Los precios en dólares son los de la edición estadounidense de cada web.</p>',
+extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada plataforma; los de guardar archivos y pedirlos a terceros, el 4 de octubre de 2026. Los precios en dólares son los de la edición estadounidense de cada web.</p>',
 ),
 
 # ══ 2 · PIC-TIME ══════════════════════════════════════════════════
@@ -186,7 +176,7 @@ title='Alternativas a Pic-Time para fotógrafos y videógrafos (2026) · Blog de
 h1='Alternativas a Pic-Time para fotógrafos y videógrafos (2026)',
 desc='Guía de alternativas a Pic-Time: qué plataforma de galerías de clientes encaja según tu caso — vídeo, contratos, almacenamiento, idioma y precio. Datos verificados.',
 lede='Pic-Time combina galerías de clientes con una tienda de impresiones y automatizaciones de venta. Si estás valorando un cambio — por precio, por vídeo, por idioma o porque no vendes copias — esta guía compara las alternativas según tu caso de uso.',
-date_iso='2026-09-08', date_h='8 de septiembre de 2026',
+date_iso='2026-10-04', date_h='4 de octubre de 2026',
 list_names=['Positiva', 'Pixieset', 'ShootProof', 'SmugMug', 'Zenfolio'],
 body="""
 <p>Pic-Time es una plataforma de galerías de clientes centrada en la venta de impresiones: incluye tienda conectada a más de 30 laboratorios y automatizaciones de venta en todos sus planes. Su plan Professional cuesta 21&nbsp;$/mes con facturación anual — 252&nbsp;$/año — con 100&nbsp;GB para fotos y 30&nbsp;GB para vídeo.</p>
@@ -198,6 +188,7 @@ body="""
 <thead><tr><th>Si buscas…</th><th>Mejor opción</th><th>Por qué</th></tr></thead>
 <tbody>
 <tr><td>Entrega y revisión de foto y vídeo</td><td><a href="/">Positiva</a></td><td>Foto y vídeo en la misma galería, con comentarios por fotograma</td></tr>
+<tr><td>Guardar tus archivos y pedírselos a clientes o proveedores</td><td><a href="/precios/">Positiva</a> (plan Estudio)</td><td>Carpetas, envíos y solicitudes junto a tus galerías; quien sube no necesita cuenta</td></tr>
 <tr><td>Tienda de impresiones y suite completa</td><td>Pixieset</td><td>Galerías, web, tienda y gestión de estudio en un ecosistema</td></tr>
 <tr><td>Contratos, facturas y pagos</td><td>ShootProof</td><td>Añade la gestión administrativa a las galerías</td></tr>
 <tr><td>Almacenamiento de fotos sin límite</td><td>SmugMug</td><td>Subidas ilimitadas de fotos en todos los planes</td></tr>
@@ -230,6 +221,7 @@ body="""
 <li>Revisión de foto y de vídeo con comentarios por fotograma y exportación a Lightroom, DaVinci Resolve y Final Cut Pro.</li>
 <li>Panel, galerías y soporte en español; precios en euros; datos alojados en la Unión Europea.</li>
 <li>Plan gratuito de 15&nbsp;GB y 2 galerías, sin tarjeta.</li>
+<li>En el plan Estudio, <strong>Archivos</strong>: carpetas para guardar tu material en cualquier formato, envíos con enlace y solicitudes para que clientes, compañeros o proveedores te suban archivos sin crear cuenta (hasta 150&nbsp;GB por archivo).</li>
 </ul>
 <p><strong>Limitaciones:</strong></p>
 <ul>
@@ -308,19 +300,7 @@ body="""
 <p><strong>Precio:</strong> Basic, 7&nbsp;$/mes con facturación anual (15&nbsp;GB); Professional, 11,50&nbsp;$/mes anual — unos 138&nbsp;$/año — con 150&nbsp;GB; Advanced, 20&nbsp;$/mes anual.</p>
 
 <h2>Comparativa de datos</h2>
-<div class="tabla-scroll">
-<table>
-<thead><tr><th>Herramienta</th><th>Vídeo</th><th>Revisión</th><th>Portfolio / web</th><th>Tienda</th><th>Plan gratis</th><th>Precio anual (fact. anual)</th></tr></thead>
-<tbody>
-<tr><td>Positiva</td><td><span class="pv-si">Por GB, junto a las fotos</span></td><td><span class="pv-si">Favoritas + comentarios en foto + comentarios de vídeo por fotograma</span></td><td>Portfolio con tus entregas</td><td>No</td><td>15 GB · 2 galerías</td><td>89 € + IVA (250 GB)</td></tr>
-<tr><td>Pic-Time</td><td>30 GB en Professional (ampliable desde 10 $/mes)</td><td>Favoritas y selección</td><td>Portfolio Page (escaparate de galerías, embebible)</td><td>Sí, 30+ laboratorios + automatizaciones</td><td>3 GB de foto (tras 3 meses) · 1 GB de vídeo</td><td>252 $ (100 GB foto + 30 GB vídeo)</td></tr>
-<tr><td>Pixieset</td><td>Por minutos según plan</td><td>Favoritas de foto</td><td>Website, producto aparte de la suite</td><td>Sí (15 % comisión en plan gratis)</td><td>3 GB</td><td>192 $ (100 GB)</td></tr>
-<tr><td>ShootProof</td><td>No documentado</td><td>Favoritas de foto</td><td>Web sencilla incluida</td><td>Sí, sin comisión</td><td>100 fotos · 5 GB</td><td>≈ 200 $ (5.000 fotos · 250 GB)</td></tr>
-<tr><td>SmugMug</td><td>Subidas de foto ilimitadas (vídeo según plan)</td><td>Proofing en plan Business</td><td>Sí, webs personalizables</td><td>Sí (Pro y Business)</td><td>No (prueba 14 días)</td><td>≈ 357 $ (Business)</td></tr>
-<tr><td>Zenfolio</td><td>—</td><td>Proofing de foto</td><td>Web incluida</td><td>Sí</td><td>No (prueba)</td><td>138 $ (Professional, 150 GB)</td></tr>
-</tbody>
-</table>
-</div>
+<!-- @tabla pic-time -->
 <p>Tenemos una comparativa más detallada de las tres primeras en <a href="/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time vs Pixieset</a>.</p>
 
 <h2>Cómo decidir</h2>
@@ -340,7 +320,7 @@ faq=[
 ('¿Qué opción es mejor si no vendo impresiones?',
  'Si tampoco necesitas contratos ni facturación, Positiva o SmugMug según tu prioridad: revisión y entrega de foto y vídeo (Positiva) o archivo ilimitado de fotos (SmugMug). Si necesitas la gestión administrativa, ShootProof.'),
 ],
-extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 8 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada plataforma.</p>',
+extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 8 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada plataforma; los de guardar archivos y pedirlos a terceros, el 4 de octubre de 2026.</p>',
 ),
 
 # ══ 3 · WETRANSFER ════════════════════════════════════════════════
@@ -350,7 +330,7 @@ title='Alternativas a WeTransfer para fotógrafos y videógrafos (2026) · Blog 
 h1='Alternativas a WeTransfer para fotógrafos y videógrafos (2026)',
 desc='Guía de alternativas a WeTransfer: enlaces que no caducan, envíos grandes gratis, entrega con tu marca o revisión con el cliente. Datos verificados.',
 lede='WeTransfer resuelve una cosa muy bien: mandar archivos pesados sin pensar. Los límites aparecen después — el enlace caduca, el envío tiene tope y la entrega no lleva tu marca. Esta guía compara las alternativas según lo que te esté fallando.',
-date_iso='2026-09-10', date_h='10 de septiembre de 2026',
+date_iso='2026-10-04', date_h='4 de octubre de 2026',
 list_names=['Positiva', 'SwissTransfer', 'Smash', 'Dropbox Transfer', 'Google Drive'],
 body="""
 <p>WeTransfer está diseñado para transferir archivos: subes, mandas, se descarga y desaparece. En su plan gratuito puedes hacer hasta 10 transferencias o 3&nbsp;GB en una ventana de 30 días, y los enlaces caducan a los tres días; los planes de pago suben el listón hasta 1&nbsp;TB por transferencia y permiten fijar tú la caducidad.</p>
@@ -362,6 +342,7 @@ body="""
 <thead><tr><th>Si buscas…</th><th>Mejor opción</th><th>Por qué</th></tr></thead>
 <tbody>
 <tr><td>Entregar a un cliente con tu marca, sin caducidad</td><td><a href="/">Positiva</a></td><td>Galería con tu identidad y enlaces que no expiran</td></tr>
+<tr><td>Que un cliente o proveedor te envíe archivos</td><td>Dropbox Transfer</td><td>Las solicitudes de Dropbox van en todos sus planes, también el gratis, sin cuenta para quien sube; Positiva las tiene en el plan Estudio</td></tr>
 <tr><td>Mandar archivos grandes gratis</td><td>SwissTransfer</td><td>Hasta 50 GB por envío, sin cuenta y sin pagar</td></tr>
 <tr><td>Envíos ilimitados con tu logo</td><td>Smash</td><td>Sin límite de tamaño en los planes de pago, con subdominio propio</td></tr>
 <tr><td>Enviar desde donde ya guardas los archivos</td><td>Dropbox Transfer</td><td>Va incluido en el plan de Dropbox que ya pagas</td></tr>
@@ -378,7 +359,7 @@ body="""
 <li><strong>La entrega no se parece a ti.</strong> La marca propia — páginas con tu identidad — llega en Ultimate; en el resto, tu trabajo se presenta con la marca de otro.</li>
 <li><strong>No hay conversación.</strong> WeTransfer entrega archivos; no hay favoritas, ni comentarios, ni forma de saber qué opina el cliente de la toma 3.</li>
 </ul>
-<p>Y el motivo para quedarse: para mandar un archivo a alguien que no es tu cliente — un proveedor, una imprenta, un colaborador — montar una galería es trabajo de más. WeTransfer y SwissTransfer siguen siendo lo más rápido cuando no hay nada que presentar.</p>
+<p>Y el motivo para quedarse: para mandar un archivo a alguien que no es tu cliente — un proveedor, una imprenta, un colaborador — montar una galería es trabajo de más. En el plan Estudio de Positiva lo mandas desde Archivos; sin él, WeTransfer y SwissTransfer siguen siendo lo más rápido cuando no hay nada que presentar.</p>
 
 <p><strong>Cómo hemos hecho esta comparativa:</strong> hemos revisado las páginas oficiales de precios y los centros de ayuda de cada servicio y las hemos comparado según los criterios que decide alguien que busca una alternativa a WeTransfer: tamaño por envío, caducidad del enlace, almacenamiento, marca propia, presentación al cliente, comentarios y precio. Positiva es nuestro producto, así que señalamos también los casos en los que otra herramienta encaja mejor.</p>
 <p>Un aviso sobre los precios: WeTransfer no publica actualmente una tabla de tarifas legible sin JavaScript, así que en su ficha damos los límites documentados en su centro de ayuda y no una cifra que no hemos podido verificar.</p>
@@ -394,11 +375,13 @@ body="""
 <li>Favoritas y comentarios, con exportación a Lightroom, DaVinci Resolve y Final Cut Pro.</li>
 <li>Analítica: sabes si la han abierto y qué se han descargado, sin preguntar.</li>
 <li>Plan gratuito de 15&nbsp;GB y 2 galerías, en español y con los datos en la Unión Europea.</li>
+<li>En el plan Estudio, <strong>Archivos</strong>: carpetas para guardar tu material en cualquier formato, envíos con enlace y solicitudes para que clientes, compañeros o proveedores te suban archivos sin crear cuenta (hasta 150&nbsp;GB por archivo).</li>
 </ul>
 <p><strong>Limitaciones:</strong></p>
 <ul>
-<li>No es una herramienta de envío genérico: los archivos van dentro de una galería, con su portada y su diseño. Para mandar un ZIP a un proveedor, es trabajo de más.</li>
-<li>Admite JPEG y MP4; no sirve para enviar un proyecto de edición, un RAW o una carpeta cualquiera.</li>
+<li>El envío de cualquier archivo, con carpetas, y las solicitudes son del plan Estudio; con Autor o el plan gratis solo puedes compartir un archivo suelto con enlace.</li>
+<li>Las galerías admiten JPEG y MP4: un RAW o un proyecto de edición van por Archivos, no dentro de la galería.</li>
+<li>Para un envío puntual a alguien distinto cada vez, sin plan ni cuenta, SwissTransfer o WeTransfer son más directos.</li>
 <li>El almacenamiento va por plan, y no hay tienda ni facturación.</li>
 </ul>
 <p><strong>Precio:</strong> <a href="/precios/">Autor, 89&nbsp;€&nbsp;+&nbsp;IVA/año (250&nbsp;GB); Estudio, 219&nbsp;€&nbsp;+&nbsp;IVA/año (1&nbsp;TB)</a>. Plan gratuito de 15&nbsp;GB y 2 galerías.</p>
@@ -477,38 +460,28 @@ body="""
 <p><strong>Precio:</strong> 15&nbsp;GB gratis con la cuenta de Google. Los planes de pago (Google One y Google Workspace) varían por país; no hemos podido verificar sus importes en la documentación oficial accesible. Google Workspace documenta 30&nbsp;GB por usuario en Business Starter, 2&nbsp;TB en Business Standard y 5&nbsp;TB en Business Plus.</p>
 
 <h2>Comparativa de datos</h2>
-<div class="tabla-scroll">
-<table>
-<thead><tr><th>Herramienta</th><th>Tamaño por envío</th><th>Caducidad del enlace</th><th>Marca propia</th><th>Revisión</th><th>Precio</th></tr></thead>
-<tbody>
-<tr><td>Positiva</td><td>Sin envíos: subes a la galería, hasta tu cuota</td><td><span class="pv-si">No caduca</span></td><td><span class="pv-si">Logo, colores y tipografía</span></td><td><span class="pv-si">Favoritas + comentarios en foto + comentarios de vídeo por fotograma</span></td><td>89 € + IVA/año (250 GB)</td></tr>
-<tr><td>WeTransfer</td><td>10 envíos o 3 GB/30 días (Free); 1 TB por transferencia (Ultimate)</td><td>3 días (Free y Starter); a tu elección en Ultimate</td><td>Páginas con marca en Ultimate</td><td>No</td><td>No publicado de forma verificable</td></tr>
-<tr><td>SwissTransfer</td><td>50 GB</td><td>15 días, ampliables a 30</td><td>No</td><td>No</td><td>Gratis</td></tr>
-<tr><td>Smash</td><td>Sin límite en los planes de pago</td><td>7 días por defecto, 30 máximo</td><td>Logo, fondo y subdominio (Pro)</td><td>No</td><td>72 $/año (Pro, sin impuestos)</td></tr>
-<tr><td>Dropbox Transfer</td><td>50 GB (Plus) · 100 GB (Business) · 250 GB (Business Plus)</td><td>7 días (Plus); 30 en empresa</td><td>Logo y fondo en planes de empresa</td><td>Con Replay, add-on aparte</td><td>Incluido en Dropbox (desde 9,99 $/mes anual)</td></tr>
-<tr><td>Google Drive</td><td>Sin envío: carpeta compartida</td><td>No caduca</td><td>No</td><td>Comentarios sobre archivos</td><td>15 GB gratis; planes según país</td></tr>
-</tbody>
-</table>
-</div>
+<!-- @tabla wetransfer -->
 
 <h2>Cómo decidir</h2>
 <p>Si lo que falla es el tamaño y no quieres pagar, SwissTransfer resuelve el problema hoy mismo. Si mandas a diario y quieres que el envío lleve tu logo, Smash. Si ya pagas Dropbox, Transfer está ahí sin coste añadido. Y si lo que estás mandando es el trabajo terminado a un cliente — la boda, la campaña, el corte final —, el problema no es el tamaño: es que un envío que caduca no es una entrega. Para eso hemos hecho <a href="/">Positiva</a>, y puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB. La comparación en detalle está en <a href="/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>.</p>
 """,
 faq=[
 ('¿Hay alternativas a WeTransfer gratuitas y sin límite de tamaño?',
- 'Sin límite del todo, no. La más generosa de las gratuitas es SwissTransfer, con 50 GB por transferencia sin cuenta ni pago. Positiva tiene plan gratuito de 15 GB y 2 galerías, pero es para entregar, no para enviar archivos sueltos.'),
+ 'Sin límite del todo, no. La más generosa de las gratuitas es SwissTransfer, con 50 GB por transferencia sin cuenta ni pago. El plan gratuito de Positiva (15 GB y 2 galerías) es para entregar; el envío de cualquier archivo y las solicitudes están en el plan Estudio.'),
 ('¿Qué alternativa a WeTransfer no caduca?',
  'Positiva y Google Drive. En Positiva el enlace de la galería no tiene fecha de caducidad y sigue funcionando aunque reemplaces archivos; en Drive el acceso dura mientras mantengas la carpeta compartida. En WeTransfer solo el plan Ultimate permite fijar la caducidad.'),
 ('¿Cuál permite poner mi marca en la entrega?',
  'Positiva (logo, colores y tipografía en toda la galería), Smash desde el plan Pro (logo, fondo y subdominio propio), Dropbox Transfer en los planes de empresa y WeTransfer en Ultimate. SwissTransfer y Google Drive, no.'),
 ('¿Alguna deja que el cliente comente lo que le mando?',
  'Positiva: favoritas y comentarios foto a foto, y comentarios sobre el fotograma exacto en vídeo, que se exportan a Lightroom, DaVinci Resolve y Final Cut Pro. Google Drive permite comentar archivos, sin timecode. El resto son servicios de transferencia y no lo contemplan.'),
+('¿Alguna sirve para que un cliente o proveedor me envíe archivos?',
+ 'Sí, varias. Dropbox tiene solicitudes de archivos en todos sus planes, y quien sube no necesita cuenta. WeTransfer las tiene desde el plan gratis, pero pide un email verificado y en Free lo recibido caduca a los tres días. Positiva las incluye en el plan Estudio: sin cuenta para quien sube, hasta 150 GB por archivo, y lo recibido se queda en tus carpetas. En Google Drive hace falta una carpeta compartida o un formulario de Forms, y ambos piden cuenta de Google.'),
 ('¿Puedo saber si mi cliente ha descargado los archivos?',
  'Smash avisa cuando el destinatario no ha descargado antes de que expire el envío, y WeTransfer notifica las descargas. Positiva va más allá: cada galería registra visitas, visitantes únicos, descargas y reproducciones.'),
 ('¿Merece la pena pagar WeTransfer si solo entrego a clientes?',
  'Depende de cuántas entregas hagas. Si la entrega es tu producto final, pagar por un enlace que caduca y no lleva tu marca resuelve el transporte pero no la presentación; una galería cuesta lo mismo o menos y hace las dos cosas.'),
 ],
-extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada servicio. Los precios en dólares son los de la edición estadounidense de cada web.</p>',
+extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada servicio; los de guardar archivos y pedirlos a terceros, el 4 de octubre de 2026. Los precios en dólares son los de la edición estadounidense de cada web.</p>',
 ),
 
 # ══ 4 · FRAME.IO ══════════════════════════════════════════════════
@@ -518,7 +491,7 @@ title='Alternativas a Frame.io para vídeo y fotografía (2026) · Blog de Posit
 h1='Alternativas a Frame.io para vídeo y fotografía (2026)',
 desc='Guía de alternativas a Frame.io: revisión de vídeo con comentarios por fotograma, entrega al cliente, precio por usuario y idioma. Datos verificados.',
 lede='Frame.io es el estándar de la revisión de vídeo en postproducción. Si buscas otra cosa suele ser por el precio por asiento, porque tu cliente no es un equipo de post, o porque además de revisar necesitas entregar. Esta guía compara las opciones según tu caso.',
-date_iso='2026-09-10', date_h='10 de septiembre de 2026',
+date_iso='2026-10-04', date_h='4 de octubre de 2026',
 list_names=['Positiva', 'Vimeo', 'Dropbox Replay', 'Frame.io'],
 body="""
 <p>Frame.io hace muy bien un trabajo concreto: que un equipo de postproducción comente un corte sobre el fotograma exacto y esos comentarios lleguen al montador. Comentarios de fotograma único, de rango y anotaciones dibujadas encima; importación de comentarios como marcadores en Premiere Pro; Camera to Cloud desde el rodaje. Su plan Pro cuesta 15&nbsp;$ por miembro y mes más impuestos, con 2&nbsp;TB y hasta 5 miembros.</p>
@@ -530,6 +503,7 @@ body="""
 <thead><tr><th>Si buscas…</th><th>Mejor opción</th><th>Por qué</th></tr></thead>
 <tbody>
 <tr><td>Revisar y entregar foto y vídeo al cliente final</td><td><a href="/">Positiva</a></td><td>Revisión por fotograma y entrega con tu marca, sin pagar por asiento</td></tr>
+<tr><td>Pedir material a clientes o proveedores sin que creen cuenta</td><td>Dropbox Replay</td><td>Usa las solicitudes de Dropbox, incluidas en todos sus planes; Positiva las tiene solo en el plan Estudio</td></tr>
 <tr><td>Alojar vídeo público y hacer marketing con él</td><td>Vimeo</td><td>Reproductor incrustable, showcases y directos</td></tr>
 <tr><td>Revisar vídeo y audio donde ya guardas los archivos</td><td>Dropbox Replay</td><td>Complemento sobre el Dropbox que ya pagas, con audio incluido</td></tr>
 <tr><td>Postproducción en equipo, con Camera to Cloud</td><td>Quedarte en Frame.io</td><td>Ninguna alternativa replica C2C ni su integración con Premiere</td></tr>
@@ -559,11 +533,12 @@ body="""
 <li>No se paga por asiento: los revisores entran por enlace, sean uno o quince.</li>
 <li>Entrega final y <a href="/portfolio/">portfolio público</a> en la misma herramienta.</li>
 <li>Panel, galerías y soporte en español; datos en la Unión Europea; plan gratuito de 15&nbsp;GB.</li>
+<li>En el plan Estudio, <strong>Archivos</strong>: carpetas para guardar tu material en cualquier formato, envíos con enlace y solicitudes para que clientes, compañeros o proveedores te suban archivos sin crear cuenta (hasta 150&nbsp;GB por archivo).</li>
 </ul>
 <p><strong>Limitaciones:</strong></p>
 <ul>
 <li>No es una herramienta de postproducción colaborativa: no hay Camera to Cloud ni panel dentro de Premiere Pro.</li>
-<li>Admite JPEG y MP4 con H.264; no revisa audio suelto, PDF ni proyectos de edición.</li>
+<li>La revisión es de JPEG y MP4 con H.264: no revisa audio suelto, PDF ni proyectos de edición. En el plan Estudio puedes guardarlos y enviarlos desde Archivos, pero no comentarlos.</li>
 <li>Sin gestión de proyectos con miembros, roles y permisos internos por equipo.</li>
 <li>El almacenamiento va por plan: 250&nbsp;GB o 1&nbsp;TB, sin crecer por miembro.</li>
 </ul>
@@ -627,17 +602,7 @@ body="""
 <p><strong>Precio:</strong> incluido con Creative Cloud. Los planes de pago de Frame.io son Pro, 15&nbsp;$ por miembro/mes más impuestos, y Team, 25&nbsp;$; la facturación anual aplica un 13&nbsp;% de descuento cuya cifra exacta no aparece en su tabla pública.</p>
 
 <h2>Comparativa de datos</h2>
-<div class="tabla-scroll">
-<table>
-<thead><tr><th>Herramienta</th><th>Comentarios en vídeo</th><th>Exporta al editor</th><th>Fotografía</th><th>Entrega y portfolio</th><th>Modelo de precio</th><th>Precio de referencia</th></tr></thead>
-<tbody>
-<tr><td>Positiva</td><td><span class="pv-si">Por fotograma</span></td><td><span class="pv-si">Marcadores a DaVinci Resolve y Final Cut Pro; favoritas a Lightroom</span></td><td><span class="pv-si">Galerías con favoritas y comentarios</span></td><td><span class="pv-si">Entrega con tu marca + portfolio público</span></td><td>Por cuenta, revisores ilimitados</td><td>89 € + IVA/año (250 GB)</td></tr>
-<tr><td>Frame.io</td><td>Por fotograma, por rango y anotaciones dibujadas</td><td>Marcadores en Premiere Pro; CSV; Resolve heredado</td><td>Sí, con visor y enlaces de revisión</td><td>Presentaciones con marca, sin portfolio</td><td>Por miembro</td><td>15 $/miembro/mes (Pro)</td></tr>
-<tr><td>Vimeo</td><td>Con código de tiempo</td><td>No documentado</td><td>No</td><td>Showcases y portfolios de vídeo</td><td>Por asiento</td><td>25 $/asiento/mes (Standard)</td></tr>
-<tr><td>Dropbox Replay</td><td>Sí; vínculo al fotograma no documentado</td><td>Integración con editores; marcadores no documentados</td><td>No</td><td>No</td><td>Por usuario, sobre un plan de Dropbox</td><td>120 $/usuario/año + Dropbox</td></tr>
-</tbody>
-</table>
-</div>
+<!-- @tabla frame-io -->
 
 <h2>Cómo decidir</h2>
 <p>Si tu flujo es de postproducción y grabas para la nube, Frame.io sigue siendo difícil de sustituir — y si ya pagas Creative Cloud, su plan gratuito mejorado quizá te baste. Si además de revisar publicas, Vimeo. Si tu archivo vive en Dropbox y revisas audio, Replay. Y si quien tiene que opinar es tu cliente, no tu montador, y después de aprobar hay que entregar el trabajo con tu marca, <a href="/">Positiva</a> está construida para ese recorrido: puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB.</p>
@@ -656,7 +621,7 @@ faq=[
 ('¿Puedo usar Frame.io gratis?',
  'Sí, con límites: el plan gratuito son 2 GB y hasta 2 miembros. Si tienes Creative Cloud, iniciar sesión con tu Adobe ID lo sube a 100 GB y cinco proyectos compartidos con otra persona.'),
 ],
-extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada herramienta. Los precios en dólares son los de la edición estadounidense de cada web.</p>',
+extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada herramienta; los de guardar archivos y pedirlos a terceros, el 4 de octubre de 2026. Los precios en dólares son los de la edición estadounidense de cada web.</p>',
 ),
 
 # ══ 5 · ARCADINA ══════════════════════════════════════════════════
@@ -666,7 +631,7 @@ title='Alternativas a Arcadina para fotógrafos (2026) · Blog de Positiva',
 h1='Alternativas a Arcadina para fotógrafos (2026)',
 desc='Guía de alternativas a Arcadina: web y galerías para fotógrafos, tienda, gestión del estudio, vídeo y revisión. Precios en euros y datos verificados.',
 lede='Arcadina lleva años siendo la opción por defecto del fotógrafo español que quiere web, galerías y tienda en castellano. Si buscas otra cosa, suele ser por el vídeo, por cómo se suman sus planes o porque necesitas revisión de verdad. Esta guía compara las alternativas según tu caso.',
-date_iso='2026-09-10', date_h='10 de septiembre de 2026',
+date_iso='2026-10-04', date_h='4 de octubre de 2026',
 list_names=['Positiva', 'PSPro', 'Pixieset', 'Pic-Time', 'Zenfolio'],
 body="""
 <p>Arcadina es una empresa española, con sede en Alzira (Valencia), que vende tres servicios independientes: <strong>Negocio</strong> (galerías de cliente y tienda, desde 10&nbsp;€/mes con pago anual, impuestos incluidos), <strong>Web</strong> (el portfolio, 8&nbsp;€/mes anual) y <strong>Manager</strong> (reservas, facturación y contratos, desde 8&nbsp;€/mes anual). También los agrupa en Suites, desde 24&nbsp;€/mes con pago anual. Todo en castellano, con soporte en castellano y sin comisiones por venta.</p>
@@ -678,6 +643,7 @@ body="""
 <thead><tr><th>Si buscas…</th><th>Mejor opción</th><th>Por qué</th></tr></thead>
 <tbody>
 <tr><td>Entregar y revisar foto y vídeo</td><td><a href="/">Positiva</a></td><td>Vídeo alojado en la galería y comentarios por fotograma</td></tr>
+<tr><td>Guardar tus archivos y pedírselos a clientes o proveedores</td><td><a href="/precios/">Positiva</a> (plan Estudio)</td><td>Carpetas, envíos y solicitudes junto a tus galerías; quien sube no necesita cuenta</td></tr>
 <tr><td>Gestionar todo el estudio en español</td><td>PSPro</td><td>Galerías, web, CRM, contratos, agenda y facturación VeriFactu</td></tr>
 <tr><td>Galerías con tienda y un ecosistema grande</td><td>Pixieset</td><td>Galería, web, tienda y gestión, cada módulo aparte</td></tr>
 <tr><td>Vender impresiones con automatizaciones</td><td>Pic-Time</td><td>Tienda conectada a más de 30 laboratorios</td></tr>
@@ -708,13 +674,14 @@ body="""
 <li>Un enlace por tipo de acceso, cada uno con su contraseña y su calidad de descarga; los enlaces no caducan.</li>
 <li><a href="/portfolio/">Portfolio público</a> alimentado por las entregas que ya tienes.</li>
 <li>Empresa española, soporte en castellano, datos alojados en la Unión Europea y plan gratuito de 15&nbsp;GB.</li>
+<li>En el plan Estudio, <strong>Archivos</strong>: carpetas para guardar tu material en cualquier formato, envíos con enlace y solicitudes para que clientes, compañeros o proveedores te suban archivos sin crear cuenta (hasta 150&nbsp;GB por archivo).</li>
 </ul>
 <p><strong>Limitaciones:</strong></p>
 <ul>
 <li>Sin tienda: no se venden copias, álbumes ni descargas desde la galería. Arcadina sí, y sin comisión.</li>
 <li>Sin reservas, contratos ni facturación: no hay equivalente al plan Manager.</li>
 <li>Sin creador de web completo con páginas, blog y formularios: el portfolio muestra tu trabajo, no sustituye a una web corporativa.</li>
-<li>Admite JPEG y MP4 con H.264; los RAW no se suben.</li>
+<li>Las galerías admiten JPEG y MP4 con H.264; los RAW solo se pueden guardar y enviar desde Archivos, en el plan Estudio.</li>
 </ul>
 <p><strong>Precio:</strong> <a href="/precios/">Autor, 89&nbsp;€&nbsp;+&nbsp;IVA/año (250&nbsp;GB); Estudio, 219&nbsp;€&nbsp;+&nbsp;IVA/año (1&nbsp;TB)</a>. Plan gratuito de 15&nbsp;GB y 2 galerías. Ojo a la comparación: los precios de Arcadina se publican con impuestos incluidos y los nuestros sin IVA.</p>
 <p><strong>No la elegiríamos si:</strong> lo que te da de comer es la venta de impresiones o necesitas la gestión administrativa del estudio.</p>
@@ -792,19 +759,7 @@ body="""
 <p><strong>Precio:</strong> Basic, 7&nbsp;$/mes con facturación anual (15&nbsp;GB); Professional, 11,50&nbsp;$/mes anual — unos 138&nbsp;$/año — con 150&nbsp;GB; Advanced, 20&nbsp;$/mes anual.</p>
 
 <h2>Comparativa de datos</h2>
-<div class="tabla-scroll">
-<table>
-<thead><tr><th>Herramienta</th><th>Vídeo en la galería</th><th>Revisión</th><th>Web pública</th><th>Tienda</th><th>Gestión del negocio</th><th>Idioma del panel</th><th>Precio de referencia</th></tr></thead>
-<tbody>
-<tr><td>Positiva</td><td><span class="pv-si">Alojado, junto a las fotos</span></td><td><span class="pv-si">Favoritas + comentarios en foto + comentarios de vídeo por fotograma</span></td><td>Portfolio con tus entregas</td><td>No</td><td>No</td><td><span class="pv-si">Español</span></td><td>89 € + IVA/año (250 GB)</td></tr>
-<tr><td>Arcadina</td><td>Enlace de YouTube o Vimeo</td><td>Favoritas + comentario por imagen seleccionada</td><td>Sí, plan Web aparte</td><td>Sí, sin comisión</td><td>Sí, plan Manager aparte</td><td>Español</td><td>Negocio desde 120 €/año (IVA incl., 30 GB); Suite Pro 288 €/año</td></tr>
-<tr><td>PSPro</td><td>No documentado</td><td>Favoritas y comparar</td><td>Sí, incluida</td><td>Sí, integrada</td><td>CRM, contratos, agenda, VeriFactu</td><td>Español</td><td>300 €/año + IVA (Starter, 300 GB)</td></tr>
-<tr><td>Pixieset</td><td>Por minutos según plan</td><td>Favoritas de foto</td><td>Módulo aparte</td><td>Módulo aparte</td><td>Studio Manager, aparte</td><td>Inglés</td><td>192 $/año (Plus, 100 GB)</td></tr>
-<tr><td>Pic-Time</td><td>Bolsa aparte (30 GB en Professional)</td><td>Favoritas y selección</td><td>Portfolio Page embebible</td><td>Sí, 30+ laboratorios</td><td>No</td><td>Inglés</td><td>252 $/año (100 GB + 30 GB vídeo)</td></tr>
-<tr><td>Zenfolio</td><td>—</td><td>Proofing de foto</td><td>Sí, incluida</td><td>Sí</td><td>Reservas</td><td>Inglés</td><td>138 $/año (Professional, 150 GB)</td></tr>
-</tbody>
-</table>
-</div>
+<!-- @tabla arcadina -->
 <p>Una advertencia sobre esa última columna: Arcadina publica sus precios con impuestos incluidos, PSPro sin IVA, y las plataformas internacionales en dólares. No son cifras directamente comparables, y conviene mirar también qué entra en cada plan.</p>
 
 <h2>Cómo decidir</h2>
@@ -824,7 +779,7 @@ faq=[
 ('¿Merece la pena cambiar si solo entrego fotografía?',
  'Probablemente no, si la tienda o la facturación de Arcadina te están funcionando. El cambio compensa cuando el vídeo pesa en tus entregas o cuando necesitas que el cliente revise y comente, no solo que descargue.'),
 ],
-extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada plataforma. Los precios de Arcadina se publican con impuestos incluidos; los de PSPro y Positiva, sin IVA; los internacionales, en dólares de la edición estadounidense.</p>',
+extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada plataforma; los de guardar archivos y pedirlos a terceros, el 4 de octubre de 2026. Los precios de Arcadina se publican con impuestos incluidos; los de PSPro y Positiva, sin IVA; los internacionales, en dólares de la edición estadounidense.</p>',
 ),
 
 # ══ 6 · VIMEO ═════════════════════════════════════════════════════
@@ -834,7 +789,7 @@ title='Alternativas a Vimeo para entregar y revisar vídeo (2026) · Blog de Pos
 h1='Alternativas a Vimeo para entregar y revisar vídeo (2026)',
 desc='Guía de alternativas a Vimeo: entrega de vídeo a clientes, revisión con comentarios por fotograma, portfolio y precio por asiento. Datos verificados.',
 lede='Vimeo hace tres cosas a la vez: aloja vídeo, lo publica y permite revisarlo. Si buscas alternativa suele ser porque solo necesitas una de las tres, o porque el precio por asiento no encaja. Esta guía compara las opciones según lo que realmente uses.',
-date_iso='2026-09-10', date_h='10 de septiembre de 2026',
+date_iso='2026-10-04', date_h='4 de octubre de 2026',
 list_names=['Positiva', 'Frame.io', 'Dropbox Replay', 'Vimeo'],
 body="""
 <p>Vimeo se paga por asiento: 12&nbsp;$ en Starter, 25&nbsp;$ en Standard y 75&nbsp;$ en Advanced por asiento y mes, con 2, 4 y 7&nbsp;TB de almacenamiento. Sus enlaces de revisión — con comentarios de código de tiempo en la línea de tiempo, y la posibilidad de comentar sin cuenta — requieren el plan Standard o superior; en Starter solo hay una versión de demostración.</p>
@@ -846,6 +801,7 @@ body="""
 <thead><tr><th>Si buscas…</th><th>Mejor opción</th><th>Por qué</th></tr></thead>
 <tbody>
 <tr><td>Entregar vídeo y fotografía a un cliente y que los revise</td><td><a href="/">Positiva</a></td><td>Galería con tu marca, comentarios por fotograma y sin coste por revisor</td></tr>
+<tr><td>Pedir material a clientes o proveedores sin que creen cuenta</td><td>Dropbox Replay</td><td>Usa las solicitudes de Dropbox, incluidas en todos sus planes; Positiva las tiene solo en el plan Estudio</td></tr>
 <tr><td>Revisión en un equipo de postproducción</td><td>Frame.io</td><td>Comentarios por rango, anotaciones y Camera to Cloud</td></tr>
 <tr><td>Revisar vídeo y audio donde ya guardas los archivos</td><td>Dropbox Replay</td><td>Complemento sobre tu Dropbox, con audio sin pérdida</td></tr>
 <tr><td>Publicar vídeo, incrustarlo y hacer directos</td><td>Quedarte en Vimeo</td><td>Ninguna alternativa de esta lista aloja vídeo público ni emite en directo</td></tr>
@@ -874,6 +830,7 @@ body="""
 <li>Fotografía y vídeo en la misma galería y el mismo enlace.</li>
 <li>Enlaces que no caducan, con contraseña y calidad de descarga por enlace.</li>
 <li>En español, con los datos en la Unión Europea y plan gratuito de 15&nbsp;GB.</li>
+<li>En el plan Estudio, <strong>Archivos</strong>: carpetas para guardar tu material en cualquier formato, envíos con enlace y solicitudes para que clientes, compañeros o proveedores te suban archivos sin crear cuenta (hasta 150&nbsp;GB por archivo).</li>
 </ul>
 <p><strong>Limitaciones:</strong></p>
 <ul>
@@ -945,17 +902,7 @@ body="""
 <p><strong>Precio:</strong> Starter, 12&nbsp;$ por asiento/mes (2&nbsp;TB); Standard, 25&nbsp;$ (4&nbsp;TB, 5 asientos incluidos); Advanced, 75&nbsp;$ (7&nbsp;TB, 10 asientos). El desglose entre facturación mensual y anual no aparece en su tabla pública.</p>
 
 <h2>Comparativa de datos</h2>
-<div class="tabla-scroll">
-<table>
-<thead><tr><th>Herramienta</th><th>Comentarios en vídeo</th><th>Exporta al editor</th><th>Fotografía</th><th>Vídeo público / directos</th><th>Modelo de precio</th><th>Precio de referencia</th></tr></thead>
-<tbody>
-<tr><td>Positiva</td><td><span class="pv-si">Por fotograma</span></td><td><span class="pv-si">Marcadores a DaVinci Resolve y Final Cut Pro</span></td><td><span class="pv-si">Galerías con favoritas y comentarios</span></td><td>No</td><td>Por cuenta, revisores ilimitados</td><td>89 € + IVA/año (250 GB)</td></tr>
-<tr><td>Vimeo</td><td>Con código de tiempo (desde Standard)</td><td>No documentado</td><td>No</td><td>Sí, con showcases y portfolios</td><td>Por asiento</td><td>25 $/asiento/mes (Standard)</td></tr>
-<tr><td>Frame.io</td><td>Por fotograma, por rango y anotaciones</td><td>Marcadores en Premiere Pro; CSV</td><td>Sí, con visor y enlaces de revisión</td><td>No</td><td>Por miembro</td><td>15 $/miembro/mes (Pro)</td></tr>
-<tr><td>Dropbox Replay</td><td>Sí; vínculo al fotograma no documentado</td><td>Integración con editores; marcadores no documentados</td><td>No</td><td>No</td><td>Por usuario, sobre un plan de Dropbox</td><td>120 $/usuario/año + Dropbox</td></tr>
-</tbody>
-</table>
-</div>
+<!-- @tabla vimeo -->
 
 <h2>Cómo decidir</h2>
 <p>Separa alojamiento de revisión y la decisión se vuelve fácil. Si publicas vídeo, quédate en Vimeo aunque revises en otro sitio. Si revisas en equipo y grabas para la nube, Frame.io. Si tu archivo está en Dropbox y hay audio de por medio, Replay. Y si a quien tienes que enseñarle el corte es tu cliente — que después querrá también las fotos, y descargarlas, y un enlace que no caduque —, <a href="/">Positiva</a> cubre ese recorrido entero: puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB.</p>
@@ -974,7 +921,7 @@ faq=[
 ('¿Cuánto almacenamiento necesito de verdad?',
  'Depende de si archivas o solo entregas. Vimeo parte de 2 TB porque asume que tu catálogo vive allí; una herramienta de entrega necesita menos, porque el original sigue en tu disco. Los 250 GB del plan Autor de Positiva dan para muchas entregas en curso, pero no para ser tu archivo.'),
 ],
-extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada herramienta. Los precios en dólares son los de la edición estadounidense de cada web.</p>',
+extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada herramienta; los de guardar archivos y pedirlos a terceros, el 4 de octubre de 2026. Los precios en dólares son los de la edición estadounidense de cada web.</p>',
 ),
 
 # ══ 7 · DROPBOX REPLAY ════════════════════════════════════════════
@@ -984,7 +931,7 @@ title='Alternativas a Dropbox Replay para revisar vídeo (2026) · Blog de Posit
 h1='Alternativas a Dropbox Replay para revisar vídeo (2026)',
 desc='Guía de alternativas a Dropbox Replay: revisión de vídeo con comentarios por fotograma, entrega al cliente, audio y precio real sumando el plan de Dropbox.',
 lede='Dropbox Replay añade revisión de vídeo y audio a los archivos que ya tienes en Dropbox. Si buscas alternativa suele ser por el precio real — son dos cuotas — o porque además de revisar necesitas entregar. Esta guía compara las opciones según tu caso.',
-date_iso='2026-09-10', date_h='10 de septiembre de 2026',
+date_iso='2026-10-04', date_h='4 de octubre de 2026',
 list_names=['Positiva', 'Frame.io', 'Vimeo', 'Dropbox Replay'],
 body="""
 <p>Dropbox Replay no es un plan, es un complemento: 12&nbsp;$ por usuario y mes con facturación mensual, 10&nbsp;$ con anual — 120&nbsp;$ al año — <em>sobre</em> un plan de pago de Dropbox, que es requisito. Sin el complemento, Replay funciona con un tope de 4 archivos (10 en Essentials y Business Plus). A cambio trae algo poco común: revisión de audio con calidad sin pérdida, además de vídeo, con archivos de hasta 150&nbsp;GB y 12 horas.</p>
@@ -996,6 +943,7 @@ body="""
 <thead><tr><th>Si buscas…</th><th>Mejor opción</th><th>Por qué</th></tr></thead>
 <tbody>
 <tr><td>Revisar y entregar foto y vídeo al cliente</td><td><a href="/">Positiva</a></td><td>Comentarios por fotograma y entrega con tu marca, en una sola cuota</td></tr>
+<tr><td>Pedir material a clientes o proveedores sin que creen cuenta</td><td>Quedarte en Dropbox Replay</td><td>Usa las solicitudes de Dropbox, incluidas en todos sus planes; Positiva las tiene solo en el plan Estudio</td></tr>
 <tr><td>Revisión en un equipo de postproducción</td><td>Frame.io</td><td>Comentarios por rango, anotaciones y Camera to Cloud</td></tr>
 <tr><td>Alojar y publicar el vídeo además de revisarlo</td><td>Vimeo</td><td>Reproductor incrustable, showcases y directos</td></tr>
 <tr><td>Revisar audio, o no mover tu archivo de sitio</td><td>Quedarte en Dropbox Replay</td><td>Es la única de la lista que revisa audio, y trabaja sobre tu Dropbox</td></tr>
@@ -1025,12 +973,13 @@ body="""
 <li>Sin coste por revisor: entra quien tenga el enlace.</li>
 <li>Fotografía y vídeo en la misma galería, con favoritas y comentarios <a href="/revision-foto/">foto a foto</a>.</li>
 <li>Entrega final con enlaces que no caducan y <a href="/portfolio/">portfolio público</a>; en español y con los datos en la UE.</li>
+<li>En el plan Estudio, <strong>Archivos</strong>: carpetas para guardar tu material en cualquier formato, envíos con enlace y solicitudes para que clientes, compañeros o proveedores te suban archivos sin crear cuenta (hasta 150&nbsp;GB por archivo).</li>
 </ul>
 <p><strong>Limitaciones:</strong></p>
 <ul>
 <li>No revisa audio suelto: no hay equivalente a la revisión de audio sin pérdida de Replay.</li>
 <li>Sin transcripción ni subtítulos automáticos, ni comparación de versiones en paralelo.</li>
-<li>No es almacenamiento sincronizado: no sustituye a Dropbox como disco de trabajo.</li>
+<li>No es almacenamiento sincronizado: Archivos (plan Estudio) guarda y envía cualquier formato, pero no sustituye a Dropbox como disco de trabajo.</li>
 <li>Admite JPEG y MP4 con H.264; el almacenamiento va por plan.</li>
 </ul>
 <p><strong>Precio:</strong> <a href="/precios/">Autor, 89&nbsp;€&nbsp;+&nbsp;IVA/año (250&nbsp;GB); Estudio, 219&nbsp;€&nbsp;+&nbsp;IVA/año (1&nbsp;TB)</a>. Plan gratuito de 15&nbsp;GB y 2 galerías.</p>
@@ -1094,17 +1043,7 @@ body="""
 <p><strong>Precio:</strong> 12&nbsp;$ por usuario/mes con facturación mensual, 10&nbsp;$ con anual (120&nbsp;$/año), más el plan de Dropbox: Plus desde 9,99&nbsp;$/mes con facturación anual, Standard 15&nbsp;$/usuario/mes anual.</p>
 
 <h2>Comparativa de datos</h2>
-<div class="tabla-scroll">
-<table>
-<thead><tr><th>Herramienta</th><th>Comentarios en vídeo</th><th>Audio</th><th>Exporta al editor</th><th>Entrega al cliente</th><th>Modelo de precio</th><th>Precio de referencia</th></tr></thead>
-<tbody>
-<tr><td>Positiva</td><td><span class="pv-si">Por fotograma</span></td><td>No</td><td><span class="pv-si">Marcadores a DaVinci Resolve y Final Cut Pro</span></td><td><span class="pv-si">Galería con tu marca + portfolio</span></td><td>Una cuota, revisores ilimitados</td><td>89 € + IVA/año (250 GB)</td></tr>
-<tr><td>Dropbox Replay</td><td>Sí; vínculo al fotograma no documentado</td><td><span class="pv-si">Sí, sin pérdida</span></td><td>Integración con editores; marcadores no documentados</td><td>No</td><td>Por usuario + plan de Dropbox</td><td>120 $/usuario/año + Dropbox</td></tr>
-<tr><td>Frame.io</td><td>Por fotograma, por rango y anotaciones</td><td>No como producto propio</td><td>Marcadores en Premiere Pro; CSV</td><td>Presentaciones con marca, sin portfolio</td><td>Por miembro</td><td>15 $/miembro/mes (Pro)</td></tr>
-<tr><td>Vimeo</td><td>Con código de tiempo (desde Standard)</td><td>No</td><td>No documentado</td><td>Showcases y portfolios de vídeo</td><td>Por asiento</td><td>25 $/asiento/mes (Standard)</td></tr>
-</tbody>
-</table>
-</div>
+<!-- @tabla dropbox-replay -->
 
 <h2>Cómo decidir</h2>
 <p>Si revisas audio, quédate: Replay es la única de la lista que lo hace. Si tu equipo es de postproducción y necesitas anotaciones y Camera to Cloud, Frame.io. Si el vídeo acaba publicado, Vimeo. Y si lo que viene después de la revisión es entregar el trabajo a un cliente — con las fotos al lado, con tu marca y con un enlace que no caduque —, ese recorrido entero lo hace <a href="/">Positiva</a> en una sola cuota: puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB. La comparación detallada está en <a href="/positiva-vs-dropbox/">Positiva vs Dropbox</a>.</p>
@@ -1123,7 +1062,7 @@ faq=[
 ('¿Merece la pena cambiar si ya pago Dropbox por el almacenamiento?',
  'Si Dropbox es tu disco de trabajo, no lo sustituyas: ninguna de estas herramientas es almacenamiento sincronizado. La pregunta real es si necesitas el complemento de revisión o si esa parte la resuelve mejor una herramienta que además entregue.'),
 ],
-extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada herramienta. Los precios en dólares son los de la edición estadounidense de cada web.</p>',
+extra_foot='<p><strong>Datos actualizados:</strong> precios, planes, funcionalidades y límites comprobados el 10 de septiembre de 2026 en las páginas oficiales de precios y los centros de ayuda de cada herramienta; los de guardar archivos y pedirlos a terceros, el 4 de octubre de 2026. Los precios en dólares son los de la edición estadounidense de cada web.</p>',
 ),
 
 ]

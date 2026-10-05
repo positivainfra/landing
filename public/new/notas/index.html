@@ -48,6 +48,35 @@
 .nota-card h2{font-size:clamp(21px,2.2vw,27px);margin:8px 0 8px}
 .nota-card p{font-size:15.5px;line-height:1.6;color:var(--pv-tinta-60)}
 @media(max-width:960px){.notas-doc{grid-template-columns:1fr}.notas-rail{position:static}}
+
+/* .cmpx.cmpx: gana a las reglas genéricas de tabla de cada hoja (p. ej. .prosa table th) */
+.cmpx.cmpx{margin:var(--pv-s5,24px) 0;border:1px solid var(--pv-linea,#DEDDD6);border-radius:16px;background:var(--pv-luz,#fff);overflow:hidden}
+.cmpx.cmpx table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:14.5px;line-height:1.45}
+.cmpx.cmpx th,.cmpx.cmpx td{padding:12px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--pv-linea,#DEDDD6);white-space:normal !important;overflow-wrap:anywhere;font-weight:400}
+.cmpx.cmpx tbody tr:last-child th,.cmpx.cmpx tbody tr:last-child td{border-bottom:0}
+.cmpx.cmpx thead th{font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--pv-tinta-60,#5A5852);background:var(--pv-bandeja,#E8E7E1);border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+.cmpx.cmpx thead th.pos{background:var(--pv-ambar-luz,#F6EAD2);color:var(--pv-ambar-ink,#8F5F15)}
+.cmpx.cmpx thead th:first-child{width:24%}
+.cmpx.cmpx tbody th{font-family:inherit;text-transform:none;letter-spacing:0;font-weight:600 !important;color:var(--pv-tinta,#171614);font-size:14px;background:none;border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+.cmpx.cmpx td{color:var(--pv-tinta-60,#5A5852)}
+.cmpx.cmpx td.pos{background:color-mix(in srgb,var(--pv-ambar-luz,#F6EAD2) 35%,transparent)}
+.cmpx.cmpx td.gana{background:#E6F2E8;color:#1F3B27;box-shadow:inset 3px 0 0 #2F7A45}
+.cmpx.cmpx .gana-b{display:flex;width:max-content;align-items:center;gap:4px;margin-bottom:5px;font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:#2F7A45;border-radius:999px;padding:2px 8px;line-height:1.5}
+.cmpx-ley{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:13px;color:var(--pv-tinta-60,#5A5852);margin:10px 0 0}
+.cmpx-ley .gana-b{display:inline-flex;align-items:center;gap:4px;font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:#2F7A45;border-radius:999px;padding:2px 8px}
+@media(max-width:700px){
+  .cmpx.cmpx{border:0;background:none;border-radius:0;overflow:visible}
+  .cmpx.cmpx table,.cmpx.cmpx tbody,.cmpx.cmpx tr,.cmpx.cmpx th,.cmpx.cmpx td{display:block;width:auto}
+  .cmpx.cmpx thead{display:none}
+  .cmpx.cmpx tbody tr{border:1px solid var(--pv-linea,#DEDDD6);border-radius:14px;background:var(--pv-luz,#fff);margin-bottom:10px;overflow:hidden}
+  .cmpx.cmpx tbody th{background:var(--pv-bandeja,#E8E7E1);padding:10px 14px;border-bottom:1px solid var(--pv-linea,#DEDDD6)}
+  .cmpx.cmpx td{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:4px 10px;padding:10px 14px}
+  .cmpx.cmpx td::before{content:attr(data-h);font-family:var(--pv-mono,'IBM Plex Mono',monospace);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--pv-tinta-60,#5A5852);padding-top:3px;grid-row:1 / span 2}
+  .cmpx.cmpx td.pos::before{color:var(--pv-ambar-ink,#8F5F15)}
+  .cmpx.cmpx td.gana{box-shadow:inset 3px 0 0 #2F7A45}
+  .cmpx.cmpx td .gana-b{grid-column:2;justify-self:start}
+  .cmpx.cmpx td .v{grid-column:2}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "Blog de Positiva", "url": "https://positiva.studio/notas/", "inLanguage": "es", "publisher": {"@id": "https://positiva.studio/#org"}}</script>
 <link rel="stylesheet" href="/new/docs.css">
@@ -117,6 +146,14 @@ document.addEventListener('click', function (e) {
     <a href="/new/revision-video/">Revisión</a>
     <a href="/new/archivos/">Archivos</a>
     <a href="/new/portfolio/">Portfolio</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-casos">Casos de uso<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-casos">
+        <a href="/new/freelance/"><b>Freelance</b><span>Entrega, revisión, archivos y portfolio en una sola cuota</span></a>
+        <a href="/new/bodas/"><b>Bodas</b><span>La boda completa, fotos y vídeo, con un enlace que no caduca</span></a>
+        <a href="/new/productoras/"><b>Productoras de vídeo</b><span>Revisión por fotograma con varios interlocutores y entrega del máster</span></a>
+      </div>
+    </div>
     <a href="/new/precios/">Precios</a>
     <a href="/new/notas/">Blog</a>
   </div>
@@ -153,37 +190,37 @@ document.addEventListener('click', function (e) {
     <p class="lede">Lo que aprendemos construyendo Positiva, contado sin humo: qué herramienta encaja en cada flujo, cuánto cuesta de verdad y qué letra pequeña conviene leer.</p>
     <div class="notas-lista">
       <a class="nota-card" href="/new/notas/alternativas-a-pixieset/">
-        <span class="nc-fecha">10 de septiembre de 2026</span>
+        <span class="nc-fecha">4 de octubre de 2026</span>
         <h2>Alternativas a Pixieset para fotógrafos y videógrafos (2026)</h2>
         <p>Pixieset es la galería de clientes más extendida, y su suite cubre web, tienda y gestión del estudio. Si estás buscando otra cosa — por el vídeo, por el precio, por el idioma o porque no necesitas media suite — esta guía compara las alternativas según tu caso.</p>
       </a>
       <a class="nota-card" href="/new/notas/alternativas-a-pic-time/">
-        <span class="nc-fecha">8 de septiembre de 2026</span>
+        <span class="nc-fecha">4 de octubre de 2026</span>
         <h2>Alternativas a Pic-Time para fotógrafos y videógrafos (2026)</h2>
         <p>Pic-Time combina galerías de clientes con una tienda de impresiones y automatizaciones de venta. Si estás valorando un cambio — por precio, por vídeo, por idioma o porque no vendes copias — esta guía compara las alternativas según tu caso de uso.</p>
       </a>
       <a class="nota-card" href="/new/notas/alternativas-a-wetransfer/">
-        <span class="nc-fecha">10 de septiembre de 2026</span>
+        <span class="nc-fecha">4 de octubre de 2026</span>
         <h2>Alternativas a WeTransfer para fotógrafos y videógrafos (2026)</h2>
         <p>WeTransfer resuelve una cosa muy bien: mandar archivos pesados sin pensar. Los límites aparecen después — el enlace caduca, el envío tiene tope y la entrega no lleva tu marca. Esta guía compara las alternativas según lo que te esté fallando.</p>
       </a>
       <a class="nota-card" href="/new/notas/alternativas-a-frame-io/">
-        <span class="nc-fecha">10 de septiembre de 2026</span>
+        <span class="nc-fecha">4 de octubre de 2026</span>
         <h2>Alternativas a Frame.io para vídeo y fotografía (2026)</h2>
         <p>Frame.io es el estándar de la revisión de vídeo en postproducción. Si buscas otra cosa suele ser por el precio por asiento, porque tu cliente no es un equipo de post, o porque además de revisar necesitas entregar. Esta guía compara las opciones según tu caso.</p>
       </a>
       <a class="nota-card" href="/new/notas/alternativas-a-arcadina/">
-        <span class="nc-fecha">10 de septiembre de 2026</span>
+        <span class="nc-fecha">4 de octubre de 2026</span>
         <h2>Alternativas a Arcadina para fotógrafos (2026)</h2>
         <p>Arcadina lleva años siendo la opción por defecto del fotógrafo español que quiere web, galerías y tienda en castellano. Si buscas otra cosa, suele ser por el vídeo, por cómo se suman sus planes o porque necesitas revisión de verdad. Esta guía compara las alternativas según tu caso.</p>
       </a>
       <a class="nota-card" href="/new/notas/alternativas-a-vimeo/">
-        <span class="nc-fecha">10 de septiembre de 2026</span>
+        <span class="nc-fecha">4 de octubre de 2026</span>
         <h2>Alternativas a Vimeo para entregar y revisar vídeo (2026)</h2>
         <p>Vimeo hace tres cosas a la vez: aloja vídeo, lo publica y permite revisarlo. Si buscas alternativa suele ser porque solo necesitas una de las tres, o porque el precio por asiento no encaja. Esta guía compara las opciones según lo que realmente uses.</p>
       </a>
       <a class="nota-card" href="/new/notas/alternativas-a-dropbox-replay/">
-        <span class="nc-fecha">10 de septiembre de 2026</span>
+        <span class="nc-fecha">4 de octubre de 2026</span>
         <h2>Alternativas a Dropbox Replay para revisar vídeo (2026)</h2>
         <p>Dropbox Replay añade revisión de vídeo y audio a los archivos que ya tienes en Dropbox. Si buscas alternativa suele ser por el precio real — son dos cuotas — o porque además de revisar necesitas entregar. Esta guía compara las opciones según tu caso.</p>
       </a>

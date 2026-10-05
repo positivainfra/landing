@@ -18,6 +18,37 @@
     var h=a.getAttribute('href');
     if(h&&h!=='/new/'&&h.charAt(0)==='/'&&here.indexOf(h)===0)a.setAttribute('aria-current','page');
   });
+  /* desplegable «Casos de uso»: ratón (hover con margen), teclado y toque */
+  document.querySelectorAll('nav.top .dd').forEach(function(dd){
+    var b=dd.querySelector('.dd-b'),t;
+    var abre=function(v){clearTimeout(t);dd.classList.toggle('abierto',v);b.setAttribute('aria-expanded',v)};
+    if(dd.querySelector('a[aria-current]'))b.classList.add('actual');
+    b.addEventListener('click',function(){abre(!dd.classList.contains('abierto'))});
+    dd.addEventListener('mouseenter',function(e){if(matchMedia('(hover:hover)').matches)abre(true)});
+    dd.addEventListener('mouseleave',function(){t=setTimeout(function(){abre(false)},180)});
+    dd.addEventListener('focusout',function(e){if(!dd.contains(e.relatedTarget))abre(false)});
+    document.addEventListener('click',function(e){if(!dd.contains(e.target))abre(false)});
+    dd.addEventListener('keydown',function(e){if(e.key==='Escape'){abre(false);b.focus()}});
+  });
+
+  /* CTA flotante de registro: todas las páginas menos /soporte/ */
+  (function(){
+    if(/\/soporte\//.test(location.pathname))return;
+    try{if(sessionStorage.getItem('pv-cta-flot')==='no')return}catch(_){}
+    var el=document.createElement('div');el.className='cta-flot';el.setAttribute('role','complementary');el.setAttribute('aria-label','Prueba Positiva');
+    el.innerHTML='<a href="https://app.positiva.studio/registro" data-ev="register_click" data-ev-place="flotante"><span class="ico"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/></svg></span><span>Prueba <b>Positiva</b> gratis</span></a>'
+      +'<button class="x" type="button" aria-label="Cerrar"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1l8 8M9 1l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>';
+    document.body.appendChild(el);
+    var UMBRAL=1000,otros=0,cerrado=false,ancho=matchMedia('(min-width:1001px)');
+    var pinta=function(){var v=!cerrado&&scrollY>UMBRAL&&otros===0;
+      if(v!==el.classList.contains('ver')){el.classList.toggle('ver',v);if(v&&ancho.matches)track('cta_flotante_visto')}};
+    /* otros botones de registro a la vista (salvo los del nav): el flotante se aparta */
+    if(hasIO){var vis=new Set();var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?vis.add(e.target):vis.delete(e.target)});otros=vis.size;pinta()});
+      document.querySelectorAll('a[href^="https://app.positiva.studio/registro"], form#wl').forEach(function(a){if(!a.closest('nav.top, .menu-m, .cta-flot'))io.observe(a)})}
+    addEventListener('scroll',pinta,{passive:true});pinta();
+    el.querySelector('.x').addEventListener('click',function(){cerrado=true;pinta();track('cta_flotante_cerrado');try{sessionStorage.setItem('pv-cta-flot','no')}catch(_){}});
+  })();
+
   var burger=document.querySelector('.burger'),menu=document.getElementById('menu-m');
   if(burger&&menu){
     var set=function(open){burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');menu.hidden=!open;document.body.classList.toggle('menu-abierto',open)};
