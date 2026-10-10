@@ -29,7 +29,7 @@ Mientras la web nueva esté en /new/ todas las páginas salen con noindex.
 Al pasar a la raíz: cambia INDEXABLE a True y BASE a '/', regenera, y quita la
 regla /new/* de public/_headers.
 """
-import re, os, sys, shutil, glob
+import re, os, sys, shutil, glob, json, hashlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
@@ -123,6 +123,30 @@ def page(d, body):
 '''
 
 os.makedirs(OUT, exist_ok=True)
+
+# ── Protección: public/new/ es SALIDA. Si alguien edita a mano un .html de
+# public/new/, la próxima ejecución lo pisaría sin avisar. gen.py guarda la
+# huella de lo que escribió y se niega a sobrescribir un fichero cambiado a
+# mano: hay que llevar ese cambio a scripts/new-web/pages/ (o a la página
+# real, si es derivada) y volver a ejecutar. `--forzar` lo pisa igualmente.
+HUELLAS = os.path.join(HERE, '.huellas-gen.json')
+huellas = json.load(open(HUELLAS)) if os.path.exists(HUELLAS) else {}
+FORZAR = '--forzar' in sys.argv
+_h = lambda t: hashlib.sha1(t.encode()).hexdigest()
+tocados = []
+for rel, h in huellas.items():
+    f = os.path.join(OUT, rel)
+    if os.path.exists(f) and _h(open(f).read()) != h:
+        tocados.append(rel)
+if tocados and not FORZAR:
+    print('\n✋ Estos ficheros de public/new/ se han editado a mano y gen.py los pisaría:')
+    for t in tocados: print('   ·', t)
+    print('\nLleva esos cambios a su fuente (scripts/new-web/pages/<página>.html, o la página real si es')
+    print('de blog/soporte/legales) y vuelve a ejecutar. Para pisarlos igualmente: gen.py --forzar\n')
+    sys.exit(1)
+def escribe(dst, html):
+    open(dst, 'w').write(html)
+    huellas[os.path.relpath(dst, OUT)] = _h(html)
 # positiva.css + las tablas comparativas (mismo CSS que el blog)
 open(os.path.join(OUT, 'positiva.css'), 'w').write(open(os.path.join(HERE, 'positiva.css')).read()
     + '\n/* ── Tablas comparativas: scripts/comparativas.py ── */' + comparativas.CSS)
@@ -135,7 +159,7 @@ for f in sorted(glob.glob(os.path.join(HERE, 'pages', '*.html'))):
     rel = d['path'].replace('/new/', '', 1).strip('/')
     dst = os.path.join(OUT, rel, 'index.html') if rel else os.path.join(OUT, 'index.html')
     os.makedirs(os.path.dirname(dst), exist_ok=True)
-    open(dst, 'w').write(page(d, body))
+    escribe(dst, page(d, body))
     n += 1
     print('✓', d['path'])
 print(f'{n} página(s) en public/new/')
@@ -161,6 +185,8 @@ for slug in DERIVADAS:
             print('  (sin marcador pv:nav, se omite)', rel); continue
         dst = os.path.join(OUT, rel)
         os.makedirs(os.path.dirname(dst), exist_ok=True)
-        open(dst, 'w').write(derivar(html))
+        escribe(dst, derivar(html))
         m += 1
 print(f'{m} página(s) de contenido derivadas en public/new/')
+
+json.dump(huellas, open(HUELLAS, 'w'), indent=0, sort_keys=True)
