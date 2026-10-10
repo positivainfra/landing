@@ -112,7 +112,7 @@ def page(d, body):
 <script defer src="/js/analytics.js"></script>
 </head>
 <body>
-{nav}
+{enlaces(nav)}
 <main id="contenido">
 {body}
 </main>

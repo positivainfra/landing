@@ -18,6 +18,17 @@
     var h=a.getAttribute('href');
     if(h&&h!=='/new/'&&h.charAt(0)==='/'&&here.indexOf(h)===0)a.setAttribute('aria-current','page');
   });
+  /* Mientras la web nueva vive en /new/: los enlaces que se pintan en el navegador
+     (resultados del buscador de soporte, etc.) no pasan por gen.py; si apuntan a
+     blog, soporte o novedades de la raíz, se llevan a su copia en /new/. Al pasar
+     a la raíz, la ruta ya no empieza por /new/ y esto no hace nada. */
+  if(location.pathname.indexOf('/new/')===0){
+    document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="/"]');if(!a)return;
+      var h=a.getAttribute('href');
+      if(/^\/(soporte|notas|novedades)(\/|$)/.test(h)&&!/\.[a-z0-9]{2,5}(#|\?|$)/i.test(h)){a.setAttribute('href','/new'+(h==='/soporte'||h==='/soporte/'?'/soporte/es/':h))}
+    },true);
+  }
+
   /* desplegable «Casos de uso»: ratón (hover con margen), teclado y toque */
   document.querySelectorAll('nav.top .dd').forEach(function(dd){
     var b=dd.querySelector('.dd-b'),t;
