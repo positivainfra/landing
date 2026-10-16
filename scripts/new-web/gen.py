@@ -109,6 +109,13 @@ def page(d, body):
 {pre}<link rel="stylesheet" href="{BASE}chrome.css">
 <link rel="stylesheet" href="{BASE}positiva.css">
 <script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<!-- Session replay SOLO aquí, y la arquitectura ya hace la separación sola:
+     por esta plantilla pasan únicamente las páginas de scripts/new-web/pages/,
+     que son todas comerciales (home, precios, casos, comparativas). Las legales,
+     el soporte y el blog entran por DERIVADAS, heredan el <head> de la página
+     real de public/ y por tanto NO traen replay, igual que en el sitio vivo.
+     Si algún día una página legal se mueve a pages/, esto hay que revisarlo. -->
+<script defer src="https://analytics.labbo.studio/recorder.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
 <script defer src="/js/analytics.js"></script>
 </head>
 <body>

@@ -27,6 +27,13 @@
 <link rel="stylesheet" href="/new/chrome.css">
 <link rel="stylesheet" href="/new/positiva.css">
 <script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<!-- Session replay SOLO aquí, y la arquitectura ya hace la separación sola:
+     por esta plantilla pasan únicamente las páginas de scripts/new-web/pages/,
+     que son todas comerciales (home, precios, casos, comparativas). Las legales,
+     el soporte y el blog entran por DERIVADAS, heredan el <head> de la página
+     real de public/ y por tanto NO traen replay, igual que en el sitio vivo.
+     Si algún día una página legal se mueve a pages/, esto hay que revisarlo. -->
+<script defer src="https://analytics.labbo.studio/recorder.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
 <script defer src="/js/analytics.js"></script>
 </head>
 <body>
@@ -105,7 +112,7 @@ document.addEventListener('click', function (e) {
   </div>
   <div class="acc">
     <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar</a>
-    <a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click" data-ev-place="nav">Empieza gratis</a>
+    <a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nav">Empieza gratis</a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Abrir menú"><span></span></button>
   </div>
 </div></nav>
@@ -124,7 +131,7 @@ document.addEventListener('click', function (e) {
   <a class="sm" href="/new/notas/">Blog</a>
   <a class="sm" href="/new/soporte/es/">Soporte</a>
   <a class="sm" href="/new/sobre-nosotros/">Sobre nosotros</a>
-  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click" data-ev-place="menu">Empieza gratis</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar en tu panel</a></div>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Empieza gratis</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar en tu panel</a></div>
 </div>
 <main id="contenido">
 <div class="wrap">
@@ -133,7 +140,7 @@ document.addEventListener('click', function (e) {
   <p class="h-xl titular"><span class="w"><span style="animation-delay:0.00s">¿Aún</span></span> <span class="w"><span style="animation-delay:0.05s">entregas</span></span> <span class="w"><span style="animation-delay:0.10s">tu</span></span> <span class="w"><span style="animation-delay:0.15s">trabajo</span></span> <span class="w"><span style="animation-delay:0.20s">en</span></span> <span class="w"><span style="animation-delay:0.25s"><em class="a">Google</em></span></span> <span class="w"><span style="animation-delay:0.30s"><em class="a">Drive?</em></span></span></p>
   <h1 class="lede h1d">Positiva vs Google Drive: por qué entregar un proyecto no es lo mismo que guardar archivos.</h1>
   <p class="lede">Tu cliente abre un correo y se encuentra una carpeta: decenas de archivos numerados, una barra de descarga y cero contexto. El trabajo está ahí, pero la sensación de haber <strong style="color:var(--pv-tinta);font-weight:600">recibido algo</strong> no aparece. Google Drive guarda de maravilla; presentar no es lo suyo.</p>
-  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="register_click">Empieza gratis</a><a class="btn ghost" href="#detalle">Ver la comparativa</a></div>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click">Empieza gratis</a><a class="btn ghost" href="#detalle">Ver la comparativa</a></div>
 </section>
 </div>
 
@@ -182,7 +189,7 @@ document.addEventListener('click', function (e) {
 <section class="final" id="demo"><div class="wrap inner">
   <span class="eyebrow r">Reserva una demo</span>
   <h2 class="h-xl r d1">Esos cinco minutos, <em class="a">bien hechos.</em></h2>
-  <p class="lede r d2">Positiva se cuenta mejor en directo. Reserva una demo y te la enseño sobre tu propio flujo de trabajo, sin compromiso. Y si prefieres verla por tu cuenta, <a href="https://app.positiva.studio/registro" data-ev="register_click">regístrate y entra hoy mismo</a>.</p>
+  <p class="lede r d2">Positiva se cuenta mejor en directo. Reserva una demo y te la enseño sobre tu propio flujo de trabajo, sin compromiso. Y si prefieres verla por tu cuenta, <a href="https://app.positiva.studio/registro" data-ev="cta_register_click">regístrate y entra hoy mismo</a>.</p>
   <form class="demo" id="wl" data-demo novalidate>
     <input type="email" name="email" id="wl-email" placeholder="nombre@tuestudio.com" required aria-label="Tu email" autocomplete="email">
     <button type="submit" class="btn">Reserva una demo</button>

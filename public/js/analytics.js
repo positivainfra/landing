@@ -45,8 +45,40 @@
     }, { passive: true });
   }
 
+  // ── ATRIBUCIÓN ENTRE DOMINIOS (15/10/2026) ───────────────────────────
+  // La app vive en app.positiva.studio y tiene su PROPIA propiedad de Umami,
+  // con otro website-id. Al saltar de dominio se pierde el origen y un alta
+  // aparece como "directa": por eso los dos registros que llegaron desde
+  // ChatGPT en sep-oct hubo que deducirlos cruzando datos a mano.
+  //
+  // Esto añade UTM a cada enlace que va a la app. Umami los guarda en la
+  // sesión de allí, así que el evento `registro` queda atribuido solo.
+  // No emite ningún evento: de eso ya se encarga [data-ev] más arriba.
+  function marcaDestino() {
+    // Las barras se sustituyen por guiones: así el informe de Umami muestra
+    // `notas-alternativas-a-pic-time` y no `notas%2Falternativas-a-pic-time`.
+    var pagina = (location.pathname.replace(/^\/|\/$/g, '') || 'home').replace(/\//g, '-');
+    var enlaces = document.querySelectorAll('a[href^="https://app.positiva.studio"]');
+    for (var i = 0; i < enlaces.length; i++) {
+      var a = enlaces[i];
+      try {
+        var u = new URL(a.href);
+        if (u.searchParams.has('utm_source')) continue;
+        // Solo entradas a la app. NUNCA una galería (/g/) ni una solicitud
+        // (/s/): son enlaces que acaban en manos del cliente del fotógrafo y
+        // no se les ensucia la URL con parámetros de marketing.
+        if (/^\/(g|s)\//.test(u.pathname)) continue;
+        u.searchParams.set('utm_source', 'landing');
+        u.searchParams.set('utm_medium', 'cta');
+        u.searchParams.set('utm_campaign', pagina);
+        a.href = u.toString();
+      } catch (_) { /* un href raro no debe romper la página */ }
+    }
+  }
+
   window.track = track;
   window.Events = Events;
-  if (document.readyState !== 'loading') bindClicks();
-  else document.addEventListener('DOMContentLoaded', bindClicks);
+  function arranca() { bindClicks(); marcaDestino(); }
+  if (document.readyState !== 'loading') arranca();
+  else document.addEventListener('DOMContentLoaded', arranca);
 })();

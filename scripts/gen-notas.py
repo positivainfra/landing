@@ -84,6 +84,9 @@ HEAD = """<!DOCTYPE html>
 <link rel="stylesheet" href="/soporte/soporte.css">
 <style>{css}</style>
 {schema}
+<!-- Analítica · Umami autoalojado (tracker servido en /stats). -->
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script defer src="/js/analytics.js"></script>
 </head>
 <body class="pagina-articulo">
 
