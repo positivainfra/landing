@@ -48,6 +48,12 @@
 .nota-card h2{font-size:clamp(21px,2.2vw,27px);margin:8px 0 8px}
 .nota-card p{font-size:15.5px;line-height:1.6;color:var(--pv-tinta-60)}
 @media(max-width:960px){.notas-doc{grid-template-columns:1fr}.notas-rail{position:static}}
+/* CTA bajo la tabla de decisión. Deliberadamente SIN caja ni fondo: es una
+   nota al margen, no un banner. Si pide más atención que la tabla que acaba
+   de leer el lector, deja de ser una invitación y pasa a ser publicidad. */
+.nota-cta{border-left:2px solid var(--pv-ambar);padding:2px 0 2px 16px;margin:var(--pv-s4) 0;font-size:15.5px;line-height:1.65;color:var(--pv-tinta-60)}
+.nota-cta a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.nota-cta a:hover{color:var(--pv-tinta)}
 
 /* .cmpx.cmpx: gana a las reglas genéricas de tabla de cada hoja (p. ej. .prosa table th) */
 .cmpx.cmpx{margin:var(--pv-s5,24px) 0;border:1px solid var(--pv-linea,#DEDDD6);border-radius:16px;background:var(--pv-luz,#fff);overflow:hidden}
@@ -213,6 +219,8 @@ document.addEventListener('click', function (e) {
 </table>
 </div>
 
+<p class="nota-cta">Positiva tiene plan gratuito &mdash;15&nbsp;GB, dos galerías, sin tarjeta y sin caducidad&mdash;, así que puedes verlo con tus propias fotos antes de cambiar nada: <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_tabla" data-ev-nota="alternativas-a-vimeo">crea tu cuenta gratis</a>.</p>
+
 <h2>Por qué cambiar (o no) desde Vimeo</h2>
 <ul>
 <li><strong>Pagas por asiento y por publicación aunque solo revises.</strong> El precio se calcula por asiento, y los enlaces de revisión solo funcionan desde Standard, a 25&nbsp;$ por asiento y mes.</li>
@@ -322,7 +330,7 @@ document.addEventListener('click', function (e) {
 <p class="cmpx-ley"><span class="gana-b">✓ Mejor</span><span>El mejor dato de la fila, sea de quien sea. Sin distintivo: empate o depende de tu caso.</span></p>
 
 <h2>Cómo decidir</h2>
-<p>Separa alojamiento de revisión y la decisión se vuelve fácil. Si publicas vídeo, quédate en Vimeo aunque revises en otro sitio. Si revisas en equipo y grabas para la nube, Frame.io. Si tu archivo está en Dropbox y hay audio de por medio, Replay. Y si a quien tienes que enseñarle el corte es tu cliente — que después querrá también las fotos, y descargarlas, y un enlace que no caduque —, <a href="/">Positiva</a> cubre ese recorrido entero: puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB.</p>
+<p>Separa alojamiento de revisión y la decisión se vuelve fácil. Si publicas vídeo, quédate en Vimeo aunque revises en otro sitio. Si revisas en equipo y grabas para la nube, Frame.io. Si tu archivo está en Dropbox y hay audio de por medio, Replay. Y si a quien tienes que enseñarle el corte es tu cliente — que después querrá también las fotos, y descargarlas, y un enlace que no caduque —, <a href="/">Positiva</a> cubre ese recorrido entero: puedes <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_cierre">probarla gratis</a> con 15&nbsp;GB.</p>
 
 
 <h2>Preguntas frecuentes</h2>
@@ -346,7 +354,7 @@ document.addEventListener('click', function (e) {
     <div class="banner-pv">
       <span class="bp-logo">Positiva<b>.</b></span>
       <p>Galerías de entrega y revisión de fotos y vídeo, con tu marca. En español y con los datos en la Unión Europea.</p>
-      <a class="bp-btn" href="https://app.positiva.studio/registro">Prueba Positiva gratis</a>
+      <a class="bp-btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_rail">Prueba Positiva gratis</a>
       <span class="bp-nota">15 GB y 2 galerías · sin tarjeta</span>
     </div>
     <div class="banner-mini">

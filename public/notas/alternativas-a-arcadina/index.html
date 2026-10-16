@@ -46,6 +46,12 @@
 .nota-card h2{font-size:clamp(21px,2.2vw,27px);margin:8px 0 8px}
 .nota-card p{font-size:15.5px;line-height:1.6;color:var(--pv-tinta-60)}
 @media(max-width:960px){.notas-doc{grid-template-columns:1fr}.notas-rail{position:static}}
+/* CTA bajo la tabla de decisión. Deliberadamente SIN caja ni fondo: es una
+   nota al margen, no un banner. Si pide más atención que la tabla que acaba
+   de leer el lector, deja de ser una invitación y pasa a ser publicidad. */
+.nota-cta{border-left:2px solid var(--pv-ambar);padding:2px 0 2px 16px;margin:var(--pv-s4) 0;font-size:15.5px;line-height:1.65;color:var(--pv-tinta-60)}
+.nota-cta a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.nota-cta a:hover{color:var(--pv-tinta)}
 
 /* .cmpx.cmpx: gana a las reglas genéricas de tabla de cada hoja (p. ej. .prosa table th) */
 .cmpx.cmpx{margin:var(--pv-s5,24px) 0;border:1px solid var(--pv-linea,#DEDDD6);border-radius:16px;background:var(--pv-luz,#fff);overflow:hidden}
@@ -468,6 +474,8 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 </table>
 </div>
 
+<p class="nota-cta">Positiva tiene plan gratuito &mdash;15&nbsp;GB, dos galerías, sin tarjeta y sin caducidad&mdash;, así que puedes verlo con tus propias fotos antes de cambiar nada: <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_tabla" data-ev-nota="alternativas-a-arcadina">crea tu cuenta gratis</a>.</p>
+
 <h2>Por qué cambiar (o no) desde Arcadina</h2>
 <ul>
 <li><strong>El vídeo no se aloja, se enlaza.</strong> Su documentación de ayuda explica que en las galerías se rellena «la URL del vídeo» desde YouTube o Vimeo, o se conecta una cuenta de Vimeo. Si entregas vídeo, dependes de una plataforma más y de sus reglas.</li>
@@ -590,7 +598,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
 <p>Una advertencia sobre esa última columna: Arcadina publica sus precios con impuestos incluidos, PSPro sin IVA, y las plataformas internacionales en dólares. No son cifras directamente comparables, y conviene mirar también qué entra en cada plan.</p>
 
 <h2>Cómo decidir</h2>
-<p>Si vendes impresiones y llevas tu administración dentro de la herramienta, Arcadina sigue siendo una opción razonable en castellano y con soporte en tu idioma; PSPro es la alternativa española si quieres además CRM y facturación modernos. Si lo que buscas es un ecosistema internacional con tienda, Pixieset o Pic-Time. Y si el motivo de tu búsqueda es el vídeo — entregarlo dentro de la galería y que tu cliente lo revise fotograma a fotograma en lugar de comentar un enlace de YouTube —, ahí está el hueco que llena <a href="/">Positiva</a>: puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB. La comparación en detalle está en <a href="/positiva-vs-arcadina/">Positiva vs Arcadina</a>.</p>
+<p>Si vendes impresiones y llevas tu administración dentro de la herramienta, Arcadina sigue siendo una opción razonable en castellano y con soporte en tu idioma; PSPro es la alternativa española si quieres además CRM y facturación modernos. Si lo que buscas es un ecosistema internacional con tienda, Pixieset o Pic-Time. Y si el motivo de tu búsqueda es el vídeo — entregarlo dentro de la galería y que tu cliente lo revise fotograma a fotograma en lugar de comentar un enlace de YouTube —, ahí está el hueco que llena <a href="/">Positiva</a>: puedes <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_cierre">probarla gratis</a> con 15&nbsp;GB. La comparación en detalle está en <a href="/positiva-vs-arcadina/">Positiva vs Arcadina</a>.</p>
 
 
 <h2>Preguntas frecuentes</h2>
@@ -614,7 +622,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     <div class="banner-pv">
       <span class="bp-logo">Positiva<b>.</b></span>
       <p>Galerías de entrega y revisión de fotos y vídeo, con tu marca. En español y con los datos en la Unión Europea.</p>
-      <a class="bp-btn" href="https://app.positiva.studio/registro">Prueba Positiva gratis</a>
+      <a class="bp-btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_rail">Prueba Positiva gratis</a>
       <span class="bp-nota">15 GB y 2 galerías · sin tarjeta</span>
     </div>
     <div class="banner-mini">

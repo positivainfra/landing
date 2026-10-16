@@ -33,15 +33,60 @@ CSS = """
 .nota-card h2{font-size:clamp(21px,2.2vw,27px);margin:8px 0 8px}
 .nota-card p{font-size:15.5px;line-height:1.6;color:var(--pv-tinta-60)}
 @media(max-width:960px){.notas-doc{grid-template-columns:1fr}.notas-rail{position:static}}
+/* CTA bajo la tabla de decisión. Deliberadamente SIN caja ni fondo: es una
+   nota al margen, no un banner. Si pide más atención que la tabla que acaba
+   de leer el lector, deja de ser una invitación y pasa a ser publicidad. */
+.nota-cta{border-left:2px solid var(--pv-ambar);padding:2px 0 2px 16px;margin:var(--pv-s4) 0;font-size:15.5px;line-height:1.65;color:var(--pv-tinta-60)}
+.nota-cta a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.nota-cta a:hover{color:var(--pv-tinta)}
 """
 CSS += comparativas.CSS
+
+# ── CTA bajo la tabla de decision ─────────────────────────────────────────
+# Va donde el lector YA tiene su respuesta (la tabla está al 10-15% del
+# artículo); el CTA que ya había en prosa está al 83%, cuando mucha gente se
+# ha ido. Se inserta sustituyendo el marcador <!-- @cta --> del cuerpo, igual
+# que scripts/new-web/gen.py hace con <!-- @demo -->.
+#
+# VOZ: institucional, nunca primera persona del singular. El artículo lo firma
+# la organización (ver el schema Article de abajo) y hablar en primera persona
+# contaría el tamaño del equipo, que es una decisión ya tomada en contra.
+#
+# ES UNA INVITACIÓN, NO UNA CONFESIÓN. Se probó una versión que declaraba el
+# interés en voz alta ("la tabla la firma alguien con parte interesada") y se
+# descartó: no es el tono de la casa. Aquí solo se dice qué hay y se invita.
+#
+# NO REPITE AL CTA DEL CIERRE. El de prosa, al 83%, dice "puedes probarla
+# gratis con 15 GB"; si este usara las mismas palabras parecería un duplicado.
+#
+# El evento es cta_register_click, el MISMO del resto del sitio: el total de
+# conversión sigue siendo un número. Lo que distingue el sitio es
+# data-ev-place, y la nota concreta la dice el utm_campaign que pone
+# marcaDestino() en public/js/analytics.js.
+# El texto por defecto vale para las siete notas. Para afinarlo en una nota
+# concreta (mencionar la pega puntual del competidor, por ejemplo), basta añadir
+# cta='…' al dict del artículo en notas_content.py: no hay que tocar nada aquí.
+# El {enlace} se sustituye por el <a> ya instrumentado; si un texto propio no lo
+# lleva, el CTA se queda sin enlace, así que el assert de abajo lo impide.
+CTA_TEXTO = ('Positiva tiene plan gratuito &mdash;15&nbsp;GB, dos galerías, sin tarjeta y sin '
+             'caducidad&mdash;, así que puedes verlo con tus propias fotos antes de cambiar '
+             'nada: {enlace}.')
+CTA_ENLACE = ('<a href="https://app.positiva.studio/registro" data-ev="cta_register_click" '
+              'data-ev-place="nota_tabla" data-ev-nota="{slug}">crea tu cuenta gratis</a>')
+
+
+def cta_tabla(a):
+    texto = a.get('cta', CTA_TEXTO)
+    assert '{enlace}' in texto, f"el cta de {a['slug']} no tiene {{enlace}}: nadie podría pinchar"
+    return '<p class="nota-cta">' + texto.format(enlace=CTA_ENLACE.format(slug=a['slug'])) + '</p>'
+
 
 RAIL = """
   <aside class="notas-rail">
     <div class="banner-pv">
       <span class="bp-logo">Positiva<b>.</b></span>
       <p>Galerías de entrega y revisión de fotos y vídeo, con tu marca. En español y con los datos en la Unión Europea.</p>
-      <a class="bp-btn" href="https://app.positiva.studio/registro">Prueba Positiva gratis</a>
+      <a class="bp-btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_rail">Prueba Positiva gratis</a>
       <span class="bp-nota">15 GB y 2 galerías · sin tarjeta</span>
     </div>
     <div class="banner-mini">
@@ -149,7 +194,7 @@ def article_page(a):
     <p class="lede">{a['lede']}</p>
     <p class="notas-fecha">{a['date_h']} · Blog de Positiva</p>
     <div class="prosa">
-{comparativas.pintar(a['body'])}
+{comparativas.pintar(a['body']).replace('<!-- @cta -->', cta_tabla(a))}
 {faq_html}
 {a.get('extra_foot','')}
     </div>

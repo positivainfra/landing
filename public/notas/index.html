@@ -46,6 +46,12 @@
 .nota-card h2{font-size:clamp(21px,2.2vw,27px);margin:8px 0 8px}
 .nota-card p{font-size:15.5px;line-height:1.6;color:var(--pv-tinta-60)}
 @media(max-width:960px){.notas-doc{grid-template-columns:1fr}.notas-rail{position:static}}
+/* CTA bajo la tabla de decisión. Deliberadamente SIN caja ni fondo: es una
+   nota al margen, no un banner. Si pide más atención que la tabla que acaba
+   de leer el lector, deja de ser una invitación y pasa a ser publicidad. */
+.nota-cta{border-left:2px solid var(--pv-ambar);padding:2px 0 2px 16px;margin:var(--pv-s4) 0;font-size:15.5px;line-height:1.65;color:var(--pv-tinta-60)}
+.nota-cta a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.nota-cta a:hover{color:var(--pv-tinta)}
 
 /* .cmpx.cmpx: gana a las reglas genéricas de tabla de cada hoja (p. ej. .prosa table th) */
 .cmpx.cmpx{margin:var(--pv-s5,24px) 0;border:1px solid var(--pv-linea,#DEDDD6);border-radius:16px;background:var(--pv-luz,#fff);overflow:hidden}
@@ -487,7 +493,7 @@ body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;
     <div class="banner-pv">
       <span class="bp-logo">Positiva<b>.</b></span>
       <p>Galerías de entrega y revisión de fotos y vídeo, con tu marca. En español y con los datos en la Unión Europea.</p>
-      <a class="bp-btn" href="https://app.positiva.studio/registro">Prueba Positiva gratis</a>
+      <a class="bp-btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_rail">Prueba Positiva gratis</a>
       <span class="bp-nota">15 GB y 2 galerías · sin tarjeta</span>
     </div>
     <div class="banner-mini">

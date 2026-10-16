@@ -43,6 +43,8 @@ body="""
 </table>
 </div>
 
+<!-- @cta -->
+
 <h2>Por qué cambiar (o no) desde Pixieset</h2>
 <p>Los motivos que más pesan al valorar una salida:</p>
 <ul>
@@ -150,7 +152,7 @@ body="""
 <p>Tenemos una comparativa más detallada de las tres primeras en <a href="/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time vs Pixieset</a>.</p>
 
 <h2>Cómo decidir</h2>
-<p>Si tu negocio vive de las impresiones, Pic-Time es la sustituta natural de la parte de galerías. Si lo que te ata a Pixieset es Studio Manager, ShootProof lo trae de serie. Si archivas decenas de miles de fotografías, SmugMug. Si quieres dejar de pagar módulos sueltos, Zenfolio. Y Positiva es nuestra recomendación si entregas foto y vídeo, necesitas que tu cliente <a href="/revision-foto/">revise de verdad</a> y prefieres trabajar en español y en euros — puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB antes de mover nada.</p>
+<p>Si tu negocio vive de las impresiones, Pic-Time es la sustituta natural de la parte de galerías. Si lo que te ata a Pixieset es Studio Manager, ShootProof lo trae de serie. Si archivas decenas de miles de fotografías, SmugMug. Si quieres dejar de pagar módulos sueltos, Zenfolio. Y Positiva es nuestra recomendación si entregas foto y vídeo, necesitas que tu cliente <a href="/revision-foto/">revise de verdad</a> y prefieres trabajar en español y en euros — puedes <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_cierre">probarla gratis</a> con 15&nbsp;GB antes de mover nada.</p>
 """,
 faq=[
 ('¿Cuál es la alternativa más parecida a Pixieset?',
@@ -197,6 +199,8 @@ body="""
 </tbody>
 </table>
 </div>
+
+<!-- @cta -->
 
 <h2>Por qué cambiar (o no) desde Pic-Time</h2>
 <p>Los motivos que más aparecen al valorar una salida de Pic-Time:</p>
@@ -304,7 +308,7 @@ body="""
 <p>Tenemos una comparativa más detallada de las tres primeras en <a href="/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time vs Pixieset</a>.</p>
 
 <h2>Cómo decidir</h2>
-<p>Si las ventas de impresiones sostienen tu negocio, Pic-Time sigue siendo difícil de sustituir; Pixieset es la alternativa más parecida y añade una suite más amplia. Si necesitas contratos y facturación integrados, ShootProof cubre ese hueco. Si tu problema es archivar volumen, SmugMug. Positiva es nuestra recomendación para fotógrafos y videógrafos que priorizan <a href="/galerias/">entregar</a> y <a href="/revision-video/">revisar</a> foto y vídeo con su marca, quieren trabajar en español y en euros, y no necesitan tienda de impresiones — puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB antes de decidir.</p>
+<p>Si las ventas de impresiones sostienen tu negocio, Pic-Time sigue siendo difícil de sustituir; Pixieset es la alternativa más parecida y añade una suite más amplia. Si necesitas contratos y facturación integrados, ShootProof cubre ese hueco. Si tu problema es archivar volumen, SmugMug. Positiva es nuestra recomendación para fotógrafos y videógrafos que priorizan <a href="/galerias/">entregar</a> y <a href="/revision-video/">revisar</a> foto y vídeo con su marca, quieren trabajar en español y en euros, y no necesitan tienda de impresiones — puedes <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_cierre">probarla gratis</a> con 15&nbsp;GB antes de decidir.</p>
 """,
 faq=[
 ('¿Cuál es la alternativa más parecida a Pic-Time?',
@@ -351,6 +355,8 @@ body="""
 </tbody>
 </table>
 </div>
+
+<!-- @cta -->
 
 <h2>Por qué cambiar (o no) desde WeTransfer</h2>
 <ul>
@@ -463,7 +469,7 @@ body="""
 <!-- @tabla wetransfer -->
 
 <h2>Cómo decidir</h2>
-<p>Si lo que falla es el tamaño y no quieres pagar, SwissTransfer resuelve el problema hoy mismo. Si mandas a diario y quieres que el envío lleve tu logo, Smash. Si ya pagas Dropbox, Transfer está ahí sin coste añadido. Y si lo que estás mandando es el trabajo terminado a un cliente — la boda, la campaña, el corte final —, el problema no es el tamaño: es que un envío que caduca no es una entrega. Para eso hemos hecho <a href="/">Positiva</a>, y puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB. La comparación en detalle está en <a href="/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>.</p>
+<p>Si lo que falla es el tamaño y no quieres pagar, SwissTransfer resuelve el problema hoy mismo. Si mandas a diario y quieres que el envío lleve tu logo, Smash. Si ya pagas Dropbox, Transfer está ahí sin coste añadido. Y si lo que estás mandando es el trabajo terminado a un cliente — la boda, la campaña, el corte final —, el problema no es el tamaño: es que un envío que caduca no es una entrega. Para eso hemos hecho <a href="/">Positiva</a>, y puedes <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_cierre">probarla gratis</a> con 15&nbsp;GB. La comparación en detalle está en <a href="/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>.</p>
 """,
 faq=[
 ('¿Hay alternativas a WeTransfer gratuitas y sin límite de tamaño?',
@@ -511,6 +517,8 @@ body="""
 </tbody>
 </table>
 </div>
+
+<!-- @cta -->
 
 <h2>Por qué cambiar (o no) desde Frame.io</h2>
 <ul>
@@ -605,7 +613,7 @@ body="""
 <!-- @tabla frame-io -->
 
 <h2>Cómo decidir</h2>
-<p>Si tu flujo es de postproducción y grabas para la nube, Frame.io sigue siendo difícil de sustituir — y si ya pagas Creative Cloud, su plan gratuito mejorado quizá te baste. Si además de revisar publicas, Vimeo. Si tu archivo vive en Dropbox y revisas audio, Replay. Y si quien tiene que opinar es tu cliente, no tu montador, y después de aprobar hay que entregar el trabajo con tu marca, <a href="/">Positiva</a> está construida para ese recorrido: puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB.</p>
+<p>Si tu flujo es de postproducción y grabas para la nube, Frame.io sigue siendo difícil de sustituir — y si ya pagas Creative Cloud, su plan gratuito mejorado quizá te baste. Si además de revisar publicas, Vimeo. Si tu archivo vive en Dropbox y revisas audio, Replay. Y si quien tiene que opinar es tu cliente, no tu montador, y después de aprobar hay que entregar el trabajo con tu marca, <a href="/">Positiva</a> está construida para ese recorrido: puedes <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_cierre">probarla gratis</a> con 15&nbsp;GB.</p>
 """,
 faq=[
 ('¿Qué alternativa a Frame.io permite comentar sobre el fotograma exacto?',
@@ -652,6 +660,8 @@ body="""
 </tbody>
 </table>
 </div>
+
+<!-- @cta -->
 
 <h2>Por qué cambiar (o no) desde Arcadina</h2>
 <ul>
@@ -763,7 +773,7 @@ body="""
 <p>Una advertencia sobre esa última columna: Arcadina publica sus precios con impuestos incluidos, PSPro sin IVA, y las plataformas internacionales en dólares. No son cifras directamente comparables, y conviene mirar también qué entra en cada plan.</p>
 
 <h2>Cómo decidir</h2>
-<p>Si vendes impresiones y llevas tu administración dentro de la herramienta, Arcadina sigue siendo una opción razonable en castellano y con soporte en tu idioma; PSPro es la alternativa española si quieres además CRM y facturación modernos. Si lo que buscas es un ecosistema internacional con tienda, Pixieset o Pic-Time. Y si el motivo de tu búsqueda es el vídeo — entregarlo dentro de la galería y que tu cliente lo revise fotograma a fotograma en lugar de comentar un enlace de YouTube —, ahí está el hueco que llena <a href="/">Positiva</a>: puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB. La comparación en detalle está en <a href="/positiva-vs-arcadina/">Positiva vs Arcadina</a>.</p>
+<p>Si vendes impresiones y llevas tu administración dentro de la herramienta, Arcadina sigue siendo una opción razonable en castellano y con soporte en tu idioma; PSPro es la alternativa española si quieres además CRM y facturación modernos. Si lo que buscas es un ecosistema internacional con tienda, Pixieset o Pic-Time. Y si el motivo de tu búsqueda es el vídeo — entregarlo dentro de la galería y que tu cliente lo revise fotograma a fotograma en lugar de comentar un enlace de YouTube —, ahí está el hueco que llena <a href="/">Positiva</a>: puedes <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_cierre">probarla gratis</a> con 15&nbsp;GB. La comparación en detalle está en <a href="/positiva-vs-arcadina/">Positiva vs Arcadina</a>.</p>
 """,
 faq=[
 ('¿Cuál es la alternativa española más parecida a Arcadina?',
@@ -808,6 +818,8 @@ body="""
 </tbody>
 </table>
 </div>
+
+<!-- @cta -->
 
 <h2>Por qué cambiar (o no) desde Vimeo</h2>
 <ul>
@@ -905,7 +917,7 @@ body="""
 <!-- @tabla vimeo -->
 
 <h2>Cómo decidir</h2>
-<p>Separa alojamiento de revisión y la decisión se vuelve fácil. Si publicas vídeo, quédate en Vimeo aunque revises en otro sitio. Si revisas en equipo y grabas para la nube, Frame.io. Si tu archivo está en Dropbox y hay audio de por medio, Replay. Y si a quien tienes que enseñarle el corte es tu cliente — que después querrá también las fotos, y descargarlas, y un enlace que no caduque —, <a href="/">Positiva</a> cubre ese recorrido entero: puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB.</p>
+<p>Separa alojamiento de revisión y la decisión se vuelve fácil. Si publicas vídeo, quédate en Vimeo aunque revises en otro sitio. Si revisas en equipo y grabas para la nube, Frame.io. Si tu archivo está en Dropbox y hay audio de por medio, Replay. Y si a quien tienes que enseñarle el corte es tu cliente — que después querrá también las fotos, y descargarlas, y un enlace que no caduque —, <a href="/">Positiva</a> cubre ese recorrido entero: puedes <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_cierre">probarla gratis</a> con 15&nbsp;GB.</p>
 """,
 faq=[
 ('¿Qué alternativa a Vimeo permite que el cliente comente el vídeo?',
@@ -950,6 +962,8 @@ body="""
 </tbody>
 </table>
 </div>
+
+<!-- @cta -->
 
 <h2>Por qué cambiar (o no) desde Dropbox Replay</h2>
 <ul>
@@ -1046,7 +1060,7 @@ body="""
 <!-- @tabla dropbox-replay -->
 
 <h2>Cómo decidir</h2>
-<p>Si revisas audio, quédate: Replay es la única de la lista que lo hace. Si tu equipo es de postproducción y necesitas anotaciones y Camera to Cloud, Frame.io. Si el vídeo acaba publicado, Vimeo. Y si lo que viene después de la revisión es entregar el trabajo a un cliente — con las fotos al lado, con tu marca y con un enlace que no caduque —, ese recorrido entero lo hace <a href="/">Positiva</a> en una sola cuota: puedes <a href="https://app.positiva.studio/registro">probarla gratis</a> con 15&nbsp;GB. La comparación detallada está en <a href="/positiva-vs-dropbox/">Positiva vs Dropbox</a>.</p>
+<p>Si revisas audio, quédate: Replay es la única de la lista que lo hace. Si tu equipo es de postproducción y necesitas anotaciones y Camera to Cloud, Frame.io. Si el vídeo acaba publicado, Vimeo. Y si lo que viene después de la revisión es entregar el trabajo a un cliente — con las fotos al lado, con tu marca y con un enlace que no caduque —, ese recorrido entero lo hace <a href="/">Positiva</a> en una sola cuota: puedes <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nota_cierre">probarla gratis</a> con 15&nbsp;GB. La comparación detallada está en <a href="/positiva-vs-dropbox/">Positiva vs Dropbox</a>.</p>
 """,
 faq=[
 ('¿Cuánto cuesta realmente Dropbox Replay?',
