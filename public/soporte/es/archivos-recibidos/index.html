@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dónde llegan los archivos de una solicitud · Soporte de Positiva</title>
+<meta name="description" content="Lo que te suben con una solicitud aparece en su carpeta de destino, en una subcarpeta por persona y día, y te avisamos por correo cuando alguien termina o se queda a medias.">
+<meta property="og:title" content="Dónde llegan los archivos de una solicitud · Soporte de Positiva">
+<meta property="og:description" content="Lo que te suben con una solicitud aparece en su carpeta de destino, en una subcarpeta por persona y día, y te avisamos por correo cuando alguien termina o se queda a medias.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://positiva.studio/soporte/es/archivos-recibidos/">
+<meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#F1F0EC">
+<link rel="canonical" href="https://positiva.studio/soporte/es/archivos-recibidos/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/soporte/soporte.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Dónde llegan los archivos de una solicitud","description":"Lo que te suben con una solicitud aparece en su carpeta de destino, en una subcarpeta por persona y día, y te avisamos por correo cuando alguien termina o se queda a medias.","inLanguage":"es","dateModified":"17 de octubre de 2026","publisher":{"@type":"Organization","name":"Positiva","url":"https://positiva.studio"},"mainEntityOfPage":"https://positiva.studio/soporte/es/archivos-recibidos/"}</script>
+<script defer src="/js/analytics.js"></script>
+<link rel="stylesheet" href="/docs.css">
+</head>
+<body class="pagina-articulo">
+
+<!-- pv:nav -->
+<!-- ════════════════════════════════════════════════════════════════
+     NAV DE LA WEB · fuente única: partials/chrome-nav.html
+     Lo usan gen.py (páginas de scripts/new-web/pages/) y `npm run stamp`
+     (blog, soporte, novedades y legales). Edita AQUÍ y ejecuta ambos.
+     ════════════════════════════════════════════════════════════════ -->
+<link rel="stylesheet" href="/chrome.css">
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+document.documentElement.classList.add('js');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+
+/* Conversión de Google Ads: «registro» (clientes potenciales).
+   Se dispara al pinchar cualquier enlace a app.positiva.studio/registro (los de
+   login apuntan a la raíz de la app y quedan fuera).
+   Sin bloquear la navegación: transport beacon sobrevive al cambio de página. */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+    'event_callback': callback
+  });
+  return false;
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="https://app.positiva.studio/registro"]');
+  if (!a || a.classList.contains('nav-login') || a.hasAttribute('data-no-conv')) return;
+  try {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+      'transport_type': 'beacon'
+    });
+  } catch (_) {}
+}, { passive: true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+<a class="saltar-n" href="#contenido">Saltar al contenido</a>
+<nav class="top" id="nav" aria-label="Principal"><div class="wrap inner">
+  <a href="/" class="logo" aria-label="Positiva, inicio"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
+  <div class="links">
+    <a href="/galerias/">Entrega</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-revision">Revisión<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-revision">
+        <a href="/revision-video/"><b>Revisión de vídeo</b><span>Comentarios en el fotograma exacto, exportables a DaVinci Resolve y Final Cut Pro</span></a>
+        <a href="/revision-foto/"><b>Revisión de fotos</b><span>Favoritas y comentarios foto a foto, en tu panel al momento</span></a>
+      </div>
+    </div>
+    <a href="/archivos/">Archivos</a>
+    <a href="/portfolio/">Portfolio</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-casos">Casos de uso<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-casos">
+        <a href="/freelance/"><b>Freelance</b><span>Entrega, revisión, archivos y portfolio en una sola cuota</span></a>
+        <a href="/bodas/"><b>Bodas</b><span>La boda completa, fotos y vídeo, con un enlace que no caduca</span></a>
+        <a href="/productoras/"><b>Productoras de vídeo</b><span>Revisión por fotograma con varios interlocutores y entrega del máster</span></a>
+      </div>
+    </div>
+    <a href="/precios/">Precios</a>
+    <a href="/notas/">Blog</a>
+  </div>
+  <div class="acc">
+    <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar</a>
+    <a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nav">Empieza gratis</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Abrir menú"><span></span></button>
+  </div>
+</div></nav>
+<div class="menu-m" id="menu-m" hidden>
+  <a href="/galerias/">Entrega</a>
+  <a href="/revision-video/">Revisión de vídeo</a>
+  <a href="/revision-foto/">Revisión de fotos</a>
+  <a href="/archivos/">Archivos</a>
+  <a href="/portfolio/">Portfolio</a>
+  <a href="/precios/">Precios</a>
+  <span class="sub">Casos de uso</span>
+  <a class="sm" href="/freelance/">Freelance</a>
+  <a class="sm" href="/bodas/">Bodas</a>
+  <a class="sm" href="/productoras/">Productoras de vídeo</a>
+  <span class="sub">Recursos</span>
+  <a class="sm" href="/notas/">Blog</a>
+  <a class="sm" href="/soporte/es/">Soporte</a>
+  <a class="sm" href="/sobre-nosotros/">Sobre nosotros</a>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Empieza gratis</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar en tu panel</a></div>
+</div>
+<!-- /pv:nav -->
+
+<main id="contenido">
+
+<div class="wrap doc">
+  <aside class="rail">
+    <a class="rail-volver" href="/soporte/es/"><span aria-hidden="true">←</span> Todo el soporte</a>
+    <form class="busca busca-mini" role="search" data-busca>
+  <label class="sr" for="q">Buscar en el soporte</label>
+  <div class="busca-campo">
+    <svg class="busca-lupa" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.8 12.8 17 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <input id="q" type="search" role="combobox" aria-expanded="false" aria-controls="busca-panel" aria-autocomplete="list"
+           placeholder="Buscar…" autocomplete="off" spellcheck="false">
+    <kbd class="busca-tecla" aria-hidden="true">/</kbd>
+  </div>
+  <div class="busca-panel" id="busca-panel" hidden></div>
+</form>
+    <div class="rail-seccion">
+      <p class="eyebrow"><span class="idx">05</span> Archivos y solicitudes</p>
+      <ul class="rail-lista"><li><a href="/soporte/es/archivos-y-carpetas/">Cómo subir y organizar tus archivos en carpetas</a></li><li><a href="/soporte/es/compartir-un-archivo-suelto/">Cómo compartir un archivo o una carpeta</a></li><li><a href="/soporte/es/que-ve-quien-recibe-tu-enlace/">Qué ve quien abre un enlace de Archivos</a></li><li><a href="/soporte/es/seleccionar-varios-archivos/">Cómo seleccionar varios archivos y carpetas a la vez</a></li><li><a href="/soporte/es/borrar-y-archivar-archivos/">Cómo borrar o archivar archivos y carpetas</a></li><li><a href="/soporte/es/pedir-archivos/">Cómo pedir archivos con una solicitud</a></li><li><a href="/soporte/es/subir-a-una-solicitud/">Cómo subir archivos a una solicitud</a></li><li><span aria-current="page">Dónde llegan los archivos de una solicitud</span></li></ul>
+    </div>
+  </aside>
+
+  <article class="art">
+    <nav class="miga" aria-label="Migas de pan">
+      <a href="/soporte/es/">Soporte</a> <span aria-hidden="true">·</span>
+      <a href="/soporte/es/#archivos">Archivos y solicitudes</a>
+    </nav>
+    
+    <h1>Dónde llegan los archivos de una solicitud</h1>
+    <p class="lede">Lo que te suben con una solicitud aparece en su carpeta de destino, en una subcarpeta por persona y día, y te avisamos por correo cuando alguien termina o se queda a medias.</p>
+    
+    <nav class="sumario" aria-label="En esta página"><b>En esta página</b><ol><li><a href="#como-se-organiza-lo-recibido">Cómo se organiza lo recibido</a></li><li><a href="#el-detalle-de-la-solicitud">El detalle de la solicitud</a></li><li><a href="#los-avisos-por-correo">Los avisos por correo</a></li><li><a href="#el-espacio-que-ocupa-lo-recibido">El espacio que ocupa lo recibido</a></li><li><a href="#que-hacer-despues-con-los-archivos">Qué hacer después con los archivos</a></li></ol></nav>
+    <div class="prosa">
+<p>Una solicitud no guarda los archivos aparte: todo lo recibido entra en tus <strong>«Archivos»</strong>, en la carpeta que elegiste como destino al crearla. La solicitud es solo el registro de quién mandó qué y cuándo. Si todavía no has creado ninguna, empieza por <a href="/soporte/es/pedir-archivos/">Cómo pedir archivos con una solicitud</a>.</p>
+
+<h2 id="como-se-organiza-lo-recibido">Cómo se organiza lo recibido</h2>
+<p>Dentro de la carpeta de destino, cada persona tiene su propia subcarpeta, con su nombre y la fecha del día en que subió. Por ejemplo, si María López sube el 28 de septiembre, sus archivos llegan a una carpeta llamada <code>María López — 28/09</code>. Si mandó carpetas, su organización se conserva dentro.</p>
+<ul>
+<li>La subcarpeta depende del email y del día, no del dispositivo: si María sube una parte desde el portátil y otra desde el móvil el mismo día, todo llega a la misma carpeta.</li>
+<li>Si vuelve a subir otro día, se crea una carpeta nueva con esa fecha.</li>
+<li>Gracias a esta separación, dos personas que mandan archivos con el mismo nombre (dos <code>CLIP001.BRAW</code>, por ejemplo) no se pisan.</li>
+</ul>
+<p>En Archivos solo aparecen los archivos que han terminado de subir. Lo que está a medias se ve únicamente en el detalle de la solicitud. En el árbol de carpetas, la carpeta de destino lleva un icono de bandeja de entrada, y un punto mientras alguien está subiendo.</p>
+<p>Cada archivo recibido lleva una nota en su menú <strong>«⋯»</strong>: <strong>«Recibido de»</strong> seguido del nombre de la persona, <strong>«(sin verificar)»</strong>, el título de la solicitud y la fecha.</p>
+<aside class="nota"><b>El nombre y el email no están verificados</b><p>Quien sube escribe su nombre y su email, y Positiva no los comprueba. Por eso el panel los marca como <strong>«(sin verificar)»</strong>: indican quién dice ser, no quién es.</p></aside>
+
+<h2 id="el-detalle-de-la-solicitud">El detalle de la solicitud</h2>
+<p>En <strong>«Archivos»</strong>, pestaña <strong>«Solicitudes»</strong>, pulsa el nombre de una solicitud para abrir su detalle. Arriba ves cuántos archivos y gigas has recibido y, si hay subidas en curso, cuántos quedan por llegar.</p>
+<p>En <strong>«Quién ha subido»</strong> aparece cada persona con su email, y debajo cada una de sus tandas con su estado: terminada (con la hora), subiendo, parada desde una hora concreta o cerrada sin terminar. <strong>«Ver archivos»</strong> despliega la lista de esa tanda con el estado de cada archivo (<strong>«recibido»</strong>, <strong>«pendiente»</strong>, <strong>«subiendo»</strong>, <strong>«falló»</strong> o <strong>«descartado»</strong>) y, si falló, el motivo; por ejemplo <strong>«llegó con otro tamaño»</strong> o <strong>«no cabía en la cuota»</strong>.</p>
+<p>Cada persona tiene tres acciones:</p>
+<ul>
+<li><strong>«Descargar»</strong>: descarga en un ZIP lo que ha subido esa persona.</li>
+<li><strong>«Abrir en Archivos»</strong>: te lleva a su subcarpeta.</li>
+<li><strong>«Descartar»</strong>: borra de Archivos todo lo que ha subido esa persona, también lo que hayas movido a otra carpeta, y su acceso a la solicitud deja de funcionar. El diálogo te dice cuántos archivos y gigas se borran. <strong>No se puede deshacer.</strong> Úsalo para limpiar una subida equivocada o de alguien que no debía tener el enlace.</li>
+</ul>
+<p>Encima de la lista de personas, <strong>«Descargar todo»</strong> descarga en un ZIP todo lo recibido en esa solicitud.</p>
+
+<h2 id="los-avisos-por-correo">Los avisos por correo</h2>
+<p>Si la solicitud tiene activado <strong>«Avisarme por correo»</strong> (lo está por defecto), te escribimos al email de tu cuenta en estos casos:</p>
+<ul>
+<li><strong>Una subida ha terminado.</strong> El asunto es «(nombre) ha terminado de subir · (título)» e incluye cuántos archivos y gigas han llegado, con un botón <strong>«Abrir la carpeta»</strong>.</li>
+<li><strong>Una subida se ha quedado a medias.</strong> Si una tanda lleva más de seis horas parada sin terminar, recibes «Subida incompleta · (título)» con lo que ha llegado y lo que falta. Si esa persona retoma la subida desde el mismo navegador, sigue donde lo dejó; cuando termine, te llega el aviso de terminada.</li>
+<li><strong>Alguien cierra su subida sin terminar.</strong> Si la persona pulsa <strong>«Terminar»</strong> con archivos sin subir, recibes «(nombre) ha cerrado su subida · (título)». Lo que no llegó a subir no está en tu cuenta.</li>
+</ul>
+<p>El aviso llega por cada tanda: si diez personas terminan en una hora, recibes diez correos. Para dejar de recibirlos de una solicitud, ábrela con <strong>«Editar»</strong> y desactiva <strong>«Avisarme por correo»</strong>. El panel sigue mostrando lo mismo.</p>
+<p>Hay un cuarto aviso que no se puede desactivar: <strong>«Una subida no cabe en tu cuenta»</strong>. Llega cuando alguien intenta subir más de lo que te queda libre, como mucho uno al día por solicitud. Quien sube no puede hacer nada hasta que haya sitio.</p>
+<p>Quien sube no recibe ningún correo de Positiva.</p>
+
+<h2 id="el-espacio-que-ocupa-lo-recibido">El espacio que ocupa lo recibido</h2>
+<p>Lo que te suben descuenta de tu almacenamiento como cualquier otro archivo. Además, mientras una subida está en marcha, Positiva aparta en tu cuenta el espacio de lo que falta por llegar, para que dos personas subiendo a la vez no llenen la cuenta a medias. En la lista de solicitudes, la columna <strong>«Recibido»</strong> muestra lo que ha llegado y, si hay algo pendiente, el total previsto («de» seguido de los gigas). La barra de almacenamiento de Archivos muestra ese espacio reservado como un tramo aparte. Si una subida se queda parada dos días, deja de reservar espacio.</p>
+<p>Las solicitudes no tienen tope propio, así que una subida grande puede llenar tu cuenta. Si ocurre, tampoco podrás subir tú desde el panel hasta que <a href="/soporte/es/ampliar-almacenamiento/">amplíes el almacenamiento</a> o liberes espacio. Consulta <a href="/soporte/es/almacenamiento/">cómo se calcula tu almacenamiento</a>.</p>
+
+<h2 id="que-hacer-despues-con-los-archivos">Qué hacer después con los archivos</h2>
+<p>Una vez recibidos, son archivos normales de tu sección Archivos: puedes moverlos, cambiarles el nombre, descargarlos o compartir la subcarpeta de una persona con otra (por ejemplo, mandar los brutos de un operador al editor). Consulta <a href="/soporte/es/compartir-un-archivo-suelto/">cómo compartir un archivo o una carpeta</a>.</p>
+<p>Moverlos fuera de la carpeta de destino no los desvincula de la solicitud: siguen apareciendo en su detalle, y <strong>«Descartar»</strong> también los borraría.</p>
+<p>Si borras la solicitud, te pregunta qué hacer con lo recibido: <strong>«Conservarlo en Archivos»</strong> (la opción que conviene casi siempre) o <strong>«Borrarlo también»</strong>.</p>
+    </div>
+    <p class="sello">Revisado contra la versión en producción el 17 de octubre de 2026.</p>
+    <section class="ayuda">
+      <h2 id="sigue-sin-resolverse">¿Sigue sin resolverse?</h2>
+      <p>Si este artículo no responde a tu caso, escríbenos. Respondemos todas las consultas en un plazo de 24 a 48 horas.</p>
+      <p><a class="btn btn-primario" href="mailto:hola@positiva.studio?subject=Soporte%20%C2%B7%20D%C3%B3nde%20llegan%20los%20archivos%20de%20una%20solicitud">Escribir a hola@positiva.studio</a></p>
+    </section>
+    <section class="relacionados">
+      <h2 id="seguir-leyendo">Seguir leyendo</h2>
+      <ul><li><a href="/soporte/es/pedir-archivos/"><b>Cómo pedir archivos con una solicitud</b><span>Una solicitud es un enlace que mandas a clientes, compañeros o proveedores para que te suban material sin crear una cuenta; lo que suben llega a una carpeta de tus Archivos.</span></a></li><li><a href="/soporte/es/subir-a-una-solicitud/"><b>Cómo subir archivos a una solicitud</b><span>Quien recibe el enlace de una solicitud sube sus archivos o carpetas desde el navegador, sin crear cuenta, y si la subida se corta puede retomarla donde se quedó.</span></a></li><li><a href="/soporte/es/almacenamiento/"><b>Cómo se calcula tu almacenamiento</b><span>Tu cuenta dispone de un único saldo de almacenamiento del que descuentan las fotografías, los vídeos, los ZIP, los archivos sueltos y las versiones antiguas.</span></a></li><li><a href="/soporte/es/compartir-un-archivo-suelto/"><b>Cómo compartir un archivo o una carpeta</b><span>Desde la sección Archivos, cualquier archivo o carpeta se comparte con un enlace propio con tu marca, al que puedes poner contraseña y fecha de caducidad.</span></a></li></ul>
+    </section>
+  </article>
+</div>
+</main>
+
+<!-- pv:footer -->
+<!-- ════════════════════════════════════════════════════════════════
+     PIE COMÚN · fuente única: partials/chrome-footer.html
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
+     las páginas. Sirve de mapa del sitio: cada página pública real
+     debe estar enlazada aquí (SEO + LLMs leen esto).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="footer">
+footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
+.footcols{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pv-s6);
+  margin-bottom:var(--pv-s8);
+}
+.footcols h3{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-tinta-60);margin:0 0 var(--pv-s3);
+}
+.footcols a{
+  display:block;font-family:var(--pv-sans);font-size:14px;color:var(--pv-tinta-60);
+  text-decoration:none;padding:4px 0;transition:color .18s;
+}
+.footcols a:hover{color:var(--pv-tinta)}
+.footer-word{
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(15px,3.9vw,58px);line-height:1;color:var(--pv-tinta);
+  white-space:nowrap;
+}
+.footer-word svg{height:.92em;width:auto;flex:none}
+.footer-word span{color:var(--pv-ambar)}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
+.footer-meta{
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
+  font-size:14px;color:var(--pv-tinta-60);
+}
+.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
+.footer-meta a:hover{color:var(--pv-tinta)}
+@media(max-width:760px){
+  .footcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--pv-s5) var(--pv-s4)}
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <h3>Galerías para clientes</h3>
+        <a href="/galerias/">Entrega tu trabajo</a>
+        <a href="/revision-video/">Revisión de vídeo</a>
+        <a href="/revision-foto/">Revisión de fotografías</a>
+        <a href="/portfolio/">Portfolio público</a>
+        <a href="/precios/">Precios</a>
+        <a href="/#faq">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <h3>Casos de uso</h3>
+        <a href="/freelance/">Para profesionales freelance</a>
+        <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
+        <a href="/productoras/">Para productoras de vídeo</a>
+      </div>
+      <div>
+        <h3>Comparativas</h3>
+        <a href="/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time · Pixieset</a>
+        <a href="/positiva-vs-arcadina/">Positiva vs Arcadina</a>
+        <a href="/positiva-vs-dropbox/">Positiva vs Dropbox</a>
+        <a href="/positiva-vs-google-drive/">Positiva vs Google Drive</a>
+        <a href="/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>
+      </div>
+      <div>
+        <h3>Recursos</h3>
+        <a href="/soporte/es/">Soporte</a>
+        <a href="/novedades/">Novedades</a>
+        <a href="/notas/">Blog</a>
+        <a href="/sobre-nosotros/">Sobre nosotros</a>
+        <a href="https://app.positiva.studio" data-no-conv>Accede a tu panel</a>
+        <a href="https://app.positiva.studio/registro">Empieza gratis</a>
+        <a href="mailto:hola@positiva.studio">Contacto</a>
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/terminos/">Términos</a>
+      </div>
+    </div>
+    <div class="footer-word">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
+    <p class="footer-entidad">Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.</p>
+    <div class="footer-meta">
+      <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Hecha en España · Se gestiona, se mejora y se factura desde Europa</span>
+      <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+    </div>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://positiva.studio/#org",
+      "name": "Positiva",
+      "url": "https://positiva.studio/",
+      "logo": "https://positiva.studio/assets/og.png",
+      "description": "Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.",
+      "email": "hola@positiva.studio",
+      "foundingLocation": { "@type": "Place", "name": "Valencia, España" },
+      "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
+      "areaServed": "ES",
+      "knowsLanguage": "es",
+      "sameAs": [
+        "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
+        "https://www.linkedin.com/company/positiva-studio/",
+        "https://instagram.com/positiva.studio_"
+      ]
+    }</script>
+  </div>
+</footer>
+
+<script>
+/* ── Vídeos del sitio: reproducción automática en bucle mientras están en
+   pantalla y pausa al salir — mismo comportamiento en móvil y escritorio.
+   Quedan fuera: la historia de la home (.hst), las tarjetas de la home
+   (.qcard) y el showcase (#reelvid), que tienen su propio control, los
+   vídeos con controles y los marcados con data-noauto. ── */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  const vids = Array.prototype.filter.call(
+    document.querySelectorAll('video[loop][muted]:not([controls]):not([data-noauto])'),
+    (v) => !v.closest('.hst') && !v.closest('.qcard') && v.id !== 'reelvid'
+  );
+  if (!vids.length) return;
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); }
+    else if (!v.paused) { v.pause(); }
+  }), { threshold: 0.25, rootMargin: '100px 0px' });
+  vids.forEach((v) => { v.muted = true; v.playsInline = true; io.observe(v); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
+})();
+</script>
+<!-- /pv:footer -->
+
+<script>
+/* La cabecera y el pie traen su propio JS desde los parciales (cápsula al
+   bajar, menú móvil y desplegables). Aquí solo va lo que es del soporte. */
+document.documentElement.classList.add('js');
+
+(() => {
+  /* Marca «Soporte» como sección activa en el menú común, sin tocar el parcial. */
+  for (const a of document.querySelectorAll('#nav .nav-links a, .menu a')) {
+    const href = a.getAttribute('href') || '';
+    if (href === '/soporte/' || href.startsWith('/soporte/')) a.setAttribute('aria-current', 'page');
+  }
+})();
+
+(() => {
+  /* ── Buscador ────────────────────────────────────────────────────────────
+   * Busca en el TEXTO COMPLETO de los artículos, no solo en los títulos: quien
+   * teclea «RAW» o «Cuarto oscuro» está buscando una frase que vive dentro de
+   * un artículo, no el nombre de ninguno.
+   *
+   * El índice (buscador.json) se descarga la primera vez que alguien toca el
+   * campo, no al cargar la página: quien viene a leer un artículo concreto no
+   * paga por una búsqueda que no va a hacer.
+   */
+  const form = document.querySelector('[data-busca]');
+  if (!form) return;
+
+  const campo = form.querySelector('input');
+  const panel = form.querySelector('.busca-panel');
+  const IDIOMA = document.documentElement.lang || 'es';
+
+  const limpia = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const escapaHtml = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  let indice = null;
+  let cargando = null;
+  let resultados = [];
+  let foco = -1;
+
+  const cargar = () => {
+    if (indice) return Promise.resolve(indice);
+    if (!cargando) {
+      cargando = fetch(`/soporte/${IDIOMA}/buscador.json`)
+        .then((r) => r.json())
+        .then((d) => {
+          indice = d.map((a) => ({ ...a, _t: limpia(a.titulo), _d: limpia(a.descripcion), _c: limpia(a.texto) }));
+          return indice;
+        })
+        .catch(() => { indice = []; return indice; });
+    }
+    return cargando;
+  };
+
+  // Todos los términos tienen que aparecer en algún sitio. El título pesa seis
+  // veces más que el cuerpo: buscar «momentos» tiene que devolver el artículo
+  // que se llama así, no los nueve que lo mencionan de pasada.
+  function buscar(q) {
+    const terminos = limpia(q).split(/\s+/).filter((t) => t.length > 1);
+    if (!terminos.length || !indice) return [];
+    const salida = [];
+    for (const art of indice) {
+      let puntos = 0;
+      let todos = true;
+      for (const t of terminos) {
+        let p = 0;
+        if (art._t.includes(t)) p += art._t.startsWith(t) ? 16 : 12;
+        if (art._d.includes(t)) p += 5;
+        if (art._c.includes(t)) p += 2;
+        if (!p) { todos = false; break; }
+        puntos += p;
+      }
+      if (todos) salida.push({ art, puntos, termino: terminos[0] });
+    }
+    return salida.sort((a, b) => b.puntos - a.puntos).slice(0, 7);
+  }
+
+  // Un trozo del artículo alrededor de la primera aparición, con el término
+  // marcado. Sin esto, siete resultados con su descripción genérica obligan a
+  // abrirlos uno a uno para ver cuál era.
+  function fragmento(art, termino) {
+    const donde = art._c.indexOf(termino);
+    if (donde === -1) return escapaHtml(art.descripcion);
+    // Se recorta por palabra entera: un fragmento que empieza en «…egador no
+    // sabe» hace dudar de si la página está rota.
+    let desde = Math.max(0, donde - 60);
+    if (desde > 0) {
+      const espacio = art.texto.indexOf(' ', desde);
+      if (espacio !== -1 && espacio < donde) desde = espacio + 1;
+    }
+    let trozo = art.texto.slice(desde, desde + 190);
+    const corte = trozo.lastIndexOf(' ');
+    const cortado = desde + 190 < art.texto.length;
+    if (cortado && corte > 120) trozo = trozo.slice(0, corte);
+    const re = new RegExp(`(${termino.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return (desde > 0 ? '…' : '') + escapaHtml(trozo).replace(re, '<mark>$1</mark>') + (cortado ? '…' : '');
+  }
+
+  function pintar(q) {
+    if (!q.trim()) { cerrar(); return; }
+    resultados = buscar(q);
+    foco = -1;
+    if (!resultados.length) {
+      panel.innerHTML = `<p class="busca-nada">Ningún artículo coincide con <b>${escapaHtml(q)}</b>.
+        Escribe a <a href="mailto:hola@positiva.studio">hola@positiva.studio</a> indicando tu caso:
+        respondemos en un plazo de 24 a 48 horas.</p>`;
+    } else {
+      panel.innerHTML = `<ul role="listbox" aria-label="Resultados">${resultados.map((r, i) => `
+        <li role="option" id="res-${i}" aria-selected="false">
+          <a href="/soporte/${IDIOMA}/${r.art.slug}/">
+            <b>${escapaHtml(r.art.titulo)}</b>
+            <span class="busca-cat">${escapaHtml(r.art.categoria)}</span>
+            <span class="busca-frag">${fragmento(r.art, r.termino)}</span>
+          </a>
+        </li>`).join('')}</ul>`;
+    }
+    panel.hidden = false;
+    campo.setAttribute('aria-expanded', 'true');
+  }
+
+  function cerrar() {
+    panel.hidden = true;
+    panel.innerHTML = '';
+    campo.setAttribute('aria-expanded', 'false');
+    campo.removeAttribute('aria-activedescendant');
+    foco = -1;
+  }
+
+  function mover(paso) {
+    const items = [...panel.querySelectorAll('li')];
+    if (!items.length) return;
+    if (foco >= 0) items[foco].setAttribute('aria-selected', 'false');
+    foco = (foco + paso + items.length + 1) % (items.length + 1) - 1;
+    if (foco < 0) { campo.removeAttribute('aria-activedescendant'); return; }
+    items[foco].setAttribute('aria-selected', 'true');
+    items[foco].scrollIntoView({ block: 'nearest' });
+    campo.setAttribute('aria-activedescendant', `res-${foco}`);
+  }
+
+  campo.addEventListener('focus', cargar, { once: true });
+  campo.addEventListener('input', () => { cargar().then(() => pintar(campo.value)); });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const primero = panel.querySelector('a');
+    if (primero) primero.click();
+  });
+
+  campo.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); mover(1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); mover(-1); }
+    else if (e.key === 'Enter' && foco >= 0) { e.preventDefault(); panel.querySelectorAll('a')[foco].click(); }
+    else if (e.key === 'Escape') { cerrar(); campo.blur(); }
+  });
+
+  document.addEventListener('click', (e) => { if (!form.contains(e.target)) cerrar(); });
+
+  // «/» desde cualquier punto de la página lleva el cursor al buscador.
+  document.addEventListener('keydown', (e) => {
+    const editando = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable;
+    if (editando) return;
+    if (e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+      e.preventDefault();
+      // preventScroll + scrollIntoView propio: el foco a secas deja el campo
+      // justo debajo de la barra fija, medio tapado.
+      campo.focus({ preventScroll: true });
+      campo.select();
+      const caja = form.getBoundingClientRect();
+      if (caja.top < 110 || caja.bottom > window.innerHeight - 80) {
+        form.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+    }
+  });
+})();
+
+(() => {
+  /* ── Raíl del índice: marca la categoría que estás mirando ─────────────── */
+  const enlaces = [...document.querySelectorAll('.rail-cats a')];
+  if (!enlaces.length || !('IntersectionObserver' in window)) return;
+  const porId = new Map(enlaces.map((a) => [a.getAttribute('href').slice(1), a]));
+  const vistos = new Set();
+  const io = new IntersectionObserver((entradas) => {
+    for (const e of entradas) e.isIntersecting ? vistos.add(e.target.id) : vistos.delete(e.target.id);
+    const activo = enlaces.find((a) => vistos.has(a.getAttribute('href').slice(1)));
+    for (const a of enlaces) a.classList.toggle('activo', a === activo);
+  }, { rootMargin: '-96px 0px -70% 0px' });
+  for (const id of porId.keys()) {
+    const sec = document.getElementById(id);
+    if (sec) io.observe(sec);
+  }
+})();
+</script>
+
+<!-- Analítica · Umami autoalojado (mismo tracker que el resto de la web). -->
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script src="/positiva.js" defer></script>
+</body>
+</html>

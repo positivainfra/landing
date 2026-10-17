@@ -167,7 +167,7 @@ document.addEventListener('click', function (e) {
 <div class="wrap indice">
   <aside class="rail">
     <p class="rail-rotulo">El índice</p>
-    <ul class="rail-cats"><li><a href="#primeros-pasos"><span class="idx">01</span> Primeros pasos</a></li><li><a href="#galerias"><span class="idx">02</span> Galerías</a></li><li><a href="#subida"><span class="idx">03</span> Subir fotos y vídeos</a></li><li><a href="#compartir"><span class="idx">04</span> Compartir y descargas</a></li><li><a href="#revision"><span class="idx">05</span> Revisión y comentarios</a></li><li><a href="#revisor"><span class="idx">06</span> Si vas a revisar</a></li><li><a href="#diseno"><span class="idx">07</span> Diseño y marca</a></li><li><a href="#cuenta"><span class="idx">08</span> Cuenta y planes</a></li><li><a href="#problemas"><span class="idx">09</span> Resolución de problemas</a></li></ul>
+    <ul class="rail-cats"><li><a href="#primeros-pasos"><span class="idx">01</span> Primeros pasos</a></li><li><a href="#galerias"><span class="idx">02</span> Galerías</a></li><li><a href="#subida"><span class="idx">03</span> Subir fotos y vídeos</a></li><li><a href="#compartir"><span class="idx">04</span> Compartir y descargas</a></li><li><a href="#archivos"><span class="idx">05</span> Archivos y solicitudes</a></li><li><a href="#revision"><span class="idx">06</span> Revisión y comentarios</a></li><li><a href="#revisor"><span class="idx">07</span> Si vas a revisar</a></li><li><a href="#diseno"><span class="idx">08</span> Diseño y marca</a></li><li><a href="#cuenta"><span class="idx">09</span> Cuenta y planes</a></li><li><a href="#problemas"><span class="idx">10</span> Resolución de problemas</a></li></ul>
   </aside>
   <div class="indice-cuerpo">
 <section class="cat" id="primeros-pasos">
@@ -191,7 +191,7 @@ document.addEventListener('click', function (e) {
       </a></li><li>
       <a href="/soporte/es/el-panel-por-dentro/">
         <span class="fila-t">Las secciones del panel de Positiva</span>
-        <span class="fila-d">Qué contiene cada sección del menú del panel, qué pasos aparecen al abrir una galería y qué elementos no están donde el nombre sugiere.</span>
+        <span class="fila-d">Qué contiene cada una de las cuatro secciones del panel, qué hay en el menú de cuenta, cómo se ordena el listado de galerías y qué pasos aparecen al abrir una.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li></ul>
 </section>
@@ -202,6 +202,11 @@ document.addEventListener('click', function (e) {
       <a href="/soporte/es/crear-una-galeria/">
         <span class="fila-t">Cómo crear una galería</span>
         <span class="fila-d">El formulario de creación pide cuatro datos y solo el nombre es obligatorio: qué decide cada uno de ellos y en qué estado queda la galería al guardar.</span>
+        <span class="fila-v" aria-hidden="true">→</span>
+      </a></li><li>
+      <a href="/soporte/es/crear-galeria-desde-archivos/">
+        <span class="fila-t">Cómo crear una galería con lo que ya tienes en Archivos</span>
+        <span class="fila-d">Monta una galería nueva, o amplía una que ya existe, con fotografías y vídeos que ya están en Archivos: sin volver a subirlos y sin ocupar el doble de espacio.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
       <a href="/soporte/es/los-pasos-de-una-galeria/">
@@ -256,12 +261,12 @@ document.addEventListener('click', function (e) {
       </a></li><li>
       <a href="/soporte/es/reemplazar-un-archivo/">
         <span class="fila-t">Cómo sustituir una fotografía por una versión corregida</span>
-        <span class="fila-d">Sustituir una fotografía cambia el archivo y conserva los comentarios, las favoritas, la portada y su posición, siempre que el nombre coincida de forma exacta.</span>
+        <span class="fila-d">Sustituir una fotografía cambia el archivo y conserva los comentarios, las favoritas, la portada y su posición; para sustituir varias a la vez basta con soltarlas con el mismo nombre.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
       <a href="/soporte/es/versiones-antiguas/">
         <span class="fila-t">Versiones antiguas: qué son y cómo liberar su espacio</span>
-        <span class="fila-d">Cada sustitución archiva la fotografía anterior, esa copia ocupa tu almacenamiento y se libera con «Purgar versiones», salvo si tiene comentarios abiertos.</span>
+        <span class="fila-d">Cada sustitución archiva la versión anterior de la fotografía o del vídeo, esa copia ocupa tu almacenamiento y se libera con «Purgar versiones», salvo si tiene comentarios abiertos.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
       <a href="/soporte/es/subida-interrumpida/">
@@ -296,22 +301,62 @@ document.addEventListener('click', function (e) {
       </a></li><li>
       <a href="/soporte/es/zip-descarga-completa/">
         <span class="fila-t">El botón «Descargar todo» y el archivo ZIP</span>
-        <span class="fila-d">El botón «Descargar todo» aparece en la galería cuando subes un archivo ZIP, que ocupa almacenamiento y obedece a los permisos del enlace.</span>
+        <span class="fila-d">El botón «Descargar todo» aparece solo en las galerías con descarga activada: Positiva genera el archivo al vuelo, y puedes sustituirlo por un ZIP tuyo.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
       <a href="/soporte/es/revocar-un-enlace/">
         <span class="fila-t">Cómo revocar un enlace de cliente</span>
         <span class="fila-d">Revocar cierra de forma definitiva el acceso de un enlace concreto, sin afectar a los demás enlaces de la misma galería.</span>
         <span class="fila-v" aria-hidden="true">→</span>
+      </a></li></ul>
+</section>
+<section class="cat" id="archivos">
+  <p class="eyebrow"><span class="idx">05</span> Archivos y solicitudes</p>
+  <p class="cat-resumen">Tus carpetas de trabajo, enlaces para compartirlas y solicitudes para que te suban material.</p>
+  <ul class="filas"><li>
+      <a href="/soporte/es/archivos-y-carpetas/">
+        <span class="fila-t">Cómo subir y organizar tus archivos en carpetas</span>
+        <span class="fila-d">La sección Archivos guarda el material que no va en una galería, organizado en carpetas como en el Finder o el Explorador de tu ordenador.</span>
+        <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
       <a href="/soporte/es/compartir-un-archivo-suelto/">
-        <span class="fila-t">Cómo compartir un archivo suelto</span>
-        <span class="fila-d">La sección Archivos genera un enlace de descarga con tu marca para un documento que no forma parte de ninguna galería, y ese enlace es público.</span>
+        <span class="fila-t">Cómo compartir un archivo o una carpeta</span>
+        <span class="fila-d">Desde la sección Archivos, cualquier archivo o carpeta se comparte con un enlace propio con tu marca, al que puedes poner contraseña y fecha de caducidad.</span>
+        <span class="fila-v" aria-hidden="true">→</span>
+      </a></li><li>
+      <a href="/soporte/es/que-ve-quien-recibe-tu-enlace/">
+        <span class="fila-t">Qué ve quien abre un enlace de Archivos</span>
+        <span class="fila-d">Quien abre un enlace de Archivos ve una página con la marca del estudio desde la que descarga cada archivo, cada carpeta o todo junto en un ZIP, sin crear ninguna cuenta.</span>
+        <span class="fila-v" aria-hidden="true">→</span>
+      </a></li><li>
+      <a href="/soporte/es/seleccionar-varios-archivos/">
+        <span class="fila-t">Cómo seleccionar varios archivos y carpetas a la vez</span>
+        <span class="fila-d">Con las casillas, ⇧ y ⌘ seleccionas varios archivos y carpetas, y la barra inferior aplica la misma acción a todos de una vez.</span>
+        <span class="fila-v" aria-hidden="true">→</span>
+      </a></li><li>
+      <a href="/soporte/es/borrar-y-archivar-archivos/">
+        <span class="fila-t">Cómo borrar o archivar archivos y carpetas</span>
+        <span class="fila-d">Borrar elimina para siempre el archivo o la carpeta con todo su contenido y apaga sus enlaces; archivar solo lo aparta de la lista y se deshace con un clic.</span>
+        <span class="fila-v" aria-hidden="true">→</span>
+      </a></li><li>
+      <a href="/soporte/es/pedir-archivos/">
+        <span class="fila-t">Cómo pedir archivos con una solicitud</span>
+        <span class="fila-d">Una solicitud es un enlace que mandas a clientes, compañeros o proveedores para que te suban material sin crear una cuenta; lo que suben llega a una carpeta de tus Archivos.</span>
+        <span class="fila-v" aria-hidden="true">→</span>
+      </a></li><li>
+      <a href="/soporte/es/subir-a-una-solicitud/">
+        <span class="fila-t">Cómo subir archivos a una solicitud</span>
+        <span class="fila-d">Quien recibe el enlace de una solicitud sube sus archivos o carpetas desde el navegador, sin crear cuenta, y si la subida se corta puede retomarla donde se quedó.</span>
+        <span class="fila-v" aria-hidden="true">→</span>
+      </a></li><li>
+      <a href="/soporte/es/archivos-recibidos/">
+        <span class="fila-t">Dónde llegan los archivos de una solicitud</span>
+        <span class="fila-d">Lo que te suben con una solicitud aparece en su carpeta de destino, en una subcarpeta por persona y día, y te avisamos por correo cuando alguien termina o se queda a medias.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li></ul>
 </section>
 <section class="cat" id="revision">
-  <p class="eyebrow"><span class="idx">05</span> Revisión y comentarios</p>
+  <p class="eyebrow"><span class="idx">06</span> Revisión y comentarios</p>
   <p class="cat-resumen">Cómo recibir, responder y gestionar los comentarios de tu cliente.</p>
   <ul class="filas"><li>
       <a href="/soporte/es/como-funciona-la-revision/">
@@ -332,6 +377,16 @@ document.addEventListener('click', function (e) {
       <a href="/soporte/es/rondas-de-revision/">
         <span class="fila-t">Las rondas de revisión</span>
         <span class="fila-d">Las rondas limitan el feedback de una galería a un número fijo de tandas, y tú decides cuándo se cierra cada una y cuándo se abre la siguiente.</span>
+        <span class="fila-v" aria-hidden="true">→</span>
+      </a></li><li>
+      <a href="/soporte/es/versiones-de-un-video/">
+        <span class="fila-t">Las versiones de un vídeo</span>
+        <span class="fila-d">Al sustituir un vídeo, Positiva conserva el anterior entero: en la revisión se puede volver a reproducir cada versión y ver qué se comentó sobre cuál.</span>
+        <span class="fila-v" aria-hidden="true">→</span>
+      </a></li><li>
+      <a href="/soporte/es/comparar-versiones/">
+        <span class="fila-t">Cómo comparar las versiones de una fotografía</span>
+        <span class="fila-d">En una galería de revisión, una fotografía sustituida se puede poner junto a su versión anterior con un corte que se arrastra sobre la imagen.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
       <a href="/soporte/es/marcar-favoritas/">
@@ -356,47 +411,52 @@ document.addEventListener('click', function (e) {
       </a></li><li>
       <a href="/soporte/es/exportar-marcadores-video/">
         <span class="fila-t">Cómo exportar comentarios de vídeo a DaVinci Resolve (EDL) y Final Cut Pro (FCPXML)</span>
-        <span class="fila-d">Los comentarios anclados al código de tiempo (timecode) se descargan como marcadores de línea de tiempo para DaVinci Resolve o para Final Cut Pro.</span>
+        <span class="fila-d">Tutorial: exporta los comentarios de tu cliente como marcadores de timeline — archivo EDL para DaVinci Resolve o FCPXML para Final Cut Pro — e impórtalos en tu editor.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li></ul>
 </section>
 <section class="cat" id="revisor">
-  <p class="eyebrow"><span class="idx">06</span> Si vas a revisar</p>
+  <p class="eyebrow"><span class="idx">07</span> Si vas a revisar</p>
   <p class="cat-resumen">Para quien recibe una galería de revisión. No se necesita cuenta en Positiva.</p>
   <ul class="filas"><li>
       <a href="/soporte/es/revisor-entrar-en-la-galeria/">
-        <span class="fila-t">Cómo entrar a revisar una galería<i class="marca-revisor">Revisor</i></span>
+        <span class="fila-t">Cómo entrar a revisar una galería</span>
         <span class="fila-d">Entrar a revisar una galería no requiere ninguna cuenta: se hace con el enlace del fotógrafo, una dirección de correo y el enlace que llega a ella.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
+      <a href="/soporte/es/revisor-idioma-de-la-galeria/">
+        <span class="fila-t">En qué idioma ves la galería y te llegan los correos</span>
+        <span class="fila-d">La galería se muestra en castellano o en inglés según tu navegador, se cambia con el selector <strong>ES / EN</strong>, y los correos de la revisión te llegan en el idioma que estabas usando.</span>
+        <span class="fila-v" aria-hidden="true">→</span>
+      </a></li><li>
       <a href="/soporte/es/revisor-marcar-y-comentar-fotos/">
-        <span class="fila-t">Cómo marcar y comentar fotografías<i class="marca-revisor">Revisor</i></span>
+        <span class="fila-t">Cómo marcar y comentar fotografías</span>
         <span class="fila-d">Marcar una fotografía le indica al fotógrafo que la quieres; comentarla ancla una nota a un punto concreto de la imagen. Son dos acciones distintas.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
       <a href="/soporte/es/revisor-comentar-video/">
-        <span class="fila-t">Cómo comentar un vídeo en un instante concreto<i class="marca-revisor">Revisor</i></span>
+        <span class="fila-t">Cómo comentar un vídeo en un instante concreto</span>
         <span class="fila-d">Con la tecla C el vídeo se pausa y el comentario queda anclado al instante exacto que estás viendo, en lugar de al vídeo entero.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
       <a href="/soporte/es/revisor-atajos-de-teclado/">
-        <span class="fila-t">Atajos de teclado del reproductor de vídeo<i class="marca-revisor">Revisor</i></span>
+        <span class="fila-t">Atajos de teclado del reproductor de vídeo</span>
         <span class="fila-d">Varias teclas del reproductor cambian de función según el vídeo esté en marcha o en pausa, y esta lista recoge todas con sus dos comportamientos.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
       <a href="/soporte/es/revisor-terminar-ronda/">
-        <span class="fila-t">Cómo avisar de que has terminado la revisión<i class="marca-revisor">Revisor</i></span>
+        <span class="fila-t">Cómo avisar de que has terminado la revisión</span>
         <span class="fila-d">Al terminar de comentar avisas al fotógrafo desde la propia galería, con un botón que cambia según la galería trabaje por rondas o no.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
       <a href="/soporte/es/revisor-no-me-llega-el-email/">
-        <span class="fila-t">No recibo el correo de verificación<i class="marca-revisor">Revisor</i></span>
+        <span class="fila-t">No recibo el correo de verificación</span>
         <span class="fila-d">El correo con el enlace de entrada no aparece en la bandeja, y la pantalla «Revisa tu correo» indica con un mensaje distinto qué ha ocurrido en cada caso.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li></ul>
 </section>
 <section class="cat" id="diseno">
-  <p class="eyebrow"><span class="idx">07</span> Diseño y marca</p>
+  <p class="eyebrow"><span class="idx">08</span> Diseño y marca</p>
   <p class="cat-resumen">Diseños de galería, colores, tipografía, logotipo y dominio propio.</p>
   <ul class="filas"><li>
       <a href="/soporte/es/disenos-de-galeria/">
@@ -426,7 +486,7 @@ document.addEventListener('click', function (e) {
       </a></li><li>
       <a href="/soporte/es/dominio-propio/">
         <span class="fila-t">Cómo usar tu propio dominio</span>
-        <span class="fila-d">Puedes entregar tus galerías desde tu propio dominio: se guarda en Branding y lo configuramos de forma manual en un plazo de 24 a 48 horas.</span>
+        <span class="fila-d">Puedes entregar tus galerías desde tu propio dominio: lo guardas en Branding, pones dos registros DNS y el alta y el certificado se hacen solos.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
       <a href="/soporte/es/perfil-publico/">
@@ -441,7 +501,7 @@ document.addEventListener('click', function (e) {
       </a></li></ul>
 </section>
 <section class="cat" id="cuenta">
-  <p class="eyebrow"><span class="idx">08</span> Cuenta y planes</p>
+  <p class="eyebrow"><span class="idx">09</span> Cuenta y planes</p>
   <p class="cat-resumen">Planes, almacenamiento, facturación y analítica.</p>
   <ul class="filas"><li>
       <a href="/soporte/es/planes-y-precios/">
@@ -464,14 +524,19 @@ document.addEventListener('click', function (e) {
         <span class="fila-d">Subir de plan se cobra en el acto por la parte proporcional del periodo; bajar no cobra nada y se aplica al final del periodo que ya has pagado.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li><li>
+      <a href="/soporte/es/idioma-del-panel/">
+        <span class="fila-t">El idioma del panel y el de tus clientes</span>
+        <span class="fila-d">El panel se puede usar en castellano o en inglés y se cambia desde el menú de cuenta; tus clientes ven la galería en el idioma de su navegador, y lo que escribes tú no se traduce.</span>
+        <span class="fila-v" aria-hidden="true">→</span>
+      </a></li><li>
       <a href="/soporte/es/analitica/">
         <span class="fila-t">La analítica de tus galerías</span>
-        <span class="fila-d">El paso Analítica reúne las visitas, la tasa de selección, las descargas y las reproducciones de cada galería en los planes Autor y Estudio.</span>
+        <span class="fila-d">El paso Analítica reúne las visitas, la tasa de selección, las descargas — en cuatro cifras y con la lista de piezas descargadas — y las reproducciones de cada galería, en los planes Autor y Estudio.</span>
         <span class="fila-v" aria-hidden="true">→</span>
       </a></li></ul>
 </section>
 <section class="cat" id="problemas">
-  <p class="eyebrow"><span class="idx">09</span> Resolución de problemas</p>
+  <p class="eyebrow"><span class="idx">10</span> Resolución de problemas</p>
   <p class="cat-resumen">Incidencias frecuentes, su causa y cómo resolverlas.</p>
   <ul class="filas"><li>
       <a href="/soporte/es/enlace-no-valido/">

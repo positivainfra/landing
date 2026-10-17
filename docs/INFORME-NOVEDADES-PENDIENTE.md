@@ -1,126 +1,71 @@
-# Informe de impacto · lote b6e3647 → 2a59b6c (desplegado el 14/09/2026)
+# Informe de impacto · lote 2a59b6c → 783e41b (desplegado a 17/10/2026)
 
-33 commits, cinco temas visibles. Publicadas **seis entradas** en `/novedades/`
-(14, 13, 13, 12, 11 y 10 de septiembre).
+627 commits en main. Publicadas **27 entradas** en `/novedades/` (6 de septiembre y 21 de octubre),
+con la fecha del merge a main como fecha de despliegue.
 
-Interno y fuera de novedades: los prompts y runbooks, la inversión de
-`run_worker_first`, el marcador HSTS, los tests del Worker y el relleno hacia
-atrás del códec en las filas existentes.
+Esta vez, por petición expresa de Rodrigo, el soporte **sí se ha editado desde este flujo**:
+12 artículos nuevos, unos 40 revisados, y la categoría nueva «Archivos y solicitudes» (05).
+El índice, los raíles, las migas, el buscador y las tarjetas «Seguir leyendo» salen ahora de
+`scripts/soporte-indice.py` (fuente única del orden de categorías y artículos).
 
----
+Artículos nuevos: archivos-y-carpetas, que-ve-quien-recibe-tu-enlace, seleccionar-varios-archivos,
+borrar-y-archivar-archivos, pedir-archivos, subir-a-una-solicitud, archivos-recibidos,
+crear-galeria-desde-archivos, versiones-de-un-video, comparar-versiones,
+revisor-idioma-de-la-galeria, idioma-del-panel. `compartir-un-archivo-suelto` se reescribe como
+«Cómo compartir un archivo o una carpeta» (misma URL) y pasa a Archivos y solicitudes.
 
-## 1 · ZIP por momento (14/09)
+Corregido en la landing: /archivos/ decía que las solicitudes llevan «contraseña opcional».
+No la llevan (el código no la tiene); sí la llevan los enlaces de lo que compartes.
 
-`GET /media/zip?scope=moment`. Botón junto al título de cada sección del visor.
-Condiciones reales, leídas del código: tier ≠ `none`, momento no vacío, **más de
-un grupo**, cuadrícula con momentos; nunca en «Otros» ni con el filtro de
-favoritas. Convive con el zip manual global.
+## Posible bug de la app (para Claude Code en SHOWCASEBRAIN)
 
-**Editado aquí:** `zip-descarga-completa` (sección «Descargar un momento
-suelto») y `momentos` (sección «Qué ve tu cliente»).
+- Crear galería desde Archivos con el plan Gratis al límite: el diálogo probablemente muestra
+  el código crudo «limite_de_galerias» (`DialogoCrearGaleria.tsx` imprime `err.message` en vez
+  del texto traducido de `createGallery` en `data.ts`). El artículo no cita el mensaje.
 
-**A verificar en pantalla:**
-1. Cómo se llama y dónde está exactamente el control: lo describo como «su
-   propio botón de descarga junto al título». El commit dice que se unificó a
-   **un solo icono de descarga en todo el visor** — si tiene una etiqueta de
-   texto visible o un tooltip, conviene citarla tal cual.
-2. Que con el filtro de favoritas el botón efectivamente desaparece (lo digo).
-3. El nombre del archivo: según `0934f9f` queda `Galería - Momento.zip`, sin el
-   sufijo « - fotos». No lo cito en el artículo; si quieres citarlo, confírmalo.
+## A verificar en pantalla
 
-## 2 · Indexación (12-13/09)
+Archivos
+1. Enlaces `/f/` antiguos: una nota dice que volver a compartir da un enlace nuevo; el código
+   reactiva el mismo. El artículo sigue al código y dice que esos enlaces no admiten contraseña.
+2. En la vista «Archivados», el botón de lote sigue diciendo «Archivar» aunque restaura.
+3. Lo archivado dentro de una carpeta compartida puede seguir visible por su enlace.
+4. Renombrar una carpeta compartida quizá no cambia el nombre que ve quien la recibe.
+5. Si el plan Gratis tiene Archivos (los artículos dicen «en los demás planes» sin concretar).
+6. La tarjeta genérica de vista previa para estudios con marca blanca.
 
-`GALLERY_ROBOTS_MODE` se queda en **noindex permanente** para `/g/` y `/f/`
-(Disallow impediría rastrear pero no listar, y este producto consiste en
-repartir esos enlaces). El panel entero fuera del índice por inversión:
-`X-Robots-Tag` noindex salvo lista cerrada. Portfolios inyectados en el edge con
-HTMLRewriter: título, descripción, canonical, H1, bio, `<img>` con alt, OG y
-JSON-LD Person/ProfilePage. Umbral: sin bio y sin galería publicada, noindex.
-Etiquetas `/galerias/<tag>`: noindex en v1. Sitemap por subdominio.
-Despublicado → 404 con página de marca.
+Solicitudes
+7. El contador de la pestaña «Solicitudes» es por navegador (lo dice el artículo).
+8. Qué ve quien está subiendo cuando cierras la solicitud.
+9. Días tras los que una subida a medias empieza de cero (el artículo dice «varios días»).
+10. «Esta solicitud no acepta archivos ahora mismo»: según el código sale cuando el plan ya no
+    incluye solicitudes; el artículo para quien sube lo explica como que la cuenta no puede recibir.
 
-**Editado aquí:** `perfil-publico` (sección «Tu web y los buscadores»).
+Panel y galerías
+11. activa-o-publica habla de galerías archivadas «por inactividad»; el código bloquea el
+    interruptor para el estado que el panel llama «Desactivada». ¿Es lo mismo?
+12. Una galería nueva sigue Branding «mientras no le cambies el tema»: confirmar que tocar un
+    campo del tema fija el resto.
 
-**A verificar:**
-1. Que el umbral es exactamente «sin bio **y** sin ninguna galería publicada»
-   (lo escribo así).
-2. Si el panel avisa de alguna forma de que un perfil está fuera del índice. Si
-   no avisa, el artículo es el único sitio donde el fotógrafo puede enterarse.
+Subida y versiones
+13. Desde el 05/10 la cola solo muestra errores conocidos o «Error de subida»: confirmar con un
+    HEIC y con la cuota llena.
+14. Que «Previsualizar» abre la galería en modo fotógrafo (donde salen «Comparar» y liberar versión).
+15. subir-fotos-y-videos pone los partidos de fútbol como ejemplo de bloqueo de operadoras:
+    quitarlo si no se quiere decir en público.
 
-**Otros artículos que puede tocar (no editados):** `portfolio` (si promete
-visibilidad en buscadores sin matizar el umbral) y `enlace-de-cliente` (ahora se
-puede afirmar que un enlace repartido no acaba en Google).
+Revisión
+16. El filtro «Abiertos / Todos / Resueltos» también en la revisión de fotos, y el punto atenuado
+    del comentario resuelto.
+17. El selector ES / EN oculto en la cabecera de la revisión de vídeo en móvil.
 
-## 3 · Portero de códec, HEVC y póster provisional (11-12/09)
+Diseño y marca
+18. Selector S/M/L debajo de portada y cuadrícula; aviso de «Limpiar títulos» al abrir la galería;
+    galerías anteriores al 15/10 con Playfair Display e Inter.
 
-Tres estados en `videoGate.ts`: **entra** (códec web), **entra avisando**
-(`hardware-only` = HEVC), **no entra** (`not-web` con etiqueta, o desconocido
-del que el navegador no saca fotogramas). Un fourCC desconocido que sí da
-fotogramas entra y avisa a Sentry.
+Cuenta
+19. La barra de almacenamiento en «Cuenta y facturación» en todos los planes, y la casilla del
+    correo diario de descargas en Gratis (en el código no hay filtro de plan en la casilla).
+20. «un enlace corto» en la intro de «Descargas sueltas»: no está claro a qué se refiere.
 
-**Editado aquí:** `formatos-admitidos` — tabla de vídeo rehecha, secciones «Qué
-dice el aviso cuando un vídeo no entra», «El HEVC entra, pero avisando» y «Un
-vídeo sin portada se sube igual». La entradilla ya distingue foto (decide el
-navegador) de vídeo (comprobación propia).
-
-**Literales usados, sacados del código y NO vistos en pantalla:**
-
-| Literal | Origen |
-|---|---|
-| `«archivo» está en ProRes 422 — Es un códec de edición: los navegadores no lo reproducen…` | `describeRejection()`, rama EDITING. El nombre del archivo y el códec del ejemplo son míos |
-| `«archivo» no tiene imagen — Solo tiene sonido: en la galería tus clientes verían un rectángulo negro.` | `describeRejection()`, rama `codec === "none"` |
-| `«archivo» no se puede reproducir en el navegador` | `describeRejection()`, rama desconocido |
-| `2 vídeos en HEVC (el formato que graba el iPhone por defecto)…` | `hardwareOnlyNotice()`, texto completo y literal |
-
-**A verificar:**
-1. Dónde se pinta cada aviso (fila de la cola, banda al terminar la tanda,
-   toast) — el artículo dice «al terminar la tanda» para el de HEVC, que es lo
-   que sugiere el código (`UNA vez por tanda con el número`).
-2. Que el aviso incluye el peso («Pesa 2,4 GB») como dice `pesoLegible`.
-3. Que la portada provisional se puede cambiar desde el panel: lo afirmo, y es
-   la única frase de esa sección que no está respaldada por el diff que leí.
-4. **Contradicción pendiente en otro artículo:** `archivos-que-no-suben` y
-   `subir-fotos-y-videos` pueden seguir diciendo que el vídeo falla con «No se
-   pudo leer el vídeo.» Ese mensaje ya no es el único camino. No los he editado
-   para no tocar más alcance del necesario — decide si van en este lote o en el
-   siguiente.
-
-## 4 · Dominios propios automáticos (10-11/09)
-
-Alta automática en Cloudflare tras verificar la propiedad; correo al fotógrafo
-cuando el dominio sirve; el panel muestra el estado real de cada registro en vez
-de pedirle que mire. `CNAME_DESTINO = saas.positiva.studio`, TXT
-`_positiva-verify.<hostname>`.
-
-**Editado aquí:** `dominio-propio` — **reescrito**. El artículo anterior decía
-que el DNS y el certificado se configuran «a mano, en 24-48 horas», que ya es
-falso. También cambia su `<meta name="description">`.
-
-**Literales usados (de `registrosDe()` en `Branding.tsx`, no vistos en
-pantalla):** los seis estados del CNAME de la tabla «Qué dice el panel en cada
-momento», copiados uno a uno.
-
-**A verificar:**
-1. Que el bloque sigue estando en **Branding** y se llama «Dominio propio».
-2. Que el panel muestra el TXT y el CNAME con nombre y valor copiables, como
-   describo en el paso 3.
-3. Que el aviso de Cloudflare «DNS only» aparece tal cual (yo lo resumo).
-
-## 5 · Rescate de avisos (10/09)
-
-Un aviso que fallaba podía dejar sin cerrar la fila y llevarse por delante el
-resumen de descargas del día; los 5xx transitorios de Supabase ya se reintentan.
-
-**Editado aquí:** solo la entrada de novedades (etiqueta Arreglo).
-
-**A verificar:** nada en soporte. `analitica` ya describe el resumen diario y no
-prometía fiabilidad, así que no queda desactualizado.
-
----
-
-## Cierre
-
-- `docs/novedades-estado.txt` → `2a59b6c`.
-- **Sitemap:** no lo he tocado. Ahora se genera con `npm run sitemap`, que saca
-  los `lastmod` de la fecha real del último commit de cada página — hay que
-  ejecutarlo **después** de commitear este lote, no antes.
+Pendiente fuera de este lote: la tanda 2 de octubre (cliente, avisos y aprobaciones) no está en main.

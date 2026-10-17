@@ -19,7 +19,7 @@
 <link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/soporte/soporte.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Hay archivos que no se suben","description":"Cuando un archivo se queda fuera de la galería la causa suele ser su formato y no la conexión: identifica el síntoma en pantalla y aplica su solución.","inLanguage":"es","dateModified":"31 de agosto de 2026","publisher":{"@type":"Organization","name":"Positiva","url":"https://positiva.studio"},"mainEntityOfPage":"https://positiva.studio/soporte/es/archivos-que-no-suben/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Hay archivos que no se suben","description":"Cuando un archivo se queda fuera de la galería la causa suele ser su formato y no la conexión: identifica el síntoma en pantalla y aplica su solución.","inLanguage":"es","dateModified":"17 de octubre de 2026","publisher":{"@type":"Organization","name":"Positiva","url":"https://positiva.studio"},"mainEntityOfPage":"https://positiva.studio/soporte/es/archivos-que-no-suben/"}</script>
 <script defer src="/js/analytics.js"></script>
 <link rel="stylesheet" href="/docs.css">
 </head>
@@ -145,7 +145,7 @@ document.addEventListener('click', function (e) {
   <div class="busca-panel" id="busca-panel" hidden></div>
 </form>
     <div class="rail-seccion">
-      <p class="eyebrow"><span class="idx">09</span> Resolución de problemas</p>
+      <p class="eyebrow"><span class="idx">10</span> Resolución de problemas</p>
       <ul class="rail-lista"><li><a href="/soporte/es/enlace-no-valido/">«Este enlace no es válido o ha caducado»</a></li><li><a href="/soporte/es/no-puedo-descargar/">El cliente no puede descargar los archivos</a></li><li><a href="/soporte/es/galeria-lenta/">La galería tarda demasiado en cargar</a></li><li><span aria-current="page">Hay archivos que no se suben</span></li></ul>
     </div>
   </aside>
@@ -169,24 +169,24 @@ document.addEventListener('click', function (e) {
 <p><strong>Qué mirar.</strong> La lista de subida, justo después de soltar los archivos.</p>
 <p><strong>Qué debería verse.</strong> Una fila por cada archivo soltado, aunque alguna termine fallando.</p>
 <p><strong>Qué hacer si no es así.</strong> Si no aparece ni fila, ni mensaje de error, ni barra de progreso, esos archivos son casi con seguridad <strong>RAW</strong> —CR2, NEF, ARW, DNG— o algún formato que el sistema no reconoce como imagen ni como vídeo. Se descartan en silencio, sin llegar a figurar siquiera como fila fallida. Revela el material y expórtalo a JPEG. Consulta <a href="/soporte/es/formatos-admitidos/">Formatos de archivo admitidos</a>.</p>
-<h3 id="2-las-filas-no-muestran-mensajes-de-decodificacion">2. Las filas no muestran mensajes de decodificación</h3>
-<p><strong>Qué mirar.</strong> El texto de cada fila, incluidos los mensajes en inglés o con terminología técnica.</p>
-<p><strong>Qué debería verse.</strong> Filas que avanzan hasta completarse y desaparecen de la lista.</p>
-<p><strong>Qué hacer si no es así.</strong> Un mensaje de ese tipo significa que el navegador no sabe decodificar ese formato. Los formatos que lo provocan son <strong>HEIC</strong> —el del iPhone— y <strong>TIFF</strong>. No pulses el enlace de reintentar: cada intento vuelve a subir el original entero, falla en el mismo punto y consume más espacio. Exporta a JPEG y sube esa versión.</p>
+<h3 id="2-las-filas-no-muestran-mensajes-de-decodificacion">2. Ninguna fotografía HEIC o TIFF falla con «Error de subida»</h3>
+<p><strong>Qué mirar.</strong> El texto de cada fila y la extensión del archivo. Despliega el listado con la flecha de la cola (<strong>«Ver archivos»</strong>) si no lo ves.</p>
+<p><strong>Qué debería verse.</strong> Filas que avanzan hasta completarse y terminan en <strong>«✓ lista»</strong>.</p>
+<p><strong>Qué hacer si no es así.</strong> La fila dice solo <strong>«Error de subida»</strong>, sin más detalle, pero si el archivo es <strong>HEIC</strong> —el del iPhone— o <strong>TIFF</strong>, la causa es que el navegador no sabe decodificar ese formato. No pulses el enlace de reintentar: cada intento vuelve a subir el original entero, falla en el mismo punto y consume más espacio. Exporta a JPEG y sube esa versión.</p>
 <h3 id="3-los-archivos-que-suben-enteros-y-no-aparecen-en-la-galeria">3. Los archivos que suben enteros y no aparecen en la galería</h3>
 <p><strong>Qué mirar.</strong> La rejilla del paso <strong>Fotos y vídeos</strong>, comparando lo que hay dentro con lo que habías soltado.</p>
 <p><strong>Qué debería verse.</strong> Cada archivo que completa su subida aparece en la rejilla.</p>
 <p><strong>Qué hacer si no es así.</strong> El original ha subido completo y ha fallado al generar las miniaturas y las versiones derivadas. La fotografía se queda a medias y no llega a mostrarse: Positiva no muestra un archivo incompleto, porque se vería roto delante de tu cliente.</p>
 <p>Es la misma causa que la comprobación anterior, con el almacenamiento ya consumido. Exporta a JPEG y sube esa versión. Consulta <a href="/soporte/es/formatos-admitidos/">Formatos de archivo admitidos</a>.</p>
-<h3 id="4-los-videos-no-muestran-no-se-pudo-leer-el-video">4. Los vídeos no muestran «No se pudo leer el vídeo.»</h3>
-<p><strong>Qué mirar.</strong> El mensaje de las filas correspondientes a vídeos.</p>
-<p><strong>Qué debería verse.</strong> El vídeo genera su fotograma de portada y empieza a subir.</p>
-<p><strong>Qué hacer si no es así.</strong> El mensaje <strong>«No se pudo leer el vídeo.»</strong> indica que tu navegador no puede reproducir ese archivo, de modo que ni siquiera intenta subirlo. El rechazo es temprano y no consume espacio. Exporta a MP4 con H.264.</p>
+<h3 id="4-los-videos-no-muestran-no-se-pudo-leer-el-video">4. Ningún vídeo se queda fuera antes de subir</h3>
+<p><strong>Qué mirar.</strong> Si al soltar vídeos aparece un aviso que nombra el archivo y su formato, por ejemplo <strong>«boda-final.mov» está en ProRes 422</strong>, o el diálogo <strong>«N vídeos no se pueden ver en el navegador»</strong>.</p>
+<p><strong>Qué debería verse.</strong> El vídeo entra en la cola, genera su fotograma de portada y empieza a subir.</p>
+<p><strong>Qué hacer si no es así.</strong> Ese vídeo está en un formato que tus clientes no podrían reproducir en la galería —un códec de edición, un HEVC de cámara de alta gama o un archivo sin imagen—, así que Positiva no lo sube. El rechazo es temprano y no consume espacio. Exporta a MP4 con H.264, o pulsa <strong>«Compartirlo por Archivos»</strong> para que tu cliente lo descargue en lugar de verlo. Consulta <a href="/soporte/es/formatos-admitidos/">Formatos de archivo admitidos</a>.</p>
 <h3 id="5-queda-espacio-en-tu-almacenamiento">5. Queda espacio en tu almacenamiento</h3>
 <p><strong>Qué mirar.</strong> Si han fallado varios archivos a la vez con el mismo mensaje, y la barra de almacenamiento de tu cuenta.</p>
 <p><strong>Qué debería verse.</strong> Espacio libre suficiente para la tanda completa.</p>
 <p><strong>Qué hacer si no es así.</strong> El mensaje <strong>«Te has quedado sin espacio. Reintentar no servirá hasta que liberes sitio o amplíes tu almacenamiento.»</strong> indica que el saldo está agotado, y reintentar no sirve de nada mientras no haya sitio. Junto al aviso hay un enlace <strong>«Ampliar almacenamiento»</strong>. También puedes liberar el que ya tienes purgando <a href="/soporte/es/versiones-antiguas/">las versiones antiguas</a>.</p>
-<p>En la fila de cada archivo afectado, el motivo se lee como <strong>«No hay saldo suficiente para este archivo.»</strong></p>
+<p>Cada archivo afectado queda en su fila con el error y el enlace de <strong>«reintentar»</strong>, que no servirá hasta que haya sitio.</p>
 <aside class="nota nota-aviso"><b>Recarga la página después de ampliar el almacenamiento</b><p>El aviso de falta de espacio permanece en pantalla el resto de la sesión, aunque ya hayas ampliado y las subidas nuevas funcionen con normalidad. Recarga la página para dejar de verlo.</p></aside>
 <h3 id="6-la-subida-arranca-en-un-tiempo-razonable">6. La subida arranca en un tiempo razonable</h3>
 <p><strong>Qué mirar.</strong> Cuánto tarda la cola en empezar a moverse, y en qué navegador estás trabajando.</p>
@@ -196,18 +196,16 @@ document.addEventListener('click', function (e) {
 <p><strong>Qué mirar.</strong> La barra de progreso del vídeo y su estado en la lista.</p>
 <p><strong>Qué debería verse.</strong> El vídeo pasa a «listo» al terminar.</p>
 <p><strong>Qué hacer si no es así.</strong> Un vídeo detenido en el último tramo de la barra no está bloqueado: falta la tira de miniaturas, que se genera <strong>en paralelo a la subida</strong>, no después, y que todavía no ha terminado. Positiva la espera al final, hasta unos dos minutos, y el vídeo no pasa a «listo» hasta entonces. Espera y no recargues la página. Consulta <a href="/soporte/es/subir-fotos-y-videos/">Cómo subir fotografías y vídeos a una galería</a>.</p>
-<h3 id="8-el-error-menciona-la-politica-cors">8. El error menciona la política CORS</h3>
-<p><strong>Qué mirar.</strong> El texto completo del error de la fila.</p>
-<p><strong>Qué debería verse.</strong> Cualquier mensaje relativo al archivo o al espacio disponible, no a la infraestructura de almacenamiento.</p>
-<p><strong>Qué hacer si no es así.</strong> Este mensaje no depende de tu archivo ni de tu conexión:</p>
-<blockquote><p>El bucket no expuso la cabecera ETag (revisa la política CORS).</p></blockquote>
-<p>Corresponde a un fallo de configuración de nuestra infraestructura, no a algo que puedas resolver desde el panel. Escribe a <code>hola@positiva.studio</code> con el nombre de la galería. Respondemos en un plazo de 24 a 48 horas.</p>
+<h3 id="8-el-error-menciona-la-politica-cors">8. Los archivos válidos no fallan todos a la vez</h3>
+<p><strong>Qué mirar.</strong> Si fallan con <strong>«Error de subida»</strong> archivos en JPEG o MP4 con H.264, con espacio libre y con la conexión funcionando, y si <strong>«reintentar»</strong> vuelve a fallar.</p>
+<p><strong>Qué debería verse.</strong> Fallos aislados que se resuelven al reintentar.</p>
+<p><strong>Qué hacer si no es así.</strong> Si el formato es correcto, queda espacio y el fallo se repite en todos los archivos, lo más probable es un problema de nuestro lado, no algo que puedas resolver desde el panel. Escribe a <code>hola@positiva.studio</code> con el nombre de la galería. Respondemos en un plazo de 24 a 48 horas.</p>
 <h2 id="si-el-problema-continua">Si el problema continúa</h2>
 <p>Reúne estos datos antes de escribir a soporte:</p>
 <ul><li>El nombre de la galería y cuántos archivos componían la tanda.</li><li>La extensión y el tamaño de un archivo que haya fallado.</li><li>El texto exacto del error de esa fila.</li><li>El navegador y la versión que estabas utilizando.</li></ul>
 <p>Escribe a <code>hola@positiva.studio</code>. Respondemos en un plazo de 24 a 48 horas.</p>
     </div>
-    <p class="sello">Revisado contra la versión en producción el 31 de agosto de 2026.</p>
+    <p class="sello">Revisado contra la versión en producción el 17 de octubre de 2026.</p>
     <section class="ayuda">
       <h2 id="sigue-sin-resolverse">¿Sigue sin resolverse?</h2>
       <p>Si este artículo no responde a tu caso, escríbenos. Respondemos todas las consultas en un plazo de 24 a 48 horas.</p>

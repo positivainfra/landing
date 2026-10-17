@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo subir y organizar tus archivos en carpetas · Soporte de Positiva</title>
+<meta name="description" content="La sección Archivos guarda el material que no va en una galería, organizado en carpetas como en el Finder o el Explorador de tu ordenador.">
+<meta property="og:title" content="Cómo subir y organizar tus archivos en carpetas · Soporte de Positiva">
+<meta property="og:description" content="La sección Archivos guarda el material que no va en una galería, organizado en carpetas como en el Finder o el Explorador de tu ordenador.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://positiva.studio/soporte/es/archivos-y-carpetas/">
+<meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#F1F0EC">
+<link rel="canonical" href="https://positiva.studio/soporte/es/archivos-y-carpetas/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/soporte/soporte.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Cómo subir y organizar tus archivos en carpetas","description":"La sección Archivos guarda el material que no va en una galería, organizado en carpetas como en el Finder o el Explorador de tu ordenador.","inLanguage":"es","dateModified":"17 de octubre de 2026","publisher":{"@type":"Organization","name":"Positiva","url":"https://positiva.studio"},"mainEntityOfPage":"https://positiva.studio/soporte/es/archivos-y-carpetas/"}</script>
+<script defer src="/js/analytics.js"></script>
+<link rel="stylesheet" href="/docs.css">
+</head>
+<body class="pagina-articulo">
+
+<!-- pv:nav -->
+<!-- ════════════════════════════════════════════════════════════════
+     NAV DE LA WEB · fuente única: partials/chrome-nav.html
+     Lo usan gen.py (páginas de scripts/new-web/pages/) y `npm run stamp`
+     (blog, soporte, novedades y legales). Edita AQUÍ y ejecuta ambos.
+     ════════════════════════════════════════════════════════════════ -->
+<link rel="stylesheet" href="/chrome.css">
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+document.documentElement.classList.add('js');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+
+/* Conversión de Google Ads: «registro» (clientes potenciales).
+   Se dispara al pinchar cualquier enlace a app.positiva.studio/registro (los de
+   login apuntan a la raíz de la app y quedan fuera).
+   Sin bloquear la navegación: transport beacon sobrevive al cambio de página. */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+    'event_callback': callback
+  });
+  return false;
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="https://app.positiva.studio/registro"]');
+  if (!a || a.classList.contains('nav-login') || a.hasAttribute('data-no-conv')) return;
+  try {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+      'transport_type': 'beacon'
+    });
+  } catch (_) {}
+}, { passive: true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+<a class="saltar-n" href="#contenido">Saltar al contenido</a>
+<nav class="top" id="nav" aria-label="Principal"><div class="wrap inner">
+  <a href="/" class="logo" aria-label="Positiva, inicio"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
+  <div class="links">
+    <a href="/galerias/">Entrega</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-revision">Revisión<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-revision">
+        <a href="/revision-video/"><b>Revisión de vídeo</b><span>Comentarios en el fotograma exacto, exportables a DaVinci Resolve y Final Cut Pro</span></a>
+        <a href="/revision-foto/"><b>Revisión de fotos</b><span>Favoritas y comentarios foto a foto, en tu panel al momento</span></a>
+      </div>
+    </div>
+    <a href="/archivos/">Archivos</a>
+    <a href="/portfolio/">Portfolio</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-casos">Casos de uso<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-casos">
+        <a href="/freelance/"><b>Freelance</b><span>Entrega, revisión, archivos y portfolio en una sola cuota</span></a>
+        <a href="/bodas/"><b>Bodas</b><span>La boda completa, fotos y vídeo, con un enlace que no caduca</span></a>
+        <a href="/productoras/"><b>Productoras de vídeo</b><span>Revisión por fotograma con varios interlocutores y entrega del máster</span></a>
+      </div>
+    </div>
+    <a href="/precios/">Precios</a>
+    <a href="/notas/">Blog</a>
+  </div>
+  <div class="acc">
+    <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar</a>
+    <a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nav">Empieza gratis</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Abrir menú"><span></span></button>
+  </div>
+</div></nav>
+<div class="menu-m" id="menu-m" hidden>
+  <a href="/galerias/">Entrega</a>
+  <a href="/revision-video/">Revisión de vídeo</a>
+  <a href="/revision-foto/">Revisión de fotos</a>
+  <a href="/archivos/">Archivos</a>
+  <a href="/portfolio/">Portfolio</a>
+  <a href="/precios/">Precios</a>
+  <span class="sub">Casos de uso</span>
+  <a class="sm" href="/freelance/">Freelance</a>
+  <a class="sm" href="/bodas/">Bodas</a>
+  <a class="sm" href="/productoras/">Productoras de vídeo</a>
+  <span class="sub">Recursos</span>
+  <a class="sm" href="/notas/">Blog</a>
+  <a class="sm" href="/soporte/es/">Soporte</a>
+  <a class="sm" href="/sobre-nosotros/">Sobre nosotros</a>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Empieza gratis</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar en tu panel</a></div>
+</div>
+<!-- /pv:nav -->
+
+<main id="contenido">
+
+<div class="wrap doc">
+  <aside class="rail">
+    <a class="rail-volver" href="/soporte/es/"><span aria-hidden="true">←</span> Todo el soporte</a>
+    <form class="busca busca-mini" role="search" data-busca>
+  <label class="sr" for="q">Buscar en el soporte</label>
+  <div class="busca-campo">
+    <svg class="busca-lupa" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.8 12.8 17 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <input id="q" type="search" role="combobox" aria-expanded="false" aria-controls="busca-panel" aria-autocomplete="list"
+           placeholder="Buscar…" autocomplete="off" spellcheck="false">
+    <kbd class="busca-tecla" aria-hidden="true">/</kbd>
+  </div>
+  <div class="busca-panel" id="busca-panel" hidden></div>
+</form>
+    <div class="rail-seccion">
+      <p class="eyebrow"><span class="idx">05</span> Archivos y solicitudes</p>
+      <ul class="rail-lista"><li><span aria-current="page">Cómo subir y organizar tus archivos en carpetas</span></li><li><a href="/soporte/es/compartir-un-archivo-suelto/">Cómo compartir un archivo o una carpeta</a></li><li><a href="/soporte/es/que-ve-quien-recibe-tu-enlace/">Qué ve quien abre un enlace de Archivos</a></li><li><a href="/soporte/es/seleccionar-varios-archivos/">Cómo seleccionar varios archivos y carpetas a la vez</a></li><li><a href="/soporte/es/borrar-y-archivar-archivos/">Cómo borrar o archivar archivos y carpetas</a></li><li><a href="/soporte/es/pedir-archivos/">Cómo pedir archivos con una solicitud</a></li><li><a href="/soporte/es/subir-a-una-solicitud/">Cómo subir archivos a una solicitud</a></li><li><a href="/soporte/es/archivos-recibidos/">Dónde llegan los archivos de una solicitud</a></li></ul>
+    </div>
+  </aside>
+
+  <article class="art">
+    <nav class="miga" aria-label="Migas de pan">
+      <a href="/soporte/es/">Soporte</a> <span aria-hidden="true">·</span>
+      <a href="/soporte/es/#archivos">Archivos y solicitudes</a>
+    </nav>
+    
+    <h1>Cómo subir y organizar tus archivos en carpetas</h1>
+    <p class="lede">La sección Archivos guarda el material que no va en una galería, organizado en carpetas como en el Finder o el Explorador de tu ordenador.</p>
+    
+    <nav class="sumario" aria-label="En esta página"><b>En esta página</b><ol><li><a href="#como-esta-organizada-la-seccion">Cómo está organizada la sección</a></li><li><a href="#subir-archivos">Subir archivos</a></li><li><a href="#crear-carpetas">Crear carpetas</a></li><li><a href="#mover-y-renombrar">Mover y renombrar</a></li><li><a href="#buscar">Buscar</a></li><li><a href="#ordenar-y-cambiar-de-vista">Ordenar y cambiar de vista</a></li><li><a href="#cuanto-ocupa-cada-carpeta">Cuánto ocupa cada carpeta</a></li><li><a href="#la-ficha-de-un-archivo">La ficha de un archivo</a></li><li><a href="#descargar-tus-propios-archivos">Descargar tus propios archivos</a></li></ol></nav>
+    <div class="prosa">
+<p>Archivos es la sección del panel para todo lo que no va en una galería: presupuestos, contratos, material en bruto, copias de seguridad de un rodaje o entregas que solo hay que descargar. Funciona como las carpetas de tu ordenador, y cualquier archivo o carpeta puede compartirse después con un enlace.</p>
+<h2 id="como-esta-organizada-la-seccion">Cómo está organizada la sección</h2>
+<ul><li><strong>A la izquierda, el árbol de carpetas.</strong> Empieza en <strong>«Todo el estudio»</strong>, que es la raíz, y se despliega rama a rama. Las carpetas compartidas llevan un punto. Al pie está la barra de almacenamiento de tu cuenta. En pantallas más estrechas, el árbol se abre con el botón que lleva el nombre de la carpeta en la que estás, encima del título.</li><li><strong>A la derecha, la carpeta abierta.</strong> Arriba, la ruta (<strong>«Archivos»</strong> y las carpetas por las que has entrado), el nombre de la carpeta con su resumen —cuántos archivos tiene y cuánto ocupan— y los botones de acción. Debajo, la lista.</li><li><strong>Las pestañas.</strong> <strong>«Todo»</strong> enseña la carpeta abierta; <strong>«Compartidos»</strong> reúne lo que tiene enlace propio, y <strong>«Archivados»</strong>, lo que has apartado de la lista. Las dos últimas abarcan todo el estudio, no solo la carpeta abierta. La pestaña <strong>«Solicitudes»</strong> se explica en <a href="/soporte/es/pedir-archivos/">su propio artículo</a>.</li></ul>
+<p>La carpeta abierta forma parte de la dirección de la página: si recargas, sigues en la misma carpeta, y el botón Atrás del navegador te devuelve a la anterior.</p>
+<p>Las carpetas y la subida de varios archivos a la vez forman parte del plan Estudio. En los demás planes, Archivos guarda archivos sueltos y se suben de uno en uno: con más de uno, el panel responde <strong>«Tu plan permite enviar un archivo por enlace. Para mandar una tanda entera, mejora de plan.»</strong></p>
+<h2 id="subir-archivos">Subir archivos</h2>
+<ol><li>Entra en la carpeta donde quieres dejar los archivos.</li><li>Pulsa <strong>«Subir»</strong> y elige <strong>«Archivos»</strong> para seleccionar archivos sueltos, o <strong>«Carpeta»</strong> para subir una carpeta entera de tu ordenador.</li><li>Sigue el avance en la cola de subida, la misma que en las galerías.</li></ol>
+<p>También puedes arrastrar archivos o carpetas desde tu ordenador y soltarlos sobre la lista: el panel indica <strong>«Suelta para subir a»</strong> y el nombre de la carpeta de destino.</p>
+<ul><li><strong>La organización de tu disco se conserva.</strong> Al subir una carpeta, Positiva recrea dentro de la carpeta abierta las subcarpetas que traía, y lo confirma: <strong>«Se han creado 3 carpetas para conservar la organización de tu disco.»</strong></li><li><strong>Subir no comparte nada.</strong> Lo que subes queda en tu cuenta sin enlace, salvo que lo dejes dentro de una carpeta que ya está compartida; en ese caso, el panel te avisa antes con <strong>«Esta carpeta está compartida»</strong>.</li><li><strong>Si fallan algunos archivos, el resto queda subido.</strong> El aviso dice cuáles no entraron y ofrece <strong>«Reintentar esos»</strong>, que vuelve a subir solo esos.</li><li><strong>Con la búsqueda activa no se sube.</strong> El botón se desactiva con el motivo <strong>«Con la búsqueda puesta no hay carpeta de destino»</strong>. Borra la búsqueda y entra en la carpeta.</li></ul>
+<h2 id="crear-carpetas">Crear carpetas</h2>
+<p>El botón <strong>«Nueva carpeta»</strong> de la cabecera crea una carpeta dentro de la que tienes abierta. El botón con el signo + que hay junto a <strong>«Carpetas»</strong>, en lo alto del árbol, la crea en la raíz. En los dos casos escribes el nombre y pulsas <strong>«Crear»</strong>.</p>
+<p>Puedes repetir nombres dentro de la misma carpeta: el panel no lo impide.</p>
+<h2 id="mover-y-renombrar">Mover y renombrar</h2>
+<ul><li><strong>Mover.</strong> En el menú de los tres puntos de la fila, elige <strong>«Mover a…»</strong>. El diálogo muestra el árbol de carpetas, con <strong>«Archivos (raíz)»</strong> arriba; elige el destino y pulsa <strong>«Mover»</strong>. Una carpeta no puede moverse dentro de sí misma ni de sus subcarpetas, y esas opciones aparecen desactivadas. Mover no se puede deshacer desde el aviso: para devolver algo, muévelo otra vez.</li><li><strong>Renombrar.</strong> Pulsa el icono <strong>«Renombrar»</strong> de la fila, escribe el <strong>«Nuevo nombre»</strong> y guarda. En un archivo editas el nombre completo, extensión incluida. La carpeta abierta se renombra desde su menú de los tres puntos, con <strong>«Renombrar carpeta»</strong>.</li></ul>
+<p>Ni mover ni renombrar cambian la dirección de un enlace. Lo que sí cambia es qué enseña: mover un archivo fuera o dentro de una carpeta compartida lo quita o lo añade a ese enlace. Consulta <a href="/soporte/es/compartir-un-archivo-suelto/">Cómo compartir un archivo o una carpeta</a>.</p>
+<h2 id="buscar">Buscar</h2>
+<p>El campo <strong>«Buscar»</strong> de la cabecera encuentra archivos y carpetas por su nombre en todas las carpetas del estudio; encima de los resultados aparece <strong>«Buscando en todas las carpetas»</strong>. Para limitarla a la carpeta abierta, marca <strong>«Solo en esta carpeta»</strong>.</p>
+<p>Cada resultado que está en otra carpeta muestra su ruta, y el título resume lo encontrado, por ejemplo <strong>«6 resultados · 2 carpetas · 4 archivos · 1,2 GB»</strong>. Al abrir una carpeta desde los resultados, la búsqueda se borra y entras en ella.</p>
+<h2 id="ordenar-y-cambiar-de-vista">Ordenar y cambiar de vista</h2>
+<ul><li>La lista se ordena por <strong>«Nombre»</strong>, <strong>«Subido»</strong> o <strong>«Tamaño»</strong> pulsando la cabecera de la columna; un segundo clic invierte el orden. Por defecto aparece primero lo más reciente.</li><li>Las carpetas van siempre antes que los archivos, sea cual sea el orden.</li><li>Con <strong>«Ver en lista»</strong> y <strong>«Ver en rejilla»</strong> alternas entre la lista y una rejilla de tarjetas. En la rejilla, el orden se cambia con el botón <strong>«Ordenar»</strong>.</li></ul>
+<h2 id="cuanto-ocupa-cada-carpeta">Cuánto ocupa cada carpeta</h2>
+<p>La columna <strong>«Tamaño»</strong> de una carpeta suma todo lo que contiene, subcarpetas incluidas. Si algún archivo de dentro aún no se ha terminado de medir, la cifra lleva delante el signo «≈» y, al pasar el ratón, el panel explica <strong>«Falta por medir algún archivo de esta carpeta»</strong>: el tamaño real es algo mayor.</p>
+<p>Todo lo que hay en Archivos cuenta contra tu almacenamiento. Consulta <a href="/soporte/es/almacenamiento/">Cómo se calcula tu almacenamiento</a>.</p>
+<h2 id="la-ficha-de-un-archivo">La ficha de un archivo</h2>
+<p>Al pulsar el nombre de un archivo se abre su ficha en un panel lateral: <strong>«Subido»</strong>, <strong>«Tamaño»</strong>, <strong>«Carpeta»</strong> y <strong>«Enlaces»</strong>, con los ajustes del enlace si lo tiene. Al pie están <strong>«Descargar»</strong>, <strong>«Renombrar»</strong>, <strong>«Mover»</strong> y <strong>«Archivar»</strong>. Se cierra con la X, con <strong>Esc</strong> o pulsando de nuevo el nombre.</p>
+<h2 id="descargar-tus-propios-archivos">Descargar tus propios archivos</h2>
+<p>En el menú de los tres puntos de la fila, <strong>«Descargar»</strong> baja el archivo tal como lo subiste. En una carpeta, descarga un ZIP con todo su contenido y sus subcarpetas. Descargar desde el panel no crea ningún enlace.</p>
+<p>Un ZIP admite como máximo 800 archivos. Por encima, el panel responde <strong>«Son demasiados archivos para un solo ZIP (máximo 800). Descarga las carpetas por separado.»</strong></p>
+<p>Para descargar, mover, archivar o borrar varios elementos de una vez, consulta <a href="/soporte/es/seleccionar-varios-archivos/">Cómo seleccionar varios archivos y carpetas a la vez</a>.</p>
+    </div>
+    <p class="sello">Revisado contra la versión en producción el 17 de octubre de 2026.</p>
+    <section class="ayuda">
+      <h2 id="sigue-sin-resolverse">¿Sigue sin resolverse?</h2>
+      <p>Si este artículo no responde a tu caso, escríbenos. Respondemos todas las consultas en un plazo de 24 a 48 horas.</p>
+      <p><a class="btn btn-primario" href="mailto:hola@positiva.studio?subject=Soporte%20%C2%B7%20C%C3%B3mo%20subir%20y%20organizar%20tus%20archivos%20en%20carpetas">Escribir a hola@positiva.studio</a></p>
+    </section>
+    <section class="relacionados">
+      <h2 id="seguir-leyendo">Seguir leyendo</h2>
+      <ul><li><a href="/soporte/es/compartir-un-archivo-suelto/"><b>Cómo compartir un archivo o una carpeta</b><span>Desde la sección Archivos, cualquier archivo o carpeta se comparte con un enlace propio con tu marca, al que puedes poner contraseña y fecha de caducidad.</span></a></li><li><a href="/soporte/es/seleccionar-varios-archivos/"><b>Cómo seleccionar varios archivos y carpetas a la vez</b><span>Con las casillas, ⇧ y ⌘ seleccionas varios archivos y carpetas, y la barra inferior aplica la misma acción a todos de una vez.</span></a></li><li><a href="/soporte/es/borrar-y-archivar-archivos/"><b>Cómo borrar o archivar archivos y carpetas</b><span>Borrar elimina para siempre el archivo o la carpeta con todo su contenido y apaga sus enlaces; archivar solo lo aparta de la lista y se deshace con un clic.</span></a></li><li><a href="/soporte/es/almacenamiento/"><b>Cómo se calcula tu almacenamiento</b><span>Tu cuenta dispone de un único saldo de almacenamiento del que descuentan las fotografías, los vídeos, los ZIP, los archivos sueltos y las versiones antiguas.</span></a></li></ul>
+    </section>
+  </article>
+</div>
+</main>
+
+<!-- pv:footer -->
+<!-- ════════════════════════════════════════════════════════════════
+     PIE COMÚN · fuente única: partials/chrome-footer.html
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
+     las páginas. Sirve de mapa del sitio: cada página pública real
+     debe estar enlazada aquí (SEO + LLMs leen esto).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="footer">
+footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
+.footcols{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pv-s6);
+  margin-bottom:var(--pv-s8);
+}
+.footcols h3{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-tinta-60);margin:0 0 var(--pv-s3);
+}
+.footcols a{
+  display:block;font-family:var(--pv-sans);font-size:14px;color:var(--pv-tinta-60);
+  text-decoration:none;padding:4px 0;transition:color .18s;
+}
+.footcols a:hover{color:var(--pv-tinta)}
+.footer-word{
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(15px,3.9vw,58px);line-height:1;color:var(--pv-tinta);
+  white-space:nowrap;
+}
+.footer-word svg{height:.92em;width:auto;flex:none}
+.footer-word span{color:var(--pv-ambar)}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
+.footer-meta{
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
+  font-size:14px;color:var(--pv-tinta-60);
+}
+.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
+.footer-meta a:hover{color:var(--pv-tinta)}
+@media(max-width:760px){
+  .footcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--pv-s5) var(--pv-s4)}
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <h3>Galerías para clientes</h3>
+        <a href="/galerias/">Entrega tu trabajo</a>
+        <a href="/revision-video/">Revisión de vídeo</a>
+        <a href="/revision-foto/">Revisión de fotografías</a>
+        <a href="/portfolio/">Portfolio público</a>
+        <a href="/precios/">Precios</a>
+        <a href="/#faq">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <h3>Casos de uso</h3>
+        <a href="/freelance/">Para profesionales freelance</a>
+        <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
+        <a href="/productoras/">Para productoras de vídeo</a>
+      </div>
+      <div>
+        <h3>Comparativas</h3>
+        <a href="/positiva-vs-pictime-vs-pixieset/">Positiva vs Pic-Time · Pixieset</a>
+        <a href="/positiva-vs-arcadina/">Positiva vs Arcadina</a>
+        <a href="/positiva-vs-dropbox/">Positiva vs Dropbox</a>
+        <a href="/positiva-vs-google-drive/">Positiva vs Google Drive</a>
+        <a href="/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>
+      </div>
+      <div>
+        <h3>Recursos</h3>
+        <a href="/soporte/es/">Soporte</a>
+        <a href="/novedades/">Novedades</a>
+        <a href="/notas/">Blog</a>
+        <a href="/sobre-nosotros/">Sobre nosotros</a>
+        <a href="https://app.positiva.studio" data-no-conv>Accede a tu panel</a>
+        <a href="https://app.positiva.studio/registro">Empieza gratis</a>
+        <a href="mailto:hola@positiva.studio">Contacto</a>
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/terminos/">Términos</a>
+      </div>
+    </div>
+    <div class="footer-word">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
+    <p class="footer-entidad">Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.</p>
+    <div class="footer-meta">
+      <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Hecha en España · Se gestiona, se mejora y se factura desde Europa</span>
+      <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+    </div>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://positiva.studio/#org",
+      "name": "Positiva",
+      "url": "https://positiva.studio/",
+      "logo": "https://positiva.studio/assets/og.png",
+      "description": "Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.",
+      "email": "hola@positiva.studio",
+      "foundingLocation": { "@type": "Place", "name": "Valencia, España" },
+      "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
+      "areaServed": "ES",
+      "knowsLanguage": "es",
+      "sameAs": [
+        "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
+        "https://www.linkedin.com/company/positiva-studio/",
+        "https://instagram.com/positiva.studio_"
+      ]
+    }</script>
+  </div>
+</footer>
+
+<script>
+/* ── Vídeos del sitio: reproducción automática en bucle mientras están en
+   pantalla y pausa al salir — mismo comportamiento en móvil y escritorio.
+   Quedan fuera: la historia de la home (.hst), las tarjetas de la home
+   (.qcard) y el showcase (#reelvid), que tienen su propio control, los
+   vídeos con controles y los marcados con data-noauto. ── */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  const vids = Array.prototype.filter.call(
+    document.querySelectorAll('video[loop][muted]:not([controls]):not([data-noauto])'),
+    (v) => !v.closest('.hst') && !v.closest('.qcard') && v.id !== 'reelvid'
+  );
+  if (!vids.length) return;
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); }
+    else if (!v.paused) { v.pause(); }
+  }), { threshold: 0.25, rootMargin: '100px 0px' });
+  vids.forEach((v) => { v.muted = true; v.playsInline = true; io.observe(v); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
+})();
+</script>
+<!-- /pv:footer -->
+
+<script>
+/* La cabecera y el pie traen su propio JS desde los parciales (cápsula al
+   bajar, menú móvil y desplegables). Aquí solo va lo que es del soporte. */
+document.documentElement.classList.add('js');
+
+(() => {
+  /* Marca «Soporte» como sección activa en el menú común, sin tocar el parcial. */
+  for (const a of document.querySelectorAll('#nav .nav-links a, .menu a')) {
+    const href = a.getAttribute('href') || '';
+    if (href === '/soporte/' || href.startsWith('/soporte/')) a.setAttribute('aria-current', 'page');
+  }
+})();
+
+(() => {
+  /* ── Buscador ────────────────────────────────────────────────────────────
+   * Busca en el TEXTO COMPLETO de los artículos, no solo en los títulos: quien
+   * teclea «RAW» o «Cuarto oscuro» está buscando una frase que vive dentro de
+   * un artículo, no el nombre de ninguno.
+   *
+   * El índice (buscador.json) se descarga la primera vez que alguien toca el
+   * campo, no al cargar la página: quien viene a leer un artículo concreto no
+   * paga por una búsqueda que no va a hacer.
+   */
+  const form = document.querySelector('[data-busca]');
+  if (!form) return;
+
+  const campo = form.querySelector('input');
+  const panel = form.querySelector('.busca-panel');
+  const IDIOMA = document.documentElement.lang || 'es';
+
+  const limpia = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const escapaHtml = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  let indice = null;
+  let cargando = null;
+  let resultados = [];
+  let foco = -1;
+
+  const cargar = () => {
+    if (indice) return Promise.resolve(indice);
+    if (!cargando) {
+      cargando = fetch(`/soporte/${IDIOMA}/buscador.json`)
+        .then((r) => r.json())
+        .then((d) => {
+          indice = d.map((a) => ({ ...a, _t: limpia(a.titulo), _d: limpia(a.descripcion), _c: limpia(a.texto) }));
+          return indice;
+        })
+        .catch(() => { indice = []; return indice; });
+    }
+    return cargando;
+  };
+
+  // Todos los términos tienen que aparecer en algún sitio. El título pesa seis
+  // veces más que el cuerpo: buscar «momentos» tiene que devolver el artículo
+  // que se llama así, no los nueve que lo mencionan de pasada.
+  function buscar(q) {
+    const terminos = limpia(q).split(/\s+/).filter((t) => t.length > 1);
+    if (!terminos.length || !indice) return [];
+    const salida = [];
+    for (const art of indice) {
+      let puntos = 0;
+      let todos = true;
+      for (const t of terminos) {
+        let p = 0;
+        if (art._t.includes(t)) p += art._t.startsWith(t) ? 16 : 12;
+        if (art._d.includes(t)) p += 5;
+        if (art._c.includes(t)) p += 2;
+        if (!p) { todos = false; break; }
+        puntos += p;
+      }
+      if (todos) salida.push({ art, puntos, termino: terminos[0] });
+    }
+    return salida.sort((a, b) => b.puntos - a.puntos).slice(0, 7);
+  }
+
+  // Un trozo del artículo alrededor de la primera aparición, con el término
+  // marcado. Sin esto, siete resultados con su descripción genérica obligan a
+  // abrirlos uno a uno para ver cuál era.
+  function fragmento(art, termino) {
+    const donde = art._c.indexOf(termino);
+    if (donde === -1) return escapaHtml(art.descripcion);
+    // Se recorta por palabra entera: un fragmento que empieza en «…egador no
+    // sabe» hace dudar de si la página está rota.
+    let desde = Math.max(0, donde - 60);
+    if (desde > 0) {
+      const espacio = art.texto.indexOf(' ', desde);
+      if (espacio !== -1 && espacio < donde) desde = espacio + 1;
+    }
+    let trozo = art.texto.slice(desde, desde + 190);
+    const corte = trozo.lastIndexOf(' ');
+    const cortado = desde + 190 < art.texto.length;
+    if (cortado && corte > 120) trozo = trozo.slice(0, corte);
+    const re = new RegExp(`(${termino.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return (desde > 0 ? '…' : '') + escapaHtml(trozo).replace(re, '<mark>$1</mark>') + (cortado ? '…' : '');
+  }
+
+  function pintar(q) {
+    if (!q.trim()) { cerrar(); return; }
+    resultados = buscar(q);
+    foco = -1;
+    if (!resultados.length) {
+      panel.innerHTML = `<p class="busca-nada">Ningún artículo coincide con <b>${escapaHtml(q)}</b>.
+        Escribe a <a href="mailto:hola@positiva.studio">hola@positiva.studio</a> indicando tu caso:
+        respondemos en un plazo de 24 a 48 horas.</p>`;
+    } else {
+      panel.innerHTML = `<ul role="listbox" aria-label="Resultados">${resultados.map((r, i) => `
+        <li role="option" id="res-${i}" aria-selected="false">
+          <a href="/soporte/${IDIOMA}/${r.art.slug}/">
+            <b>${escapaHtml(r.art.titulo)}</b>
+            <span class="busca-cat">${escapaHtml(r.art.categoria)}</span>
+            <span class="busca-frag">${fragmento(r.art, r.termino)}</span>
+          </a>
+        </li>`).join('')}</ul>`;
+    }
+    panel.hidden = false;
+    campo.setAttribute('aria-expanded', 'true');
+  }
+
+  function cerrar() {
+    panel.hidden = true;
+    panel.innerHTML = '';
+    campo.setAttribute('aria-expanded', 'false');
+    campo.removeAttribute('aria-activedescendant');
+    foco = -1;
+  }
+
+  function mover(paso) {
+    const items = [...panel.querySelectorAll('li')];
+    if (!items.length) return;
+    if (foco >= 0) items[foco].setAttribute('aria-selected', 'false');
+    foco = (foco + paso + items.length + 1) % (items.length + 1) - 1;
+    if (foco < 0) { campo.removeAttribute('aria-activedescendant'); return; }
+    items[foco].setAttribute('aria-selected', 'true');
+    items[foco].scrollIntoView({ block: 'nearest' });
+    campo.setAttribute('aria-activedescendant', `res-${foco}`);
+  }
+
+  campo.addEventListener('focus', cargar, { once: true });
+  campo.addEventListener('input', () => { cargar().then(() => pintar(campo.value)); });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const primero = panel.querySelector('a');
+    if (primero) primero.click();
+  });
+
+  campo.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); mover(1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); mover(-1); }
+    else if (e.key === 'Enter' && foco >= 0) { e.preventDefault(); panel.querySelectorAll('a')[foco].click(); }
+    else if (e.key === 'Escape') { cerrar(); campo.blur(); }
+  });
+
+  document.addEventListener('click', (e) => { if (!form.contains(e.target)) cerrar(); });
+
+  // «/» desde cualquier punto de la página lleva el cursor al buscador.
+  document.addEventListener('keydown', (e) => {
+    const editando = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable;
+    if (editando) return;
+    if (e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+      e.preventDefault();
+      // preventScroll + scrollIntoView propio: el foco a secas deja el campo
+      // justo debajo de la barra fija, medio tapado.
+      campo.focus({ preventScroll: true });
+      campo.select();
+      const caja = form.getBoundingClientRect();
+      if (caja.top < 110 || caja.bottom > window.innerHeight - 80) {
+        form.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+    }
+  });
+})();
+
+(() => {
+  /* ── Raíl del índice: marca la categoría que estás mirando ─────────────── */
+  const enlaces = [...document.querySelectorAll('.rail-cats a')];
+  if (!enlaces.length || !('IntersectionObserver' in window)) return;
+  const porId = new Map(enlaces.map((a) => [a.getAttribute('href').slice(1), a]));
+  const vistos = new Set();
+  const io = new IntersectionObserver((entradas) => {
+    for (const e of entradas) e.isIntersecting ? vistos.add(e.target.id) : vistos.delete(e.target.id);
+    const activo = enlaces.find((a) => vistos.has(a.getAttribute('href').slice(1)));
+    for (const a of enlaces) a.classList.toggle('activo', a === activo);
+  }, { rootMargin: '-96px 0px -70% 0px' });
+  for (const id of porId.keys()) {
+    const sec = document.getElementById(id);
+    if (sec) io.observe(sec);
+  }
+})();
+</script>
+
+<!-- Analítica · Umami autoalojado (mismo tracker que el resto de la web). -->
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script src="/positiva.js" defer></script>
+</body>
+</html>
