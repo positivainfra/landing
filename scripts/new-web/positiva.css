@@ -344,3 +344,11 @@ em.a{font-style:italic;color:var(--ambar-ink)}
 .cols p.h-m{font-size:clamp(26px,2.8vw,40px);line-height:1.15;color:var(--tinta)}
 .sala .cols code{background:#2A2A27;color:var(--hueso)}
 @media(max-width:760px){.cols.m2{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cols.m2>div{padding:18px 16px}.cols.m2 h3{font-size:19px}.cols.m2 p{font-size:14px}}
+
+/* Letra pequeña de plan: toda función que no está en todos los planes lo dice
+   así, junto a su texto. Uso: <small class="plan">Plan Estudio</small> /
+   <small class="plan">Planes Autor y Estudio</small> (EN: Studio plan /
+   Author and Studio plans). Dentro de un <li> o un titular va en línea. */
+small.plan{background:none;border:0;border-radius:0;padding:0;box-shadow:none;transform:none;min-height:0;display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-2);line-height:1.5}
+li small.plan,h3 small.plan,h2 small.plan,.k small.plan,b small.plan,td small.plan{display:inline;margin:0 0 0 6px}
+.sala small.plan,.oscuro small.plan{color:#A9A8A2}

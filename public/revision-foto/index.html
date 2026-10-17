@@ -6,6 +6,10 @@
 <title>Revisión y selección de fotos online con tu cliente · Positiva</title>
 <meta name="description" content="Tu cliente marca favoritas y comenta foto a foto en la propia galería. Tú recibes la selección en tu panel al momento y la exportas a tu editor: lista .txt, hoja .csv o etiquetas de color de Finder.">
 <link rel="canonical" href="https://positiva.studio/revision-foto/">
+<link rel="alternate" hreflang="es" href="https://positiva.studio/revision-foto/">
+<link rel="alternate" hreflang="en" href="https://positiva.studio/en/photo-proofing/">
+<link rel="alternate" hreflang="x-default" href="https://positiva.studio/revision-foto/">
+
 <meta property="og:title" content="Revisión y selección de fotos online con tu cliente · Positiva">
 <meta property="og:description" content="Tu cliente marca favoritas y comenta foto a foto en la propia galería. Tú recibes la selección en tu panel al momento y la exportas a tu editor: lista .txt, hoja .csv o etiquetas de color de Finder.">
 <meta property="og:type" content="website">
@@ -114,6 +118,7 @@ document.addEventListener('click', function (e) {
     <a href="/notas/">Blog</a>
   </div>
   <div class="acc">
+    <a class="lang" href="/en/photo-proofing/" hreflang="en" lang="en" data-lang-switch title="English">EN</a>
     <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar</a>
     <a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nav">Empieza gratis</a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Abrir menú"><span></span></button>
@@ -134,6 +139,7 @@ document.addEventListener('click', function (e) {
   <a class="sm" href="/notas/">Blog</a>
   <a class="sm" href="/soporte/es/">Soporte</a>
   <a class="sm" href="/sobre-nosotros/">Sobre nosotros</a>
+  <a class="sm" href="/en/photo-proofing/" hreflang="en" lang="en" data-lang-switch>English</a>
   <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Empieza gratis</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar en tu panel</a></div>
 </div>
 <main id="contenido">
@@ -176,7 +182,7 @@ document.addEventListener('click', function (e) {
     <details><summary>¿Cómo recibo la selección?</summary><p>En tu panel, al momento. Y la exportas como lista de nombres (.txt), hoja de cálculo (.csv) o etiquetas de color de Finder para aplicarla en tu editor. <a href="/soporte/es/favoritas-del-cliente/">Cómo exportar las favoritas</a>.</p></details>
     <details><summary>¿Pueden revisar varias personas a la vez?</summary><p>Sí. Y tú eliges el modo por galería: colaborativo — todos ven los comentarios de todos — o individual, donde cada uno solo ve los suyos. <a href="/soporte/es/quien-ve-los-comentarios/">Quién ve cada comentario</a>.</p></details>
     <details><summary>¿Está en el plan Gratis?</summary><p>Sí: la selección de favoritas y los comentarios en fotografías están desde el plan Gratis. <a href="/precios/">Los planes, en detalle</a>.</p></details>
-    <details><summary>¿Y para vídeo?</summary><p>La revisión de vídeo ancla cada comentario a su fotograma y exporta marcadores a DaVinci Resolve o Final Cut. <a href="/revision-video/">Revisión de vídeo, a fondo</a>.</p></details>
+    <details><summary>¿Y para vídeo?</summary><p>La revisión de vídeo ancla cada comentario a su fotograma y exporta marcadores a DaVinci Resolve o Final Cut. <a href="/revision-video/">Revisión de vídeo, a fondo</a>.</p><small class="plan">Planes Autor y Estudio</small></details>
   </div>
   <nav class="ayuda r" aria-label="Artículos relacionados"><span>Del soporte</span><div><a href="/revision-video/">Revisión de vídeo</a><a href="/galerias/">Galerías de entrega</a><a href="/soporte/es/como-funciona-la-revision/">Cómo funciona la revisión</a><a href="/soporte/es/favoritas-del-cliente/">Las favoritas y cómo exportarlas</a><a href="/soporte/es/comentarios-en-el-panel/">Los comentarios en tu panel</a><a href="/soporte/es/convertir-entrega-revision/">Convertir entrega y revisión</a></div></nav>
 </section>
@@ -238,7 +244,7 @@ document.addEventListener('click', function (e) {
         {
           "@type": "Question",
           "name": "¿Y para vídeo?",
-          "acceptedAnswer": { "@type": "Answer", "text": "La revisión de vídeo ancla cada comentario a su fotograma y exporta marcadores a DaVinci Resolve o Final Cut Pro." }
+          "acceptedAnswer": { "@type": "Answer", "text": "La revisión de vídeo ancla cada comentario a su fotograma y exporta marcadores a DaVinci Resolve o Final Cut Pro. Está en los planes Autor y Estudio." }
         }
       ]
     }
@@ -321,6 +327,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
         <a href="/novedades/">Novedades</a>
         <a href="/notas/">Blog</a>
         <a href="/sobre-nosotros/">Sobre nosotros</a>
+        <a href="/en/" hreflang="en" lang="en">English</a>
         <a href="https://app.positiva.studio" data-no-conv>Accede a tu panel</a>
         <a href="https://app.positiva.studio/registro">Empieza gratis</a>
         <a href="mailto:hola@positiva.studio">Contacto</a>
@@ -354,7 +361,7 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
       "foundingLocation": { "@type": "Place", "name": "Valencia, España" },
       "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
       "areaServed": "ES",
-      "knowsLanguage": "es",
+      "knowsLanguage": ["es", "en"],
       "sameAs": [
         "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
         "https://www.linkedin.com/company/positiva-studio/",

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio Website for Photographers · Positiva</title>
+<meta name="description" content="A portfolio website for photographers and videographers, built from the photos and video already in your galleries. Home, Galleries, About and Contact.">
+<link rel="canonical" href="https://positiva.studio/en/portfolio-website/">
+<link rel="alternate" hreflang="es" href="https://positiva.studio/portfolio/">
+<link rel="alternate" hreflang="en" href="https://positiva.studio/en/portfolio-website/">
+<link rel="alternate" hreflang="x-default" href="https://positiva.studio/portfolio/">
+
+<meta property="og:title" content="Portfolio website for photographers and videographers · Positiva">
+<meta property="og:description" content="A portfolio website for photographers and videographers, built from the photos and video already in your galleries. Home, Galleries, About and Contact.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://positiva.studio/en/portfolio-website/">
+<meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F3F2EE">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/img/perfiles/perfil-rmq.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="/chrome.css">
+<link rel="stylesheet" href="/positiva.css">
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<!-- Session replay SOLO aquí, y la arquitectura ya hace la separación sola:
+     por esta plantilla pasan únicamente las páginas de scripts/new-web/pages/,
+     que son todas comerciales (home, precios, casos, comparativas). Las legales,
+     el soporte y el blog entran por DERIVADAS, heredan el <head> de la página
+     real de public/ y por tanto NO traen replay, igual que en el sitio vivo.
+     Si algún día una página legal se mueve a pages/, esto hay que revisarlo. -->
+<script defer src="https://analytics.labbo.studio/recorder.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script defer src="/js/analytics.js"></script>
+</head>
+<body>
+<!-- ════════════════════════════════════════════════════════════════
+     NAV DE LA WEB EN INGLÉS · gemelo de partials/chrome-nav.html (cambia los dos a la vez)
+     Lo usan gen.py (páginas de scripts/new-web/pages/) y `npm run stamp`
+     (blog, soporte, novedades y legales). Edita AQUÍ y ejecuta ambos.
+     ════════════════════════════════════════════════════════════════ -->
+<link rel="stylesheet" href="/chrome.css">
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+document.documentElement.classList.add('js');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+
+/* Conversión de Google Ads: «registro» (clientes potenciales).
+   Se dispara al pinchar cualquier enlace a app.positiva.studio/registro (los de
+   login apuntan a la raíz de la app y quedan fuera).
+   Sin bloquear la navegación: transport beacon sobrevive al cambio de página. */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+    'event_callback': callback
+  });
+  return false;
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="https://app.positiva.studio/registro"]');
+  if (!a || a.classList.contains('nav-login') || a.hasAttribute('data-no-conv')) return;
+  try {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+      'transport_type': 'beacon'
+    });
+  } catch (_) {}
+}, { passive: true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+<a class="saltar-n" href="#contenido">Skip to content</a>
+<nav class="top" id="nav" aria-label="Main"><div class="wrap inner">
+  <a href="/en/" class="logo" aria-label="Positiva, home"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
+  <div class="links">
+    <a href="/en/client-galleries/">Client galleries</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-revision">Review<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-revision">
+        <a href="/en/video-review/"><b>Video review</b><span>Frame-accurate comments, exported as markers to DaVinci Resolve and Final Cut Pro</span></a>
+        <a href="/en/photo-proofing/"><b>Photo proofing</b><span>Client favorites and comments on every photo, live in your dashboard</span></a>
+      </div>
+    </div>
+    <a href="/en/file-sharing/">Files</a>
+    <a href="/en/portfolio-website/">Portfolio</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-casos">Compare<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-casos">
+        <a href="/en/pixieset-alternative/"><b>Pixieset alternative</b><span>Photo and video in the same client gallery</span></a>
+        <a href="/en/pic-time-alternative/"><b>Pic-Time alternative</b><span>Client galleries without a print store attached</span></a>
+        <a href="/en/frame-io-alternative/"><b>Frame.io alternative</b><span>Frame-accurate video review with client delivery included</span></a>
+      </div>
+    </div>
+    <a href="/en/pricing/">Pricing</a>
+  </div>
+  <div class="acc">
+    <a class="lang" href="/portfolio/" hreflang="es" lang="es" data-lang-switch title="Español">ES</a>
+    <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Log in</a>
+    <a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nav">Start free</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Open menu"><span></span></button>
+  </div>
+</div></nav>
+<div class="menu-m" id="menu-m" hidden>
+  <a href="/en/client-galleries/">Client galleries</a>
+  <a href="/en/video-review/">Video review</a>
+  <a href="/en/photo-proofing/">Photo proofing</a>
+  <a href="/en/file-sharing/">Files</a>
+  <a href="/en/portfolio-website/">Portfolio</a>
+  <a href="/en/pricing/">Pricing</a>
+  <span class="sub">Compare</span>
+  <a class="sm" href="/en/pixieset-alternative/">Pixieset alternative</a>
+  <a class="sm" href="/en/pic-time-alternative/">Pic-Time alternative</a>
+  <a class="sm" href="/en/frame-io-alternative/">Frame.io alternative</a>
+  <span class="sub">Resources</span>
+  <a class="sm" href="/soporte/es/">Help center (in Spanish)</a>
+  <a class="sm" href="/portfolio/" hreflang="es" lang="es" data-lang-switch>Español</a>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Start free</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Log in to your dashboard</a></div>
+</div>
+<main id="contenido">
+<div class="wrap">
+<section class="hero">
+  <span class="eyebrow">Portfolio website</span>
+  <p class="h-xl titular"><span class="w"><span style="animation-delay:0.00s">Your</span></span> <span class="w"><span style="animation-delay:0.05s">website:</span></span> <span class="w"><span style="animation-delay:0.10s">three</span></span> <span class="w"><span style="animation-delay:0.15s">years</span></span> <span class="w"><span style="animation-delay:0.20s"><em class="a">“under</em></span></span> <span class="w"><span style="animation-delay:0.25s"><em class="a">construction.”</em></span></span></p>
+  <h1 class="lede h1d">Portfolio website for photographers and videographers</h1>
+  <p class="lede">The one on Positiva goes live today: pick the best of what you’ve already uploaded and your website stays up to date. On your own subdomain, from day one.</p>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click">Start free</a><a class="btn ghost" href="#webs">See real websites</a></div>
+  <figure class="browser stage" data-grow>
+    <div class="bar"><i></i><i></i><i></i><span class="url">rodrigomarquez.positiva.studio</span></div>
+    <div class="panes"><div class="pane on"><img src="/img/perfiles/perfil-rmq.webp" alt="Rodrigo Márquez’s portfolio website, published with Positiva"></div></div>
+  </figure>
+</section>
+</div>
+
+<div class="wrap">
+<section class="sec" id="como">
+  <div class="head r"><span class="eyebrow">How it works</span><h2 class="h-l">You already have your best portfolio: <em class="a">this year’s deliveries.</em></h2></div>
+  <div class="cols">
+    <div class="r"><span class="k">No second upload</span><h3>It’s already in Positiva</h3><p>As soon as a photo or a video is in Positiva, it’s available for your website. No folders to prepare and no uploading your work a second time: the portfolio comes together after the deliveries, not before.</p></div>
+    <div class="r d1"><span class="k">No settings</span><h3>Add what represents you</h3><p>No fiddling with settings, converting images or plugins that break. Select, publish, done.</p></div>
+    <div class="r d2"><span class="k">Your brand</span><h3>Your brand, of course</h3><p>Your galleries, your story and your contact details. Everything a client needs to get to know you.</p><p>Your logo, colors and fonts, too. <small class="plan">Author and Studio plans</small></p></div>
+  </div>
+</section>
+
+<section class="sec" id="webs">
+  <div class="head r"><span class="eyebrow">Portfolios</span><h2 class="h-l">Real websites, <em class="a">published from the dashboard.</em></h2><p class="lede">No templates to fill in and no page builder to learn: the website reads your selected work, and it’s served at your address.</p><p class="lede">It also reads your brand: logo, colors and fonts. <small class="plan">Author and Studio plans</small></p></div>
+  <div class="pair">
+    <figure class="media reveal-img"><img src="/img/perfiles/perfil-rmq.webp" alt="Rodrigo Márquez’s portfolio website on Positiva, with Home, Galleries, About and Contact pages" loading="lazy"><figcaption>Photographer &amp; filmmaker · rodrigomarquez.positiva.studio</figcaption></figure>
+    <figure class="media reveal-img"><img src="/img/perfiles/perfil-qws.webp" alt="Quiero Wedding Studio’s portfolio website on Positiva" loading="lazy"><figcaption>Wedding studio · quieroweddingstudio.positiva.studio</figcaption></figure>
+  </div>
+</section>
+</div>
+
+<section class="sala"><div class="wrap">
+  <div class="head r" style="padding-top:var(--gap)"><span class="eyebrow">Video, too</span><h2 class="h-l">Your video work, <em class="a">without using more storage.</em> <small class="plan">Author and Studio plans</small></h2><p class="lede">The portfolio takes video in two ways: pieces you’ve already uploaded to Positiva, or links from YouTube or Vimeo.</p></div>
+  <div class="cols c2">
+    <div class="r"><span class="k">Already in Positiva</span><h3>Uploaded video</h3><p>Use the file that’s already in Positiva, the one you delivered to your client. No third-party watermarks and no ads.</p></div>
+    <div class="r d1"><span class="k">YouTube or Vimeo</span><h3>Linked video</h3><p>Paste the YouTube or Vimeo link as is. It doesn’t use any of your storage.</p></div>
+  </div>
+</div></section>
+
+<div class="wrap">
+<section class="sec tight" id="faq">
+  <div class="head r"><span class="eyebrow">FAQ</span><h2 class="h-l">The ones that matter.</h2></div>
+  <div class="faq r">
+    <details><summary>Do I have to upload my photos again for the portfolio?</summary><p>No. The portfolio is built from the galleries you’ve already uploaded: as soon as a piece is in Positiva, it’s available for your website.</p></details>
+    <details><summary>Which plans include the portfolio website?</summary><p>All of them, including Free. Video on your portfolio website — uploaded or linked — is available on the Author and Studio plans.</p></details>
+    <details><summary>Can I turn my portfolio website off?</summary><p>Yes, with the “Turn off profile” switch. Nothing is deleted: your content stays exactly as it is, and anyone who opens your address is redirected to positiva.studio until you turn it back on. Your private galleries keep working with their links.</p></details>
+    <details><summary>What’s the difference between the portfolio and a public gallery?</summary><p>Adding a piece to the portfolio shows that photo or video on your website. Making a gallery public shows the whole gallery, with everything in it. They’re two separate decisions.</p></details>
+    <details><summary>Can I use my own domain?</summary><p>Your website is live at yourstudio.positiva.studio from day one, on every plan. On the Studio plan you can serve it from your own custom domain. <a href="/en/client-galleries/#marca" style="color:var(--pv-ambar-ink)">How your brand works in Positiva</a>.</p></details>
+  </div>
+</section>
+</div>
+<section class="final" id="demo"><div class="wrap inner">
+  <span class="eyebrow r">Book a demo</span>
+  <h2 class="h-xl r d1">Your website, live <em class="a">before your next booking.</em></h2>
+  <p class="lede r d2">Positiva is best shown live. Book a demo and I’ll walk you through it on your own workflow, with no commitment. If you’d rather explore on your own, <a href="https://app.positiva.studio/registro" data-ev="cta_register_click">sign up and start today</a>.</p>
+  <form class="demo" id="wl" data-demo novalidate>
+    <input type="email" name="email" id="wl-email" placeholder="name@yourstudio.com" required aria-label="Your email" autocomplete="email">
+    <button type="submit" class="btn">Book a demo</button>
+  </form>
+  <small class="demo-msg" id="msg">No commitment and no newsletter: I'll only email you to schedule it.</small>
+</div></section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positiva.studio/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Portfolio website", "item": "https://positiva.studio/en/portfolio-website/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I have to upload my photos again for the portfolio?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The portfolio is built from the galleries you've already uploaded: as soon as a photo or a video is in Positiva, it's available to add to your website." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which plans include the portfolio website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "All of them, including Free. Video on your portfolio website, uploaded or linked from YouTube or Vimeo, is available on the Author and Studio plans." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I turn my portfolio website off?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, with the Turn off profile switch. Nothing is deleted: your content stays exactly as it is, and anyone who opens your address is redirected to positiva.studio until you turn it back on. Your private galleries aren't affected." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between the portfolio and a public gallery?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Adding a piece to the portfolio shows that photo or video on your website. Making a gallery public shows the whole gallery. They're two separate decisions." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use my own domain?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Your website is live at yourstudio.positiva.studio from day one, on every plan. On the Studio plan you can serve it from your own custom domain." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</main>
+<!-- ════════════════════════════════════════════════════════════════
+     PIE EN INGLÉS · gemelo de partials/chrome-footer.html (cambia los dos a la vez)
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
+     las páginas. Sirve de mapa del sitio: cada página pública real
+     debe estar enlazada aquí (SEO + LLMs leen esto).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="footer">
+footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
+.footcols{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pv-s6);
+  margin-bottom:var(--pv-s8);
+}
+.footcols h3{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-tinta-60);margin:0 0 var(--pv-s3);
+}
+.footcols a{
+  display:block;font-family:var(--pv-sans);font-size:14px;color:var(--pv-tinta-60);
+  text-decoration:none;padding:4px 0;transition:color .18s;
+}
+.footcols a:hover{color:var(--pv-tinta)}
+.footer-word{
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(15px,3.9vw,58px);line-height:1;color:var(--pv-tinta);
+  white-space:nowrap;
+}
+.footer-word svg{height:.92em;width:auto;flex:none}
+.footer-word span{color:var(--pv-ambar)}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
+.footer-meta{
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
+  font-size:14px;color:var(--pv-tinta-60);
+}
+.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
+.footer-meta a:hover{color:var(--pv-tinta)}
+@media(max-width:760px){
+  .footcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--pv-s5) var(--pv-s4)}
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <h3>Product</h3>
+        <a href="/en/client-galleries/">Client galleries</a>
+        <a href="/en/video-review/">Video review</a>
+        <a href="/en/photo-proofing/">Photo proofing</a>
+        <a href="/en/file-sharing/">File sharing and requests</a>
+        <a href="/en/portfolio-website/">Portfolio website</a>
+        <a href="/en/pricing/">Pricing</a>
+        <a href="/en/#faq">FAQ</a>
+      </div>
+      <div>
+        <h3>Compare</h3>
+        <a href="/en/pixieset-alternative/">Pixieset alternative</a>
+        <a href="/en/pic-time-alternative/">Pic-Time alternative</a>
+        <a href="/en/frame-io-alternative/">Frame.io alternative</a>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <a href="/soporte/es/" hreflang="es">Help center (in Spanish)</a>
+        <a href="/novedades/" hreflang="es">Changelog (in Spanish)</a>
+        <a href="/sobre-nosotros/" hreflang="es">About us (in Spanish)</a>
+        <a href="/" hreflang="es" lang="es">Español</a>
+      </div>
+      <div>
+        <h3>Account</h3>
+        <a href="https://app.positiva.studio" data-no-conv>Log in to your dashboard</a>
+        <a href="https://app.positiva.studio/registro">Start free</a>
+        <a href="mailto:hola@positiva.studio">Contact</a>
+        <a href="/aviso-legal/" hreflang="es">Legal notice (Spanish)</a>
+        <a href="/privacidad/" hreflang="es">Privacy (Spanish)</a>
+        <a href="/terminos/" hreflang="es">Terms (Spanish)</a>
+      </div>
+    </div>
+    <div class="footer-word">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
+    <p class="footer-entidad">Positiva is a client gallery platform for photographers, videographers and video production companies: photo and video delivery, client proofing, frame-accurate video review with comments exported as markers to DaVinci Resolve and Final Cut Pro, file sharing and file requests, and a portfolio website built from the work you deliver. EU-hosted, GDPR-compliant and made in Spain.</p>
+    <div class="footer-meta">
+      <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Made in Spain · Run, built and billed from Europe</span>
+      <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+    </div>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://positiva.studio/#org",
+      "name": "Positiva",
+      "url": "https://positiva.studio/",
+      "logo": "https://positiva.studio/assets/og.png",
+      "description": "Positiva is a client gallery platform for photographers, videographers and video production companies, with photo and video delivery, client proofing, frame-accurate video review exported to DaVinci Resolve and Final Cut Pro, file sharing and a portfolio website. EU-hosted and made in Spain.",
+      "email": "hola@positiva.studio",
+      "foundingLocation": { "@type": "Place", "name": "Valencia, Spain" },
+      "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
+      "areaServed": "ES",
+      "knowsLanguage": ["es", "en"],
+      "sameAs": [
+        "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
+        "https://www.linkedin.com/company/positiva-studio/",
+        "https://instagram.com/positiva.studio_"
+      ]
+    }</script>
+  </div>
+</footer>
+
+<script>
+/* ── Vídeos del sitio: reproducción automática en bucle mientras están en
+   pantalla y pausa al salir — mismo comportamiento en móvil y escritorio.
+   Quedan fuera: la historia de la home (.hst), las tarjetas de la home
+   (.qcard) y el showcase (#reelvid), que tienen su propio control, los
+   vídeos con controles y los marcados con data-noauto. ── */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  const vids = Array.prototype.filter.call(
+    document.querySelectorAll('video[loop][muted]:not([controls]):not([data-noauto])'),
+    (v) => !v.closest('.hst') && !v.closest('.qcard') && v.id !== 'reelvid'
+  );
+  if (!vids.length) return;
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); }
+    else if (!v.paused) { v.pause(); }
+  }), { threshold: 0.25, rootMargin: '100px 0px' });
+  vids.forEach((v) => { v.muted = true; v.playsInline = true; io.observe(v); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
+})();
+</script>
+<script src="/positiva.js" defer></script>
+</body>
+</html>

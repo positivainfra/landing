@@ -44,6 +44,9 @@ nav.top .dd-p b{font-weight:600;font-size:15px}
 nav.top .dd-p span{font-size:13px;line-height:1.4;color:var(--n-tinta-2);font-weight:400}
 @media(prefers-reduced-motion:reduce){nav.top .dd-p,nav.top .dd-b svg{transition:none}}
 nav.top .acc{display:flex;gap:8px;align-items:center}
+/* Selector de idioma (ES · EN): discreto, en mono como el logo */
+nav.top .lang{font-family:'Space Mono',ui-monospace,monospace;font-weight:700;font-size:12px;letter-spacing:.12em;color:var(--n-tinta-2);text-decoration:none;padding:8px 10px;border-radius:999px;transition:background .2s,color .2s}
+nav.top .lang:hover{background:var(--n-bandeja);color:var(--n-tinta)}
 nav.top .btn,.menu-m .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;font-family:var(--n-sans);font-weight:600;font-size:14px;line-height:1.2;text-decoration:none;border:1px solid var(--n-tinta);background:var(--n-tinta);color:var(--n-luz);transition:transform .5s var(--n-ease),background .25s;cursor:pointer}
 nav.top .btn:hover,.menu-m .btn:hover{transform:translateY(-2px);background:#000;color:var(--n-luz)}
 /* «Empieza gratis»: ámbar de marca, el único botón de color de la cabecera (texto tinta: 7:1 de contraste) */

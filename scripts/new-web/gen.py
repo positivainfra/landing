@@ -40,12 +40,21 @@ BASE = '/'
 
 nav = open(os.path.join(ROOT, 'partials', 'chrome-nav.html')).read().strip()
 footer = open(os.path.join(ROOT, 'partials', 'chrome-footer.html')).read().strip()
+# Inglés (/en/): nav y pie gemelos. Cada página EN declara `lang: en` y, si tiene
+# equivalente en castellano, `alt: /ruta-es/` (de ahí salen hreflang y el selector ES/EN).
+nav_en = open(os.path.join(ROOT, 'partials', 'chrome-nav.en.html')).read().strip()
+footer_en = open(os.path.join(ROOT, 'partials', 'chrome-footer.en.html')).read().strip()
 
 DEMO = '''<form class="demo" id="wl" data-demo novalidate>
     <input type="email" name="email" id="wl-email" placeholder="nombre@tuestudio.com" required aria-label="Tu email" autocomplete="email">
     <button type="submit" class="btn">Reserva una demo</button>
   </form>
   <small class="demo-msg" id="msg">Sin compromiso y sin newsletter: te escribo solo para agendarla.</small>'''
+DEMO_EN = '''<form class="demo" id="wl" data-demo novalidate>
+    <input type="email" name="email" id="wl-email" placeholder="name@yourstudio.com" required aria-label="Your email" autocomplete="email">
+    <button type="submit" class="btn">Book a demo</button>
+  </form>
+  <small class="demo-msg" id="msg">No commitment and no newsletter: I'll only email you to schedule it.</small>'''
 
 def meta(src):
     m = re.match(r'\s*<!--(.*?)-->', src, re.S)
@@ -73,34 +82,48 @@ def enlaces(html):
     html = re.sub(r'href="/soporte/?"', f'href="{BASE}soporte/es/"', html)
     return html.replace('href="/#', f'href="{BASE}#')
 
-def faq_ld(body, canon):
+def faq_ld(body, canon, lang='es'):
     """WebSite + FAQPage con las preguntas visibles (<details><summary>…</summary><p>…</p>)."""
     limpia = lambda s: re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', s)).strip()
     qs = [{'@type': 'Question', 'name': limpia(q), 'acceptedAnswer': {'@type': 'Answer', 'text': limpia(a)}}
           for q, a in re.findall(r'<details[^>]*>\s*<summary>(.*?)</summary>\s*(.*?)</details>', body, re.S)]
     url = 'https://positiva.studio' + canon
     g = [{'@type': 'WebSite', '@id': 'https://positiva.studio/#website', 'url': 'https://positiva.studio/', 'name': 'Positiva',
-          'publisher': {'@id': 'https://positiva.studio/#org'}, 'inLanguage': 'es'}]
-    if qs: g.append({'@type': 'FAQPage', '@id': url + '#faq', 'mainEntity': qs})
+          'publisher': {'@id': 'https://positiva.studio/#org'}, 'inLanguage': ['es', 'en']}]
+    if qs: g.append({'@type': 'FAQPage', '@id': url + '#faq', 'inLanguage': lang, 'mainEntity': qs})
     return '<script type="application/ld+json">' + json.dumps({'@context': 'https://schema.org', '@graph': g}, ensure_ascii=False) + '</script>'
 
+ALT = {}   # ruta → ruta equivalente en el otro idioma (se rellena antes de generar)
+
 def page(d, body):
+    lang = d.get('lang', 'es')
+    en = lang == 'en'
     robots = '' if INDEXABLE else ('<!-- Web nueva en pruebas: NO indexar. Ver scripts/new-web/gen.py -->\n'
                                    '<meta name="robots" content="noindex, nofollow">\n')
     canon = d['path']
     pre = ''.join(f'<link rel="preload" href="{p.strip()}" as="image" fetchpriority="high">\n'
                   for p in d.get('preload', '').split(',') if p.strip())
-    body = enlaces(comparativas.pintar(body.replace('<!-- @demo -->', DEMO)))
-    if '<!-- @faq-ld -->' in body: body = body.replace('<!-- @faq-ld -->', faq_ld(body, canon))
-    foot = enlaces(footer)
+    body = enlaces(comparativas.pintar(body.replace('<!-- @demo -->', DEMO_EN if en else DEMO)))
+    if '<!-- @faq-ld -->' in body: body = body.replace('<!-- @faq-ld -->', faq_ld(body, canon, lang))
+    foot = enlaces(footer_en if en else footer)
+    otra = ALT.get(canon)
+    menu = enlaces(nav_en if en else nav)
+    if otra: menu = re.sub(r'href="[^"]*"( hreflang="(?:es|en)" lang="(?:es|en)" data-lang-switch)', lambda m: f'href="{otra}"' + m.group(1), menu)
+    hre = ''
+    if otra:
+        es_url, en_url = (otra, canon) if en else (canon, otra)
+        hre = (f'<link rel="alternate" hreflang="es" href="https://positiva.studio{es_url}">\n'
+               f'<link rel="alternate" hreflang="en" href="https://positiva.studio{en_url}">\n'
+               f'<link rel="alternate" hreflang="x-default" href="https://positiva.studio{es_url}">\n')
     return f'''<!DOCTYPE html>
-<html lang="es">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{d['title']}</title>
 <meta name="description" content="{d['description']}">
 {robots}<link rel="canonical" href="https://positiva.studio{canon}">
+{hre}
 <meta property="og:title" content="{d.get('og', d['title'])}">
 <meta property="og:description" content="{d['description']}">
 <meta property="og:type" content="website">
@@ -108,7 +131,7 @@ def page(d, body):
 <meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="es_ES">
+<meta property="og:locale" content="{'en_US' if en else 'es_ES'}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F3F2EE">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -130,7 +153,7 @@ def page(d, body):
 <script defer src="/js/analytics.js"></script>
 </head>
 <body>
-{enlaces(nav)}
+{menu}
 <main id="contenido">
 {body}
 </main>
@@ -172,7 +195,12 @@ shutil.copy(os.path.join(HERE, 'positiva.js'), os.path.join(OUT, 'positiva.js'))
 for f in ('chrome.css', 'docs.css'):
     shutil.copy(os.path.join(HERE, f), os.path.join(OUT, f))
 n = 0
-for f in sorted(glob.glob(os.path.join(HERE, 'pages', '*.html'))):
+FUENTES = sorted(glob.glob(os.path.join(HERE, 'pages', '*.html'))) + sorted(glob.glob(os.path.join(HERE, 'pages', 'en', '*.html')))
+for f in FUENTES:
+    d, _ = meta(open(f).read())
+    if d.get('alt'):
+        ALT[d['path']] = d['alt']; ALT[d['alt']] = d['path']
+for f in FUENTES:
     d, body = meta(open(f).read())
     rel = d['path'].strip('/')
     dst = os.path.join(OUT, rel, 'index.html') if rel else os.path.join(OUT, 'index.html')

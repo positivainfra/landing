@@ -40,3 +40,16 @@ Datos clave:
 - [Notas](https://positiva.studio/notas/): guías y comparativas (alternativas a Pixieset, Pic-Time, WeTransfer, Frame.io y Arcadina).
 - [Novedades](https://positiva.studio/novedades/): registro fechado de cada mejora desplegada.
 - [Aviso legal](https://positiva.studio/aviso-legal/) · [Privacidad](https://positiva.studio/privacidad/) · [Términos](https://positiva.studio/terminos/)
+
+## English
+
+Positiva is also available in English (the app, the client galleries and these pages). Help center, blog and legal pages are in Spanish.
+
+- [Home](https://positiva.studio/en/): client galleries for photographers and videographers.
+- [Client galleries](https://positiva.studio/en/client-galleries/): photo and video delivery under your brand, with links that never expire.
+- [Video review](https://positiva.studio/en/video-review/): frame-accurate comments, exported as markers to DaVinci Resolve (EDL) and Final Cut Pro (FCPXML).
+- [Photo proofing](https://positiva.studio/en/photo-proofing/): client favorites and comments, exportable to Lightroom Classic.
+- [File sharing and file requests](https://positiva.studio/en/file-sharing/)
+- [Portfolio website](https://positiva.studio/en/portfolio-website/)
+- [Pricing](https://positiva.studio/en/pricing/): Free, Author and Studio plans, in euros excl. VAT.
+- [Pixieset alternative](https://positiva.studio/en/pixieset-alternative/) · [Pic-Time alternative](https://positiva.studio/en/pic-time-alternative/) · [Frame.io alternative](https://positiva.studio/en/frame-io-alternative/)

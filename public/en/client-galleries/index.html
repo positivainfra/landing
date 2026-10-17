@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Client Galleries for Photographers & Videographers</title>
+<meta name="description" content="Branded client galleries for photo and video delivery. Links that never expire, no client accounts, and download permissions set per link. EU-hosted.">
+<link rel="canonical" href="https://positiva.studio/en/client-galleries/">
+<link rel="alternate" hreflang="es" href="https://positiva.studio/galerias/">
+<link rel="alternate" hreflang="en" href="https://positiva.studio/en/client-galleries/">
+<link rel="alternate" hreflang="x-default" href="https://positiva.studio/galerias/">
+
+<meta property="og:title" content="Client galleries for photographers and videographers · Positiva">
+<meta property="og:description" content="Branded client galleries for photo and video delivery. Links that never expire, no client accounts, and download permissions set per link. EU-hosted.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://positiva.studio/en/client-galleries/">
+<meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F3F2EE">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/video/galeria-hero-poster2.jpg" as="image" fetchpriority="high">
+<link rel="stylesheet" href="/chrome.css">
+<link rel="stylesheet" href="/positiva.css">
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<!-- Session replay SOLO aquí, y la arquitectura ya hace la separación sola:
+     por esta plantilla pasan únicamente las páginas de scripts/new-web/pages/,
+     que son todas comerciales (home, precios, casos, comparativas). Las legales,
+     el soporte y el blog entran por DERIVADAS, heredan el <head> de la página
+     real de public/ y por tanto NO traen replay, igual que en el sitio vivo.
+     Si algún día una página legal se mueve a pages/, esto hay que revisarlo. -->
+<script defer src="https://analytics.labbo.studio/recorder.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script defer src="/js/analytics.js"></script>
+</head>
+<body>
+<!-- ════════════════════════════════════════════════════════════════
+     NAV DE LA WEB EN INGLÉS · gemelo de partials/chrome-nav.html (cambia los dos a la vez)
+     Lo usan gen.py (páginas de scripts/new-web/pages/) y `npm run stamp`
+     (blog, soporte, novedades y legales). Edita AQUÍ y ejecuta ambos.
+     ════════════════════════════════════════════════════════════════ -->
+<link rel="stylesheet" href="/chrome.css">
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+document.documentElement.classList.add('js');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+
+/* Conversión de Google Ads: «registro» (clientes potenciales).
+   Se dispara al pinchar cualquier enlace a app.positiva.studio/registro (los de
+   login apuntan a la raíz de la app y quedan fuera).
+   Sin bloquear la navegación: transport beacon sobrevive al cambio de página. */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+    'event_callback': callback
+  });
+  return false;
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="https://app.positiva.studio/registro"]');
+  if (!a || a.classList.contains('nav-login') || a.hasAttribute('data-no-conv')) return;
+  try {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+      'transport_type': 'beacon'
+    });
+  } catch (_) {}
+}, { passive: true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+<a class="saltar-n" href="#contenido">Skip to content</a>
+<nav class="top" id="nav" aria-label="Main"><div class="wrap inner">
+  <a href="/en/" class="logo" aria-label="Positiva, home"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
+  <div class="links">
+    <a href="/en/client-galleries/">Client galleries</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-revision">Review<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-revision">
+        <a href="/en/video-review/"><b>Video review</b><span>Frame-accurate comments, exported as markers to DaVinci Resolve and Final Cut Pro</span></a>
+        <a href="/en/photo-proofing/"><b>Photo proofing</b><span>Client favorites and comments on every photo, live in your dashboard</span></a>
+      </div>
+    </div>
+    <a href="/en/file-sharing/">Files</a>
+    <a href="/en/portfolio-website/">Portfolio</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-casos">Compare<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-casos">
+        <a href="/en/pixieset-alternative/"><b>Pixieset alternative</b><span>Photo and video in the same client gallery</span></a>
+        <a href="/en/pic-time-alternative/"><b>Pic-Time alternative</b><span>Client galleries without a print store attached</span></a>
+        <a href="/en/frame-io-alternative/"><b>Frame.io alternative</b><span>Frame-accurate video review with client delivery included</span></a>
+      </div>
+    </div>
+    <a href="/en/pricing/">Pricing</a>
+  </div>
+  <div class="acc">
+    <a class="lang" href="/galerias/" hreflang="es" lang="es" data-lang-switch title="Español">ES</a>
+    <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Log in</a>
+    <a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nav">Start free</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Open menu"><span></span></button>
+  </div>
+</div></nav>
+<div class="menu-m" id="menu-m" hidden>
+  <a href="/en/client-galleries/">Client galleries</a>
+  <a href="/en/video-review/">Video review</a>
+  <a href="/en/photo-proofing/">Photo proofing</a>
+  <a href="/en/file-sharing/">Files</a>
+  <a href="/en/portfolio-website/">Portfolio</a>
+  <a href="/en/pricing/">Pricing</a>
+  <span class="sub">Compare</span>
+  <a class="sm" href="/en/pixieset-alternative/">Pixieset alternative</a>
+  <a class="sm" href="/en/pic-time-alternative/">Pic-Time alternative</a>
+  <a class="sm" href="/en/frame-io-alternative/">Frame.io alternative</a>
+  <span class="sub">Resources</span>
+  <a class="sm" href="/soporte/es/">Help center (in Spanish)</a>
+  <a class="sm" href="/galerias/" hreflang="es" lang="es" data-lang-switch>Español</a>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Start free</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Log in to your dashboard</a></div>
+</div>
+<main id="contenido">
+<div class="wrap">
+<section class="hero">
+  <span class="eyebrow">Client galleries</span>
+  <p class="h-xl titular"><span class="w"><span style="animation-delay:0.00s">Your</span></span> <span class="w"><span style="animation-delay:0.05s">work.</span></span> <span class="w"><span style="animation-delay:0.10s"><em class="a">Your</em></span></span> <span class="w"><span style="animation-delay:0.15s"><em class="a">brand.</em></span></span></p>
+  <h1 class="lede h1d">Client galleries for photographers and videographers</h1>
+  <p class="lede">Private photo and video delivery with your fonts and your colors. Designs built for your client to enjoy, links that never expire, moments to tell the story in order, and photos and video together behind the same link.</p>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click">Start free</a><a class="btn ghost" href="#marca">See how it works</a></div>
+  <p class="fine">“Can you send me the link again?”<br/> is no longer part of your week.</p>
+  <figure class="browser stage" data-grow style="margin-top:clamp(40px,6vw,72px)">
+    <div class="bar"><i></i><i></i><i></i><span class="url">rodrigomarquez.positiva.studio/g/must-have-nyc</span></div>
+    <div class="panes"><div class="pane on"><video data-noauto class="auto" muted playsinline loop preload="none" poster="/video/galeria-hero-poster2.jpg" src="/video/galeria-hero-720.mp4" data-start="1.6"></video></div></div>
+    <figcaption><b>Real gallery</b> · photos and video, delivered with Positiva</figcaption>
+  </figure>
+</section>
+</div>
+
+<div class="wrap">
+<section class="sec" id="como">
+  <div class="head r"><span class="eyebrow">How it works</span><h2 class="h-l">You upload, you share, <em class="a">your client enjoys it.</em></h2></div>
+  <div class="cols">
+    <div class="r"><span class="num">01</span><h3>Photos and video in one gallery</h3><p>Drag your files in. While the upload builds the optimized versions, you can arrange moments, design the gallery or create the links.</p></div>
+    <div class="r d1"><span class="num">02</span><h3>A link with your brand</h3><p>An address with your name and the gallery’s name, editable before you create it. Each link has its own password and download quality, and you can change both at any time without generating a new link.</p><p>Or on your own custom domain. <small class="plan">Studio plan</small></p></div>
+    <div class="r d2"><span class="num">03</span><h3>Your client enjoys it</h3><p>They open the link in any browser, browse the gallery, mark favorites and download whatever their link allows. That’s it.</p></div>
+  </div>
+</section>
+
+<section class="sec" id="marca">
+  <article class="step">
+    <div class="txt r"><span class="eyebrow">Your brand</span><h2>Your brand at the moment that counts.</h2>
+      <p class="l">We put a lot of time, money and effort into making work of the highest quality. Clients only keep what we deliver, and that’s where a bland delivery experience can drag great work down a few notches.</p>
+      <ul><li>No search engines and no accounts: only the people you choose see your work.</li><li>Your colors and fonts on the cover and the grid.</li><li>Your logo on the cover, the grid and the downloads, with no Positiva badge. <small class="plan">Author and Studio plans</small></li><li>yourstudio.positiva.studio, on every plan.</li><li>Or your own custom domain. <small class="plan">Studio plan</small></li></ul></div>
+    <figure class="media vert reveal-img"><img src="/img/galerias/v-street-nyc.webp" width="1000" height="1250" alt="Cover of a real client gallery with the studio name at the top and the Street NYC series" loading="lazy"><figcaption>Real gallery</figcaption></figure>
+  </article>
+</section>
+
+<section class="sec tight" id="diseno">
+  <div class="head r"><span class="eyebrow">Design</span><h2 class="h-l">Seven covers. Six grids. <em class="a">Your signature.</em></h2><p class="lede">Every gallery comes with art direction designed by a photographer: you pick the cover, the grid and the theme, and your fonts and colors are already in place.</p><p class="lede">Your logo, too, and Positiva doesn’t show up anywhere. <small class="plan">Author and Studio plans</small></p></div>
+  <div class="pair">
+    <figure class="media reveal-img"><video data-noauto class="auto" muted playsinline loop preload="none" poster="/video/pasos/disenas-poster.jpg" src="/video/pasos/disenas.mp4"></video></figure>
+    <figure class="media reveal-img"><video data-noauto class="auto" muted playsinline loop preload="none" poster="/img/galerias/diseno-video.webp" src="/video/disenos-video.mp4"></video></figure>
+  </div>
+  <div class="cols c4 plain r" style="margin-top:56px">
+    <div><span class="k">Covers</span><p>Seven cover layouts. You choose one per gallery.</p></div>
+    <div><span class="k">Grids</span><p>Six ways to lay out the grid, all designed to let your work lead.</p></div>
+    <div><span class="k">Themes</span><p>Light or dark, with accent colors that don’t compete with your photos.</p></div>
+    <div><span class="k">Video</span><p>Designs of their own for video delivery.</p></div>
+  </div>
+  <div class="trio-img" style="margin-top:56px">
+    <figure class="media reveal-img"><img src="/img/galerias/v-musthave.webp" width="1000" height="1250" alt="Client gallery with a full-bleed cover and the title over the photo" loading="lazy"></figure>
+    <figure class="media reveal-img"><img src="/img/galerias/v-cliffton.webp" width="1000" height="1250" alt="Client gallery with an editorial cover: large title and an offset photo" loading="lazy"></figure>
+    <figure class="media reveal-img"><img src="/img/galerias/v-brandpulse.webp" width="1000" height="1250" alt="Client gallery with a dark theme and the title centered on the cover" loading="lazy"></figure>
+  </div>
+  <p class="cap-c">Real galleries · three projects, three designs</p>
+</section>
+</div>
+
+<section class="sala" id="enlace"><div class="wrap">
+  <article class="step" style="padding-bottom:0">
+    <div class="txt r"><span class="eyebrow">The link</span><h2>No expiry date.</h2>
+      <p class="l">Positiva gallery links never expire. And one gallery can have as many links as you need, each with its own password and permissions — originals for the client, view only for everyone else. If a link shouldn’t keep circulating, you revoke it.</p></div>
+    <div class="r">
+      <div class="cols c2" style="gap:14px">
+        <div><span class="k">Client</span><p style="color:var(--hueso);font-family:var(--mono);font-size:13px">…positiva.studio/must-have-nyc</p><div class="chips"><span class="on">Download: High</span><span>Password</span></div></div>
+        <div><span class="k">Press</span><p style="color:var(--hueso);font-family:var(--mono);font-size:13px">…positiva.studio/must-have-nyc-press</p><div class="chips"><span>View only</span><span>Password</span></div></div>
+      </div>
+      <p class="cap-c" style="color:var(--gris)">Two links · one gallery · different permissions</p>
+    </div>
+  </article>
+  <div class="cols" style="margin-top:clamp(48px,6vw,80px)">
+    <div class="r"><h3>It doesn’t change</h3><p>Replace a photo or upload the corrected cut of the video and the link stays the same. <b>Nobody asks for “the right link” again</b>.</p></div>
+    <div class="r d1"><h3>Password-protected</h3><p>Every link starts with its own password, which you can change or remove without touching the others.</p></div>
+    <div class="r d2"><h3>On your domain</h3><p>The address is served from your subdomain, on every plan. <b>The address is part of your brand, too</b>.</p><p>Or from your own custom domain. <small class="plan">Studio plan</small></p></div>
+  </div>
+</div></section>
+
+<div class="wrap">
+<section class="sec" id="permisos">
+  <div class="head r"><span class="eyebrow">Permissions and downloads</span><h2 class="h-l">You decide <em class="a">what they take home.</em></h2><p class="lede">Download quality is set per link, with three levels, and you can change it whenever you want. The “Download all” button appears on its own, with a zip built on the fly that respects that link’s quality — and if you’d rather deliver your own zip, with a contract inside, you can do that too.</p></div>
+  <div class="cols">
+    <div class="r"><span class="k">Default</span><h3>None · view only</h3><p>The default setting. The gallery can be viewed, not downloaded: no download button appears.</p></div>
+    <div class="r d1"><span class="k">For sharing</span><h3>Web</h3><p>The optimized version, the same one shown in the gallery. For sharing without handing out originals.</p></div>
+    <div class="r d2"><span class="k">Final delivery</span><h3>High · web + original</h3><p>Everything: the web version and the original file exactly as you uploaded it. For the final delivery.</p></div>
+  </div>
+  <div class="cols c2 plain" style="margin-top:clamp(48px,6vw,72px)">
+    <div class="r"><h3>Favorites go back to your editor</h3><p>Your client confirms their email when they mark the first one, so you know who picked each photo. You import the favorites into Lightroom with the Positiva plugin, or export the selection — just your client’s, or everyone’s — as a list of file names (.txt), a spreadsheet (.csv) or Finder color tags.</p></div>
+    <div class="r d1"><h3>Project not signed off yet?</h3><p>Any gallery can be set to delivery or to proofing, and you can switch back and forth as often as you need without losing anything. Proofing adds comments — <a href="/en/photo-proofing/" style="color:var(--pv-ambar-ink)">on photos, image by image</a>; <a href="/en/video-review/" style="color:var(--pv-ambar-ink)">on video, pinned to the exact frame</a>.</p></div>
+  </div>
+</section>
+
+<section class="sec tight" id="momentos">
+  <article class="step flip">
+    <div class="txt r"><span class="eyebrow">Moments</span><h2>The gallery tells the day in chapters.</h2><p class="l">Moments split the gallery into named sections — the job sets the outline: session, event, ceremony — and your client jumps straight to the part they’re looking for from inside the gallery.</p></div>
+    <figure class="media vert reveal-img"><img src="/img/galerias/v-sommos.webp" width="1000" height="1250" alt="Real client gallery split into moments, each section named in the header" loading="lazy"><figcaption>Real gallery · moments, with their counts, in the header</figcaption></figure>
+  </article>
+</section>
+
+<section class="sec tight" id="video">
+  <div class="head r"><span class="eyebrow">Photo and video</span><h2 class="h-l">One gallery. <em class="a">One link.</em></h2><p class="lede">JPEG and MP4 live side by side in the same gallery: the same moments, the same branding and a single address to send. Video plays right inside the gallery, without sending anyone to another platform and without separate storage pools: a gigabyte is a gigabyte, photo or video.</p></div>
+  <div class="pair">
+    <figure class="media reveal-img"><img src="/img/galerias/v-musthave-fotos.webp" width="1000" height="1250" alt="The photo grid of a real client gallery, with Photos and Video tabs in the header" loading="lazy"><figcaption>Photos · the grid, with the Video tab next to it</figcaption></figure>
+    <figure class="media reveal-img"><img src="/img/galerias/v-musthave-video.webp" width="1000" height="1250" alt="The Video tab of the same gallery, with the video ready to play" loading="lazy"><figcaption>Video · plays inside the gallery itself</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec tight" id="analitica">
+  <article class="step">
+    <div class="txt r"><span class="eyebrow">Analytics</span><h2>You know if they’ve opened it.</h2><p class="l">Every gallery tracks its activity: visits, unique visitors, downloads and plays. Nothing to install and no third-party tracking pixels.</p><p class="l"><small class="plan">Author and Studio plans</small></p></div>
+    <div class="media dark reveal-img" style="display:grid;place-items:center;aspect-ratio:16/10;color:var(--hueso)">
+      <div style="display:grid;grid-template-columns:repeat(2,auto);gap:22px 56px;font-variant-numeric:tabular-nums;padding:24px">
+        <div><b style="font-size:clamp(36px,5vw,56px);font-weight:600;display:block;line-height:1">214</b><span style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--gris)">VISITS</span></div>
+        <div><b style="font-size:clamp(36px,5vw,56px);font-weight:600;display:block;line-height:1">38</b><span style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--gris)">UNIQUE</span></div>
+        <div><b style="font-size:clamp(36px,5vw,56px);font-weight:600;display:block;line-height:1">61</b><span style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--gris)">DOWNLOADS</span></div>
+        <div><b style="font-size:clamp(36px,5vw,56px);font-weight:600;display:block;line-height:1">122</b><span style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--gris)">PLAYS</span></div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="sec tight" id="faq">
+  <div class="head r"><span class="eyebrow">FAQ</span><h2 class="h-l">The ones that matter.</h2></div>
+  <div class="faq r">
+    <details><summary>Does the gallery link expire?</summary><p>No. Links have no expiry date, and they don’t change when you replace files in the gallery.</p></details>
+    <details><summary>Does my client need to create an account?</summary><p>No. They open the link in any browser, with no account and nothing to install. For a delivery, access is controlled by the link’s password.</p></details>
+    <details><summary>Can I give the couple and the guests different permissions?</summary><p>Yes. One gallery can have as many links as you need, each with its own password and download quality: view only, web, or high with originals.</p></details>
+    <details><summary>Can I deliver photos and video in the same gallery?</summary><p>Yes. Photos and video share the same gallery, the same moments and the same link, and video plays inside the gallery. Storage is a single pool for both.</p></details>
+    <details><summary>Which file formats does a gallery support?</summary><p>JPEG for photos and MP4 with H.264 for video — the formats a web browser can play. RAW files aren’t supported.</p></details>
+    <details><summary>Can I see whether my client has opened the gallery?</summary><p>Yes. Every gallery tracks visits, unique visitors, downloads and plays. <small class="plan">Author and Studio plans</small></p></details>
+    <details><summary>What happens if I replace a file after delivery?</summary><p>The link stays the same and the previous version is kept. Nobody has to download anything again or ask for a new link.</p></details>
+  </div>
+</section>
+</div>
+
+<section class="final" id="demo"><div class="wrap inner">
+  <span class="eyebrow r">Book a demo</span>
+  <h2 class="h-xl r d1">Your next delivery, with a link <em class="a">that never dies.</em></h2>
+  <p class="lede r d2">Positiva is best shown live. Book a demo and I’ll walk you through it on your own workflow, with no commitment. If you’d rather explore on your own, <a href="https://app.positiva.studio/registro" data-ev="cta_register_click">sign up and start today</a>. Plans and storage are on the <a href="/en/pricing/">pricing page</a>.</p>
+  <form class="demo" id="wl" data-demo novalidate>
+    <input type="email" name="email" id="wl-email" placeholder="name@yourstudio.com" required aria-label="Your email" autocomplete="email">
+    <button type="submit" class="btn">Book a demo</button>
+  </form>
+  <small class="demo-msg" id="msg">No commitment and no newsletter: I'll only email you to schedule it.</small>
+</div></section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positiva.studio/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Client galleries", "item": "https://positiva.studio/en/client-galleries/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does the gallery link expire?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Positiva gallery links have no expiry date, and they don't change when you replace files in the gallery." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my client need to create an account?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. They open the link in any browser, with no account and nothing to install. For a delivery, access is controlled by the password you set on the link." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I give the couple and the guests different permissions?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. One gallery can have as many links as you need, each with its own password and download quality: view only, web, or high with originals." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I deliver photos and video in the same gallery?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Photos and video share the same gallery, the same moments and the same link, and video plays inside the gallery. Storage is a single pool for both." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which file formats does a gallery support?",
+          "acceptedAnswer": { "@type": "Answer", "text": "JPEG for photos and MP4 with H.264 for video, the formats a web browser can play. RAW files aren't supported." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I see whether my client has opened the gallery?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, on the Author and Studio plans. Every gallery tracks visits, unique visitors, downloads and plays." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I replace a file after delivery?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Your client's link stays the same and the previous version is kept. Nobody has to download anything again or ask for a new link." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</main>
+<!-- ════════════════════════════════════════════════════════════════
+     PIE EN INGLÉS · gemelo de partials/chrome-footer.html (cambia los dos a la vez)
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
+     las páginas. Sirve de mapa del sitio: cada página pública real
+     debe estar enlazada aquí (SEO + LLMs leen esto).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="footer">
+footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
+.footcols{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pv-s6);
+  margin-bottom:var(--pv-s8);
+}
+.footcols h3{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-tinta-60);margin:0 0 var(--pv-s3);
+}
+.footcols a{
+  display:block;font-family:var(--pv-sans);font-size:14px;color:var(--pv-tinta-60);
+  text-decoration:none;padding:4px 0;transition:color .18s;
+}
+.footcols a:hover{color:var(--pv-tinta)}
+.footer-word{
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(15px,3.9vw,58px);line-height:1;color:var(--pv-tinta);
+  white-space:nowrap;
+}
+.footer-word svg{height:.92em;width:auto;flex:none}
+.footer-word span{color:var(--pv-ambar)}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
+.footer-meta{
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
+  font-size:14px;color:var(--pv-tinta-60);
+}
+.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
+.footer-meta a:hover{color:var(--pv-tinta)}
+@media(max-width:760px){
+  .footcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--pv-s5) var(--pv-s4)}
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <h3>Product</h3>
+        <a href="/en/client-galleries/">Client galleries</a>
+        <a href="/en/video-review/">Video review</a>
+        <a href="/en/photo-proofing/">Photo proofing</a>
+        <a href="/en/file-sharing/">File sharing and requests</a>
+        <a href="/en/portfolio-website/">Portfolio website</a>
+        <a href="/en/pricing/">Pricing</a>
+        <a href="/en/#faq">FAQ</a>
+      </div>
+      <div>
+        <h3>Compare</h3>
+        <a href="/en/pixieset-alternative/">Pixieset alternative</a>
+        <a href="/en/pic-time-alternative/">Pic-Time alternative</a>
+        <a href="/en/frame-io-alternative/">Frame.io alternative</a>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <a href="/soporte/es/" hreflang="es">Help center (in Spanish)</a>
+        <a href="/novedades/" hreflang="es">Changelog (in Spanish)</a>
+        <a href="/sobre-nosotros/" hreflang="es">About us (in Spanish)</a>
+        <a href="/" hreflang="es" lang="es">Español</a>
+      </div>
+      <div>
+        <h3>Account</h3>
+        <a href="https://app.positiva.studio" data-no-conv>Log in to your dashboard</a>
+        <a href="https://app.positiva.studio/registro">Start free</a>
+        <a href="mailto:hola@positiva.studio">Contact</a>
+        <a href="/aviso-legal/" hreflang="es">Legal notice (Spanish)</a>
+        <a href="/privacidad/" hreflang="es">Privacy (Spanish)</a>
+        <a href="/terminos/" hreflang="es">Terms (Spanish)</a>
+      </div>
+    </div>
+    <div class="footer-word">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
+    <p class="footer-entidad">Positiva is a client gallery platform for photographers, videographers and video production companies: photo and video delivery, client proofing, frame-accurate video review with comments exported as markers to DaVinci Resolve and Final Cut Pro, file sharing and file requests, and a portfolio website built from the work you deliver. EU-hosted, GDPR-compliant and made in Spain.</p>
+    <div class="footer-meta">
+      <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Made in Spain · Run, built and billed from Europe</span>
+      <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+    </div>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://positiva.studio/#org",
+      "name": "Positiva",
+      "url": "https://positiva.studio/",
+      "logo": "https://positiva.studio/assets/og.png",
+      "description": "Positiva is a client gallery platform for photographers, videographers and video production companies, with photo and video delivery, client proofing, frame-accurate video review exported to DaVinci Resolve and Final Cut Pro, file sharing and a portfolio website. EU-hosted and made in Spain.",
+      "email": "hola@positiva.studio",
+      "foundingLocation": { "@type": "Place", "name": "Valencia, Spain" },
+      "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
+      "areaServed": "ES",
+      "knowsLanguage": ["es", "en"],
+      "sameAs": [
+        "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
+        "https://www.linkedin.com/company/positiva-studio/",
+        "https://instagram.com/positiva.studio_"
+      ]
+    }</script>
+  </div>
+</footer>
+
+<script>
+/* ── Vídeos del sitio: reproducción automática en bucle mientras están en
+   pantalla y pausa al salir — mismo comportamiento en móvil y escritorio.
+   Quedan fuera: la historia de la home (.hst), las tarjetas de la home
+   (.qcard) y el showcase (#reelvid), que tienen su propio control, los
+   vídeos con controles y los marcados con data-noauto. ── */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  const vids = Array.prototype.filter.call(
+    document.querySelectorAll('video[loop][muted]:not([controls]):not([data-noauto])'),
+    (v) => !v.closest('.hst') && !v.closest('.qcard') && v.id !== 'reelvid'
+  );
+  if (!vids.length) return;
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); }
+    else if (!v.paused) { v.pause(); }
+  }), { threshold: 0.25, rootMargin: '100px 0px' });
+  vids.forEach((v) => { v.muted = true; v.playsInline = true; io.observe(v); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
+})();
+</script>
+<script src="/positiva.js" defer></script>
+</body>
+</html>

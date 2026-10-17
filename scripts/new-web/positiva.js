@@ -6,6 +6,8 @@
    autoplay genérico del pie común no los arranque por su cuenta.
    ══════════════════════════════════════════════════════════════════════ */
 (function(){
+  var EN=(document.documentElement.lang||'').slice(0,2)==='en';
+  var T=function(es,en){return EN?en:es};
   var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var track=function(n,d){try{if(window.track)window.track(n,d)}catch(_){}};
   var hasIO='IntersectionObserver' in window;
@@ -36,9 +38,9 @@
   (function(){
     if(/\/soporte\//.test(location.pathname))return;
     try{if(sessionStorage.getItem('pv-cta-flot')==='no')return}catch(_){}
-    var el=document.createElement('div');el.className='cta-flot';el.setAttribute('role','complementary');el.setAttribute('aria-label','Prueba Positiva');
-    el.innerHTML='<a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="flotante"><span class="ico"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/></svg></span><span>Prueba <b>Positiva</b> gratis</span></a>'
-      +'<button class="x" type="button" aria-label="Cerrar"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1l8 8M9 1l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>';
+    var el=document.createElement('div');el.className='cta-flot';el.setAttribute('role','complementary');el.setAttribute('aria-label',T('Prueba Positiva','Try Positiva'));
+    el.innerHTML='<a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="flotante"><span class="ico"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/></svg></span><span>'+T('Prueba <b>Positiva</b> gratis','Try <b>Positiva</b> free')+'</span></a>'
+      +'<button class="x" type="button" aria-label="'+T('Cerrar','Close')+'"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1l8 8M9 1l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>';
     document.body.appendChild(el);
     var UMBRAL=1000,otros=0,cerrado=false,ancho=matchMedia('(min-width:1001px)');
     var pinta=function(){var v=!cerrado&&scrollY>UMBRAL&&otros===0;
@@ -52,7 +54,7 @@
 
   var burger=document.querySelector('.burger'),menu=document.getElementById('menu-m');
   if(burger&&menu){
-    var set=function(open){burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');menu.hidden=!open;document.body.classList.toggle('menu-abierto',open)};
+    var set=function(open){burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?T('Cerrar menú','Close menu'):T('Abrir menú','Open menu'));menu.hidden=!open;document.body.classList.toggle('menu-abierto',open)};
     burger.addEventListener('click',function(){set(burger.getAttribute('aria-expanded')!=='true')});
     menu.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
     addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden){set(false);burger.focus()}});
@@ -109,11 +111,11 @@
   /* demo: mismo endpoint que la web actual (/api/waitlist → hola@positiva.studio) */
   var wl=document.querySelector('#wl[data-demo]');
   if(wl){wl.addEventListener('submit',async function(e){e.preventDefault();var form=e.target,email=form.email.value.trim(),msg=document.getElementById('msg');
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent='Ese email no parece válido. Revísalo.';msg.style.color='var(--graso)';return}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent=T('Ese email no parece válido. Revísalo.','That email doesn\'t look right. Please check it.');msg.style.color='var(--graso)';return}
     var btn=form.querySelector('button');btn.disabled=true;
     try{var r=await fetch('/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'landing-new:'+location.pathname})});
       if(!r.ok&&r.status!==409)throw new Error(String(r.status));
-      msg.textContent='Recibido. Te escribo para agendarla.';msg.style.color='var(--ambar-ink)';track('waitlist_submitted',{source:'landing-new'});form.reset()}
-    catch(_){msg.textContent='No se ha podido guardar. Inténtalo de nuevo en un momento.';msg.style.color='var(--graso)'}
+      msg.textContent=T('Recibido. Te escribo para agendarla.','Got it. I\'ll email you to schedule it.');msg.style.color='var(--ambar-ink)';track('waitlist_submitted',{source:'landing-new'});form.reset()}
+    catch(_){msg.textContent=T('No se ha podido guardar. Inténtalo de nuevo en un momento.','We couldn\'t save it. Please try again in a moment.');msg.style.color='var(--graso)'}
     finally{btn.disabled=false}})}
 })();

@@ -12,10 +12,14 @@ Reglas (decididas con Rodrigo el 04/10/2026):
     tu caso»: sin distintivo. Varias columnas de Positiva (Autor/Estudio)
     pueden ganar juntas si las dos superan al resto.
   · Archivos y solicitudes es solo del plan Estudio: se dice siempre.
+  · Lo que en Positiva no está en todos los planes, también (p. ej. «planes Autor y Estudio»).
   · Lo no verificado: «No lo hemos encontrado en su documentación».
 Datos de archivos y solicitudes verificados el 04/10/2026 en documentación
 oficial (Dropbox, WeTransfer, Google, Frame.io, Vimeo, Pic-Time, Pixieset,
-Arcadina). El resto, con las fechas de cada artículo.
+Arcadina). TODOS los datos de competidores revisados de nuevo el 17/10/2026
+en sus webs y centros de ayuda oficiales (WeTransfer y Arcadina, edición
+española; el resto, estadounidense). Las celdas de Positiva dicen el plan
+cuando la función no está en todos (fuente: frontend/src/config/plans.ts).
 
 Cada tabla: cols = [(nombre, es_positiva)], filas = [(criterio, [celdas], {índices ganadores})]
 """
@@ -25,6 +29,22 @@ NE = 'No lo hemos encontrado en su documentación'
 POS_GUARDAR = 'Carpetas con cualquier formato y envíos con enlace (plan Estudio)'
 POS_PEDIR = 'Sí, en el plan Estudio: quien sube no necesita cuenta; hasta 150 GB por archivo'
 PRECIO_POS = '89 € + IVA/año (Autor, 250 GB)'
+# Funciones de Positiva que dependen del plan (plans.ts): se dice en la celda.
+POS_REV = 'Favoritas y comentarios en foto; por fotograma en vídeo (planes Autor y Estudio)'
+POS_GRATIS = '15 GB · 2 galerías activas, que caducan a los 30 días'
+POS_MARCA = 'Logo, colores y tipografía (planes Autor y Estudio)'
+POS_COM_VIDEO = 'Por fotograma (planes Autor y Estudio)'
+POS_EXPORTA = 'Marcadores a DaVinci Resolve (EDL) y Final Cut Pro (FCPXML), planes Autor y Estudio'
+POS_PORTFOLIO = 'Portfolio con tus entregas (con vídeos, en Autor y Estudio)'
+PIXIESET_VIDEO = '30 min de vídeo HD en Basic; en el resto, dentro del almacenamiento'
+PICTIME_SUBIDA = 'Subida del cliente a la galería en Pic-Time 1.0; aún no en 2.0'
+FRAME_EDITOR = 'Panel en Premiere Pro; CSV y texto; Resolve sin soporte en V4'
+VIMEO_EDITOR = 'Descarga de comentarios; sin integración con editores encontrada'
+REPLAY_COM = 'Sí; sincronizados al fotograma solo desde DaVinci Resolve'
+REPLAY_EDITOR = 'Marcadores en Final Cut Pro y After Effects'
+WT_CADUCA = 'De 3 a 7 días en Free y Starter (su ayuda y su web no coinciden); sin límite en Ultimate'
+WT_PEDIR = 'Sí, desde el plan gratis; quien sube verifica su email y lo recibido caduca a los 3 días en Free y Starter'
+WT_PRECIO = 'Starter 8 €/mes; Ultimate 23 €/mes (facturación mensual, web española)'
 
 TABLAS = {
 
@@ -32,13 +52,13 @@ TABLAS = {
 'pixieset': dict(
   cols=[('Positiva', True), ('Pixieset', False), ('Pic-Time', False)],
   filas=[
-    ('Vídeo', ['Por GB, junto a las fotos', 'Por minutos según plan (30 min en Basic)', 'Bolsa aparte: 30 GB en Professional'], {0}),
-    ('Revisión', ['Favoritas, comentarios en foto y por fotograma en vídeo', 'Favoritas de foto', 'Favoritas y selección'], {0}),
-    ('Guardar tus archivos y pedirlos a terceros', [POS_PEDIR + '; carpetas y envíos', NE, 'Subida del cliente a la galería, desactivada en Pic-Time 2.0'], {0}),
-    ('Web pública', ['Portfolio con tus entregas', 'Website completa, módulo aparte', 'Portfolio Page embebible'], {1}),
+    ('Vídeo', ['Por GB, junto a las fotos', PIXIESET_VIDEO, 'Cuota aparte: 30 GB en Professional'], {0}),
+    ('Revisión', [POS_REV, 'Favoritas de foto, con notas', 'Favoritas y selección (desde Professional)'], {0}),
+    ('Guardar tus archivos y pedirlos a terceros', [POS_PEDIR + '; carpetas y envíos', NE, PICTIME_SUBIDA], {0}),
+    ('Web pública', [POS_PORTFOLIO, 'Website completa, módulo aparte', 'Portfolio Page embebible'], {1}),
     ('Tienda', ['No', 'Sí, módulo aparte (15 % en el plan gratis)', 'Sí, 30+ laboratorios y automatizaciones'], {2}),
-    ('Gestión del negocio', ['No', 'Studio Manager, módulo aparte', 'No'], {1}),
-    ('Plan gratis', ['15 GB · 2 galerías', '3 GB', '3 GB de foto · 1 GB de vídeo'], {0}),
+    ('Gestión del negocio', ['No', 'Studio Manager, módulo aparte o en la Suite', 'No'], {1}),
+    ('Plan gratis', [POS_GRATIS, '3 GB, galerías ilimitadas', '10 GB que bajan a 3 GB a los 3 meses · 1 GB de vídeo'], set()),
     ('Precio anual', [PRECIO_POS, '192 $ (Plus, 100 GB)', '252 $ (Professional, 100 GB + 30 GB de vídeo)'], {0}),
   ],
   nota='ShootProof, SmugMug y Zenfolio, en sus apartados del artículo.'),
@@ -46,12 +66,12 @@ TABLAS = {
 'pic-time': dict(
   cols=[('Positiva', True), ('Pic-Time', False), ('Pixieset', False)],
   filas=[
-    ('Vídeo', ['Por GB, junto a las fotos', '30 GB en Professional (ampliable desde 10 $/mes)', 'Por minutos según plan'], {0}),
-    ('Revisión', ['Favoritas, comentarios en foto y por fotograma en vídeo', 'Favoritas y selección', 'Favoritas de foto'], {0}),
-    ('Guardar tus archivos y pedirlos a terceros', [POS_PEDIR + '; carpetas y envíos', 'Subida del cliente a la galería, desactivada en Pic-Time 2.0', NE], {0}),
-    ('Web pública', ['Portfolio con tus entregas', 'Portfolio Page (escaparate de galerías, embebible)', 'Website completa, producto aparte'], {2}),
-    ('Tienda', ['No', 'Sí, 30+ laboratorios y automatizaciones', 'Sí (15 % de comisión en el plan gratis)'], {1}),
-    ('Plan gratis', ['15 GB · 2 galerías', '3 GB de foto (tras 3 meses) · 1 GB de vídeo', '3 GB'], {0}),
+    ('Vídeo', ['Por GB, junto a las fotos', '30 GB en Professional (ampliable desde 10 $/mes con facturación anual)', PIXIESET_VIDEO], {0}),
+    ('Revisión', [POS_REV, 'Favoritas y selección (desde Professional)', 'Favoritas de foto, con notas'], {0}),
+    ('Guardar tus archivos y pedirlos a terceros', [POS_PEDIR + '; carpetas y envíos', PICTIME_SUBIDA, NE], {0}),
+    ('Web pública', [POS_PORTFOLIO, 'Portfolio Page (escaparate de galerías, embebible)', 'Website completa, producto aparte'], {2}),
+    ('Tienda', ['No', 'Sí, 30+ laboratorios y automatizaciones; 8 % en Professional si cobra Pic-Time', 'Sí (15 % de comisión en el plan gratis; 0 % en los de pago)'], {1}),
+    ('Plan gratis', [POS_GRATIS, '10 GB que bajan a 3 GB a los 3 meses · 1 GB de vídeo · sin selección del cliente', '3 GB, galerías ilimitadas'], set()),
     ('Precio anual', [PRECIO_POS, '252 $ (100 GB + 30 GB de vídeo)', '192 $ (Plus, 100 GB)'], {0}),
   ],
   nota='ShootProof, SmugMug y Zenfolio, en sus apartados del artículo.'),
@@ -60,67 +80,67 @@ TABLAS = {
   cols=[('Positiva', True), ('WeTransfer', False), ('Dropbox Transfer', False), ('Google Drive', False)],
   filas=[
     ('Pensado para', ['Entregar y revisar con el cliente', 'Enviar archivos', 'Enviar desde tu Dropbox', 'Guardar y compartir carpetas'], set()),
-    ('Tamaño', ['Galería: hasta tu cuota · Archivos: hasta 150 GB por archivo (Estudio)', '3 GB/30 días (Free); 1 TB por transferencia (Ultimate)', '50 GB (Plus) a 250 GB (Business Plus)', 'Hasta tu cuota'], set()),
-    ('Caducidad del enlace', ['La galería no caduca', '3 días (Free y Starter); sin límite en Ultimate', '7 días (Plus); 30 en planes de empresa', 'No caduca'], {0, 3}),
-    ('Tu marca', ['Logo, colores y tipografía', 'Páginas con marca en Ultimate', 'Logo y fondo en planes de empresa', 'No'], {0}),
-    ('Revisión', ['Favoritas, comentarios en foto y por fotograma en vídeo', 'No', 'Con Replay, complemento aparte', 'Comentarios sobre archivos, con cuenta de Google'], {0}),
-    ('Pedir archivos a terceros', [POS_PEDIR, 'Sí, desde el plan gratis; pide email verificado y lo recibido caduca a los 3 días en Free', 'Sí, en todos los planes, sin cuenta; de 2 GB (Basic/Plus) a 250 GB por archivo', 'Solo con Forms o carpeta compartida: pide cuenta de Google'], {2}),
-    ('Plan gratis', ['15 GB · 2 galerías', '10 envíos o 3 GB cada 30 días', '2 GB', '15 GB compartidos con Gmail y Fotos'], set()),
-    ('Precio', [PRECIO_POS, 'Starter 6,99 $/mes; Ultimate sin precio verificable', 'Incluido en Dropbox (Plus, 9,99 $/mes)', '15 GB gratis; planes según país'], set()),
+    ('Tamaño', ['Galería: hasta tu cuota · Archivos: hasta 150 GB por archivo (Estudio)', '3 GB/30 días (Free); 300 GB/30 días (Starter); hasta 1 TB por envío (Ultimate)', '50 GB (Plus) a 250 GB (Business Plus)', 'Hasta tu cuota'], set()),
+    ('Caducidad del enlace', ['No caduca en Autor y Estudio; en Gratis, a los 30 días', WT_CADUCA, '7 días (Plus); fecha a tu elección en planes de equipo', 'No caduca'], {0, 3}),
+    ('Tu marca', [POS_MARCA, 'Página y fondos propios en Ultimate', 'Logo y fondo en planes de equipo', 'No'], {0}),
+    ('Revisión', [POS_REV, 'No', 'Comentarios en archivos; al fotograma, con Replay (aparte)', 'Comentarios sobre archivos, con cuenta de Google'], {0}),
+    ('Pedir archivos a terceros', [POS_PEDIR, WT_PEDIR, 'Sí, en todos los planes, sin cuenta; de 2 GB (Basic/Plus) a 250 GB por archivo', 'Solo con Forms o carpeta compartida: pide cuenta de Google'], {2}),
+    ('Plan gratis', [POS_GRATIS, '10 envíos o 3 GB cada 30 días; solo uso no comercial', '2 GB', '15 GB compartidos con Gmail y Fotos'], set()),
+    ('Precio', [PRECIO_POS, WT_PRECIO, 'Incluido en Dropbox (Plus, 9,99 $/mes anual)', '15 GB gratis; Workspace desde 7 $/usuario/mes'], set()),
   ],
   nota='SwissTransfer y Smash, en sus apartados del artículo.'),
 
 'frame-io': dict(
   cols=[('Positiva', True), ('Frame.io', False), ('Vimeo', False), ('Dropbox Replay', False)],
   filas=[
-    ('Comentarios en vídeo', ['Por fotograma', 'Por fotograma, por rango y anotaciones dibujadas', 'Con código de tiempo (desde Standard)', 'Sí; vínculo al fotograma no documentado'], {1}),
-    ('Exporta al editor', ['Marcadores a DaVinci Resolve y Final Cut Pro', 'Marcadores en Premiere Pro; CSV', 'No documentado', 'No documentado'], set()),
+    ('Comentarios en vídeo', [POS_COM_VIDEO, 'Por fotograma, por rango y anotaciones dibujadas', 'Con código de tiempo; el invitado comenta sin cuenta', REPLAY_COM], {1}),
+    ('Exporta al editor', [POS_EXPORTA, FRAME_EDITOR, VIMEO_EDITOR, REPLAY_EDITOR], set()),
     ('Fotografía', ['Galerías con favoritas, comentarios y exportación a Lightroom', 'Sí, con visor y enlaces de revisión', 'No', 'No'], {0}),
     ('Guardar tus archivos', [POS_GUARDAR, 'Cualquier archivo, hasta 5 TB, con carpetas', 'Solo vídeo', 'Tu Dropbox, con cualquier archivo'], {1}),
     ('Pedir archivos a terceros', [POS_PEDIR, 'Sin función propia', 'Solo programándolo con su API', 'Con las solicitudes de Dropbox, sin cuenta'], set()),
-    ('Entrega y portfolio', ['Entrega con tu marca + portfolio público', 'Presentaciones con marca, sin portfolio', 'Showcases y portfolios de vídeo', 'No'], {0}),
+    ('Entrega y portfolio', ['Entrega con tu marca (Autor y Estudio) + portfolio público', 'Presentaciones con marca (desde Pro), sin portfolio', 'Showcases y portfolios de vídeo (desde Standard)', 'No'], {0}),
     ('Almacenamiento', ['250 GB (Autor) · 1 TB (Estudio)', '2 TB (Pro, +2 TB por miembro)', '4 TB (Standard)', 'El de tu Dropbox (2 TB en Plus)'], {2}),
     ('Modelo de precio', ['Por cuenta, revisores ilimitados', 'Por miembro', 'Por asiento', 'Por usuario, sobre un plan de Dropbox'], {0}),
-    ('Precio de referencia', [PRECIO_POS, '15 $/miembro/mes (Pro)', '25 $/asiento/mes (Standard)', '120 $/usuario/año + Dropbox'], {0}),
+    ('Precio de referencia', [PRECIO_POS, '15 $/miembro/mes + impuestos (Pro)', '25 $/asiento/mes (Standard)', '120 $/usuario/año + Dropbox'], {0}),
   ]),
 
 'vimeo': dict(
   cols=[('Positiva', True), ('Vimeo', False), ('Frame.io', False), ('Dropbox Replay', False)],
   filas=[
-    ('Comentarios en vídeo', ['Por fotograma', 'Con código de tiempo (desde Standard)', 'Por fotograma, por rango y anotaciones', 'Sí; vínculo al fotograma no documentado'], {2}),
-    ('Exporta al editor', ['Marcadores a DaVinci Resolve y Final Cut Pro', 'No documentado', 'Marcadores en Premiere Pro; CSV', 'No documentado'], set()),
+    ('Comentarios en vídeo', [POS_COM_VIDEO, 'Con código de tiempo; el invitado comenta sin cuenta', 'Por fotograma, por rango y anotaciones', REPLAY_COM], {2}),
+    ('Exporta al editor', [POS_EXPORTA, VIMEO_EDITOR, FRAME_EDITOR, REPLAY_EDITOR], set()),
     ('Fotografía', ['Galerías con favoritas y comentarios', 'No', 'Sí, con visor y enlaces de revisión', 'No'], {0}),
-    ('Vídeo público y directos', ['No', 'Sí, con reproductor incrustable, showcases y directos', 'No', 'No'], {1}),
+    ('Vídeo público y directos', ['No', 'Sí: reproductor incrustable y showcases; directos en Advanced', 'No', 'No'], {1}),
     ('Guardar tus archivos', [POS_GUARDAR, 'Solo vídeo', 'Cualquier archivo, hasta 5 TB, con carpetas', 'Tu Dropbox, con cualquier archivo'], {2}),
     ('Pedir archivos a terceros', [POS_PEDIR, 'Solo programándolo con su API', 'Sin función propia', 'Con las solicitudes de Dropbox, sin cuenta'], set()),
     ('Almacenamiento', ['250 GB (Autor) · 1 TB (Estudio)', '4 TB (Standard)', '2 TB (Pro)', 'El de tu Dropbox (2 TB en Plus)'], {1}),
     ('Modelo de precio', ['Por cuenta, revisores ilimitados', 'Por asiento', 'Por miembro', 'Por usuario, sobre un plan de Dropbox'], {0}),
-    ('Precio de referencia', [PRECIO_POS, '25 $/asiento/mes (Standard)', '15 $/miembro/mes (Pro)', '120 $/usuario/año + Dropbox'], {0}),
+    ('Precio de referencia', [PRECIO_POS, '25 $/asiento/mes (Standard)', '15 $/miembro/mes + impuestos (Pro)', '120 $/usuario/año + Dropbox'], {0}),
   ]),
 
 'dropbox-replay': dict(
   cols=[('Positiva', True), ('Dropbox Replay', False), ('Frame.io', False), ('Vimeo', False)],
   filas=[
-    ('Comentarios en vídeo', ['Por fotograma', 'Sí; vínculo al fotograma no documentado', 'Por fotograma, por rango y anotaciones', 'Con código de tiempo (desde Standard)'], {2}),
+    ('Comentarios en vídeo', [POS_COM_VIDEO, REPLAY_COM, 'Por fotograma, por rango y anotaciones', 'Con código de tiempo; el invitado comenta sin cuenta'], {2}),
     ('Audio', ['No', 'Sí, sin pérdida', 'No como producto propio', 'No'], {1}),
-    ('Exporta al editor', ['Marcadores a DaVinci Resolve y Final Cut Pro', 'No documentado', 'Marcadores en Premiere Pro; CSV', 'No documentado'], set()),
-    ('Entrega al cliente', ['Galería con tu marca + portfolio', 'No', 'Presentaciones con marca, sin portfolio', 'Showcases y portfolios de vídeo'], {0}),
+    ('Exporta al editor', [POS_EXPORTA, REPLAY_EDITOR, FRAME_EDITOR, VIMEO_EDITOR], set()),
+    ('Entrega al cliente', ['Galería con tu marca (Autor y Estudio) + portfolio', 'No', 'Presentaciones con marca, sin portfolio', 'Showcases y portfolios de vídeo'], {0}),
     ('Guardar tus archivos', [POS_GUARDAR, 'Tu Dropbox sincronizado, con cualquier archivo', 'Cualquier archivo, hasta 5 TB', 'Solo vídeo'], {1}),
     ('Pedir archivos a terceros', [POS_PEDIR, 'Con las solicitudes de Dropbox, sin cuenta', 'Sin función propia', 'Solo programándolo con su API'], set()),
     ('Modelo de precio', ['Una cuota, revisores ilimitados', 'Por usuario + plan de Dropbox', 'Por miembro', 'Por asiento'], {0}),
-    ('Precio de referencia', [PRECIO_POS, '120 $/usuario/año + Dropbox', '15 $/miembro/mes (Pro)', '25 $/asiento/mes (Standard)'], {0}),
+    ('Precio de referencia', [PRECIO_POS, '120 $/usuario/año + Dropbox', '15 $/miembro/mes + impuestos (Pro)', '25 $/asiento/mes (Standard)'], {0}),
   ]),
 
 'arcadina': dict(
   cols=[('Positiva', True), ('Arcadina', False), ('Pixieset', False), ('Pic-Time', False)],
   filas=[
-    ('Vídeo en la galería', ['Alojado, junto a las fotos', 'Enlace de YouTube o Vimeo', 'Por minutos según plan', 'Bolsa aparte (30 GB en Professional)'], {0}),
-    ('Revisión', ['Favoritas, comentarios en foto y por fotograma en vídeo', 'Favoritas + comentario por imagen seleccionada', 'Favoritas de foto', 'Favoritas y selección'], {0}),
-    ('Guardar tus archivos y pedirlos a terceros', [POS_PEDIR + '; carpetas y envíos', NE, NE, 'Subida del cliente a la galería, desactivada en Pic-Time 2.0'], {0}),
-    ('Web pública', ['Portfolio con tus entregas', 'Sí, plan Web aparte', 'Módulo aparte', 'Portfolio Page embebible'], set()),
+    ('Vídeo en la galería', ['Alojado, junto a las fotos', 'Enlace de YouTube o Vimeo', PIXIESET_VIDEO, 'Cuota aparte (30 GB en Professional)'], {0}),
+    ('Revisión', [POS_REV, 'Favoritas + comentario en las fotos seleccionadas', 'Favoritas de foto, con notas', 'Favoritas y selección (desde Professional)'], {0}),
+    ('Guardar tus archivos y pedirlos a terceros', [POS_PEDIR + '; carpetas y envíos', NE, NE, PICTIME_SUBIDA], {0}),
+    ('Web pública', [POS_PORTFOLIO, 'Sí, plan Web aparte', 'Módulo aparte', 'Portfolio Page embebible'], set()),
     ('Tienda', ['No', 'Sí, sin comisión', 'Módulo aparte', 'Sí, 30+ laboratorios'], set()),
     ('Gestión del negocio', ['No', 'Sí, plan Manager aparte', 'Studio Manager, aparte', 'No'], set()),
-    ('Idioma del panel', ['Español', 'Español', 'Inglés', 'Inglés'], {0, 1}),
+    ('Idioma del panel', ['Español', 'Español', 'Inglés', 'Inglés, con traducción automática'], {0, 1}),
     ('Precio de referencia', [PRECIO_POS, 'Negocio desde 120 €/año (IVA incl., 30 GB)', '192 $/año (Plus, 100 GB)', '252 $/año (100 GB + 30 GB de vídeo)'], {0}),
   ],
   nota='PSPro y Zenfolio, en sus apartados del artículo.'),
@@ -129,82 +149,82 @@ TABLAS = {
 'vs-pictime-pixieset': dict(
   cols=[('Positiva Autor', True), ('Positiva Estudio', True), ('Pic-Time Professional', False), ('Pixieset Plus', False)],
   filas=[
-    ('Precio al año', ['89 € + IVA', '219 € + IVA', '252 $ (21 $/mes anual)', '192 $ (≈ 180 €)'], {0}),
-    ('Espacio para fotos y vídeos', ['250 GB compartidos', '1 TB compartido', '100 GB + 30 GB de vídeo', '100 GB de fotos + vídeo por minutos'], {1}),
-    ('¿El vídeo tiene una cuota aparte?', ['No', 'No', 'Sí', 'Sí'], {0, 1}),
-    ('Selección de favoritos del cliente', ['Sí, desde el plan gratis', 'Sí', 'Sí', 'Sí'], set()),
-    ('Tu marca en la galería', ['Logo, colores y tipografía', 'Lo mismo + multimarca', 'Sí', 'Logo y branding'], {1}),
-    ('Dominio propio', ['No', 'Sí', 'Sí', 'Sí'], set()),
-    ('Tus archivos y solicitudes a terceros', ['Compartir un archivo suelto con enlace', 'Carpetas, envíos y solicitudes; quien sube no necesita cuenta', 'Subida del cliente a la galería, desactivada en Pic-Time 2.0', NE], {1}),
-    ('Comisión si vendes copias o álbumes', ['0 %', '0 %', 'Comisión en su tienda integrada', '0 % en planes de pago · 15 % en el gratis'], set()),
-    ('Llevarte tus archivos al irte', ['ZIP con la estructura intacta, sin pedirlo a soporte', 'Igual', 'Exportación disponible', 'Exportación disponible'], set()),
-    ('Archivos alojados en la UE (RGPD)', ['Sí', 'Sí', 'No · UE, EE. UU. y Australia', 'No garantizado'], {0, 1}),
-    ('No entrena IA con tu material', ['Nunca', 'Nunca', 'Indexa tus imágenes salvo opt-out', 'No en modelos generativos'], {0, 1}),
+    ('Precio al año', ['89 € + IVA', '219 € + IVA', '252 $ (21 $/mes anual)', '192 $ (16 $/mes anual)'], {0}),
+    ('Espacio para fotos y vídeos', ['250 GB compartidos', '1 TB compartido', '100 GB + 30 GB de vídeo', '100 GB compartidos'], {1}),
+    ('¿El vídeo tiene una cuota aparte?', ['No', 'No', 'Sí', 'No en Plus (en Basic, 30 min de HD)'], {0, 1, 3}),
+    ('Selección de favoritos del cliente', ['Sí, en todos los planes', 'Sí', 'Sí (desde Professional)', 'Sí, con notas'], set()),
+    ('Tu marca en la galería', ['Logo, colores y tipografía', 'Lo mismo + multimarca', 'Sí, sin la marca de Pic-Time', 'Logo y marca propios, sin la de Pixieset'], {1}),
+    ('Dominio propio', ['No', 'Sí, lo activamos bajo petición', 'Sí', 'Sí'], set()),
+    ('Tus archivos y solicitudes a terceros', ['Compartir un archivo suelto con enlace', 'Carpetas, envíos y solicitudes; quien sube no necesita cuenta', PICTIME_SUBIDA, NE], {1}),
+    ('Comisión si vendes copias o álbumes', ['0 % (no hay tienda)', '0 % (no hay tienda)', '8 % si cobra Pic-Time; 0 % si cobras tú', '0 % en planes de pago · 15 % en el gratis'], set()),
+    ('Llevarte tus archivos al irte', ['ZIP con la estructura intacta, sin pedirlo a soporte', 'Igual', NE, NE], set()),
+    ('Archivos alojados en la UE (RGPD)', ['Sí', 'Sí', 'No: servidores en la UE, EE. UU. y Australia', 'Su DPA permite transferencias fuera del EEE, sin compromiso de UE'], {0, 1}),
+    ('No entrena IA con tu material', ['Nunca', 'Nunca', 'Indexa tus imágenes salvo opt-out y puede entrenar con una pequeña parte', NE], {0, 1}),
   ],
-  nota='Pixieset Pro (288 $/año, 1 TB) sale de la tabla para que se lea entera: mismas funciones que Plus con más espacio.'),
+  nota='Pixieset Pro (24 $/mes con facturación anual, 1 TB) sale de la tabla para que se lea entera: mismas funciones que Plus con más espacio.'),
 
 'vs-arcadina': dict(
   cols=[('Positiva Autor', True), ('Positiva Estudio', True), ('Arcadina Exposure', False), ('Arcadina Focus', False)],
   filas=[
     ('Precio al año', ['89 € + IVA', '219 € + IVA', '240 € (imp. incl.)', '360 € (imp. incl.)'], {0}),
     ('Espacio para fotos y vídeos', ['250 GB compartidos', '1 TB compartido', '100 GB', '300 GB'], {1}),
-    ('Revisión con comentarios (en vídeo, al fotograma)', ['Sí, exportables a DaVinci y Final Cut', 'Sí', 'Su web no lo anuncia', 'Su web no lo anuncia'], {0, 1}),
+    ('Revisión con comentarios (en vídeo, al fotograma)', ['Sí, exportables a DaVinci y Final Cut', 'Sí', 'Comentario en las fotos seleccionadas; en vídeo, no lo hemos encontrado', 'Igual'], {0, 1}),
     ('Selección de favoritas del cliente', ['Sí, con nombre y exportación a Lightroom, Finder, .txt y .csv', 'Sí', 'Sí', 'Sí'], set()),
-    ('Diseños de entrega para vídeo', ['Estreno, Cartel, Vitrina, Montaje y Videoteca', 'Sí', 'Su web no lo anuncia', 'Su web no lo anuncia'], {0, 1}),
-    ('Tu marca en la galería', ['Logo, colores y tipografía', 'Lo mismo + multimarca', 'Logo propio', 'Logo propio'], {1}),
-    ('Dominio propio', ['No', 'Sí', 'Con su Plan Web, aparte', 'Con su Plan Web, aparte'], {1}),
-    ('Tus archivos y solicitudes a terceros', ['Compartir un archivo suelto con enlace', 'Carpetas, envíos y solicitudes; quien sube no necesita cuenta', 'Su web no lo anuncia', 'Su web no lo anuncia'], {1}),
+    ('Diseños de entrega para vídeo', ['Estreno, Cartel, Vitrina, Montaje y Videoteca', 'Sí', 'Vídeo enlazado desde YouTube o Vimeo', 'Igual'], {0, 1}),
+    ('Tu marca en la galería', ['Logo, colores y tipografía', 'Lo mismo + multimarca', 'Logo propio, sin la marca Arcadina', 'Igual'], {1}),
+    ('Dominio propio', ['No', 'Sí, lo activamos bajo petición', 'Sí, conectas tu dominio', 'Sí, conectas tu dominio'], {1, 2, 3}),
+    ('Tus archivos y solicitudes a terceros', ['Compartir un archivo suelto con enlace', 'Carpetas, envíos y solicitudes; quien sube no necesita cuenta', NE, NE], {1}),
     ('Web del fotógrafo, tienda y reservas', ['Portfolio público · sin tienda ni reservas', 'Igual', 'Tienda sin comisiones · web y reservas en otros planes', 'Igual'], {2, 3}),
-    ('Archivos alojados en la UE (RGPD)', ['Sí', 'Sí', 'Empresa española · su web no especifica el alojamiento', 'Ídem'], {0, 1}),
-    ('No entrena IA con tu material', ['Nunca', 'Nunca', 'Su web no lo especifica', 'Ídem'], {0, 1}),
+    ('Archivos alojados en la UE (RGPD)', ['Sí', 'Sí', 'Empresa española; usa Hetzner y AWS sin publicar la región', 'Ídem'], {0, 1}),
+    ('No entrena IA con tu material', ['Nunca', 'Nunca', NE, 'Ídem'], {0, 1}),
   ],
-  nota='Arcadina Aperture (120 €/año con impuestos, 30 GB) sale de la tabla para que se lea entera.'),
+  nota='Arcadina Aperture (120 €/año, 30 GB) y Flash (600 €/año, 1.000 GB), con impuestos incluidos, salen de la tabla para que se lea entera.'),
 
 'vs-dropbox': dict(
   cols=[('Dropbox', False), ('Positiva', True)],
   filas=[
     ('Pensado para', ['Almacenamiento y sincronización', 'Entregar y revisar fotos y vídeo con el cliente'], set()),
-    ('El cliente recibe', ['Una carpeta de archivos', 'Una galería con tu marca'], {1}),
-    ('Tu marca (logo, colores, tipografía)', ['No', 'Sí'], {1}),
-    ('El enlace caduca', ['No', 'No, nunca'], set()),
-    ('El cliente elige sus favoritos', ['No', 'Sí'], {1}),
-    ('Comentarios sobre cada archivo', ['No', 'Sí, en foto y por fotograma en vídeo'], {1}),
-    ('Vídeo reproducible en la galería', ['No, solo descarga', 'Sí'], {1}),
+    ('El cliente recibe', ['Una carpeta de archivos', 'Una galería con tu marca (planes Autor y Estudio)'], {1}),
+    ('Tu marca (logo, colores, tipografía)', ['Logo y fondo en los envíos de planes de equipo; las carpetas, sin marca', 'Sí, en los planes Autor y Estudio'], {1}),
+    ('El enlace caduca', ['No', 'No en Autor y Estudio; en Gratis, a los 30 días'], set()),
+    ('El cliente elige sus favoritos', ['No', 'Sí, en todos los planes'], {1}),
+    ('Comentarios sobre cada archivo', ['Sí; en vídeo, con código de tiempo solo en algunos planes (en Plus y Standard, en el segundo 0)', 'Sí: en foto, y por fotograma en vídeo (planes Autor y Estudio)'], {1}),
+    ('Vídeo reproducible en la galería', ['Vista previa del archivo', 'Sí, en la galería, junto a las fotos'], {1}),
     ('Guardar tus archivos de trabajo', ['Cualquier archivo, sincronizado con tu ordenador', 'Carpetas y envíos con enlace (plan Estudio), sin sincronización'], {0}),
     ('Pedir archivos a terceros', ['Sí, en todos los planes, sin cuenta; de 2 GB a 250 GB por archivo', 'Sí, en el plan Estudio, sin cuenta; hasta 150 GB por archivo'], {0}),
-    ('Portfolio / web pública', ['No', 'Sí'], {1}),
-    ('Precio de referencia', ['Plus · 2 TB · 9,99 $/mes', 'Autor · 250 GB · 89 €/año'], set()),
+    ('Portfolio / web pública', ['No', 'Sí (con vídeos, en Autor y Estudio)'], {1}),
+    ('Precio de referencia', ['Plus · 2 TB · 9,99 $/mes con facturación anual', 'Autor · 250 GB · 89 €/año + IVA'], set()),
   ]),
 
 'vs-google-drive': dict(
   cols=[('Google Drive', False), ('Positiva', True)],
   filas=[
     ('Pensado para', ['Almacenamiento en la nube', 'Entregar y revisar fotos y vídeo con el cliente'], set()),
-    ('El cliente recibe', ['Una carpeta de archivos', 'Una galería con tu marca'], {1}),
-    ('Tu marca (logo, colores, tipografía)', ['No', 'Sí'], {1}),
-    ('El enlace caduca', ['No', 'No, nunca'], set()),
-    ('El cliente elige sus favoritos', ['No', 'Sí'], {1}),
-    ('Comentarios sobre cada archivo', ['Sí, con cuenta de Google', 'Sí, sin cuenta; en vídeo, por fotograma'], {1}),
+    ('El cliente recibe', ['Una carpeta de archivos', 'Una galería con tu marca (planes Autor y Estudio)'], {1}),
+    ('Tu marca (logo, colores, tipografía)', ['No', 'Sí, en los planes Autor y Estudio'], {1}),
+    ('El enlace caduca', ['No', 'No en Autor y Estudio; en Gratis, a los 30 días'], set()),
+    ('El cliente elige sus favoritos', ['No', 'Sí, en todos los planes'], {1}),
+    ('Comentarios sobre cada archivo', ['Sí, con cuenta de Google', 'Sí, sin cuenta; en vídeo, por fotograma (planes Autor y Estudio)'], {1}),
     ('Vídeo reproducible en la galería', ['Vista previa del archivo', 'Sí, en la galería, junto a las fotos'], {1}),
     ('Guardar tus archivos de trabajo', ['Cualquier archivo, sincronizado con tu ordenador', 'Carpetas y envíos con enlace (plan Estudio), sin sincronización'], {0}),
     ('Pedir archivos a terceros', ['Solo con Forms o carpeta compartida: pide cuenta de Google', 'Sí, en el plan Estudio, sin cuenta; hasta 150 GB por archivo'], {1}),
-    ('Portfolio / web pública', ['No', 'Sí'], {1}),
-    ('Precio de referencia', ['15 GB gratis; planes de pago según país', 'Autor · 250 GB · 89 €/año'], set()),
+    ('Portfolio / web pública', ['No', 'Sí (con vídeos, en Autor y Estudio)'], {1}),
+    ('Precio de referencia', ['15 GB gratis; Workspace Business Starter, 7 $/usuario/mes (30 GB)', 'Autor · 250 GB · 89 €/año + IVA'], set()),
   ]),
 
 'vs-wetransfer': dict(
   cols=[('WeTransfer', False), ('Positiva', True)],
   filas=[
     ('Pensado para', ['Envío de archivos', 'Entregar y revisar fotos y vídeo con el cliente'], set()),
-    ('El cliente recibe', ['Un enlace de descarga', 'Una galería con tu marca'], {1}),
-    ('Tu marca (logo, colores, tipografía)', ['Limitada (plan de pago)', 'Sí'], {1}),
-    ('El enlace caduca', ['A los 3 días (Free y Starter)', 'No, nunca'], {1}),
-    ('Plan gratuito', ['10 envíos o 3 GB cada 30 días', '15 GB · 2 galerías, sin caducidad'], {1}),
-    ('El cliente elige sus favoritos', ['No', 'Sí'], {1}),
-    ('Comentarios sobre cada archivo', ['No', 'Sí'], {1}),
-    ('Pedir archivos a terceros', ['Sí, desde el plan gratis; pide email verificado y lo recibido caduca a los 3 días en Free', 'Sí, en el plan Estudio, sin cuenta; lo recibido no caduca'], set()),
-    ('Portfolio / web pública', ['No', 'Sí'], {1}),
-    ('Precio', ['Starter 6,99 $/mes; Ultimate sin precio verificable', 'Autor · 250 GB · 89 €/año'], set()),
+    ('El cliente recibe', ['Un enlace de descarga', 'Una galería con tu marca (planes Autor y Estudio)'], {1}),
+    ('Tu marca (logo, colores, tipografía)', ['Página y fondos propios en Ultimate', 'Sí, en los planes Autor y Estudio'], {1}),
+    ('El enlace caduca', [WT_CADUCA, 'No en Autor y Estudio; en Gratis, a los 30 días'], {1}),
+    ('Plan gratuito', ['10 envíos o 3 GB cada 30 días; solo uso no comercial', POS_GRATIS], {1}),
+    ('El cliente elige sus favoritos', ['No', 'Sí, en todos los planes'], {1}),
+    ('Comentarios sobre cada archivo', ['No', 'Sí: en foto, y por fotograma en vídeo (planes Autor y Estudio)'], {1}),
+    ('Pedir archivos a terceros', [WT_PEDIR, 'Sí, en el plan Estudio, sin cuenta; lo recibido no caduca'], set()),
+    ('Portfolio / web pública', ['No', 'Sí (con vídeos, en Autor y Estudio)'], {1}),
+    ('Precio', [WT_PRECIO, 'Autor · 250 GB · 89 €/año + IVA'], set()),
   ]),
 }
 

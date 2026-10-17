@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>File Sharing & File Requests for Photographers · Positiva</title>
+<meta name="description" content="File sharing and file requests for photographers and videographers. Share folders by link and collect footage from anyone, no account needed. EU-hosted.">
+<link rel="canonical" href="https://positiva.studio/en/file-sharing/">
+<link rel="alternate" hreflang="es" href="https://positiva.studio/archivos/">
+<link rel="alternate" hreflang="en" href="https://positiva.studio/en/file-sharing/">
+<link rel="alternate" hreflang="x-default" href="https://positiva.studio/archivos/">
+
+<meta property="og:title" content="File sharing and file requests for photographers and videographers · Positiva">
+<meta property="og:description" content="File sharing and file requests for photographers and videographers. Share folders by link and collect footage from anyone, no account needed. EU-hosted.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://positiva.studio/en/file-sharing/">
+<meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F3F2EE">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/chrome.css">
+<link rel="stylesheet" href="/positiva.css">
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<!-- Session replay SOLO aquí, y la arquitectura ya hace la separación sola:
+     por esta plantilla pasan únicamente las páginas de scripts/new-web/pages/,
+     que son todas comerciales (home, precios, casos, comparativas). Las legales,
+     el soporte y el blog entran por DERIVADAS, heredan el <head> de la página
+     real de public/ y por tanto NO traen replay, igual que en el sitio vivo.
+     Si algún día una página legal se mueve a pages/, esto hay que revisarlo. -->
+<script defer src="https://analytics.labbo.studio/recorder.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script defer src="/js/analytics.js"></script>
+</head>
+<body>
+<!-- ════════════════════════════════════════════════════════════════
+     NAV DE LA WEB EN INGLÉS · gemelo de partials/chrome-nav.html (cambia los dos a la vez)
+     Lo usan gen.py (páginas de scripts/new-web/pages/) y `npm run stamp`
+     (blog, soporte, novedades y legales). Edita AQUÍ y ejecuta ambos.
+     ════════════════════════════════════════════════════════════════ -->
+<link rel="stylesheet" href="/chrome.css">
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+document.documentElement.classList.add('js');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+
+/* Conversión de Google Ads: «registro» (clientes potenciales).
+   Se dispara al pinchar cualquier enlace a app.positiva.studio/registro (los de
+   login apuntan a la raíz de la app y quedan fuera).
+   Sin bloquear la navegación: transport beacon sobrevive al cambio de página. */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+    'event_callback': callback
+  });
+  return false;
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="https://app.positiva.studio/registro"]');
+  if (!a || a.classList.contains('nav-login') || a.hasAttribute('data-no-conv')) return;
+  try {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+      'transport_type': 'beacon'
+    });
+  } catch (_) {}
+}, { passive: true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+<a class="saltar-n" href="#contenido">Skip to content</a>
+<nav class="top" id="nav" aria-label="Main"><div class="wrap inner">
+  <a href="/en/" class="logo" aria-label="Positiva, home"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
+  <div class="links">
+    <a href="/en/client-galleries/">Client galleries</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-revision">Review<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-revision">
+        <a href="/en/video-review/"><b>Video review</b><span>Frame-accurate comments, exported as markers to DaVinci Resolve and Final Cut Pro</span></a>
+        <a href="/en/photo-proofing/"><b>Photo proofing</b><span>Client favorites and comments on every photo, live in your dashboard</span></a>
+      </div>
+    </div>
+    <a href="/en/file-sharing/">Files</a>
+    <a href="/en/portfolio-website/">Portfolio</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-casos">Compare<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-casos">
+        <a href="/en/pixieset-alternative/"><b>Pixieset alternative</b><span>Photo and video in the same client gallery</span></a>
+        <a href="/en/pic-time-alternative/"><b>Pic-Time alternative</b><span>Client galleries without a print store attached</span></a>
+        <a href="/en/frame-io-alternative/"><b>Frame.io alternative</b><span>Frame-accurate video review with client delivery included</span></a>
+      </div>
+    </div>
+    <a href="/en/pricing/">Pricing</a>
+  </div>
+  <div class="acc">
+    <a class="lang" href="/archivos/" hreflang="es" lang="es" data-lang-switch title="Español">ES</a>
+    <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Log in</a>
+    <a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nav">Start free</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Open menu"><span></span></button>
+  </div>
+</div></nav>
+<div class="menu-m" id="menu-m" hidden>
+  <a href="/en/client-galleries/">Client galleries</a>
+  <a href="/en/video-review/">Video review</a>
+  <a href="/en/photo-proofing/">Photo proofing</a>
+  <a href="/en/file-sharing/">Files</a>
+  <a href="/en/portfolio-website/">Portfolio</a>
+  <a href="/en/pricing/">Pricing</a>
+  <span class="sub">Compare</span>
+  <a class="sm" href="/en/pixieset-alternative/">Pixieset alternative</a>
+  <a class="sm" href="/en/pic-time-alternative/">Pic-Time alternative</a>
+  <a class="sm" href="/en/frame-io-alternative/">Frame.io alternative</a>
+  <span class="sub">Resources</span>
+  <a class="sm" href="/soporte/es/">Help center (in Spanish)</a>
+  <a class="sm" href="/archivos/" hreflang="es" lang="es" data-lang-switch>Español</a>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Start free</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Log in to your dashboard</a></div>
+</div>
+<main id="contenido">
+<div class="wrap">
+<section class="hero">
+  <span class="eyebrow">Files and file requests</span>
+  <p class="h-xl titular"><span class="w"><span style="animation-delay:0.00s">Your</span></span> <span class="w"><span style="animation-delay:0.05s">working</span></span> <span class="w"><span style="animation-delay:0.10s">files,</span></span> <span class="w"><span style="animation-delay:0.15s"><em class="a">where</em></span></span> <span class="w"><span style="animation-delay:0.20s"><em class="a">you</em></span></span> <span class="w"><span style="animation-delay:0.25s"><em class="a">already</em></span></span> <span class="w"><span style="animation-delay:0.30s"><em class="a">deliver.</em></span></span></p>
+  <h1 class="lede h1d">File sharing and file requests for photographers and videographers</h1>
+  <p class="lede">Storage, sharing and file requests for photographers, videographers and video production companies. Share material with clients and collaborators by link, on every plan.</p>
+  <p class="lede">Organize your folders and collect raw footage, logos or selects with a link. <small class="plan">Studio plan</small></p>
+  <div class="cta"><a class="btn ghost" href="#como">See how it works</a></div>
+  <div class="stage" id="stage" data-grow><div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.positiva.studio/panel/archivos</span></div><div class="panes"><div class="pane on"><img src="/img/archivos/archivos-panel-16x9.webp" alt="The Files section of the Positiva dashboard: working folders and a folder shared with a link on your domain"></div></div></div></div>
+</section>
+</div>
+
+<div class="wrap">
+<section class="sec">
+  <div class="head r"><span class="eyebrow">What it’s for</span><h2 class="h-l">Three jobs. <em class="a">One folder.</em></h2><p class="lede">What you now juggle between a hard drive, Google Drive and WeTransfer lives right next to your client galleries.</p></div>
+  <div class="cols">
+    <div class="r"><span class="num">01</span><h3>Organize</h3><p>Working folders inside your plan’s storage: raw footage, selects, client logos, versions. <small class="plan">Studio plan</small></p></div>
+    <div class="r d1"><span class="num">02</span><h3>Share</h3><p>Send a file to a client, a collaborator or a lab with a link, on every plan. No re-sending, and no link that dies after seven days — it only expires if you set a date.</p><p>A whole folder or several files in one link. <small class="plan">Studio plan</small></p></div>
+    <div class="r d2"><span class="num">03</span><h3>Request</h3><p>Ask for material with a link: raw footage from a second shooter, logos from a client, files from a vendor. They upload without an account. <small class="plan">Studio plan</small></p></div>
+  </div>
+</section>
+</div>
+
+<section class="sala" id="como"><div class="wrap">
+  <div class="head r" style="padding-top:var(--gap)"><span class="eyebrow">How a file request works</span><h2 class="h-l">Three steps. <small class="plan">Studio plan</small></h2><p class="lede">It’s the same workflow you deliver with: what you receive here, you can review, deliver and publish without leaving Positiva.</p></div>
+  <div class="cols">
+    <div class="r"><span class="num">01</span><h3>Create the request</h3><p>A title and a destination folder in your Files. You get a link to share.</p></div>
+    <div class="r d1"><span class="num">02</span><h3>Whoever gets the link uploads</h3><p>No sign-up, straight from the browser. They see time remaining and upload speed. If the connection drops, the upload picks up where it left off.</p></div>
+    <div class="r d2"><span class="num">03</span><h3>It lands in Files</h3><p>In the folder you chose, with a subfolder for each person who uploaded. From there, download it or create a delivery or proofing gallery without leaving Positiva.</p></div>
+  </div>
+  <div class="trio-img" style="margin-top:clamp(40px,5vw,72px)">
+    <figure class="media reveal-img"><img src="/img/archivos/solicitud-pagina-16x10.webp" alt="A file request page with the photographer’s branding and instructions" loading="lazy"><figcaption>Always with your brand</figcaption></figure>
+    <figure class="media reveal-img"><img src="/img/archivos/solicitud-progreso-16x10.webp" alt="An upload in progress, showing each file’s progress and the upload speed" loading="lazy"><figcaption>The upload · progress and speed</figcaption></figure>
+    <figure class="media reveal-img"><img src="/img/archivos/recibido-carpeta-16x10.webp" alt="Received files in a folder named after the person who uploaded them" loading="lazy"><figcaption>What you receive · with the uploader’s name</figcaption></figure>
+  </div>
+</div></section>
+
+<div class="wrap">
+<section class="sec">
+  <div class="head r"><span class="eyebrow">What’s included</span><h2 class="h-l">Take real control <em class="a">of your files.</em></h2></div>
+  <div class="cols m2">
+    <div class="r"><span class="k">Uploaders</span><h3>No account to upload</h3><p>Open the link and drag files in. No sign-up, no app. <small class="plan">Studio plan</small></p></div>
+    <div class="r d1"><span class="k">Size</span><h3>No per-transfer limit</h3><p>The only limit is your plan’s storage. A 40 GB raw file is just another file.</p></div>
+    <div class="r d2"><span class="k">Storage</span><h3>You know what takes up space</h3><p>Every folder and file shows its size, so you can keep track of what you store and decide based on real numbers.</p></div>
+    <div class="r"><span class="k">Connection</span><h3>Resumable uploads</h3><p>Long uploads survive a dropped connection or a closed laptop.</p></div>
+    <div class="r d1"><span class="k">Privacy</span><h3>Optional password and expiry</h3><p>The links you share folders and files with can ask for a password before showing anything, and can stop working after a date you choose.</p></div>
+    <div class="r d2"><span class="k">Hosting</span><h3>EU-hosted, never used for AI</h3><p>The same European hosting as your galleries. Your files are never used to train AI.</p></div>
+  </div>
+</section>
+
+<section class="sec tight" id="faq">
+  <div class="head r"><span class="eyebrow">FAQ</span><h2 class="h-l">Before you request your first raw footage.</h2></div>
+  <div class="faq r">
+    <details><summary>Do my clients have to learn how to use it?</summary><p>No. They only open a link: to see what you share or to upload what you ask for. Files is your tool, not theirs.</p></details>
+    <details><summary>How much can someone upload to me?</summary><p>Whatever fits in your storage. File requests have no size or file-count limit of their own.</p></details>
+    <details><summary>Does the file request link expire?</summary><p>Not on its own. It stays open until you close it once you have the material, or until an expiry date if you set one.</p></details>
+    <details><summary>Can I password-protect a file request?</summary><p>No. File requests don’t have a password: anyone with the link can upload. If the link reaches the wrong person, you close the request or regenerate its link. The links you use to share files and folders can have a password.</p></details>
+    <details><summary>Which plan includes it?</summary><p>Folders, multi-file uploads and file requests are on the Studio plan (1 TB). On the Free and Author plans, Files holds individual files that you share one by one. Client galleries and proofing are on every plan.</p></details>
+    <details><summary>Can several people use the same link?</summary><p>Yes. They all upload to the same folder, each into their own subfolder, and you see every file with the uploader’s name.</p></details>
+  </div>
+</section>
+</div>
+
+<section class="final" id="demo"><div class="wrap inner">
+  <span class="eyebrow r">Book a demo</span>
+  <h2 class="h-xl r d1">Deliver, review and share. <em class="a">With your brand.</em></h2>
+  <p class="lede r d2">Folders, multi-file transfers and file requests are on the Studio plan, along with 1 TB for photo and video, your custom domain and proofing rounds. Book a demo and I’ll walk you through it on your own workflow, or <a href="/en/pricing/">see the plans</a>.</p>
+  <form class="demo" id="wl" data-demo novalidate>
+    <input type="email" name="email" id="wl-email" placeholder="name@yourstudio.com" required aria-label="Your email" autocomplete="email">
+    <button type="submit" class="btn">Book a demo</button>
+  </form>
+  <small class="demo-msg" id="msg">No commitment and no newsletter: I'll only email you to schedule it.</small>
+</div></section>
+</main>
+<!-- ════════════════════════════════════════════════════════════════
+     PIE EN INGLÉS · gemelo de partials/chrome-footer.html (cambia los dos a la vez)
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
+     las páginas. Sirve de mapa del sitio: cada página pública real
+     debe estar enlazada aquí (SEO + LLMs leen esto).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="footer">
+footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
+.footcols{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pv-s6);
+  margin-bottom:var(--pv-s8);
+}
+.footcols h3{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-tinta-60);margin:0 0 var(--pv-s3);
+}
+.footcols a{
+  display:block;font-family:var(--pv-sans);font-size:14px;color:var(--pv-tinta-60);
+  text-decoration:none;padding:4px 0;transition:color .18s;
+}
+.footcols a:hover{color:var(--pv-tinta)}
+.footer-word{
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(15px,3.9vw,58px);line-height:1;color:var(--pv-tinta);
+  white-space:nowrap;
+}
+.footer-word svg{height:.92em;width:auto;flex:none}
+.footer-word span{color:var(--pv-ambar)}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
+.footer-meta{
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
+  font-size:14px;color:var(--pv-tinta-60);
+}
+.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
+.footer-meta a:hover{color:var(--pv-tinta)}
+@media(max-width:760px){
+  .footcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--pv-s5) var(--pv-s4)}
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <h3>Product</h3>
+        <a href="/en/client-galleries/">Client galleries</a>
+        <a href="/en/video-review/">Video review</a>
+        <a href="/en/photo-proofing/">Photo proofing</a>
+        <a href="/en/file-sharing/">File sharing and requests</a>
+        <a href="/en/portfolio-website/">Portfolio website</a>
+        <a href="/en/pricing/">Pricing</a>
+        <a href="/en/#faq">FAQ</a>
+      </div>
+      <div>
+        <h3>Compare</h3>
+        <a href="/en/pixieset-alternative/">Pixieset alternative</a>
+        <a href="/en/pic-time-alternative/">Pic-Time alternative</a>
+        <a href="/en/frame-io-alternative/">Frame.io alternative</a>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <a href="/soporte/es/" hreflang="es">Help center (in Spanish)</a>
+        <a href="/novedades/" hreflang="es">Changelog (in Spanish)</a>
+        <a href="/sobre-nosotros/" hreflang="es">About us (in Spanish)</a>
+        <a href="/" hreflang="es" lang="es">Español</a>
+      </div>
+      <div>
+        <h3>Account</h3>
+        <a href="https://app.positiva.studio" data-no-conv>Log in to your dashboard</a>
+        <a href="https://app.positiva.studio/registro">Start free</a>
+        <a href="mailto:hola@positiva.studio">Contact</a>
+        <a href="/aviso-legal/" hreflang="es">Legal notice (Spanish)</a>
+        <a href="/privacidad/" hreflang="es">Privacy (Spanish)</a>
+        <a href="/terminos/" hreflang="es">Terms (Spanish)</a>
+      </div>
+    </div>
+    <div class="footer-word">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
+    <p class="footer-entidad">Positiva is a client gallery platform for photographers, videographers and video production companies: photo and video delivery, client proofing, frame-accurate video review with comments exported as markers to DaVinci Resolve and Final Cut Pro, file sharing and file requests, and a portfolio website built from the work you deliver. EU-hosted, GDPR-compliant and made in Spain.</p>
+    <div class="footer-meta">
+      <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Made in Spain · Run, built and billed from Europe</span>
+      <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+    </div>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://positiva.studio/#org",
+      "name": "Positiva",
+      "url": "https://positiva.studio/",
+      "logo": "https://positiva.studio/assets/og.png",
+      "description": "Positiva is a client gallery platform for photographers, videographers and video production companies, with photo and video delivery, client proofing, frame-accurate video review exported to DaVinci Resolve and Final Cut Pro, file sharing and a portfolio website. EU-hosted and made in Spain.",
+      "email": "hola@positiva.studio",
+      "foundingLocation": { "@type": "Place", "name": "Valencia, Spain" },
+      "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
+      "areaServed": "ES",
+      "knowsLanguage": ["es", "en"],
+      "sameAs": [
+        "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
+        "https://www.linkedin.com/company/positiva-studio/",
+        "https://instagram.com/positiva.studio_"
+      ]
+    }</script>
+  </div>
+</footer>
+
+<script>
+/* ── Vídeos del sitio: reproducción automática en bucle mientras están en
+   pantalla y pausa al salir — mismo comportamiento en móvil y escritorio.
+   Quedan fuera: la historia de la home (.hst), las tarjetas de la home
+   (.qcard) y el showcase (#reelvid), que tienen su propio control, los
+   vídeos con controles y los marcados con data-noauto. ── */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  const vids = Array.prototype.filter.call(
+    document.querySelectorAll('video[loop][muted]:not([controls]):not([data-noauto])'),
+    (v) => !v.closest('.hst') && !v.closest('.qcard') && v.id !== 'reelvid'
+  );
+  if (!vids.length) return;
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); }
+    else if (!v.paused) { v.pause(); }
+  }), { threshold: 0.25, rootMargin: '100px 0px' });
+  vids.forEach((v) => { v.muted = true; v.playsInline = true; io.observe(v); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
+})();
+</script>
+<script src="/positiva.js" defer></script>
+</body>
+</html>
