@@ -1,11 +1,12 @@
 User-agent: *
 Allow: /
 
-# Los dos sitemaps tienen el mismo contenido. sitemap.xml es el de siempre;
-# sitemap-2026-09.xml se añadió el 13/09/2026 porque la copia que Google tenía
-# guardada de sitemap.xml era del 14 de agosto (6 URLs) y no la refrescaba: una
-# URL nueva le obliga a descargar en vez de apoyarse en la caducada.
-# Estas líneas son una vía de descubrimiento aparte del envío en Search Console,
-# y robots.txt se lee mucho más a menudo que cualquier otro fichero.
+# Vía de descubrimiento aparte del envío en Search Console: robots.txt se lee
+# mucho más a menudo que cualquier otro fichero.
+#
+# Hubo un segundo sitemap, sitemap-2026-09.xml, del 13/09/2026: la copia que
+# Google tenía de sitemap.xml era del 14 de agosto (6 URLs) y no la refrescaba,
+# y una URL nueva le obliga a descargar en vez de apoyarse en la caducada. Ese
+# parche se retiró el 17/10/2026, cuando la web nueva cambió el sitemap entero
+# (108 URLs) y dejó de hacer falta. Si vuelve a pasar, el truco está aquí escrito.
 Sitemap: https://positiva.studio/sitemap.xml
-Sitemap: https://positiva.studio/sitemap-2026-09.xml

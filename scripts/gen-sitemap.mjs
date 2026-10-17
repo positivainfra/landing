@@ -16,8 +16,13 @@ import path from 'node:path';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const PUBLIC = path.join(ROOT, 'public');
 const SITEMAP = path.join(PUBLIC, 'sitemap.xml');
-// Copias del mismo sitemap que también hay que mantener al día (ver más abajo).
-const ALIASES = ['sitemap-2026-09.xml'];
+// Copias del mismo sitemap que también hay que mantener al día.
+// Vacío desde el 17/10/2026: sitemap-2026-09.xml era un parche para forzar a
+// Google a descargar en vez de usar su copia cacheada del 14 de agosto, y dejó
+// de hacer falta cuando la web nueva reescribió el sitemap entero (108 URLs).
+// Si vuelve a quedarse con una copia vieja, añadir aquí un nombre nuevo (una
+// URL que no conoce le obliga a descargar) y anunciarlo en robots.txt.
+const ALIASES = [];
 const ORIGIN = 'https://positiva.studio';
 const CHECK = process.argv.includes('--check');
 
@@ -82,4 +87,4 @@ fs.writeFileSync(SITEMAP, xml);
 // una versión del 14 de agosto de sitemap.xml y no la refrescaba. Ambas se
 // escriben a la vez para que no puedan divergir sin que nadie se entere.
 for (const alias of ALIASES) fs.writeFileSync(path.join(PUBLIC, alias), xml);
-console.log(`\npublic/sitemap.xml reescrito (y ${ALIASES.join(', ')}).`);
+console.log(`\npublic/sitemap.xml reescrito${ALIASES.length ? ` (y ${ALIASES.join(', ')})` : ''}.`);

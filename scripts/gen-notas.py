@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Genera /notas/ (índice + artículos) a partir de ARTICLES.
-import os, sys, json, html
+import os, sys, json, html, re, glob
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comparativas  # tablas con la celda ganadora (fuente única, también para /positiva-vs-*)
 
@@ -120,7 +120,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
 <meta property="og:locale" content="es_ES">
 <meta name="theme-color" content="#F1F0EC">
-<link rel="canonical" href="https://positiva.studio{path}">
+<link rel="canonical" href="https://positiva.studio{path}">{hreflang}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -148,6 +148,42 @@ FOOT = """
 </body>
 </html>
 """
+
+
+# ── hreflang con las páginas en inglés ────────────────────────────────────
+# Tres notas tienen gemela en inglés (/en/pic-time-alternative/ y compañía),
+# pero las genera OTRO script: scripts/new-web/gen.py. Ese emite el lado EN a
+# partir del campo `alt:` de la cabecera de scripts/new-web/pages/en/*.html.
+#
+# Si aquí repitiéramos el mapeo a mano tendríamos dos listas que se van
+# separando en silencio, y un hreflang que apunta a un sitio que no te devuelve
+# la visita es un hreflang que Google IGNORA entero. Así que no se repite: se
+# lee esa misma cabecera. Una sola fuente de verdad, en el lado EN.
+#
+# Si una fuente EN pierde su `alt:`, esta nota se queda sin hreflang en el mismo
+# paso, que es exactamente lo que se quiere: los pares caen juntos o no caen.
+PAGINAS_EN = os.path.join(os.path.dirname(__file__), 'new-web', 'pages', 'en')
+
+
+def hreflang_de(ruta_es):
+    """Devuelve los <link rel=alternate> si alguna página EN declara `alt: <ruta_es>`."""
+    if not os.path.isdir(PAGINAS_EN):
+        return ''
+    for f in sorted(glob.glob(os.path.join(PAGINAS_EN, '*.html'))):
+        cab = re.match(r'\s*<!--(.*?)-->', open(f, encoding='utf-8').read(), re.S)
+        if not cab:
+            continue
+        d = dict(l.split(':', 1) for l in cab.group(1).strip().splitlines() if ':' in l)
+        d = {k.strip(): v.strip() for k, v in d.items()}
+        if d.get('alt') == ruta_es and d.get('path'):
+            en = d['path']
+            # El salto va DELANTE: así una nota sin gemela no deja una línea en
+            # blanco suelta en el <head> (ni ruido en el diff al regenerar).
+            return ('\n'
+                    f'<link rel="alternate" hreflang="es" href="https://positiva.studio{ruta_es}">\n'
+                    f'<link rel="alternate" hreflang="en" href="https://positiva.studio{en}">\n'
+                    f'<link rel="alternate" hreflang="x-default" href="https://positiva.studio{ruta_es}">')
+    return ''
 
 
 def article_page(a):
@@ -183,8 +219,10 @@ def article_page(a):
         faq_html = '\n<h2>Preguntas frecuentes</h2>\n' + '\n'.join(
             f'<h3>{q}</h3>\n<p>{r}</p>' for q, r in a['faq'])
 
+    ruta = f"/notas/{a['slug']}/"
     body = HEAD.format(title=a['title'], desc=a['desc'], ogtype='article',
-                       path=f"/notas/{a['slug']}/", css=CSS, schema=schema)
+                       path=ruta, css=CSS, schema=schema,
+                       hreflang=hreflang_de(ruta))
     body += f"""
 <main id="contenido">
 <div class="wrap notas-doc">
@@ -226,7 +264,7 @@ def index_page(articles):
     body = HEAD.format(
         title='Blog · Positiva',
         desc='Guías y comparativas para fotógrafos, videógrafos y productoras: alternativas a las herramientas de siempre, entrega de galerías y revisión de fotos y vídeo.',
-        ogtype='website', path='/notas/', css=CSS, schema=schema)
+        ogtype='website', path='/notas/', css=CSS, schema=schema, hreflang='')
     body += f"""
 <main id="contenido">
 <div class="wrap notas-doc">
