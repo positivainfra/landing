@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Galerías de fotos y vídeo para clientes con tu marca · Positiva</title>
-<meta name="description" content="Galerías privadas de fotos y vídeo con tu marca y un enlace que no caduca. Tu cliente entra sin cuenta, marca favoritas y descarga según los permisos de cada enlace: solo ver, web o alta con originales.">
+<title>Galerías de entrega de fotos y vídeo para clientes con tu marca · Positiva</title>
+<meta name="description" content="Galerías privadas de entrega de fotos y vídeo con tu marca y un enlace que no caduca. Tu cliente entra sin cuenta, marca favoritas y descarga según los permisos de cada enlace: solo ver, descarga web o alta con originales.">
 <!-- Web nueva en pruebas: NO indexar. Ver scripts/new-web/gen.py -->
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://positiva.studio/new/galerias/">
-<meta property="og:title" content="Galerías de fotos y vídeo para clientes con tu marca · Positiva">
-<meta property="og:description" content="Galerías privadas de fotos y vídeo con tu marca y un enlace que no caduca. Tu cliente entra sin cuenta, marca favoritas y descarga según los permisos de cada enlace: solo ver, web o alta con originales.">
+<meta property="og:title" content="Galerías de entrega de fotos y vídeo para clientes con tu marca · Positiva">
+<meta property="og:description" content="Galerías privadas de entrega de fotos y vídeo con tu marca y un enlace que no caduca. Tu cliente entra sin cuenta, marca favoritas y descarga según los permisos de cada enlace: solo ver, descarga web o alta con originales.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://positiva.studio/new/galerias/">
 <meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
@@ -97,7 +97,13 @@ document.addEventListener('click', function (e) {
   <a href="/new/" class="logo" aria-label="Positiva, inicio"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
   <div class="links">
     <a href="/new/galerias/">Entrega</a>
-    <a href="/new/revision-video/">Revisión</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-revision">Revisión<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-revision">
+        <a href="/new/revision-video/"><b>Revisión de vídeo</b><span>Comentarios en el fotograma exacto, exportables a DaVinci Resolve y Final Cut Pro</span></a>
+        <a href="/new/revision-foto/"><b>Revisión de fotos</b><span>Favoritas y comentarios foto a foto, en tu panel al momento</span></a>
+      </div>
+    </div>
     <a href="/new/archivos/">Archivos</a>
     <a href="/new/portfolio/">Portfolio</a>
     <div class="dd">
@@ -140,7 +146,7 @@ document.addEventListener('click', function (e) {
   <span class="eyebrow">Galerías de entrega</span>
   <p class="h-xl titular"><span class="w"><span style="animation-delay:0.00s">Tu</span></span> <span class="w"><span style="animation-delay:0.05s">trabajo.</span></span> <span class="w"><span style="animation-delay:0.10s"><em class="a">Tu</em></span></span> <span class="w"><span style="animation-delay:0.15s"><em class="a">marca.</em></span></span></p>
   <h1 class="lede h1d">Galerías de entrega de fotos y vídeo con tu marca</h1>
-  <p class="lede">Galerías privadas de fotos y vídeo con tu logo, tu tipografía y tus colores. Entrega tu material con diseños pensados por un fotógrafo, enlaces que no caducan, momentos para ordenar el relato y todo, foto y vídeo, en el mismo enlace.</p>
+  <p class="lede">Galerías privadas de fotos y vídeo con tu logo, tu tipografía y tus colores. Entrega tu material con diseños pensados para que tu cliente disfrute, enlaces que no caducan, momentos para ordenar el relato y todo, foto y vídeo, en el mismo enlace.</p>
   <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click">Empieza gratis</a><a class="btn ghost" href="#marca">Ver cómo funciona</a></div>
   <p class="fine">La frase «¿me lo puedes volver a pasar?»<br/> desaparece de tu vida.</p>
   <figure class="browser stage" data-grow style="margin-top:clamp(40px,6vw,72px)">
@@ -165,7 +171,7 @@ document.addEventListener('click', function (e) {
   <article class="step">
     <div class="txt r"><span class="eyebrow">Tu marca</span><h2>Tu marca en el momento clave.</h2>
       <p class="l">Los creadores invertimos mucho tiempo, dinero y esfuerzo en crear piezas de la mayor calidad. Nuestro cliente solo se queda con lo que entregamos, y ahí es donde una experiencia gris puede dejar tu trabajo varios peldaños por debajo de su calidad.</p>
-      <ul><li>Sin buscadores y sin cuentas: tu trabajo solo lo ve quien tú decides.</li><li>Logo, colores y tipografías tuyos en portada, rejilla y descargas.</li><li>tuestudio.positiva.studio — o tu dominio propio en el plan Estudio.</li><li>Tu cliente ve tu estudio. Positiva se queda fuera del plano.</li></ul></div>
+      <ul><li>Sin buscadores y sin cuentas: tu trabajo solo lo ve quien tú decides.</li><li>Logo, colores y tipografías tuyos en portada, rejilla y descargas.</li><li>tuestudio.positiva.studio — o tu dominio propio en el plan Estudio.</li></ul></div>
     <figure class="media reveal-img"><img src="/img/galerias/marca-galeria.webp" alt="Portada de una galería real con el nombre del estudio arriba y la sesión Must Have NYC" loading="lazy"><figcaption>Galería real</figcaption></figure>
   </article>
 </section>
@@ -173,14 +179,14 @@ document.addEventListener('click', function (e) {
 <section class="sec tight" id="diseno">
   <div class="head r"><span class="eyebrow">Diseño</span><h2 class="h-l">Siete portadas. Seis cuadrículas. <em class="a">Tu firma.</em></h2><p class="lede">Cada galería sale con una dirección de arte pensada por un fotógrafo: eliges portada, cuadrícula y tema, y todo lo demás — tu logo, tu tipografía, tus colores — ya está puesto. Positiva no aparece por ningún sitio.</p></div>
   <div class="pair">
-    <figure class="media reveal-img"><video data-noauto class="auto" muted playsinline loop preload="none" poster="/video/pasos/disenas-poster.jpg" src="/video/pasos/disenas.mp4"></video><figcaption><b>Foto</b> · portada, cuadrícula y tema, en tiempo real</figcaption></figure>
-    <figure class="media reveal-img"><video data-noauto class="auto" muted playsinline loop preload="none" poster="/img/galerias/diseno-video.webp" src="/video/disenos-video.mp4"></video><figcaption><b>Vídeo</b> · Estreno, Cartel, Vitrina, Montaje y Videoteca</figcaption></figure>
+    <figure class="media reveal-img"><video data-noauto class="auto" muted playsinline loop preload="none" poster="/video/pasos/disenas-poster.jpg" src="/video/pasos/disenas.mp4"></video></figure>
+    <figure class="media reveal-img"><video data-noauto class="auto" muted playsinline loop preload="none" poster="/img/galerias/diseno-video.webp" src="/video/disenos-video.mp4"></video></figure>
   </div>
   <div class="cols c4 plain r" style="margin-top:56px">
-    <div><span class="k">Portadas</span><p>Siete composiciones de portada, de la editorial al cartel. La eliges por galería.</p></div>
+    <div><span class="k">Portadas</span><p>Siete composiciones de portada. La eliges por galería.</p></div>
     <div><span class="k">Cuadrículas</span><p>Seis formas de ordenar la rejilla, pensadas para que mande tu material.</p></div>
     <div><span class="k">Temas</span><p>Claro u oscuro, con acentos de color que no compiten con tus fotos.</p></div>
-    <div><span class="k">Vídeo</span><p>Diseños propios de entrega de vídeo — Estreno, Cartel, Vitrina, Montaje y Videoteca. <a href="/new/soporte/es/disenos-de-galeria/" style="color:var(--pv-ambar-ink)">Los diseños, en detalle</a>.</p></div>
+    <div><span class="k">Vídeo</span><p>Diseños propios de entrega de vídeo. <a href="/new/soporte/es/disenos-de-galeria/" style="color:var(--pv-ambar-ink)">Los diseños, en detalle</a>.</p></div>
   </div>
   <div class="trio-img" style="margin-top:56px">
     <figure class="media reveal-img"><img src="/img/galerias/huella-barro.webp" alt="Galería de un documental: portada oscura con laureles de festivales" loading="lazy"></figure>
@@ -220,7 +226,7 @@ document.addEventListener('click', function (e) {
   </div>
   <div class="cols c2 plain" style="margin-top:clamp(48px,6vw,72px)">
     <div class="r"><h3>Las favoritas vuelven a tu editor</h3><p>Tu cliente confirma su email al marcar la primera, así que sabes quién ha elegido cada foto. Tú importas los favoritos en Lightroom con el plugin de Positiva o exportas la selección — solo la de tu cliente, o la de todos — como lista de nombres (.txt), hoja de cálculo (.csv) o etiquetas de color de Finder.</p></div>
-    <div class="r d1"><h3>¿Y si el proyecto aún no está cerrado?</h3><p>Toda galería puede ser de entrega o de revisión, y convertirse las veces que haga falta sin perder contenido. La revisión añade comentarios — <a href="/new/revision-foto/" style="color:var(--pv-ambar-ink)">en foto, imagen a imagen</a>; <a href="/new/revision-video/" style="color:var(--pv-ambar-ink)">en vídeo, anclados al fotograma</a>.</p></div>
+    <div class="r d1"><h3>¿Y si el proyecto aún no está cerrado?</h3><p>Toda galería puede ser de entrega o de revisión, y puedes pasar de una a otra las veces que haga falta sin perder contenido. La revisión añade comentarios — <a href="/new/revision-foto/" style="color:var(--pv-ambar-ink)">en foto, imagen a imagen</a>; <a href="/new/revision-video/" style="color:var(--pv-ambar-ink)">en vídeo, anclados al fotograma</a>.</p></div>
   </div>
 </section>
 
@@ -232,7 +238,7 @@ document.addEventListener('click', function (e) {
 </section>
 
 <section class="sec tight" id="video">
-  <div class="head r"><span class="eyebrow">Fotos y vídeo</span><h2 class="h-l">La misma galería. <em class="a">El mismo enlace.</em></h2><p class="lede">JPEG y MP4 conviven en la misma galería: los mismos momentos, la misma marca y una sola dirección que enviar. El vídeo se reproduce dentro — sin mandar a nadie a otra plataforma — y sin bolsas separadas: un GB es un GB, sea foto o vídeo.</p></div>
+  <div class="head r"><span class="eyebrow">Fotos y vídeo</span><h2 class="h-l">La misma galería. <em class="a">El mismo enlace.</em></h2><p class="lede">JPEG y MP4 conviven en la misma galería: los mismos momentos, la misma marca y una sola dirección que enviar. El vídeo se reproduce dentro, sin mandar a nadie a otra plataforma y sin bolsas separadas: un GB es un GB, sea foto o vídeo.</p></div>
   <div class="pair">
     <figure class="media reveal-img"><img src="/img/galerias/galeria-fotos.webp" alt="La rejilla de fotos de una galería real, con las pestañas Fotos y Vídeo en la cabecera" loading="lazy"><figcaption>Fotos · la rejilla, con la pestaña Vídeo al lado</figcaption></figure>
     <figure class="media reveal-img"><img src="/img/galerias/galeria-video.webp" alt="Un vídeo reproduciéndose dentro de la misma galería" loading="lazy"><figcaption>Vídeo · se reproduce en la propia galería</figcaption></figure>
