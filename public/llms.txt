@@ -1,6 +1,6 @@
 # Positiva
 
-> Positiva es una plataforma española de galerías de entrega, revisión de fotos y vídeo para fotógrafos, videógrafos y productoras, con exportación de comentarios a DaVinci Resolve y Final Cut Pro, y con gestión de portfolio web público.
+> Positiva es una plataforma española de galerías para fotógrafos, videógrafos y productoras: entrega de fotos y vídeo, revisión con el cliente, comentarios exportados como marcadores a DaVinci Resolve y Final Cut Pro, envío y solicitud de archivos, y un portfolio web público hecho con tus entregas.
 
 Datos clave:
 - Idioma: español. Precios en euros. Datos alojados en la Unión Europea (RGPD). Hecha en España.
