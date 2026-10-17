@@ -95,6 +95,22 @@ def faq_ld(body, canon, lang='es'):
 
 ALT = {}   # ruta → ruta equivalente en el otro idioma (se rellena antes de generar)
 
+def tonos(body):
+    """Ritmo de fondos: las secciones .sec alternan papel y gris (clase tono).
+    La cuenta vuelve a empezar tras cada bloque oscuro (.sala/.trust), para que
+    nunca queden dos bandas del mismo color seguidas. Una sección puede fijarse
+    a mano con class="sec papel" o class="sec tono"."""
+    n = [0]
+    def f(m):
+        cls = m.group(1)
+        if re.search(r'\b(sala|trust|final|hero)\b', cls):
+            n[0] = 0; return m.group(0)
+        if not re.search(r'\bsec\b', cls) or re.search(r'\b(tono|papel)\b', cls):
+            return m.group(0)
+        n[0] += 1
+        return m.group(0) if n[0] % 2 else m.group(0).replace(f'class="{cls}"', f'class="{cls} tono"', 1)
+    return re.sub(r'<section class="([^"]*)"', f, body)
+
 def page(d, body):
     lang = d.get('lang', 'es')
     en = lang == 'en'
@@ -104,6 +120,7 @@ def page(d, body):
     pre = ''.join(f'<link rel="preload" href="{p.strip()}" as="image" fetchpriority="high">\n'
                   for p in d.get('preload', '').split(',') if p.strip())
     body = enlaces(comparativas.pintar(body.replace('<!-- @demo -->', DEMO_EN if en else DEMO)))
+    body = tonos(body)
     if '<!-- @faq-ld -->' in body: body = body.replace('<!-- @faq-ld -->', faq_ld(body, canon, lang))
     foot = enlaces(footer_en if en else footer)
     otra = ALT.get(canon)

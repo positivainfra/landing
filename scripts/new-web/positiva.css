@@ -352,3 +352,24 @@ em.a{font-style:italic;color:var(--ambar-ink)}
 small.plan{background:none;border:0;border-radius:0;padding:0;box-shadow:none;transform:none;min-height:0;display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-2);line-height:1.5}
 li small.plan,h3 small.plan,h2 small.plan,.k small.plan,b small.plan,td small.plan{display:inline;margin:0 0 0 6px}
 .sala small.plan,.oscuro small.plan{color:#A9A8A2}
+
+/* ── Ritmo de fondos (gen.py → tonos): las secciones alternan papel y un gris
+   cálido a todo el ancho; el negro (.sala, .trust) queda como acento. ── */
+.sec.tono{background:var(--bandeja);box-shadow:0 0 0 100vmax var(--bandeja);clip-path:inset(0 -100vmax);margin-top:var(--gap);padding-top:clamp(72px,10vw,140px);padding-bottom:clamp(72px,10vw,140px)}
+.sec.tono+.sec{padding-top:clamp(72px,10vw,140px)}
+.sec.tono .media,.sec.tono .cols>div,.sec.tono .q,.sec.tono details{border-color:#D9D7CF}
+.sec.tono+.final,.sec.tono+.sala,.sec.tono+.trust{margin-top:0}
+@media(max-width:760px){
+  .sec.tono{padding-top:72px;padding-bottom:72px}
+  .sec.tono+.sec{padding-top:72px}
+}
+
+/* Bandas dentro de una sección (p. ej. los pasos de la home): .step.banda a todo
+   el ancho, en gris (tono) o en negro (sala). */
+.step.banda{position:relative;box-shadow:0 0 0 100vmax var(--b);clip-path:inset(0 -100vmax);background:var(--b);padding-block:clamp(72px,9vw,128px);margin-block:clamp(40px,5vw,72px)}
+.step.banda.tono{--b:var(--bandeja)}
+.step.banda.sala{--b:var(--sala);margin-top:clamp(40px,5vw,72px);padding-bottom:clamp(72px,9vw,128px)}
+.step.banda.sala h3,.step.banda.sala h2{color:var(--hueso)}
+.step.banda.sala .more{color:var(--ambar)}
+.step.banda + .step.banda{margin-top:0}
+@media(max-width:760px){.step.banda{padding-block:64px}}
