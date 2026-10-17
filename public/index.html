@@ -2,751 +2,46 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Positiva · Galerías de fotos y vídeo para fotógrafos y videógrafos</title>
-<meta name="description" content="Entrega galerías de fotos y vídeo con tu marca y revisa proyectos online con tu cliente, sin reenviar enlaces. Para fotógrafos y videógrafos.">
-<meta property="og:title" content="Positiva">
-<meta property="og:description" content="Entrégalo una vez. No lo reenvíes nunca.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Positiva · Galerías de fotos y vídeo para clientes, revisión online y envío de archivos</title>
+<meta name="description" content="Galerías de entrega y revisión online de fotos y vídeo para clientes y envío y solicitud de archivos, con tu marca. Para fotógrafos, videógrafos y productoras. Alojado en la UE.">
+<link rel="canonical" href="https://positiva.studio/">
+<meta property="og:title" content="Tu trabajo no termina cuando exportas">
+<meta property="og:description" content="Galerías de entrega y revisión online de fotos y vídeo para clientes y envío y solicitud de archivos, con tu marca. Para fotógrafos, videógrafos y productoras. Alojado en la UE.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://positiva.studio/">
 <meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Positiva. Entrégalo una vez. No lo reenvíes nunca.">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Positiva">
-<meta name="twitter:description" content="Entrégalo una vez. No lo reenvíes nunca.">
-<meta name="twitter:image" content="https://positiva.studio/assets/og.png?v=2">
-<meta name="theme-color" content="#F1F0EC">
-<link rel="canonical" href="https://positiva.studio/">
+<meta name="theme-color" content="#F3F2EE">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
-<!-- Fuentes auto-alojadas en /fonts (subconjunto latino). Cero CDN externo. -->
 <link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/video/galeria-hero-poster.jpg" as="image" fetchpriority="high">
-
-<style>
-/* ── Fuentes auto-alojadas · subconjunto latino · font-display:swap ── */
-@font-face{font-family:'Playfair Display';font-style:normal;font-weight:300 400;font-display:swap;src:url(/fonts/playfair.woff2) format('woff2')}
-@font-face{font-family:'Playfair Display';font-style:italic;font-weight:300 400;font-display:swap;src:url(/fonts/playfair-italic.woff2) format('woff2')}
-@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument.woff2) format('woff2')}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/ibmplexmono-400.woff2) format('woff2')}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/ibmplexmono-700.woff2) format('woff2')}
-@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/spacemono-700.woff2) format('woff2')}
-
-/* ══════════════════════════════════════════════════════════════
-   POSITIVA · Landing v2 — editorial, foto protagonista
-   Tokens idénticos a src/styles/tokens.css. No inventes valores.
-   Animación: solo transform/opacity. Cero librerías. Cero CDN.
-   ══════════════════════════════════════════════════════════════ */
-:root{
-  --pv-papel:#F1F0EC; --pv-luz:#FFFFFF; --pv-bandeja:#E6E5E0;
-  --pv-sala:#0E0E0D;  --pv-sala-2:#1A1A18;
-  --pv-tinta:#171614; --pv-tinta-60:#6E6D67; --pv-tinta-30:#A9A8A2;
-  --pv-linea:#D6D5CF; --pv-linea-sala:#2A2A27;
-  --pv-ambar:#C98A2B; --pv-ambar-luz:#F5E9D2; --pv-ambar-hover:#B37A24; --pv-ambar-ink:#8F5F15;
-  --pv-graso:#E0402A;
-  --pv-display:'Playfair Display',Georgia,serif;
-  --pv-sans:'Instrument Sans',-apple-system,system-ui,sans-serif;
-  --pv-mono:'IBM Plex Mono',ui-monospace,monospace;
-  --pv-r-foto:0px; --pv-r-panel:10px; --pv-r-input:8px; --pv-r-pill:999px;
-  --pv-s1:4px;--pv-s2:8px;--pv-s3:12px;--pv-s4:16px;--pv-s5:24px;
-  --pv-s6:32px;--pv-s7:48px;--pv-s8:64px;--pv-s9:96px;--pv-s10:128px;
-  --pv-ease:cubic-bezier(.4,0,.2,1); --pv-ease-draw:cubic-bezier(.5,.05,.25,1);
-  --pv-ease-out:cubic-bezier(.19,1,.22,1);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  background:var(--pv-papel);color:var(--pv-tinta);
-  font-family:var(--pv-sans);font-size:18px;line-height:1.67;
-  -webkit-font-smoothing:antialiased;overflow-x:clip;
-}
-img{max-width:100%}
-.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
-.narrow{max-width:820px}
-
-h1,h2,h3{font-family:var(--pv-display);font-weight:300;letter-spacing:-.02em;line-height:1.04}
-h2{font-size:clamp(38px,5.2vw,72px)}
-h3{font-size:clamp(24px,2.2vw,30px);font-weight:400;line-height:1.22;letter-spacing:-.01em}
-h1 em,h2 em,h3 em{font-style:italic}
-.lede{font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:var(--pv-tinta-60);max-width:56ch}
-
-/* eyebrow con regla horizontal — cabecera de sección editorial */
-.eyebrow{
-  font-family:var(--pv-mono);font-size:11px;font-weight:700;
-  letter-spacing:.18em;text-transform:uppercase;color:var(--pv-ambar-ink);
-  display:flex;align-items:center;gap:var(--pv-s4);margin-bottom:var(--pv-s6);
-}
-.eyebrow::after{content:"";flex:1;height:1px;background:currentColor;opacity:.28}
-.dark .eyebrow,.capture .eyebrow{color:var(--pv-ambar)}
-.eyebrow .idx{color:var(--pv-tinta-30)}
-.dark .eyebrow .idx{color:#5C5B56}
-
-.kicker{
-  font-family:var(--pv-mono);font-size:14px;font-weight:700;letter-spacing:.16em;
-  color:var(--pv-ambar);text-transform:uppercase;line-height:1.8;
-}
-
-section{padding:clamp(88px,12vw,160px) 0}
-.dark{background:var(--pv-sala);color:#EDECE8}
-.dark .lede{color:#9C9B95}
-
-/* ── revelado al hacer scroll (IO + clase .is-in) ─────────────
-   Solo si hay JS (html.js): sin JS todo es visible desde el HTML. */
-html.js .reveal{opacity:0;transform:translateY(30px);
-  transition:opacity .9s var(--pv-ease-out),transform .9s var(--pv-ease-out);
-  transition-delay:var(--d,0s);will-change:opacity,transform}
-html.js .reveal.is-in{opacity:1;transform:none}
-
-/* (el CSS del nav y el menú móvil vive en el bloque pv:nav estampado) */
-
-/* ── botones ─────────────────────────────────────── */
-.btn{
-  display:inline-flex;align-items:center;gap:var(--pv-s2);
-  font-size:15px;font-weight:600;padding:14px 28px;
-  border-radius:var(--pv-r-pill);border:1px solid transparent;
-  cursor:pointer;text-decoration:none;transition:all .22s var(--pv-ease);
-}
-.btn-primary{background:var(--pv-tinta);color:var(--pv-papel)}
-.btn-primary:hover{background:#000;transform:translateY(-2px)}
-.btn-amber{background:var(--pv-ambar);color:#171614;border-color:var(--pv-ambar);font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 8px 24px -8px rgba(201,138,43,.6)}
-.btn-amber:hover{background:var(--pv-ambar-hover);color:#171614;border-color:var(--pv-ambar-hover);transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(201,138,43,.8)}
-.btn-ghost{background:transparent;color:var(--pv-tinta);border-color:var(--pv-linea)}
-.btn-ghost:hover{border-color:var(--pv-tinta)}
-.dark .btn-ghost,.capture .btn-ghost{color:#EDECE8;border-color:var(--pv-linea-sala)}
-.dark .btn-ghost:hover{border-color:#EDECE8}
-.btn-sm{padding:9px 18px;font-size:14px}
-
-/* ══════════════════════════════════════════════════════════════
-   LA HISTORIA · hero pineado, dirigido por el scroll de forma
-   CONTINUA: el JS publica --p y los progresos --s1..--s3 y los
-   --t/--m de cada texto; todo lo demás son calc() en CSS.
-   Scrubbing real: avanza, retrocede y se detiene contigo.
-   Sin JS o con reduced-motion: hero estático con la tarjeta final.
-   ══════════════════════════════════════════════════════════════ */
-#historia{padding:0}
-html.js #historia{height:460vh}
-.hst{position:sticky;top:0;height:100svh;overflow:clip;display:flex;align-items:safe center;--swap:calc((min(1180px,100vw) - 2*clamp(20px,4vw,56px) + clamp(36px,5vw,88px))/2)}
-html:not(.js) #historia,.rm #historia{height:auto}
-html:not(.js) .hst,.hst.rm{position:static;height:auto;min-height:100svh;--s1:1;--s1b:1;--s2:1;--s3:1;--s4:1;--xf:1;--xf2:1;--t0:1;--m0:0px}
-.hst-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(36px,5vw,88px);align-items:center;width:100%;padding-top:clamp(56px,6.5vh,84px);padding-bottom:clamp(8px,2vh,20px)}
-
-/* textos, apilados en la misma celda; opacidad y deriva por variables */
-/* los textos son las estaciones del camino: 01/03 a la izquierda, 02/04 a la derecha */
-.hst-textos{position:relative;display:grid;min-height:min(50vh,470px);container-type:inline-size}
-.acto{grid-area:1/1;align-self:center;pointer-events:none}
-.acto.on{pointer-events:auto}
-.acto-0{opacity:var(--t0,1);transform:translateY(var(--m0,0px))}
-.acto-2{opacity:var(--t2,0);transform:translateY(var(--m2,30px))}
-.acto-3{opacity:var(--t3,0);transform:translateY(var(--m3,30px)) translateX(var(--swap))}
-.acto-4{opacity:var(--t4,0);transform:translateY(var(--m4,30px))}
-.acto>em{font-style:normal;font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pv-ambar-ink);display:block;margin-bottom:var(--pv-s4)}
-.acto h3{font-size:min(clamp(30px,3.4vw,48px),6.5svh);font-weight:300;letter-spacing:-.02em;line-height:1.12;margin-bottom:var(--pv-s4)}
-.acto h3 i{font-style:italic}
-.acto>p{font-size:clamp(16.5px,1.4vw,19px);line-height:1.6;color:var(--pv-tinta-60);max-width:42ch}
-.acto-0 .hero-eyebrow{margin-bottom:var(--pv-s6)}
-.acto-0 .hero-display{color:var(--pv-tinta);font-family:var(--pv-display);font-weight:300;letter-spacing:-.025em;line-height:1.08;font-size:min(clamp(40px,5.2vw,84px),10svh)}
-.acto-0 .hero-display .hl>span{white-space:nowrap}
-@supports (font-size:1cqw){.acto-0 .hero-display{font-size:min(11.2cqw,84px,10svh)}}
-.acto-0 .hero-display em{font-style:italic}
-.acto-0 h1{font-family:var(--pv-sans);font-weight:600;line-height:1.3;font-size:clamp(20px,2vw,26px);letter-spacing:-.01em;color:var(--pv-tinta);max-width:34ch;margin-top:var(--pv-s5)}
-.acto-0 .lede0{font-family:var(--pv-sans);font-weight:400;line-height:1.5;font-size:clamp(18px,1.6vw,22px);color:var(--pv-tinta-60);max-width:44ch;margin-top:var(--pv-s3)}
-.acto-0 .cta-row{display:flex;gap:var(--pv-s3);flex-wrap:wrap;margin-top:var(--pv-s6)}
-/* líneas del titular: máscara + entrada escalonada al cargar */
-.hl{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
-.hl>span{display:block;transform:translateY(112%);transition:transform 1.1s var(--pv-ease-out);transition-delay:var(--d,0s)}
-html.loaded .hl>span,html:not(.js) .hl>span{transform:none}
-/* el camino: la línea ámbar que se traza con el scroll y une los actos */
-.camino{position:absolute;inset:12% 9% 7%;z-index:0;pointer-events:none;clip-path:inset(0 0 calc((1 - var(--pc,0))*112%) 0)}
-.camino svg{width:100%;height:100%;display:block;overflow:visible}
-.camino path{fill:none;stroke:var(--pv-ambar);stroke-width:2.5px;stroke-linecap:round;opacity:.55;vector-effect:non-scaling-stroke;stroke-dasharray:0 7}
-html:not(.js) .camino,.hst.rm .camino{display:none}
-/* indicador de actos (fijo abajo, fuera de las columnas que viajan) */
-.hst-pie{position:absolute;left:0;right:0;bottom:clamp(16px,3.5vh,36px);z-index:2}
-.hst-titulo-caja{position:absolute;left:0;right:0;bottom:calc(clamp(16px,3.5vh,36px) + 34px);z-index:2}
-.hst-titulo{
-  margin:0;font-family:var(--pv-mono);font-size:11.5px;font-weight:700;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--pv-tinta-60);
-  opacity:clamp(0, calc(var(--s1b,0)*3 - 1), 1);
-}
-.acto .acto-enlace{margin-top:var(--pv-s5);font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
-.acto .acto-enlace a{color:var(--pv-ambar-ink);text-decoration:none}
-.acto .acto-enlace a:hover{color:var(--pv-tinta)}
-.acto .acto-enlace .fl{color:var(--pv-ambar);margin-left:6px}
-.acto .acto-enlace .sep{color:var(--pv-tinta-30);margin:0 8px}
-.hst-pie .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:var(--pv-s4)}
-.hitos{position:static;display:flex;gap:18px;font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--pv-tinta-30);opacity:clamp(0, calc(var(--s1b,0)*3 - 1), 1)}
-.hitos span{position:relative;padding-top:10px;transition:color .3s}
-.hitos span::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--pv-linea);border-radius:2px;transition:background .3s}
-.hitos span.on{color:var(--pv-ambar-ink)}
-.hitos span.on::before{background:var(--pv-ambar)}
-.hst-hint{position:static;font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pv-tinta-30);opacity:calc(1 - var(--e1,0)*1.6)}
-
-/* ── la tarjeta que se transforma (todo scrubbed) ── */
-.tj{position:relative;z-index:3;justify-self:center;width:min(100%,480px);font-family:var(--pv-mono);
-  transform:translateX(calc((var(--s2,0) - var(--s3,0))*var(--swap)*-1))
-            translateY(calc((var(--a2,0) + var(--a3,0))*-80px))
-            rotate(calc(var(--a2,0)*-3deg + var(--a3,0)*3deg));}
-/* acto 0: la entrega con Positiva, terminada (sale al primer scroll) */
-.tj-final{
-  position:absolute;left:50%;top:50%;z-index:5;width:min(118%,580px);
-  opacity:calc(1 - var(--e1,0)*1.4);
-  transform:translate(-50%,calc(-50% + var(--e1,0)*-9vh)) scale(calc(1 - var(--e1,0)*.06));
-  animation:tj-flota 6s ease-in-out infinite alternate;
-}
-.tj-final .f-vid{
-  position:relative;overflow:clip;border-radius:var(--pv-r-panel);background:#000;
-  box-shadow:0 44px 90px -34px rgba(23,22,20,.5);
-}
-.f-vid .f-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.f-vid video{position:relative;z-index:1}
-/* pequeño loading mientras el vídeo del hero llega */
-html.js .f-vid.cargando::before{
-  content:"";position:absolute;left:50%;top:50%;z-index:2;width:34px;height:34px;
-  margin:-17px 0 0 -17px;border-radius:50%;
-  border:3px solid rgba(255,255,255,.28);border-top-color:var(--pv-ambar);
-  animation:pv-gira .8s linear infinite;
-}
-html.js .f-vid.cargando::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(14,14,13,.18)}
-@keyframes pv-gira{to{transform:rotate(360deg)}}
-.tj-final video{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
-.tj-final .f-url{text-decoration:none;pointer-events:auto;cursor:pointer;
-  display:flex;align-items:center;gap:9px;margin-top:12px;
-  background:var(--pv-luz);border:1px solid var(--pv-linea);border-radius:var(--pv-r-pill);
-  padding:10px 16px;font-size:11px;color:var(--pv-tinta-60);white-space:nowrap;overflow:hidden;
-}
-.tj-final .f-url i{font-style:normal;flex:none;width:7px;height:7px;border-radius:50%;background:var(--pv-ambar)}
-.tj-final .f-url em{font-style:normal;color:var(--pv-tinta);font-weight:700}
-html:not(.js) .tj-final,.hst.rm .tj-final{animation:none}
-
-
-/* acto 01 · subes: captura real del panel que avanza con el scroll y
-   se funde con el panel CSS durante el salto al acto 02 (--xf) */
-.tj-clip{
-  position:absolute;left:-5%;right:-5%;top:0;z-index:3;
-  border-radius:var(--pv-r-panel);overflow:clip;background:var(--pv-luz);
-  border:1px solid var(--pv-linea);
-  box-shadow:0 44px 90px -34px rgba(23,22,20,.45);
-  opacity:calc(clamp(0, calc(var(--s1b,0)*1.5), 1) * (1 - var(--xf,0)));
-  transform:
-    translateY(calc((1 - var(--s1b,0))*18vh + var(--s1b,0)*48px))
-    translateX(calc(var(--s2,0)*-20px))
-    rotate(calc(var(--s2,0)*-1.4deg))
-    scale(calc(.94 + var(--s1b,0)*.06 + var(--s2,0)*.05));
-  pointer-events:none;
-}
-.tj-clip video{display:block;width:100%;height:auto}
-html:not(.js) .tj-clip,.hst.rm .tj-clip{display:none}
-
-/* acto 02 · diseñas: segunda captura real; entra en el aterrizaje del salto
-   (--xf) y cede el sitio al panel CSS en el siguiente (--xf2) */
-.tj-clip2{
-  position:absolute;left:0;right:0;top:0;z-index:3;
-  border-radius:var(--pv-r-panel);overflow:clip;background:var(--pv-luz);
-  border:1px solid var(--pv-linea);
-  box-shadow:0 44px 90px -34px rgba(23,22,20,.45);
-  opacity:calc(clamp(0, var(--xf,0), 1) * (1 - var(--xf2,0)));
-  transform:
-    translateY(calc((1 - var(--s1b,0))*18vh + var(--s1b,0)*48px - var(--s3,0)*62px))
-    translateX(calc(var(--s2,0)*-20px + var(--s3,0)*20px))
-    rotate(calc(var(--s2,0)*-1.4deg + var(--s3,0)*1.6deg))
-    scale(calc(.94 + var(--s1b,0)*.06 + var(--s2,0)*.05 - var(--s3,0)*.09));
-  pointer-events:none;
-}
-.tj-clip2 video{display:block;width:100%;height:auto}
-html:not(.js) .tj-clip2,.hst.rm .tj-clip2{display:none}
-
-/* acto 03 · portfolio: tu web pública, entra en el último salto (--xf2) */
-.tj-port{
-  position:absolute;left:0;right:0;top:0;z-index:3;
-  border-radius:var(--pv-r-panel);overflow:clip;background:var(--pv-luz);
-  border:1px solid var(--pv-linea);
-  box-shadow:0 44px 90px -34px rgba(23,22,20,.45);
-  opacity:clamp(0, var(--xf2,0), 1);
-  transform:
-    translateY(calc((1 - var(--s1b,0))*18vh + var(--s1b,0)*48px - var(--s3,0)*62px))
-    translateX(calc(var(--s2,0)*-20px + var(--s3,0)*20px))
-    rotate(calc(var(--s2,0)*-1.4deg + var(--s3,0)*1.6deg))
-    scale(calc(.94 + var(--s1b,0)*.06 + var(--s2,0)*.05 - var(--s3,0)*.09));
-  pointer-events:none;
-}
-.tj-port img{display:block;width:100%;height:auto}
-html:not(.js) .tj-port,.hst.rm .tj-port{display:none}
-
-/* con JS, el panel y los enlaces antiguos solo reservan el hueco (fallback sin JS) */
-html.js .hst:not(.rm) .tj-panel,html.js .hst:not(.rm) .tj-urls{visibility:hidden}
-
-/* el panel: nace en 01 y se recoloca en cada acto (deriva + giro sutil) */
-.tj-panel{
-  position:relative;z-index:2;background:var(--pv-luz);border:1px solid var(--pv-linea);
-  border-radius:var(--pv-r-panel);overflow:clip;
-  box-shadow:0 44px 90px -34px rgba(23,22,20,.45);
-  opacity:clamp(0, var(--xf2,0), 1);
-  transform:
-    translateY(calc((1 - var(--s1b,0))*18vh + var(--s1b,0)*48px - var(--s3,0)*62px))
-    translateX(calc(var(--s2,0)*-20px + var(--s3,0)*20px))
-    rotate(calc(var(--s2,0)*-1.4deg + var(--s3,0)*1.6deg))
-    scale(calc(.94 + var(--s1b,0)*.06 + var(--s2,0)*.05 - var(--s3,0)*.09));
-}
-.tj-cab{display:flex;justify-content:space-between;align-items:baseline;padding:14px 16px 10px;font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pv-tinta-30)}
-.tj-cab b{color:var(--pv-tinta)}
-/* la portada crece con 02 */
-.tj-cover{position:relative;max-height:calc(var(--s2,0)*240px);opacity:var(--s2,0);overflow:hidden}
-.tj-cover img{width:100%;height:190px;object-fit:cover;object-position:center 30%;display:block;transform:scale(calc(1.12 - var(--s2,0)*.12))}
-.tj-cover .marca{
-  position:absolute;left:14px;bottom:12px;font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-  color:#fff;background:rgba(14,14,13,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
-  padding:6px 10px;border-radius:var(--pv-r-pill);
-  opacity:clamp(0, calc(var(--s2,0)*2 - .9), 1);
-  scale:calc(1.4 - clamp(0, calc(var(--s2,0)*2 - .9), 1)*.4);
-}
-/* la rejilla se puebla en 01, foto a foto, siguiendo el scroll */
-.tj-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;padding:6px 14px 14px}
-.tj-grid figure{position:relative;margin:0;aspect-ratio:3/4}
-.tj-grid img{width:100%;height:100%;object-fit:cover;display:block;border-radius:5px}
-.tj-grid figure:nth-child(1){opacity:clamp(0, calc(var(--s1b,0)*2.6 - 0.00), 1);transform:translateY(calc((1 - clamp(0, calc(var(--s1b,0)*2.6 - 0.00), 1))*22px)) scale(calc(.72 + clamp(0, calc(var(--s1b,0)*2.6 - 0.00), 1)*.28))}
-.tj-grid figure:nth-child(2){opacity:clamp(0, calc(var(--s1b,0)*2.6 - 0.28), 1);transform:translateY(calc((1 - clamp(0, calc(var(--s1b,0)*2.6 - 0.28), 1))*22px)) scale(calc(.72 + clamp(0, calc(var(--s1b,0)*2.6 - 0.28), 1)*.28))}
-.tj-grid figure:nth-child(3){opacity:clamp(0, calc(var(--s1b,0)*2.6 - 0.56), 1);transform:translateY(calc((1 - clamp(0, calc(var(--s1b,0)*2.6 - 0.56), 1))*22px)) scale(calc(.72 + clamp(0, calc(var(--s1b,0)*2.6 - 0.56), 1)*.28))}
-.tj-grid figure:nth-child(4){opacity:clamp(0, calc(var(--s1b,0)*2.6 - 0.84), 1);transform:translateY(calc((1 - clamp(0, calc(var(--s1b,0)*2.6 - 0.84), 1))*22px)) scale(calc(.72 + clamp(0, calc(var(--s1b,0)*2.6 - 0.84), 1)*.28))}
-.tj-grid figure:nth-child(5){opacity:clamp(0, calc(var(--s1b,0)*2.6 - 1.12), 1);transform:translateY(calc((1 - clamp(0, calc(var(--s1b,0)*2.6 - 1.12), 1))*22px)) scale(calc(.72 + clamp(0, calc(var(--s1b,0)*2.6 - 1.12), 1)*.28))}
-.tj-grid figure:nth-child(6){opacity:clamp(0, calc(var(--s1b,0)*2.6 - 1.40), 1);transform:translateY(calc((1 - clamp(0, calc(var(--s1b,0)*2.6 - 1.40), 1))*22px)) scale(calc(.72 + clamp(0, calc(var(--s1b,0)*2.6 - 1.40), 1)*.28))}
-
-/* favoritas: el trazo de lápiz graso de la casa + el corazón pequeño */
-.mk{position:absolute;inset:-5px;z-index:6;pointer-events:none;opacity:0}
-.mk svg{width:100%;height:100%;display:block;overflow:visible}
-.mk path{fill:none;stroke:var(--pv-graso);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1150px}
-.tj-fav{position:absolute;right:2px;bottom:2px;z-index:7;width:17px;height:17px;border-radius:50%;background:var(--pv-luz);display:flex;align-items:center;justify-content:center;font-size:8.5px;box-shadow:0 3px 8px rgba(0,0,0,.3);opacity:0}
-.tj-fav::before{content:"♥";color:var(--pv-graso)}
-figure.f1 .mk{opacity:clamp(0, calc(var(--s4,0)*10 - 0.0), 1)}
-figure.f1 .mk path{stroke-dashoffset:calc(1150px - clamp(0, calc(var(--s4,0)*2.2 - 0.0), 1)*1150px)}
-figure.f1 .tj-fav{opacity:clamp(0, calc(var(--s4,0)*2.2 - 0.35), 1);scale:clamp(.4, calc(.4 + clamp(0, calc(var(--s4,0)*2.2 - 0.0), 1)*.6), 1)}
-figure.f2 .mk{opacity:clamp(0, calc(var(--s4,0)*10 - 1.8), 1)}
-figure.f2 .mk path{stroke-dashoffset:calc(1150px - clamp(0, calc(var(--s4,0)*2.2 - 0.45), 1)*1150px)}
-figure.f2 .tj-fav{opacity:clamp(0, calc(var(--s4,0)*2.2 - 0.8), 1);scale:clamp(.4, calc(.4 + clamp(0, calc(var(--s4,0)*2.2 - 0.45), 1)*.6), 1)}
-figure.f3 .mk{opacity:clamp(0, calc(var(--s4,0)*10 - 3.6), 1)}
-figure.f3 .mk path{stroke-dashoffset:calc(1150px - clamp(0, calc(var(--s4,0)*2.2 - 0.9), 1)*1150px)}
-figure.f3 .tj-fav{opacity:clamp(0, calc(var(--s4,0)*2.2 - 1.25), 1);scale:clamp(.4, calc(.4 + clamp(0, calc(var(--s4,0)*2.2 - 0.9), 1)*.6), 1)}
-
-/* el comentario del cliente (04) */
-.tj-coment{
-  position:absolute;left:16px;right:16px;bottom:14px;z-index:5;
-  background:var(--pv-sala);color:#EDECE8;border-radius:10px 10px 10px 4px;padding:11px 14px;
-  font-size:11.5px;line-height:1.5;box-shadow:0 16px 40px -14px rgba(0,0,0,.5);
-  opacity:clamp(0, calc(var(--s4,0)*1.7 - .55), 1);
-  transform:translateY(calc((1 - clamp(0, calc(var(--s4,0)*1.7 - .55), 1))*16px));
-}
-.tj-coment b{display:block;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pv-ambar);margin-bottom:3px}
-/* los enlaces llegan en 03, uno tras otro */
-.tj-urls{display:grid;gap:8px;margin-top:12px}
-.tj-url{
-  display:flex;align-items:center;gap:10px;
-  background:var(--pv-luz);border:1px solid var(--pv-linea);border-radius:var(--pv-r-pill);
-  padding:10px 16px;font-size:11px;color:var(--pv-tinta-60);white-space:nowrap;overflow:hidden;
-}
-.tj-url:nth-child(1){opacity:clamp(0, calc(var(--s3,0)*1.8 - .1), 1);transform:translateY(calc((1 - clamp(0, calc(var(--s3,0)*1.8 - .1), 1))*24px)) translateX(calc(clamp(0,calc(var(--s3,0)*1.8 - .1),1)*20px - 20px))}
-.tj-url:nth-child(2){opacity:clamp(0, calc(var(--s3,0)*1.8 - .6), 1);transform:translateY(calc((1 - clamp(0, calc(var(--s3,0)*1.8 - .6), 1))*24px)) translateX(calc(clamp(0,calc(var(--s3,0)*1.8 - .6),1)*20px - 20px))}
-.tj-url em{font-style:normal;color:var(--pv-tinta);font-weight:700}
-.tj-url .perm{margin-left:auto;flex:none;font-size:8.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-ambar-ink);background:var(--pv-ambar-luz);border-radius:var(--pv-r-pill);padding:4px 9px}
-.tj-url i{font-style:normal;flex:none;width:7px;height:7px;border-radius:50%;background:var(--pv-ambar)}
-/* sello no caduca (03) */
-.tj-sello{
-  position:absolute;top:10px;right:12px;z-index:6;
-  font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--pv-ambar-ink);background:var(--pv-ambar-luz);border:1px solid var(--pv-ambar);
-  border-radius:var(--pv-r-pill);padding:6px 11px;
-  opacity:clamp(0, calc(var(--s3,0)*2.2), 1);
-  scale:calc(1.6 - clamp(0, calc(var(--s3,0)*2.2), 1)*.6);
-  rotate:calc(6deg - clamp(0, calc(var(--s3,0)*2.2), 1)*6deg);
-}
-
-/* fallbacks: sin JS o reduced-motion → estado final, sin pin */
-html:not(.js) .acto,.hst.rm .acto{position:static;grid-area:auto}
-html:not(.js) .acto:not(.acto-0),.hst.rm .acto:not(.acto-0){display:none}
-html:not(.js) .hitos,html:not(.js) .hst-hint,.hst.rm .hitos,.hst.rm .hst-hint,html:not(.js) .hst-titulo-caja,.hst.rm .hst-titulo-caja{display:none}
-html:not(.js) .tj-final,.hst.rm .tj-final{display:none}
-html:not(.js) .tj-panel,.hst.rm .tj-panel{transform:none}
-html:not(.js) .tj,.hst.rm .tj,html:not(.js) .hst-textos,.hst.rm .hst-textos{transform:none}
-html:not(.js) .mk,.hst.rm .mk,html:not(.js) .tj-fav,.hst.rm .tj-fav{opacity:1}
-html:not(.js) .mk path,.hst.rm .mk path{stroke-dashoffset:0}
-html:not(.js) .tj-url,.hst.rm .tj-url{opacity:1;transform:none}
-
-@media(max-height:800px) and (min-width:901px){
-  .acto-0 .hero-eyebrow{margin-bottom:14px}
-  .acto-0 h1{margin-top:14px;font-size:19px}
-  .acto-0 .lede0{margin-top:10px;font-size:16.5px}
-  .acto-0 .cta-row{margin-top:18px}
-  .acto-0 .cta-row .btn{padding:12px 24px}
-  .hst-textos{min-height:min(46vh,420px)}
-}
-@media(max-width:900px){
-  .hst{--swap:0px}
-  .camino{display:none}
-  /* pasos centrados en vertical: texto arriba, visual en un hueco fijo debajo,
-     y el pie siempre libre — nada queda por debajo del pliegue */
-  .hst-grid{grid-template-columns:1fr;gap:20px;align-content:center;padding-top:clamp(64px,8vh,88px);padding-bottom:92px}
-  .hst-textos{min-height:0;align-items:end}
-  .acto{align-self:end}
-  /* el visual ocupa exactamente su alto (16:9 del ancho disponible) */
-  .tj{height:min(calc(min(100vw - 40px, 430px)*0.5625), 34svh)}
-  .tj,.hst-textos{transform:none!important}
-  .tj-clip,.tj-clip2,.tj-port{transform:none!important;top:0;height:100%}
-  .tj-clip video,.tj-clip2 video,.tj-port img{height:100%;object-fit:cover}
-  .acto h3{font-size:clamp(23px,5.8vw,30px);margin-bottom:10px}
-  .acto>p{font-size:15.5px}
-  .acto-0 .hero-display{font-size:min(11.2cqw,44px)}
-  .acto-0 h1{font-size:17px;margin-top:12px;line-height:1.3}
-  .acto-0 .lede0{font-size:15.5px;margin-top:10px;line-height:1.45}
-  .acto-0 .cta-row{margin-top:16px}
-  .acto-0 .cta-row .btn{padding:11px 20px;font-size:14px}
-  .acto-0 .hero-eyebrow{margin-bottom:14px}
-  .tj{width:min(100%,430px);justify-self:start}
-  /* el vídeo del hero: ancho contenido y anclado bajo el texto, sin pisar los CTA */
-  .tj-final{top:0;width:100%;transform:translate(-50%,calc(var(--e1,0)*-9vh)) scale(calc(1 - var(--e1,0)*.06))}
-  .tj-clip,.tj-clip2{left:0;right:0}
-  .tj-cover img{height:130px}
-  .tj-coment{font-size:10.5px;padding:9px 12px}
-  .tj-url{font-size:10px;padding:9px 12px}
-  .hst-pie{bottom:14px}
-  .hst-titulo-caja{bottom:44px}
-  .hst-titulo{font-size:9px;letter-spacing:.07em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .hst-hint{display:none}
-}
-
-
-/* móvil con poca altura: compactar el paso para que texto+visual+pie siempre quepan */
-@media(max-width:900px) and (max-height:760px){
-  .hst-grid{padding-top:70px;padding-bottom:84px;gap:12px}
-  .acto>em{margin-bottom:8px}
-  .acto h3{font-size:clamp(20px,5vw,24px);margin-bottom:8px}
-  .acto>p{font-size:14px;line-height:1.5;max-width:46ch}
-  .acto .acto-enlace{margin-top:12px;font-size:11px}
-  .tj{height:min(calc(min(100vw - 40px, 430px)*0.5625), 24svh)}
-  .acto-0 .hero-display{font-size:min(10cqw,38px)}
-  .acto-0 h1{font-size:15px;margin-top:10px}
-  .acto-0 .lede0{font-size:14px;margin-top:8px}
-  .acto-0 .cta-row{margin-top:12px}
-}
-
-/* ── showcase contenido (tras la historia) ── */
-.reel2{max-width:1010px;margin:0 auto}
-.reel2 .marco{overflow:clip;border-radius:var(--pv-r-panel);background:#000;box-shadow:0 44px 100px -40px rgba(23,22,20,.5)}
-.reel2 video{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
-.reel2 figcaption{
-  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--pv-tinta-30);margin-top:var(--pv-s4);
-  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
-}
-.reel2 figcaption b{color:var(--pv-ambar-ink)}
-
-/* ── 02 · qué hace positiva: tarjetas con captura, enlazadas ── */
-.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px);margin-top:clamp(40px,5vw,64px)}
-@media(max-width:820px){.qgrid{grid-template-columns:1fr}}
-.qcard{
-  display:block;min-width:0;text-decoration:none;color:inherit;position:relative;
-  background:var(--pv-luz);border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);
-  overflow:clip;transition:transform .3s var(--pv-ease),box-shadow .3s var(--pv-ease);
-}
-.qcard:hover{transform:translateY(-4px);box-shadow:0 28px 60px -30px rgba(23,22,20,.3)}
-.qcard .qshot{aspect-ratio:16/9;background:var(--pv-bandeja);overflow:hidden}
-.qcard .qshot img,.qcard .qshot video{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s var(--pv-ease)}
-.qcard:hover .qshot img,.qcard:hover .qshot video{transform:scale(1.03)}
-.qcard .qbody{padding:clamp(18px,2.4vw,28px)}
-.qcard .qbody em{font-style:normal;font-family:var(--pv-mono);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pv-ambar-ink)}
-.qcard h3{font-size:clamp(22px,2.2vw,28px);font-weight:400;margin:var(--pv-s2) 0 var(--pv-s3)}
-.qcard p{color:var(--pv-tinta-60);font-size:15.5px;line-height:1.6;max-width:52ch}
-.qcard .qgo{
-  display:inline-flex;align-items:center;gap:7px;margin-top:var(--pv-s4);
-  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--pv-tinta);
-}
-.qcard .qgo::after{content:"→";color:var(--pv-ambar);transition:transform .25s var(--pv-ease)}
-.qcard:hover .qgo::after{transform:translateX(4px)}
-.qcard.wide{grid-column:1/-1}
-/* tarjeta ENLACES: el panel de enlaces animado (heredero del paso «compartes») */
-.qshot-links{aspect-ratio:16/9;background:var(--pv-bandeja);overflow:hidden;padding:clamp(12px,1.6vw,18px);font-family:var(--pv-mono)}
-.lk-cab{display:flex;justify-content:space-between;align-items:baseline;font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pv-tinta-30);margin-bottom:10px}
-.lk-cab b{color:var(--pv-tinta)}
-.lk{border:1px solid var(--pv-linea);border-radius:12px;padding:10px 12px;background:var(--pv-luz);
-  opacity:0;transform:translateY(16px);
-  transition:opacity .6s var(--pv-ease-out),transform .6s var(--pv-ease-out);transition-delay:var(--ld,0s)}
-.lk+.lk{margin-top:8px}
-.qcard.is-in .lk{opacity:1;transform:none}
-.lk1{--ld:.2s}.lk2{--ld:.55s}.lk3{--ld:.9s}
-.lk-url{display:flex;align-items:center;gap:8px;font-size:10.5px;color:var(--pv-tinta-60);white-space:nowrap;overflow:hidden;min-width:0}
-.lk-url span{min-width:0;overflow:hidden;text-overflow:ellipsis}
-.lk-url i{font-style:normal;flex:none;width:7px;height:7px;border-radius:50%;background:var(--pv-ambar)}
-.lk-url em{font-style:normal;color:var(--pv-tinta);font-weight:700}
-.lk-ops{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
-.lk-ops>*{opacity:0;transition:opacity .45s var(--pv-ease);transition-delay:calc(var(--ld,0s) + .3s + var(--i,0)*.14s)}
-.qcard.is-in .lk-ops>*{opacity:1}
-.lk-ops>*:nth-child(1){--i:0}.lk-ops>*:nth-child(2){--i:1}.lk-ops>*:nth-child(3){--i:2}.lk-ops>*:nth-child(4){--i:3}
-.lk-ops .op{display:inline-flex;align-items:center;gap:4px;font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--pv-tinta-30)}
-.lk-ops .op u{text-decoration:none;padding:3px 8px;border-radius:var(--pv-r-pill);border:1px solid var(--pv-linea)}
-.lk-ops .op u.on{background:var(--pv-ambar-luz);border-color:var(--pv-ambar);color:var(--pv-ambar-ink)}
-.lk-ops .chip{font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--pv-tinta-30);padding:3px 9px;border-radius:var(--pv-r-pill);border:1px solid var(--pv-linea)}
-.lk-ops .chip-on{background:var(--pv-ambar-luz);border-color:var(--pv-ambar);color:var(--pv-ambar-ink)}
-.lk-pie{margin-top:9px;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-tinta-30);
-  opacity:0;transition:opacity .5s var(--pv-ease);transition-delay:1.25s}
-.qcard.is-in .lk-pie{opacity:1}
-@media(max-width:520px){.qcard .qshot.qshot-links{aspect-ratio:auto}}
-@media(min-width:821px){
-  .qcard.wide{display:grid;grid-template-columns:1.15fr .85fr;align-items:center}
-  .qcard.wide .qshot{aspect-ratio:auto;height:100%;min-height:320px}
-}
-/* tarjeta ANALÍTICA: panel de datos de una galería */
-.qshot-datos{aspect-ratio:16/9;background:var(--pv-bandeja);overflow:hidden;padding:clamp(14px,1.8vw,22px);font-family:var(--pv-mono);display:flex;flex-direction:column}
-.dt-cab{display:flex;justify-content:space-between;align-items:baseline;font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pv-tinta-30);margin-bottom:clamp(12px,1.6vw,18px)}
-.dt-cab b{color:var(--pv-tinta)}
-.dt-cifras{display:flex;gap:clamp(14px,2.4vw,32px);flex-wrap:wrap}
-.dt-cifras span{display:grid;gap:3px;opacity:0;transform:translateY(10px);
-  transition:opacity .55s var(--pv-ease-out),transform .55s var(--pv-ease-out);transition-delay:calc(.15s + var(--i,0)*.13s)}
-.qcard.is-in .dt-cifras span{opacity:1;transform:none}
-.dt-cifras span:nth-child(1){--i:0}.dt-cifras span:nth-child(2){--i:1}
-.dt-cifras span:nth-child(3){--i:2}.dt-cifras span:nth-child(4){--i:3}
-.dt-cifras b{font-family:var(--pv-display);font-weight:300;font-size:clamp(24px,3.2vw,38px);line-height:1;color:var(--pv-tinta)}
-.dt-cifras span:nth-child(3) b{color:var(--pv-ambar-ink)}
-.dt-cifras i{font-style:normal;font-size:8.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-tinta-30)}
-.dt-barras{margin-top:auto;display:flex;align-items:flex-end;gap:clamp(4px,.7vw,8px);height:clamp(38px,6vw,72px)}
-.dt-barras u{flex:1;display:block;background:var(--pv-linea);border-radius:3px 3px 0 0;height:var(--h,30%);
-  transform:scaleY(.06);transform-origin:bottom;
-  transition:transform .6s var(--pv-ease-out);transition-delay:calc(.5s + var(--i,0)*.06s)}
-.qcard.is-in .dt-barras u{transform:none}
-.dt-barras u.on{background:var(--pv-ambar)}
-.dt-pie{margin-top:10px;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-tinta-30);
-  display:flex;justify-content:space-between;gap:12px;
-  opacity:0;transition:opacity .5s var(--pv-ease);transition-delay:1.1s}
-.qcard.is-in .dt-pie{opacity:1}
-@media(min-width:821px){
-  .qcard.wide .qshot-datos{aspect-ratio:auto;justify-content:center;gap:clamp(20px,3vw,34px)}
-  .qcard.wide .dt-barras{margin-top:0;height:clamp(88px,11vw,140px)}
-}
-
-/* mini visor de vídeo (tarjeta revisión) */
-.qcard .qshot.qshot-vid{position:relative;background:var(--pv-sala);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:22px;padding:24px;font-family:var(--pv-mono)}
-.vmini-nota{
-  background:#F5F4F1;color:var(--pv-tinta);border-radius:9px;
-  padding:12px 16px;font-size:12px;display:flex;gap:8px;align-items:baseline;
-  box-shadow:0 16px 40px -18px rgba(0,0,0,.7);max-width:88%;
-}
-.vmini-nota b{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-ambar-ink);flex:none}
-.vmini-nota em{font-style:normal;color:var(--pv-tinta-30);flex:none}
-.vmini-bar{width:88%;display:flex;align-items:center;gap:14px;color:#9C9B95;font-size:10.5px}
-.vmini-bar>i{flex:none;width:0;height:0;border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent #EDECE8}
-.vmini-bar>em{font-style:normal;flex:none;letter-spacing:.06em}
-.vmini-linea{position:relative;flex:1;height:3px;background:#2A2A27;border-radius:2px}
-.vmini-linea b{position:absolute;left:0;top:0;bottom:0;width:43%;background:var(--pv-ambar);border-radius:2px}
-.vmini-linea span{
-  position:absolute;left:43%;top:50%;transform:translate(-50%,-50%);
-  width:13px;height:13px;border-radius:50%;background:var(--pv-graso);
-  border:2.5px solid var(--pv-sala);
-}
-
-/* ── letra pequeña que importa (UE + IA) ── */
-.fine{border-top:1px solid var(--pv-linea);border-bottom:1px solid var(--pv-linea);padding:clamp(32px,4vw,48px) 0}
-.fine .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px)}
-@media(max-width:760px){.fine .cols{grid-template-columns:1fr}}
-.fine h3{display:flex;align-items:center;gap:10px;font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pv-tinta);margin-bottom:var(--pv-s3)}
-.fine .fic{width:22px;height:22px;flex:none;fill:none;stroke:var(--pv-ambar-ink);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.fine .fic .fill{fill:var(--pv-ambar-ink);stroke:none}
-.fine p{font-size:15px;line-height:1.65;color:var(--pv-tinta-60);max-width:56ch}
-
-/* ── precios ─────────────────────────────────────── */
-.founder{
-  display:flex;align-items:baseline;gap:var(--pv-s4);flex-wrap:wrap;
-  background:var(--pv-ambar-luz);border:1px solid var(--pv-ambar);
-  border-radius:var(--pv-r-panel);padding:var(--pv-s4) var(--pv-s5);margin-top:var(--pv-s7);
-}
-.founder b{
-  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--pv-tinta);white-space:nowrap;
-}
-.founder span{font-size:15px;line-height:1.6;color:var(--pv-tinta)}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--pv-s4);margin-top:var(--pv-s8);align-items:stretch}
-@media(max-width:940px){.plans{grid-template-columns:1fr}}
-.plan{
-  background:var(--pv-luz);border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);
-  padding:var(--pv-s6);transition:transform .3s var(--pv-ease),box-shadow .3s var(--pv-ease);
-}
-.plan:hover{transform:translateY(-4px);box-shadow:0 24px 60px -30px rgba(23,22,20,.25)}
-/* plan destacado: sala oscura, como una galería */
-.plan.featured{background:var(--pv-sala);border-color:var(--pv-sala);color:#EDECE8}
-.plan.featured:hover{box-shadow:0 30px 70px -30px rgba(0,0,0,.55)}
-.plan-tag{font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pv-tinta-30);margin-bottom:var(--pv-s4)}
-.plan.featured .plan-tag{color:var(--pv-ambar)}
-.plan-name{font-family:var(--pv-display);font-size:32px;font-weight:400;line-height:1;margin-bottom:var(--pv-s3)}
-.price{font-family:var(--pv-display);font-size:46px;font-weight:300;line-height:1;letter-spacing:-.02em}
-.price small{font-family:var(--pv-sans);font-size:15px;font-weight:400;color:var(--pv-tinta-60);letter-spacing:0}
-.plan.featured .price small{color:#9C9B95}
-.price-alt{font-size:14px;color:var(--pv-tinta-30);margin-top:var(--pv-s2)}
-.plan.featured .price-alt{color:#9C9B95}
-.plan ul{list-style:none;margin-top:var(--pv-s5);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);font-size:16px;line-height:1.9}
-.plan.featured ul{border-top-color:var(--pv-linea-sala)}
-.plan ul li{display:flex;gap:10px;align-items:baseline}
-.plan ul li::before{content:"—";color:var(--pv-ambar);flex:none}
-.plan ul li.off{color:var(--pv-tinta-30)}
-.plan ul li.off::before{content:"×";color:var(--pv-tinta-30)}
-.plan .gb{font-family:var(--pv-mono);font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--pv-tinta);background:var(--pv-ambar-luz);display:inline-block;padding:5px 11px;border-radius:var(--pv-r-pill);margin-top:var(--pv-s4)}
-.extra{font-family:var(--pv-mono);font-size:12px;color:var(--pv-tinta-60);text-align:center;margin-top:var(--pv-s6);letter-spacing:.04em;line-height:2}
-
-/* ── comparativa ─────────────────────────────────── */
-.vs{display:grid;grid-template-columns:1fr 1fr;gap:var(--pv-s4);margin-top:var(--pv-s8)}
-@media(max-width:760px){.vs{grid-template-columns:1fr}}
-.vs-card{border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);padding:var(--pv-s6);background:var(--pv-luz)}
-.vs-card.them{background:transparent;border-style:dashed}
-.vs-card h3{margin-bottom:var(--pv-s4)}
-.vs-line{display:flex;justify-content:space-between;gap:var(--pv-s4);padding:var(--pv-s3) 0;border-bottom:1px solid var(--pv-linea);font-size:16px}
-.vs-line:last-child{border:0}
-.vs-line span:last-child{font-family:var(--pv-mono);font-size:13px;font-weight:700;letter-spacing:.04em;text-align:right}
-.vs-card.them .vs-line span:last-child{color:var(--pv-tinta-60)}
-
-/* ── faq ─────────────────────────────────────────── */
-.faq{margin-top:var(--pv-s8)}
-details{border-top:1px solid var(--pv-linea)}
-details:last-of-type{border-bottom:1px solid var(--pv-linea)}
-.dark details{border-color:var(--pv-linea-sala)}
-.dark details p{color:#9C9B95}
-summary{
-  font-family:var(--pv-display);font-size:clamp(20px,2vw,24px);font-weight:400;cursor:pointer;
-  list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:var(--pv-s4);
-  padding:var(--pv-s5) 0;transition:color .18s;
-}
-summary:hover{color:var(--pv-ambar-hover)}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--pv-ambar);font-family:var(--pv-sans);font-weight:400;flex:none;transition:transform .3s var(--pv-ease)}
-details[open] summary::after{transform:rotate(45deg)}
-details p{padding:0 0 var(--pv-s5);color:var(--pv-tinta-60);max-width:64ch}
-
-/* ── captura ─────────────────────────────────────── */
-.capture{
-  background:var(--pv-sala);color:#EDECE8;border-radius:var(--pv-r-panel);
-  padding:clamp(64px,9vw,128px) var(--pv-s7);text-align:center;overflow:hidden;position:relative;
-}
-.capture h2{color:#EDECE8;margin-bottom:var(--pv-s4)}
-.capture .lede{margin:0 auto}
-.capture form{display:flex;gap:var(--pv-s2);max-width:480px;margin:var(--pv-s7) auto 0;flex-wrap:wrap}
-input[type=email]{
-  flex:1;min-width:220px;font-family:var(--pv-sans);font-size:16px;padding:14px 18px;
-  background:var(--pv-sala-2);border:1px solid var(--pv-linea-sala);
-  border-radius:var(--pv-r-input);color:#EDECE8;
-}
-input[type=email]::placeholder{color:#5C5B56}
-input[type=email]:focus{outline:2px solid var(--pv-ambar);outline-offset:1px;border-color:transparent}
-.capture form .btn{background:var(--pv-ambar);color:#171614;border:0;text-transform:uppercase;letter-spacing:.08em}
-.capture form .btn:hover{background:var(--pv-ambar-hover)}
-.capture small{display:block;margin-top:var(--pv-s5);font-family:var(--pv-mono);font-size:11px;letter-spacing:.08em;color:#5C5B56;text-transform:uppercase}
-
-/* ── footer con palabra gigante ──────────────────── */
-footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
-.footer-word{
-  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
-  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
-  letter-spacing:.18em;text-transform:uppercase;
-  font-size:clamp(30px,7.8vw,116px);line-height:1;color:var(--pv-tinta);
-  white-space:nowrap;
-}
-.footer-word svg{height:.92em;width:auto;flex:none}
-.footer-word span{color:var(--pv-ambar)}
-.footer-meta{
-  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
-  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
-  font-size:14px;color:var(--pv-tinta-30);
-}
-.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
-.footer-meta a:hover{color:var(--pv-tinta)}
-
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  html.js .reveal{opacity:1;transform:none}
-  .hl>span{transform:none!important}
-  .manifesto li strong::after{transform:scaleX(1)}
-  .mq-track{transform:none}
-}
-</style>
-<!-- Analítica · Umami autoalojado (tracker servido en /stats). -->
+<link rel="preload" href="/video/galeria-hero-poster2.jpg" as="image" fetchpriority="high">
+<link rel="stylesheet" href="/chrome.css">
+<link rel="stylesheet" href="/positiva.css">
 <script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
-<!-- Session replay de Umami (opcional; graba interacciones). Quítalo si no lo quieres. -->
+<!-- Session replay SOLO aquí, y la arquitectura ya hace la separación sola:
+     por esta plantilla pasan únicamente las páginas de scripts/new-web/pages/,
+     que son todas comerciales (home, precios, casos, comparativas). Las legales,
+     el soporte y el blog entran por DERIVADAS, heredan el <head> de la página
+     real de public/ y por tanto NO traen replay, igual que en el sitio vivo.
+     Si algún día una página legal se mueve a pages/, esto hay que revisarlo. -->
 <script defer src="https://analytics.labbo.studio/recorder.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
 <script defer src="/js/analytics.js"></script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://positiva.studio/#website",
-      "url": "https://positiva.studio/",
-      "name": "Positiva",
-      "publisher": {
-        "@id": "https://positiva.studio/#org"
-      },
-      "inLanguage": "es"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://positiva.studio/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Por qué no ofrecéis almacenamiento ilimitado?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Porque no existe. Cada gigabyte que guardamos lo pagamos. Cuando alguien te vende «ilimitado», está apostando a que la mayoría de sus clientes no lo usen — y a que los que sí, se vayan. Preferimos decirte el número."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Os lleváis comisión de mis álbumes o mis copias?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. No cobramos ni un céntimo si tú vendes álbumes o copias de tus fotografías. No tenemos tienda y no la vamos a tener. Te damos la herramienta para que tu cliente elija, y tú vendes el álbum, la copia o el USB como te dé la gana, al precio que quieras, con el laboratorio que quieras. El 100 % de las ganancias son tuyas."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Puedo llevarme mis archivos si me voy?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Puedes llevarte tus archivos cuando quieras, en un ZIP. No hay permanencia, no hay penalización y no hay que escribir a soporte para pedirlo."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Sirve para vídeo de verdad?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí, y comparte espacio con las fotos. Lo que no hacemos es cobrarte aparte por «horas de vídeo» como si fuera otro producto. Y con las herramientas de revisión de vídeo, encontrarás un nuevo flujo de trabajo con tu cliente mucho mas sencillo."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Quién está detrás de esto?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Positiva está creada por Rodrigo Márquez, un fotógrafo y realizador de Valencia que, además, es ingeniero informático. Tras más de doce años dedicándose a este sector y buscando una herramienta similar, decide crearla."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
 </head>
 <body>
-
-<!-- pv:nav -->
 <!-- ════════════════════════════════════════════════════════════════
-     CABECERA COMÚN · fuente única: partials/chrome-nav.html
-     Edita AQUÍ y ejecuta `npm run stamp` para propagarla a todas
-     las páginas. No edites el bloque pv:nav de las páginas a mano.
-     Autocontenida: CSS + markup + JS (las satélite no traen menú móvil).
+     NAV DE LA WEB · fuente única: partials/chrome-nav.html
+     Lo usan gen.py (páginas de scripts/new-web/pages/) y `npm run stamp`
+     (blog, soporte, novedades y legales). Edita AQUÍ y ejecuta ambos.
      ════════════════════════════════════════════════════════════════ -->
-
+<link rel="stylesheet" href="/chrome.css">
 <!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
      banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
      (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
@@ -794,751 +89,188 @@ document.addEventListener('click', function (e) {
 }, { passive: true });
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
-
-<style data-pv-chrome="nav">
-/* Base de la cápsula (idéntica a la de siempre; aquí para que exista en TODAS las páginas) */
-nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:14px clamp(14px,3vw,40px)}
-.nav-inner{
-  display:flex;align-items:center;justify-content:space-between;gap:var(--pv-s5);
-  max-width:1280px;margin:0 auto;padding:10px 12px 10px clamp(18px,2.4vw,28px);
-  border:1px solid transparent;border-radius:var(--pv-r-pill);
-  transition:background .4s var(--pv-ease),border-color .4s var(--pv-ease),box-shadow .4s var(--pv-ease);
-}
-nav.scrolled .nav-inner{
-  background:rgba(241,240,236,.82);
-  backdrop-filter:blur(16px) saturate(1.4);
-  -webkit-backdrop-filter:blur(16px) saturate(1.4);
-  border-color:var(--pv-linea);
-  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);
-}
-.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--pv-tinta)}
-.logo svg{height:27px;width:auto;display:block;flex:none}
-.logo-word{
-  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;font-size:14px;
-  letter-spacing:.22em;text-transform:uppercase;line-height:1;
-}
-.logo-word b{color:var(--pv-ambar)}
-.nav-links{display:flex;align-items:center;gap:var(--pv-s6)}
-.nav-links a,.nav-drop-btn{
-  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
-  text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
-  display:inline-flex;align-items:center;line-height:1;
-}
-.nav-links a:hover,.nav-drop-btn:hover{color:var(--pv-tinta)}
-.nav-right{display:flex;align-items:center;gap:var(--pv-s4)}
-.nav-login{
-  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
-  text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
-}
-.nav-login:hover{color:var(--pv-tinta)}
-.nav-cta{background:var(--pv-ambar);color:#171614;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
-.nav-cta:hover{background:var(--pv-ambar-hover);color:#171614;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
-
-/* Desplegables: mismo lenguaje que la cápsula (papel translúcido + línea + blur) */
-.nav-drop{position:relative;display:flex;align-items:center}
-.nav-drop-btn{background:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:7px;padding:0}
-.nav-drop-btn::after{
-  content:"";width:5px;height:5px;flex:none;margin-top:-3px;
-  border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
-  transform:rotate(45deg);transition:transform .25s var(--pv-ease);
-}
-.nav-drop:hover .nav-drop-btn::after,.nav-drop.open .nav-drop-btn::after{transform:rotate(225deg);margin-top:3px}
-.nav-drop-menu{
-  position:absolute;top:100%;left:50%;transform:translateX(-50%);
-  padding-top:14px;min-width:240px;
-  opacity:0;visibility:hidden;transition:opacity .25s var(--pv-ease),visibility 0s linear .25s;
-}
-.nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu,.nav-drop.open .nav-drop-menu{
-  opacity:1;visibility:visible;transition:opacity .25s var(--pv-ease),visibility 0s linear 0s;
-}
-.nav-drop-card{
-  background:rgba(241,240,236,.94);
-  backdrop-filter:blur(16px) saturate(1.4);
-  -webkit-backdrop-filter:blur(16px) saturate(1.4);
-  border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);
-  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);
-  padding:10px;display:flex;flex-direction:column;
-}
-.nav-drop-card a{
-  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
-  text-transform:uppercase;color:#4A4943;text-decoration:none;
-  padding:10px 14px;border-radius:6px;white-space:nowrap;transition:color .18s,background .18s;
-}
-.nav-drop-card a:hover{color:var(--pv-tinta);background:rgba(23,22,20,.05)}
-.nav-drop-card .drop-grupo{
-  font-family:var(--pv-mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--pv-tinta-30);
-  margin-top:6px;padding:12px 14px 4px;border-top:1px solid var(--pv-linea);
-}
-.nav-drop-card a.sub{padding-left:26px}
-.nav-drop-card .drop-grupo-link{font-size:12px;letter-spacing:.13em;color:#4A4943}
-.nav-drop-card a.sub-alt{font-family:var(--pv-sans);font-size:13.5px;font-weight:500;letter-spacing:0;text-transform:none}
-/* Sobre hero oscuro la cápsula aclara sus enlaces, pero el panel del desplegable
-   sigue siendo papel: sus enlaces mantienen tinta siempre. */
-body.hero-oscuro nav:not(.scrolled) .nav-drop .nav-drop-card a{color:#4A4943}
-body.hero-oscuro nav:not(.scrolled) .nav-drop .nav-drop-card a:hover{color:var(--pv-tinta)}
-
-/* Burger (solo móvil) */
-.nav-burger{
-  display:none;position:relative;width:44px;height:44px;flex:none;
-  background:var(--pv-tinta);border:0;border-radius:var(--pv-r-pill);cursor:pointer;
-}
-.nav-burger span{
-  position:absolute;left:13px;right:13px;height:2px;background:var(--pv-papel);
-  transition:transform .35s var(--pv-ease),top .35s var(--pv-ease);
-}
-.nav-burger span:first-child{top:18px}
-.nav-burger span:last-child{top:24px}
-.nav-burger[aria-expanded="true"] span:first-child{top:21px;transform:rotate(45deg)}
-.nav-burger[aria-expanded="true"] span:last-child{top:21px;transform:rotate(-45deg)}
-html:not(.js) .nav-burger{display:none!important}
-
-/* Menú móvil a pantalla completa */
-body.menu-locked{overflow:hidden}
-body.menu-locked .logo{color:#EDECE8}
-body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
-.menu{
-  position:fixed;inset:0;z-index:55;background:var(--pv-sala);color:#EDECE8;
-  display:flex;flex-direction:column;
-  padding:calc(84px + env(safe-area-inset-top)) clamp(24px,7vw,56px) calc(24px + env(safe-area-inset-bottom));
-  overflow-y:auto;-webkit-overflow-scrolling:touch;
-  opacity:0;visibility:hidden;
-  transition:opacity .45s var(--pv-ease),visibility 0s linear .45s;
-}
-.menu.open{opacity:1;visibility:visible;transition:opacity .45s var(--pv-ease),visibility 0s linear 0s}
-.menu .m-anim{opacity:0;transform:translateY(18px);transition:opacity .5s var(--pv-ease-out),transform .5s var(--pv-ease-out);transition-delay:var(--d,0s)}
-.menu.open .m-anim{opacity:1;transform:none}
-.menu .m-nav{position:static;inset:auto;z-index:auto;padding:0;display:flex;flex-direction:column}
-.m-item{border-bottom:1px solid var(--pv-linea-sala)}
-.m-item>a,.m-acc{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;
-  font-family:var(--pv-display);font-weight:300;font-size:clamp(25px,6.6vw,32px);
-  letter-spacing:-.02em;line-height:1.2;color:#EDECE8;text-decoration:none;
-  padding:17px 0;background:none;border:0;text-align:left;cursor:pointer;
-}
-.m-item>a:hover,.m-acc:hover{color:var(--pv-ambar)}
-.m-acc::after{
-  content:"";flex:none;width:9px;height:9px;margin-right:6px;
-  border-right:1.5px solid #9C9B95;border-bottom:1.5px solid #9C9B95;
-  transform:rotate(45deg) translateY(-2px);transition:transform .3s var(--pv-ease);
-}
-.m-item.open .m-acc::after{transform:rotate(225deg) translateY(-2px)}
-.m-sub{overflow:hidden;max-height:0;transition:max-height .35s var(--pv-ease)}
-.m-item.open .m-sub{max-height:440px}
-.m-sub>div{padding:2px 0 18px}
-.m-sub a{display:block;font-family:var(--pv-sans);font-size:16.5px;color:#B8B7B1;text-decoration:none;padding:9px 0}
-.m-sub a:hover{color:#EDECE8}
-.m-grupo{font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#5C5B56;margin:12px 0 3px}
-.m-cta{
-  display:block;text-align:center;background:var(--pv-ambar);color:#171614;
-  font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.08em;
-  text-decoration:none;padding:17px 24px;border-radius:var(--pv-r-pill);
-  margin-top:var(--pv-s6);box-shadow:0 10px 30px -10px rgba(201,138,43,.55);
-}
-.m-cta:active{background:var(--pv-ambar-hover)}
-.m-entrar{
-  display:block;text-align:center;font-family:var(--pv-mono);font-size:12px;font-weight:700;
-  letter-spacing:.13em;text-transform:uppercase;color:#9C9B95;text-decoration:none;
-  padding:16px 0 6px;
-}
-.m-entrar:hover{color:#EDECE8}
-.menu-meta{
-  margin-top:var(--pv-s6);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea-sala);
-  font-family:var(--pv-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5C5B56;
-  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
-}
-.menu-meta a{color:#9C9B95;text-decoration:none}
-
-@media(max-width:1020px){
-  nav .nav-links,nav .nav-login,nav .nav-cta{display:none}
-  .nav-burger{display:block}
-}
-</style>
-
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="/" class="logo" aria-label="Positiva">
-      <svg viewBox="-2 -2 56 59" aria-hidden="true">
-        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
-        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
-        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
-      </svg>
-      <span class="logo-word">Positiva<b>.</b></span>
-    </a>
-    <div class="nav-links">
-      <div class="nav-drop">
-        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Galerías para clientes</button>
-        <div class="nav-drop-menu">
-          <div class="nav-drop-card">
-            <a href="/galerias/">Entrega tu trabajo</a>
-            <p class="drop-grupo drop-grupo-link">Revisa con tu cliente</p>
-            <a class="sub sub-alt" href="/revision-video/">Vídeo</a>
-            <a class="sub sub-alt" href="/revision-foto/">Fotografías</a>
-          </div>
-        </div>
+<a class="saltar-n" href="#contenido">Saltar al contenido</a>
+<nav class="top" id="nav" aria-label="Principal"><div class="wrap inner">
+  <a href="/" class="logo" aria-label="Positiva, inicio"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
+  <div class="links">
+    <a href="/galerias/">Entrega</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-revision">Revisión<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-revision">
+        <a href="/revision-video/"><b>Revisión de vídeo</b><span>Comentarios en el fotograma exacto, exportables a DaVinci Resolve y Final Cut Pro</span></a>
+        <a href="/revision-foto/"><b>Revisión de fotos</b><span>Favoritas y comentarios foto a foto, en tu panel al momento</span></a>
       </div>
-      <div class="nav-drop">
-        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Casos de uso</button>
-        <div class="nav-drop-menu">
-          <div class="nav-drop-card">
-            <a href="/freelance/">Para profesionales freelance</a>
-            <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
-            <a href="/productoras/">Para productoras de vídeo</a>
-          </div>
-        </div>
-      </div>
-      <a href="/portfolio/">Portfolio público</a>
-      <a href="/precios/">Precios</a>
-      <a href="/soporte/es/">Soporte</a>
     </div>
-    <div class="nav-right">
-      <a href="https://app.positiva.studio" class="nav-login" data-ev="login_click" data-ev-place="nav">Entrar</a>
-      <a href="https://app.positiva.studio/registro" class="btn nav-cta" data-ev="cta_register_click" data-ev-place="nav">Empieza gratis</a>
-      <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
-        <span></span><span></span>
-      </button>
+    <a href="/archivos/">Archivos</a>
+    <a href="/portfolio/">Portfolio</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-casos">Casos de uso<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-casos">
+        <a href="/freelance/"><b>Freelance</b><span>Entrega, revisión, archivos y portfolio en una sola cuota</span></a>
+        <a href="/bodas/"><b>Bodas</b><span>La boda completa, fotos y vídeo, con un enlace que no caduca</span></a>
+        <a href="/productoras/"><b>Productoras de vídeo</b><span>Revisión por fotograma con varios interlocutores y entrega del máster</span></a>
+      </div>
+    </div>
+    <a href="/precios/">Precios</a>
+    <a href="/notas/">Blog</a>
+  </div>
+  <div class="acc">
+    <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar</a>
+    <a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nav">Empieza gratis</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Abrir menú"><span></span></button>
+  </div>
+</div></nav>
+<div class="menu-m" id="menu-m" hidden>
+  <a href="/galerias/">Entrega</a>
+  <a href="/revision-video/">Revisión de vídeo</a>
+  <a href="/revision-foto/">Revisión de fotos</a>
+  <a href="/archivos/">Archivos</a>
+  <a href="/portfolio/">Portfolio</a>
+  <a href="/precios/">Precios</a>
+  <span class="sub">Casos de uso</span>
+  <a class="sm" href="/freelance/">Freelance</a>
+  <a class="sm" href="/bodas/">Bodas</a>
+  <a class="sm" href="/productoras/">Productoras de vídeo</a>
+  <span class="sub">Recursos</span>
+  <a class="sm" href="/notas/">Blog</a>
+  <a class="sm" href="/soporte/es/">Soporte</a>
+  <a class="sm" href="/sobre-nosotros/">Sobre nosotros</a>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Empieza gratis</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar en tu panel</a></div>
+</div>
+<main id="contenido">
+<div class="wrap">
+<section class="hero">
+  <span class="eyebrow">Para fotógrafos, videógrafos y productoras</span>
+  <p class="h-xl titular"><span class="w"><span>Tu&nbsp;trabajo</span></span> <span class="w"><span>no&nbsp;termina</span></span> <span class="w"><span><em class="a">cuando&nbsp;exportas.</em></span></span></p>
+  <h1 class="lede h1d">Galerías de entrega y revisión de fotos y vídeo para clientes, envío y recepción de archivos y portfolio con tu marca.</h1>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click">Empieza gratis</a><a class="btn ghost" href="#demo">Reserva una demo</a></div>
+  <p class="fine">15 GB gratis para siempre · sin tarjeta</p>
+
+  <div class="stage" id="stage" data-grow>
+    <div class="browser">
+      <div class="bar"><i></i><i></i><i></i><span class="url" id="url">rodrigomarquez.positiva.studio/g/must-have-nyc</span></div>
+      <div class="panes" id="panes">
+        <div class="pane on" data-p="0"><video data-noauto muted playsinline loop preload="metadata" poster="/video/galeria-hero-poster2.jpg" data-start="1.6" src="/video/galeria-hero.mp4"></video></div>
+        <div class="pane" data-p="1"><video data-noauto muted playsinline loop preload="metadata" poster="/video/pasos/revision-poster.jpg" src="/video/revision-video.mp4"></video></div>
+        <div class="pane" data-p="2"><img src="/img/archivos/solicitud-subiendo-16x9.webp" alt="Solicitud de archivos con la marca del fotógrafo: un colaborador sube sus clips sin cuenta" loading="lazy"></div>
+        <div class="pane" data-p="3"><img src="/img/perfiles/perfil-rmq.webp" alt="Portfolio público generado desde las galerías"></div>
+      </div>
+      <div class="chap" role="tablist" aria-label="Qué hace Positiva">
+        <button role="tab" aria-selected="true" data-p="0" data-url="rodrigomarquez.positiva.studio/g/must-have-nyc" data-dur="12000"><b>Entrega</b><span>Galerías de fotos y vídeo con tu marca. Un enlace que no caduca.</span><i></i></button>
+        <button role="tab" aria-selected="false" data-p="1" data-url="rodrigomarquez.positiva.studio/g/must-have-nyc" data-dur="9000"><b>Revisión</b><span>Favoritas y comentarios sobre la foto o el fotograma con rondas de revisión.</span><i></i></button>
+        <button role="tab" aria-selected="false" data-p="2" data-url="portfolio.rodrigomarquez.es/s/1SHmSpI63NoLoH4byUeLE9" data-dur="7000"><b>Envíos</b><span>Envía y solicita archivos sin salir de tu panel.</span><i></i></button>
+        <button role="tab" aria-selected="false" data-p="3" data-url="rodrigomarquez.positiva.studio" data-dur="8000"><b>Portfolio</b><span>Tu web, con lo que ya has entregado. Con tu dominio.</span><i></i></button>
+      </div>
     </div>
   </div>
-</nav>
-
-<div class="menu" id="menu">
-  <nav class="m-nav" aria-label="Menú">
-    <div class="m-item m-anim" style="--d:.04s"><a href="/">Inicio</a></div>
-    <div class="m-item m-anim" style="--d:.08s">
-      <button class="m-acc" type="button" aria-expanded="false">Galerías para clientes</button>
-      <div class="m-sub"><div>
-        <a href="/galerias/">Entrega tu trabajo</a>
-        <p class="m-grupo">Revisa con tu cliente</p>
-        <a href="/revision-video/">Vídeo</a>
-        <a href="/revision-foto/">Fotografías</a>
-      </div></div>
-    </div>
-    <div class="m-item m-anim" style="--d:.12s">
-      <button class="m-acc" type="button" aria-expanded="false">Casos de uso</button>
-      <div class="m-sub"><div>
-        <a href="/freelance/">Para profesionales freelance</a>
-        <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
-        <a href="/productoras/">Para productoras de vídeo</a>
-      </div></div>
-    </div>
-    <div class="m-item m-anim" style="--d:.16s"><a href="/portfolio/">Portfolio público</a></div>
-    <div class="m-item m-anim" style="--d:.2s"><a href="/precios/">Precios</a></div>
-    <div class="m-item m-anim" style="--d:.24s"><a href="/soporte/es/">Soporte</a></div>
-  </nav>
-  <a class="m-cta m-anim" style="--d:.3s" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Empieza gratis</a>
-  <a class="m-entrar m-anim" style="--d:.34s" href="https://app.positiva.studio">Entrar en tu panel</a>
-  <div class="menu-meta m-anim" style="--d:.38s">
-    <span>Positiva · Hecha en España</span>
-    <a href="mailto:hola@positiva.studio">hola@positiva.studio</a>
-  </div>
+</section>
 </div>
 
-<script>
-/* Chrome común: scrolled + burger + desplegables. Guardado para no doblar
-   listeners si una página conserva JS antiguo de nav. */
-(() => {
-  if (window.__pvChrome) return; window.__pvChrome = true;
-  const nav = document.getElementById('nav');
-  let last = -1;
-  const onScroll = () => {
-    const on = window.scrollY > 12;
-    if (on !== last) { nav.classList.toggle('scrolled', on); last = on; }
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  const burger = document.getElementById('burger');
-  const menu = document.getElementById('menu');
-  const setMenu = (open) => {
-    menu.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-    document.body.classList.toggle('menu-locked', open);
-    if (!open) menu.querySelectorAll('.m-item.open').forEach(o => {
-      o.classList.remove('open');
-      const b = o.querySelector('.m-acc'); if (b) b.setAttribute('aria-expanded', 'false');
-    });
-  };
-  burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
-  /* Acordeones del menú móvil: uno abierto a la vez; se pliegan al cerrar el menú */
-  menu.querySelectorAll('.m-acc').forEach(btn => btn.addEventListener('click', () => {
-    const it = btn.parentElement;
-    const abre = !it.classList.contains('open');
-    menu.querySelectorAll('.m-item.open').forEach(o => {
-      o.classList.remove('open');
-      const b = o.querySelector('.m-acc'); if (b) b.setAttribute('aria-expanded', 'false');
-    });
-    it.classList.toggle('open', abre);
-    btn.setAttribute('aria-expanded', String(abre));
-  }));
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
-
-  /* Desplegables: hover/focus por CSS; el click alterna .open (táctil y accesibilidad) */
-  document.querySelectorAll('.nav-drop').forEach(drop => {
-    const btn = drop.querySelector('.nav-drop-btn');
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const open = !drop.classList.contains('open');
-      document.querySelectorAll('.nav-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nav-drop-btn').setAttribute('aria-expanded','false'); });
-      drop.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', String(open));
-    });
-  });
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.nav-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nav-drop-btn').setAttribute('aria-expanded','false'); });
-  });
-})();
-</script>
-<!-- /pv:nav -->
-<main id="contenido">
-
-<!-- ══ HERO · declaración tipográfica + tira de negativos ══ -->
-<!-- ══ LA HISTORIA · hero pineado que cuenta la entrega ══ -->
-<section id="historia">
-  <div class="hst" id="hst" data-acto="0" style="--p:0">
-    <div class="hst-titulo-caja"><div class="wrap"><h2 class="hst-titulo">Entrega, revisión y portfolio, en la misma herramienta</h2></div></div>
-    <div class="camino" aria-hidden="true">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <path pathLength="100" d="M 74 4 C 74 26, 27 26, 27 46 C 27 64, 74 60, 74 80 C 74 92, 58 96, 44 97"/>
-      </svg>
-    </div>
-    <div class="wrap hst-grid">
-
-      <div class="hst-textos">
-        <header class="acto acto-0 on">
-          <p class="eyebrow hero-eyebrow">Para fotógrafos y videógrafos</p>
-          <p class="hero-display">
-            <span class="hl"><span style="--d:.05s">Entrega tu trabajo</span></span>
-            <span class="hl"><span style="--d:.15s"><em>como merece</em></span></span>
-            <span class="hl"><span style="--d:.25s"><em>ser visto.</em></span></span>
-          </p>
-          <h1>Plataforma de galerías de fotos y vídeo para clientes</h1>
-          <p class="lede0">Galerías privadas de fotos y vídeos para clientes. Con tu marca. Sin reenviar el enlace jamás.</p>
-          <div class="cta-row">
-            <a href="https://app.positiva.studio/registro" class="btn btn-amber" data-ev="cta_register_click" data-ev-place="hero">Empieza gratis</a>
-            <a href="#historia" class="btn btn-ghost" id="cta-pasos">Cómo funciona</a>
-          </div>
-        </header>
-        <div class="acto acto-2">
-          <em>01 · Entrega</em>
-          <h3>Entrega<br><i>tu trabajo.</i></h3>
-          <p>Entrega fotografías y vídeos en una galería personalizada. Con un enlace
-          que no caduca. Con tu marca, con tus archivos organizados por momentos, y
-          controlando quién puede ver o descargar cada archivo.</p>
-          <p class="acto-enlace"><a href="/galerias/">Ver galerías para clientes<span class="fl">→</span></a></p>
-        </div>
-        <div class="acto acto-3">
-          <em>02 · Revisión</em>
-          <h3>Revisa<br><i>con tu cliente.</i></h3>
-          <p>Recibe feedback de tu cliente sin salir de Positiva. Favoritas y
-          comentarios en fotografías; comentarios sobre el fotograma en vídeo.
-          Todo centralizado, sin WhatsApps, emails ni llamadas.</p>
-          <p class="acto-enlace">Ver opciones de revisión<span class="sep">·</span><a href="/revision-video/">Vídeo<span class="fl">→</span></a><span class="sep">|</span><a href="/revision-foto/">Foto<span class="fl">→</span></a></p>
-        </div>
-        <div class="acto acto-4">
-          <em>03 · Portfolio</em>
-          <h3>Publica<br><i>tu portfolio.</i></h3>
-          <p>Crea tu web de fotógrafo o videógrafo en segundos. Revisa los proyectos
-          que has subido a Positiva, escoge tus fotografías y vídeos preferidos y
-          añádelos a tu portfolio público. Sin volver a subir archivos ni mantener
-          otra web.</p>
-          <p class="acto-enlace"><a href="/portfolio/">Ver portfolio público<span class="fl">→</span></a></p>
-        </div>
-        
-      </div>
-
-      <div class="tj">
-        <!-- acto 0 · la entrega con Positiva: galería real en vídeo -->
-        <div class="tj-final">
-          <div class="f-vid">
-            <img class="f-poster" src="/video/galeria-hero-poster.jpg" alt="" width="1280" height="720" fetchpriority="high" decoding="async">
-            <video id="herovid" src="/video/galeria-hero-720.mp4" poster="/video/galeria-hero-poster.jpg"
-              width="1280" height="720" autoplay muted loop playsinline preload="auto"
-              aria-label="Una galería real entregada con Positiva"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
-            <script>if(matchMedia("(min-width:761px)").matches){document.getElementById("herovid").src="/video/galeria-hero.mp4";}</script>
-          </div>
-          <a class="f-url" href="https://portfolio.rodrigomarquez.es/g/musthave-nyc" target="_blank" rel="noopener"><i></i><span><em>rodrigomarquez</em>.positiva.studio/g/musthave-nyc</span></a>
-        </div>
-        <!-- acto 1 · subes: captura real de la subida, movida por el scroll -->
-        <div class="tj-clip">
-          <video id="clipentrega" src="/video/pasos/entrega.mp4" poster="/video/pasos/entrega-poster.webp"
-            width="1280" height="720" muted loop playsinline preload="none"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
-        </div>
-        <!-- acto 2 · diseñas: captura real del diseño de la galería -->
-        <div class="tj-clip2">
-          <video id="cliprevision" src="/video/pasos/revision.mp4" poster="/video/pasos/revision-poster.webp"
-            width="1280" height="720" muted loop playsinline preload="none"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
-        </div>
-        <!-- acto 4 · portfolio: tu web pública -->
-        <div class="tj-port">
-          <img src="/img/perfiles/perfil-rmq.webp" alt="" width="1400" height="932" loading="lazy" decoding="async">
-        </div>
-        <div class="tj-panel">
-          <div class="tj-cab"><span><b>Campaña NYC</b></span><span>84 fotos · 3 vídeos</span></div>
-          <div class="tj-cover">
-            <img src="/img/placeholders/web/nyc-cover.webp" alt="" width="1200" height="809" loading="lazy" decoding="async">
-            <span class="marca">Rodrigo Márquez</span>
-            <span class="tj-sello">No caduca</span>
-            <div class="tj-coment"><b>Cliente · hace 2 min</b>La del abrigo rojo, en grande para la web ✨</div>
-          </div>
-          <div class="tj-grid">
-            <figure class="f1"><img src="/img/placeholders/web/nyc-flag.webp" alt="" loading="lazy" decoding="async"><span class="mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="wx1" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="12" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.9 8.7 L 69.6 9.8 L 130.4 10.0 L 191.9 10.0 L 191.0 103.9 L 190.6 198.4 L 190.4 292.2 L 129.7 292.2 L 68.9 290.4 L 8.3 289.9 L 8.9 195.7 L 7.5 102.9 L 7.9 8.7 L 54.5 5.6" stroke-width="11" opacity="0.97" filter="url(#wx1)"/></svg></span><span class="tj-fav"></span></figure>
-            <figure class="f2"><img src="/img/placeholders/web/nyc-street.webp" alt="" loading="lazy" decoding="async"><span class="mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="wx2" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="14" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="17" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.8 7.6 L 68.3 8.3 L 129.0 9.9 L 189.4 10.3 L 190.9 103.9 L 190.5 197.3 L 191.9 291.7 L 130.6 291.8 L 69.4 290.7 L 8.0 290.9 L 7.3 196.7 L 7.1 102.4 L 7.8 7.6 L 64.8 5.1" stroke-width="11" opacity="0.97" filter="url(#wx2)"/></svg></span><span class="tj-fav"></span></figure>
-            <figure><img src="/img/placeholders/web/nyc-venice.webp" alt="" loading="lazy" decoding="async"></figure>
-            <figure><img src="/img/placeholders/web/nyc-mural.webp" alt="" loading="lazy" decoding="async"></figure>
-            <figure class="f3"><img src="/img/placeholders/web/nyc-kiosco.webp" alt="" loading="lazy" decoding="async"><span class="mk"><svg viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="wx3" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="21" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.16 0.85" numOctaves="2" seed="26" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.42" result="h"/><feComposite in="d" in2="h" operator="out"/></filter></defs><path d="M 7.6 9.8 L 68.1 10.5 L 129.7 11.0 L 190.2 10.5 L 190.2 104.0 L 190.8 197.9 L 190.3 291.1 L 129.4 291.4 L 68.9 291.1 L 7.6 291.9 L 7.3 197.1 L 8.3 104.1 L 7.6 9.8 L 49.6 4.6" stroke-width="11" opacity="0.97" filter="url(#wx3)"/></svg></span><span class="tj-fav"></span></figure>
-            <figure><img src="/img/placeholders/web/nyc-beach.webp" alt="" loading="lazy" decoding="async"></figure>
-          </div>
-        </div>
-        <div class="tj-urls">
-          <div class="tj-url"><i></i><span><em>rodrigomarquez</em>.positiva.studio/campana-nyc</span><span class="perm">Alta</span></div>
-          <div class="tj-url"><i></i><span><em>rodrigomarquez</em>.positiva.studio/campana-nyc-prensa</span><span class="perm">Solo ver</span></div>
-        </div>
-      </div>
-
-    </div>
-    <div class="hst-pie">
-      <div class="wrap">
-        <div class="hitos" aria-hidden="true">
-          <span data-a="1">01 Entrega</span><span data-a="2">02 Revisión</span><span data-a="3">03 Portfolio</span>
-        </div>
-        <span class="hst-hint" aria-hidden="true">Sigue bajando ↓</span>
-      </div>
-    </div>
+<div class="marquee" aria-label="Trabajo real entregado con Positiva">
+  <div class="track" id="track">
+    <figure><img src="/img/galerias/v-b-aitana.webp" alt=""><figcaption>Aitana i David</figcaption></figure>
+    <figure><img src="/img/placeholders/web/nyc-flag.webp" alt=""><figcaption>Campaña NYC</figcaption></figure>
+    <figure><img src="/img/galerias/v-cliffton.webp" alt=""><figcaption>Cliffton Pro València</figcaption></figure>
+    <figure><img src="/img/placeholders/web/sl-pescador.webp" alt=""><figcaption>La segunda línea</figcaption></figure>
+    <figure><img src="/img/galerias/v-b-alvaro.webp" alt=""><figcaption>Álvaro y Elena</figcaption></figure>
+    <figure><img src="/img/placeholders/web/nyc-kiosco.webp" alt=""><figcaption>Campaña NYC · vídeo</figcaption></figure>
+    <figure><img src="/img/galerias/v-sommos.webp" alt=""><figcaption>Sommos Connecta</figcaption></figure>
+    <figure><img src="/img/galerias/v-musthave.webp" alt=""><figcaption>Must Have NYC</figcaption></figure>
+    <figure><img src="/img/galerias/v-brandpulse.webp" alt=""><figcaption>Brandpulse</figcaption></figure>
+    <figure><img src="/img/placeholders/web/sl-tendero.webp" alt=""><figcaption>La segunda línea</figcaption></figure>
   </div>
+  <p class="cap">Trabajo real entregado con Positiva</p>
+</div>
+
+<div class="wrap">
+<section class="sec" id="como">
+  <div class="head r"><span class="eyebrow">Entrega · Revisión · Envíos · Portfolio</span><h2 class="h-l">Todo tu flujo de trabajo,<br/> en un sitio y con tu marca.</h2><p class="lede">Lo que hoy repartes entre un WeTransfer con anuncios, un hilo de WhatsApp y una carpeta de Drive, aquí lo tienes en un solo sitio y con tu marca.</p></div>
+  <article class="step">
+    <div class="txt r"><span class="eyebrow">Entrega</span><h3>Galerías diseñadas para que tu cliente disfrute de tu contenido.</h3><p class="l">Fotos y vídeos. Con tu marca. No caduca.</p>
+      <ul><li>Cada enlace es configurable. Elige qué puede descargar y si quieres protegerlo con contraseña.</li><li>Descarga ZIP automático de la galería completa o de cada momento.</li><li>Puedes reemplazar archivos sin reenviar el enlace.</li><li>Analítica de visitas, únicos, descargas y reproducciones.</li></ul><a class="more" href="/galerias/">Galerías de entrega</a></div>
+    <div class="media vert reveal-img"><img src="/img/galerias/v-cliffton.webp" width="1000" height="1250" alt="Galería de entrega de un evento con la marca del fotógrafo: portada y primeras fotos" loading="lazy"></div>
+  </article>
+
+  <article class="step flip">
+    <div class="txt r"><span class="eyebrow">Revisión</span><h3>Olvídate de recoger feedback entre email, WhatsApps y llamadas.</h3><p class="l">Ahora tu cliente comenta sobre la foto o el fotograma exacto en vídeo y lo recibes en tu panel.</p>
+      <ul><li>Configura rondas de cambios.</li><li>Integración con Lightroom, DaVinci Resolve y Final Cut Pro.</li><li>Revisión colaborativa o individual. Elige si tus revisores ven lo que dicen los demás.</li></ul><a class="more" href="/revision-video/">Revisión de vídeo y foto</a></div>
+    <div class="media reveal-img"><video data-noauto class="auto" muted playsinline loop preload="metadata" poster="/video/pasos/revision-poster.jpg" src="/video/pasos/revision-y-export.mp4"></video></div>
+  </article>
+
+  <article class="step">
+    <div class="txt r"><span class="eyebrow">Envíos y solicitudes · plan Estudio</span><h3>Envía y recibe archivos sin salir de tu marca.</h3><p class="l">Envía una carpeta a un cliente o pide brutos a tus colaboradores. Nada caduca hasta que tú no quieras.</p>
+      <ul><li>Subidas grandes que se reanudan si se corta.</li><li>Sin límite por envío: el único límite es tu cuota.</li><li>Crea tus galerías de entrega o revisión desde tus archivos subidos o solicitados.</li></ul><a class="more" href="/archivos/">Archivos y solicitudes</a></div>
+    <div class="media reveal-img"><img src="/img/archivos/archivos-panel-16x9.webp" alt="Panel de Archivos: una carpeta compartida con un enlace en tu dominio" loading="lazy" style="aspect-ratio:16/9"></div>
+  </article>
+
+  <article class="step flip">
+    <div class="txt r"><span class="eyebrow">Portfolio público</span><h3>Tu portfolio, con lo que ya has entregado.</h3><p class="l">Actualizar tu web nunca fue tan fácil. Elige los trabajos entregados que mejor te representan. Ya los tienes subidos. Con tu dominio en el plan Estudio.</p><a class="more" href="/portfolio/">Portfolio público</a></div>
+    <div class="media reveal-img"><img src="/img/perfiles/perfil-qws.webp" alt="Portfolio público de un estudio de bodas"></div>
+  </article>
 </section>
 
-<!-- ══ 01 · SHOWCASE ══ -->
-<section id="showcase" style="padding-top:clamp(48px,6vw,88px)">
-  <div class="wrap">
-    <figure class="reel2 reveal">
-      <div class="marco">
-        <video id="reelvid" src="/video/showcase-hero.mp4" poster="/video/showcase-hero-poster.jpg"
-          width="1280" height="720" autoplay muted loop playsinline preload="metadata"
-          aria-label="Recorrido por Positiva: galerías con tu marca, revisión del cliente y portfolio público."><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video>
-      </div>
-      <figcaption><span><b>Showcase</b> · una galería real, de la subida a la entrega</span><span>40 s · sin sonido</span></figcaption>
-    </figure>
+<section class="sec" id="que">
+  <div class="head r"><span class="eyebrow">Qué hace Positiva</span><h2 class="h-l">Todo lo que tu cliente recibe de ti, en un solo sitio. Con tu marca.</h2><p class="lede">Descubre todo lo que te ofrece Positiva.</p></div>
+  <div class="grid">
+    <a class="q r" href="/galerias/"><div class="shot"><img src="/img/galerias/galeria-fotos.webp" alt=""><video data-noauto class="hover" muted playsinline loop preload="none" src="/video/pasos/subes.mp4"></video></div><div class="b"><span class="k">Galerías</span><h3>Fotos y vídeos, en una sola galería</h3><p>Sin separar formatos ni mandar a tu cliente a otra plataforma.</p><span class="go">Ver las galerías</span></div></a>
+    <a class="q r d1" href="/galerias/#diseno"><div class="shot"><img src="/img/galerias/marca-galeria.webp" alt=""><video data-noauto class="hover" muted playsinline loop preload="none" src="/video/pasos/disenas.mp4"></video></div><div class="b"><span class="k">Diseño</span><h3>Tu galería, tu marca</h3><p>Logo, colores, tipografía, portada y cuadrícula.</p><span class="go">Ver los diseños</span></div></a>
+    <a class="q r d2" href="/galerias/"><div class="shot"><img src="/img/qcards/enlaces.webp" alt="" loading="lazy"><video data-noauto class="hover" muted playsinline loop preload="none" src="/video/pasos/entrega.mp4"></video></div><div class="b"><span class="k">Enlaces</span><h3>Un enlace con permisos y contraseña que no caduca</h3><p>Elige quién y qué puede ver y descargar.</p><span class="go">Ver los enlaces</span></div></a>
+    <a class="q r" href="/revision-video/"><div class="shot"><img src="/img/qcards/revision-video.webp" alt=""><video data-noauto class="hover" muted playsinline loop preload="none" src="/video/revision-comentar.mp4"></video></div><div class="b"><span class="k">Revisión de vídeo</span><h3>Comentarios sobre el fotograma</h3><p>Deja de interpretar a qué se refiere tu cliente. Lo marca donde toca.</p><span class="go">Ver la revisión de vídeo</span></div></a>
+    <a class="q r d1" href="/revision-foto/"><div class="shot"><img src="/img/qcards/revision-foto.webp" alt=""><video data-noauto class="hover" muted playsinline loop preload="none" src="/video/pasos/cliente.mp4"></video></div><div class="b"><span class="k">Revisión de foto</span><h3>Favoritas y comentarios por imagen</h3><p>Tu cliente marca favoritos y cambios sobre la imagen.</p><span class="go">Ver la revisión de foto</span></div></a>
+    <a class="q r d2" href="/archivos/"><div class="shot"><img src="/img/archivos/envio-cliente-16x10.webp" alt="" loading="lazy"></div><div class="b"><span class="k">Envíos y solicitudes</span><h3>Envía y solicita archivos con tu marca</h3><p>A clientes, proveedores y partners. Sin cuenta para quien sube.</p><span class="go">Ver Archivos</span></div></a>
+    <a class="q r wide" href="/portfolio/"><div class="shot"><img src="/img/perfiles/perfil-rmq.webp" alt=""></div><div class="b"><span class="k">Portfolio público</span><h3>Tu web, con lo que ya has entregado</h3><p>La manera definitiva de tener actualizada tu web. Por fin.</p><span class="go">Ver el portfolio</span></div></a>
+    <a class="q r d1 tall" href="/soporte/es/analitica/"><div class="shot" style="background:var(--sala);display:grid;place-items:center;color:var(--hueso)"><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px 28px;font-variant-numeric:tabular-nums;padding:20px"><div><b style="font-size:34px;font-weight:600;display:block;line-height:1">214</b><span style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gris)">VISITAS</span></div><div><b style="font-size:34px;font-weight:600;display:block;line-height:1">61</b><span style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gris)">DESCARGAS</span></div><div><b style="font-size:34px;font-weight:600;display:block;line-height:1">38</b><span style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gris)">ÚNICOS</span></div><div><b style="font-size:34px;font-weight:600;display:block;line-height:1">122</b><span style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gris)">REPRODUCC.</span></div></div></div><div class="b"><span class="k">Analítica</span><h3>Sabes si lo han visto</h3><p>Visitas, descargas y reproducciones. Sin píxeles de terceros.</p><span class="go">Ver la analítica</span></div></a>
   </div>
 </section>
+</div>
 
-<!-- ══ 02 · QUÉ HACE POSITIVA ══ -->
-<section id="galeria">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="idx">02</span> Qué hace Positiva</p>
-    <h2 class="narrow reveal" style="--d:.05s">Así funciona Positiva,<br><em>de la subida a la entrega.</em></h2>
+<section class="trust"><div class="wrap inner">
+  <div class="r"><span class="k">Alojamiento</span><h3>Tus archivos, en la UE</h3><p>Servidores de la Unión Europea y RGPD. Hecha, mejorada y facturada desde España.</p></div>
+  <div class="r d1"><span class="k">IA</span><h3>Nada entrena a nadie</h3><p>Nunca usamos tus fotos ni tus vídeos para entrenar modelos. Lo que subes es tuyo.</p></div>
+  <div class="r d2"><span class="k">Ventas</span><h3>Cero comisiones</h3><p>No tenemos tienda. Si vendes álbumes y copias, hazlo con quien quieras: nosotros te damos las herramientas. El 100 % es tuyo.</p></div>
+  <div class="r d3"><span class="k">Espacio</span><h3>Sin «ilimitado»</h3><p>Te decimos cuántos gigas tienes y cuánto valen. Quien dice ilimitado te lo cobra en otro sitio.</p></div>
+  <figure class="quote r"><blockquote>«Positiva es la herramienta que yo habría querido tener durante doce años como fotógrafo de bodas y eventos.»</blockquote><cite>Rodrigo Márquez · fundador</cite></figure>
+</div></section>
 
-    <div class="qgrid">
-      <a class="qcard reveal" href="/galerias/">
-        <div class="qshot"><video src="/video/galeria-hero.mp4" poster="/img/qcards/entrega.webp"
-          width="1280" height="720" muted loop playsinline preload="none"
-          aria-label="Una galería de entrega real con fotos y vídeo, con la marca del estudio"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video></div>
-        <div class="qbody">
-          <em>Foto + vídeo</em>
-          <h3>Fotos y vídeos, en una sola galería</h3>
-          <p>Fotografías y vídeos conviven en el mismo lugar. Sin separar formatos,
-          mandar carpetas distintas ni enviar a tu cliente a otra plataforma.</p>
-          <span class="qgo">Ver las galerías</span>
-        </div>
-      </a>
-      <a class="qcard reveal" style="--d:.08s" href="/galerias/#diseno">
-        <div class="qshot"><video src="/video/pasos/disenas.mp4" poster="/img/qcards/diseno.webp"
-          width="1280" height="720" muted loop playsinline preload="none"
-          aria-label="Elegir portada y cuadrícula de una galería"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video></div>
-        <div class="qbody">
-          <em>Diseño</em>
-          <h3>Tu galería, tu marca</h3>
-          <p>Tu logo, tus colores y tu tipografía. Elige portada, cuadrícula y diseño
-          para que la experiencia de entrega también refleje tu identidad.</p>
-          <span class="qgo">Ver los diseños</span>
-        </div>
-      </a>
-      <a class="qcard reveal" href="/galerias/">
-        <div class="qshot qshot-links" aria-hidden="true">
-          <div class="lk-cab"><span><b>Campaña NYC</b></span><span>Compartir</span></div>
-          <div class="lk lk1">
-            <div class="lk-url"><i></i><span><em>rodrigomarquez</em>.positiva.studio/campana-nyc</span></div>
-            <div class="lk-ops">
-              <span class="op"><b>Descarga</b><u class="on">Sí</u><u>No</u></span>
-              <span class="op"><b>Favoritas</b><u class="on">Sí</u><u>No</u></span>
-              <span class="chip">Contraseña</span>
-              <span class="chip">Desactivar</span>
-            </div>
-          </div>
-          <div class="lk lk2">
-            <div class="lk-url"><i></i><span><em>rodrigomarquez</em>.positiva.studio/campana-nyc-prensa</span></div>
-            <div class="lk-ops">
-              <span class="op"><b>Descarga</b><u class="on">Sí</u><u>No</u></span>
-              <span class="op"><b>Favoritas</b><u>Sí</u><u class="on">No</u></span>
-              <span class="chip chip-on">Contraseña ····</span>
-            </div>
-          </div>
-          <div class="lk lk3">
-            <div class="lk-url"><i></i><span><em>rodrigomarquez</em>.positiva.studio/campana-nyc-invitados</span></div>
-            <div class="lk-ops">
-              <span class="op"><b>Descarga</b><u>Sí</u><u class="on">No</u></span>
-              <span class="op"><b>Favoritas</b><u class="on">Sí</u><u>No</u></span>
-              <span class="chip">Contraseña</span>
-            </div>
-          </div>
-          <div class="lk-pie">＋ Nuevo enlace · los enlaces no caducan</div>
-        </div>
-        <div class="qbody">
-          <em>Enlaces</em>
-          <h3>Un enlace que no caduca, y uno para cada acceso</h3>
-          <p>Lo compartes una vez y sigue funcionando hasta que tú decidas lo contrario:
-          puedes reemplazar fotografías y vídeos sin enviar una URL nueva. Y creas tantos
-          enlaces como necesites para la misma galería, cada uno con su contraseña y sus
-          permisos de descarga: originales para el cliente, versión web para prensa o
-          solo visualización para invitados.</p>
-          <span class="qgo">Ver las galerías</span>
-        </div>
-      </a>
-      <a class="qcard reveal" style="--d:.08s" href="/revision-video/">
-        <div class="qshot"><video src="/video/revision-video.mp4" poster="/img/qcards/revision-video.webp"
-          width="1280" height="720" muted loop playsinline preload="none"
-          aria-label="El cliente comenta sobre el fotograma y el estudio responde desde su panel"><track kind="captions" src="/video/silencio.vtt" srclang="es" label="Sin diálogo"></video></div>
-        <div class="qbody">
-          <em>Revisión</em>
-          <h3>El feedback, donde toca</h3>
-          <p>Tu cliente marca sus favoritos y comenta directamente sobre cada
-          fotografía o fotograma. Tú recibes todo asociado al archivo correcto,
-          en un único lugar.</p>
-          <span class="qgo">Ver la revisión</span>
-        </div>
-      </a>
-      <a class="qcard qcard-datos wide reveal" href="/soporte/es/analitica/">
-        <div class="qshot qshot-datos" aria-hidden="true">
-          <div class="dt-cab"><span><b>Campaña NYC</b></span><span>Analítica</span></div>
-          <div class="dt-cifras">
-            <span><b>214</b><i>Visitas</i></span>
-            <span><b>38</b><i>Únicos</i></span>
-            <span><b>61</b><i>Descargas</i></span>
-            <span><b>122</b><i>Reproducc.</i></span>
-          </div>
-          <div class="dt-barras">
-            <u style="--h:14%;--i:0"></u>
-            <u style="--h:22%;--i:1"></u>
-            <u style="--h:18%;--i:2"></u>
-            <u style="--h:40%;--i:3"></u>
-            <u style="--h:100%;--i:4" class="on"></u>
-            <u style="--h:72%;--i:5"></u>
-            <u style="--h:55%;--i:6"></u>
-            <u style="--h:34%;--i:7"></u>
-            <u style="--h:46%;--i:8"></u>
-            <u style="--h:28%;--i:9"></u>
-            <u style="--h:20%;--i:10"></u>
-            <u style="--h:16%;--i:11"></u>
-          </div>
-          <div class="dt-pie"><span>Últimos 14 días</span><span>Sin píxeles de terceros</span></div>
-        </div>
-        <div class="qbody">
-          <em>Analítica</em>
-          <h3>Sabes si lo han visto</h3>
-          <p>Consulta visitas, visitantes, descargas y reproducciones de cada galería.
-          Sin tener que escribir al cliente para preguntar si ha podido abrirla.</p>
-          <span class="qgo">Ver la analítica</span>
-        </div>
-      </a>
-    </div>
-
-    <p class="lede reveal" style="margin-top:var(--pv-s8)">
-      Positiva es la herramienta que yo habría querido tener durante doce
-      años como fotógrafo de bodas y eventos.
-    </p>
-    <p class="kicker reveal" style="margin-top:var(--pv-s6)">
-      Creada por un fotógrafo. Para fotógrafos.
-    </p>
+<div class="wrap">
+<section class="sec" id="precios">
+  <div class="head r"><span class="eyebrow">Precios</span><h2 class="h-l">Sin ilimitado. <em class="a">Porque es mentira.</em></h2><p class="lede">Tarifa Fundador: los primeros 50 creadores se quedan con este precio para siempre.</p></div>
+  <div class="plans">
+    <div class="plan r"><span class="k">Para probar</span><h3>Gratis</h3><div class="price">0 €<small>para siempre</small></div><ul><li>15 GB · 2 galerías activas</li><li>Favoritas y comentarios en fotos</li><li>Caducan a los 30 días</li><li>Sin tu marca ni dominio</li></ul><a class="btn ghost" href="https://app.positiva.studio/registro" data-ev="cta_register_click">Empieza gratis</a></div>
+    <div class="plan hi r d1"><span class="k">El más común</span><h3>Autor</h3><div class="price">89 €<small>/año + IVA · o 8,95 €/mes</small></div><ul><li>250 GB · foto + vídeo</li><li>Galerías ilimitadas, enlaces que no caducan</li><li>Tu logo, tus colores</li><li>Comentarios en fotos y vídeo</li><li>Portfolio público</li></ul><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click">Elegir Autor</a></div>
+    <div class="plan r d2"><span class="k">Para estudios</span><h3>Estudio</h3><div class="price">219 €<small>/año + IVA · o 22,95 €/mes</small></div><ul><li>1 TB · foto + vídeo</li><li>Todo lo de Autor</li><li>Tu dominio y multimarca</li><li>Rondas de aprobación</li><li>Archivos y solicitudes</li></ul><a class="btn ghost" href="https://app.positiva.studio/registro" data-ev="cta_register_click">Elegir Estudio</a></div>
   </div>
+  <div class="cmp r">
+    <div><h3>Pic-Time · Professional</h3><dl><dt>Precio</dt><dd>252 $/año</dd><dt>Fotos</dt><dd>100 GB</dd><dt>Vídeo</dt><dd>30 GB</dd></dl></div>
+    <div><h3>Positiva · Autor</h3><dl><dt>Precio</dt><dd>89 €/año</dd><dt>Fotos</dt><dd>250 GB compartidos</dd><dt>Vídeo</dt><dd>250 GB compartidos</dd></dl></div>
+  </div>
+  <p class="r" style="margin-top:14px;font-size:14px;color:var(--tinta-2);text-align:center">¿Ya trabajas con Pic-Time? Escríbenos y te ayudamos con la mudanza. · <a href="/positiva-vs-pictime-vs-pixieset/">Comparativa completa →</a></p>
 </section>
 
-<!-- ══ LETRA PEQUEÑA QUE IMPORTA ══ -->
-<section style="padding:0">
-  <div class="wrap">
-    <div class="fine reveal">
-      <div class="cols">
-        <div>
-          <h3><svg class="fic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.4-2.9 7.4-7 9-4.1-1.6-7-4.6-7-9V6l7-3z"/><path class="fill" d="M12 8.2l.9 1.6 1.6.9-1.6.9-.9 1.6-.9-1.6-1.6-.9 1.6-.9.9-1.6z"/></svg>Tus archivos, alojados en la UE</h3>
-          <p>Todo tu material se guarda en servidores de la Unión Europea, con pleno
-          cumplimiento del RGPD. Tus fotos y las de tus clientes no cruzan el charco.
-          Positiva se ha construido en España y se gestiona, se mejora y se factura
-          desde Europa.</p>
-        </div>
-        <div>
-          <h3><svg class="fic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.6l1.1 2.9 2.9 1.1-2.9 1.1-1.1 2.9-1.1-2.9-2.9-1.1 2.9-1.1 1.1-2.9z"/><path d="M5.6 18.4L18.4 5.6"/></svg>Tu trabajo no entrena a ninguna IA</h3>
-          <p>Nunca usamos tus fotos ni tus vídeos para entrenar modelos de inteligencia
-          artificial. Lo que subes es tuyo. Y punto.</p>
-        </div>
-      </div>
-    </div>
+<section class="sec">
+  <div class="head r"><span class="eyebrow">Preguntas frecuentes</span><h2 class="h-l">Las que importan.</h2></div>
+  <div class="faq r">
+    <details><summary>¿Por qué no ofrecéis almacenamiento ilimitado?</summary><p>Porque no existe. Cada gigabyte que guardamos lo pagamos. Preferimos decirte el número.</p></details>
+    <details><summary>¿Os lleváis comisión de mis álbumes o mis copias?</summary><p>No. No tenemos tienda y no la vamos a tener. Tu cliente elige en la galería y tú vendes como quieras.</p></details>
+    <details><summary>¿Puedo llevarme mis archivos si me voy?</summary><p>Cuando quieras, en un ZIP. Sin permanencia, sin penalización y sin escribir a soporte.</p></details>
+    <details><summary>¿Sirve para vídeo de verdad?</summary><p>Sí, y comparte espacio con las fotos. No cobramos aparte por «horas de vídeo».</p></details>
+    <details><summary>¿Quién está detrás?</summary><p>Rodrigo Márquez, fotógrafo y realizador de Valencia que además es ingeniero informático. Tras doce años buscando una herramienta así, la hizo.</p></details>
   </div>
 </section>
+</div>
 
-<!-- ══ 03 · PRECIOS ══ -->
-<section id="precios">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="idx">03</span> Precios</p>
-    <h2 class="narrow reveal" style="--d:.05s">Sin ilimitado.<br>Porque es <em>mentira.</em></h2>
-    <p class="lede reveal" style="--d:.1s;margin-top:var(--pv-s5)">
-      El almacenamiento cuesta dinero real. Quien te dice «ilimitado», te lo está
-      cobrando en otro sitio: en el precio, en la calidad o en permanencia.
-      Nosotros te decimos cuántos gigas tienes y cuánto valen.
-    </p>
-
-    <div class="founder reveal">
-      <b>Tarifa Fundador</b>
-      <span>Los primeros 50 fotógrafos que entren se quedan con este precio para siempre. Es lo justo: han confiado en nosotros cuando Positiva todavía se estaba construyendo.</span>
-    </div>
-
-    <div class="plans">
-      <div class="plan reveal">
-        <div class="plan-tag">Para probar</div>
-        <div class="plan-name">Gratis</div>
-        <div class="price">0 €</div>
-        <div class="price-alt">para siempre</div>
-        <div class="gb">15 GB</div>
-        <ul>
-          <li>2 galerías activas</li>
-          <li>Selección de favoritos por parte del cliente</li>
-          <li>Comentarios de cliente en fotografías.</li>
-          <li>Caducan a los 30 días</li>
-          <li class="off">Sin tu marca</li>
-          <li class="off">Sin dominio propio</li>
-        </ul>
-      </div>
-
-      <div class="plan featured reveal" style="--d:.08s">
-        <div class="plan-tag">El más común</div>
-        <div class="plan-name">Autor</div>
-        <div class="price">89 € <small>/año + IVA</small></div>
-        <div class="price-alt">o 8,95 €/mes</div>
-        <div class="gb">250 GB · foto + vídeo</div>
-        <ul>
-          <li>Galerías ilimitadas</li>
-          <li>Tu logo, tus colores</li>
-          <li>Comentarios de cliente en fotografías y vídeo.</li>
-          <li>Enlaces que no caducan</li>
-          <li>Portfolio público</li>
-        </ul>
-      </div>
-
-      <div class="plan reveal" style="--d:.16s">
-        <div class="plan-tag">Para estudios</div>
-        <div class="plan-name">Estudio</div>
-        <div class="price">219 € <small>/año + IVA</small></div>
-        <div class="price-alt">o 22,95 €/mes</div>
-        <div class="gb">1 TB · foto + vídeo</div>
-        <ul>
-          <li>Todo lo de Autor</li>
-          <li>Tu propio dominio</li>
-          <li>Multimarca</li>
-          <li>Rondas de aprobación</li>
-          <li>Solicitudes de archivos</li>
-          <li>Portfolio público</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="extra reveal">
-      ¿Necesitas mas espacio? <strong style="color:var(--pv-tinta)">+100 GB por 19 €/año</strong> + IVA.
-      <br>Google Drive te cobra 24 €/año por esos mismos 100 GB.
-    </p>
-  </div>
-</section>
-
-<!-- ══ 04 · COMPARATIVA ══ -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="idx">04</span> Comparación honesta</p>
-    <h2 class="narrow reveal" style="--d:.05s">Paga menos,<br><em>con más prestaciones.</em></h2>
-
-    <div class="vs">
-      <div class="vs-card them reveal">
-        <h3>Pic-Time <em>Professional</em></h3>
-        <div class="vs-line"><span>Precio</span><span>252 $/año</span></div>
-        <div class="vs-line"><span>Fotos</span><span>100 GB</span></div>
-        <div class="vs-line"><span>Vídeo</span><span>30 GB</span></div>
-      </div>
-      <div class="vs-card reveal" style="--d:.1s">
-        <h3>Positiva <em>Autor</em></h3>
-        <div class="vs-line"><span>Precio</span><span>89 €/año</span></div>
-        <div class="vs-line"><span>Fotos</span><span>250 GB · Compartido Foto y vídeo</span></div>
-        <div class="vs-line"><span>Vídeo</span><span>250 GB · Compartido Foto y vídeo</span></div>
-      </div>
-    </div>
-    <p class="extra reveal" style="text-align:left;margin-top:var(--pv-s5)">
-      Casi el doble de almacenamiento por menos de la mitad de precio. Y la selección,
-      que en Pic-Time solo aparece a partir de su plan Professional, en Positiva te la ofrecemos desde el plan gratuito.
-      <br>¿Quieres todos los números? <a href="/positiva-vs-pictime-vs-pixieset/" style="color:var(--pv-ambar)" data-ev="comparison_opened" data-ev-place="landing">Comparativa Positiva vs Pic-Time vs Pixieset →</a>
-      <br>¿Ya trabajas con Pic-Time? <a href="mailto:hola@positiva.studio?subject=Migrar%20desde%20Pic-Time" style="color:var(--pv-ambar)" data-ev="migracion_pictime" data-ev-place="landing">Escríbenos y te ayudamos con la mudanza →</a>
-    </p>
-  </div>
-</section>
-
-<!-- ══ 05 · FAQ ══ -->
-<section class="dark" id="faq">
-  <div class="wrap narrow" style="max-width:820px">
-    <p class="eyebrow reveal"><span class="idx">05</span> Las que importan</p>
-    <h2 class="reveal" style="--d:.05s">Preguntas frecuentes.</h2>
-
-    <div class="faq reveal" style="--d:.1s">
-      <details open>
-        <summary>¿Por qué no ofrecéis almacenamiento ilimitado?</summary>
-        <p>Porque no existe. Cada gigabyte que guardamos lo pagamos. Cuando alguien te
-        vende «ilimitado», está apostando a que la mayoría de sus clientes no lo usen —
-        y a que los que sí, se vayan. Preferimos decirte el número.</p>
-      </details>
-      <details>
-        <summary>¿Os lleváis comisión de mis álbumes o mis copias?</summary>
-        <p>No. No cobramos ni un céntimo si tú vendes álbumes o copias de tus fotografías.
-        No tenemos tienda y no la vamos a tener. Te damos la herramienta para que tu
-        cliente elija, y tú vendes el álbum, la copia o el USB como te dé la gana, al
-        precio que quieras, con el laboratorio que quieras. El 100 % de las ganancias
-        son tuyas.</p>
-      </details>
-      <details>
-        <summary>¿Puedo llevarme mis archivos si me voy?</summary>
-        <p>Puedes llevarte tus archivos cuando quieras, en un ZIP. No hay permanencia, no hay penalización y no hay que escribir a soporte para pedirlo.</p>
-      </details>
-      <details>
-        <summary>¿Sirve para vídeo de verdad?</summary>
-        <p>Sí, y comparte espacio con las fotos. Lo que no hacemos es cobrarte
-        aparte por «horas de vídeo» como si fuera otro producto. Y con las herramientas de revisión de vídeo, encontrarás un nuevo flujo de trabajo con tu cliente mucho mas sencillo.</p>
-      </details>
-      <details>
-        <summary>¿Quién está detrás de esto?</summary>
-        <p>Positiva está creada por <a href="https://rodrigomarquez.es/" target="_blank" rel="noopener" style="color:var(--pv-ambar)">Rodrigo Márquez</a>, un fotógrafo y realizador de Valencia que, además, es ingeniero informático. Tras más de doce años dedicándose a este sector y buscando una herramienta similar, decide crearla. </p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ══ 06 · CAPTURA ══ -->
-<section id="lista">
-  <div class="wrap">
-    <div class="capture reveal">
-      <p class="eyebrow" style="justify-content:center"><span class="idx">06</span> Reserva una demo</p>
-      <h2>Positiva está casi lista.</h2>
-      <p class="lede">
-        Positiva se cuenta mejor en directo. Reserva una demo y te la enseño sobre tu
-        propio flujo de trabajo, de la subida a la entrega, sin compromiso. Y si
-        prefieres verla por tu cuenta, <a href="https://app.positiva.studio/registro"
-        style="color:var(--pv-ambar)" data-ev="cta_register_click" data-ev-place="demo_section">regístrate
-        y entra hoy mismo</a>.
-      </p>
-      <form id="wl" novalidate>
-        <input type="email" name="email" placeholder="nombre@tuestudio.com" required aria-label="Tu email">
-        <button type="submit" class="btn">Reserva una demo</button>
-      </form>
-      <small id="msg">Sin compromiso y sin newsletter: te escribo solo para agendarla.</small>
-    </div>
-  </div>
-</section>
-
+<section class="final" id="demo"><div class="wrap inner">
+  <span class="eyebrow r">Reserva una demo</span>
+  <h2 class="h-xl r d1">Se cuenta mejor <em class="a">en directo.</em></h2>
+  <p class="lede r d2" style="text-align:center">Sobre tu propio flujo: entrega, revisión y envíos, sin compromiso. Y si prefieres verla por tu cuenta, regístrate y entra hoy mismo.</p>
+  <form class="demo" id="wl" data-demo novalidate>
+    <input type="email" name="email" id="wl-email" placeholder="nombre@tuestudio.com" required aria-label="Tu email" autocomplete="email">
+    <button type="submit" class="btn">Reserva una demo</button>
+  </form>
+  <small class="demo-msg" id="msg">Sin compromiso y sin newsletter: te escribo solo para agendarla.</small>
+</div></section>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://positiva.studio/#website", "url": "https://positiva.studio/", "name": "Positiva", "publisher": {"@id": "https://positiva.studio/#org"}, "inLanguage": "es"}, {"@type": "FAQPage", "@id": "https://positiva.studio/#faq", "mainEntity": [{"@type": "Question", "name": "¿Por qué no ofrecéis almacenamiento ilimitado?", "acceptedAnswer": {"@type": "Answer", "text": "Porque no existe. Cada gigabyte que guardamos lo pagamos. Preferimos decirte el número."}}, {"@type": "Question", "name": "¿Os lleváis comisión de mis álbumes o mis copias?", "acceptedAnswer": {"@type": "Answer", "text": "No. No tenemos tienda y no la vamos a tener. Tu cliente elige en la galería y tú vendes como quieras."}}, {"@type": "Question", "name": "¿Puedo llevarme mis archivos si me voy?", "acceptedAnswer": {"@type": "Answer", "text": "Cuando quieras, en un ZIP. Sin permanencia, sin penalización y sin escribir a soporte."}}, {"@type": "Question", "name": "¿Sirve para vídeo de verdad?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, y comparte espacio con las fotos. No cobramos aparte por «horas de vídeo»."}}, {"@type": "Question", "name": "¿Quién está detrás?", "acceptedAnswer": {"@type": "Answer", "text": "Rodrigo Márquez, fotógrafo y realizador de Valencia que además es ingeniero informático. Tras doce años buscando una herramienta así, la hizo."}}]}]}</script>
 </main>
-
-<!-- pv:footer -->
 <!-- ════════════════════════════════════════════════════════════════
      PIE COMÚN · fuente única: partials/chrome-footer.html
      Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
@@ -1680,234 +412,6 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
   document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
 })();
 </script>
-<!-- /pv:footer -->
-
-<script>
-document.documentElement.classList.add('js');
-
-/* ── Vídeo del hero: pausa fuera de viewport; sin autoplay si el
-   usuario prefiere menos movimiento ── */
-(() => {
-  const v = document.getElementById('reelvid');
-  if (!v) return;
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    v.removeAttribute('autoplay'); v.controls = true; return;
-  }
-  if (!('IntersectionObserver' in window)) return;
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { v.play().catch(() => {}); } else { v.pause(); }
-  }), { threshold: 0.15 });
-  io.observe(v);
-})();
-
-/* ── Titular del hero: entra al cargar ── */
-window.addEventListener('load', () => document.documentElement.classList.add('loaded'));
-
-/* ── La historia: scrub continuo ──
-   Publica --p, --e1 (Positiva sale / entra la entrega arcaica),
-   --s1..--s3 (tachado+subida, entrega, revisión→portfolio), los arcos
-   --a2..--a3 de los saltos, --pc (trazado del camino) y --tN/--mN
-   de cada texto. Los umbrales solo deciden puntero e hitos. */
-(() => {
-  const sec = document.getElementById('historia');
-  const hst = document.getElementById('hst');
-  if (!sec || !hst) return;
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    hst.classList.add('rm');
-    return;
-  }
-  const actos = Array.from(hst.querySelectorAll('.acto'));
-  const hitos = Array.from(hst.querySelectorAll('.hitos span'));
-  const seg = (p, a, b) => Math.min(1, Math.max(0, (p - a) / (b - a)));
-  // rangos (afinar aquí): tres pasos — entrega, revisión, portfolio
-  const E1 = [.03,.10];
-  const S2 = [.32,.44], S3 = [.62,.74];           // saltos entrega→revisión→portfolio
-  // textos: [entraA,entraB,saleA,saleB] · 2=entrega(izq) 3=revisión(dcha) 4=portfolio(izq)
-  const T = [[.06,.12,.31,.37],[.39,.45,.61,.67],[.69,.75,2,3]];
-  const DOM = [.06,.38,.68];
-  let raf = 0, lastDom = -1;
-  const st = hst.style;
-  const vid = document.getElementById('herovid');
-  // clips de paso: cada uno se reproduce dentro de su ventana de scroll
-  const clips = [
-    { el: document.getElementById('clipentrega'), a: .06, b: .44, dentro: false },
-    { el: document.getElementById('cliprevision'), a: .38, b: .74, dentro: false },
-  ].filter(c => c.el);
-  let vidFuera = false; // true cuando el acto 0 ya ha salido de escena
-  if (vid) {
-    // Los navegadores exigen la propiedad IDL, no solo el atributo, para autoplay fiable
-    vid.muted = true;
-    vid.playsInline = true;
-    vid.defaultMuted = true;
-    // pequeño loading sobre el póster hasta que el vídeo arranca de verdad
-    const fv = vid.closest('.f-vid');
-    if (fv && vid.readyState < 3) {
-      fv.classList.add('cargando');
-      const listo = () => fv.classList.remove('cargando');
-      vid.addEventListener('playing', listo, { once: true });
-      vid.addEventListener('canplaythrough', listo, { once: true });
-      vid.addEventListener('error', listo, { once: true });
-      setTimeout(listo, 8000); // red de seguridad: nunca un spinner eterno
-    }
-    const arranca = () => { if (!vidFuera && vid.paused) vid.play().catch(() => {}); };
-    vid.addEventListener('loadeddata', arranca);
-    vid.addEventListener('canplay', arranca);
-    addEventListener('load', arranca);
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) arranca(); });
-    arranca();
-    // los clips de los pasos esperan a que el hero esté servido (o 2,5 s)
-    let promo = false;
-    const promociona = () => {
-      if (promo) return; promo = true;
-      for (const c of clips) {
-        if (c.el.preload !== 'auto' && c.el.paused && c.el.currentTime === 0) {
-          c.el.preload = 'auto';
-          if (c.el.networkState === HTMLMediaElement.NETWORK_EMPTY) c.el.load();
-        }
-      }
-    };
-    vid.addEventListener('playing', promociona, { once: true });
-    setTimeout(promociona, 2500);
-  }
-  const pinta = () => {
-    raf = 0;
-    const total = sec.offsetHeight - innerHeight;
-    const p = Math.min(1, Math.max(0, -sec.getBoundingClientRect().top / (total || 1)));
-    st.setProperty('--p', p.toFixed(4));
-    const e1v = seg(p, E1[0], E1[1]);
-    st.setProperty('--e1', e1v.toFixed(4));
-    if (vid) {
-      vidFuera = e1v >= 1;
-      if (vidFuera) { if (!vid.paused) vid.pause(); }
-      else if (vid.paused) { vid.play().catch(() => {}); }
-    }
-    // clip del acto 01: se reproduce al entrar en escena, se queda en su
-    // último fotograma (rejilla llena) y se rebobina al volver arriba
-    for (const c of clips) {
-      const dentro = p > c.a && p < c.b;
-      if (dentro) {
-        if (!c.dentro && c.el.currentTime > 2) c.el.currentTime = 0; // reentrada: desde el principio
-        if (c.el.paused && !c.el.ended) c.el.play().catch(() => {});
-      } else {
-        if (!c.el.paused) c.el.pause();
-        if (p <= c.a && c.el.currentTime > 0) c.el.currentTime = 0;
-      }
-      c.dentro = dentro;
-    }
-    st.setProperty('--xf', seg(p, .37, .44).toFixed(4));   // entrega → revisión
-    st.setProperty('--xf2', seg(p, .67, .74).toFixed(4));  // revisión → portfolio
-    st.setProperty('--pc', seg(p, .12, .86).toFixed(4));
-    st.setProperty('--s1b', seg(p, .10, .20).toFixed(4));
-    const v2 = seg(p, S2[0], S2[1]), v3 = seg(p, S3[0], S3[1]);
-    st.setProperty('--s2', v2.toFixed(4));
-    st.setProperty('--a2', (4 * v2 * (1 - v2)).toFixed(4)); // arco del primer salto
-    st.setProperty('--s3', v3.toFixed(4));
-    st.setProperty('--a3', (4 * v3 * (1 - v3)).toFixed(4)); // arco del segundo
-    const o0 = seg(p, .03, .09);
-    st.setProperty('--t0', (1 - o0).toFixed(3));
-    st.setProperty('--m0', (o0 * -30).toFixed(1) + 'px');
-    for (let i = 0; i < 3; i++) {
-      const [ia, ib, oa, ob] = T[i];
-      const tin = seg(p, ia, ib), tout = seg(p, oa, ob);
-      st.setProperty('--t' + (i + 2), (tin * (1 - tout)).toFixed(3));
-      st.setProperty('--m' + (i + 2), (((1 - tin) * 30) - tout * 30).toFixed(1) + 'px');
-    }
-    let dom = 0;
-    for (let i = 0; i < DOM.length; i++) if (p >= DOM[i]) dom = i + 1;
-    if (dom !== lastDom) {
-      lastDom = dom;
-      hst.dataset.acto = String(dom);
-      actos.forEach((el, i) => el.classList.toggle('on', i === dom));
-      hitos.forEach(h => h.classList.toggle('on', Number(h.dataset.a) === dom));
-    }
-  };
-  addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(pinta); }, { passive: true });
-  addEventListener('resize', () => { if (!raf) raf = requestAnimationFrame(pinta); }, { passive: true });
-  pinta();
-  // el CTA «Cómo funciona» lleva al primer paso de la historia
-  const cta = document.getElementById('cta-pasos');
-  if (cta) cta.addEventListener('click', (e) => {
-    e.preventDefault();
-    scrollTo({ top: sec.offsetTop + .12 * (sec.offsetHeight - innerHeight), behavior: 'smooth' });
-  });
-})();
-
-/* ── tarjetas «Qué hace»: los vídeos se reproducen en bucle mientras están
-   en pantalla y se pausan al salir (con hover como reserva sin IO) ── */
-(() => {
-  const vids = document.querySelectorAll('.qcard video');
-  if (!vids.length) return;
-  if (!('IntersectionObserver' in window)) {
-    vids.forEach((v) => {
-      const card = v.closest('.qcard');
-      card.addEventListener('mouseenter', () => { v.play().catch(() => {}); });
-      card.addEventListener('mouseleave', () => { v.pause(); });
-    });
-    return;
-  }
-  const io = new IntersectionObserver((es) => es.forEach((e) => {
-    const v = e.target;
-    if (e.isIntersecting) { v.play().catch(() => {}); }
-    else if (!v.paused) { v.pause(); }
-  }), { threshold: 0.3, rootMargin: '100px 0px' });
-  vids.forEach((v) => { v.muted = true; v.playsInline = true; io.observe(v); });
-  document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
-})();
-
-/* ── Revelado al hacer scroll + tachado del manifiesto ── */
-(() => {
-  const manifesto = document.getElementById('manifesto'); // puede no existir
-  if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
-    if (manifesto) manifesto.classList.add('is-struck');
-    return;
-  }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add(e.target.id === 'manifesto' ? 'is-struck' : 'is-in');
-      io.unobserve(e.target);
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  if (manifesto) io.observe(manifesto);
-})();
-
-
-/* ── Lista de espera ──────────────────────────────────────────
-   Envía a /api/waitlist (Worker → Cloudflare Email Routing → hola@positiva.studio).
-   Sin analytics de terceros. Sin píxeles. Ver manifiesto.        */
-document.getElementById('wl').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const email = form.email.value.trim();
-  const msg = document.getElementById('msg');
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    msg.textContent = 'Ese email no parece válido. Revísalo.';
-    msg.style.color = 'var(--pv-graso)';
-    track(Events.WAITLIST_INVALID_EMAIL, { source: 'landing' });
-    return;
-  }
-  const btn = form.querySelector('button');
-  btn.disabled = true;
-  try {
-    const r = await fetch('/api/waitlist', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, source: 'landing' }),
-    });
-    if (!r.ok && r.status !== 409) throw new Error(String(r.status));
-    msg.textContent = 'Apuntado. Te escribo el día que abra.';
-    msg.style.color = 'var(--pv-ambar)';
-    track(Events.WAITLIST_SUBMITTED, { source: 'landing' });
-    form.reset();
-  } catch (_) {
-    msg.textContent = 'No se ha podido guardar. Inténtalo de nuevo en un momento.';
-    msg.style.color = 'var(--pv-graso)';
-  } finally {
-    btn.disabled = false;
-  }
-});
-</script>
+<script src="/positiva.js" defer></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
    tarjetas y el aire bajo el nav, que ahora ocupa sitio en vez de flotar.
    La maquetación de cada familia (raíl, buscador, sumario, changelog…) se
    queda como está.
-   Fuente: scripts/new-web/docs.css → public/new/docs.css (gen.py)
+   Fuente: scripts/new-web/docs.css → public/docs.css (gen.py)
    ══════════════════════════════════════════════════════════════════════ */
 
 :root{

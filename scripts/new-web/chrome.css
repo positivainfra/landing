@@ -4,7 +4,7 @@
    blog, novedades, legales), que traen su propia hoja. Por eso todo va
    acotado a nav.top, .menu-m y .saltar-n, con sus propios tokens: no pisa
    nada de la página ni se deja pisar.
-   Fuente: scripts/new-web/chrome.css → public/new/chrome.css (gen.py)
+   Fuente: scripts/new-web/chrome.css → public/chrome.css (gen.py)
    ══════════════════════════════════════════════════════════════════════ */
 @font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/spacemono-700.woff2) format('woff2')}
 nav.top,.menu-m,.saltar-n,.cta-flot{

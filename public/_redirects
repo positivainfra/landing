@@ -1,0 +1,5 @@
+# Cloudflare Pages · redirecciones
+
+# La web nueva vivió en /new/ mientras se probaba: cualquier enlace viejo va a su página en la raíz.
+/new /  301
+/new/* /:splat 301

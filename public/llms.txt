@@ -7,6 +7,7 @@ Datos clave:
 - Foto y vídeo conviven en la misma galería y el mismo enlace, con la marca del profesional. Los enlaces no caducan.
 - Revisión de fotos: el cliente marca favoritas (con su nombre) y comenta foto a foto; exportación a Lightroom Classic, CSV, lista de nombres y etiquetas de Finder.
 - Revisión de vídeo: comentarios anclados al fotograma exacto, rondas de revisión, y exportación de los comentarios como marcadores en EDL (DaVinci Resolve) y FCPXML (Final Cut Pro).
+- Archivos: carpetas de trabajo, envío de archivos con marca y solicitudes para que terceros suban material sin cuenta (plan Estudio).
 - Portfolio web público que se monta con las entregas ya hechas, con dominios propios.
 - Sin publicidad, sin comisiones y sin entrenar ninguna IA con el material de los usuarios.
 - Planes: Gratis (15 GB, 2 galerías, sin tarjeta) · Autor (250 GB, 89 € + IVA/año) · Estudio (1 TB, 219 € + IVA/año). Tarifa Fundador para los primeros 50 usuarios de pago.
@@ -18,6 +19,7 @@ Datos clave:
 - [Galerías de entrega](https://positiva.studio/galerias/): entrega con marca propia, diseños, momentos y enlaces que no caducan.
 - [Revisión de vídeo](https://positiva.studio/revision-video/): comentarios en el fotograma y exportación a DaVinci Resolve y Final Cut Pro.
 - [Revisión de fotografías](https://positiva.studio/revision-foto/): favoritas y comentarios del cliente, exportables a Lightroom.
+- [Archivos y solicitudes](https://positiva.studio/archivos/): almacenamiento, envío y solicitud de archivos a terceros sin cuenta (plan Estudio).
 - [Portfolio](https://positiva.studio/portfolio/): web pública montada con las entregas.
 - [Precios](https://positiva.studio/precios/): planes y almacenamiento, en euros.
 - [Para profesionales freelance](https://positiva.studio/freelance/)

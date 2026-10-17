@@ -20,23 +20,10 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
+// Las páginas comerciales (home, producto, casos, comparativas) las escribe
+// scripts/new-web/gen.py con el nav ya puesto: NO van aquí.
 const PAGES = [
-  'public/index.html',
-  'public/galerias/index.html',
-  'public/revision-video/index.html',
-  'public/portfolio/index.html',
   'public/novedades/index.html',
-  'public/sobre-nosotros/index.html',
-  'public/precios/index.html',
-  'public/bodas/index.html',
-  'public/productoras/index.html',
-  'public/revision-foto/index.html',
-  'public/freelance/index.html',
-  'public/positiva-vs-dropbox/index.html',
-  'public/positiva-vs-google-drive/index.html',
-  'public/positiva-vs-pictime-vs-pixieset/index.html',
-  'public/positiva-vs-wetransfer/index.html',
-  'public/positiva-vs-arcadina/index.html',
   'public/aviso-legal/index.html',
   'public/privacidad/index.html',
   'public/terminos/index.html',
@@ -65,6 +52,11 @@ for (const page of PAGES) {
   const before = readFileSync(path, 'utf8');
   let after = stamp(before, 'nav', nav, page);
   after = stamp(after, 'footer', footer, page);
+  // Capa visual de la web: docs.css encima de su CSS propio y positiva.js (nav, menú, CTA).
+  // Idempotente: solo se añade si falta. El «saltar» viejo sobra: el nav trae el suyo.
+  after = after.replace(/\s*<a class="saltar" href="#contenido">[^<]*<\/a>/, '');
+  if (!after.includes('href="/docs.css"')) after = after.replace('</head>', '<link rel="stylesheet" href="/docs.css">\n</head>');
+  if (!after.includes('src="/positiva.js"')) after = after.replace('</body>', '<script src="/positiva.js" defer></script>\n</body>');
   if (after !== before) { writeFileSync(path, after); changed++; console.log(`✓ ${page}`); }
   else console.log(`· ${page} (sin cambios)`);
 }

@@ -1,33 +1,32 @@
 #!/usr/bin/env python3
 """
-Web nueva de Positiva (en pruebas bajo /new/).
+Páginas comerciales de positiva.studio (home, producto, casos, comparativas).
 
   python3 scripts/new-web/gen.py        (desde la raíz del repo)
+  python3 scripts/new-web/check.py      (comprueba enlaces y medios)
 
 Cada página es scripts/new-web/pages/<ruta>.html con una cabecera de metadatos
 en un comentario y solo el contenido de <main>. Este script:
-  · copia positiva.css y positiva.js a public/new/
-  · envuelve cada página con <head>, nav (partials/new-nav.html), pie común
-    (partials/chrome-footer.html) y scripts, con los marcadores pv:newnav y
-    pv:footer para que `npm run stamp` pueda refrescarlos después
-  · escribe public/new/<ruta>/index.html
+  · copia positiva.css, positiva.js, chrome.css y docs.css a public/
+  · envuelve cada página con <head>, nav (partials/chrome-nav.html), pie común
+    (partials/chrome-footer.html) y scripts
+  · escribe public/<ruta>/index.html
+
+Blog, soporte, novedades y legales NO salen de aquí: tienen su propio flujo y
+reciben el nav, el pie, docs.css y positiva.js con `npm run stamp`.
 
 Cabecera de cada página:
   <!--
   title: Título de la pestaña
   description: Meta descripción
-  path: /new/galerias/
+  path: /galerias/
   preload: /video/galeria-hero-poster.jpg      (opcional)
   -->
 
 Atajos dentro del contenido:
   <!-- @demo -->          formulario de «Reserva una demo» (usa /api/waitlist)
-  <!-- @tabla clave -->   tabla comparativa con la celda ganadora de cada fila
-                          (fuente única: scripts/comparativas.py, compartida con el blog)
-
-Mientras la web nueva esté en /new/ todas las páginas salen con noindex.
-Al pasar a la raíz: cambia INDEXABLE a True y BASE a '/', regenera, y quita la
-regla /new/* de public/_headers.
+  <!-- @tabla clave -->   tabla comparativa (fuente única: scripts/comparativas.py)
+  <!-- @faq-ld -->        JSON-LD WebSite + FAQPage a partir de los <details> de la página
 """
 import re, os, sys, shutil, glob, json, hashlib
 
@@ -35,11 +34,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 import comparativas
-OUT = os.path.join(ROOT, 'public', 'new')
-INDEXABLE = False
-BASE = '/new/'
+OUT = os.path.join(ROOT, 'public')
+INDEXABLE = True
+BASE = '/'
 
-nav = open(os.path.join(ROOT, 'partials', 'new-nav.html')).read().strip()
+nav = open(os.path.join(ROOT, 'partials', 'chrome-nav.html')).read().strip()
 footer = open(os.path.join(ROOT, 'partials', 'chrome-footer.html')).read().strip()
 
 DEMO = '''<form class="demo" id="wl" data-demo novalidate>
@@ -74,13 +73,25 @@ def enlaces(html):
     html = re.sub(r'href="/soporte/?"', f'href="{BASE}soporte/es/"', html)
     return html.replace('href="/#', f'href="{BASE}#')
 
+def faq_ld(body, canon):
+    """WebSite + FAQPage con las preguntas visibles (<details><summary>…</summary><p>…</p>)."""
+    limpia = lambda s: re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', s)).strip()
+    qs = [{'@type': 'Question', 'name': limpia(q), 'acceptedAnswer': {'@type': 'Answer', 'text': limpia(a)}}
+          for q, a in re.findall(r'<details[^>]*>\s*<summary>(.*?)</summary>\s*(.*?)</details>', body, re.S)]
+    url = 'https://positiva.studio' + canon
+    g = [{'@type': 'WebSite', '@id': 'https://positiva.studio/#website', 'url': 'https://positiva.studio/', 'name': 'Positiva',
+          'publisher': {'@id': 'https://positiva.studio/#org'}, 'inLanguage': 'es'}]
+    if qs: g.append({'@type': 'FAQPage', '@id': url + '#faq', 'mainEntity': qs})
+    return '<script type="application/ld+json">' + json.dumps({'@context': 'https://schema.org', '@graph': g}, ensure_ascii=False) + '</script>'
+
 def page(d, body):
     robots = '' if INDEXABLE else ('<!-- Web nueva en pruebas: NO indexar. Ver scripts/new-web/gen.py -->\n'
                                    '<meta name="robots" content="noindex, nofollow">\n')
-    canon = d['path'].replace('/new/', '/', 1) if INDEXABLE else d['path']
+    canon = d['path']
     pre = ''.join(f'<link rel="preload" href="{p.strip()}" as="image" fetchpriority="high">\n'
                   for p in d.get('preload', '').split(',') if p.strip())
     body = enlaces(comparativas.pintar(body.replace('<!-- @demo -->', DEMO)))
+    if '<!-- @faq-ld -->' in body: body = body.replace('<!-- @faq-ld -->', faq_ld(body, canon))
     foot = enlaces(footer)
     return f'''<!DOCTYPE html>
 <html lang="es">
@@ -131,8 +142,8 @@ def page(d, body):
 
 os.makedirs(OUT, exist_ok=True)
 
-# ── Protección: public/new/ es SALIDA. Si alguien edita a mano un .html de
-# public/new/, la próxima ejecución lo pisaría sin avisar. gen.py guarda la
+# ── Protección: las páginas que escribe este script son SALIDA. Si alguien edita
+# a mano una de ellas en public/, la próxima ejecución lo pisaría sin avisar. gen.py guarda la
 # huella de lo que escribió y se niega a sobrescribir un fichero cambiado a
 # mano: hay que llevar ese cambio a scripts/new-web/pages/ (o a la página
 # real, si es derivada) y volver a ejecutar. `--forzar` lo pisa igualmente.
@@ -146,7 +157,7 @@ for rel, h in huellas.items():
     if os.path.exists(f) and _h(open(f).read()) != h:
         tocados.append(rel)
 if tocados and not FORZAR:
-    print('\n✋ Estos ficheros de public/new/ se han editado a mano y gen.py los pisaría:')
+    print('\n✋ Estos ficheros de public/ se han editado a mano y gen.py los pisaría:')
     for t in tocados: print('   ·', t)
     print('\nLleva esos cambios a su fuente (scripts/new-web/pages/<página>.html, o la página real si es')
     print('de blog/soporte/legales) y vuelve a ejecutar. Para pisarlos igualmente: gen.py --forzar\n')
@@ -163,37 +174,12 @@ for f in ('chrome.css', 'docs.css'):
 n = 0
 for f in sorted(glob.glob(os.path.join(HERE, 'pages', '*.html'))):
     d, body = meta(open(f).read())
-    rel = d['path'].replace('/new/', '', 1).strip('/')
+    rel = d['path'].strip('/')
     dst = os.path.join(OUT, rel, 'index.html') if rel else os.path.join(OUT, 'index.html')
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     escribe(dst, page(d, body))
     n += 1
     print('✓', d['path'])
-print(f'{n} página(s) en public/new/')
-
-# ── Páginas derivadas ─────────────────────────────────────────────────────
-def derivar(html):
-    html = re.sub(r'<!-- pv:nav -->.*?<!-- /pv:nav -->', '<!-- pv:nav -->\n' + nav + '\n<!-- /pv:nav -->', html, count=1, flags=re.S)
-    html = re.sub(r'\s*<a class="saltar" href="#contenido">[^<]*</a>', '', html)
-    html = re.sub(r'<meta name="robots"[^>]*>\s*', '', html)
-    if not INDEXABLE:
-        html = html.replace('</title>', '</title>\n<!-- Web nueva en pruebas: NO indexar -->\n<meta name="robots" content="noindex, nofollow">', 1)
-    html = html.replace('</head>', f'<link rel="stylesheet" href="{BASE}docs.css">\n</head>', 1)
-    html = html.replace('</body>', f'<script src="{BASE}positiva.js" defer></script>\n</body>', 1)
-    return enlaces(html)
-
-m = 0
-PUB = os.path.join(ROOT, 'public')
-for slug in DERIVADAS:
-    for src in sorted(glob.glob(os.path.join(PUB, slug, '**', 'index.html'), recursive=True)):
-        rel = os.path.relpath(src, PUB)
-        html = open(src).read()
-        if '<!-- pv:nav -->' not in html:
-            print('  (sin marcador pv:nav, se omite)', rel); continue
-        dst = os.path.join(OUT, rel)
-        os.makedirs(os.path.dirname(dst), exist_ok=True)
-        escribe(dst, derivar(html))
-        m += 1
-print(f'{m} página(s) de contenido derivadas en public/new/')
+print(f'{n} página(s) en public/')
 
 json.dump(huellas, open(HUELLAS, 'w'), indent=0, sort_keys=True)

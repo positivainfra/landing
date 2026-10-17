@@ -2,167 +2,45 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Positiva vs Dropbox · Entregar no es lo mismo que sincronizar</title>
 <meta name="description" content="Dropbox sincroniza archivos; Positiva entrega proyectos con tu marca. Comparativa honesta de la experiencia de entrega para fotógrafos y videógrafos.">
-<meta property="og:title" content="Positiva vs Dropbox">
-<meta property="og:description" content="Dropbox sincroniza archivos. Positiva entrega proyectos. La diferencia está en los últimos cinco minutos.">
+<link rel="canonical" href="https://positiva.studio/positiva-vs-dropbox/">
+<meta property="og:title" content="Positiva vs Dropbox · Entregar no es lo mismo que sincronizar">
+<meta property="og:description" content="Dropbox sincroniza archivos; Positiva entrega proyectos con tu marca. Comparativa honesta de la experiencia de entrega para fotógrafos y videógrafos.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://positiva.studio/positiva-vs-dropbox/">
 <meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_ES">
-<meta name="theme-color" content="#F1F0EC">
-<link rel="canonical" href="https://positiva.studio/positiva-vs-dropbox/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F3F2EE">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/chrome.css">
+<link rel="stylesheet" href="/positiva.css">
 <script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<!-- Session replay SOLO aquí, y la arquitectura ya hace la separación sola:
+     por esta plantilla pasan únicamente las páginas de scripts/new-web/pages/,
+     que son todas comerciales (home, precios, casos, comparativas). Las legales,
+     el soporte y el blog entran por DERIVADAS, heredan el <head> de la página
+     real de public/ y por tanto NO traen replay, igual que en el sitio vivo.
+     Si algún día una página legal se mueve a pages/, esto hay que revisarlo. -->
 <script defer src="https://analytics.labbo.studio/recorder.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
-<script src="/js/analytics.js"></script>
-<style>
-@font-face{font-family:'Playfair Display';font-style:normal;font-weight:300 400;font-display:swap;src:url(/fonts/playfair.woff2) format('woff2')}
-@font-face{font-family:'Playfair Display';font-style:italic;font-weight:300 400;font-display:swap;src:url(/fonts/playfair-italic.woff2) format('woff2')}
-@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument.woff2) format('woff2')}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/ibmplexmono-400.woff2) format('woff2')}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/ibmplexmono-700.woff2) format('woff2')}
-@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/spacemono-700.woff2) format('woff2')}
-:root{
-  --pv-papel:#F1F0EC; --pv-luz:#FFFFFF; --pv-bandeja:#E6E5E0; --pv-sala:#0E0E0D; --pv-sala-2:#1A1A18;
-  --pv-tinta:#171614; --pv-tinta-60:#6E6D67; --pv-tinta-30:#A9A8A2; --pv-linea:#D6D5CF; --pv-linea-sala:#2A2A27;
-  --pv-ambar:#C98A2B; --pv-ambar-luz:#F5E9D2; --pv-ambar-hover:#B37A24; --pv-ambar-ink:#8F5F15; --pv-graso:#E0402A;
-  --pv-display:'Playfair Display',Georgia,serif; --pv-sans:'Instrument Sans',-apple-system,system-ui,sans-serif;
-  --pv-mono:'IBM Plex Mono',ui-monospace,monospace;
-  --pv-r-panel:10px; --pv-r-input:8px; --pv-r-pill:999px;
-  --pv-s2:8px;--pv-s3:12px;--pv-s4:16px;--pv-s5:24px;--pv-s6:32px;--pv-s7:48px;--pv-s8:64px;
-  --pv-ease:cubic-bezier(.4,0,.2,1); --pv-ease-out:cubic-bezier(.19,1,.22,1);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--pv-papel);color:var(--pv-tinta);font-family:var(--pv-sans);font-size:18px;line-height:1.67;-webkit-font-smoothing:antialiased;overflow-x:clip}
-.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
-h1,h2{font-family:var(--pv-display);font-weight:300;letter-spacing:-.02em;line-height:1.05}
-h2{font-size:clamp(30px,4vw,54px)}
-h2 em,h1 em{font-style:italic}
-.lede{font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:var(--pv-tinta-60);max-width:60ch}
-.eyebrow{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pv-ambar-ink);display:flex;align-items:center;gap:var(--pv-s4);margin-bottom:var(--pv-s6)}
-.eyebrow::after{content:"";flex:1;height:1px;background:currentColor;opacity:.28}
-.dark .eyebrow,.capture .eyebrow{color:var(--pv-ambar)}
-section{padding:clamp(72px,9vw,120px) 0}
-.dark{background:var(--pv-sala);color:#EDECE8}
-.dark .lede{color:#9C9B95}
-html.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--pv-ease-out),transform .9s var(--pv-ease-out);transition-delay:var(--d,0s)}
-html.js .reveal.is-in{opacity:1;transform:none}
-nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:14px clamp(14px,3vw,40px)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--pv-s5);max-width:1280px;margin:0 auto;padding:10px 12px 10px clamp(18px,2.4vw,28px);border:1px solid transparent;border-radius:var(--pv-r-pill);transition:background .4s var(--pv-ease),border-color .4s var(--pv-ease),box-shadow .4s var(--pv-ease)}
-nav.scrolled .nav-inner{background:rgba(241,240,236,.82);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-color:var(--pv-linea);box-shadow:0 18px 50px -24px rgba(23,22,20,.35)}
-.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--pv-tinta)}
-.logo svg{height:27px;width:auto;display:block;flex:none}
-.logo-word{font-family:'Space Mono',ui-monospace,monospace;font-weight:700;font-size:14px;letter-spacing:.22em;text-transform:uppercase;line-height:1}
-.logo-word b{color:var(--pv-ambar)}
-.nav-links{display:flex;align-items:center;gap:var(--pv-s6)}
-.nav-links a{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pv-tinta-60);text-decoration:none;transition:color .18s}
-.nav-links a:hover{color:var(--pv-tinta)}
-.btn{display:inline-flex;align-items:center;gap:var(--pv-s2);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--pv-r-pill);border:1px solid transparent;cursor:pointer;text-decoration:none;transition:all .22s var(--pv-ease)}
-.nav-cta{background:var(--pv-ambar);color:#171614;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
-.nav-cta:hover{background:var(--pv-ambar-hover);color:#171614;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
-@media(max-width:760px){nav .nav-links{display:none}}
-.hero{padding-top:clamp(140px,20vh,210px);padding-bottom:clamp(48px,7vw,88px)}
-.hero-display{font-family:var(--pv-display);font-weight:300;letter-spacing:-.02em;line-height:1.05;font-size:clamp(40px,6.4vw,100px)}
-.hero-display em{font-style:italic}
-.hero h1{font-family:var(--pv-sans);font-weight:400;letter-spacing:0;line-height:1.5;font-size:clamp(18px,1.7vw,22px);color:var(--pv-tinta);max-width:62ch;margin-top:var(--pv-s5)}
-.hero .lede{margin-top:var(--pv-s6)}
-.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--pv-s4);margin-top:clamp(40px,6vw,72px)}
-@media(max-width:760px){.meta-grid{grid-template-columns:1fr}}
-.meta-card{border:1px solid var(--pv-linea-sala);border-radius:var(--pv-r-panel);padding:clamp(28px,4vw,44px)}
-.meta-card.pos{border-color:var(--pv-ambar);box-shadow:0 0 0 1px var(--pv-ambar)}
-.meta-card .verb{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#5C5B56}
-.meta-card.pos .verb{color:var(--pv-ambar)}
-.meta-line{font-family:var(--pv-display);font-weight:300;font-size:clamp(26px,3vw,38px);line-height:1.15;margin-top:var(--pv-s4);color:#EDECE8}
-/* experiencia (visual, no tabla) */
-.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--pv-s4);margin-top:clamp(40px,6vw,72px)}
-@media(max-width:760px){.exp-grid{grid-template-columns:1fr}}
-.exp{border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);background:var(--pv-luz);padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;gap:var(--pv-s5)}
-.exp.pos{border-color:var(--pv-ambar);box-shadow:0 0 0 1px var(--pv-ambar)}
-.exp-tag{font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pv-tinta-30)}
-.exp.pos .exp-tag{color:var(--pv-ambar)}
-.exp-quote{font-family:var(--pv-display);font-weight:300;font-style:italic;font-size:clamp(24px,2.8vw,36px);line-height:1.25;color:var(--pv-tinta)}
-.exp-list{list-style:none;display:flex;flex-direction:column;gap:var(--pv-s4);margin-top:auto;padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea)}
-.exp.pos .exp-list{border-top-color:var(--pv-ambar)}
-.exp-list li{font-size:16px;color:var(--pv-tinta-60);display:flex;gap:var(--pv-s4);align-items:baseline}
-.exp-list li b{font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pv-ambar);min-width:58px;flex:none}
-/* tabla de datos */
-.cmp-scroll{overflow-x:auto;margin-top:clamp(40px,6vw,72px);-webkit-overflow-scrolling:touch}
-table{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;font-size:16px;line-height:1.5}
-th,td{padding:16px 20px;text-align:left;vertical-align:top;border-bottom:1px solid var(--pv-linea)}
-thead th{font-family:var(--pv-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--pv-tinta-30)}
-thead th.pos{color:var(--pv-ambar)}
-tbody th{font-weight:600;color:var(--pv-tinta);white-space:nowrap}
-td{color:var(--pv-tinta-60)}
-col.pos{background:rgba(201,138,43,.08)}
-td.pos{color:var(--pv-tinta)}
-td .si{color:var(--pv-ambar);font-family:var(--pv-mono);font-weight:700;font-size:13px}
-thead th:first-child,tbody th{position:sticky;left:0;z-index:2;background:var(--pv-papel);border-right:1px solid var(--pv-linea)}
-thead th:first-child{z-index:3}
-@media(max-width:760px){tbody th,thead th:first-child{white-space:normal;min-width:132px;max-width:168px}}
-.cmp-note{font-family:var(--pv-mono);font-size:12px;color:var(--pv-tinta-30);letter-spacing:.03em;line-height:1.9;margin-top:var(--pv-s5);max-width:82ch}
-.cmp-note a{color:var(--pv-ambar);text-decoration:none}
-.minutes h2{color:#EDECE8}
-.minutes .lede{margin-top:var(--pv-s6);font-size:clamp(19px,1.8vw,23px)}
-.minutes .big{font-family:var(--pv-display);font-weight:300;font-size:clamp(30px,4.4vw,60px);line-height:1.1;color:#EDECE8;margin-top:var(--pv-s7)}
-.minutes .big em{font-style:italic;color:var(--pv-ambar)}
-.capture{background:var(--pv-sala);color:#EDECE8;border-radius:var(--pv-r-panel);padding:clamp(56px,8vw,104px) var(--pv-s7);text-align:center}
-.capture h2{color:#EDECE8;margin-bottom:var(--pv-s4)}
-.capture .lede{margin:0 auto;color:#9C9B95}
-.capture form{display:flex;gap:var(--pv-s2);max-width:480px;margin:var(--pv-s7) auto 0;flex-wrap:wrap}
-input[type=email]{flex:1;min-width:220px;font-family:var(--pv-sans);font-size:16px;padding:14px 18px;background:var(--pv-sala-2);border:1px solid var(--pv-linea-sala);border-radius:var(--pv-r-input);color:#EDECE8}
-input[type=email]::placeholder{color:#5C5B56}
-input[type=email]:focus{outline:2px solid var(--pv-ambar);outline-offset:1px;border-color:transparent}
-.capture form .btn{background:var(--pv-ambar);color:#171614;border:0;text-transform:uppercase;letter-spacing:.08em}
-.capture form .btn:hover{background:var(--pv-ambar-hover)}
-.capture small{display:block;margin-top:var(--pv-s5);font-family:var(--pv-mono);font-size:11px;letter-spacing:.08em;color:#5C5B56;text-transform:uppercase}
-footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);margin-top:clamp(56px,8vw,110px)}
-.footer-meta{display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;font-size:14px;color:var(--pv-tinta-30)}
-.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
-.footer-meta a:hover{color:var(--pv-tinta)}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html.js .reveal{opacity:1;transform:none}}
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Inicio",
-          "item": "https://positiva.studio/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Positiva vs Dropbox",
-          "item": "https://positiva.studio/positiva-vs-dropbox/"
-        }
-      ]
-    }
-  ]
-}
-</script>
+<script defer src="/js/analytics.js"></script>
 </head>
 <body>
-
-<!-- pv:nav -->
 <!-- ════════════════════════════════════════════════════════════════
-     CABECERA COMÚN · fuente única: partials/chrome-nav.html
-     Edita AQUÍ y ejecuta `npm run stamp` para propagarla a todas
-     las páginas. No edites el bloque pv:nav de las páginas a mano.
-     Autocontenida: CSS + markup + JS (las satélite no traen menú móvil).
+     NAV DE LA WEB · fuente única: partials/chrome-nav.html
+     Lo usan gen.py (páginas de scripts/new-web/pages/) y `npm run stamp`
+     (blog, soporte, novedades y legales). Edita AQUÍ y ejecuta ambos.
      ════════════════════════════════════════════════════════════════ -->
-
+<link rel="stylesheet" href="/chrome.css">
 <!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
      banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
      (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
@@ -210,429 +88,142 @@ document.addEventListener('click', function (e) {
 }, { passive: true });
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
-
-<style data-pv-chrome="nav">
-/* Base de la cápsula (idéntica a la de siempre; aquí para que exista en TODAS las páginas) */
-nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:14px clamp(14px,3vw,40px)}
-.nav-inner{
-  display:flex;align-items:center;justify-content:space-between;gap:var(--pv-s5);
-  max-width:1280px;margin:0 auto;padding:10px 12px 10px clamp(18px,2.4vw,28px);
-  border:1px solid transparent;border-radius:var(--pv-r-pill);
-  transition:background .4s var(--pv-ease),border-color .4s var(--pv-ease),box-shadow .4s var(--pv-ease);
-}
-nav.scrolled .nav-inner{
-  background:rgba(241,240,236,.82);
-  backdrop-filter:blur(16px) saturate(1.4);
-  -webkit-backdrop-filter:blur(16px) saturate(1.4);
-  border-color:var(--pv-linea);
-  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);
-}
-.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--pv-tinta)}
-.logo svg{height:27px;width:auto;display:block;flex:none}
-.logo-word{
-  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;font-size:14px;
-  letter-spacing:.22em;text-transform:uppercase;line-height:1;
-}
-.logo-word b{color:var(--pv-ambar)}
-.nav-links{display:flex;align-items:center;gap:var(--pv-s6)}
-.nav-links a,.nav-drop-btn{
-  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
-  text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
-  display:inline-flex;align-items:center;line-height:1;
-}
-.nav-links a:hover,.nav-drop-btn:hover{color:var(--pv-tinta)}
-.nav-right{display:flex;align-items:center;gap:var(--pv-s4)}
-.nav-login{
-  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
-  text-transform:uppercase;color:#4A4943;text-decoration:none;transition:color .18s;
-}
-.nav-login:hover{color:var(--pv-tinta)}
-.nav-cta{background:var(--pv-ambar);color:#171614;border-color:var(--pv-ambar);padding:11px 22px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 6px 20px -8px rgba(201,138,43,.6)}
-.nav-cta:hover{background:var(--pv-ambar-hover);color:#171614;border-color:var(--pv-ambar-hover);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(201,138,43,.75)}
-
-/* Desplegables: mismo lenguaje que la cápsula (papel translúcido + línea + blur) */
-.nav-drop{position:relative;display:flex;align-items:center}
-.nav-drop-btn{background:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:7px;padding:0}
-.nav-drop-btn::after{
-  content:"";width:5px;height:5px;flex:none;margin-top:-3px;
-  border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
-  transform:rotate(45deg);transition:transform .25s var(--pv-ease);
-}
-.nav-drop:hover .nav-drop-btn::after,.nav-drop.open .nav-drop-btn::after{transform:rotate(225deg);margin-top:3px}
-.nav-drop-menu{
-  position:absolute;top:100%;left:50%;transform:translateX(-50%);
-  padding-top:14px;min-width:240px;
-  opacity:0;visibility:hidden;transition:opacity .25s var(--pv-ease),visibility 0s linear .25s;
-}
-.nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu,.nav-drop.open .nav-drop-menu{
-  opacity:1;visibility:visible;transition:opacity .25s var(--pv-ease),visibility 0s linear 0s;
-}
-.nav-drop-card{
-  background:rgba(241,240,236,.94);
-  backdrop-filter:blur(16px) saturate(1.4);
-  -webkit-backdrop-filter:blur(16px) saturate(1.4);
-  border:1px solid var(--pv-linea);border-radius:var(--pv-r-panel);
-  box-shadow:0 18px 50px -24px rgba(23,22,20,.35);
-  padding:10px;display:flex;flex-direction:column;
-}
-.nav-drop-card a{
-  font-family:var(--pv-mono);font-size:12px;font-weight:700;letter-spacing:.13em;
-  text-transform:uppercase;color:#4A4943;text-decoration:none;
-  padding:10px 14px;border-radius:6px;white-space:nowrap;transition:color .18s,background .18s;
-}
-.nav-drop-card a:hover{color:var(--pv-tinta);background:rgba(23,22,20,.05)}
-.nav-drop-card .drop-grupo{
-  font-family:var(--pv-mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--pv-tinta-30);
-  margin-top:6px;padding:12px 14px 4px;border-top:1px solid var(--pv-linea);
-}
-.nav-drop-card a.sub{padding-left:26px}
-.nav-drop-card .drop-grupo-link{font-size:12px;letter-spacing:.13em;color:#4A4943}
-.nav-drop-card a.sub-alt{font-family:var(--pv-sans);font-size:13.5px;font-weight:500;letter-spacing:0;text-transform:none}
-/* Sobre hero oscuro la cápsula aclara sus enlaces, pero el panel del desplegable
-   sigue siendo papel: sus enlaces mantienen tinta siempre. */
-body.hero-oscuro nav:not(.scrolled) .nav-drop .nav-drop-card a{color:#4A4943}
-body.hero-oscuro nav:not(.scrolled) .nav-drop .nav-drop-card a:hover{color:var(--pv-tinta)}
-
-/* Burger (solo móvil) */
-.nav-burger{
-  display:none;position:relative;width:44px;height:44px;flex:none;
-  background:var(--pv-tinta);border:0;border-radius:var(--pv-r-pill);cursor:pointer;
-}
-.nav-burger span{
-  position:absolute;left:13px;right:13px;height:2px;background:var(--pv-papel);
-  transition:transform .35s var(--pv-ease),top .35s var(--pv-ease);
-}
-.nav-burger span:first-child{top:18px}
-.nav-burger span:last-child{top:24px}
-.nav-burger[aria-expanded="true"] span:first-child{top:21px;transform:rotate(45deg)}
-.nav-burger[aria-expanded="true"] span:last-child{top:21px;transform:rotate(-45deg)}
-html:not(.js) .nav-burger{display:none!important}
-
-/* Menú móvil a pantalla completa */
-body.menu-locked{overflow:hidden}
-body.menu-locked .logo{color:#EDECE8}
-body.menu-locked nav .nav-inner{background:transparent;border-color:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
-.menu{
-  position:fixed;inset:0;z-index:55;background:var(--pv-sala);color:#EDECE8;
-  display:flex;flex-direction:column;
-  padding:calc(84px + env(safe-area-inset-top)) clamp(24px,7vw,56px) calc(24px + env(safe-area-inset-bottom));
-  overflow-y:auto;-webkit-overflow-scrolling:touch;
-  opacity:0;visibility:hidden;
-  transition:opacity .45s var(--pv-ease),visibility 0s linear .45s;
-}
-.menu.open{opacity:1;visibility:visible;transition:opacity .45s var(--pv-ease),visibility 0s linear 0s}
-.menu .m-anim{opacity:0;transform:translateY(18px);transition:opacity .5s var(--pv-ease-out),transform .5s var(--pv-ease-out);transition-delay:var(--d,0s)}
-.menu.open .m-anim{opacity:1;transform:none}
-.menu .m-nav{position:static;inset:auto;z-index:auto;padding:0;display:flex;flex-direction:column}
-.m-item{border-bottom:1px solid var(--pv-linea-sala)}
-.m-item>a,.m-acc{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;
-  font-family:var(--pv-display);font-weight:300;font-size:clamp(25px,6.6vw,32px);
-  letter-spacing:-.02em;line-height:1.2;color:#EDECE8;text-decoration:none;
-  padding:17px 0;background:none;border:0;text-align:left;cursor:pointer;
-}
-.m-item>a:hover,.m-acc:hover{color:var(--pv-ambar)}
-.m-acc::after{
-  content:"";flex:none;width:9px;height:9px;margin-right:6px;
-  border-right:1.5px solid #9C9B95;border-bottom:1.5px solid #9C9B95;
-  transform:rotate(45deg) translateY(-2px);transition:transform .3s var(--pv-ease);
-}
-.m-item.open .m-acc::after{transform:rotate(225deg) translateY(-2px)}
-.m-sub{overflow:hidden;max-height:0;transition:max-height .35s var(--pv-ease)}
-.m-item.open .m-sub{max-height:440px}
-.m-sub>div{padding:2px 0 18px}
-.m-sub a{display:block;font-family:var(--pv-sans);font-size:16.5px;color:#B8B7B1;text-decoration:none;padding:9px 0}
-.m-sub a:hover{color:#EDECE8}
-.m-grupo{font-family:var(--pv-mono);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#5C5B56;margin:12px 0 3px}
-.m-cta{
-  display:block;text-align:center;background:var(--pv-ambar);color:#171614;
-  font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.08em;
-  text-decoration:none;padding:17px 24px;border-radius:var(--pv-r-pill);
-  margin-top:var(--pv-s6);box-shadow:0 10px 30px -10px rgba(201,138,43,.55);
-}
-.m-cta:active{background:var(--pv-ambar-hover)}
-.m-entrar{
-  display:block;text-align:center;font-family:var(--pv-mono);font-size:12px;font-weight:700;
-  letter-spacing:.13em;text-transform:uppercase;color:#9C9B95;text-decoration:none;
-  padding:16px 0 6px;
-}
-.m-entrar:hover{color:#EDECE8}
-.menu-meta{
-  margin-top:var(--pv-s6);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea-sala);
-  font-family:var(--pv-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5C5B56;
-  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
-}
-.menu-meta a{color:#9C9B95;text-decoration:none}
-
-@media(max-width:1020px){
-  nav .nav-links,nav .nav-login,nav .nav-cta{display:none}
-  .nav-burger{display:block}
-}
-</style>
-
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="/" class="logo" aria-label="Positiva">
-      <svg viewBox="-2 -2 56 59" aria-hidden="true">
-        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
-        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
-        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
-      </svg>
-      <span class="logo-word">Positiva<b>.</b></span>
-    </a>
-    <div class="nav-links">
-      <div class="nav-drop">
-        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Galerías para clientes</button>
-        <div class="nav-drop-menu">
-          <div class="nav-drop-card">
-            <a href="/galerias/">Entrega tu trabajo</a>
-            <p class="drop-grupo drop-grupo-link">Revisa con tu cliente</p>
-            <a class="sub sub-alt" href="/revision-video/">Vídeo</a>
-            <a class="sub sub-alt" href="/revision-foto/">Fotografías</a>
-          </div>
-        </div>
+<a class="saltar-n" href="#contenido">Saltar al contenido</a>
+<nav class="top" id="nav" aria-label="Principal"><div class="wrap inner">
+  <a href="/" class="logo" aria-label="Positiva, inicio"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
+  <div class="links">
+    <a href="/galerias/">Entrega</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-revision">Revisión<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-revision">
+        <a href="/revision-video/"><b>Revisión de vídeo</b><span>Comentarios en el fotograma exacto, exportables a DaVinci Resolve y Final Cut Pro</span></a>
+        <a href="/revision-foto/"><b>Revisión de fotos</b><span>Favoritas y comentarios foto a foto, en tu panel al momento</span></a>
       </div>
-      <div class="nav-drop">
-        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Casos de uso</button>
-        <div class="nav-drop-menu">
-          <div class="nav-drop-card">
-            <a href="/freelance/">Para profesionales freelance</a>
-            <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
-            <a href="/productoras/">Para productoras de vídeo</a>
-          </div>
-        </div>
+    </div>
+    <a href="/archivos/">Archivos</a>
+    <a href="/portfolio/">Portfolio</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-casos">Casos de uso<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-casos">
+        <a href="/freelance/"><b>Freelance</b><span>Entrega, revisión, archivos y portfolio en una sola cuota</span></a>
+        <a href="/bodas/"><b>Bodas</b><span>La boda completa, fotos y vídeo, con un enlace que no caduca</span></a>
+        <a href="/productoras/"><b>Productoras de vídeo</b><span>Revisión por fotograma con varios interlocutores y entrega del máster</span></a>
       </div>
-      <a href="/portfolio/">Portfolio público</a>
-      <a href="/precios/">Precios</a>
-      <a href="/soporte/es/">Soporte</a>
     </div>
-    <div class="nav-right">
-      <a href="https://app.positiva.studio" class="nav-login" data-ev="login_click" data-ev-place="nav">Entrar</a>
-      <a href="https://app.positiva.studio/registro" class="btn nav-cta" data-ev="cta_register_click" data-ev-place="nav">Empieza gratis</a>
-      <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
-        <span></span><span></span>
-      </button>
-    </div>
+    <a href="/precios/">Precios</a>
+    <a href="/notas/">Blog</a>
   </div>
-</nav>
-
-<div class="menu" id="menu">
-  <nav class="m-nav" aria-label="Menú">
-    <div class="m-item m-anim" style="--d:.04s"><a href="/">Inicio</a></div>
-    <div class="m-item m-anim" style="--d:.08s">
-      <button class="m-acc" type="button" aria-expanded="false">Galerías para clientes</button>
-      <div class="m-sub"><div>
-        <a href="/galerias/">Entrega tu trabajo</a>
-        <p class="m-grupo">Revisa con tu cliente</p>
-        <a href="/revision-video/">Vídeo</a>
-        <a href="/revision-foto/">Fotografías</a>
-      </div></div>
-    </div>
-    <div class="m-item m-anim" style="--d:.12s">
-      <button class="m-acc" type="button" aria-expanded="false">Casos de uso</button>
-      <div class="m-sub"><div>
-        <a href="/freelance/">Para profesionales freelance</a>
-        <a href="/bodas/">Para fotógrafos y videógrafos de bodas</a>
-        <a href="/productoras/">Para productoras de vídeo</a>
-      </div></div>
-    </div>
-    <div class="m-item m-anim" style="--d:.16s"><a href="/portfolio/">Portfolio público</a></div>
-    <div class="m-item m-anim" style="--d:.2s"><a href="/precios/">Precios</a></div>
-    <div class="m-item m-anim" style="--d:.24s"><a href="/soporte/es/">Soporte</a></div>
-  </nav>
-  <a class="m-cta m-anim" style="--d:.3s" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Empieza gratis</a>
-  <a class="m-entrar m-anim" style="--d:.34s" href="https://app.positiva.studio">Entrar en tu panel</a>
-  <div class="menu-meta m-anim" style="--d:.38s">
-    <span>Positiva · Hecha en España</span>
-    <a href="mailto:hola@positiva.studio">hola@positiva.studio</a>
+  <div class="acc">
+    <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar</a>
+    <a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nav">Empieza gratis</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Abrir menú"><span></span></button>
   </div>
+</div></nav>
+<div class="menu-m" id="menu-m" hidden>
+  <a href="/galerias/">Entrega</a>
+  <a href="/revision-video/">Revisión de vídeo</a>
+  <a href="/revision-foto/">Revisión de fotos</a>
+  <a href="/archivos/">Archivos</a>
+  <a href="/portfolio/">Portfolio</a>
+  <a href="/precios/">Precios</a>
+  <span class="sub">Casos de uso</span>
+  <a class="sm" href="/freelance/">Freelance</a>
+  <a class="sm" href="/bodas/">Bodas</a>
+  <a class="sm" href="/productoras/">Productoras de vídeo</a>
+  <span class="sub">Recursos</span>
+  <a class="sm" href="/notas/">Blog</a>
+  <a class="sm" href="/soporte/es/">Soporte</a>
+  <a class="sm" href="/sobre-nosotros/">Sobre nosotros</a>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Empieza gratis</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Entrar en tu panel</a></div>
+</div>
+<main id="contenido">
+<div class="wrap">
+<section class="hero">
+  <span class="eyebrow">Positiva vs Dropbox</span>
+  <p class="h-xl titular"><span class="w"><span style="animation-delay:0.00s">¿Aún</span></span> <span class="w"><span style="animation-delay:0.05s">entregas</span></span> <span class="w"><span style="animation-delay:0.10s">tu</span></span> <span class="w"><span style="animation-delay:0.15s">trabajo</span></span> <span class="w"><span style="animation-delay:0.20s">en</span></span> <span class="w"><span style="animation-delay:0.25s"><em class="a">Dropbox?</em></span></span></p>
+  <h1 class="lede h1d">Positiva vs Dropbox: por qué entregar un proyecto no es lo mismo que sincronizar archivos.</h1>
+  <p class="lede">Compartes una carpeta de Dropbox y tu cliente entra a un explorador de archivos idéntico al de cualquier otra empresa: gris, funcional, anónimo. Hace su trabajo sin fallar. Pero no cuenta nada de ti, ni de lo que hay dentro, ni de las horas que has echado. Es una carpeta más.</p>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click">Empieza gratis</a><a class="btn ghost" href="#detalle">Ver la comparativa</a></div>
+</section>
 </div>
 
-<script>
-/* Chrome común: scrolled + burger + desplegables. Guardado para no doblar
-   listeners si una página conserva JS antiguo de nav. */
-(() => {
-  if (window.__pvChrome) return; window.__pvChrome = true;
-  const nav = document.getElementById('nav');
-  let last = -1;
-  const onScroll = () => {
-    const on = window.scrollY > 12;
-    if (on !== last) { nav.classList.toggle('scrolled', on); last = on; }
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+<div class="wrap">
+<section class="sec">
+  <div class="head r"><span class="eyebrow">Sirven para cosas distintas</span><h2 class="h-l">Dropbox no es peor. <em class="a">Es para otro momento.</em></h2></div>
+  <div class="cols c2 plain" style="text-align:center">
+    <div class="r"><p class="h-m" style="color:var(--tinta-2)">Dropbox es un archivador sincronizado.</p></div>
+    <div class="r d1"><p class="h-m">Positiva es la sala donde presentas tu trabajo.</p></div>
+  </div>
+</section>
 
-  const burger = document.getElementById('burger');
-  const menu = document.getElementById('menu');
-  const setMenu = (open) => {
-    menu.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-    document.body.classList.toggle('menu-locked', open);
-    if (!open) menu.querySelectorAll('.m-item.open').forEach(o => {
-      o.classList.remove('open');
-      const b = o.querySelector('.m-acc'); if (b) b.setAttribute('aria-expanded', 'false');
-    });
-  };
-  burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
-  /* Acordeones del menú móvil: uno abierto a la vez; se pliegan al cerrar el menú */
-  menu.querySelectorAll('.m-acc').forEach(btn => btn.addEventListener('click', () => {
-    const it = btn.parentElement;
-    const abre = !it.classList.contains('open');
-    menu.querySelectorAll('.m-item.open').forEach(o => {
-      o.classList.remove('open');
-      const b = o.querySelector('.m-acc'); if (b) b.setAttribute('aria-expanded', 'false');
-    });
-    it.classList.toggle('open', abre);
-    btn.setAttribute('aria-expanded', String(abre));
-  }));
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+<section class="sec tight">
+  <div class="head r"><span class="eyebrow">Cuando termina un proyecto…</span><h2 class="h-l">Lo que siente <em class="a">tu cliente.</em></h2></div>
+  <div class="vs"><div class="r"><span class="k">Con Dropbox</span><blockquote>«Tengo acceso a una carpeta.»</blockquote><dl><dt>Recibe</dt><dd>Una carpeta de archivos</dd><dt>Termina</dt><dd>Descarga los archivos y cierra</dd></dl></div><div class="r pos d1"><span class="k">Con Positiva</span><blockquote>«Han preparado esto para mí.»</blockquote><dl><dt>Recibe</dt><dd>Una galería con tu marca</dd><dt>Termina</dt><dd>Explora, comparte y disfruta el trabajo</dd></dl></div></div>
+</section>
+</div>
 
-  /* Desplegables: hover/focus por CSS; el click alterna .open (táctil y accesibilidad) */
-  document.querySelectorAll('.nav-drop').forEach(drop => {
-    const btn = drop.querySelector('.nav-drop-btn');
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const open = !drop.classList.contains('open');
-      document.querySelectorAll('.nav-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nav-drop-btn').setAttribute('aria-expanded','false'); });
-      drop.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', String(open));
-    });
-  });
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.nav-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nav-drop-btn').setAttribute('aria-expanded','false'); });
-  });
-})();
+<section class="sala"><div class="wrap">
+  <div class="head r" style="padding-top:var(--gap);margin-bottom:32px"><span class="eyebrow">La idea</span><h2 class="h-l">Los últimos <em class="a">cinco minutos.</em></h2><p class="lede">Todo lo demás ya lo tienes resuelto. Positiva se ocupa solo del último paso, la entrega: ese momento en que tu cliente abre tu trabajo por primera vez. Y ahí, una carpeta de archivos y una galería con tu marca no cuentan lo mismo.</p></div>
+  <figure class="cita r" style="margin:0 auto"><blockquote style="color:var(--hueso)">Positiva compite en los últimos cinco minutos del trabajo. Y esos cinco minutos son <em>los únicos que ve tu cliente.</em></blockquote></figure>
+</div></section>
+
+<div class="wrap">
+<section class="sec" id="detalle">
+  <div class="head r"><span class="eyebrow">En detalle</span><h2 class="h-l">Dropbox y Positiva, <em class="a">lado a lado.</em></h2></div>
+  <div class="r"><div class="cmpx"><table>
+<thead><tr><th scope="col"><span style="position:absolute;left:-9999px">Criterio</span></th><th scope="col">Dropbox</th><th scope="col" class="pos">Positiva</th></tr></thead>
+<tbody>
+<tr><th scope="row">Pensado para</th><td data-h="Dropbox"><span class="v">Almacenamiento y sincronización</span></td><td data-h="Positiva" class="pos"><span class="v">Entregar y revisar fotos y vídeo con el cliente</span></td></tr>
+<tr><th scope="row">El cliente recibe</th><td data-h="Dropbox"><span class="v">Una carpeta de archivos</span></td><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Una galería con tu marca</span></td></tr>
+<tr><th scope="row">Tu marca (logo, colores, tipografía)</th><td data-h="Dropbox"><span class="v">No</span></td><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí</span></td></tr>
+<tr><th scope="row">El enlace caduca</th><td data-h="Dropbox"><span class="v">No</span></td><td data-h="Positiva" class="pos"><span class="v">No, nunca</span></td></tr>
+<tr><th scope="row">El cliente elige sus favoritos</th><td data-h="Dropbox"><span class="v">No</span></td><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí</span></td></tr>
+<tr><th scope="row">Comentarios sobre cada archivo</th><td data-h="Dropbox"><span class="v">No</span></td><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí, en foto y por fotograma en vídeo</span></td></tr>
+<tr><th scope="row">Vídeo reproducible en la galería</th><td data-h="Dropbox"><span class="v">No, solo descarga</span></td><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí</span></td></tr>
+<tr><th scope="row">Guardar tus archivos de trabajo</th><td data-h="Dropbox" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Cualquier archivo, sincronizado con tu ordenador</span></td><td data-h="Positiva" class="pos"><span class="v">Carpetas y envíos con enlace (plan Estudio), sin sincronización</span></td></tr>
+<tr><th scope="row">Pedir archivos a terceros</th><td data-h="Dropbox" class="gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí, en todos los planes, sin cuenta; de 2 GB a 250 GB por archivo</span></td><td data-h="Positiva" class="pos"><span class="v">Sí, en el plan Estudio, sin cuenta; hasta 150 GB por archivo</span></td></tr>
+<tr><th scope="row">Portfolio / web pública</th><td data-h="Dropbox"><span class="v">No</span></td><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Mejor en esta fila">✓ Mejor</span><span class="v">Sí</span></td></tr>
+<tr><th scope="row">Precio de referencia</th><td data-h="Dropbox"><span class="v">Plus · 2 TB · 9,99 $/mes</span></td><td data-h="Positiva" class="pos"><span class="v">Autor · 250 GB · 89 €/año</span></td></tr>
+</tbody></table></div>
+<p class="cmpx-ley"><span class="gana-b">✓ Mejor</span><span>El mejor dato de la fila, sea de quien sea. Sin distintivo: empate o depende de tu caso.</span></p></div>
+  <p class="fuentes r">Precios de referencia de planes de particular, aproximados y sin IVA; varían según promociones, país y modalidad de facturación. Aquí no comparamos almacenamiento ni precio: comparamos la entrega. Guardar y pedir archivos, verificado el 4 de octubre de 2026 en la ayuda de Dropbox: las solicitudes de archivos están en todos sus planes; en Positiva, en el plan Estudio. Fuentes: <a href="https://one.google.com/about/plans" rel="noopener" target="_blank">Google One</a>, <a href="https://www.dropbox.com/plans" rel="noopener" target="_blank">Dropbox</a>, <a href="https://wetransfer.com/pricing" rel="noopener" target="_blank">WeTransfer</a>.</p>
+</section>
+</div>
+<section class="final" id="demo"><div class="wrap inner">
+  <span class="eyebrow r">Reserva una demo</span>
+  <h2 class="h-xl r d1">Esos cinco minutos, <em class="a">bien hechos.</em></h2>
+  <p class="lede r d2">Positiva se cuenta mejor en directo. Reserva una demo y te la enseño sobre tu propio flujo de trabajo, sin compromiso. Y si prefieres verla por tu cuenta, <a href="https://app.positiva.studio/registro" data-ev="cta_register_click">regístrate y entra hoy mismo</a>.</p>
+  <form class="demo" id="wl" data-demo novalidate>
+    <input type="email" name="email" id="wl-email" placeholder="nombre@tuestudio.com" required aria-label="Tu email" autocomplete="email">
+    <button type="submit" class="btn">Reserva una demo</button>
+  </form>
+  <small class="demo-msg" id="msg">Sin compromiso y sin newsletter: te escribo solo para agendarla.</small>
+</div></section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://positiva.studio/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Positiva vs Dropbox",
+          "item": "https://positiva.studio/positiva-vs-dropbox/"
+        }
+      ]
+    }
+  ]
+}
 </script>
-<!-- /pv:nav -->
-<main id="contenido">
-
-
-<header class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Positiva vs Dropbox</p>
-    <p class="hero-display reveal">¿Aún entregas tu trabajo<br><em>en Dropbox?</em></p>
-    <h1>Positiva vs Dropbox: por qué entregar un proyecto no es lo mismo que sincronizar archivos.</h1>
-    <p class="lede reveal" style="--d:.1s">Compartes una carpeta de Dropbox y tu cliente entra a un explorador de archivos idéntico al de cualquier otra empresa: gris, funcional, anónimo. Hace su trabajo sin fallar. Pero no cuenta nada de ti, ni de lo que hay dentro, ni de las horas que has echado. Es una carpeta más.</p>
-  </div>
-</header>
-
-<section class="dark">
-  <div class="wrap">
-    <p class="eyebrow">Sirven para cosas distintas</p>
-    <h2 class="reveal" style="color:#EDECE8">Dropbox no es peor.<br><em>Es para otro momento.</em></h2>
-    <div class="meta-grid">
-      <div class="meta-card reveal">
-        <span class="verb">Sincroniza archivos</span>
-        <p class="meta-line">Dropbox es un archivador sincronizado.</p>
-      </div>
-      <div class="meta-card pos reveal" style="--d:.1s">
-        <span class="verb">Entrega proyectos</span>
-        <p class="meta-line">Positiva es la sala donde presentas tu trabajo.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <p class="eyebrow">Cuando termina un proyecto…</p>
-    <h2 class="reveal" style="--d:.05s">Lo que siente<br><em>tu cliente.</em></h2>
-    <div class="exp-grid">
-      <div class="exp reveal">
-        <span class="exp-tag">Con Dropbox</span>
-        <p class="exp-quote">«Tengo acceso a una carpeta.»</p>
-        <ul class="exp-list">
-          <li><b>Recibe</b> Una carpeta de archivos</li>
-          <li><b>Termina</b> Descarga los archivos y cierra</li>
-        </ul>
-      </div>
-      <div class="exp pos reveal" style="--d:.1s">
-        <span class="exp-tag">Con Positiva</span>
-        <p class="exp-quote">«Han preparado esto para mí.»</p>
-        <ul class="exp-list">
-          <li><b>Recibe</b> Una galería con tu marca</li>
-          <li><b>Termina</b> Explora, comparte y disfruta el trabajo</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="dark minutes">
-  <div class="wrap">
-    <p class="eyebrow">La idea</p>
-    <h2 class="reveal">Los últimos<br><em>cinco minutos.</em></h2>
-    <p class="lede reveal" style="--d:.1s">
-      Todo lo demás ya lo tienes resuelto. Positiva se ocupa solo del último
-      paso, la entrega: ese momento en que tu cliente abre tu trabajo por primera
-      vez. Y ahí, una carpeta de archivos y una galería con tu marca no cuentan lo mismo.
-    </p>
-    <p class="big reveal" style="--d:.15s">
-      Positiva compite en los últimos cinco minutos del trabajo. Y esos cinco minutos son
-      <em>los únicos que ve tu cliente.</em>
-    </p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <p class="eyebrow">En detalle</p>
-    <h2 class="reveal" style="--d:.05s">Dropbox y Positiva,<br><em>lado a lado.</em></h2>
-    <div class="cmp-scroll reveal" style="--d:.1s">
-      <table>
-        <colgroup><col><col><col class="pos"></colgroup>
-        <thead><tr><th></th><th>Dropbox</th><th class="pos">Positiva</th></tr></thead>
-        <tbody>
-          <tr><th>Para qué está pensado</th><td>Almacenamiento y sincronización</td><td class="pos">Entregar fotos y vídeo a clientes</td></tr>
-          <tr><th>El cliente recibe</th><td>Una carpeta de archivos</td><td class="pos">Una galería con tu marca</td></tr>
-          <tr><th>Tu marca (logo, colores, tipografía)</th><td>No</td><td class="pos"><span class="si">Sí</span></td></tr>
-          <tr><th>El enlace caduca</th><td>No</td><td class="pos"><span class="si">No, nunca</span></td></tr>
-          <tr><th>El cliente elige sus favoritos</th><td>No</td><td class="pos"><span class="si">Sí</span></td></tr>
-          <tr><th>Comentarios sobre cada archivo</th><td>No</td><td class="pos"><span class="si">Sí</span></td></tr>
-          <tr><th>Vídeo reproducible en la galería</th><td>No — solo descarga</td><td class="pos"><span class="si">Sí</span></td></tr>
-          <tr><th>Portfolio / web pública</th><td>No</td><td class="pos"><span class="si">Sí</span></td></tr>
-          <tr><th>Precio de referencia</th><td>Plus · 2 TB ≈ 120 €/año</td><td class="pos">Autor · 250 GB · 89 €/año</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="cmp-note reveal">
-      Precios de referencia de planes de particular, aproximados y sin IVA; varían según
-      promociones, país y modalidad de facturación. Aquí no comparamos almacenamiento ni
-      precio: comparamos la entrega. Fuentes:
-      <a href="https://one.google.com/about/plans" target="_blank" rel="noopener">Google One</a>,
-      <a href="https://www.dropbox.com/plans" target="_blank" rel="noopener">Dropbox</a>,
-      <a href="https://wetransfer.com/pricing" target="_blank" rel="noopener">WeTransfer</a>.
-    </p>
-  </div>
-</section>
-
-<section id="lista" style="padding-top:0">
-  <div class="wrap">
-    <div class="capture reveal">
-      <p class="eyebrow" style="justify-content:center">Reserva una demo</p>
-      <h2 style="font-weight:300">Esos cinco minutos,<br><em>bien hechos.</em></h2>
-      <p class="lede">
-        Positiva se cuenta mejor en directo. Reserva una demo y te la enseño sobre tu
-        propio flujo de trabajo, de la subida a la entrega, sin compromiso. Y si
-        prefieres verla por tu cuenta, <a href="https://app.positiva.studio/registro"
-        style="color:var(--pv-ambar)" data-ev="cta_register_click" data-ev-place="demo_section">regístrate
-        y entra hoy mismo</a>.
-      </p>
-      <form id="wl" novalidate>
-        <input type="email" name="email" placeholder="nombre@tuestudio.com" required aria-label="Tu email">
-        <button type="submit" class="btn">Reserva una demo</button>
-      </form>
-      <small id="msg">Sin compromiso y sin newsletter: te escribo solo para agendarla.</small>
-    </div>
-  </div>
-</section>
-
 </main>
-
-<!-- pv:footer -->
 <!-- ════════════════════════════════════════════════════════════════
      PIE COMÚN · fuente única: partials/chrome-footer.html
      Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
@@ -774,49 +365,6 @@ footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);
   document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
 })();
 </script>
-<!-- /pv:footer -->
-
-<script>
-document.documentElement.classList.add('js');
-window.addEventListener('load', () => document.documentElement.classList.add('loaded'));
-(() => {
-  if (!('IntersectionObserver' in window)) { document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in')); return; }
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-})();
-(() => {
-  const nav = document.getElementById('nav'); let last = -1;
-  const onScroll = () => { const on = window.scrollY > 12; if (on !== last) { nav.classList.toggle('scrolled', on); last = on; } };
-  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
-})();
-document.getElementById('wl').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const email = form.email.value.trim();
-  const msg = document.getElementById('msg');
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    msg.textContent = 'Ese email no parece válido. Revísalo.';
-    msg.style.color = 'var(--pv-graso)';
-    track(Events.WAITLIST_INVALID_EMAIL, { source: 'vs-dropbox' });
-    return;
-  }
-  const btn = form.querySelector('button');
-  btn.disabled = true;
-  try {
-    const r = await fetch('/api/waitlist', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, source: 'vs-dropbox' }),
-    });
-    if (!r.ok && r.status !== 409) throw new Error(String(r.status));
-    msg.textContent = 'Apuntado. Te escribo el día que abra.';
-    msg.style.color = 'var(--pv-ambar)';
-    track(Events.WAITLIST_SUBMITTED, { source: 'vs-dropbox' });
-    form.reset();
-  } catch (_) {
-    msg.textContent = 'No se ha podido guardar. Inténtalo de nuevo en un momento.';
-    msg.style.color = 'var(--pv-graso)';
-  } finally { btn.disabled = false; }
-});
-</script>
+<script src="/positiva.js" defer></script>
 </body>
 </html>

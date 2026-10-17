@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Comprueba que todo lo que enlazan las páginas de /new/ existe en public/."""
+"""Comprueba que todo lo que enlazan las páginas de public/ existe."""
 import re, os, glob
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PUB = os.path.join(ROOT, 'public')
 falta = set()
-for f in glob.glob(os.path.join(PUB, 'new', '**', 'index.html'), recursive=True):
+for f in glob.glob(os.path.join(PUB, '**', 'index.html'), recursive=True):
     s = open(f).read()
     for u in re.findall(r'(?:href|src|poster)="(/[^"#?]*)', s):
         if u.startswith('//') or '${' in u: continue   # plantillas JS (buscador de soporte)
