@@ -52,4 +52,7 @@ Positiva is also available in English (the app, the client galleries and these p
 - [File sharing and file requests](https://positiva.studio/en/file-sharing/)
 - [Portfolio website](https://positiva.studio/en/portfolio-website/)
 - [Pricing](https://positiva.studio/en/pricing/): Free, Author and Studio plans, in euros excl. VAT.
-- [Pixieset alternative](https://positiva.studio/en/pixieset-alternative/) · [Pic-Time alternative](https://positiva.studio/en/pic-time-alternative/) · [Frame.io alternative](https://positiva.studio/en/frame-io-alternative/)
+- [For freelancers](https://positiva.studio/en/freelancers/) · [For wedding photographers](https://positiva.studio/en/wedding-photographers/) · [For video production companies](https://positiva.studio/en/video-production-companies/)
+- [About us](https://positiva.studio/en/about/): who builds Positiva and why.
+- [Pixieset alternative](https://positiva.studio/en/pixieset-alternative/) · [Pic-Time alternative](https://positiva.studio/en/pic-time-alternative/) · [Frame.io alternative](https://positiva.studio/en/frame-io-alternative/) · [WeTransfer alternative](https://positiva.studio/en/wetransfer-alternative/) · [Vimeo alternative](https://positiva.studio/en/vimeo-alternative/) · [Dropbox Replay alternative](https://positiva.studio/en/dropbox-replay-alternative/)
+- [Positiva vs WeTransfer](https://positiva.studio/en/positiva-vs-wetransfer/) · [Positiva vs Dropbox](https://positiva.studio/en/positiva-vs-dropbox/) · [Positiva vs Google Drive](https://positiva.studio/en/positiva-vs-google-drive/)

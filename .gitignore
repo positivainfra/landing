@@ -4,3 +4,8 @@ node_modules/
 # Basura local: nunca al repo ni al despliegue
 _to_delete/
 public/*.zip
+
+# Python y salidas de trabajo de Claude
+__pycache__/
+*.pyc
+Claude outputs/

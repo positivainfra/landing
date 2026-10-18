@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dropbox Replay Alternative for Video Review (2026)</title>
+<meta name="description" content="Looking for a Dropbox Replay alternative? Positiva, Frame.io and Vimeo compared on frame-accurate review, audio, client delivery and the real price.">
+<link rel="canonical" href="https://positiva.studio/en/dropbox-replay-alternative/">
+<link rel="alternate" hreflang="es" href="https://positiva.studio/notas/alternativas-a-dropbox-replay/">
+<link rel="alternate" hreflang="en" href="https://positiva.studio/en/dropbox-replay-alternative/">
+<link rel="alternate" hreflang="x-default" href="https://positiva.studio/notas/alternativas-a-dropbox-replay/">
+
+<meta property="og:title" content="Dropbox Replay Alternative for Video Review (2026)">
+<meta property="og:description" content="Looking for a Dropbox Replay alternative? Positiva, Frame.io and Vimeo compared on frame-accurate review, audio, client delivery and the real price.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://positiva.studio/en/dropbox-replay-alternative/">
+<meta property="og:image" content="https://positiva.studio/assets/og-en.png?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F3F2EE">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/chrome.css">
+<link rel="stylesheet" href="/positiva.css">
+<script defer src="https://analytics.labbo.studio/stats" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<!-- Session replay SOLO aquí, y la arquitectura ya hace la separación sola:
+     por esta plantilla pasan únicamente las páginas de scripts/new-web/pages/,
+     que son todas comerciales (home, precios, casos, comparativas). Las legales,
+     el soporte y el blog entran por DERIVADAS, heredan el <head> de la página
+     real de public/ y por tanto NO traen replay, igual que en el sitio vivo.
+     Si algún día una página legal se mueve a pages/, esto hay que revisarlo. -->
+<script defer src="https://analytics.labbo.studio/recorder.js" data-website-id="ddf13c3b-1f69-4fac-bd38-4629c55611bd"></script>
+<script defer src="/js/analytics.js"></script>
+</head>
+<body>
+<!-- ════════════════════════════════════════════════════════════════
+     NAV DE LA WEB EN INGLÉS · gemelo de partials/chrome-nav.html (cambia los dos a la vez)
+     Lo usan gen.py (páginas de scripts/new-web/pages/) y `npm run stamp`
+     (blog, soporte, novedades y legales). Edita AQUÍ y ejecuta ambos.
+     ════════════════════════════════════════════════════════════════ -->
+<link rel="stylesheet" href="/chrome.css">
+<!-- Google Ads (gtag.js) · Consent Mode v2 con TODO DENEGADO por defecto y sin
+     banner: no se escribe ni se lee ninguna cookie en el navegador del visitante
+     (coherente con /privacidad/). Google recibe pings anónimos sin identificadores
+     y modela las conversiones. NO cambiar estos 'denied' ni añadir un banner que
+     los actualice sin revisar antes la política de privacidad. -->
+<script>
+document.documentElement.classList.add('js');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 0
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+gtag('js', new Date());
+gtag('config', 'AW-617896664');
+
+/* Conversión de Google Ads: «registro» (clientes potenciales).
+   Se dispara al pinchar cualquier enlace a app.positiva.studio/registro (los de
+   login apuntan a la raíz de la app y quedan fuera).
+   Sin bloquear la navegación: transport beacon sobrevive al cambio de página. */
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+    'event_callback': callback
+  });
+  return false;
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="https://app.positiva.studio/registro"]');
+  if (!a || a.classList.contains('nav-login') || a.hasAttribute('data-no-conv')) return;
+  try {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-617896664/J1C6CLaa9e8cENi10aYC',
+      'transport_type': 'beacon'
+    });
+  } catch (_) {}
+}, { passive: true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-617896664"></script>
+<a class="saltar-n" href="#contenido">Skip to content</a>
+<nav class="top" id="nav" aria-label="Main"><div class="wrap inner">
+  <a href="/en/" class="logo" aria-label="Positiva, home"><svg viewBox="-2 -2 56 59" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/><path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/><circle cx="26" cy="20.5" r="3.8" fill="#C98A2B"/></svg><span>Positiva<b>.</b></span></a>
+  <div class="links">
+    <a href="/en/client-galleries/">Client galleries</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-revision">Review<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-revision">
+        <a href="/en/video-review/"><b>Video review</b><span>Frame-accurate comments, exported as markers to DaVinci Resolve and Final Cut Pro</span></a>
+        <a href="/en/photo-proofing/"><b>Photo proofing</b><span>Client favorites and comments on every photo, live in your dashboard</span></a>
+      </div>
+    </div>
+    <a href="/en/file-sharing/">Files</a>
+    <a href="/en/portfolio-website/">Portfolio</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-expanded="false" aria-controls="dd-casos">Use cases<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dd-p" id="dd-casos">
+        <a href="/en/freelancers/"><b>Freelancers</b><span>Delivery, review, files and portfolio in one plan</span></a>
+        <a href="/en/wedding-photographers/"><b>Weddings</b><span>The whole wedding, photos and film, in a link that never expires</span></a>
+        <a href="/en/video-production-companies/"><b>Video production companies</b><span>Frame-accurate review with multiple stakeholders and master delivery</span></a>
+      </div>
+    </div>
+    <a href="/en/pricing/">Pricing</a>
+  </div>
+  <div class="acc">
+    <a class="lang" href="/notas/alternativas-a-dropbox-replay/" hreflang="es" lang="es" data-lang-switch title="Español">ES</a>
+    <a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Log in</a>
+    <a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="nav">Start free</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-m" aria-label="Open menu"><span></span></button>
+  </div>
+</div></nav>
+<div class="menu-m" id="menu-m" hidden>
+  <a href="/en/client-galleries/">Client galleries</a>
+  <a href="/en/video-review/">Video review</a>
+  <a href="/en/photo-proofing/">Photo proofing</a>
+  <a href="/en/file-sharing/">Files</a>
+  <a href="/en/portfolio-website/">Portfolio</a>
+  <a href="/en/pricing/">Pricing</a>
+  <span class="sub">Use cases</span>
+  <a class="sm" href="/en/freelancers/">Freelancers</a>
+  <a class="sm" href="/en/wedding-photographers/">Weddings</a>
+  <a class="sm" href="/en/video-production-companies/">Video production companies</a>
+  <span class="sub">Resources</span>
+  <a class="sm" href="/soporte/es/">Help center (in Spanish)</a>
+  <a class="sm" href="/en/about/">About us</a>
+  <a class="sm" href="/notas/alternativas-a-dropbox-replay/" hreflang="es" lang="es" data-lang-switch>Español</a>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="menu">Start free</a><a class="btn ghost" href="https://app.positiva.studio" data-no-conv>Log in to your dashboard</a></div>
+</div>
+<main id="contenido">
+<div class="wrap">
+<section class="hero">
+  <span class="eyebrow">Prices and features checked on October 17, 2026</span>
+  <h1 class="h-l titular-h1">Dropbox Replay alternatives for client video review (2026)</h1>
+  <p class="lede">Dropbox Replay adds video and audio review to the files you already keep in Dropbox. People look for a Dropbox Replay alternative because of the real price (it’s two subscriptions) or because, besides reviewing, they need to deliver. Here’s how the options compare, including where Positiva doesn’t fit.</p>
+  <div class="cta"><a class="btn" href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="replay_alternative_hero">Start free</a><a class="btn ghost" href="#quick">See the quick answer</a></div>
+</section>
+</div>
+
+<div class="wrap">
+<section class="sec tight" id="quick">
+  <div class="head r"><span class="eyebrow">Quick answer</span><h2 class="h-l">Pick by <em class="a">what comes after the review.</em></h2><p class="lede">The short version. The details, prices and sources are below.</p></div>
+  <div class="r"><div class="cmpx"><table>
+<thead><tr><th scope="col">If you need…</th><th scope="col">Best pick</th><th scope="col">Why</th></tr></thead>
+<tbody>
+<tr><th scope="row">Review and deliver photos and video to a client</th><td data-h="Best pick" class="pos"><span class="v"><a href="/en/video-review/">Positiva</a></span></td><td data-h="Why"><span class="v">Frame-accurate comments and branded delivery, in one subscription</span></td></tr>
+<tr><th scope="row">Collect files from clients or suppliers without them creating an account</th><td data-h="Best pick"><span class="v">Stay on Dropbox Replay</span></td><td data-h="Why"><span class="v">It uses Dropbox file requests, included on every Dropbox plan; Positiva has file requests on the Studio plan only</span></td></tr>
+<tr><th scope="row">Review inside a post-production team</th><td data-h="Best pick"><span class="v">Frame.io</span></td><td data-h="Why"><span class="v">Range comments, annotations and Camera to Cloud</span></td></tr>
+<tr><th scope="row">Host and publish the video, not just review it</th><td data-h="Best pick"><span class="v">Vimeo</span></td><td data-h="Why"><span class="v">Embeddable player, showcases and live streaming</span></td></tr>
+<tr><th scope="row">Review audio, or keep your archive where it is</th><td data-h="Best pick"><span class="v">Stay on Dropbox Replay</span></td><td data-h="Why"><span class="v">The only one on this list that reviews audio, and it works on top of your Dropbox</span></td></tr>
+</tbody></table></div></div>
+</section>
+
+<section class="sec tight tono">
+  <div class="head r"><span class="eyebrow">Before you switch</span><h2 class="h-l">Why people leave Dropbox Replay <em class="a">(and why many stay).</em></h2></div>
+  <div class="prosa r">
+    <p>Dropbox Replay isn’t a plan, it’s an add-on: $120/user/year ($10/month billed annually; $12/month billed monthly) <em>on top of</em> a paid Dropbox plan, which is required. Without the add-on, Replay is limited to 4 or 10 files, depending on the plan. In exchange it offers something uncommon: lossless audio review alongside video, with files up to 150 GB and 12 hours long. These are the reasons that come up when people look for a Dropbox Replay alternative:</p>
+    <ul style="margin:0;padding-left:1.15em;display:grid;gap:10px"><li><strong>The real price is two subscriptions.</strong> The add-on’s $120 a year comes on top of your Dropbox plan: with Plus at $119.88/year ($9.99/month billed annually), one person pays over $240 a year.</li><li><strong>Reviewing isn’t delivering.</strong> Once the cut is approved, the final delivery to the client (branded, with the photos alongside, with per-link permissions) is still a separate problem and, usually, a separate tool.</li><li><strong>Photos are left out.</strong> Replay is video and audio; a wedding or a mixed campaign needs something more.</li><li><strong>Frame accuracy depends on your editor.</strong> Dropbox documents that comments import as markers in Final Cut Pro and After Effects, and that comments from DaVinci Resolve sync to the frame; for everything else, it doesn’t claim frame-accurate anchoring.</li></ul>
+    <p>And the reasons to stay: if you review audio (a mix, a voice-over, a score), Replay is the only tool in this comparison that covers it, in lossless quality. And if your archive already lives in Dropbox, not moving anything has real value.</p>
+    <p style="font-size:15px"><strong>How we compared:</strong> we read each tool’s official pricing page and help center on October 17, 2026, and compared them on what someone leaving Dropbox Replay decides on: comments and how precise they are, audio, getting comments into the editor, delivery to the client, photos, and pricing model. Full sources at the end.</p>
+  </div>
+</section>
+
+<section class="sec tight" id="tools">
+  <div class="head r"><span class="eyebrow">The options</span><h2 class="h-l">Each option, <em class="a">same questions.</em></h2></div>
+  <div class="cols c2">
+<div class="r" style="display:grid;gap:10px;align-content:start;background:var(--sala);color:var(--hueso);border-color:var(--sala)"><span class="k" style="color:var(--ambar)">Best for: videographers and production companies who review with the client and then deliver</span><h3>Positiva</h3><p style="color:var(--gris)"><strong>What it does well</strong></p><ul style="margin:0;padding-left:1.15em;display:grid;gap:6px;font-size:15px;color:var(--gris)"><li>Your client <a href="/en/video-review/">comments on the exact frame</a> by link, with no account, and you take those comments into DaVinci Resolve (EDL) or Final Cut Pro (FCPXML) as markers. <small class="plan">Author and Studio plans</small></li><li>One subscription: it doesn’t need any other plan underneath.</li><li>No cost per reviewer: anyone with the link can comment.</li><li>Photos and video in the same gallery, with favorites and comments on both.</li><li>Once the cut is approved, the same <a href="/en/client-galleries/">gallery</a> handles the final branded delivery, with links that don’t expire, and feeds your <a href="/en/portfolio-website/">portfolio website</a>.</li><li><a href="/en/file-sharing/">Files</a>: folders for your material in any format, link transfers, and file requests so clients, collaborators or suppliers can upload without creating an account (up to 150 GB per file). <small class="plan">Studio plan</small></li></ul><p style="color:var(--gris)"><strong>Limitations</strong></p><ul style="margin:0;padding-left:1.15em;display:grid;gap:6px;font-size:15px;color:var(--gris)"><li><strong>No audio-only review.</strong> There’s no equivalent to Replay’s lossless audio review.</li><li>No automatic transcription or subtitles, and no side-by-side version comparison.</li><li>It isn’t synced storage: Files (Studio plan) stores and sends any format, but it doesn’t replace Dropbox as your working drive.</li><li>Plays H.264 and HEVC video (no ProRes playback) and JPEG photos; storage is per plan (250 GB or 1 TB).</li><li>Video comments need a paid plan, and our help center is in Spanish only for now.</li></ul><p style="color:var(--gris)"><strong>Price:</strong> Free, €0 (15 GB, 2 active galleries). <a href="/en/pricing/">Author: €89/year + VAT</a> (or €8.95/month), 250 GB. <a href="/en/pricing/">Studio: €219/year + VAT</a> (or €22.95/month), 1 TB, with proofing rounds and file requests.</p><p style="color:var(--gris)"><strong>We wouldn’t pick it if</strong> what you review is audio, or you need the tool to double as your synced drive.</p></div>
+<div class="r d1" style="display:grid;gap:10px;align-content:start"><span class="k">Best for: post-production teams with several editors</span><h3>Frame.io</h3><p><strong>What it does well</strong></p><ul style="margin:0;padding-left:1.15em;display:grid;gap:6px;font-size:15px;color:var(--tinta-2)"><li>Frame-accurate comments, range comments and drawn annotations.</li><li>A comment panel inside Premiere Pro, plus CSV and text export.</li><li>Camera to Cloud, and storage that grows with each member (2 TB on Pro, +2 TB per extra member).</li><li>Handles photos too.</li></ul><p><strong>Limitations</strong></p><ul style="margin:0;padding-left:1.15em;display:grid;gap:6px;font-size:15px;color:var(--tinta-2)"><li>Priced per member: Pro allows up to 5 members, Team up to 15.</li><li>No standalone audio review as a product of its own.</li><li>Frame.io’s V4 guide says DaVinci Resolve will not be supported in V4 (you can still import comments exported as EDL into Resolve).</li><li>No final delivery with a portfolio.</li></ul><p><strong>Price:</strong> Pro: $180/member/year ($15/month) + tax, 2 TB, up to 5 members. Team: $300/member/year ($25/month) + tax, 3 TB, up to 15. Free plan: 2 GB, or 100 GB if you subscribe to Creative Cloud.</p><p>The full picture, with more tools, is on our <a href="/en/frame-io-alternative/">Frame.io alternative</a> page.</p></div>
+<div class="r" style="display:grid;gap:10px;align-content:start"><span class="k">Best for: people who review and also publish</span><h3>Vimeo</h3><p><strong>What it does well</strong></p><ul style="margin:0;padding-left:1.15em;display:grid;gap:6px;font-size:15px;color:var(--tinta-2)"><li>Time-coded comments; reviewers can comment without an account.</li><li>An embeddable player and showcases on paid plans; portfolio websites from Standard.</li><li>2 TB of storage already on Starter, 4 TB on Standard.</li></ul><p><strong>Limitations</strong></p><ul style="margin:0;padding-left:1.15em;display:grid;gap:6px;font-size:15px;color:var(--tinta-2)"><li>Priced per seat, and review links need Standard ($300/seat/year; $25/month) or higher.</li><li>You can download comments, but we couldn’t find an editor integration.</li><li>No photos and no audio.</li><li>Portfolios on a custom domain don’t support SSL.</li></ul><p><strong>Price:</strong> Starter: $144/seat/year ($12/month). Standard: $300/seat/year ($25/month). Advanced: $900/seat/year ($75/month). Their public table doesn’t break down monthly vs annual billing.</p></div>
+<div class="r d1" style="display:grid;gap:10px;align-content:start"><span class="k">Best for: video and audio review on an archive that already lives in Dropbox</span><h3>Dropbox Replay</h3><p><strong>What it does well</strong></p><ul style="margin:0;padding-left:1.15em;display:grid;gap:6px;font-size:15px;color:var(--tinta-2)"><li>Reviews video and audio, with lossless audio; nothing else on this list does.</li><li>Transcription and captions, version comparison and due dates.</li><li>Password-protected links and digital watermarking.</li><li>Files up to 150 GB and 12 hours long; your material stays where it is.</li></ul><p><strong>Limitations</strong></p><ul style="margin:0;padding-left:1.15em;display:grid;gap:6px;font-size:15px;color:var(--tinta-2)"><li>Requires a paid Dropbox plan underneath: the real bill is two subscriptions.</li><li>Without the add-on, a cap of 4 or 10 files, depending on your plan.</li><li>No photo galleries, no final delivery and no portfolio.</li></ul><p><strong>Price:</strong> $120/user/year ($10/month billed annually; $12/month billed monthly), <em>plus</em> the Dropbox plan: Plus from $119.88/year ($9.99/month billed annually); Standard $180/user/year ($15/user/month billed annually).</p></div>
+  </div>
+</section>
+
+<section class="sec tight tono" id="table">
+  <div class="head r"><span class="eyebrow">Side by side</span><h2 class="h-l">Four tools, <em class="a">one cut to approve.</em></h2></div>
+  <div class="r"><div class="cmpx"><table>
+<thead><tr><th scope="col"><span style="position:absolute;left:-9999px">Criterion</span></th><th scope="col" class="pos">Positiva</th><th scope="col">Dropbox Replay</th><th scope="col">Frame.io</th><th scope="col">Vimeo</th></tr></thead>
+<tbody>
+<tr><th scope="row">Video comments</th><td data-h="Positiva" class="pos"><span class="v">Frame-accurate <small class="plan">Author and Studio plans</small></span></td><td data-h="Dropbox Replay"><span class="v">Yes; frame-synced only from DaVinci Resolve</span></td><td data-h="Frame.io" class="gana"><span class="gana-b" aria-label="Best in this row">✓ Best</span><span class="v">Frame-accurate, range comments and annotations</span></td><td data-h="Vimeo"><span class="v">Time-coded; guests comment without an account</span></td></tr>
+<tr><th scope="row">Audio</th><td data-h="Positiva" class="pos"><span class="v">No</span></td><td data-h="Dropbox Replay" class="gana"><span class="gana-b" aria-label="Best in this row">✓ Best</span><span class="v">Yes, lossless</span></td><td data-h="Frame.io"><span class="v">Not as a product of its own</span></td><td data-h="Vimeo"><span class="v">No</span></td></tr>
+<tr><th scope="row">Comments into your editor</th><td data-h="Positiva" class="pos"><span class="v">Markers for DaVinci Resolve (EDL) and Final Cut Pro (FCPXML) <small class="plan">Author and Studio plans</small></span></td><td data-h="Dropbox Replay"><span class="v">Markers in Final Cut Pro and After Effects</span></td><td data-h="Frame.io"><span class="v">Premiere Pro panel; CSV and text export; Resolve not supported in V4</span></td><td data-h="Vimeo"><span class="v">Comment download; no editor integration found</span></td></tr>
+<tr><th scope="row">Delivery to the client</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Best in this row">✓ Best</span><span class="v">Branded gallery + portfolio <small class="plan">Author and Studio plans</small></span></td><td data-h="Dropbox Replay"><span class="v">No</span></td><td data-h="Frame.io"><span class="v">Custom-branded shares, no portfolio</span></td><td data-h="Vimeo"><span class="v">Showcases and video portfolios</span></td></tr>
+<tr><th scope="row">Storing your files</th><td data-h="Positiva" class="pos"><span class="v">Folders for any file type, and link transfers <small class="plan">Studio plan</small></span></td><td data-h="Dropbox Replay" class="gana"><span class="gana-b" aria-label="Best in this row">✓ Best</span><span class="v">Your synced Dropbox, any file</span></td><td data-h="Frame.io"><span class="v">Any file, up to 5 TB</span></td><td data-h="Vimeo"><span class="v">Video only</span></td></tr>
+<tr><th scope="row">Collecting files from others</th><td data-h="Positiva" class="pos"><span class="v">Yes; uploaders need no account; up to 150 GB per file <small class="plan">Studio plan</small></span></td><td data-h="Dropbox Replay"><span class="v">With Dropbox file requests, no account needed</span></td><td data-h="Frame.io"><span class="v">No built-in feature</span></td><td data-h="Vimeo"><span class="v">Only by building it with their API</span></td></tr>
+<tr><th scope="row">Pricing model</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Best in this row">✓ Best</span><span class="v">One subscription; reviewers unlimited, by link</span></td><td data-h="Dropbox Replay"><span class="v">Per user + a Dropbox plan</span></td><td data-h="Frame.io"><span class="v">Per member</span></td><td data-h="Vimeo"><span class="v">Per seat</span></td></tr>
+<tr><th scope="row">Reference price</th><td data-h="Positiva" class="pos gana"><span class="gana-b" aria-label="Best in this row">✓ Best</span><span class="v">Author, 250 GB: €89/year + VAT (or €8.95/month)</span></td><td data-h="Dropbox Replay"><span class="v">$120/user/year ($10/month) + a Dropbox plan</span></td><td data-h="Frame.io"><span class="v">Pro: $180/member/year ($15/month) + tax</span></td><td data-h="Vimeo"><span class="v">Standard: $300/seat/year ($25/month)</span></td></tr>
+</tbody></table></div>
+<p class="cmpx-ley"><span class="gana-b">✓ Best</span><span>The strongest value in the row, whoever has it. No badge: a tie, or it depends on your case. Positiva in euros plus VAT; the rest in US dollars as published.</span></p></div>
+  <p class="fuentes r">Sources: <a href="https://www.dropbox.com/replay" rel="noopener" target="_blank">dropbox.com/replay</a> · <a href="https://frame.io/pricing" rel="noopener" target="_blank">frame.io/pricing</a> · <a href="https://vimeo.com/upgrade-plan" rel="noopener" target="_blank">vimeo.com/upgrade-plan</a>, checked on October 17, 2026. Full list in the methodology below.</p>
+</section>
+
+<section class="sec tight">
+  <div class="head r"><span class="eyebrow">How to decide</span><h2 class="h-l">Match the tool <em class="a">to what comes next.</em></h2></div>
+  <div class="prosa r"><p>If you review audio, stay: Replay is the only one on this list that does. If your team does post-production and needs annotations and Camera to Cloud, Frame.io. If the video ends up published, Vimeo.</p><p>And if what comes after the review is delivering the work to a client (with the photos alongside, your branding and a link that doesn’t expire), Positiva does that whole path in one subscription. See how it handles <a href="/en/file-sharing/">file sharing and file requests</a>, or <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="replay_alternative_decide">try it free</a> with 15 GB.</p></div>
+</section>
+
+<section class="sec tight tono" id="faq">
+  <div class="head r"><span class="eyebrow">FAQ</span><h2 class="h-l">The questions that matter.</h2></div>
+  <div class="faq r">
+    <details><summary>How much does Dropbox Replay really cost?</summary><p>The add-on is $120 per user per year ($10/month billed annually), but it requires a paid Dropbox plan underneath. With Dropbox Plus at $119.88/year ($9.99/month billed annually), the real cost for one person is over $240 a year.</p></details>
+    <details><summary>Which alternative lets clients comment on the exact frame?</summary><p>Positiva and Frame.io document it explicitly, and Frame.io adds range comments and drawn annotations. Vimeo works with time codes. In Replay’s official documentation, frame sync only appears for comments made from DaVinci Resolve.</p></details>
+    <details><summary>Is there an alternative that reviews audio?</summary><p>Not on this list. Replay is the only one that reviews audio, and in lossless quality. If audio is part of your workflow, that’s a solid reason to stay.</p></details>
+    <details><summary>Can I use Dropbox Replay for free?</summary><p>With limits: without the paid add-on, Replay is capped at 4 or 10 files, depending on your Dropbox plan. For ongoing use you need the add-on.</p></details>
+    <details><summary>Which one also delivers the finished work?</summary><p>Positiva: the same tool you review with handles the final delivery, with photos and videos in the gallery, per-link permissions and a public portfolio. Frame.io has custom-branded shares but no portfolio, and Replay and Vimeo don’t cover photo delivery.</p></details>
+    <details><summary>Is it worth switching if I already pay for Dropbox storage?</summary><p>If Dropbox is your working drive, don’t replace it: none of these tools is synced storage. The real question is whether you need the review add-on, or whether a tool that also delivers solves that part better.</p></details>
+  </div>
+</section>
+
+<section class="sec tight" id="methodology">
+  <div class="head r"><span class="eyebrow">Methodology</span><h2 class="h-l">How we checked.</h2></div>
+  <div class="prosa r" style="font-size:16px"><p><strong>Checked on October 17, 2026</strong> on each company’s official pricing page and help center, US edition:</p><p><a href="https://www.dropbox.com/replay" rel="noopener" target="_blank">Dropbox Replay</a> · <a href="https://help.dropbox.com/installs/dropbox-replay-add-on" rel="noopener" target="_blank">Replay add-on</a> · <a href="https://help.dropbox.com/integrations/dropbox-replay-integrations" rel="noopener" target="_blank">Replay integrations</a> · <a href="https://www.dropbox.com/plans" rel="noopener" target="_blank">Dropbox plans</a> · <a href="https://frame.io/pricing" rel="noopener" target="_blank">Frame.io pricing</a> · <a href="https://help.frame.io/en/articles/10150181-getting-started-what-are-the-pricing-plans-you-offer" rel="noopener" target="_blank">Frame.io plans (help)</a> · <a href="https://frame.io/creative-cloud" rel="noopener" target="_blank">Frame.io for Creative Cloud</a> · <a href="https://help.frame.io/en/articles/9893008-what-to-expect-when-updating-to-v4-a-comprehensive-guide" rel="noopener" target="_blank">Frame.io V4 update guide</a> · <a href="https://help.frame.io/en/articles/4128691-import-comments-into-resolve-with-edl" rel="noopener" target="_blank">Frame.io comments to Resolve (EDL)</a> · <a href="https://vimeo.com/upgrade-plan" rel="noopener" target="_blank">Vimeo plans</a> · <a href="https://help.vimeo.com/hc/en-us/articles/12426192100113-How-to-use-and-manage-video-review-links" rel="noopener" target="_blank">Vimeo review links</a> · <a href="https://help.vimeo.com/hc/en-us" rel="noopener" target="_blank">Vimeo help center</a></p><p>Positiva’s data comes from our <a href="/en/pricing/">pricing page</a> and the product itself.</p><p>Positiva is our product, so we also point out where other tools fit better. Positiva’s prices are in euros plus VAT; everyone else’s are shown in the currency of their official pricing page (US dollars) and with the billing period they publish. We don’t convert currencies. “We couldn’t find it in their documentation” means exactly that: not that the feature doesn’t exist. If something has changed or is wrong, email us at <a href="mailto:hola@positiva.studio">hola@positiva.studio</a> and we’ll fix it.</p></div>
+</section>
+</div>
+<section class="final" id="demo"><div class="wrap inner">
+  <span class="eyebrow r">Book a demo</span>
+  <h2 class="h-xl r d1">Test it on a real job. <em class="a">Your next delivery.</em></h2>
+  <p class="lede r d2">Positiva is easier to show than to describe. Book a demo and I’ll walk you through it on your own workflow, no strings attached. Or <a href="https://app.positiva.studio/registro" data-ev="cta_register_click" data-ev-place="replay_alternative_final">sign up and try it today</a>: the Free plan needs no card.</p>
+  <form class="demo" id="wl" data-demo novalidate>
+    <input type="email" name="email" id="wl-email" placeholder="name@yourstudio.com" required aria-label="Your email" autocomplete="email">
+    <button type="submit" class="btn">Book a demo</button>
+  </form>
+  <small class="demo-msg" id="msg">No commitment and no newsletter: I'll only email you to schedule it.</small>
+</div></section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does Dropbox Replay really cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The add-on is $120 per user per year ($10/month billed annually), but it requires a paid Dropbox plan underneath. With Dropbox Plus at $119.88/year ($9.99/month billed annually), the real cost for one person is over $240 a year."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which alternative lets clients comment on the exact frame?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Positiva and Frame.io document it explicitly, and Frame.io adds range comments and drawn annotations. Vimeo works with time codes. In Replay’s official documentation, frame sync only appears for comments made from DaVinci Resolve."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there an alternative that reviews audio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not on this list. Replay is the only one that reviews audio, and in lossless quality. If audio is part of your workflow, that’s a solid reason to stay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Dropbox Replay for free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With limits: without the paid add-on, Replay is capped at 4 or 10 files, depending on your Dropbox plan. For ongoing use you need the add-on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which one also delivers the finished work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Positiva: the same tool you review with handles the final delivery, with photos and videos in the gallery, per-link permissions and a public portfolio. Frame.io has custom-branded shares but no portfolio, and Replay and Vimeo don’t cover photo delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it worth switching if I already pay for Dropbox storage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If Dropbox is your working drive, don’t replace it: none of these tools is synced storage. The real question is whether you need the review add-on, or whether a tool that also delivers solves that part better."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://positiva.studio/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Dropbox Replay alternative",
+          "item": "https://positiva.studio/en/dropbox-replay-alternative/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</main>
+<!-- ════════════════════════════════════════════════════════════════
+     PIE EN INGLÉS · gemelo de partials/chrome-footer.html (cambia los dos a la vez)
+     Edita AQUÍ y ejecuta `npm run stamp` para propagarlo a todas
+     las páginas. Sirve de mapa del sitio: cada página pública real
+     debe estar enlazada aquí (SEO + LLMs leen esto).
+     ════════════════════════════════════════════════════════════════ -->
+<style data-pv-chrome="footer">
+footer{padding:var(--pv-s8) 0 var(--pv-s6);border-top:1px solid var(--pv-linea);overflow:hidden}
+.footcols{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--pv-s6);
+  margin-bottom:var(--pv-s8);
+}
+.footcols h3{
+  font-family:var(--pv-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pv-tinta-60);margin:0 0 var(--pv-s3);
+}
+.footcols a{
+  display:block;font-family:var(--pv-sans);font-size:14px;color:var(--pv-tinta-60);
+  text-decoration:none;padding:4px 0;transition:color .18s;
+}
+.footcols a:hover{color:var(--pv-tinta)}
+.footer-word{
+  display:flex;align-items:center;gap:clamp(14px,2.4vw,36px);
+  font-family:'Space Mono',ui-monospace,monospace;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(15px,3.9vw,58px);line-height:1;color:var(--pv-tinta);
+  white-space:nowrap;
+}
+.footer-word svg{height:.92em;width:auto;flex:none}
+.footer-word span{color:var(--pv-ambar)}
+.footer-entidad{margin-top:var(--pv-s7);font-size:12.5px;line-height:1.6;color:var(--pv-tinta-60);max-width:78ch}
+.footer-meta{
+  display:flex;justify-content:space-between;gap:var(--pv-s4);flex-wrap:wrap;
+  margin-top:var(--pv-s7);padding-top:var(--pv-s5);border-top:1px solid var(--pv-linea);
+  font-size:14px;color:var(--pv-tinta-60);
+}
+.footer-meta a{color:var(--pv-tinta-60);text-decoration:none}
+.footer-meta a:hover{color:var(--pv-tinta)}
+@media(max-width:760px){
+  .footcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--pv-s5) var(--pv-s4)}
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <h3>Product</h3>
+        <a href="/en/client-galleries/">Client galleries</a>
+        <a href="/en/video-review/">Video review</a>
+        <a href="/en/photo-proofing/">Photo proofing</a>
+        <a href="/en/file-sharing/">File sharing and requests</a>
+        <a href="/en/portfolio-website/">Portfolio website</a>
+        <a href="/en/pricing/">Pricing</a>
+        <a href="/en/#faq">FAQ</a>
+      </div>
+      <div>
+        <h3>Use cases</h3>
+        <a href="/en/freelancers/">For freelancers</a>
+        <a href="/en/wedding-photographers/">For wedding photographers and videographers</a>
+        <a href="/en/video-production-companies/">For video production companies</a>
+      </div>
+      <div>
+        <h3>Compare</h3>
+        <a href="/en/pixieset-alternative/">Pixieset alternative</a>
+        <a href="/en/pic-time-alternative/">Pic-Time alternative</a>
+        <a href="/en/frame-io-alternative/">Frame.io alternative</a>
+        <a href="/en/wetransfer-alternative/">WeTransfer alternative</a>
+        <a href="/en/vimeo-alternative/">Vimeo alternative</a>
+        <a href="/en/dropbox-replay-alternative/">Dropbox Replay alternative</a>
+        <a href="/en/positiva-vs-wetransfer/">Positiva vs WeTransfer</a>
+        <a href="/en/positiva-vs-dropbox/">Positiva vs Dropbox</a>
+        <a href="/en/positiva-vs-google-drive/">Positiva vs Google Drive</a>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <a href="/soporte/es/" hreflang="es">Help center (in Spanish)</a>
+        <a href="/novedades/" hreflang="es">Changelog (in Spanish)</a>
+        <a href="/en/about/">About us</a>
+        <a href="/" hreflang="es" lang="es">Español</a>
+        <a href="https://app.positiva.studio" data-no-conv>Log in to your dashboard</a>
+        <a href="https://app.positiva.studio/registro">Start free</a>
+        <a href="mailto:hola@positiva.studio">Contact</a>
+        <a href="/aviso-legal/" hreflang="es">Legal notice (Spanish)</a>
+        <a href="/privacidad/" hreflang="es">Privacy (Spanish)</a>
+        <a href="/terminos/" hreflang="es">Terms (Spanish)</a>
+      </div>
+    </div>
+    <div class="footer-word">
+      <svg viewBox="-2 -2 56 59" aria-hidden="true">
+        <path fill-rule="evenodd" fill="currentColor" d="M12 0 H40 A12 12 0 0 1 52 12 V29 A12 12 0 0 1 40 41 H12 A12 12 0 0 1 0 29 V12 A12 12 0 0 1 12 0 Z M10 10 H42 V31 H10 Z"/>
+        <path fill="currentColor" d="M0 20 H10 V50 A5 5 0 0 1 5 55 A5 5 0 0 1 0 50 Z"/>
+        <circle cx="26" cy="20.5" r="3.8" fill="var(--pv-ambar)"/>
+      </svg>
+      Positiva<span>.</span>
+    </div>
+    <p class="footer-entidad">Positiva is a client gallery platform for photographers, videographers and video production companies: photo and video delivery, client proofing, frame-accurate video review with comments exported as markers to DaVinci Resolve and Final Cut Pro, file sharing and file requests, and a portfolio website built from the work you deliver. EU-hosted, GDPR-compliant and made in Spain.</p>
+    <div class="footer-meta">
+      <span>Positiva · <span style="font-family:var(--pv-mono);font-size:12px">positiva.studio</span> · Made in Spain · Run, built and billed from Europe</span>
+      <span><a href="mailto:hola@positiva.studio">hola@positiva.studio</a></span>
+    </div>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://positiva.studio/#org",
+      "name": "Positiva",
+      "url": "https://positiva.studio/",
+      "logo": "https://positiva.studio/assets/og.png",
+      "description": "Positiva is a client gallery platform for photographers, videographers and video production companies, with photo and video delivery, client proofing, frame-accurate video review exported to DaVinci Resolve and Final Cut Pro, file sharing and a portfolio website. EU-hosted and made in Spain.",
+      "email": "hola@positiva.studio",
+      "foundingLocation": { "@type": "Place", "name": "Valencia, Spain" },
+      "founder": { "@type": "Person", "name": "Rodrigo Márquez" },
+      "areaServed": "ES",
+      "knowsLanguage": ["es", "en"],
+      "sameAs": [
+        "https://www.youtube.com/channel/UCDfdc7rUgmT_ImBDUzT48jg",
+        "https://www.linkedin.com/company/positiva-studio/",
+        "https://instagram.com/positiva.studio_"
+      ]
+    }</script>
+  </div>
+</footer>
+
+<script>
+/* ── Vídeos del sitio: reproducción automática en bucle mientras están en
+   pantalla y pausa al salir — mismo comportamiento en móvil y escritorio.
+   Quedan fuera: la historia de la home (.hst), las tarjetas de la home
+   (.qcard) y el showcase (#reelvid), que tienen su propio control, los
+   vídeos con controles y los marcados con data-noauto. ── */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  const vids = Array.prototype.filter.call(
+    document.querySelectorAll('video[loop][muted]:not([controls]):not([data-noauto])'),
+    (v) => !v.closest('.hst') && !v.closest('.qcard') && v.id !== 'reelvid'
+  );
+  if (!vids.length) return;
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); }
+    else if (!v.paused) { v.pause(); }
+  }), { threshold: 0.25, rootMargin: '100px 0px' });
+  vids.forEach((v) => { v.muted = true; v.playsInline = true; io.observe(v); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach(v => v.pause()); });
+})();
+</script>
+<script src="/positiva.js" defer></script>
+</body>
+</html>

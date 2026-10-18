@@ -145,7 +145,7 @@ def page(d, body):
 <meta property="og:description" content="{d['description']}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://positiva.studio{canon}">
-<meta property="og:image" content="https://positiva.studio/assets/og.png?v=2">
+<meta property="og:image" content="https://positiva.studio/assets/{'og-en.png?v=1' if en else 'og.png?v=2'}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="{'en_US' if en else 'es_ES'}">
