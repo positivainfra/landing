@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hay archivos que no se suben · Soporte de Positiva</title>
+<title>Hay archivos que no se suben · Positiva</title>
 <meta name="description" content="Cuando un archivo se queda fuera de la galería la causa suele ser su formato y no la conexión: identifica el síntoma en pantalla y aplica su solución.">
-<meta property="og:title" content="Hay archivos que no se suben · Soporte de Positiva">
+<meta property="og:title" content="Hay archivos que no se suben · Positiva">
 <meta property="og:description" content="Cuando un archivo se queda fuera de la galería la causa suele ser su formato y no la conexión: identifica el síntoma en pantalla y aplica su solución.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://positiva.studio/soporte/es/archivos-que-no-suben/">
@@ -170,19 +170,19 @@ document.addEventListener('click', function (e) {
 <h3 id="1-cada-archivo-soltado-tiene-su-fila-en-la-cola">1. Cada archivo soltado tiene su fila en la cola</h3>
 <p><strong>Qué mirar.</strong> La lista de subida, justo después de soltar los archivos.</p>
 <p><strong>Qué debería verse.</strong> Una fila por cada archivo soltado, aunque alguna termine fallando.</p>
-<p><strong>Qué hacer si no es así.</strong> Si no aparece ni fila, ni mensaje de error, ni barra de progreso, esos archivos son casi con seguridad <strong>RAW</strong> —CR2, NEF, ARW, DNG— o algún formato que el sistema no reconoce como imagen ni como vídeo. Se descartan en silencio, sin llegar a figurar siquiera como fila fallida. Revela el material y expórtalo a JPEG. Consulta <a href="/soporte/es/formatos-admitidos/">Formatos de archivo admitidos</a>.</p>
+<p><strong>Qué hacer si no es así.</strong> Si no aparece ni fila, ni mensaje de error, ni barra de progreso, esos archivos son casi con seguridad <strong>RAW</strong> —CR2, NEF, ARW, DNG— o algún formato que Positiva no reconoce como imagen ni como vídeo. Se descartan en silencio, sin llegar a figurar siquiera como fila fallida. Revela el material y expórtalo a JPEG. Consulta <a href="/soporte/es/formatos-admitidos/">Formatos de archivo admitidos</a>.</p>
 <h3 id="2-las-filas-no-muestran-mensajes-de-decodificacion">2. Ninguna fotografía HEIC o TIFF falla con «Error de subida»</h3>
 <p><strong>Qué mirar.</strong> El texto de cada fila y la extensión del archivo. Despliega el listado con la flecha de la cola (<strong>«Ver archivos»</strong>) si no lo ves.</p>
 <p><strong>Qué debería verse.</strong> Filas que avanzan hasta completarse y terminan en <strong>«✓ lista»</strong>.</p>
-<p><strong>Qué hacer si no es así.</strong> La fila dice solo <strong>«Error de subida»</strong>, sin más detalle, pero si el archivo es <strong>HEIC</strong> —el del iPhone— o <strong>TIFF</strong>, la causa es que el navegador no sabe decodificar ese formato. No pulses el enlace de reintentar: cada intento vuelve a subir el original entero, falla en el mismo punto y consume más espacio. Exporta a JPEG y sube esa versión.</p>
+<p><strong>Qué hacer si no es así.</strong> La fila dice solo <strong>«Error de subida»</strong>, sin más detalle, pero si el archivo es <strong>HEIC</strong> —el del iPhone— o <strong>TIFF</strong>, la causa es ese formato, que no se puede mostrar en la galería. No pulses el enlace de reintentar: cada intento vuelve a subir el original entero, vuelve a fallar y consume más espacio. Exporta a JPEG y sube esa versión.</p>
 <h3 id="3-los-archivos-que-suben-enteros-y-no-aparecen-en-la-galeria">3. Los archivos que suben enteros y no aparecen en la galería</h3>
 <p><strong>Qué mirar.</strong> La rejilla del paso <strong>Fotos y vídeos</strong>, comparando lo que hay dentro con lo que habías soltado.</p>
 <p><strong>Qué debería verse.</strong> Cada archivo que completa su subida aparece en la rejilla.</p>
-<p><strong>Qué hacer si no es así.</strong> El original ha subido completo y ha fallado al generar las miniaturas y las versiones derivadas. La fotografía se queda a medias y no llega a mostrarse: Positiva no muestra un archivo incompleto, porque se vería roto delante de tu cliente.</p>
+<p><strong>Qué hacer si no es así.</strong> El original ha subido completo, pero no se ha podido preparar para mostrarlo. La fotografía se queda a medias y no aparece en la galería: Positiva no enseña un archivo que se vería roto delante de tu cliente.</p>
 <p>Es la misma causa que la comprobación anterior, con el almacenamiento ya consumido. Exporta a JPEG y sube esa versión. Consulta <a href="/soporte/es/formatos-admitidos/">Formatos de archivo admitidos</a>.</p>
 <h3 id="4-los-videos-no-muestran-no-se-pudo-leer-el-video">4. Ningún vídeo se queda fuera antes de subir</h3>
 <p><strong>Qué mirar.</strong> Si al soltar vídeos aparece un aviso que nombra el archivo y su formato, por ejemplo <strong>«boda-final.mov» está en ProRes 422</strong>, o el diálogo <strong>«N vídeos no se pueden ver en el navegador»</strong>.</p>
-<p><strong>Qué debería verse.</strong> El vídeo entra en la cola, genera su fotograma de portada y empieza a subir.</p>
+<p><strong>Qué debería verse.</strong> El vídeo entra en la cola y empieza a subir.</p>
 <p><strong>Qué hacer si no es así.</strong> Ese vídeo está en un formato que tus clientes no podrían reproducir en la galería —un códec de edición, un HEVC de cámara de alta gama o un archivo sin imagen—, así que Positiva no lo sube. El rechazo es temprano y no consume espacio. Exporta a MP4 con H.264, o pulsa <strong>«Compartirlo por Archivos»</strong> para que tu cliente lo descargue en lugar de verlo. Consulta <a href="/soporte/es/formatos-admitidos/">Formatos de archivo admitidos</a>.</p>
 <h3 id="5-queda-espacio-en-tu-almacenamiento">5. Queda espacio en tu almacenamiento</h3>
 <p><strong>Qué mirar.</strong> Si han fallado varios archivos a la vez con el mismo mensaje, y la barra de almacenamiento de tu cuenta.</p>
@@ -193,11 +193,11 @@ document.addEventListener('click', function (e) {
 <h3 id="6-la-subida-arranca-en-un-tiempo-razonable">6. La subida arranca en un tiempo razonable</h3>
 <p><strong>Qué mirar.</strong> Cuánto tarda la cola en empezar a moverse, y en qué navegador estás trabajando.</p>
 <p><strong>Qué debería verse.</strong> La cola arranca en cuanto sueltas los archivos.</p>
-<p><strong>Qué hacer si no es así.</strong> Si estás en <strong>Safari</strong> y has entrado en una galería que ya contiene cientos de fotografías, la subida puede tardar unos segundos de más en arrancar: el navegador está descargando las miniaturas de lo que ya había y comparte la conexión con la subida. Arranca por sí sola. Consulta <a href="/soporte/es/galeria-lenta/">La galería tarda demasiado en cargar</a>.</p>
+<p><strong>Qué hacer si no es así.</strong> Si estás en <strong>Safari</strong> y has entrado en una galería que ya contiene cientos de fotografías, la subida puede tardar unos segundos de más en arrancar mientras se cargan las miniaturas de lo que ya había. Arranca por sí sola. Consulta <a href="/soporte/es/galeria-lenta/">La galería tarda demasiado en cargar</a>.</p>
 <h3 id="7-el-progreso-de-un-video-largo-detenido-al-final">7. El progreso de un vídeo largo detenido al final</h3>
 <p><strong>Qué mirar.</strong> La barra de progreso del vídeo y su estado en la lista.</p>
 <p><strong>Qué debería verse.</strong> El vídeo pasa a «listo» al terminar.</p>
-<p><strong>Qué hacer si no es así.</strong> Un vídeo detenido en el último tramo de la barra no está bloqueado: falta la tira de miniaturas, que se genera <strong>en paralelo a la subida</strong>, no después, y que todavía no ha terminado. Positiva la espera al final, hasta unos dos minutos, y el vídeo no pasa a «listo» hasta entonces. Espera y no recargues la página. Consulta <a href="/soporte/es/subir-fotos-y-videos/">Cómo subir fotografías y vídeos a una galería</a>.</p>
+<p><strong>Qué hacer si no es así.</strong> Un vídeo detenido en el último tramo de la barra no está bloqueado: le falta terminar de prepararse, lo que puede llevar hasta unos dos minutos, y no pasa a «listo» hasta entonces. Espera y no recargues la página. Consulta <a href="/soporte/es/subir-fotos-y-videos/">Cómo subir fotografías y vídeos a una galería</a>.</p>
 <h3 id="8-el-error-menciona-la-politica-cors">8. Los archivos válidos no fallan todos a la vez</h3>
 <p><strong>Qué mirar.</strong> Si fallan con <strong>«Error de subida»</strong> archivos en JPEG o MP4 con H.264, con espacio libre y con la conexión funcionando, y si <strong>«reintentar»</strong> vuelve a fallar.</p>
 <p><strong>Qué debería verse.</strong> Fallos aislados que se resuelven al reintentar.</p>
@@ -215,7 +215,7 @@ document.addEventListener('click', function (e) {
     </section>
     <section class="relacionados">
       <h2 id="seguir-leyendo">Seguir leyendo</h2>
-      <ul><li><a href="/soporte/es/formatos-admitidos/"><b>Formatos de archivo admitidos</b><span>Positiva admite lo que tu navegador sepa leer como imagen o como vídeo, con consecuencias muy distintas para el RAW, el HEIC, el TIFF y el PNG.</span></a></li><li><a href="/soporte/es/subida-interrumpida/"><b>La subida se ha interrumpido</b><span>Cuando una tanda de subida se corta, lo que ya había terminado está a salvo y el resto desaparece de la cola: qué comprobar y cómo recuperar lo que falta.</span></a></li><li><a href="/soporte/es/subir-fotos-y-videos/"><b>Cómo subir fotografías y vídeos a una galería</b><span>Positiva sube los archivos desde tu navegador en tandas de cinco simultáneos, genera las versiones derivadas por el camino y espera al vídeo hasta el final.</span></a></li><li><a href="/soporte/es/enlace-no-valido/"><b>«Este enlace no es válido o ha caducado»</b><span>El aviso «Este enlace no es válido o ha caducado» corresponde a tres situaciones distintas y la pantalla no indica cuál de ellas es la que se ha producido.</span></a></li></ul>
+      <ul><li><a href="/soporte/es/formatos-admitidos/"><b>Formatos de archivo admitidos</b><span>Qué formatos de fotografía y de vídeo puedes subir a una galería, y qué ocurre con el RAW, el HEIC, el TIFF y el PNG.</span></a></li><li><a href="/soporte/es/subida-interrumpida/"><b>La subida se ha interrumpido</b><span>Cuando una tanda de subida se corta, lo que ya había terminado está a salvo y el resto desaparece de la cola: qué comprobar y cómo recuperar lo que falta.</span></a></li><li><a href="/soporte/es/subir-fotos-y-videos/"><b>Cómo subir fotografías y vídeos a una galería</b><span>Suelta las fotografías y los vídeos en la galería y deja la pestaña abierta hasta que la cola llegue a cero; los vídeos tardan un poco más en quedar listos.</span></a></li><li><a href="/soporte/es/enlace-no-valido/"><b>«Este enlace no es válido o ha caducado»</b><span>El aviso «Este enlace no es válido o ha caducado» corresponde a tres situaciones distintas y la pantalla no indica cuál de ellas es la que se ha producido.</span></a></li></ul>
     </section>
   </article>
 </div>

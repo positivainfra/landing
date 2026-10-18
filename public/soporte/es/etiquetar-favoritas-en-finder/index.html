@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cómo etiquetar en Finder las favoritas de tu cliente · Soporte de Positiva</title>
+<title>Etiquetar en Finder las favoritas del cliente · Positiva</title>
 <meta name="description" content="Recorrido completo del script de Finder, con las pantallas de seguridad que macOS muestra la primera vez y cómo superarlas paso a paso.">
-<meta property="og:title" content="Cómo etiquetar en Finder las favoritas de tu cliente · Soporte de Positiva">
+<meta property="og:title" content="Etiquetar en Finder las favoritas del cliente · Positiva">
 <meta property="og:description" content="Recorrido completo del script de Finder, con las pantallas de seguridad que macOS muestra la primera vez y cómo superarlas paso a paso.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://positiva.studio/soporte/es/etiquetar-favoritas-en-finder/">
@@ -181,8 +181,8 @@ document.addEventListener('click', function (e) {
 <figure class="captura"><img src="/soporte/img/finder-02-zip-en-la-carpeta.webp" alt="Ventana del Finder con las fotografías originales y el archivo test-favoritos-seleccion.zip dentro de la misma carpeta" width="1274" height="476" loading="lazy" decoding="async"><figcaption>El <code>.zip</code>, ya movido junto a los originales. Puede haber subcarpetas: la búsqueda es recursiva.</figcaption></figure>
 <h3 id="3-descomprime-el-zip-con-doble-clic">3. Descomprime el .zip con doble clic</h3>
 <p>Del <code>.zip</code> sale un archivo <code>.command</code> con el mismo nombre.</p>
-<figure class="captura"><img src="/soporte/img/finder-03-command-descomprimido.webp" alt="La misma carpeta tras descomprimir, con el archivo .command seleccionado junto al .zip original" width="1316" height="526" loading="lazy" decoding="async"><figcaption>El archivo <code>.command</code> ya sale con permiso de ejecución. Descomprimirlo es la razón por la que Positiva entrega un <code>.zip</code> y no el script suelto.</figcaption></figure>
-<aside class="nota nota-info"><b>Por qué se entrega dentro de un .zip</b><p>Un navegador nunca marca como ejecutable lo que descarga. Un <code>.command</code> descargado directamente fallaría al abrirse y habría que corregirlo desde el Terminal. El formato <code>.zip</code> sí conserva los permisos del archivo, y la Utilidad de Archivos de macOS los restaura al descomprimirlo. Por eso este paso no se puede saltar copiando el <code>.command</code> de otro sitio.</p></aside>
+<figure class="captura"><img src="/soporte/img/finder-03-command-descomprimido.webp" alt="La misma carpeta tras descomprimir, con el archivo .command seleccionado junto al .zip original" width="1316" height="526" loading="lazy" decoding="async"><figcaption>El archivo <code>.command</code> ya sale listo para abrirse. Descomprimirlo es la razón por la que Positiva entrega un <code>.zip</code> y no el script suelto.</figcaption></figure>
+<aside class="nota nota-info"><b>Por qué se entrega dentro de un .zip</b><p>Un <code>.command</code> descargado suelto no se abriría con doble clic. Al descomprimir el <code>.zip</code>, macOS lo deja listo para abrirse. Por eso este paso no se puede saltar copiando el <code>.command</code> de otro sitio.</p></aside>
 <h3 id="4-haz-doble-clic-en-el-command">4. Haz doble clic en el .command</h3>
 <p>La primera vez macOS lo bloquea y muestra este aviso:</p>
 <blockquote><p>Apple no ha podido verificar que <code>&lt;nombre-del-script&gt;.command</code> no contenga software malicioso que pueda dañar tu Mac o comprometer tu privacidad.</p></blockquote>

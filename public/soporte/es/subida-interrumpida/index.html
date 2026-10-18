@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La subida se ha interrumpido · Soporte de Positiva</title>
+<title>La subida se ha interrumpido · Positiva</title>
 <meta name="description" content="Cuando una tanda de subida se corta, lo que ya había terminado está a salvo y el resto desaparece de la cola: qué comprobar y cómo recuperar lo que falta.">
-<meta property="og:title" content="La subida se ha interrumpido · Soporte de Positiva">
+<meta property="og:title" content="La subida se ha interrumpido · Positiva">
 <meta property="og:description" content="Cuando una tanda de subida se corta, lo que ya había terminado está a salvo y el resto desaparece de la cola: qué comprobar y cómo recuperar lo que falta.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://positiva.studio/soporte/es/subida-interrumpida/">
@@ -164,15 +164,15 @@ document.addEventListener('click', function (e) {
     
     <div class="prosa">
 <p>La cola de subida se detiene antes de llegar a cero, o la lista aparece vacía y en la galería falta parte del material que habías soltado.</p>
-<p>Un corte de red no suele romper nada: cada llamada se reintenta por su cuenta varias veces antes de dar el archivo por fallido, y el resto de la cola continúa subiendo mientras tanto. La causa habitual de una tanda perdida no es la conexión, sino el cierre de la pestaña del navegador.</p>
-<p>Mientras la conexión no envía nada, la línea de la cola lo dice: <strong>«Esperando conexión…»</strong>. En cuanto vuelve, la subida sigue sola y la línea recupera el tiempo restante. Si lo que ocurre es que tu red no llega al almacenamiento —pasa con algunas operadoras españolas durante sus bloqueos de direcciones—, Positiva lo detecta y sube por su propio dominio sin que tengas que hacer nada.</p>
-<p>Cuando un archivo sí acaba fallando, su fila conserva el texto del error y un enlace de <strong>«reintentar»</strong> a la derecha. Las filas fallidas <strong>no se pintan en rojo</strong>: se reconocen por ese texto y por ese enlace, no por el color.</p>
+<p>Un corte de red no suele romper nada: cada archivo se reintenta solo varias veces antes de darse por fallido, y el resto de la cola continúa subiendo mientras tanto. La causa habitual de una tanda perdida no es la conexión, sino el cierre de la pestaña del navegador.</p>
+<p>Mientras la conexión no envía nada, la línea de la cola lo dice: <strong>«Esperando conexión…»</strong>. En cuanto vuelve, la subida sigue sola y la línea recupera el tiempo restante. Si tu operadora bloquea parte de internet —pasa con algunas operadoras españolas, por ejemplo en horario de partidos de fútbol—, la subida sigue igualmente sin que tengas que hacer nada.</p>
+<p>Cuando un archivo sí acaba fallando, su fila conserva el texto del error y un enlace de <strong>«reintentar»</strong> a la derecha. Las filas fallidas <strong>no se marcan en rojo</strong>: se reconocen por ese texto y por ese enlace, no por el color.</p>
 <h2 id="comprobaciones-en-orden">Comprobaciones, en orden</h2>
 <h3 id="1-la-pestana-del-navegador-ha-permanecido-abierta">1. La pestaña del navegador ha permanecido abierta</h3>
 <p><strong>Qué mirar.</strong> La pestaña de Positiva y la lista de la cola, en el paso <strong>Fotos y vídeos</strong> de la galería.</p>
 <p><strong>Qué debería verse.</strong> La cola en marcha: junto a la barra, una línea del tipo <strong>«12 de 240 terminados · Quedan ~3 min · 12,4 MB/s»</strong>, y en el listado hasta cinco archivos subiendo a la vez y el resto <strong>«en cola»</strong>.</p>
-<p><strong>Qué hacer si no es así.</strong> Si cerraste la pestaña o recargaste la página, la cola se ha perdido. Lo que ya había terminado está a salvo, porque está en el almacenamiento y en la galería; lo que estaba subiendo o esperando turno desaparece de la lista y hay que volver a soltarlo.</p>
-<p>Los archivos <strong>grandes</strong> suben por partes y pueden retomar la subida donde se quedaron, pero solo si vuelves a soltar exactamente el mismo archivo desde el mismo navegador. La barra arranca entonces con lo que ya estaba arriba, y el tiempo restante solo cuenta lo que falta. Los archivos de tamaño normal empiezan de cero.</p>
+<p><strong>Qué hacer si no es así.</strong> Si cerraste la pestaña o recargaste la página, la cola se ha perdido. Lo que ya había terminado está a salvo en la galería; lo que estaba subiendo o esperando turno desaparece de la lista y hay que volver a soltarlo.</p>
+<p>Los archivos <strong>grandes</strong> pueden retomar la subida donde se quedaron, pero solo si vuelves a soltar exactamente el mismo archivo desde el mismo navegador. La barra arranca entonces con lo que ya se había subido, y el tiempo restante solo cuenta lo que falta. Los archivos de tamaño normal empiezan de cero.</p>
 <aside class="nota nota-aviso"><b>Positiva no ofrece «continuar donde lo dejaste»</b><p>No hay ningún aviso de que tenías una subida sin terminar, ni una pantalla que te lo recuerde al volver a la galería. Si cierras la pestaña a mitad de tanda, eres tú quien tiene que llevar la cuenta de lo que faltaba.</p></aside>
 <p>La regla práctica es dejar la pestaña abierta y el ordenador despierto hasta que la cola llegue a cero. Puedes moverte por otros pasos de la misma galería mientras tanto, porque eso no interrumpe la subida.</p>
 <h3 id="2-las-filas-con-mensaje-de-error-dentro-de-la-cola">2. Las filas con mensaje de error dentro de la cola</h3>
@@ -189,8 +189,8 @@ document.addEventListener('click', function (e) {
 <h3 id="4-los-archivos-que-suben-enteros-y-no-aparecen-en-la-galeria">4. Los archivos que suben enteros y no aparecen en la galería</h3>
 <p><strong>Qué mirar.</strong> La rejilla del paso <strong>Fotos y vídeos</strong>, comparando lo que hay dentro con lo que habías soltado.</p>
 <p><strong>Qué debería verse.</strong> Cada archivo que termina su subida aparece en la rejilla.</p>
-<p><strong>Qué hacer si no es así.</strong> Una fotografía puede subir su original completo y fallar después, al generar sus versiones derivadas. En ese caso no aparece en la galería: se queda a medias. Es el comportamiento previsto, porque un archivo incompleto se mostraría roto delante de tu cliente.</p>
-<p>La causa casi nunca es la red, sino el formato: un HEIC o un TIFF que el navegador no sabe decodificar. Reintentar repite la subida completa del original y vuelve a fallar en el mismo punto. Exporta a JPEG y sube esa versión. Consulta <a href="/soporte/es/formatos-admitidos/">Formatos de archivo admitidos</a>.</p>
+<p><strong>Qué hacer si no es así.</strong> Una fotografía puede subir entera y fallar después, al prepararse para mostrarse en la galería. En ese caso no aparece en la galería. Es el comportamiento previsto: así tu cliente nunca ve una imagen rota.</p>
+<p>La causa casi nunca es la red, sino el formato: suele ser un HEIC o un TIFF. Reintentar repite la subida completa del original y vuelve a fallar en el mismo punto. Exporta a JPEG y sube esa versión. Consulta <a href="/soporte/es/formatos-admitidos/">Formatos de archivo admitidos</a>.</p>
 <h2 id="si-el-problema-continua">Si el problema continúa</h2>
 <p>Reúne estos datos antes de escribir a soporte:</p>
 <ul><li>El nombre de la galería y cuántos archivos componían la tanda.</li><li>El navegador y la versión que estabas utilizando.</li><li>El texto exacto del error de una de las filas fallidas.</li><li>Si el aviso de espacio agotado llegó a aparecer, y si el problema persiste después de recargar la página.</li></ul>
@@ -204,7 +204,7 @@ document.addEventListener('click', function (e) {
     </section>
     <section class="relacionados">
       <h2 id="seguir-leyendo">Seguir leyendo</h2>
-      <ul><li><a href="/soporte/es/subir-fotos-y-videos/"><b>Cómo subir fotografías y vídeos a una galería</b><span>Positiva sube los archivos desde tu navegador en tandas de cinco simultáneos, genera las versiones derivadas por el camino y espera al vídeo hasta el final.</span></a></li><li><a href="/soporte/es/archivos-que-no-suben/"><b>Hay archivos que no se suben</b><span>Cuando un archivo se queda fuera de la galería la causa suele ser su formato y no la conexión: identifica el síntoma en pantalla y aplica su solución.</span></a></li><li><a href="/soporte/es/ampliar-almacenamiento/"><b>Cómo ampliar o reducir tu almacenamiento</b><span>El almacenamiento adicional se compra en bloques de 100 GB sobre un plan de pago: ampliar se cobra en el acto y reducir se aplica en la renovación.</span></a></li><li><a href="/soporte/es/formatos-admitidos/"><b>Formatos de archivo admitidos</b><span>Positiva admite lo que tu navegador sepa leer como imagen o como vídeo, con consecuencias muy distintas para el RAW, el HEIC, el TIFF y el PNG.</span></a></li></ul>
+      <ul><li><a href="/soporte/es/subir-fotos-y-videos/"><b>Cómo subir fotografías y vídeos a una galería</b><span>Suelta las fotografías y los vídeos en la galería y deja la pestaña abierta hasta que la cola llegue a cero; los vídeos tardan un poco más en quedar listos.</span></a></li><li><a href="/soporte/es/archivos-que-no-suben/"><b>Hay archivos que no se suben</b><span>Cuando un archivo se queda fuera de la galería la causa suele ser su formato y no la conexión: identifica el síntoma en pantalla y aplica su solución.</span></a></li><li><a href="/soporte/es/ampliar-almacenamiento/"><b>Cómo ampliar o reducir tu almacenamiento</b><span>El almacenamiento adicional se compra en bloques de 100 GB sobre un plan de pago: ampliar se cobra en el acto y reducir se aplica en la renovación.</span></a></li><li><a href="/soporte/es/formatos-admitidos/"><b>Formatos de archivo admitidos</b><span>Qué formatos de fotografía y de vídeo puedes subir a una galería, y qué ocurre con el RAW, el HEIC, el TIFF y el PNG.</span></a></li></ul>
     </section>
   </article>
 </div>
