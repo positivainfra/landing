@@ -125,7 +125,10 @@ def page(d, body):
     foot = enlaces(footer_en if en else footer)
     otra = ALT.get(canon)
     menu = enlaces(nav_en if en else nav)
-    if otra: menu = re.sub(r'href="[^"]*"( hreflang="(?:es|en)" lang="(?:es|en)" data-lang-switch)', lambda m: f'href="{otra}"' + m.group(1), menu)
+    # Selector de idioma (cabecera, menú móvil y pie): todos al equivalente de ESTA página.
+    if otra:
+        cambia = lambda h: re.sub(r'href="[^"]*"( hreflang="(?:es|en)" lang="(?:es|en)" data-lang-switch)', lambda m: f'href="{otra}"' + m.group(1), h)
+        menu, foot = cambia(menu), cambia(foot)
     hre = ''
     if otra:
         es_url, en_url = (otra, canon) if en else (canon, otra)

@@ -52,6 +52,11 @@ for (const page of PAGES) {
   const before = readFileSync(path, 'utf8');
   let after = stamp(before, 'nav', nav, page);
   after = stamp(after, 'footer', footer, page);
+  // Selector de idioma (cabecera, menú móvil y pie): si la página declara su gemela en
+  // inglés (<link rel="alternate" hreflang="en">, lo pone gen-notas.py), todos van ahí;
+  // si no, se quedan en /en/. Misma fuente que el hreflang: no se pueden separar.
+  const gemela = after.match(/<link rel="alternate" hreflang="en" href="https:\/\/positiva\.studio([^"]+)">/);
+  if (gemela) after = after.replace(/href="[^"]*"( hreflang="en" lang="en" data-lang-switch)/g, `href="${gemela[1]}"$1`);
   // Capa visual de la web: docs.css encima de su CSS propio y positiva.js (nav, menú, CTA).
   // Idempotente: solo se añade si falta. El «saltar» viejo sobra: el nav trae el suyo.
   after = after.replace(/\s*<a class="saltar" href="#contenido">[^<]*<\/a>/, '');
