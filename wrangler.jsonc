@@ -13,11 +13,20 @@
     "binding": "ASSETS"
   },
 
-  // Dominio público del Worker. custom_domain:true crea el registro DNS
-  // (proxied) y la ruta al desplegar. Para servir también www, añade otra
-  // entrada { "pattern": "www.positiva.studio", "custom_domain": true }.
+  // Dominio público del Worker: RUTA DE ZONA, no Custom Domain (desde
+  // feat/modo-partido-prep). Un Custom Domain crea un registro DNS de tipo
+  // «Worker» que no se puede poner en DNS only, y el «modo partido» de la app
+  // (SHOWCASEBRAIN/MODO-PARTIDO.md) necesita hacerlo cuando LaLiga bloquea las
+  // IPs de la zona. El registro del apex es ahora un AAAA 100:: con proxy,
+  // creado a mano; wrangler NO lo crea ni lo borra.
+  //
+  // Esta ruta es además la que impide que el comodín `*/*` del frontend de
+  // la app (positiva-frontend-production) se coma la landing: antes existía
+  // con «Worker: None» y el MISMO patrón, así que el reparto del apex con las
+  // rutas `*/media/g/*`, `*/api/track`, etc. de la app no cambia: solo cambia
+  // a quién entrega esta ruta. No la borres (ver MODO-PARTIDO.md §1.2).
   "routes": [
-    { "pattern": "positiva.studio", "custom_domain": true }
+    { "pattern": "positiva.studio/*", "zone_name": "positiva.studio" }
   ],
 
   // ── Waitlist por email (Cloudflare Email Routing, sin base de datos) ──
