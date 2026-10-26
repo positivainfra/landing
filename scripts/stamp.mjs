@@ -13,6 +13,8 @@
  *   · Lo que haya entre marcadores se sobrescribe SIEMPRE: no edites ahí.
  *   · Para añadir una página nueva: pon los marcadores en su HTML y súmala a PAGES.
  *   · /soporte/ también se estampa (nav y pie); su CONTENIDO sigue siendo del flujo de soporte.
+ *   · Una página con <html lang="en"> recibe los gemelos ingleses (chrome-nav.en.html,
+ *     chrome-footer.en.html).
  */
 import { readFileSync, writeFileSync, globSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
@@ -24,10 +26,17 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 // scripts/new-web/gen.py con el nav ya puesto: NO van aquí.
 const PAGES = [
   'public/novedades/index.html',
+  'public/legal/extension/index.html',
+  // Legales, en los dos idiomas: las GENERA SHOWCASEBRAIN (frontend/scripts/
+  // legales-landing.tsx) desde el texto de la app. Ese guion va ANTES que este:
+  // escribe la página con los marcadores vacíos y el hreflang de su pareja, y
+  // aquí se estampa.
   'public/aviso-legal/index.html',
   'public/privacidad/index.html',
   'public/terminos/index.html',
-  'public/legal/extension/index.html',
+  'public/en/legal-notice/index.html',
+  'public/en/privacy/index.html',
+  'public/en/terms/index.html',
 ];
 
 // /notas/ (el blog) se estampa igual: índice y artículos.
@@ -37,8 +46,11 @@ for (const f of globSync('public/notas/**/index.html', { cwd: ROOT })) PAGES.pus
 // llevan los mismos marcadores. El glob las recoge aunque el otro flujo añada artículos.
 for (const f of globSync('public/soporte/es/**/index.html', { cwd: ROOT })) PAGES.push(f);
 
-const nav = readFileSync(resolve(ROOT, 'partials/chrome-nav.html'), 'utf8').trim();
-const footer = readFileSync(resolve(ROOT, 'partials/chrome-footer.html'), 'utf8').trim();
+const parcial = (f) => readFileSync(resolve(ROOT, 'partials', f), 'utf8').trim();
+const CHROME = {
+  es: { nav: parcial('chrome-nav.html'), footer: parcial('chrome-footer.html') },
+  en: { nav: parcial('chrome-nav.en.html'), footer: parcial('chrome-footer.en.html') },
+};
 
 const stamp = (html, tag, content, file) => {
   const re = new RegExp(`<!-- pv:${tag} -->[\\s\\S]*?<!-- /pv:${tag} -->`);
@@ -50,13 +62,16 @@ let changed = 0;
 for (const page of PAGES) {
   const path = resolve(ROOT, page);
   const before = readFileSync(path, 'utf8');
-  let after = stamp(before, 'nav', nav, page);
-  after = stamp(after, 'footer', footer, page);
+  const lang = /<html lang="en"/.test(before) ? 'en' : 'es';
+  const otro = lang === 'en' ? 'es' : 'en';
+  let after = stamp(before, 'nav', CHROME[lang].nav, page);
+  after = stamp(after, 'footer', CHROME[lang].footer, page);
   // Selector de idioma (cabecera, menú móvil y pie): si la página declara su gemela en
-  // inglés (<link rel="alternate" hreflang="en">, lo pone gen-notas.py), todos van ahí;
-  // si no, se quedan en /en/. Misma fuente que el hreflang: no se pueden separar.
-  const gemela = after.match(/<link rel="alternate" hreflang="en" href="https:\/\/positiva\.studio([^"]+)">/);
-  if (gemela) after = after.replace(/href="[^"]*"( hreflang="en" lang="en" data-lang-switch)/g, `href="${gemela[1]}"$1`);
+  // el otro idioma (<link rel="alternate" hreflang="en|es">, lo ponen gen-notas.py y el
+  // generador de legales de SHOWCASEBRAIN), todos van ahí; si no, se quedan en la home
+  // del otro idioma. Misma fuente que el hreflang: no se pueden separar.
+  const gemela = after.match(new RegExp(`<link rel="alternate" hreflang="${otro}" href="https://positiva\\.studio([^"]+)">`));
+  if (gemela) after = after.replace(new RegExp(`href="[^"]*"( hreflang="${otro}" lang="${otro}" data-lang-switch)`, 'g'), `href="${gemela[1]}"$1`);
   // Capa visual de la web: docs.css encima de su CSS propio y positiva.js (nav, menú, CTA).
   // Idempotente: solo se añade si falta. El «saltar» viejo sobra: el nav trae el suyo.
   after = after.replace(/\s*<a class="saltar" href="#contenido">[^<]*<\/a>/, '');

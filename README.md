@@ -40,6 +40,42 @@ npm run stamp        # re-estampa partials/ en las páginas listadas en scripts/
 - El footer es el mapa del sitio: toda página pública nueva debe enlazarse ahí
   (y añadirse a `sitemap.xml`).
 
+## Legales (generadas, no se editan aquí)
+
+`/aviso-legal/`, `/privacidad/`, `/terminos/` y sus gemelas inglesas
+`/en/legal-notice/`, `/en/privacy/`, `/en/terms/` **no se mantienen a mano**:
+las genera el repo de la app (SHOWCASEBRAIN) desde el mismo texto que pinta
+`/legal/*` (`frontend/src/legal/content/` y `content/en/`). Un cambio de texto
+va allí, en castellano e inglés a la vez, y se vuelve a generar. Cada página
+declara el hreflang de su pareja, y de ese `<link>` sale el enlace de idioma de
+su nav y su pie. `scripts/.huellas-legales.json` guarda la huella de cada una:
+si se edita a mano, el generador se niega a pisarla.
+
+(Hasta el 25/10/2026 las castellanas eran a mano y se quedaron en el texto
+anterior a la corrección del 06/10 de la app.)
+
+El orden importa:
+
+```bash
+# 1. en SHOWCASEBRAIN/frontend (POSITIVA_LANDING_DIR si la landing no es la carpeta hermana)
+npm run legales:landing
+# 2. aquí: nav y pie (las inglesas reciben los parciales .en)
+npm run stamp
+# 3. aquí: lastmod (las URLs ya están en sitemap.xml)
+npm run sitemap
+```
+
+`scripts/new-web/gen.py` no toca ninguno de esos ficheros (puede ir antes o
+después), pero sí usa `partials/chrome-footer.en.html`: si cambias ese pie,
+ejecuta gen.py **y** stamp. Volver a ejecutar el paso 1 después del 2 no
+cambia nada (`npm run legales:landing -- --check` sale con 0).
+`gen-sitemap.mjs` saca el lastmod del último commit del fichero: tras
+commitear un cambio de legales, vuelve a pasarlo para que lo recoja.
+
+`/legal/extension/` (privacidad de la extensión de Chrome) sigue a mano: no
+existe en la app. El contrato de encargado de tratamiento (cuarto documento de
+la app) no se publica aquí en ningún idioma.
+
 ## Rendimiento
 
 - **Cero peticiones a dominios externos.** Fuentes e imágenes auto-alojadas.
